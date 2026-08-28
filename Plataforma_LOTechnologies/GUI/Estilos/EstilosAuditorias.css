@@ -1,0 +1,11 @@
+﻿.aud-paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.aud-etiqueta-warn {
+    background-color: #fff4e5;
+    color: #b3691e;
+}

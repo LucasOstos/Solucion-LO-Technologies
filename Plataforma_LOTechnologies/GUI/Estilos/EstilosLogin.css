@@ -1,0 +1,290 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0f1b2e;
+}
+
+.login-pagina {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(180deg, #0f1b2e 0%, #16233b 100%);
+    border-radius: 16px;
+    padding: 40px 32px 24px 32px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.login-logo {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 20px auto;
+    background-color: #2f6bff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.login-brand-titulo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.login-brand-titulo span {
+    color: #4c8dff;
+}
+
+.login-brand-subtitulo {
+    color: #93a0b4;
+    font-size: 13px;
+    margin: 4px 0 28px 0;
+}
+
+.login-tarjeta {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 28px 24px;
+    text-align: left;
+}
+
+.login-tarjeta h2 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    color: #17223a;
+}
+
+.login-tarjeta p.login-subtexto {
+    margin: 0 0 20px 0;
+    font-size: 13px;
+    color: #7c8697;
+}
+
+.form-grupo {
+    margin-bottom: 16px;
+}
+
+.form-grupo label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2a3448;
+    margin-bottom: 6px;
+}
+
+.input-con-icono {
+    position: relative;
+}
+
+.input-con-icono .icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9aa4b5;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.input-con-icono .ocultar-contrasenia {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9aa4b5;
+    font-size: 14px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.input-con-icono input[type="text"],
+.input-con-icono input[type="email"],
+.input-con-icono input[type="password"] {
+    width: 100%;
+    padding: 10px 36px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #17223a;
+}
+
+.input-con-icono input:focus {
+    outline: none;
+    border-color: #2f6bff;
+    box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.15);
+}
+
+.campo-error {
+    color: #d64545;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+    font-weight: bold;
+}
+
+.olvide-contrasenia {
+    text-align: right;
+    margin-bottom: 18px;
+}
+
+.olvide-contrasenia a {
+    font-size: 13px;
+    color: #2f6bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.olvide-contrasenia a:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    width: 100%;
+    background-color: #2f6bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #2757d6;
+}
+
+.login-error-banner {
+    display: block;
+    background-color: #fdeceb;
+    border: 1px solid #f3b9b4;
+    color: #b3261e;
+    font-size: 13px;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+}
+
+.login-piepagina {
+    margin-top: 20px;
+    color: #5f6b80;
+    font-size: 11px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 27, 46, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-box {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-box h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    color: #17223a;
+}
+
+.modal-subtexto {
+    margin: 0 0 16px 0;
+    font-size: 13px;
+    color: #7c8697;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #17223a;
+    margin-bottom: 8px;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: #2f6bff;
+    box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.15);
+}
+
+.modal-mensaje {
+    background-color: #eef4ff;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #2a3448;
+    margin-bottom: 8px;
+}
+
+.modal-botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.modal-btn-cancelar,
+.modal-btn-enviar {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.modal-btn-cancelar {
+    background-color: #ffffff;
+    color: #6b7385;
+    border: 1px solid #dfe3ea;
+}
+
+.modal-btn-cancelar:hover {
+    background-color: #f4f6fa;
+}
+
+.modal-btn-enviar {
+    background-color: #2f6bff;
+    color: #ffffff;
+}
+
+.modal-btn-enviar:hover {
+    background-color: #2757d6;
+}
+
+.modal-btn-enviar:disabled {
+    background-color: #9db4e8;
+    cursor: not-allowed;
+}

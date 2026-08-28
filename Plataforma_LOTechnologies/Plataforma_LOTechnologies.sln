@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GUI", "GUI\", "{49760FB8-2856-9F9B-D44C-3777971CB0EC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{0d2d4b31-dbba-4452-ad2d-ad86b39eddb6}|SERVICIO.dll;{9f1db369-ae7c-439a-a005-d65f702ab0d2}|BE.dll;{bee9d0c9-49e2-4029-97a8-3ea2b3a8bd7b}|BLL.dll;{BFC98CFA-D62D-48EF-A93A-3C7388431F9D}|DAL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52914"
+		Debug.AspNetCompiler.PhysicalPath = "GUI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52914\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52914"
+		Release.AspNetCompiler.PhysicalPath = "GUI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52914\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52914"
+		SlnRelativePath = "GUI\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERVICIO", "SERVICIO\SERVICIO.csproj", "{0D2D4B31-DBBA-4452-AD2D-AD86B39EDDB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{BFC98CFA-D62D-48EF-A93A-3C7388431F9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE", "BE\BE.csproj", "{9F1DB369-AE7C-439A-A005-D65F702AB0D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{BEE9D0C9-49E2-4029-97A8-3EA2B3A8BD7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49760FB8-2856-9F9B-D44C-3777971CB0EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49760FB8-2856-9F9B-D44C-3777971CB0EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49760FB8-2856-9F9B-D44C-3777971CB0EC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{49760FB8-2856-9F9B-D44C-3777971CB0EC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{0D2D4B31-DBBA-4452-AD2D-AD86B39EDDB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D2D4B31-DBBA-4452-AD2D-AD86B39EDDB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D2D4B31-DBBA-4452-AD2D-AD86B39EDDB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D2D4B31-DBBA-4452-AD2D-AD86B39EDDB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC98CFA-D62D-48EF-A93A-3C7388431F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC98CFA-D62D-48EF-A93A-3C7388431F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC98CFA-D62D-48EF-A93A-3C7388431F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC98CFA-D62D-48EF-A93A-3C7388431F9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1DB369-AE7C-439A-A005-D65F702AB0D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1DB369-AE7C-439A-A005-D65F702AB0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1DB369-AE7C-439A-A005-D65F702AB0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1DB369-AE7C-439A-A005-D65F702AB0D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE9D0C9-49E2-4029-97A8-3EA2B3A8BD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE9D0C9-49E2-4029-97A8-3EA2B3A8BD7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE9D0C9-49E2-4029-97A8-3EA2B3A8BD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE9D0C9-49E2-4029-97A8-3EA2B3A8BD7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9185C193-908E-40CE-95C8-9A818A0CE99A}
+	EndGlobalSection
+EndGlobal

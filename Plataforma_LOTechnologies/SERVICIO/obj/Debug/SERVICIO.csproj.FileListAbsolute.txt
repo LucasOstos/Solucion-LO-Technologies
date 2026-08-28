@@ -1,0 +1,11 @@
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\bin\Debug\SERVICIO.dll
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\bin\Debug\SERVICIO.pdb
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\bin\Debug\BE.dll
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\bin\Debug\BE.pdb
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\obj\Debug\SERVICIO.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\obj\Debug\SERVICIO.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\obj\Debug\SERVICIO.csproj.Up2Date
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\obj\Debug\SERVICIO.dll
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\obj\Debug\SERVICIO.pdb
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\bin\Debug\DAL.dll
+C:\Users\Usuario\Desktop\Solucion LO Technologies\Plataforma_LOTechnologies\SERVICIO\bin\Debug\DAL.pdb

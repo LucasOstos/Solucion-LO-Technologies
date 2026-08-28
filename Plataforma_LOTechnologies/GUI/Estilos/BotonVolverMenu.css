@@ -1,0 +1,14 @@
+﻿.boton-volver-menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2f6bff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.boton-volver-menu:hover {
+    text-decoration: underline;
+}

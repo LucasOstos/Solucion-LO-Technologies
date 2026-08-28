@@ -1,0 +1,38 @@
+﻿.rep-columnas {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.rep-checks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.rep-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eef1f6;
+}
+
+.rep-item-info {
+    flex: 1;
+}
+
+.rep-item-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .rep-columnas {
+        grid-template-columns: 1fr;
+    }
+}

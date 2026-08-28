@@ -1,0 +1,40 @@
+﻿.ind-recomendacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid transparent;
+}
+
+.ind-prioridad-alto {
+    background-color: #fdeceb;
+    border-left-color: #b3261e;
+}
+
+.ind-prioridad-medio {
+    background-color: #eef4ff;
+    border-left-color: #2f6bff;
+}
+
+.ind-prioridad-positivo {
+    background-color: #eaf7ee;
+    border-left-color: #1e7a37;
+}
+
+.ind-etiqueta-alto {
+    background-color: #b3261e;
+    color: #ffffff;
+}
+
+.ind-etiqueta-medio {
+    background-color: #2f6bff;
+    color: #ffffff;
+}
+
+.ind-etiqueta-positivo {
+    background-color: #1e7a37;
+    color: #ffffff;
+}

@@ -1,0 +1,16 @@
+﻿.br-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.br-alerta {
+    background-color: #fff4e5;
+    border: 1px solid #f0c987;
+    color: #7a4d00;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}

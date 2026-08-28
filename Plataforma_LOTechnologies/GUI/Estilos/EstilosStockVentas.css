@@ -1,0 +1,47 @@
+﻿.sv-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.sv-stat-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sv-stat-valor {
+    font-size: 20px;
+    font-weight: 700;
+    color: #17223a;
+    margin-top: 4px;
+}
+
+.sv-grafico-placeholder {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f6fa;
+    border-radius: 8px;
+    color: #9aa4b5;
+    font-size: 13px;
+}
+
+.sv-barra-stock {
+    display: inline-block;
+    width: 80px;
+    height: 6px;
+    background-color: #eef1f6;
+    border-radius: 4px;
+    margin-right: 8px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.sv-barra-relleno {
+    height: 100%;
+    background-color: #2f6bff;
+}

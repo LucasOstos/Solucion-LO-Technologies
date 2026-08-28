@@ -1,0 +1,81 @@
+﻿.esc-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.esc-tarjeta {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.esc-tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    gap: 8px;
+}
+
+.esc-etiqueta-base {
+    background-color: #eef4ff;
+    color: #2f6bff;
+}
+
+.esc-etiqueta-en-revision {
+    background-color: #fff4e5;
+    color: #b3691e;
+}
+
+.esc-etiqueta-aprobado {
+    background-color: #eaf7ee;
+    color: #1e7a37;
+}
+
+.esc-etiqueta-borrador {
+    background-color: #f4f6fa;
+    color: #6b7385;
+}
+
+.esc-stats {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9fafc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 0;
+    text-align: center;
+}
+
+.esc-tarjeta-botones {
+    display: flex;
+    gap: 8px;
+}
+
+.esc-boton-full {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.esc-fila-sector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 0;
+}
+
+.esc-fila-sector .texto-secundario {
+    flex: 0 0 120px;
+}
+
+.esc-select-cambio {
+    flex: 1;
+}

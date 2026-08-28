@@ -1,0 +1,89 @@
+﻿.ap-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.ap-stat-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ap-stat-valor {
+    font-size: 24px;
+    font-weight: 700;
+    color: #17223a;
+}
+
+.ap-color-alta {
+    color: #b3261e;
+}
+
+.ap-color-media {
+    color: #b3691e;
+}
+
+.ap-color-baja {
+    color: #2f6bff;
+}
+
+.ap-candidato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    background-color: #f9fafc;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.ap-borde-alta {
+    border-left-color: #b3261e;
+}
+
+.ap-borde-media {
+    border-left-color: #b3691e;
+}
+
+.ap-borde-baja {
+    border-left-color: #2f6bff;
+}
+
+.ap-etiqueta-alta {
+    background-color: #b3261e;
+    color: #fff;
+}
+
+.ap-etiqueta-media {
+    background-color: #b3691e;
+    color: #fff;
+}
+
+.ap-etiqueta-baja {
+    background-color: #2f6bff;
+    color: #fff;
+}
+
+.ap-candidato-info {
+    flex: 1 1 200px;
+}
+
+.ap-candidato-movimiento {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.ap-candidato-metricas {
+    display: flex;
+    gap: 16px;
+    text-align: center;
+    font-size: 13px;
+}

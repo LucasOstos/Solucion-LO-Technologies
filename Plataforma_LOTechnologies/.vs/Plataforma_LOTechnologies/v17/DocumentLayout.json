@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{49760FB8-2856-9F9B-D44C-3777971CB0EC}|C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI|c:\\users\\usuario\\desktop\\solucion lo technologies\\plataforma_lotechnologies\\gui\\paginalogin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{49760FB8-2856-9F9B-D44C-3777971CB0EC}|C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI|solutionrelative:gui\\paginalogin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49760FB8-2856-9F9B-D44C-3777971CB0EC}|C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI|c:\\users\\usuario\\desktop\\solucion lo technologies\\plataforma_lotechnologies\\gui\\paginaprincipal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{49760FB8-2856-9F9B-D44C-3777971CB0EC}|C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI|solutionrelative:gui\\paginaprincipal.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaginaPrincipal.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI\\PaginaPrincipal.aspx",
+              "RelativeDocumentMoniker": "GUI\\PaginaPrincipal.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI\\PaginaPrincipal.aspx",
+              "RelativeToolTip": "GUI\\PaginaPrincipal.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-27T21:23:53.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaginaLogin.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI\\PaginaLogin.aspx",
+              "RelativeDocumentMoniker": "GUI\\PaginaLogin.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Solucion LO Technologies\\Plataforma_LOTechnologies\\GUI\\PaginaLogin.aspx",
+              "RelativeToolTip": "GUI\\PaginaLogin.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-27T20:09:22.005Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

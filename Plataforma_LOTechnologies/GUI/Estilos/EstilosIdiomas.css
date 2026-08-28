@@ -1,0 +1,75 @@
+﻿.idi-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.idi-tarjeta {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.idi-tarjeta-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.idi-bandera {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background-color: #eef4ff;
+    color: #2f6bff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.idi-nombre-bloque {
+    flex: 1;
+}
+
+.idi-switch {
+    display: inline-block;
+}
+
+.idi-barra {
+    width: 100%;
+    height: 6px;
+    background-color: #eef1f6;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 6px 0 12px 0;
+}
+
+.idi-barra-relleno {
+    height: 100%;
+}
+
+.idi-completitud-alta {
+    background-color: #1e7a37;
+}
+
+.idi-completitud-media {
+    background-color: #b3691e;
+}
+
+.idi-completitud-baja {
+    background-color: #b3261e;
+}
+
+.idi-tarjeta-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #eef1f6;
+    font-size: 13px;
+}
