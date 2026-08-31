@@ -72,7 +72,7 @@ namespace BLL
         {
             Usuario usuario = accesoDAL.ObtenerUsuario(pEmail);
             if (usuario == null) return;
-            Guid token = tokenDAL.GenerarToken(usuario.DNI, 60);
+            Guid token = tokenDAL.GenerarToken(usuario.DNI, 5);
             GmailServicio.Instancia.EnviarMailRecuperacion(usuario.Email, $"{usuario.Nombre} {usuario.Apellido}", token);
         }
         public ResultadoCambio ValidarToken(Guid pToken)
