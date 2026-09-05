@@ -21,7 +21,8 @@ namespace SERVICIO.Logica
         private readonly Dictionary<string, string> TablasConDVH = new Dictionary<string, string>
         {
             { "Empresa", "CodigoEmpresa" },
-            { "Usuario", "UsuarioDNI" }
+            { "Usuario", "UsuarioDNI" },
+            { "Local", "CodigoLocal"}
         };
         public void ActualizarDigitoTabla(string pNombreTabla)
         {

@@ -25,11 +25,11 @@ body {
     margin-bottom: 18px;
 }
 
-    .encabezado h1 {
-        margin: 0 0 4px 0;
-        font-size: 22px;
-        color: #17223a;
-    }
+.encabezado h1 {
+    margin: 0 0 4px 0;
+    font-size: 22px;
+    color: #17223a;
+}
 
 .subtitulo {
     margin: 0;

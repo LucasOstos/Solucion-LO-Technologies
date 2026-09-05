@@ -28,5 +28,17 @@ namespace BE
         public string Telefono { get; set; }
         public string Observaciones { get; set; }
         public string Estado { get; set; }
+        public LocalBE(int pCodigoLocal, int pCodigoEmpresa, string pNombre, string pDireccion, string pTipoLocal, decimal? pSuperficieAprox, string pTelefono, string pObservaciones, string pEstado)
+        {
+            CodigoLocal = pCodigoLocal;
+            CodigoEmpresa = pCodigoEmpresa;
+            Nombre = pNombre;
+            Direccion = pDireccion;
+            TipoLocal = pTipoLocal;
+            SuperficieAprox = pSuperficieAprox;
+            Telefono = pTelefono;
+            Observaciones = pObservaciones;
+            Estado = pEstado;
+        }
     }
 }

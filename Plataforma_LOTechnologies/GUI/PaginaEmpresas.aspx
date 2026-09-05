@@ -16,6 +16,7 @@
     <form id="formEmpresas" runat="server">
         <div class="pagina">
             <div class="contenedor">
+
                 <uc:BotonVolverMenu ID="volverMenu" runat="server" />
 
                 <div class="encabezado">
@@ -25,7 +26,8 @@
                     <asp:Button ID="btnNuevaEmpresa" runat="server" CssClass="boton-nuevo"
                         Text="Nueva Empresa" OnClick="btnNuevaEmpresa_Click" CausesValidation="false" />
                 </div>
-                <asp:Label ID="lbMensaje" runat="server" CssClass="mensaje" Visible="false" />
+
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
 
                 <div class="filtros">
                     <asp:TextBox ID="tbBuscar" runat="server" CssClass="campo-buscar" placeholder="Buscar por nombre o CUIT..." />
@@ -47,6 +49,7 @@
                                 <th>CUIT</th>
                                 <th>Correo</th>
                                 <th>Teléfono</th>
+                                <th>Dirección</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -55,24 +58,17 @@
                             <asp:Repeater ID="rptEmpresas" runat="server" OnItemCommand="rptEmpresas_ItemCommand">
                                 <ItemTemplate>
                                     <tr>
-                                        <td>
-                                            <div class="celda-principal">
-                                                <span class="avatar avatar-cuadrado">&#127970;</span>
-                                                <div>
-                                                    <div class="texto-principal"><%# Eval("RazonSocial") %></div>
-                                                    <div class="texto-secundario"><%# Eval("Direccion") %></div>
-                                                </div>
-                                            </div>
-                                        </td>
+                                        <td class="texto-principal">&#127970; <%# Eval("RazonSocial") %></td>
                                         <td><%# Eval("CUIT") %></td>
                                         <td><%# Eval("Correo") %></td>
                                         <td><%# Eval("Telefono") %></td>
+                                        <td><%# Eval("Direccion") %></td>
                                         <td>
-                                            <span class='<%# (int)Eval("Estado") == 1 ? "etiqueta etiqueta-activo" : "etiqueta etiqueta-inactivo" %>'>
-                                                <%# (int)Eval("Estado") == 1 ? "Activo" : "Inactivo" %>
+                                            <span class='<%# (bool)Eval("Estado") ? "etiqueta etiqueta-activo" : "etiqueta etiqueta-inactivo" %>'>
+                                                <%# (bool)Eval("Estado") ? "Activo" : "Inactivo" %>
                                             </span>
                                         </td>
-                                        <td class="acciones">
+                                        <td>
                                             <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar"
                                                 CommandName="Editar" CommandArgument='<%# Eval("CodigoEmpresa") %>'>&#9998;</asp:LinkButton>
                                             <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Activar/Desactivar"
@@ -84,10 +80,8 @@
                             </asp:Repeater>
                         </tbody>
                     </table>
-
                     <asp:Label ID="lblSinEmpresas" runat="server" Text="No hay empresas que coincidan con la búsqueda." Visible="false" CssClass="sin-resultados" />
                 </div>
-
             </div>
         </div>
 
@@ -95,7 +89,7 @@
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3><asp:Literal ID="litTituloModal" runat="server" Text="Nueva Empresa" /></h3>
-                    <span class="modal-cerrar" onclick="cerrarModalEmpresa()">&times;</span>
+                    <span class="modal-cerrar" onclick="document.getElementById('pnlModalEmpresa').style.display='none';">&times;</span>
                 </div>
 
                 <asp:HiddenField ID="hfCodigoEmpresa" runat="server" />
@@ -116,16 +110,16 @@
                             ErrorMessage="Ingrese el CUIT" Display="Dynamic" ValidationGroup="vgEmpresa" />
                     </div>
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Teléfono" AssociatedControlID="tbTelefono" />
-                        <asp:TextBox ID="tbTelefono" runat="server" CssClass="modal-campo" TextMode="Number" />
+                        <asp:Label runat="server" Text="Correo *" AssociatedControlID="tbCorreo" />
+                        <asp:TextBox ID="tbCorreo" runat="server" CssClass="modal-campo" TextMode="Email" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="tbCorreo" CssClass="campo-error"
+                            ErrorMessage="Ingrese el correo" Display="Dynamic" ValidationGroup="vgEmpresa" />
                     </div>
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Correo *" AssociatedControlID="tbCorreo" />
-                    <asp:TextBox ID="tbCorreo" runat="server" CssClass="modal-campo" TextMode="Email" />
-                    <asp:RequiredFieldValidator runat="server" ControlToValidate="tbCorreo" CssClass="campo-error"
-                        ErrorMessage="Ingrese el correo" Display="Dynamic" ValidationGroup="vgEmpresa" />
+                    <asp:Label runat="server" Text="Teléfono" AssociatedControlID="tbTelefono" />
+                    <asp:TextBox ID="tbTelefono" runat="server" CssClass="modal-campo" TextMode="Number" />
                 </div>
 
                 <div class="grupo-campo">

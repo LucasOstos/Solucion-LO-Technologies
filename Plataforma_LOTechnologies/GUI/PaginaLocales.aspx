@@ -24,18 +24,21 @@
                         <h1>Locales Comerciales</h1>
                     </div>
                     <asp:Button ID="btnNuevoLocal" runat="server" CssClass="boton-nuevo"
-                        Text="+ Nuevo Local" OnClick="btnNuevoLocal_Click" CausesValidation="false" />
+                        Text="Nuevo Local" OnClick="btnNuevoLocal_Click" CausesValidation="false" />
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
 
                 <div class="filtros">
                     <asp:TextBox ID="tbBuscar" runat="server" CssClass="campo-buscar" placeholder="Buscar local..." />
-
                     <asp:DropDownList ID="ddlFiltroEmpresa" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed">
                         <asp:ListItem Text="Todas las empresas" Value="" />
                     </asp:DropDownList>
-
+                    <asp:DropDownList ID="ddlFiltroEstado" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed">
+                        <asp:ListItem Text="Todos los estados" Value="" />
+                        <asp:ListItem Text="Activo" Value="Activo" />
+                        <asp:ListItem Text="Inactivo" Value="Inactivo" />
+                    </asp:DropDownList>
                     <asp:Button ID="btnBuscar" runat="server" CssClass="boton-buscar" Text="Buscar" OnClick="btnBuscar_Click" CausesValidation="false" />
                 </div>
 
@@ -70,9 +73,7 @@
                             </div>
                         </div>
                     </ItemTemplate>
-                    <FooterTemplate>
-                        </div>
-                    </FooterTemplate>
+                    <FooterTemplate></div></FooterTemplate>
                 </asp:Repeater>
 
                 <asp:Label ID="lblSinLocales" runat="server" Text="No hay locales que coincidan con la búsqueda." Visible="false" CssClass="sin-resultados" />
@@ -102,10 +103,6 @@
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Empresa Cliente *" AssociatedControlID="ddlEmpresa" />
                         <asp:DropDownList ID="ddlEmpresa" runat="server" CssClass="modal-campo" />
-                    </div>
-                    <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Ciudad" AssociatedControlID="tbCiudad" />
-                        <asp:TextBox ID="tbCiudad" runat="server" CssClass="modal-campo" />
                     </div>
                 </div>
 
