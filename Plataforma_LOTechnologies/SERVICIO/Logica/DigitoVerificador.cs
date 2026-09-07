@@ -22,7 +22,13 @@ namespace SERVICIO.Logica
         {
             { "Empresa", "CodigoEmpresa" },
             { "Usuario", "UsuarioDNI" },
-            { "Local", "CodigoLocal"}
+            { "Local", "CodigoLocal"},
+            { "Sector", "CodigoSector" },
+            { "Layout", "CodigoLayout"},
+            { "Categoria", "CodigoCategoria" },
+            { "Producto", "CodigoProducto" },
+            { "Venta", "CodigoVenta" },
+            { "Stock", "CodigoStock" }
         };
         public void ActualizarDigitoTabla(string pNombreTabla)
         {

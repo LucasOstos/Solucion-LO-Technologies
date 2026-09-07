@@ -8,21 +8,48 @@
     margin-bottom: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
-
 .ls-item-info {
     flex: 1;
 }
-
 .ls-item-acciones {
     display: flex;
     gap: 12px;
     white-space: nowrap;
 }
-
 .ls-color-muestra {
     display: inline-block;
     width: 20px;
     height: 20px;
     border-radius: 4px;
     border: 1px solid #dfe3ea;
+}
+.sec-treemap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 140px;
+}
+.sec-treemap-bloque {
+    flex-grow: 1;
+    min-width: 80px;
+    min-height: 140px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    color: #ffffff;
+}
+.sec-treemap-nombre {
+    font-size: 13px;
+    font-weight: 600;
+}
+.sec-treemap-valor {
+    font-size: 12px;
+    opacity: 0.85;
+}
+.et-preview-imagen {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
 }

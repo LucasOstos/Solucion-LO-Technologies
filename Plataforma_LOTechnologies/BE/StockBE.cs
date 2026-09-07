@@ -15,5 +15,6 @@ namespace BE
         public int? Minimo { get; set; }
         public int? Maximo { get; set; }
         public string Periodo { get; set; }
+        public DateTime FechaActualizacion { get; set; }
     }
 }

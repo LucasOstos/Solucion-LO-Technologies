@@ -39,7 +39,6 @@ namespace BLL
             localDAL.ModificarLocal(pLocal);
             digitos.ActualizarDigitoFila("Local", pLocal.CodigoLocal);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Modificar local", "Gestión locales", 2);
-
             return ResultadoGuardarLocal.Exitoso;
         }
         public void CambiarEstado(int pCodigoLocal, string pNuevoEstado)
