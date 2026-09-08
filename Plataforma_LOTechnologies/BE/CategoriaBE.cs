@@ -12,5 +12,12 @@ namespace BE
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public bool Estado { get; set; }
+        public CategoriaBE(int pCodigo, string pNombre, string pDescripcion, bool pEstado)
+        {
+            CodigoCategoria = pCodigo;
+            Nombre = pNombre;
+            Descripcion = pDescripcion;
+            Estado = pEstado;
+        }
     }
 }

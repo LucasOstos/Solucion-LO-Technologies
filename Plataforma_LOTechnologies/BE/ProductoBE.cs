@@ -27,5 +27,16 @@ namespace BE
         public string Descripcion { get; set; }
         public decimal? Precio { get; set; }
         public bool Estado {  get; set; }
+        public ProductoBE(int codigoProducto, int codigoCategoria, int? codigoSector, int numeroSerie, string nombre, string descripcion, decimal? precio, bool estado)
+        {
+            CodigoProducto = codigoProducto;
+            CodigoCategoria = codigoCategoria;
+            CodigoSector = codigoSector;
+            NumeroSerie = numeroSerie;
+            Nombre = nombre;
+            Descripcion = descripcion;
+            Precio = precio;
+            Estado = estado;
+        }
     }
 }

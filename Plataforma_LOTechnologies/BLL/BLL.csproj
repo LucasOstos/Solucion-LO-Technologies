@@ -41,12 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaBLL.cs" />
+    <Compile Include="ComparacionBLL.cs" />
     <Compile Include="EmpresaBLL.cs" />
+    <Compile Include="EscenarioBLL.cs" />
+    <Compile Include="IndicadorBLL.cs" />
     <Compile Include="LayoutBLL.cs" />
     <Compile Include="LocalBLL.cs" />
+    <Compile Include="ProductoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecomendacionBLL.cs" />
     <Compile Include="SectorBLL.cs" />
+    <Compile Include="StockBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
+    <Compile Include="VentaBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

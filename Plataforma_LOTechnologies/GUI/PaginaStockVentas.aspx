@@ -59,22 +59,26 @@
                         <div class="sv-stat-card">
                             <div class="texto-secundario">Total Ventas (mes)</div>
                             <div class="sv-stat-valor">
-                                <asp:Literal ID="litTotalVentas" runat="server" Text="$0" /></div>
+                                <asp:Literal ID="litTotalVentas" runat="server" Text="$0" />
+                            </div>
                         </div>
                         <div class="sv-stat-card">
                             <div class="texto-secundario">Ticket Promedio</div>
                             <div class="sv-stat-valor">
-                                <asp:Literal ID="litTicketPromedio" runat="server" Text="$0" /></div>
+                                <asp:Literal ID="litTicketPromedio" runat="server" Text="$0" />
+                            </div>
                         </div>
                         <div class="sv-stat-card">
                             <div class="texto-secundario">Unidades Vendidas</div>
                             <div class="sv-stat-valor">
-                                <asp:Literal ID="litUnidadesVendidas" runat="server" Text="0" /></div>
+                                <asp:Literal ID="litUnidadesVendidas" runat="server" Text="0" />
+                            </div>
                         </div>
                         <div class="sv-stat-card">
                             <div class="texto-secundario">Margen Total</div>
                             <div class="sv-stat-valor">
-                                <asp:Literal ID="litMargenTotal" runat="server" Text="0%" /></div>
+                                <asp:Literal ID="litMargenTotal" runat="server" Text="0%" />
+                            </div>
                         </div>
                     </div>
 
@@ -171,7 +175,7 @@
                     <h3>Carga Manual</h3>
                     <span class="modal-cerrar" onclick="cerrarModal('pnlModalCarga')">&times;</span>
                 </div>
-
+                <asp:HiddenField ID="hfCodigoStockEdicion" runat="server" />
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Tipo de dato *" AssociatedControlID="ddlTipoCarga" />
                     <asp:DropDownList ID="ddlTipoCarga" runat="server" CssClass="modal-campo">
@@ -196,6 +200,16 @@
                         <asp:Label runat="server" Text="Importe total (si es venta)" AssociatedControlID="tbImporteCarga" />
                         <asp:TextBox ID="tbImporteCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
                     </div>
+                    <div class="fila-formulario">
+                        <div class="grupo-campo">
+                            <asp:Label runat="server" Text="Stock mínimo (si es stock)" AssociatedControlID="tbMinimoCarga" />
+                            <asp:TextBox ID="tbMinimoCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
+                        </div>
+                        <div class="grupo-campo">
+                            <asp:Label runat="server" Text="Stock máximo (si es stock)" AssociatedControlID="tbMaximoCarga" />
+                            <asp:TextBox ID="tbMaximoCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
+                        </div>
+                    </div>
                 </div>
 
                 <div class="grupo-campo">
@@ -213,7 +227,6 @@
                 </div>
             </div>
         </asp:Panel>
-
     </form>
 </body>
 </html>

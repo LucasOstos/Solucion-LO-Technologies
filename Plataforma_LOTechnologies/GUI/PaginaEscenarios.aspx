@@ -96,7 +96,11 @@
                     <asp:Label runat="server" Text="Descripción" AssociatedControlID="tbDescripcionEscenario" />
                     <asp:TextBox ID="tbDescripcionEscenario" runat="server" CssClass="modal-campo" TextMode="MultiLine" Rows="2" />
                 </div>
-
+                <div class="grupo-campo">
+                    <asp:Label runat="server" Text="Objetivo" AssociatedControlID="tbObjetivoEscenario" />
+                    <asp:TextBox ID="tbObjetivoEscenario" runat="server" CssClass="modal-campo"
+                        placeholder="Ej: Aumentar la circulación en el sector Electrónica" />
+                </div>
                 <div class="grupo-campo">
                     <label>Cambios propuestos de sectores</label>
                     <%-- Se puebla dinámicamente desde los Sectores reales del
@@ -106,7 +110,7 @@
                             <div class="esc-fila-sector">
                                 <span class="texto-secundario"><%# Eval("Nombre") %></span>
                                 <asp:HiddenField runat="server" Value='<%# Eval("CodigoSector") %>' />
-                                <asp:DropDownList runat="server" CssClass="modal-campo esc-select-cambio">
+                                <asp:DropDownList ID="ddlCambioSector" runat="server" CssClass="modal-campo esc-select-cambio">
                                     <asp:ListItem Text="Sin cambios" Value="" />
                                     <asp:ListItem Text="Mover al frente" Value="Mover al frente" />
                                     <asp:ListItem Text="Mover al fondo" Value="Mover al fondo" />
@@ -124,6 +128,39 @@
                         Text="Cancelar" OnClick="btnCancelarEscenario_Click" CausesValidation="false" />
                     <asp:Button ID="btnGuardarEscenario" runat="server" CssClass="modal-boton-guardar"
                         Text="Crear Escenario" OnClick="btnGuardarEscenario_Click" ValidationGroup="vgEscenario" />
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="pnlDetalleEscenario" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+            <div class="modal-caja">
+                <div class="modal-encabezado">
+                    <h3>
+                        <asp:Literal ID="litNombreDetalleEscenario" runat="server" /></h3>
+                    <span class="modal-cerrar" onclick="cerrarModal('pnlDetalleEscenario')">&times;</span>
+                </div>
+
+                <p><strong>Estado:</strong>
+                    <asp:Literal ID="litEstadoDetalleEscenario" runat="server" /></p>
+                <p><strong>Descripción:</strong>
+                    <asp:Literal ID="litDescripcionDetalleEscenario" runat="server" /></p>
+                <p><strong>Objetivo:</strong>
+                    <asp:Literal ID="litObjetivoDetalleEscenario" runat="server" /></p>
+
+                <div class="grupo-campo">
+                    <label>Cambios propuestos</label>
+                    <asp:Repeater ID="rptDetalleCambios" runat="server">
+                        <ItemTemplate>
+                            <div class="esc-cambio-item">
+                                <span class="etiqueta etiqueta-info"><%# Eval("TipoCambio") %></span>
+                                <span><%# Eval("Descripcion") %></span>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:Label ID="lblSinCambiosDetalle" runat="server" Text="Este escenario no tiene cambios propuestos cargados." Visible="false" CssClass="sin-resultados" />
+                </div>
+                <div class="modal-botones">
+                    <asp:Button runat="server" CssClass="modal-boton-cancelar" Text="Cerrar"
+                        OnClientClick="cerrarModal('pnlDetalleEscenario'); return false;" />
                 </div>
             </div>
         </asp:Panel>

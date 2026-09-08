@@ -42,15 +42,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="CategoriaDAL.cs" />
+    <Compile Include="ComparacionDAL.cs" />
     <Compile Include="DigitoVerificadorDAL.cs" />
     <Compile Include="EmpresaDAL.cs" />
+    <Compile Include="EscenarioDAL.cs" />
+    <Compile Include="IndicadorDAL.cs" />
     <Compile Include="LayoutDAL.cs" />
     <Compile Include="LocalDAL.cs" />
+    <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecomendacionDAL.cs" />
     <Compile Include="SectorDAL.cs" />
+    <Compile Include="StockDAL.cs" />
     <Compile Include="SucesoDAL.cs" />
     <Compile Include="TokenRecuperacionDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="VentaDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

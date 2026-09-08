@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    public class IndicadorSectorListado
+    {
+        public int CodigoSector { get; set; }
+        public string Sector { get; set; }
+        public decimal Ventas { get; set; }
+        public decimal Margen { get; set; }
+        public decimal Circulacion { get; set; }
+        public decimal Rotacion { get; set; }
+        public int IndiceGlobal { get; set; }
+        public string ClaseIndiceGlobal { get; set; }
+    }
     public class IndicadorBE
     {
         public int CodigoIndicador { get; set; }

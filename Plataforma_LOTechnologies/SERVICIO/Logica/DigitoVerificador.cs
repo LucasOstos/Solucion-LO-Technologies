@@ -28,7 +28,11 @@ namespace SERVICIO.Logica
             { "Categoria", "CodigoCategoria" },
             { "Producto", "CodigoProducto" },
             { "Venta", "CodigoVenta" },
-            { "Stock", "CodigoStock" }
+            { "Stock", "CodigoStock" },
+            { "Escenario", "CodigoEscenario" },
+            { "Comparacion", "CodigoComparacion" },
+            { "Indicador", "CodigoIndicador" },
+            { "Recomendacion", "CodigoRecomendacion" }
         };
         public void ActualizarDigitoTabla(string pNombreTabla)
         {

@@ -23,9 +23,11 @@
                 <div class="encabezado">
                     <div>
                         <h1>Productos y Categorías</h1>
-                        <p class="subtitulo">CUN 005 — Gestión de productos y categorías del local</p>
                     </div>
-                    <asp:Button ID="btnNuevo" runat="server" CssClass="boton-nuevo" Text="Nuevo Producto" OnClick="btnNuevo_Click" CausesValidation="false" />
+                    <div>
+                        <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
+                        <asp:Button ID="btnNuevo" runat="server" CssClass="boton-nuevo" Text="Nuevo Producto" OnClick="btnNuevo_Click" CausesValidation="false" />
+                    </div>
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
@@ -70,9 +72,9 @@
                                             <td>
                                                 <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar"
                                                     CommandName="EditarProducto" CommandArgument='<%# Eval("CodigoProducto") %>'>&#9998;</asp:LinkButton>
-                                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Eliminar"
-                                                    CommandName="EliminarProducto" CommandArgument='<%# Eval("CodigoProducto") %>'
-                                                    OnClientClick="return confirm('¿Confirmás eliminar este producto?');">&#128465;</asp:LinkButton>
+                                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Activar/Desactivar"
+                                                    CommandName="CambiarEstado" CommandArgument='<%# Eval("CodigoProducto") %>'
+                                                    OnClientClick="return confirm('¿Confirmás cambiar el estado de este producto?');">&#8635;</asp:LinkButton>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -92,9 +94,8 @@
                             <thead>
                                 <tr>
                                     <th>Categoría</th>
-                                    <th>Categoría Padre</th>
-                                    <th>Sector</th>
-                                    <th>Margen Estimado</th>
+                                    <th>Descripción</th>
+                                    <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -103,9 +104,12 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td class="texto-principal"><%# Eval("Nombre") %></td>
-                                            <td><%# Eval("NombreCategoriaPadre") %></td>
-                                            <td><%# Eval("NombreSector") %></td>
-                                            <td><%# Eval("MargenEstimado") %>%</td>
+                                            <td><%# Eval("Descripcion") %></td>
+                                            <td>
+                                                <span class='<%# (bool)Eval("Estado") ? "etiqueta etiqueta-activo" : "etiqueta etiqueta-inactivo" %>'>
+                                                    <%# (bool)Eval("Estado") ? "Activo" : "Inactivo" %>
+                                                </span>
+                                            </td>
                                             <td>
                                                 <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar"
                                                     CommandName="EditarCategoria" CommandArgument='<%# Eval("CodigoCategoria") %>'>&#9998;</asp:LinkButton>
@@ -129,13 +133,12 @@
                         <asp:Literal ID="litTituloModalProducto" runat="server" Text="Nuevo Producto" /></h3>
                     <span class="modal-cerrar" onclick="cerrarModal('pnlModalProducto')">&times;</span>
                 </div>
-
                 <asp:HiddenField ID="hfCodigoProducto" runat="server" />
-
+                <asp:HiddenField ID="hfNumeroSerie" runat="server" />
                 <div class="fila-formulario">
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Código interno" AssociatedControlID="tbCodigoInterno" />
-                        <asp:TextBox ID="tbCodigoInterno" runat="server" CssClass="modal-campo" placeholder="PROD-XXX" />
+                        <asp:TextBox ID="tbCodigoInterno" runat="server" CssClass="modal-campo" Enabled="false" />
                     </div>
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Precio" AssociatedControlID="tbPrecio" />
@@ -151,8 +154,21 @@
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Categoría" AssociatedControlID="ddlCategoriaProducto" />
-                    <asp:DropDownList ID="ddlCategoriaProducto" runat="server" CssClass="modal-campo" />
+                    <asp:Label runat="server" Text="Descripción" AssociatedControlID="tbDescripcionProducto" />
+                    <asp:TextBox ID="tbDescripcionProducto" runat="server" CssClass="modal-campo" TextMode="MultiLine" Rows="2" />
+                </div>
+
+                <div class="fila-formulario">
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Categoría *" AssociatedControlID="ddlCategoriaProducto" />
+                        <asp:DropDownList ID="ddlCategoriaProducto" runat="server" CssClass="modal-campo" />
+                    </div>
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Sector" AssociatedControlID="ddlSectorProducto" />
+                        <asp:DropDownList ID="ddlSectorProducto" runat="server" CssClass="modal-campo">
+                            <asp:ListItem Text="— Sin sector asignado —" Value="" />
+                        </asp:DropDownList>
+                    </div>
                 </div>
 
                 <div class="grupo-campo grupo-casilla">
@@ -176,9 +192,7 @@
                         <asp:Literal ID="litTituloModalCategoria" runat="server" Text="Nueva Categoría" /></h3>
                     <span class="modal-cerrar" onclick="cerrarModal('pnlModalCategoria')">&times;</span>
                 </div>
-
                 <asp:HiddenField ID="hfCodigoCategoria" runat="server" />
-
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Nombre *" AssociatedControlID="tbNombreCategoria" />
                     <asp:TextBox ID="tbNombreCategoria" runat="server" CssClass="modal-campo" />
@@ -187,20 +201,13 @@
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Categoría Padre" AssociatedControlID="ddlCategoriaPadre" />
-                    <asp:DropDownList ID="ddlCategoriaPadre" runat="server" CssClass="modal-campo">
-                        <asp:ListItem Text="— Sin categoría padre —" Value="" />
-                    </asp:DropDownList>
+                    <asp:Label runat="server" Text="Descripción" AssociatedControlID="tbDescripcionCategoria" />
+                    <asp:TextBox ID="tbDescripcionCategoria" runat="server" CssClass="modal-campo" TextMode="MultiLine" Rows="3" />
                 </div>
 
-                <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Sector asociado" AssociatedControlID="ddlSectorCategoria" />
-                    <asp:DropDownList ID="ddlSectorCategoria" runat="server" CssClass="modal-campo" />
-                </div>
-
-                <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Margen estimado (%)" AssociatedControlID="tbMargenEstimado" />
-                    <asp:TextBox ID="tbMargenEstimado" runat="server" CssClass="modal-campo" TextMode="Number" />
+                <div class="grupo-campo grupo-casilla">
+                    <asp:CheckBox ID="chkActivoCategoria" runat="server" Checked="true" />
+                    <asp:Label runat="server" Text="Categoría activa" AssociatedControlID="chkActivoCategoria" />
                 </div>
 
                 <div class="modal-botones">
@@ -211,7 +218,6 @@
                 </div>
             </div>
         </asp:Panel>
-
     </form>
 </body>
 </html>
