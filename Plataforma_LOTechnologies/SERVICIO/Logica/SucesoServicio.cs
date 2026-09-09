@@ -9,7 +9,7 @@ namespace SERVICIO.Logica
 {
     public class SucesoServicio
     {
-        SucesoDAL accesoDAL = new SucesoDAL();
+        SucesoDAL sucesoDAL = new SucesoDAL();
         private static SucesoServicio instancia;
         public static SucesoServicio Instancia
         {
@@ -18,15 +18,23 @@ namespace SERVICIO.Logica
         public void RegistrarSuceso(string pUsuario, string pDescripcion, string pTipoSuceso, int pCriticidad)
         {
             Suceso suceso = new Suceso(DateTime.Now, pUsuario, pDescripcion, pTipoSuceso, pCriticidad);
-            accesoDAL.RegistrarSuceso(suceso);
+            sucesoDAL.RegistrarSuceso(suceso);
         }
         public List<Suceso> ObtenerSucesosUltimosTresDias()
         {
-            return accesoDAL.LeerSucesosUltimosTresDias();
+            return sucesoDAL.LeerSucesosUltimosTresDias();
         }
         public List<Suceso> ObtenerSucesos()
         {
-            return accesoDAL.LeerSucesos();
+            return sucesoDAL.LeerSucesos();
+        }
+        public List<Suceso> FiltrarSucesos(DateTime? pDesde, DateTime? pHasta, string pBusqueda, string pTipoSuceso, int? pCriticidad)
+        {
+            return sucesoDAL.FiltrarSucesos(pDesde, pHasta, pBusqueda, pTipoSuceso, pCriticidad);
+        }
+        public List<string> ObtenerTiposSuceso()
+        {
+            return sucesoDAL.ObtenerTiposSuceso();
         }
     }
 }

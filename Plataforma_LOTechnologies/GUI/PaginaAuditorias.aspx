@@ -67,7 +67,7 @@
                                         <td><%# Eval("Usuario") %></td>
                                         <td><span class="etiqueta etiqueta-info"><%# Eval("TipoSuceso") %></span></td>
                                         <td><%# Eval("Descripcion") %></td>
-                                        <td><span class='<%# "etiqueta " + ObtenerClaseCriticidad(Eval("Criticidad").ToString()) %>'><%# ObtenerNombreCriticidad(Eval("Criticidad").ToString()) %></span></td>
+                                        <td><span class='<%# "etiqueta " + ObtenerClaseCriticidad(Eval("Criticidad").ToString()) %>'><%# Eval("Criticidad") %></span></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
