@@ -19,5 +19,32 @@ namespace BE
         public DateTime? PeriodoDesde { get; set; }
         public DateTime? PeriodoHasta { get; set; }
         public DateTime FechaGeneracion { get; set; }
+        public ReporteBE(int codigoLocal, int? codigoEscenario, int? codigoComparacion, string titulo, string tipoReporte, string descripcion, string rutaArchivo, DateTime? periodoDesde, DateTime? periodoHasta, DateTime fechaGeneracion)
+        {
+            CodigoLocal = codigoLocal;
+            CodigoEscenario = codigoEscenario;
+            CodigoComparacion = codigoComparacion;
+            Titulo = titulo;
+            TipoReporte = tipoReporte;
+            Descripcion = descripcion;
+            RutaArchivo = rutaArchivo;
+            PeriodoDesde = periodoDesde;
+            PeriodoHasta = periodoHasta;
+            FechaGeneracion = fechaGeneracion;
+        }
+        public ReporteBE(int codigoReporte, int codigoLocal, int? codigoEscenario, int? codigoComparacion, string titulo, string tipoReporte, string descripcion, string rutaArchivo, DateTime? periodoDesde, DateTime? periodoHasta, DateTime fechaGeneracion)
+        {
+            CodigoReporte = codigoReporte;
+            CodigoLocal = codigoLocal;
+            CodigoEscenario = codigoEscenario;
+            CodigoComparacion = codigoComparacion;
+            Titulo = titulo;
+            TipoReporte = tipoReporte;
+            Descripcion = descripcion;
+            RutaArchivo = rutaArchivo;
+            PeriodoDesde = periodoDesde;
+            PeriodoHasta = periodoHasta;
+            FechaGeneracion = fechaGeneracion;
+        }
     }
 }

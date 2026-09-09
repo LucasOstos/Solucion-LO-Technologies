@@ -110,9 +110,9 @@
                                 <div class="rep-item">
                                     <span class="avatar avatar-cuadrado">&#128196;</span>
                                     <div class="rep-item-info">
-                                        <div class="texto-principal"><%# Eval("TituloReporte") %></div>
+                                        <div class="texto-principal"><%# Eval("Titulo") %></div>
                                         <div class="texto-secundario"><%# Eval("FechaGeneracion", "{0:dd/MM/yyyy HH:mm}") %></div>
-                                        <span class="etiqueta etiqueta-info"><%# Eval("Tipo") %></span>
+                                        <span class="etiqueta etiqueta-info"><%# Eval("TipoReporte") %></span>
                                     </div>
                                     <div class="rep-item-acciones">
                                         <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Ver"

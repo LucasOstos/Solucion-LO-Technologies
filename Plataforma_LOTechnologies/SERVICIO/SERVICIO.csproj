@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logica\BackupRestore.cs" />
     <Compile Include="Logica\DigitoVerificador.cs" />
     <Compile Include="Logica\GmailServicio.cs" />
     <Compile Include="Logica\SucesoServicio.cs" />

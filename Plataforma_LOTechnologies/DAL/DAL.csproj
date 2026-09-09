@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AnalisisProductoDAL.cs" />
+    <Compile Include="BackupRestoreDAL.cs" />
     <Compile Include="CategoriaDAL.cs" />
     <Compile Include="ComparacionDAL.cs" />
     <Compile Include="DigitoVerificadorDAL.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecomendacionDAL.cs" />
+    <Compile Include="ReporteDAL.cs" />
     <Compile Include="SectorDAL.cs" />
     <Compile Include="StockDAL.cs" />
     <Compile Include="SucesoDAL.cs" />

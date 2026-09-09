@@ -8,11 +8,11 @@ using SERVICIO.Logica;
 
 public partial class PaginaDigitosVerificadores : System.Web.UI.Page
 {
-    private const int ROL_ADMIN = 1;
     private DigitoVerificador digitos = new DigitoVerificador();
+    private BackupRestore gestorBackup = new BackupRestore();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!Sesion.Instancia.IsLogueado() || Sesion.Instancia.Usuario.Rol != ROL_ADMIN)
+        if(!Sesion.Instancia.IsLogueado() || Sesion.Instancia.Usuario.Rol != 1)
         {
             Response.Redirect("PaginaLogin.aspx");
             return;
@@ -46,7 +46,22 @@ public partial class PaginaDigitosVerificadores : System.Web.UI.Page
 
     protected void btnRestore_Click(object sender, EventArgs e)
     {
-
+        var backups = gestorBackup.ObtenerBackups();
+        var ultimoExitoso = backups.Find(b => b.Exitoso);
+        if (ultimoExitoso == null)
+        {
+            MostrarMensaje("No hay ningún backup disponible para restaurar.", esExito: false);
+            return;
+        }
+        try
+        {
+            gestorBackup.RealizarRestoreDigito(ultimoExitoso.RutaArchivo);
+            MostrarMensaje("Base de datos restaurada. Volvé a intentar iniciar sesión.", esExito: true);
+        }
+        catch (Exception)
+        {
+            MostrarMensaje("No fue posible restaurar la base de datos.", esExito: false);
+        }
     }
 
     protected void btnCancelar_Click(object sender, EventArgs e)

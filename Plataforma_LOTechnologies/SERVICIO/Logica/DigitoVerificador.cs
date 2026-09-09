@@ -32,7 +32,8 @@ namespace SERVICIO.Logica
             { "Escenario", "CodigoEscenario" },
             { "Comparacion", "CodigoComparacion" },
             { "Indicador", "CodigoIndicador" },
-            { "Recomendacion", "CodigoRecomendacion" }
+            { "Recomendacion", "CodigoRecomendacion" },
+            { "Reporte", "CodigoReporte" }
         };
         public void ActualizarDigitoTabla(string pNombreTabla)
         {

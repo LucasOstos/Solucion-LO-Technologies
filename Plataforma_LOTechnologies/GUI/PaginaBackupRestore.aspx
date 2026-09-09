@@ -1,11 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaBackupRestore.aspx.cs" Inherits="PaginaBackupRestore" %>
+
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Backup / Restore - LO Technologies</title>
     <link rel="stylesheet" type="text/css" href="/Estilos/BotonVolverMenu.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/Comun.css" />
@@ -32,15 +33,18 @@
                 <div class="br-stats">
                     <div class="ap-stat-card">
                         <div class="texto-secundario">Último Backup</div>
-                        <div class="ap-stat-valor"><asp:Literal ID="litUltimoBackup" runat="server" Text="—" /></div>
+                        <div class="ap-stat-valor">
+                            <asp:Literal ID="litUltimoBackup" runat="server" Text="—" /></div>
                     </div>
                     <div class="ap-stat-card">
                         <div class="texto-secundario">Frecuencia</div>
-                        <div class="ap-stat-valor"><asp:Literal ID="litFrecuencia" runat="server" Text="Diaria" /></div>
+                        <div class="ap-stat-valor">
+                            <asp:Literal ID="litFrecuencia" runat="server" Text="Semanal" /></div>
                     </div>
                     <div class="ap-stat-card">
                         <div class="texto-secundario">Retención</div>
-                        <div class="ap-stat-valor"><asp:Literal ID="litRetencion" runat="server" Text="30 días" /></div>
+                        <div class="ap-stat-valor">
+                            <asp:Literal ID="litRetencion" runat="server" Text="30 días" /></div>
                     </div>
                 </div>
 
@@ -72,9 +76,9 @@
                                         </td>
                                         <td>
                                             <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Descargar"
-                                                CommandName="Descargar" CommandArgument='<%# Eval("CodigoBackup") %>'>&#8595; Descargar</asp:LinkButton>
+                                                CommandName="Descargar" CommandArgument='<%# Eval("NombreArchivo") %>'>&#8595; Descargar</asp:LinkButton>
                                             <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Restaurar" Visible='<%# (bool)Eval("Exitoso") %>'
-                                                CommandName="Restaurar" CommandArgument='<%# Eval("CodigoBackup") %>'>&#8593; Restaurar</asp:LinkButton>
+                                                CommandName="Restaurar" CommandArgument='<%# Eval("NombreArchivo") %>'>&#8593; Restaurar</asp:LinkButton>
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -87,7 +91,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalRestaurar" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display:none;">
+        <asp:Panel ID="pnlModalRestaurar" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3>Confirmar Restauración</h3>
@@ -98,10 +102,12 @@
                     &#9888; <strong>Acción destructiva.</strong> Al restaurar este backup, todos los datos actuales van a ser reemplazados por los datos del punto de restauración seleccionado. Esta acción no se puede deshacer.
                 </div>
 
-                <asp:HiddenField ID="hfCodigoBackup" runat="server" />
+                <asp:HiddenField ID="hfNombreArchivo" runat="server" />
 
-                <p><strong>Punto de restauración:</strong> <asp:Literal ID="litFechaRestaurar" runat="server" /></p>
-                <p><strong>Tamaño:</strong> <asp:Literal ID="litTamanioRestaurar" runat="server" /></p>
+                <p><strong>Punto de restauración:</strong>
+                    <asp:Literal ID="litFechaRestaurar" runat="server" /></p>
+                <p><strong>Tamaño:</strong>
+                    <asp:Literal ID="litTamanioRestaurar" runat="server" /></p>
 
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text='Escribí "CONFIRMAR" para proceder' AssociatedControlID="tbConfirmarRestauracion" />

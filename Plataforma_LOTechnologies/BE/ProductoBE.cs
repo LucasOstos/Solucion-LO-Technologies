@@ -6,6 +6,20 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    #region Auxiliares
+    [Serializable]
+    public class ProductoAnalisisListado
+    {
+        public int CodigoProducto { get; set; }
+        public string NombreProducto { get; set; }
+        public string NombreCategoria { get; set; }
+        public string SectorActual { get; set; }
+        public string SectorSugerido { get; set; }
+        public int Ventas { get; set; }
+        public decimal Rotacion { get; set; }
+        public decimal Circulacion { get; set; }
+        public string Prioridad { get; set; }
+    }
     public class ProductoListado
     {
         public int CodigoProducto { get; set; }
@@ -17,6 +31,18 @@ namespace BE
         public int Stock { get; set; }
         public int Estado { get; set; }
     }
+    public class ProductoMetrica
+    {
+        public int CodigoProducto { get; set; }
+        public string NombreProducto { get; set; }
+        public string NombreCategoria { get; set; }
+        public int? CodigoSectorActual { get; set; }
+        public string NombreSectorActual { get; set; }
+        public decimal CirculacionActual { get; set; }
+        public int Ventas { get; set; }
+        public int Stock { get; set; }
+    }
+    #endregion
     public class ProductoBE
     {
         public int CodigoProducto { get; set; }
