@@ -154,4 +154,9 @@ public partial class PaginaPrincipal : System.Web.UI.Page
     {
         Response.Redirect("PaginaReportes.aspx");
     }
+
+    protected void btnPermisos_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("PaginaPermisos.aspx");
+    }
 }

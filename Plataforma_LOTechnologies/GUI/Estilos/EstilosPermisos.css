@@ -1,0 +1,118 @@
+﻿.pagina .contenedor {
+    max-width: 1300px;
+}
+
+.perm-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+}
+
+.perm-panel h2 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+}
+
+.perm-fila {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.perm-bloque label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2a3448;
+    margin-bottom: 6px;
+}
+
+.perm-lista-checks {
+    display: block;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background-color: #ffffff;
+    font-size: 13px;
+    min-height: 140px;
+    margin-bottom: 16px;
+}
+
+    .perm-lista-checks table td {
+        white-space: nowrap;
+        padding: 3px 0;
+    }
+
+    .perm-lista-checks input[type="checkbox"] {
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
+    .perm-lista-checks label {
+        display: inline;
+        font-weight: 400;
+        margin-bottom: 0;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+.perm-lista-caja {
+    width: 100%;
+    min-height: 140px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 13px;
+    background-color: #ffffff;
+}
+
+.perm-bloque-botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    padding-top: 26px;
+}
+
+    .perm-bloque-botones .boton-accion {
+        width: 100%;
+        min-height: 64px;
+        padding: 10px;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 8px;
+        border: 2px solid transparent;
+    }
+
+    .perm-bloque-botones .boton-primario {
+        background-color: #2757d6;
+        border-color: #1d47b8;
+        color: #ffffff;
+    }
+
+        .perm-bloque-botones .boton-primario:hover {
+            background-color: #1d47b8;
+        }
+
+    .perm-bloque-botones .boton-secundario {
+        background-color: #ffffff;
+        border-color: #dfe3ea;
+        color: #2a3448;
+    }
+
+    .perm-bloque-botones .boton-peligro {
+        background-color: #ffffff;
+        border-color: #f3b9b4;
+        color: #b3261e;
+    }
+
+@media (max-width: 1100px) {
+    .perm-columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .perm-fila {
+        grid-template-columns: 1fr;
+    }
+}

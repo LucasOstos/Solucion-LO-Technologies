@@ -32,7 +32,7 @@
                             </button>
                             <div class="principal-menu-separador"></div>
                             <button type="button" class="principal-menu-item principal-item-peligro" onclick="dispararLogout()">
-                                &#8594; Cerrar sesión
+  &#8594; Cerrar sesión
                             </button>
                         </div>
                     </div>
@@ -55,6 +55,7 @@
                     <asp:Button ID="btnIndicadores" runat="server" Text="Indicadores y Recomendaciones" OnClick="btnIndicadores_Click" />
                     <asp:Button ID="btnAnalisisProductos" runat="server" Text="Análisis de Productos" OnClick="btnAnalisisProductos_Click" />
                     <asp:Button ID="btnReportes" runat="server" Text="Reportes" OnClick="btnReportes_Click" />
+                    <asp:Button ID="btnPermisos" runat="server" Text="Permisos" OnClick="btnPermisos_Click" />
                 </div>
 
             </div>
