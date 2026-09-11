@@ -28,7 +28,7 @@ namespace SERVICIO.Logica
                             <p>Hola {pNombreCompleto},</p>
                             <p>Recibimos una solicitud para restablecer tu contraseña.</p>
                             <p><a href='{link}'>Hacé clic acá reestablacer tu contraseña</a></p>
-                            <p>Este link expira en 60 minutos. Si no solicitaste este cambio, ignorá este mensaje.</p>";
+                            <p>Este link expira en 5 minutos. Si no solicitaste este cambio, ignorá este mensaje.</p>";
             EnviarMail(pDestinatario, asunto, cuerpo);
         }
         private void EnviarMail(string pDestinatario, string pAsunto, string pHtml)
