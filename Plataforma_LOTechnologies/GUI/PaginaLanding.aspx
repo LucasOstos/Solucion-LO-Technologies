@@ -183,7 +183,7 @@
                 </div>
                 <div class="land-faq-item">
                     <div class="land-faq-pregunta" onclick="toggleFaq(this)">¿Cómo empiezo a usar la plataforma? <span>+</span></div>
-                    <div class="land-faq-respuesta">Primero se registra tu empresa en el sistema. Con esa empresa dada de alta, se crea un usuario Administrador, que es quien luego invita y gestiona al resto de los usuarios de tu organización. Hacé clic en "Registrarte" para ver el detalle.</div>
+                    <div class="land-faq-respuesta">Primero se registra tu empresa en el sistema. Con esa empresa dada de alta, se crea un usuario Administrador, que es quien luego gestiona al resto de los usuarios de tu organización. Hacé clic en "Registrarte" para ver el detalle.</div>
                 </div>
                 <div class="land-faq-item">
                     <div class="land-faq-pregunta" onclick="toggleFaq(this)">¿Mis datos están seguros? <span>+</span></div>
@@ -223,10 +223,10 @@
                 </div>
                 <div class="land-paso">
                     <div class="land-paso-numero">3</div>
-                    <div><strong>El Administrador gestiona al resto del equipo.</strong> Desde la plataforma, crea los usuarios Analista/Gerente que necesite tu organización.</div>
+                    <div><strong>El Administrador gestiona al resto del equipo.</strong> Desde la plataforma, crea los usuarios que necesite tu organización.</div>
                 </div>
 
-                <p style="margin-top: 16px;">¿Querés contratar el servicio para tu empresa? Escribinos a <a href="mailto:contacto@lotechnologies.com">contacto@lotechnologies.com</a>.</p>
+                <p style="margin-top: 16px;">¿Querés contratar el servicio para tu empresa? Escribinos a <a href="mailto:lotechnologies.contacto@gmail.com">lotechnologies.contacto@gmail.com</a>.</p>
 
                 <div class="modal-botones">
                     <button type="button" class="modal-boton-cancelar" onclick="cerrarModal('pnlComoAcceder')">Cerrar</button>
