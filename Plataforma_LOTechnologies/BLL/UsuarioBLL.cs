@@ -94,6 +94,13 @@ namespace BLL
             tokenDAL.MarcarUsado(pToken);
             return ResultadoCambio.Exitoso;
         }
+        public void CambiarContrasenia(int pDNI, string pContraseniaNuevaPlano)
+        {
+            string contraseniaHasheada = Encriptado.Instancia.EncriptarContraseña(pContraseniaNuevaPlano);
+            accesoDAL.CambiarContrasenia(pDNI, contraseniaHasheada);
+            digitos.ActualizarDigitoFila("Usuario", pDNI);
+            SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Cambiar contraseña", "Usuarios", 1);
+        }
         public Usuario ObtenerUsuario(string pEmail)
         {
             return accesoDAL.ObtenerUsuario(pEmail);
