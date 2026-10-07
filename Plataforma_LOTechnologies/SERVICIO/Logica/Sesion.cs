@@ -39,5 +39,9 @@ namespace SERVICIO.Logica
         {
             return Usuario != null;
         }
+        public bool TienePermiso(string pNombrePermiso)
+        {
+            return Usuario != null && Usuario.Perfil != null && Usuario.Perfil.TienePermiso(pNombrePermiso);
+        }
     }
 }

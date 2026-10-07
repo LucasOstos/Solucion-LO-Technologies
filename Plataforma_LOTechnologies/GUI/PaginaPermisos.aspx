@@ -21,7 +21,6 @@
                 <div class="encabezado">
                     <div>
                         <h1>Maestro Permisos</h1>
-                        <p class="subtitulo">Administración de Perfiles y Familias</p>
                     </div>
                 </div>
 
@@ -40,15 +39,9 @@
                                 </div>
 
                                 <label>Permisos disponibles</label>
-                                <asp:CheckBoxList ID="cblPermisosDisponibles" runat="server" CssClass="perm-lista-checks">
-                                    <asp:ListItem Text="Login" Value="Login" />
-                                    <asp:ListItem Text="Logout" Value="Logout" />
-                                    <asp:ListItem Text="Cambiar Contraseña" Value="CambiarContrasenia" />
-                                    <asp:ListItem Text="Cambiar Idioma" Value="CambiarIdioma" />
-                                </asp:CheckBoxList>
+                                <asp:CheckBoxList ID="cblPermisosDisponibles" runat="server" CssClass="perm-lista-checks"></asp:CheckBoxList>
                                 <label>Familias disponibles</label>
-                                <asp:CheckBoxList ID="cblFamiliasDisponiblesEnPerfil" runat="server" CssClass="perm-lista-checks">
-                                </asp:CheckBoxList>
+                                <asp:CheckBoxList ID="cblFamiliasDisponiblesEnPerfil" runat="server" CssClass="perm-lista-checks"></asp:CheckBoxList>
                             </div>
 
                             <div class="perm-bloque-botones">
@@ -65,9 +58,7 @@
                             <div class="perm-bloque">
                                 <div class="grupo-campo">
                                     <asp:Label runat="server" Text="Perfiles" AssociatedControlID="ddlPerfiles" />
-                                    <asp:DropDownList ID="ddlPerfiles" runat="server" CssClass="modal-campo" AutoPostBack="true" OnSelectedIndexChanged="ddlPerfiles_SelectedIndexChanged">
-                                        <asp:ListItem Text="— Seleccionar —" Value="" />
-                                    </asp:DropDownList>
+                                    <asp:DropDownList ID="ddlPerfiles" runat="server" CssClass="modal-campo" AutoPostBack="true" OnSelectedIndexChanged="ddlPerfiles_SelectedIndexChanged"></asp:DropDownList>
                                 </div>
 
                                 <label>Contenido asignado (permisos y familias)</label>
@@ -87,12 +78,7 @@
                                 </div>
 
                                 <label>Permisos disponibles</label>
-                                <asp:CheckBoxList ID="cblPermisosDisponiblesEnFamilia" runat="server" CssClass="perm-lista-checks">
-                                    <asp:ListItem Text="Login" Value="Login" />
-                                    <asp:ListItem Text="Logout" Value="Logout" />
-                                    <asp:ListItem Text="Cambiar Contraseña" Value="CambiarContrasenia" />
-                                    <asp:ListItem Text="Cambiar Idioma" Value="CambiarIdioma" />
-                                </asp:CheckBoxList>
+                                <asp:CheckBoxList ID="cblPermisosDisponiblesEnFamilia" runat="server" CssClass="perm-lista-checks"></asp:CheckBoxList>
                                 <label>Familias disponibles</label>
                                 <asp:CheckBoxList ID="cblFamiliasDisponibles" runat="server" CssClass="perm-lista-checks">
                                 </asp:CheckBoxList>
@@ -112,9 +98,7 @@
                             <div class="perm-bloque">
                                 <div class="grupo-campo">
                                     <asp:Label runat="server" Text="Familias" AssociatedControlID="ddlFamilias" />
-                                    <asp:DropDownList ID="ddlFamilias" runat="server" CssClass="modal-campo" AutoPostBack="true" OnSelectedIndexChanged="ddlFamilias_SelectedIndexChanged">
-                                        <asp:ListItem Text="— Seleccionar —" Value="" />
-                                    </asp:DropDownList>
+                                    <asp:DropDownList ID="ddlFamilias" runat="server" CssClass="modal-campo" AutoPostBack="true" OnSelectedIndexChanged="ddlFamilias_SelectedIndexChanged"></asp:DropDownList>
                                 </div>
 
                                 <label>Contenido asignado (permisos y familias)</label>

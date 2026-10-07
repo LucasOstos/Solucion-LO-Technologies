@@ -52,6 +52,7 @@
     <Compile Include="IndicadorDAL.cs" />
     <Compile Include="LayoutDAL.cs" />
     <Compile Include="LocalDAL.cs" />
+    <Compile Include="PermisoDAL.cs" />
     <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecomendacionDAL.cs" />

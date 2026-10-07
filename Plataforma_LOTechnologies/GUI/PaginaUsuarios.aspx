@@ -45,7 +45,7 @@
                         <thead>
                             <tr>
                                 <th>Usuario</th>
-                                <th>Rol</th>
+                                <th>Perfil</th>
                                 <th>Empresa</th>
                                 <th>Estado</th>
                                 <th>Último acceso</th>
@@ -65,7 +65,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><span class="etiqueta etiqueta-info"><%# ObtenerNombreRol(Eval("Rol")) %></span></td>
+                                        <td><span class="etiqueta etiqueta-info"><%# Eval("NombrePerfil") %></span></td>
                                         <td><%# Eval("NombreEmpresa") %></td>
                                         <td>
                                             <span class='<%# (bool)Eval("estadoActivo") ? "etiqueta etiqueta-activo" : "etiqueta etiqueta-inactivo" %>'>
@@ -141,11 +141,7 @@
                 <div class="fila-formulario">
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Rol" AssociatedControlID="ddlRol" />
-                        <asp:DropDownList ID="ddlRol" runat="server" CssClass="modal-campo">
-                            <asp:ListItem Text="Administrador" Value="1" />
-                            <asp:ListItem Text="Analista" Value="2" />
-                            <asp:ListItem Text="Gerente" Value="3" />
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlRol" runat="server" CssClass="modal-campo"></asp:DropDownList>
                     </div>
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Empresa" AssociatedControlID="ddlEmpresa" />

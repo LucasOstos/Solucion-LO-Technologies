@@ -8,7 +8,7 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaPrincipal : System.Web.UI.Page
+public partial class PaginaPrincipal : PaginaSegura
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -29,7 +29,7 @@ public partial class PaginaPrincipal : System.Web.UI.Page
         Usuario usuario = Sesion.Instancia.Usuario;
 
         litNombreUsuario.Text = $"{usuario.Nombre} {usuario.Apellido}";
-        litRolUsuario.Text = ObtenerNombreRol(usuario.Rol);
+        litRolUsuario.Text = ObtenerNombreRol(usuario.Perfil.Codigo);
         litInicialesUsuario.Text = ObtenerIniciales(usuario.Nombre, usuario.Apellido);
     }
     private string ObtenerNombreRol(int rol)

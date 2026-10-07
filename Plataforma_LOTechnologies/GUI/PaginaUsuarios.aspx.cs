@@ -8,25 +8,37 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaUsuarios : System.Web.UI.Page
+public partial class PaginaUsuarios : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarUsuarios; }
+    }
     private UsuarioBLL usuarioBLL = new UsuarioBLL();
     private EmpresaBLL empresaBLL = new EmpresaBLL();
+    private PermisoBLL permisoBLL = new PermisoBLL();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Sesion.Instancia.IsLogueado() || Sesion.Instancia.Usuario.Rol != 1)
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
         if (!IsPostBack)
         {
+            CargarPerfiles();
             CargarFiltroEmpresas();
             CargarUsuarios();
         }
     }
     #region Funciones
+    private void CargarPerfiles()
+    {
+        List<Perfil> perfiles = permisoBLL.ObtenerEstructura().Perfiles;
+        ddlFiltroRol.Items.Clear();
+        ddlFiltroRol.Items.Add(new ListItem("Todos los perfiles", ""));
+        ddlRol.Items.Clear();
+        foreach (Perfil perfil in perfiles)
+        {
+            ddlFiltroRol.Items.Add(new ListItem(perfil.Nombre, perfil.Codigo.ToString()));
+            ddlRol.Items.Add(new ListItem(perfil.Nombre, perfil.Codigo.ToString()));
+        }
+    }
     private void CargarFiltroEmpresas()
     {
         List<EmpresaBE> empresas = empresaBLL.ObtenerEmpresas();
@@ -70,18 +82,7 @@ public partial class PaginaUsuarios : System.Web.UI.Page
         string inicialNombre = string.IsNullOrEmpty(nombre) ? "" : nombre.Substring(0, 1);
         string inicialApellido = string.IsNullOrEmpty(apellido) ? "" : apellido.Substring(0, 1);
         return (inicialNombre + inicialApellido).ToUpper();
-    }
-
-    public string ObtenerNombreRol(object rol)
-    {
-        switch (Convert.ToInt32(rol))
-        {
-            case 1: return "Administrador";
-            case 2: return "Analista";
-            case 3: return "Gerente";
-            default: return "Desconocido";
-        }
-    }
+    }    
     private void LimpiarModal()
     {
         hfDNI.Value = "";
@@ -117,13 +118,12 @@ public partial class PaginaUsuarios : System.Web.UI.Page
         hfDNI.Value = usuario.DNI.ToString();
         litTituloModal.Text = "Editar Usuario";
         btnGuardarUsuario.Text = "Guardar Cambios";
-
         tbDNI.Text = usuario.DNI.ToString();
         tbDNI.Enabled = false;
         tbNombre.Text = usuario.Nombre;
         tbApellido.Text = usuario.Apellido;
         tbEmail.Text = usuario.Email;
-        ddlRol.SelectedValue = usuario.Rol.ToString();
+        ddlRol.SelectedValue = usuario.Perfil.Codigo.ToString();
         if (usuario.CodigoEmpresa > 0)
         {
             ddlEmpresa.SelectedValue = usuario.CodigoEmpresa.ToString();
@@ -203,7 +203,6 @@ public partial class PaginaUsuarios : System.Web.UI.Page
             AbrirModal();
             return;
         }
-
         int dni;
         if (!int.TryParse(tbDNI.Text.Trim(), out dni))
         {
@@ -217,7 +216,7 @@ public partial class PaginaUsuarios : System.Web.UI.Page
             Nombre = tbNombre.Text.Trim(),
             Apellido = tbApellido.Text.Trim(),
             Email = tbEmail.Text.Trim(),
-            Rol = int.Parse(ddlRol.SelectedValue),
+            Perfil = new Perfil(int.Parse(ddlRol.SelectedValue), ddlRol.SelectedItem.Text),
             estadoActivo = chkActivo.Checked,
             CodigoEmpresa = ddlEmpresa.Items.Count > 0 ? int.Parse(ddlEmpresa.SelectedValue) : 0
         };

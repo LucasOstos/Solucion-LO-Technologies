@@ -11,11 +11,29 @@ namespace DAL
     public class UsuarioDAL
     {
         private AccesoDatos acceso = new AccesoDatos();
+        private const string SELECT_USUARIO = @"SELECT u.UsuarioDNI, u.UsuarioNombre, u.UsuarioApellido, u.UsuarioEmail, u.UsuarioContrasenia,
+                                                u.UsuarioCodigoPerfil, p.Nombre_Perfil, u.UsuarioEstadoActivo, u.UsuarioEstadoBloqueado, u.UsuarioIntentosAcceso,
+                                                u.UsuarioUltimoAcceso, u.UsuarioIdioma, u.UsuarioCodigoEmpresa FROM Usuario u INNER JOIN Perfil p ON u.UsuarioCodigoPerfil = p.Cod_Perfil";
+        private Usuario MapearUsuario(SqlDataReader DR)
+        {
+            return new Usuario(
+                Convert.ToInt32(DR["UsuarioDNI"]),
+                DR["UsuarioNombre"].ToString(),
+                DR["UsuarioApellido"].ToString(),
+                DR["UsuarioEmail"].ToString(),
+                DR["UsuarioContrasenia"].ToString(),
+                new Perfil(Convert.ToInt32(DR["UsuarioCodigoPerfil"]), DR["Nombre_Perfil"].ToString()),
+                Convert.ToBoolean(DR["UsuarioEstadoActivo"]),
+                Convert.ToBoolean(DR["UsuarioEstadoBloqueado"]),
+                Convert.ToInt32(DR["UsuarioIntentosAcceso"]),
+                Convert.ToDateTime(DR["UsuarioUltimoAcceso"]),
+                Convert.ToInt32(DR["UsuarioIdioma"]),
+                DR["UsuarioCodigoEmpresa"] == DBNull.Value ? 0 : Convert.ToInt32(DR["UsuarioCodigoEmpresa"]));
+        }
         public List<Usuario> LeerUsuarios()
         {
             List<Usuario> listaUsuarios = new List<Usuario>();
-            string query = "SELECT UsuarioDNI, UsuarioNombre, UsuarioApellido, UsuarioEmail, UsuarioContrasenia, UsuarioRol, UsuarioEstadoActivo," +
-                           "UsuarioEstadoBloqueado, UsuarioIntentosAcceso, UsuarioUltimoAcceso, UsuarioIdioma, UsuarioCodigoEmpresa FROM Usuario";
+            string query = SELECT_USUARIO;
 
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -24,10 +42,8 @@ namespace DAL
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {
                     while (DR.Read())
-                    {
-                        Usuario usuario = new Usuario(int.Parse(DR[0].ToString()), DR[1].ToString(), DR[2].ToString(), DR[3].ToString(), DR[4].ToString(), int.Parse(DR[5].ToString()),
-                                              bool.Parse(DR[6].ToString()), bool.Parse(DR[7].ToString()), int.Parse(DR[8].ToString()), DateTime.Parse(DR[9].ToString()), int.Parse(DR[10].ToString()), int.Parse(DR[11].ToString()));
-                        listaUsuarios.Add(usuario);
+                    {                        
+                        listaUsuarios.Add(MapearUsuario(DR));
                     }
                 }
             }
@@ -36,8 +52,7 @@ namespace DAL
         public List<Usuario> LeerUsuariosBloqueados()
         {
             List<Usuario> listaUsuarios = new List<Usuario>();
-            string query = "SELECT UsuarioDNI, UsuarioNombre, UsuarioApellido, UsuarioEmail, UsuarioContrasenia, UsuarioRol, UsuarioEstadoActivo," +
-                           "UsuarioEstadoBloqueado, UsuarioIntentosAcceso, UsuarioUltimoAcceso, UsuarioIdioma, UsuarioCodigoEmpresa FROM Usuario WHERE UsuarioEstadoBloqueado = 1";
+            string query = SELECT_USUARIO + " WHERE u.UsuarioEstadoBloqueado = 1";
 
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -47,9 +62,7 @@ namespace DAL
                 {
                     while (DR.Read())
                     {
-                        Usuario usuario = new Usuario(int.Parse(DR[0].ToString()), DR[1].ToString(), DR[2].ToString(), DR[3].ToString(), DR[4].ToString(), int.Parse(DR[5].ToString()),
-                                              bool.Parse(DR[6].ToString()), bool.Parse(DR[7].ToString()), int.Parse(DR[8].ToString()), DateTime.Parse(DR[9].ToString()), int.Parse(DR[10].ToString()), int.Parse(DR[11].ToString()));
-                        listaUsuarios.Add(usuario);
+                        listaUsuarios.Add(MapearUsuario(DR));
                     }
                 }
             }
@@ -58,8 +71,7 @@ namespace DAL
         public Usuario ObtenerUsuario(string pEmail)
         {
             Usuario usuario = null;
-            string query = "SELECT UsuarioDNI, UsuarioNombre, UsuarioApellido, UsuarioEmail, UsuarioContrasenia, UsuarioRol, UsuarioEstadoActivo," +
-                           "UsuarioEstadoBloqueado, UsuarioIntentosAcceso, UsuarioUltimoAcceso, UsuarioIdioma, UsuarioCodigoEmpresa FROM Usuario WHERE UsuarioEmail = @UsuarioEmail";
+            string query = SELECT_USUARIO + " WHERE u.UsuarioEmail = @UsuarioEmail";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -69,8 +81,7 @@ namespace DAL
                 {
                     if (DR.Read())
                     {
-                        usuario = new Usuario(int.Parse(DR[0].ToString()), DR[1].ToString(), DR[2].ToString(), DR[3].ToString(), DR[4].ToString(), int.Parse(DR[5].ToString()),
-                                      bool.Parse(DR[6].ToString()), bool.Parse(DR[7].ToString()), int.Parse(DR[8].ToString()), DateTime.Parse(DR[9].ToString()), int.Parse(DR[10].ToString()), int.Parse(DR[11].ToString()));
+                        usuario = MapearUsuario(DR);
                     }
                 }
             }
@@ -79,8 +90,7 @@ namespace DAL
         public Usuario ObtenerUsuarioPorDNI(int pDNI)
         {
             Usuario usuario = null;
-            string query = "SELECT UsuarioDNI, UsuarioNombre, UsuarioApellido, UsuarioEmail, UsuarioContrasenia, UsuarioRol, UsuarioEstadoActivo," +
-                           "UsuarioEstadoBloqueado, UsuarioIntentosAcceso, UsuarioUltimoAcceso, UsuarioIdioma, UsuarioCodigoEmpresa FROM Usuario WHERE UsuarioDNI = @UsuarioDNI";
+            string query = SELECT_USUARIO + " WHERE u.UsuarioDNI = @UsuarioDNI";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -90,8 +100,7 @@ namespace DAL
                 {
                     if (DR.Read())
                     {
-                        usuario = new Usuario(int.Parse(DR[0].ToString()), DR[1].ToString(), DR[2].ToString(), DR[3].ToString(), DR[4].ToString(), int.Parse(DR[5].ToString()),
-                                      bool.Parse(DR[6].ToString()), bool.Parse(DR[7].ToString()), int.Parse(DR[8].ToString()), DateTime.Parse(DR[9].ToString()), int.Parse(DR[10].ToString()), int.Parse(DR[11].ToString()));
+                        usuario = MapearUsuario(DR);
                     }
                 }
             }
@@ -156,20 +165,22 @@ namespace DAL
                 CM.ExecuteNonQuery();
             }
         }
-        public List<UsuarioListado> ObtenerUsuariosListado(string pBusqueda, int? pRol, int? pCodigoEmpresa)
+        public List<UsuarioListado> ObtenerUsuariosListado(string pBusqueda, int? pCodigoPerfil, int? pCodigoEmpresa)
         {
             List<UsuarioListado> usuarios = new List<UsuarioListado>();
-            string query = @"SELECT u.UsuarioDNI, u.UsuarioNombre, u.UsuarioApellido, u.UsuarioEmail, u.UsuarioRol, u.UsuarioEstadoActivo, u.UsuarioEstadoBloqueado, u.UsuarioUltimoAcceso, u.UsuarioCodigoEmpresa, e.RazonSocial AS NombreEmpresa FROM Usuario u
-                   LEFT JOIN Empresa e ON u.UsuarioCodigoEmpresa = e.CodigoEmpresa WHERE (@Busqueda = '' OR u.UsuarioNombre LIKE @BusquedaLike OR u.UsuarioApellido LIKE @BusquedaLike OR u.UsuarioEmail LIKE @BusquedaLike OR (u.UsuarioNombre + ' ' + u.UsuarioApellido) LIKE @BusquedaLike OR (u.UsuarioApellido + ' ' + u.UsuarioNombre) LIKE @BusquedaLike)
-                   AND (@Rol IS NULL OR u.UsuarioRol = @Rol) AND (@CodigoEmpresa IS NULL OR u.UsuarioCodigoEmpresa = @CodigoEmpresa) ORDER BY u.UsuarioApellido, u.UsuarioNombre";
-
+            string query = @"SELECT u.UsuarioDNI, u.UsuarioNombre, u.UsuarioApellido, u.UsuarioEmail, u.UsuarioCodigoPerfil, p.Nombre_Perfil,
+                            u.UsuarioEstadoActivo, u.UsuarioEstadoBloqueado, u.UsuarioUltimoAcceso, u.UsuarioCodigoEmpresa, e.RazonSocial AS NombreEmpresa FROM Usuario u
+                            INNER JOIN Perfil p ON u.UsuarioCodigoPerfil = p.Cod_Perfil LEFT JOIN Empresa e ON u.UsuarioCodigoEmpresa = e.CodigoEmpresa
+                            WHERE (@Busqueda = '' OR u.UsuarioNombre LIKE @BusquedaLike OR u.UsuarioApellido LIKE @BusquedaLike OR u.UsuarioEmail LIKE @BusquedaLike
+                            OR (u.UsuarioNombre + ' ' + u.UsuarioApellido) LIKE @BusquedaLike OR (u.UsuarioApellido + ' ' + u.UsuarioNombre) LIKE @BusquedaLike)
+                            AND (@CodigoPerfil IS NULL OR u.UsuarioCodigoPerfil = @CodigoPerfil) AND (@CodigoEmpresa IS NULL OR u.UsuarioCodigoEmpresa = @CodigoEmpresa) ORDER BY u.UsuarioApellido, u.UsuarioNombre";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
                 string busqueda = pBusqueda ?? "";
                 CM.Parameters.AddWithValue("@Busqueda", busqueda);
                 CM.Parameters.AddWithValue("@BusquedaLike", "%" + busqueda + "%");
-                CM.Parameters.AddWithValue("@Rol", (object)pRol ?? DBNull.Value);
+                CM.Parameters.AddWithValue("@CodigoPerfil", (object)pCodigoPerfil ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@CodigoEmpresa", (object)pCodigoEmpresa ?? DBNull.Value);
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
@@ -182,7 +193,8 @@ namespace DAL
                             Nombre = DR["UsuarioNombre"].ToString(),
                             Apellido = DR["UsuarioApellido"].ToString(),
                             Email = DR["UsuarioEmail"].ToString(),
-                            Rol = Convert.ToInt32(DR["UsuarioRol"]),
+                            CodigoPerfil = Convert.ToInt32(DR["UsuarioCodigoPerfil"]),
+                            NombrePerfil = DR["Nombre_Perfil"].ToString(),
                             estadoActivo = Convert.ToBoolean(DR["UsuarioEstadoActivo"]),
                             estadoBloqueado = Convert.ToBoolean(DR["UsuarioEstadoBloqueado"]),
                             ultimoAcceso = Convert.ToDateTime(DR["UsuarioUltimoAcceso"]),
@@ -207,7 +219,7 @@ namespace DAL
         }
         public void AgregarUsuario(Usuario pUsuario)
         {
-            string query = @"INSERT INTO Usuario (UsuarioDNI, UsuarioNombre, UsuarioApellido, UsuarioEmail, UsuarioContrasenia, UsuarioRol, UsuarioEstadoActivo, UsuarioEstadoBloqueado, UsuarioIntentosAcceso, UsuarioUltimoAcceso, UsuarioIdioma, UsuarioCodigoEmpresa)
+            string query = @"INSERT INTO Usuario (UsuarioDNI, UsuarioNombre, UsuarioApellido, UsuarioEmail, UsuarioContrasenia, UsuarioCodigoPerfil, UsuarioEstadoActivo, UsuarioEstadoBloqueado, UsuarioIntentosAcceso, UsuarioUltimoAcceso, UsuarioIdioma, UsuarioCodigoEmpresa)
                    VALUES (@DNI, @Nombre, @Apellido, @Email, @Contrasenia, @Rol, @estadoActivo, 0, 0, @ultimoAcceso, @Idioma, @CodigoEmpresa)";
 
             using (SqlConnection CO = acceso.NuevaConexion())
@@ -218,7 +230,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Apellido", pUsuario.Apellido);
                 CM.Parameters.AddWithValue("@Email", pUsuario.Email);
                 CM.Parameters.AddWithValue("@Contrasenia", pUsuario.Contrasenia);
-                CM.Parameters.AddWithValue("@Rol", pUsuario.Rol);
+                CM.Parameters.AddWithValue("@Rol", pUsuario.Perfil.Codigo);
                 CM.Parameters.AddWithValue("@estadoActivo", pUsuario.estadoActivo);
                 CM.Parameters.AddWithValue("@ultimoAcceso", DateTime.Now);
                 CM.Parameters.AddWithValue("@Idioma", 1);
@@ -229,7 +241,7 @@ namespace DAL
         }
         public void ModificarUsuario(Usuario pUsuario)
         {
-            string query = @"UPDATE Usuario SET UsuarioNombre = @Nombre, UsuarioApellido = @Apellido, UsuarioEmail = @Email, UsuarioRol = @Rol, UsuarioEstadoActivo = @estadoActivo, UsuarioCodigoEmpresa = @CodigoEmpresa WHERE UsuarioDNI = @DNI";
+            string query = @"UPDATE Usuario SET UsuarioNombre = @Nombre, UsuarioApellido = @Apellido, UsuarioEmail = @Email, UsuarioCodigoPerfil = @Rol, UsuarioEstadoActivo = @estadoActivo, UsuarioCodigoEmpresa = @CodigoEmpresa WHERE UsuarioDNI = @DNI";
 
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -238,7 +250,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Nombre", pUsuario.Nombre);
                 CM.Parameters.AddWithValue("@Apellido", pUsuario.Apellido);
                 CM.Parameters.AddWithValue("@Email", pUsuario.Email);
-                CM.Parameters.AddWithValue("@Rol", pUsuario.Rol);
+                CM.Parameters.AddWithValue("@Rol", pUsuario.Perfil.Codigo);
                 CM.Parameters.AddWithValue("@estadoActivo", pUsuario.estadoActivo);
                 CM.Parameters.AddWithValue("@CodigoEmpresa", (object)pUsuario.CodigoEmpresa ?? DBNull.Value);
                 CO.Open();

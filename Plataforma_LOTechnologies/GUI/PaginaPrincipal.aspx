@@ -31,31 +31,29 @@
                                 &#128272; Cambiar contraseña
                             </button>
                             <div class="principal-menu-separador"></div>
-                            <button type="button" class="principal-menu-item principal-item-peligro" onclick="dispararLogout()">
-  &#8594; Cerrar sesión
-                            </button>
+                            <button type="button" class="principal-menu-item principal-item-peligro" onclick="dispararLogout()">&#8594; Cerrar sesión</button>
                         </div>
                     </div>
                 </div>
 
                 <div>
                     <asp:Button ID="btnLogout" runat="server" ClientIDMode="Static" Text="Cerrar Sesión" OnClick="btnLogout_Click" Style="display:none;" />
-                    <asp:Button ID="btnUsuarios" runat="server" Text="Usuarios" OnClick="btnUsuarios_Click" />
-                    <asp:Button ID="btnDigitos" runat="server" Text="Integridad del sistema" OnClick="btnDigitos_Click" />
-                    <asp:Button ID="btnEmpresas" runat="server" Text="Empresas" OnClick="btnEmpresas_Click" />
-                    <asp:Button ID="btnBackupRestore" runat="server" Text="Backup / Restore" OnClick="btnBackupRestore_Click" />
-                    <asp:Button ID="btnAuditoria" runat="server" Text="Auditoría / Bitácora" OnClick="btnAuditoria_Click" />
-                    <asp:Button ID="btnIdiomas" runat="server" Text="Idiomas" OnClick="btnIdiomas_Click" />
-                    <asp:Button ID="btnLocales" runat="server" Text="Locales" OnClick="btnLocales_Click" />
-                    <asp:Button ID="btnLayoutSectores" runat="server" Text="Layout y Sectores" OnClick="btnLayoutSectores_Click" />
-                    <asp:Button ID="btnProductos" runat="server" Text="Productos y Categorías" OnClick="btnProductos_Click" />
-                    <asp:Button ID="btnStockVentas" runat="server" Text="Stock y Ventas" OnClick="btnStockVentas_Click" />
-                    <asp:Button ID="btnEscenarios" runat="server" Text="Escenarios de Simulación" OnClick="btnEscenarios_Click" />
-                    <asp:Button ID="btnComparacionEscenarios" runat="server" Text="Comparación de Escenarios" OnClick="btnComparacionEscenarios_Click" />
-                    <asp:Button ID="btnIndicadores" runat="server" Text="Indicadores y Recomendaciones" OnClick="btnIndicadores_Click" />
-                    <asp:Button ID="btnAnalisisProductos" runat="server" Text="Análisis de Productos" OnClick="btnAnalisisProductos_Click" />
-                    <asp:Button ID="btnReportes" runat="server" Text="Reportes" OnClick="btnReportes_Click" />
-                    <asp:Button ID="btnPermisos" runat="server" Text="Permisos" OnClick="btnPermisos_Click" />
+                    <asp:Button ID="btnUsuarios" runat="server" Text="Usuarios" OnClick="btnUsuarios_Click" Permiso="Gestionar usuarios"/>
+                    <asp:Button ID="btnDigitos" runat="server" Text="Integridad del sistema" OnClick="btnDigitos_Click" Permiso="Recalcular dígitos verificadores"/>
+                    <asp:Button ID="btnEmpresas" runat="server" Text="Empresas" OnClick="btnEmpresas_Click" Permiso="Gestionar empresas"/>
+                    <asp:Button ID="btnBackupRestore" runat="server" Text="Backup / Restore" OnClick="btnBackupRestore_Click" Permiso="Realizar backup y restore"/>
+                    <asp:Button ID="btnAuditoria" runat="server" Text="Auditoría / Bitácora" OnClick="btnAuditoria_Click" Permiso="Consultar bitácora"/>
+                    <asp:Button ID="btnIdiomas" runat="server" Text="Idiomas" OnClick="btnIdiomas_Click" Permiso="Gestionar idiomas"/>
+                    <asp:Button ID="btnLocales" runat="server" Text="Locales" OnClick="btnLocales_Click" Permiso="Gestionar locales"/>
+                    <asp:Button ID="btnLayoutSectores" runat="server" Text="Layout y Sectores" OnClick="btnLayoutSectores_Click" Permiso="Gestionar layout y sectores"/>
+                    <asp:Button ID="btnProductos" runat="server" Text="Productos y Categorías" OnClick="btnProductos_Click" Permiso="Gestionar productos y categorías"/>
+                    <asp:Button ID="btnStockVentas" runat="server" Text="Stock y Ventas" OnClick="btnStockVentas_Click" Permiso="Cargar stock y ventas"/>
+                    <asp:Button ID="btnEscenarios" runat="server" Text="Escenarios de Simulación" OnClick="btnEscenarios_Click" Permiso="Gestionar escenarios"/>
+                    <asp:Button ID="btnComparacionEscenarios" runat="server" Text="Comparación de Escenarios" OnClick="btnComparacionEscenarios_Click" Permiso="Comparar escenarios"/>
+                    <asp:Button ID="btnIndicadores" runat="server" Text="Indicadores y Recomendaciones" OnClick="btnIndicadores_Click" Permiso="Visualizar indicadores"/>
+                    <asp:Button ID="btnAnalisisProductos" runat="server" Text="Análisis de Productos" OnClick="btnAnalisisProductos_Click" Permiso="Analizar ubicación de productos"/>
+                    <asp:Button ID="btnReportes" runat="server" Text="Reportes" OnClick="btnReportes_Click" Permiso="Generar reportes"/>
+                    <asp:Button ID="btnPermisos" runat="server" Text="Permisos" OnClick="btnPermisos_Click" Permiso="Gestionar permisos"/>
                 </div>
 
             </div>

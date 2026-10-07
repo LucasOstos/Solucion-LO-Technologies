@@ -49,6 +49,9 @@
     <Compile Include="IndicadorBE.cs" />
     <Compile Include="LayoutBE.cs" />
     <Compile Include="LocalBE.cs" />
+    <Compile Include="Permiso.cs" />
+    <Compile Include="PermisoCompuesto.cs" />
+    <Compile Include="PermisoSimple.cs" />
     <Compile Include="ProductoBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecomendacionBE.cs" />

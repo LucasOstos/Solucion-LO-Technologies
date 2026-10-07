@@ -13,7 +13,8 @@ namespace BE
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Email { get; set; }
-        public int Rol { get; set; }
+        public int CodigoPerfil { get; set; }
+        public string NombrePerfil { get; set; }
         public bool estadoActivo { get; set; }
         public bool estadoBloqueado { get; set; }
         public DateTime ultimoAcceso { get; set; }
@@ -28,7 +29,7 @@ namespace BE
         public string Apellido {  get; set; }
         public string Email {  get; set; }
         public string Contrasenia {  get; set; }
-        public int Rol {  get; set; }
+        public Perfil Perfil { get; set; }
         public bool estadoActivo {  get; set; }
         public bool estadoBloqueado {  get; set; }
         public int intentosAcceso {  get; set; }
@@ -36,14 +37,14 @@ namespace BE
         public int Idioma {  get; set; }
         public int CodigoEmpresa { get; set; }
         public Usuario() { }
-        public Usuario(int pDNI, string pNombre, string pApellido, string pEmail, string pContrasenia, int pRol, bool pEstadoActivo, bool pEstadoBloqueado, int pIntentosAcceso, DateTime pUltimoAcceso, int pIdioma, int pCodigoEmpresa)
+        public Usuario(int pDNI, string pNombre, string pApellido, string pEmail, string pContrasenia, Perfil pPerfil, bool pEstadoActivo, bool pEstadoBloqueado, int pIntentosAcceso, DateTime pUltimoAcceso, int pIdioma, int pCodigoEmpresa)
         {
             DNI = pDNI;
             Nombre = pNombre;
             Apellido = pApellido;
             Email = pEmail;
             Contrasenia = pContrasenia;
-            Rol = pRol;
+            Perfil = pPerfil;
             estadoActivo = pEstadoActivo;
             estadoBloqueado = pEstadoBloqueado;
             intentosAcceso = pIntentosAcceso;

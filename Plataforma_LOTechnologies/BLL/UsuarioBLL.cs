@@ -117,9 +117,9 @@ namespace BLL
         {
             return accesoDAL.ObtenerUsuarioPorDNI(pDNI);
         }
-        public List<UsuarioListado> ObtenerUsuariosListado(string pBusqueda, int? pRol, int? pCodigoEmpresa)
+        public List<UsuarioListado> ObtenerUsuariosListado(string pBusqueda, int? pCodigoPerfil, int? pCodigoEmpresa)
         {
-            return accesoDAL.ObtenerUsuariosListado(pBusqueda, pRol, pCodigoEmpresa);
+            return accesoDAL.ObtenerUsuariosListado(pBusqueda, pCodigoPerfil, pCodigoEmpresa);
         }
         public ResultadoGuardarUsuario CrearUsuario(Usuario pUsuario, string pPasswordPlano)
         {

@@ -26,15 +26,20 @@ public partial class PaginaLogin : System.Web.UI.Page
         string email = tbEmail.Text.Trim();
         string contrasenia = tbContrasenia.Text.Trim();
         LoginResultado resultado = accesoUsuarioBLL.ValidarLogin(email, contrasenia, pEscribir: integridadOK);
-
+        if (resultado.Resultado == ResultadoLogin.Exitoso)
+        {
+            resultado.Usuario.Perfil = new PermisoBLL().ObtenerPerfil(resultado.Usuario.Perfil.Codigo);
+        }
         if (!integridadOK)
         {
-            if(resultado.Resultado == ResultadoLogin.Exitoso && resultado.Usuario.Rol == 1)
+            bool puedeRecalcular = resultado.Resultado == ResultadoLogin.Exitoso && resultado.Usuario.Perfil != null && resultado.Usuario.Perfil.TienePermiso(PermisoNombres.RecalcularDigitos);
+            if (puedeRecalcular)
             {
                 Sesion.Instancia.Login(resultado.Usuario);
                 Response.Redirect("PaginaDigitosVerificadores.aspx");
             }
-            else { Sesion.Instancia.Logout(); MostrarError("El sistema no está disponible"); } return;
+            else { Sesion.Instancia.Logout(); MostrarError("El sistema no está disponible"); }
+            return;            
         }
         switch (resultado.Resultado)
         {
