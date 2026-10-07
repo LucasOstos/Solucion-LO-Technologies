@@ -8,8 +8,12 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaStockVentas : System.Web.UI.Page
+public partial class PaginaStockVentas : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.CargarStockVentas; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private ProductoBLL productoBLL = new ProductoBLL();
     private VentaBLL ventaBLL = new VentaBLL();
@@ -19,13 +23,7 @@ public partial class PaginaStockVentas : System.Web.UI.Page
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
+    {        
         if (!IsPostBack)
         {
             CargarDropdownLocales();

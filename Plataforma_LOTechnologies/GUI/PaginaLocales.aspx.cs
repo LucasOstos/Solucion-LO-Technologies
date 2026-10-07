@@ -8,18 +8,16 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaLocales : System.Web.UI.Page
+public partial class PaginaLocales : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarLocales; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private EmpresaBLL empresaBLL = new EmpresaBLL();
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
+    {        
         if (!IsPostBack)
         {
             CargarFiltroEmpresas();

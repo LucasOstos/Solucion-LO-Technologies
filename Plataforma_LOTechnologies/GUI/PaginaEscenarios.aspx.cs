@@ -8,8 +8,12 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaEscenarios : System.Web.UI.Page
+public partial class PaginaEscenarios : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarEscenarios; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private SectorBLL sectorBLL = new SectorBLL();
     private EscenarioBLL escenarioBLL = new EscenarioBLL();
@@ -18,13 +22,7 @@ public partial class PaginaEscenarios : System.Web.UI.Page
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
+    {        
         if (!IsPostBack)
         {
             CargarDropdownLocales();

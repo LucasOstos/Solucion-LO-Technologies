@@ -8,8 +8,12 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaIndicadores : System.Web.UI.Page
+public partial class PaginaIndicadores : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.VisualizarIndicadores; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private StockBLL stockBLL = new StockBLL();
     private IndicadorBLL indicadorBLL = new IndicadorBLL();
@@ -19,12 +23,7 @@ public partial class PaginaIndicadores : System.Web.UI.Page
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
+    {        
         if (!IsPostBack)
         {
             CargarDropdownLocales();

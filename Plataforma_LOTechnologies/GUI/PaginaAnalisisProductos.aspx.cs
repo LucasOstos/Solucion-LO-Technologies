@@ -8,8 +8,12 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaAnalisisProductos : System.Web.UI.Page
+public partial class PaginaAnalisisProductos : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.AnalizarProductos; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private AnalisisProductoBLL analisisBLL = new AnalisisProductoBLL();
     private List<ProductoAnalisisListado> ultimoResultado
@@ -18,13 +22,7 @@ public partial class PaginaAnalisisProductos : System.Web.UI.Page
         set { ViewState["UltimoResultado"] = value; }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
+    {        
         if (!IsPostBack)
         {
             CargarDropdownLocales();

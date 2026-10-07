@@ -8,8 +8,12 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaProductos : System.Web.UI.Page
+public partial class PaginaProductos : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarProductos; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private SectorBLL sectorBLL = new SectorBLL();
     private CategoriaBLL categoriaBLL = new CategoriaBLL();
@@ -19,13 +23,7 @@ public partial class PaginaProductos : System.Web.UI.Page
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
+    {        
         if (!IsPostBack)
         {
             CargarDropdownLocales();

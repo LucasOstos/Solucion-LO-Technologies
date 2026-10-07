@@ -4,9 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BE;
 
-public partial class PaginaIdiomas : System.Web.UI.Page
+public partial class PaginaIdiomas : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarIdiomas; }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
 

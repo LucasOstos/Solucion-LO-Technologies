@@ -9,8 +9,12 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaLayoutSectores : System.Web.UI.Page
+public partial class PaginaLayoutSectores : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarLayoutSectores; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private LayoutBLL layoutBLL = new LayoutBLL();
     private SectorBLL sectorBLL = new SectorBLL();
@@ -21,13 +25,7 @@ public partial class PaginaLayoutSectores : System.Web.UI.Page
     }
     private static readonly string[] extensionesValidas = { ".png", ".jpg", ".jpeg", ".pdf" };
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
+    {        
         if (!IsPostBack)
         {
             CargarDropdownLocales();

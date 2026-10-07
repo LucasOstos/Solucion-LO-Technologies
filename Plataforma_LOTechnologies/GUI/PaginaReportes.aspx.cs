@@ -14,8 +14,12 @@ using SERVICIO.Logica;
 using PdfImage = iTextSharp.text.Image;
 using WebListItem = System.Web.UI.WebControls.ListItem;
 
-public partial class PaginaReportes : System.Web.UI.Page
+public partial class PaginaReportes : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GenerarReportes; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private EscenarioBLL escenarioBLL = new EscenarioBLL();
     private IndicadorBLL indicadorBLL = new IndicadorBLL();
@@ -29,13 +33,7 @@ public partial class PaginaReportes : System.Web.UI.Page
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
+    {        
         if (!IsPostBack)
         {
             CargarDropdownLocales();
