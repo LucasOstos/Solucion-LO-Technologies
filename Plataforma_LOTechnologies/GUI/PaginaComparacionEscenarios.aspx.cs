@@ -8,7 +8,7 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaComparacionEscenarios : System.Web.UI.Page
+public partial class PaginaComparacionEscenarios : PaginaSegura
 {
     private LocalBLL localBLL = new LocalBLL();
     private EscenarioBLL escenarioBLL = new EscenarioBLL();
@@ -17,6 +17,10 @@ public partial class PaginaComparacionEscenarios : System.Web.UI.Page
     private int CodigoLocalActual
     {
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
+    }
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.CompararEscenarios; }
     }
 
     #region Funciones
@@ -45,11 +49,6 @@ public partial class PaginaComparacionEscenarios : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
         if (!IsPostBack)
         {
             CargarDropdownLocales();

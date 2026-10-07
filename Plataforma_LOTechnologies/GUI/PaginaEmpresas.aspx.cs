@@ -8,16 +8,15 @@ using BE;
 using BLL;
 using SERVICIO.Logica;
 
-public partial class PaginaEmpresas : System.Web.UI.Page
+public partial class PaginaEmpresas : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarEmpresas; }
+    }
     private EmpresaBLL empresaBLL = new EmpresaBLL();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Sesion.Instancia.IsLogueado() || Sesion.Instancia.Usuario.Rol != 1)
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
         if (!IsPostBack)
         {
             CargarEmpresas();

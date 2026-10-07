@@ -8,16 +8,14 @@ using BE;
 using ClosedXML.Excel;
 using SERVICIO.Logica;
 
-public partial class PaginaAuditorias : System.Web.UI.Page
+public partial class PaginaAuditorias : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.ConsultarBitacora; }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Sesion.Instancia.IsLogueado() || Sesion.Instancia.Usuario.Rol != 1)
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
         if (!IsPostBack)
         {
             CargarDropdownTipos();

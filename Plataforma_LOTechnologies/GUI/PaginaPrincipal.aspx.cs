@@ -12,12 +12,6 @@ public partial class PaginaPrincipal : PaginaSegura
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Sesion.Instancia.IsLogueado())
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
         if (!IsPostBack)
         {
             CargarHeroUsuario();
@@ -29,18 +23,8 @@ public partial class PaginaPrincipal : PaginaSegura
         Usuario usuario = Sesion.Instancia.Usuario;
 
         litNombreUsuario.Text = $"{usuario.Nombre} {usuario.Apellido}";
-        litRolUsuario.Text = ObtenerNombreRol(usuario.Perfil.Codigo);
+        litRolUsuario.Text = usuario.Perfil.Nombre;
         litInicialesUsuario.Text = ObtenerIniciales(usuario.Nombre, usuario.Apellido);
-    }
-    private string ObtenerNombreRol(int rol)
-    {
-        switch (rol)
-        {
-            case 1: return "Administrador";
-            case 2: return "Analista";
-            case 3: return "Gerente";
-            default: return "";
-        }
     }
     private string ObtenerIniciales(string nombre, string apellido)
     {

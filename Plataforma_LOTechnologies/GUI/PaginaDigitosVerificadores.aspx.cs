@@ -4,19 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BE;
 using SERVICIO.Logica;
 
-public partial class PaginaDigitosVerificadores : System.Web.UI.Page
+public partial class PaginaDigitosVerificadores : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.RecalcularDigitos; }
+    }
     private DigitoVerificador digitos = new DigitoVerificador();
     private BackupRestore gestorBackup = new BackupRestore();
     protected void Page_Load(object sender, EventArgs e)
-    {
-        if(!Sesion.Instancia.IsLogueado() || Sesion.Instancia.Usuario.Rol != 1)
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
+    {        
         if (!IsPostBack)
         {
             CargarRegistrosCorruptos();

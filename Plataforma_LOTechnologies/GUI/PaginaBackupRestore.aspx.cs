@@ -4,19 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BE;
 using SERVICIO.Logica;
 
-public partial class PaginaBackupRestore : System.Web.UI.Page
+public partial class PaginaBackupRestore : PaginaSegura
 {
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.RealizarBackupRestore; }
+    }
     private BackupRestore gestorBackup = new BackupRestore();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Sesion.Instancia.IsLogueado() || Sesion.Instancia.Usuario.Rol != 1)
-        {
-            Response.Redirect("PaginaLogin.aspx");
-            return;
-        }
-
         if (!IsPostBack)
         {
             CargarBackups();
