@@ -12,11 +12,13 @@ namespace SERVICIO.Logica
 {
     public class RegistroCorrupto
     {
-        public string NombreTabla {  get; set; }
-        public string CodigoRegistro {  get; set; }
+        public string NombreTabla { get; set; }
+        public string CodigoRegistro { get; set; }
+        public string Problema { get; set; }
     }
     public class DigitoVerificador
     {
+        private const string TODA_LA_TABLA = "Toda la tabla";
         DigitoVerificadorDAL accesoDAL = new DigitoVerificadorDAL();
         private readonly Dictionary<string, string> TablasConDVH = new Dictionary<string, string>
         {
@@ -83,7 +85,6 @@ namespace SERVICIO.Logica
         private void CalcularDigitosTabla(string pNombreTabla, string pColumnaPK)
         {
             DataTable DT = accesoDAL.ObtenerTabla(pNombreTabla, pColumnaPK);
-
             var dvh = new List<string>();
             foreach(DataRow DR in DT.Rows)
             {
@@ -96,49 +97,66 @@ namespace SERVICIO.Logica
         }
         public bool ValidarIntegridadDatos()
         {
-            foreach (var Tabla in TablasConDVH)
+            foreach (var tabla in TablasConDVH)
             {
-                if (!ValidarTabla(Tabla.Key))
+                if (DiagnosticarTabla(tabla.Key, tabla.Value).Count > 0)
                 {
                     return false;
                 }
             }
             return true;
         }
-        private bool ValidarTabla(string pNombreTabla)
+        private List<RegistroCorrupto> DiagnosticarTabla(string pNombreTabla, string pColumnaPK)
         {
-            var dvvActual = accesoDAL.ObtenerDVV(pNombreTabla);
-            if (dvvActual == null) return false;
-            DataTable DT = accesoDAL.ObtenerTabla(pNombreTabla, TablasConDVH[pNombreTabla]);
-            if (DT.Rows.Count != dvvActual.Value.pCantidadRegistros) return false;
+            var problemas = new List<RegistroCorrupto>();
+            var dvvGuardado = accesoDAL.ObtenerDVV(pNombreTabla);
+            if (dvvGuardado == null)
+            {
+                problemas.Add(NuevoProblema(pNombreTabla, TODA_LA_TABLA,
+                    "No existe el dígito verificador vertical (DVV) de la tabla. Pudo haber sido eliminado de la tabla DigitoVerificador."));
+                return problemas;
+            }
+            DataTable DT = accesoDAL.ObtenerTabla(pNombreTabla, pColumnaPK);
             var dvhsRecalculados = new List<string>();
             foreach (DataRow DR in DT.Rows)
             {
-                string dvhActual = DR["DVH"] == DBNull.Value ? null : DR["DVH"].ToString();
+                string dvhGuardado = DR["DVH"] == DBNull.Value ? null : DR["DVH"].ToString();
                 string dvhRecalculado = CalcularDVH(DR, DT);
-                if(dvhActual != dvhRecalculado) return false;
                 dvhsRecalculados.Add(dvhRecalculado);
+                if (dvhGuardado == null)
+                {
+                    problemas.Add(NuevoProblema(pNombreTabla, DR[pColumnaPK].ToString(),
+                        "El registro no tiene dígito verificador (DVH). Pudo haber sido insertado por fuera del sistema."));
+                }
+                else if (dvhGuardado != dvhRecalculado)
+                {
+                    problemas.Add(NuevoProblema(pNombreTabla, DR[pColumnaPK].ToString(),
+                        "El DVH no coincide con los datos del registro. Se modificó un dato o el propio DVH."));
+                }
             }
-            if(dvhsRecalculados.Count != dvvActual.Value.pCantidadRegistros) return false;
-            string dvvRecalculado = CalcularDVV(dvhsRecalculados);
-            return dvvRecalculado == dvvActual.Value.pDVV;
+            int cantidadGuardada = dvvGuardado.Value.pCantidadRegistros;
+            if (DT.Rows.Count != cantidadGuardada)
+            {
+                problemas.Add(NuevoProblema(pNombreTabla, TODA_LA_TABLA,
+                    $"La tabla tiene {DT.Rows.Count} registros y se esperaban {cantidadGuardada}. Se agregaron o eliminaron registros por fuera del sistema."));
+            }
+            else if (CalcularDVV(dvhsRecalculados) != dvvGuardado.Value.pDVV && problemas.Count == 0)
+            {
+                problemas.Add(NuevoProblema(pNombreTabla, TODA_LA_TABLA,
+                    "El dígito verificador vertical (DVV) no coincide. Se modificaron registros recalculando su DVH, o se alteró el DVV guardado."));
+            }
+            return problemas;
         }
+        private RegistroCorrupto NuevoProblema(string pNombreTabla, string pRegistro, string pProblema)
+        {
+            return new RegistroCorrupto { NombreTabla = pNombreTabla, CodigoRegistro = pRegistro, Problema = pProblema };
+        }        
         public List<RegistroCorrupto> ObtenerRegistrosCorruptos()
         {
             List<RegistroCorrupto> corruptos = new List<RegistroCorrupto>();
-            foreach(var tabla in TablasConDVH)
+            foreach (var tabla in TablasConDVH)
             {
-                if (ValidarTabla(tabla.Key)) continue;
-                DataTable DT = accesoDAL.ObtenerTabla(tabla.Key, tabla.Value);
-                foreach(DataRow DR in DT.Rows)
-                {
-                    string dvhAlmacenado = DR["DVH"] == DBNull.Value ? null : DR["DVH"].ToString();
-                    string dvhRecalculado = CalcularDVH(DR, DT);
-                    if(dvhAlmacenado != dvhRecalculado)
-                    {
-                        corruptos.Add(new RegistroCorrupto { NombreTabla = tabla.Key, CodigoRegistro = DR[tabla.Value].ToString() }); 
-                    }
-                }
+                corruptos.AddRange(DiagnosticarTabla(tabla.Key, tabla.Value));
             }
             return corruptos;
         }

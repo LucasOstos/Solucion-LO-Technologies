@@ -23,7 +23,6 @@
                 <div class="encabezado">
                     <div>
                         <h1>Backup / Restore</h1>
-                        <p class="subtitulo">CUS 013 — Copias de seguridad y restauración de base de datos</p>
                     </div>
                     <asp:Button ID="btnCrearBackup" runat="server" CssClass="boton-nuevo" Text="Crear Backup" OnClick="btnCrearBackup_Click" CausesValidation="false" />
                 </div>

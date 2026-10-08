@@ -41,6 +41,7 @@ namespace BLL
         public void EliminarEscenario(int pCodigoEscenario)
         {
             escenarioDAL.EliminarEscenario(pCodigoEscenario);
+            digitos.ActualizarDigitoTabla("Escenario");
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Eliminar escenario de simulación", "Gestión simulación", 2);
         }
     }

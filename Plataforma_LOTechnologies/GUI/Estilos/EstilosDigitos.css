@@ -130,3 +130,11 @@ body {
 .dv-btn-cancelar:hover {
     background-color: #f4f6fa;
 }
+
+.dv-registro {
+    white-space: nowrap;
+}
+
+.dv-tabla td {
+    vertical-align: top;
+}

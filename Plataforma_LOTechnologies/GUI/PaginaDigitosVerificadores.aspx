@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaDigitosVerificadores.aspx.cs" Inherits="PaginaDigitosVerificadores" %>
+
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
 <!DOCTYPE html>
 
@@ -16,10 +17,9 @@
             <div class="dv-wrapper">
                 <uc:BotonVolverMenu ID="volverMenu" runat="server" />
                 <h1>Integridad de datos</h1>
-                <p class="dv-subtitulo">CUS 014</p>
-                <asp:Label ID="lbMensaje" runat="server" CssClass="dv-mensaje" Visible="false"></asp:Label>
+                <asp:Label ID="lbMensaje" runat="server" CssClass="dv-mensaje" Visible="false" EnableViewState="false"></asp:Label>
                 <div class="dv-tarjeta">
-                    <h2>Registros con inconsistencias</h2>
+                    <h2>Inconsistencias detectadas</h2>
                     <asp:Repeater ID="rptCorruptos" runat="server">
                         <HeaderTemplate>
                             <table class="dv-tabla">
@@ -27,14 +27,16 @@
                                     <tr>
                                         <th>Tabla</th>
                                         <th>Registro</th>
+                                        <th>Problema</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td><%# Eval("NombreTabla")%></td>
-                                <td><%# Eval("CodigoRegistro")%></td>
+                                <td><%# Eval("NombreTabla") %></td>
+                                <td class="dv-registro"><%# Eval("CodigoRegistro") %></td>
+                                <td><%# Eval("Problema") %></td>
                             </tr>
                         </ItemTemplate>
                         <FooterTemplate>
@@ -42,16 +44,16 @@
                             </table>
                         </FooterTemplate>
                     </asp:Repeater>
-                    <asp:Label ID="lbIntegridadOK" runat="server" Text="No hay registros con inconsistencias." Visible="false"></asp:Label>
+                    <asp:Label ID="lbIntegridadOK" runat="server" Text="No se detectaron inconsistencias." Visible="false"></asp:Label>
                 </div>
                 <div class="dv-acciones">
                     <asp:Button ID="btnRecalcular" runat="server" CssClass="dv-btn dv-btn-primary" Text="Recalcular dígitos verificadores" OnClick="btnRecalcular_Click"
-                        OnClientClick="return confirmarAccion('¿Confirmás que querés recalcular los dígitos verificadores de todas las tablas?');"/>
+                        OnClientClick="return confirmarAccion('¿Confirmás que querés recalcular los dígitos verificadores de todas las tablas?');" />
 
                     <asp:Button ID="btnRestore" runat="server" CssClass="dv-btn dv-btn-secundario" Text="Restaurar base de datos" OnClick="btnRestore_Click"
-                        OnClientClick="return confirmarAccion('¿Confirmás que querés restaurar la base de datos desde un backup? Esta acción reemplaza los datos actuales.');"/>
+                        OnClientClick="return confirmarAccion('¿Confirmás que querés restaurar la base de datos desde un backup? Esta acción reemplaza los datos actuales.');" />
 
-                    <asp:Button ID="btnCancelar" runat="server" CssClass="dv-btn dv-btn-cancelar" Text="Salir" OnClick="btnCancelar_Click" CausesValidation="false"/>
+                    <asp:Button ID="btnCancelar" runat="server" CssClass="dv-btn dv-btn-cancelar" Text="Salir" OnClick="btnCancelar_Click" CausesValidation="false" />
                 </div>
             </div>
         </div>
