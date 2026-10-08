@@ -11,6 +11,10 @@ using SERVICIO.Logica;
 /// </summary>
 public class PaginaSegura : Page
 {
+    protected virtual bool PermitidaConIntegridadComprometida
+    {
+        get { return false; }
+    }
     protected virtual string PermisoRequerido
     {
         get { return null; }
@@ -18,13 +22,16 @@ public class PaginaSegura : Page
     protected override void OnInit(EventArgs e)
     {
         base.OnInit(e);
-
         if (!Sesion.Instancia.IsLogueado())
         {
             Response.Redirect("~/PaginaLogin.aspx", true);
             return;
         }
-
+        if (Sesion.Instancia.IntegridadComprometida && !PermitidaConIntegridadComprometida)
+        {
+            Response.Redirect("~/PaginaDigitosVerificadores.aspx", true);
+            return;
+        }
         if (PermisoRequerido != null && !Sesion.Instancia.TienePermiso(PermisoRequerido))
         {
             Response.Redirect("~/PaginaPrincipal.aspx", true);

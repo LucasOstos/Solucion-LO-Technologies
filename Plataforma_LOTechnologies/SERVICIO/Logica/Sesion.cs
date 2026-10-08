@@ -11,6 +11,7 @@ namespace SERVICIO.Logica
     public class Sesion
     {
         public Usuario Usuario;
+        public bool IntegridadComprometida;
         private Sesion() { }
         public static Sesion Instancia
         {

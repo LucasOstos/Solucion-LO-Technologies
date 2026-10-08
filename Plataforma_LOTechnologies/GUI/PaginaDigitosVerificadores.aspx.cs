@@ -13,6 +13,10 @@ public partial class PaginaDigitosVerificadores : PaginaSegura
     {
         get { return PermisoNombres.RecalcularDigitos; }
     }
+    protected override bool PermitidaConIntegridadComprometida
+    {
+        get { return true; }
+    }
     private DigitoVerificador digitos = new DigitoVerificador();
     private BackupRestore gestorBackup = new BackupRestore();
     protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +29,10 @@ public partial class PaginaDigitosVerificadores : PaginaSegura
     private void CargarRegistrosCorruptos()
     {
         List<RegistroCorrupto> corruptos = digitos.ObtenerRegistrosCorruptos();
-        if(corruptos.Count == 0)
+        bool hayInconsistencias = corruptos.Count > 0;
+        Sesion.Instancia.IntegridadComprometida = hayInconsistencias;
+        volverMenu.Visible = !hayInconsistencias;
+        if (!hayInconsistencias)
         {
             rptCorruptos.Visible = false; lbIntegridadOK.Visible = true;
         }

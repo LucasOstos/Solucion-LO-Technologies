@@ -36,6 +36,7 @@ public partial class PaginaLogin : System.Web.UI.Page
             if (puedeRecalcular)
             {
                 Sesion.Instancia.Login(resultado.Usuario);
+                Sesion.Instancia.IntegridadComprometida = true;
                 Response.Redirect("PaginaDigitosVerificadores.aspx");
             }
             else { Sesion.Instancia.Logout(); MostrarError("El sistema no está disponible"); }
