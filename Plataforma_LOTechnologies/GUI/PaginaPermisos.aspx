@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false"/>
 
                 <div class="perm-columnas">
                     <div class="tarjeta perm-panel">

@@ -19,12 +19,11 @@
                 <div class="encabezado">
                     <div>
                         <h1>Maestro Usuarios</h1>
-                        <%-- <p class="subtitulo">CUS 012 — Crear, modificar, activar o desactivar usuarios</p> --%>
                     </div>
                     <asp:Button ID="btnAgregarUsuario" runat="server" CssClass="boton-nuevo"
                         Text="Agregar Usuario" CausesValidation="false" OnClick="btnAgregarUsuario_Click" />
                 </div>
-                <asp:Label ID="lbMensaje" runat="server" CssClass="mensaje" Visible="false"></asp:Label>
+                <asp:Label ID="lbMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false"></asp:Label>
 
                 <div class="filtros">
                     <asp:TextBox ID="tbBuscar" runat="server" CssClass="campo-buscar" placeholder="Buscar usuario..." />
@@ -164,7 +163,7 @@
                     <asp:CheckBox ID="chkActivo" runat="server" Checked="true" />
                     <asp:Label runat="server" Text="Usuario activo" AssociatedControlID="chkActivo" />
                 </div>
-
+                <asp:Label ID="lbMensajeModal" runat="server" CssClass="mensaje mensaje-error" Visible="false" EnableViewState="false" />
                 <div class="modal-botones">
                     <asp:Button ID="btnCancelarModal" runat="server" CssClass="modal-boton-cancelar"
                         Text="Cancelar" OnClick="btnCancelarModal_Click" CausesValidation="false" />

@@ -33,6 +33,7 @@ public class PaginaSegura : Page
     protected override void OnPreRender(EventArgs e)
     {
         AplicarPermisosAControles(this);
+        ClientScript.RegisterClientScriptInclude(typeof(PaginaSegura), "Mensajes", ResolveUrl("~/JS/Mensajes.js"));
         base.OnPreRender(e);
     }
     private void AplicarPermisosAControles(Control pRaiz)

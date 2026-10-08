@@ -27,6 +27,11 @@ public partial class PaginaUsuarios : PaginaSegura
         }
     }
     #region Funciones
+    private void MostrarMensajeModal(string texto)
+    {
+        lbMensajeModal.Text = texto;
+        lbMensajeModal.Visible = true;
+    }
     private void CargarPerfiles()
     {
         List<Perfil> perfiles = permisoBLL.ObtenerEstructura().Perfiles;
@@ -206,7 +211,7 @@ public partial class PaginaUsuarios : PaginaSegura
         int dni;
         if (!int.TryParse(tbDNI.Text.Trim(), out dni))
         {
-            MostrarMensaje("DNI inválido.", esExito: false);
+            MostrarMensajeModal("DNI inválido.");
             AbrirModal();
             return;
         }
@@ -240,12 +245,12 @@ public partial class PaginaUsuarios : PaginaSegura
                 break;
 
             case ResultadoGuardarUsuario.DniYaRegistrado:
-                MostrarMensaje("Usuario ya registrado.", esExito: false);
+                MostrarMensajeModal("Ya existe un usuario registrado con ese DNI.");
                 AbrirModal();
                 break;
 
             case ResultadoGuardarUsuario.DatosInvalidos:
-                MostrarMensaje("Datos inválidos.", esExito: false);
+                MostrarMensajeModal("Datos inválidos. Revisá los campos.");
                 AbrirModal();
                 break;
         }
