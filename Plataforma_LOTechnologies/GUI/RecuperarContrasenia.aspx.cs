@@ -65,8 +65,9 @@ public partial class RecuperarContrasenia : System.Web.UI.Page
         {
             case ResultadoCambio.Exitoso:
                 panelNuevaContrasenia.Visible = false;
-                lbExito.Text = "Tu contraseña fue actualizada correctamente. Ya podés iniciar sesión.";
+                lbExito.Text = "Tu contraseña fue actualizada correctamente. Ya podés cerrar esta pestaña o iniciar sesión.";
                 lbExito.Visible = true;
+                lnkIrALogin.Visible = true;
                 break;
             case ResultadoCambio.TokenExpirado:
                 panelNuevaContrasenia.Visible = false;

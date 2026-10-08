@@ -35,8 +35,8 @@ public partial class PaginaPermisos : PaginaSegura
         CargarChecks(cblFamiliasDisponiblesEnPerfil, estructura.Familias);
         CargarChecks(cblPermisosDisponiblesEnFamilia, estructura.Permisos);
         CargarChecks(cblFamiliasDisponibles, estructura.Familias.Where(f => f.Codigo != codFamilia));
-        CargarContenido(lbContenidoPerfil, estructura.Perfiles.FirstOrDefault(p => p.Codigo == codPerfil));
-        CargarContenido(lbContenidoFamilia, estructura.Familias.FirstOrDefault(f => f.Codigo == codFamilia));
+        CargarContenido(cblContenidoPerfil, estructura.Perfiles.FirstOrDefault(p => p.Codigo == codPerfil));
+        CargarContenido(cblContenidoFamilia, estructura.Familias.FirstOrDefault(f => f.Codigo == codFamilia));
     }
     private void CargarDesplegable(DropDownList pDesplegable, IEnumerable<Permiso> pItems, string pValorASeleccionar)
     {
@@ -59,7 +59,7 @@ public partial class PaginaPermisos : PaginaSegura
             pLista.Items.Add(new ListItem(item.Nombre, item.Codigo.ToString()));
         }
     }
-    private void CargarContenido(ListBox pLista, PermisoCompuesto pCompuesto)
+    private void CargarContenido(ListControl pLista, PermisoCompuesto pCompuesto)
     {
         pLista.Items.Clear();
         if (pCompuesto == null) return;
@@ -85,7 +85,7 @@ public partial class PaginaPermisos : PaginaSegura
     {
         return pLista.Items.Cast<ListItem>().Where(i => i.Selected).Select(i => int.Parse(i.Value)).ToList();
     }
-    private void LeerSeleccionContenido(ListBox pLista, out List<int> pCodPermisos, out List<int> pCodFamilias)
+    private void LeerSeleccionContenido(ListControl pLista, out List<int> pCodPermisos, out List<int> pCodFamilias)
     {
         pCodPermisos = new List<int>();
         pCodFamilias = new List<int>();
@@ -159,7 +159,7 @@ public partial class PaginaPermisos : PaginaSegura
             return;
         }
         List<int> permisos, familias;
-        LeerSeleccionContenido(lbContenidoPerfil, out permisos, out familias);
+        LeerSeleccionContenido(cblContenidoPerfil, out permisos, out familias);
         if (Intentar(() => permisoBLL.QuitarDePerfil(codPerfil.Value, permisos, familias), "Permisos quitados del perfil."))
         {
             CargarPantalla();
@@ -215,7 +215,7 @@ public partial class PaginaPermisos : PaginaSegura
             return;
         }
         List<int> permisos, familias;
-        LeerSeleccionContenido(lbContenidoFamilia, out permisos, out familias);
+        LeerSeleccionContenido(cblContenidoFamilia, out permisos, out familias);
         if (Intentar(() => permisoBLL.QuitarDeFamilia(codFamilia.Value, permisos, familias), "Permisos quitados de la familia."))
         {
             CargarPantalla();

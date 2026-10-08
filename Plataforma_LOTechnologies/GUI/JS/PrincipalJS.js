@@ -1,24 +1,23 @@
-﻿function toggleMenuUsuario() {
-    document.getElementById('menuDesplegableUsuario').classList.toggle('abierto');
-}
-
-document.addEventListener('click', function (evento) {
-    var contenedor = document.getElementById('contenedorAvatarUsuario');
-    var menu = document.getElementById('menuDesplegableUsuario');
-    if (contenedor && menu && !contenedor.contains(evento.target)) {
-        menu.classList.remove('abierto');
-    }
-});
-
-function abrirModal(idPanel) {
-    document.getElementById(idPanel).style.display = 'flex';
-    document.getElementById('menuDesplegableUsuario').classList.remove('abierto');
+﻿function abrirModal(idPanel) {
+    var panel = document.getElementById(idPanel);
+    panel.style.display = 'flex';
+    var primerCampo = panel.querySelector('input[type="password"], input[type="text"]');
+    if (primerCampo) primerCampo.focus();
 }
 
 function cerrarModal(idPanel) {
     document.getElementById(idPanel).style.display = 'none';
 }
 
-function dispararLogout() {
-    document.getElementById('btnLogout').click();
-}
+document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape') {
+        var modal = document.getElementById('pnlCambiarContrasenia');
+        if (modal && modal.style.display !== 'none') cerrarModal('pnlCambiarContrasenia');
+    }
+});
+
+document.addEventListener('click', function (evento) {
+    if (evento.target && evento.target.id === 'pnlCambiarContrasenia') {
+        cerrarModal('pnlCambiarContrasenia');
+    }
+});

@@ -1,6 +1,8 @@
-﻿.principal-hero {
-    max-width: 720px;
-    margin: 0 auto 32px auto;
+﻿.principal-contenedor {
+    max-width: 1100px;
+}
+
+.principal-hero {
     background-color: #ffffff;
     border-radius: 14px;
     padding: 20px 24px;
@@ -8,80 +10,158 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
 }
 
 .principal-hero-usuario {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
 }
 
-.principal-hero-nombre {
-    font-size: 16px;
-    font-weight: 700;
-    color: #17223a;
+.principal-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 17px;
+    flex-shrink: 0;
 }
 
-.principal-hero-rol {
+.principal-hero-saludo {
     font-size: 12px;
     color: #7c8697;
 }
 
-.principal-avatar-contenedor {
-    position: relative;
+.principal-hero-nombre {
+    font-size: 18px;
+    font-weight: 700;
+    color: #17223a;
+    margin-bottom: 4px;
 }
 
-.principal-avatar {
-    width: 42px;
-    height: 42px;
-    font-size: 14px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.15s ease;
+.principal-hero-rol {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #2757d6;
+    background-color: #eef4ff;
+    border-radius: 999px;
+    padding: 3px 10px;
 }
 
-    .principal-avatar:hover {
-        border-color: #2f6bff;
-    }
-
-.principal-menu-desplegable {
-    position: absolute;
-    top: 52px;
-    right: 0;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    width: 200px;
-    overflow: hidden;
-    z-index: 50;
-    display: none;
+.principal-hero-acciones {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-    .principal-menu-desplegable.abierto {
-        display: block;
-    }
-
-.principal-menu-item {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 12px 16px;
+.principal-accion {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
     font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
     color: #2a3448;
-    background: none;
-    border: none;
+    background-color: #ffffff;
+    border: 1px solid #c9d0dc;
+    border-radius: 8px;
     cursor: pointer;
 }
 
-    .principal-menu-item:hover {
+    .principal-accion:hover {
         background-color: #f4f6fa;
     }
 
-    .principal-menu-item.principal-item-peligro {
-        color: #b3261e;
+.principal-accion-salir {
+    color: #b3261e;
+    border-color: #f3b9b4;
+}
+
+    .principal-accion-salir:hover {
+        background-color: #fdf1f0;
     }
 
-.principal-menu-separador {
-    height: 1px;
-    background-color: #eef1f6;
+.principal-accion:focus-visible,
+.principal-modulo:focus-visible,
+.principal-modal-cerrar:focus-visible {
+    outline: 3px solid rgba(47, 107, 255, 0.35);
+    outline-offset: 2px;
+}
+
+.principal-seccion {
+    margin-bottom: 28px;
+}
+
+    .principal-seccion:not(:has(.principal-modulo)) {
+        display: none;
+    }
+
+.principal-seccion-titulo {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #7c8697;
+    margin: 0 0 12px 2px;
+}
+
+.principal-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+}
+
+.principal-modulo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    background-color: #ffffff;
+    border: 1px solid #e3e7ee;
+    border-left: 4px solid #2757d6;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+    .principal-modulo:hover {
+        transform: translateY(-2px);
+        border-color: #b9c9f3;
+        border-left-color: #1d47b8;
+        box-shadow: 0 6px 16px rgba(39, 87, 214, 0.12);
+    }
+
+.principal-modulo-titulo {
+    font-size: 14px;
+    font-weight: 700;
+    color: #17223a;
+}
+
+.principal-modulo-desc {
+    font-size: 12px;
+    color: #7c8697;
+}
+
+.principal-modal-cerrar {
+    background: none;
+    border: none;
+    padding: 0 4px;
+    line-height: 1;
+    font-size: 22px;
+}
+
+@media (max-width: 640px) {
+    .principal-hero-acciones {
+        width: 100%;
+    }
+
+    .principal-accion {
+        flex: 1;
+        justify-content: center;
+    }
 }

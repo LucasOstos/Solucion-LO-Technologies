@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Iniciar Sesión - LO Technologies</title>
     <link rel="stylesheet" type="text/css" href="/Estilos/EstilosLogin.css" />
     <script type="text/javascript" src="/JS/LoginJS.js"></script>
@@ -49,17 +49,20 @@
 
                     <asp:Button ID="btnIngresar" runat="server" CssClass="btn-login" Text="Ingresar" OnClick="btnIngresar_Click" />
                 </div>
-                <p class="login-piepagina">© 2026 LO Technologies — v1.0</p>
+                <p class="login-piepagina">© 2026 LO Technologies — v2.0</p>
             </div>
         </div>
-        <div id="modal-recuperar" class="modal-overlay" style="display:none;">
-            <div class="modal-box">
-                <h3>Recuperar contraseña</h3>
-                <p class="modal-subtexto">Ingresá tu email y te enviamos instrucciones para recuperar tu contraseña.</p>
-                <input type="email" id="txtEmailRecuperar" class="modal-input"/>
-                <div id="modalMensaje" class="modal-mensaje" style="display:none;"></div>
-                <div class="modal-mensaje">
-                    <button type="button" class="modal-btn-cancelar" onclick="cerrarModalRecuperar()">Cancelar</button>
+        <div id="modal-recuperar" class="modal-overlay" style="display: none;">
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="tituloRecuperar">
+                <div class="modal-box-encabezado">
+                    <h3 id="tituloRecuperar">Recuperar contraseña</h3>
+                    <button type="button" class="modal-btn-x" aria-label="Cerrar" onclick="cerrarModalRecuperar()">&times;</button>
+                </div>
+                <p class="modal-subtexto" id="subtextoRecuperar">Ingresá tu email y te enviamos instrucciones para recuperar tu contraseña.</p>
+                <input type="email" id="txtEmailRecuperar" class="modal-input" placeholder="tu@email.com" aria-label="Email" />
+                <div id="modalMensaje" class="modal-mensaje" role="status" style="display: none;"></div>
+                <div class="modal-botones">
+                    <button type="button" id="btnCancelarRecuperar" class="modal-btn-cancelar" onclick="cerrarModalRecuperar()">Cancelar</button>
                     <button type="button" id="btnEnviarRecuperar" class="modal-btn-enviar" onclick="enviarSolicitudRecuperacion()">Enviar</button>
                 </div>
             </div>

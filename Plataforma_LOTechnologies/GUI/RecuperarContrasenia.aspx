@@ -37,6 +37,8 @@
                         <asp:Button ID="btnConfirmar" runat="server" CssClass="rc-btn" Text="Confirmar" OnClick="btnConfirmar_Click" ValidationGroup="vgRecuperar"/>
                     </asp:Panel>
                     <asp:Label ID="lbExito" runat="server" CssClass="rc-exito" Visible="false"></asp:Label>
+                    <asp:HyperLink ID="lnkIrALogin" runat="server" NavigateUrl="~/PaginaLogin.aspx"
+                        CssClass="rc-boton-login" Visible="false">Ir a iniciar sesión</asp:HyperLink>
                 </div>
             </div>
         </div>

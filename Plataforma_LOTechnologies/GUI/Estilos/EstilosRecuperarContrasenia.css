@@ -48,9 +48,9 @@ body {
     margin: 0 0 24px 0;
 }
 
-.rc-marca-titulo span {
-    color: #4c8dff;
-}
+    .rc-marca-titulo span {
+        color: #4c8dff;
+    }
 
 .rc-tarjeta {
     background-color: #ffffff;
@@ -59,11 +59,11 @@ body {
     text-align: left;
 }
 
-.rc-tarjeta h2 {
-    margin: 0 0 16px 0;
-    font-size: 20px;
-    color: #17223a;
-}
+    .rc-tarjeta h2 {
+        margin: 0 0 16px 0;
+        font-size: 20px;
+        color: #17223a;
+    }
 
 .rc-subtexto {
     margin: 0 0 18px 0;
@@ -75,28 +75,28 @@ body {
     margin-bottom: 16px;
 }
 
-.form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: #2a3448;
-    margin-bottom: 6px;
-}
+    .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #2a3448;
+        margin-bottom: 6px;
+    }
 
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #dfe3ea;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #17223a;
-}
+    .form-group input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #dfe3ea;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #17223a;
+    }
 
-.form-group input:focus {
-    outline: none;
-    border-color: #2f6bff;
-    box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.15);
-}
+    .form-group input:focus {
+        outline: none;
+        border-color: #2f6bff;
+        box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.15);
+    }
 
 .campo-error {
     display: block;
@@ -117,9 +117,9 @@ body {
     cursor: pointer;
 }
 
-.rc-btn:hover {
-    background-color: #2757d6;
-}
+    .rc-btn:hover {
+        background-color: #2757d6;
+    }
 
 .rc-error {
     display: block;
@@ -141,3 +141,25 @@ body {
     border-radius: 8px;
     padding: 10px 12px;
 }
+
+.rc-boton-login {
+    display: block;
+    margin-top: 14px;
+    padding: 11px;
+    text-align: center;
+    background-color: #2f6bff;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+    .rc-boton-login:hover {
+        background-color: #2757d6;
+    }
+
+    .rc-boton-login:focus-visible {
+        outline: 3px solid rgba(47, 107, 255, 0.35);
+        outline-offset: 2px;
+    }

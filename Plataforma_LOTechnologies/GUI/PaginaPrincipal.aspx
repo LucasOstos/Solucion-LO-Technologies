@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Página Principal - LO Technologies</title>
     <link rel="stylesheet" type="text/css" href="/Estilos/Comun.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/EstilosPrincipal.css" />
@@ -13,57 +13,125 @@
 <body>
     <form id="formPaginaPrincipal" runat="server">
         <div class="pagina">
-            <div class="contenedor">
+            <div class="contenedor principal-contenedor">
+
                 <div class="principal-hero">
                     <div class="principal-hero-usuario">
+                        <span class="avatar principal-avatar" aria-hidden="true">
+                            <asp:Literal ID="litInicialesUsuario" runat="server" />
+                        </span>
                         <div>
-                            <div class="principal-hero-nombre"><asp:Literal ID="litNombreUsuario" runat="server" /></div>
-                            <div class="principal-hero-rol"><asp:Literal ID="litRolUsuario" runat="server" /></div>
+                            <div class="principal-hero-saludo">Hola,</div>
+                            <div class="principal-hero-nombre">
+                                <asp:Literal ID="litNombreUsuario" runat="server" /></div>
+                            <span class="principal-hero-rol">
+                                <asp:Literal ID="litRolUsuario" runat="server" /></span>
                         </div>
                     </div>
 
-                    <div class="principal-avatar-contenedor" id="contenedorAvatarUsuario">
-                        <span class="avatar principal-avatar" onclick="toggleMenuUsuario()">
-                            <asp:Literal ID="litInicialesUsuario" runat="server" />
-                        </span>
-                        <div class="principal-menu-desplegable" id="menuDesplegableUsuario">
-                            <button type="button" class="principal-menu-item" onclick="abrirModal('pnlCambiarContrasenia')">
-                                &#128272; Cambiar contraseña
-                            </button>
-                            <div class="principal-menu-separador"></div>
-                            <button type="button" class="principal-menu-item principal-item-peligro" onclick="dispararLogout()">&#8594; Cerrar sesión</button>
-                        </div>
+                    <div class="principal-hero-acciones">
+                        <button type="button" class="principal-accion" onclick="abrirModal('pnlCambiarContrasenia')">
+                            <span aria-hidden="true">&#128273;</span> Cambiar contraseña
+                        </button>
+                        <asp:Button ID="btnLogout" runat="server" CssClass="principal-accion principal-accion-salir"
+                            Text="Cerrar sesión" OnClick="btnLogout_Click" CausesValidation="false" />
                     </div>
                 </div>
 
-                <div>
-                    <asp:Button ID="btnLogout" runat="server" ClientIDMode="Static" Text="Cerrar Sesión" OnClick="btnLogout_Click" Style="display:none;" />
-                    <asp:Button ID="btnUsuarios" runat="server" Text="Usuarios" OnClick="btnUsuarios_Click" Permiso="Gestionar usuarios"/>
-                    <asp:Button ID="btnDigitos" runat="server" Text="Integridad del sistema" OnClick="btnDigitos_Click" Permiso="Recalcular dígitos verificadores"/>
-                    <asp:Button ID="btnEmpresas" runat="server" Text="Empresas" OnClick="btnEmpresas_Click" Permiso="Gestionar empresas"/>
-                    <asp:Button ID="btnBackupRestore" runat="server" Text="Backup / Restore" OnClick="btnBackupRestore_Click" Permiso="Realizar backup y restore"/>
-                    <asp:Button ID="btnAuditoria" runat="server" Text="Auditoría / Bitácora" OnClick="btnAuditoria_Click" Permiso="Consultar bitácora"/>
-                    <asp:Button ID="btnIdiomas" runat="server" Text="Idiomas" OnClick="btnIdiomas_Click" Permiso="Gestionar idiomas"/>
-                    <asp:Button ID="btnLocales" runat="server" Text="Locales" OnClick="btnLocales_Click" Permiso="Gestionar locales"/>
-                    <asp:Button ID="btnLayoutSectores" runat="server" Text="Layout y Sectores" OnClick="btnLayoutSectores_Click" Permiso="Gestionar layout y sectores"/>
-                    <asp:Button ID="btnProductos" runat="server" Text="Productos y Categorías" OnClick="btnProductos_Click" Permiso="Gestionar productos y categorías"/>
-                    <asp:Button ID="btnStockVentas" runat="server" Text="Stock y Ventas" OnClick="btnStockVentas_Click" Permiso="Cargar stock y ventas"/>
-                    <asp:Button ID="btnEscenarios" runat="server" Text="Escenarios de Simulación" OnClick="btnEscenarios_Click" Permiso="Gestionar escenarios"/>
-                    <asp:Button ID="btnComparacionEscenarios" runat="server" Text="Comparación de Escenarios" OnClick="btnComparacionEscenarios_Click" Permiso="Comparar escenarios"/>
-                    <asp:Button ID="btnIndicadores" runat="server" Text="Indicadores y Recomendaciones" OnClick="btnIndicadores_Click" Permiso="Visualizar indicadores"/>
-                    <asp:Button ID="btnAnalisisProductos" runat="server" Text="Análisis de Productos" OnClick="btnAnalisisProductos_Click" Permiso="Analizar ubicación de productos"/>
-                    <asp:Button ID="btnReportes" runat="server" Text="Reportes" OnClick="btnReportes_Click" Permiso="Generar reportes"/>
-                    <asp:Button ID="btnPermisos" runat="server" Text="Permisos" OnClick="btnPermisos_Click" Permiso="Gestionar permisos"/>
+                <asp:Label ID="lblMensajePrincipal" runat="server" CssClass="mensaje" Visible="false" />
+
+                <div class="principal-seccion">
+                    <h2 class="principal-seccion-titulo">Gestión de locales</h2>
+                    <div class="principal-modulos">
+                        <asp:HyperLink ID="lnkEmpresas" runat="server" NavigateUrl="~/PaginaEmpresas.aspx" CssClass="principal-modulo" Permiso="Gestionar empresas">
+                            <span class="principal-modulo-titulo">Empresas</span>
+                            <span class="principal-modulo-desc">Empresas cliente de la plataforma</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkLocales" runat="server" NavigateUrl="~/PaginaLocales.aspx" CssClass="principal-modulo" Permiso="Gestionar locales">
+                            <span class="principal-modulo-titulo">Locales</span>
+                            <span class="principal-modulo-desc">Puntos de venta de cada empresa</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkLayoutSectores" runat="server" NavigateUrl="~/PaginaLayoutSectores.aspx" CssClass="principal-modulo" Permiso="Gestionar layout y sectores">
+                            <span class="principal-modulo-titulo">Layout y sectores</span>
+                            <span class="principal-modulo-desc">Plano del local y sus zonas</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkProductos" runat="server" NavigateUrl="~/PaginaProductos.aspx" CssClass="principal-modulo" Permiso="Gestionar productos y categorías">
+                            <span class="principal-modulo-titulo">Productos y categorías</span>
+                            <span class="principal-modulo-desc">Catálogo y ubicación por sector</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkStockVentas" runat="server" NavigateUrl="~/PaginaStockVentas.aspx" CssClass="principal-modulo" Permiso="Cargar stock y ventas">
+                            <span class="principal-modulo-titulo">Stock y ventas</span>
+                            <span class="principal-modulo-desc">Carga de datos operativos</span>
+                        </asp:HyperLink>
+                    </div>
+                </div>
+
+                <div class="principal-seccion">
+                    <h2 class="principal-seccion-titulo">Simulación y análisis</h2>
+                    <div class="principal-modulos">
+                        <asp:HyperLink ID="lnkEscenarios" runat="server" NavigateUrl="~/PaginaEscenarios.aspx" CssClass="principal-modulo" Permiso="Gestionar escenarios">
+                            <span class="principal-modulo-titulo">Escenarios de simulación</span>
+                            <span class="principal-modulo-desc">Crear y editar escenarios</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkComparacionEscenarios" runat="server" NavigateUrl="~/PaginaComparacionEscenarios.aspx" CssClass="principal-modulo" Permiso="Comparar escenarios">
+                            <span class="principal-modulo-titulo">Comparación de escenarios</span>
+                            <span class="principal-modulo-desc">Enfrentar dos escenarios</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkIndicadores" runat="server" NavigateUrl="~/PaginaIndicadores.aspx" CssClass="principal-modulo" Permiso="Visualizar indicadores">
+                            <span class="principal-modulo-titulo">Indicadores y recomendaciones</span>
+                            <span class="principal-modulo-desc">Rendimiento por sector</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkAnalisisProductos" runat="server" NavigateUrl="~/PaginaAnalisisProductos.aspx" CssClass="principal-modulo" Permiso="Analizar ubicación de productos">
+                            <span class="principal-modulo-titulo">Análisis de productos</span>
+                            <span class="principal-modulo-desc">Ubicación y desempeño</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkReportes" runat="server" NavigateUrl="~/PaginaReportes.aspx" CssClass="principal-modulo" Permiso="Generar reportes">
+                            <span class="principal-modulo-titulo">Reportes</span>
+                            <span class="principal-modulo-desc">Exportar resultados en PDF</span>
+                        </asp:HyperLink>
+                    </div>
+                </div>
+
+                <div class="principal-seccion">
+                    <h2 class="principal-seccion-titulo">Administración y seguridad</h2>
+                    <div class="principal-modulos">
+                        <asp:HyperLink ID="lnkUsuarios" runat="server" NavigateUrl="~/PaginaUsuarios.aspx" CssClass="principal-modulo" Permiso="Gestionar usuarios">
+                            <span class="principal-modulo-titulo">Usuarios</span>
+                            <span class="principal-modulo-desc">Altas, modificaciones y desbloqueos</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkPermisos" runat="server" NavigateUrl="~/PaginaPermisos.aspx" CssClass="principal-modulo" Permiso="Gestionar permisos">
+                            <span class="principal-modulo-titulo">Permisos</span>
+                            <span class="principal-modulo-desc">Perfiles y familias de permisos</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkAuditoria" runat="server" NavigateUrl="~/PaginaAuditorias.aspx" CssClass="principal-modulo" Permiso="Consultar bitácora">
+                            <span class="principal-modulo-titulo">Auditoría / Bitácora</span>
+                            <span class="principal-modulo-desc">Eventos registrados en el sistema</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkDigitos" runat="server" NavigateUrl="~/PaginaDigitosVerificadores.aspx" CssClass="principal-modulo" Permiso="Recalcular dígitos verificadores">
+                            <span class="principal-modulo-titulo">Integridad del sistema</span>
+                            <span class="principal-modulo-desc">Dígitos verificadores</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkBackupRestore" runat="server" NavigateUrl="~/PaginaBackupRestore.aspx" CssClass="principal-modulo" Permiso="Realizar backup y restore">
+                            <span class="principal-modulo-titulo">Backup / Restore</span>
+                            <span class="principal-modulo-desc">Copias de seguridad de la base</span>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="lnkIdiomas" runat="server" NavigateUrl="~/PaginaIdiomas.aspx" CssClass="principal-modulo" Permiso="Gestionar idiomas">
+                            <span class="principal-modulo-titulo">Idiomas</span>
+                            <span class="principal-modulo-desc">Idiomas y traducciones</span>
+                        </asp:HyperLink>
+                    </div>
                 </div>
 
             </div>
         </div>
 
-        <asp:Panel ID="pnlCambiarContrasenia" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display:none;">
-            <div class="modal-caja">
+        <asp:Panel ID="pnlCambiarContrasenia" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+            <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="tituloCambiarContrasenia">
                 <div class="modal-encabezado">
-                    <h3>Cambiar Contraseña</h3>
-                    <span class="modal-cerrar" onclick="cerrarModal('pnlCambiarContrasenia')">&times;</span>
+                    <h3 id="tituloCambiarContrasenia">Cambiar contraseña</h3>
+                    <button type="button" class="modal-cerrar principal-modal-cerrar" aria-label="Cerrar"
+                        onclick="cerrarModal('pnlCambiarContrasenia')">
+                        &times;</button>
                 </div>
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Contraseña actual *" AssociatedControlID="tbContraseniaActual" />

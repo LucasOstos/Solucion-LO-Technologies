@@ -5,22 +5,36 @@
 .perm-columnas {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 36px;
+    gap: 28px;
+    align-items: stretch;
 }
 
-.perm-panel h2 {
-    margin: 0 0 16px 0;
-    font-size: 16px;
+.perm-panel {
+    display: flex;
+    flex-direction: column;
 }
 
-.perm-fila {
+    .perm-panel h2 {
+        margin: 0 0 16px 0;
+        font-size: 16px;
+    }
+
+.perm-grilla {
+    flex: 1;
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1.1fr;
-    gap: 20px;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    column-gap: 20px;
+    row-gap: 16px;
 }
 
-.perm-bloque label {
+.perm-bloque {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.perm-titulo {
     display: block;
     font-size: 13px;
     font-weight: 600;
@@ -28,91 +42,146 @@
     margin-bottom: 6px;
 }
 
-.perm-lista-checks {
+.perm-ayuda {
     display: block;
-    border: 1px solid #dfe3ea;
-    border-radius: 8px;
-    padding: 10px 12px;
-    background-color: #ffffff;
-    font-size: 13px;
-    min-height: 140px;
-    margin-bottom: 16px;
+    font-size: 12px;
+    color: #7c8697;
+    margin-top: 6px;
 }
 
-    .perm-lista-checks table td {
-        white-space: nowrap;
-        padding: 3px 0;
-    }
-
-    .perm-lista-checks input[type="checkbox"] {
-        margin-right: 8px;
-        vertical-align: middle;
-    }
-
-    .perm-lista-checks label {
-        display: inline;
-        font-weight: 400;
-        margin-bottom: 0;
-        vertical-align: middle;
-        cursor: pointer;
-    }
-
-.perm-lista-caja {
-    width: 100%;
-    min-height: 140px;
+.perm-lista-checks {
+    list-style: none;
+    margin: 0 0 16px 0;
+    padding: 8px 10px;
     border: 1px solid #dfe3ea;
     border-radius: 8px;
-    padding: 8px;
-    font-size: 13px;
     background-color: #ffffff;
+    font-size: 13px;
+    box-sizing: border-box;
 }
 
-.perm-bloque-botones {
+.perm-bloque > .perm-lista-checks:last-child {
+    margin-bottom: 0;
+}
+
+.perm-lista-checks li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    column-gap: 8px;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+    .perm-lista-checks li:hover {
+        background-color: #f4f6fa;
+    }
+
+.perm-lista-checks input[type="checkbox"] {
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
+
+.perm-lista-checks label {
+    display: inline;
+    font-weight: 400;
+    color: #2a3448;
+    margin: 0;
+    line-height: 1.35;
+    cursor: pointer;
+}
+
+.perm-caja-asignado {
+    flex: 1;
+    min-height: 180px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    background-color: #fafbfd;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+    .perm-caja-asignado .perm-lista-checks {
+        border: none;
+        background: transparent;
+        margin: 0;
+    }
+
+.perm-lista-asignado li {
+    border-bottom: 1px solid #eef1f6;
+    border-radius: 0;
+    padding: 7px 6px;
+}
+
+    .perm-lista-asignado li:last-child {
+        border-bottom: none;
+    }
+
+.perm-botones {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     gap: 10px;
-    padding-top: 26px;
 }
 
-    .perm-bloque-botones .boton-accion {
+    .perm-botones .boton-accion {
         width: 100%;
-        min-height: 64px;
-        padding: 10px;
+        min-height: 46px;
+        padding: 8px 10px;
         font-size: 13px;
         font-weight: 700;
         border-radius: 8px;
         border: 2px solid transparent;
+        cursor: pointer;
     }
 
-    .perm-bloque-botones .boton-primario {
+    .perm-botones .boton-primario {
         background-color: #2757d6;
         border-color: #1d47b8;
         color: #ffffff;
     }
 
-        .perm-bloque-botones .boton-primario:hover {
+        .perm-botones .boton-primario:hover {
             background-color: #1d47b8;
         }
 
-    .perm-bloque-botones .boton-secundario {
+    .perm-botones .boton-secundario {
         background-color: #ffffff;
-        border-color: #dfe3ea;
+        border-color: #c9d0dc;
         color: #2a3448;
     }
 
-    .perm-bloque-botones .boton-peligro {
+        .perm-botones .boton-secundario:hover {
+            background-color: #f4f6fa;
+        }
+
+    .perm-botones .boton-peligro {
         background-color: #ffffff;
         border-color: #f3b9b4;
         color: #b3261e;
+    }
+
+        .perm-botones .boton-peligro:hover {
+            background-color: #fdf1f0;
+        }
+
+    .perm-botones .boton-accion:focus-visible {
+        outline: 3px solid rgba(47, 107, 255, 0.35);
+        outline-offset: 2px;
     }
 
 @media (max-width: 1100px) {
     .perm-columnas {
         grid-template-columns: 1fr;
     }
+}
 
-    .perm-fila {
+@media (max-width: 640px) {
+    .perm-grilla {
         grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    .perm-caja-asignado {
+        min-height: 140px;
     }
 }
