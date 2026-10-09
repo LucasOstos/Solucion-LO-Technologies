@@ -41,7 +41,7 @@
                 <asp:Label ID="lblMensajePrincipal" runat="server" CssClass="mensaje" Visible="false" />
 
                 <div class="principal-seccion">
-                    <h2 class="principal-seccion-titulo">Gestión de locales</h2>
+                    <h2 class="principal-seccion-titulo">Locales y empresa</h2>
                     <div class="principal-modulos">
                         <asp:HyperLink ID="lnkEmpresas" runat="server" NavigateUrl="~/PaginaEmpresas.aspx" CssClass="principal-modulo" Permiso="Gestionar empresas">
                             <span class="principal-modulo-titulo">Empresas</span>
