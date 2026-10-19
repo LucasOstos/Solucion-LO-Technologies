@@ -427,3 +427,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Ignore user file
+**/App_Data/SuperUsuario.json
