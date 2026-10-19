@@ -14,6 +14,7 @@ namespace BLL
         private SectorBLL sectorBLL = new SectorBLL();
         public List<ProductoAnalisisListado> DetectarOportunidades(int pCodigoLocal, string pPeriodoDesde)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             List<ProductoMetrica> metricas = analisisDAL.ObtenerMetricasPorLocal(pCodigoLocal, pPeriodoDesde);
             List<SectorListado> sectores = sectorBLL.ObtenerSectoresPorLocal(pCodigoLocal);
             var resultado = new List<ProductoAnalisisListado>();

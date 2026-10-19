@@ -41,5 +41,22 @@ namespace BE
         public const string ConsultarBitacora = "Consultar bitácora";
         public const string GestionarIdiomas = "Gestionar idiomas";
         public const string GestionarPermisos = "Gestionar permisos";
+
+        public static readonly string[] Globales =
+        {
+            GestionarEmpresas, RealizarBackupRestore, RecalcularDigitos, ConsultarBitacora, GestionarIdiomas, GestionarPermisos
+        };
+
+        public static bool EsGlobal(string pNombrePermiso)
+        {
+            return Globales.Any(g => string.Equals(g, pNombrePermiso, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public static List<string> Todos()
+        {
+            return typeof(PermisoNombres).GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                                         .Where(f => f.IsLiteral && f.FieldType == typeof(string))
+                                         .Select(f => (string)f.GetRawConstantValue()).ToList();
+        }
     }
 }

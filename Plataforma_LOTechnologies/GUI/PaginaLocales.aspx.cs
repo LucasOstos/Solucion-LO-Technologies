@@ -40,6 +40,9 @@ public partial class PaginaLocales : PaginaSegura
         {
             ddlEmpresa.Items.Add(new ListItem(emp.RazonSocial, emp.CodigoEmpresa.ToString()));
         }
+        bool esSuperUsuario = Sesion.Instancia.EsSuperUsuario;
+        ddlFiltroEmpresa.Visible = esSuperUsuario;
+        ddlEmpresa.Enabled = esSuperUsuario;
     }
     private void CargarLocales()
     {

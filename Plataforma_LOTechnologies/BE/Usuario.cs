@@ -36,6 +36,7 @@ namespace BE
         public DateTime ultimoAcceso { get; set; }
         public int Idioma {  get; set; }
         public int CodigoEmpresa { get; set; }
+        public bool EsSuperUsuario { get; set; }
         public Usuario() { }
         public Usuario(int pDNI, string pNombre, string pApellido, string pEmail, string pContrasenia, Perfil pPerfil, bool pEstadoActivo, bool pEstadoBloqueado, int pIntentosAcceso, DateTime pUltimoAcceso, int pIdioma, int pCodigoEmpresa)
         {

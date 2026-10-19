@@ -11,11 +11,12 @@ namespace DAL
     public class ProductoDAL
     {
         private AccesoDatos acceso = new AccesoDatos();
-        public List<ProductoListado> ObtenerProductosListado(string pBusqueda, int? pCodigoSector)
+        public List<ProductoListado> ObtenerProductosListado(int pCodigoEmpresa, string pBusqueda, int? pCodigoSector)
         {
             List<ProductoListado> productos = new List<ProductoListado>();
             string query = @"SELECT p.CodigoProducto, p.NumeroSerie, p.Nombre, p.Precio, p.Estado, c.Nombre AS NombreCategoria, s.Nombre AS NombreSector FROM Producto p
-                             INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria LEFT JOIN Sector s ON p.CodigoSector = s.CodigoSector WHERE (@Busqueda = '' OR p.Nombre LIKE @BusquedaLike)
+                             INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria LEFT JOIN Sector s ON p.CodigoSector = s.CodigoSector
+                             WHERE p.CodigoEmpresa = @CodigoEmpresa AND (@Busqueda = '' OR p.Nombre LIKE @BusquedaLike)
                              AND (@CodigoSector IS NULL OR p.CodigoSector = @CodigoSector) ORDER BY p.Nombre";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -24,6 +25,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Busqueda", busqueda);
                 CM.Parameters.AddWithValue("@BusquedaLike", "%" + busqueda + "%");
                 CM.Parameters.AddWithValue("@CodigoSector", (object)pCodigoSector ?? DBNull.Value);
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pCodigoEmpresa);
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {
@@ -68,19 +70,21 @@ namespace DAL
             }
             return producto;
         }
-        public int ObtenerProximoNumeroSerie()
+        public int ObtenerProximoNumeroSerie(int pCodigoEmpresa)
         {
-            string query = "SELECT ISNULL(MAX(NumeroSerie), 0) + 1 FROM Producto";
+            string query = "SELECT ISNULL(MAX(NumeroSerie), 0) + 1 FROM Producto WHERE CodigoEmpresa = @CodigoEmpresa";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pCodigoEmpresa);
                 CO.Open();
                 return (int)CM.ExecuteScalar();
             }
         }
         public int AgregarProducto(ProductoBE pProducto)
         {
-            string query = @"INSERT INTO Producto (CodigoCategoria, CodigoSector, NumeroSerie, Nombre, Descripcion, Precio, Estado) VALUES (@CodigoCategoria, @CodigoSector, @NumeroSerie, @Nombre, @Descripcion, @Precio, @Estado);
+            string query = @"INSERT INTO Producto (CodigoCategoria, CodigoSector, NumeroSerie, Nombre, Descripcion, Precio, Estado, CodigoEmpresa)
+                             VALUES (@CodigoCategoria, @CodigoSector, @NumeroSerie, @Nombre, @Descripcion, @Precio, @Estado, @CodigoEmpresa);
                              SELECT CAST(SCOPE_IDENTITY() AS INT);";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -92,6 +96,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Descripcion", (object)pProducto.Descripcion ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Precio", (object)pProducto.Precio ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Estado", pProducto.Estado);
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pProducto.CodigoEmpresa);
                 CO.Open();
                 return (int)CM.ExecuteScalar();
             }

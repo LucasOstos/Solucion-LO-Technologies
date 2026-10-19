@@ -44,7 +44,7 @@ public partial class PaginaStockVentas : PaginaSegura
     }
     private void CargarDropdownProductos()
     {
-        List<ProductoListado> productos = productoBLL.ObtenerProductosListado("", null);
+        List<ProductoListado> productos = productoBLL.ObtenerProductosListado(CodigoLocalActual, "", null);
         ddlProductoCarga.Items.Clear();
         foreach (ProductoListado producto in productos)
         {

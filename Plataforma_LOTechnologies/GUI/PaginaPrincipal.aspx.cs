@@ -24,6 +24,7 @@ public partial class PaginaPrincipal : PaginaSegura
 
         litNombreUsuario.Text = $"{usuario.Nombre} {usuario.Apellido}";
         litRolUsuario.Text = usuario.Perfil.Nombre;
+        btnAbrirCambiarContrasenia.Visible = !usuario.EsSuperUsuario;
         litInicialesUsuario.Text = ObtenerIniciales(usuario.Nombre, usuario.Apellido);
     }
     private string ObtenerIniciales(string nombre, string apellido)

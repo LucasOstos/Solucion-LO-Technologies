@@ -11,10 +11,10 @@ namespace DAL
     public class CategoriaDAL
     {
         private AccesoDatos acceso = new AccesoDatos();
-        public List<CategoriaBE> ObtenerCategorias()
+        public List<CategoriaBE> ObtenerCategorias(int pCodigoEmpresa)
         {
             List<CategoriaBE> categorias = new List<CategoriaBE>();
-            string query = "SELECT CodigoCategoria, Nombre, Descripcion, Estado FROM Categoria WHERE Estado = 1 ORDER BY Nombre";
+            string query = "SELECT CodigoCategoria, Nombre, Descripcion, Estado FROM Categoria WHERE Estado = 1 AND CodigoEmpresa = @CodigoEmpresa ORDER BY Nombre";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -53,13 +53,14 @@ namespace DAL
         }
         public int AgregarCategoria(CategoriaBE pCategoria)
         {
-            string query = @"INSERT INTO Categoria (Nombre, Descripcion, Estado) VALUES (@Nombre, @Descripcion, @Estado); SELECT CAST(SCOPE_IDENTITY() AS INT);";
+            string query = @"INSERT INTO Categoria (Nombre, Descripcion, Estado, CodigoEmpresa) VALUES (@Nombre, @Descripcion, @Estado, @CodigoEmpresa); SELECT CAST(SCOPE_IDENTITY() AS INT);";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
                 CM.Parameters.AddWithValue("@Nombre", pCategoria.Nombre);
                 CM.Parameters.AddWithValue("@Descripcion", (object)pCategoria.Descripcion ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Estado", pCategoria.Estado);
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pCategoria.CodigoEmpresa);
                 CO.Open();
                 return (int)CM.ExecuteScalar();
             }

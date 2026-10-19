@@ -18,6 +18,7 @@ namespace BLL
         private const int STOCK_CRITICO_MINIMO = 5;
         public List<RecomendacionBE> GenerarRecomendaciones(int pCodigoLocal, List<IndicadorSectorListado> pIndicadores, List<StockListado> pStockCritico)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             var recomendaciones = new List<RecomendacionBE>();
             foreach (var ind in pIndicadores)
             {
@@ -73,6 +74,7 @@ namespace BLL
         {
             foreach (var rec in pRecomendaciones)
             {
+                ControlAcceso.Validar(EntidadEmpresa.Local, rec.CodigoLocal);
                 int codigoNuevo = recomendacionDAL.AgregarRecomendacion(rec);
                 digitos.ActualizarDigitoFila("Recomendacion", codigoNuevo);
             }

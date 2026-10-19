@@ -15,10 +15,12 @@ namespace BLL
         private DigitoVerificador digitos = new DigitoVerificador();
         public List<IndicadorSectorListado> CalcularIndicadoresPorSector(int pCodigoLocal, string pPeriodoDesde)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             return indicadorDAL.CalcularIndicadoresPorSector(pCodigoLocal, pPeriodoDesde);
         }
         public void GuardarIndicadores(int pCodigoLocal, string pPeriodo, List<IndicadorSectorListado> pIndicadores)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             foreach (var ind in pIndicadores)
             {
                 GuardarUnIndicador(pCodigoLocal, ind.CodigoSector, pPeriodo, "Ventas", ind.Ventas, "$");

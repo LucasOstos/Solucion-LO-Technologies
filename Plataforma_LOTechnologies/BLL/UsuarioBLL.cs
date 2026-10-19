@@ -96,6 +96,11 @@ namespace BLL
         }
         public void CambiarContrasenia(int pDNI, string pContraseniaNuevaPlano)
         {
+            if (Sesion.Instancia.EsSuperUsuario)
+            {
+                throw new InvalidOperationException("No es posible cambiar la contraseña");
+            }
+            ControlAcceso.Validar(EntidadEmpresa.Usuario, pDNI);
             string contraseniaHasheada = Encriptado.Instancia.EncriptarContraseña(pContraseniaNuevaPlano);
             accesoDAL.CambiarContrasenia(pDNI, contraseniaHasheada);
             digitos.ActualizarDigitoFila("Usuario", pDNI);
@@ -115,6 +120,7 @@ namespace BLL
         }
         public Usuario ObtenerUsuarioPorDNI(int pDNI)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Usuario, pDNI);
             return accesoDAL.ObtenerUsuarioPorDNI(pDNI);
         }
         public List<UsuarioListado> ObtenerUsuariosListado(string pBusqueda, int? pCodigoPerfil, int? pCodigoEmpresa)
@@ -127,9 +133,9 @@ namespace BLL
             {
                 return ResultadoGuardarUsuario.DniYaRegistrado;
             }
+            AplicarAlcance(pUsuario);
             pUsuario.Contrasenia = Encriptado.Instancia.EncriptarContraseña(pPasswordPlano);
             pUsuario.Idioma = 1;
-
             accesoDAL.AgregarUsuario(pUsuario);
             digitos.ActualizarDigitoFila("Usuario", pUsuario.DNI);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Registrar usuario", "Usuarios", 1);
@@ -137,6 +143,8 @@ namespace BLL
         }
         public ResultadoGuardarUsuario ModificarUsuario(Usuario pUsuario)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Usuario, pUsuario.DNI);
+            AplicarAlcance(pUsuario);
             accesoDAL.ModificarUsuario(pUsuario);
             digitos.ActualizarDigitoFila("Usuario", pUsuario.DNI);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Modificar usuario", "Usuarios", 1);
@@ -144,6 +152,7 @@ namespace BLL
         }
         public void CambiarEstadoActivo(int dni, bool nuevoEstado)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Usuario, dni);
             accesoDAL.CambiarEstadoActivo(dni, nuevoEstado);
             digitos.ActualizarDigitoFila("Usuario", dni);
             string accion = nuevoEstado ? "Activar usuario" : "Desactivar usuario";
@@ -151,12 +160,30 @@ namespace BLL
         }
         public void DesbloquearUsuario(int pDNI)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Usuario, pDNI);
             Usuario usuario = accesoDAL.ObtenerUsuarioPorDNI(pDNI);
             accesoDAL.DesbloquearSinContrasenia(pDNI);
             digitos.ActualizarDigitoFila("Usuario", pDNI);
             Guid token = tokenDAL.GenerarToken(pDNI, 60);
             GmailServicio.Instancia.EnviarMailRecuperacion(usuario.Email, $"{usuario.Nombre} {usuario.Apellido}", token);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Desbloquear usuario", "Usuarios", 1);
+        }
+        private void AplicarAlcance(Usuario pUsuario)
+        {
+            if (ControlAcceso.EmpresaAlcance != null)
+            {
+                pUsuario.CodigoEmpresa = ControlAcceso.EmpresaAlcance.Value;
+            }
+            if (pUsuario.CodigoEmpresa <= 0)
+            {
+                throw new InvalidOperationException("El usuario tiene que pertenecer a una empresa.");
+            }
+            PermisoBLL permisoBLL = new PermisoBLL();
+            Perfil perfil = permisoBLL.ObtenerPerfil(pUsuario.Perfil.Codigo);
+            if (!permisoBLL.EsPerfilAsignable(perfil))
+            {
+                throw new UnauthorizedAccessException("No podés asignar un perfil con permisos que no tenés.");
+            }
         }
     }
 }

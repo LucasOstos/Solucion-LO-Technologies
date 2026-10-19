@@ -30,11 +30,11 @@ public partial class PaginaLayoutSectores : PaginaSegura
         {
             CargarDropdownLocales();
             int codigoLocalQuery;
-            if (int.TryParse(Request.QueryString["local"], out codigoLocalQuery))
+            if (int.TryParse(Request.QueryString["local"], out codigoLocalQuery) && ddlLocal.Items.FindByValue(codigoLocalQuery.ToString()) != null)
             {
                 ddlLocal.SelectedValue = codigoLocalQuery.ToString();
             }
-            CodigoLocalActual = int.Parse(ddlLocal.SelectedValue);
+            CodigoLocalActual = string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue);
             CargarLayouts();
             CargarSectores();
         }

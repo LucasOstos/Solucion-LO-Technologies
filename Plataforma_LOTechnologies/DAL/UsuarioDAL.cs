@@ -234,7 +234,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@estadoActivo", pUsuario.estadoActivo);
                 CM.Parameters.AddWithValue("@ultimoAcceso", DateTime.Now);
                 CM.Parameters.AddWithValue("@Idioma", 1);
-                CM.Parameters.AddWithValue("@CodigoEmpresa", (object)pUsuario.CodigoEmpresa ?? DBNull.Value);
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pUsuario.CodigoEmpresa > 0 ? (object)pUsuario.CodigoEmpresa : DBNull.Value);
                 CO.Open();
                 CM.ExecuteNonQuery();
             }
@@ -252,7 +252,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Email", pUsuario.Email);
                 CM.Parameters.AddWithValue("@Rol", pUsuario.Perfil.Codigo);
                 CM.Parameters.AddWithValue("@estadoActivo", pUsuario.estadoActivo);
-                CM.Parameters.AddWithValue("@CodigoEmpresa", (object)pUsuario.CodigoEmpresa ?? DBNull.Value);
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pUsuario.CodigoEmpresa > 0 ? (object)pUsuario.CodigoEmpresa : DBNull.Value);
                 CO.Open();
                 CM.ExecuteNonQuery();
             }

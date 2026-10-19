@@ -37,6 +37,19 @@ namespace SERVICIO.Logica
                 return SB.ToString();
             }
         }
+        public string FirmarHMAC(string pTexto)
+        {
+            using (HMACSHA256 hmac = new HMACSHA256(clave))
+            {
+                byte[] bytes = hmac.ComputeHash(Encoding.UTF8.GetBytes(pTexto));
+                StringBuilder SB = new StringBuilder();
+                for (int x = 0; x < bytes.Length; x++)
+                {
+                    SB.Append(bytes[x].ToString("x2"));
+                }
+                return SB.ToString();
+            }
+        }
         public string EncriptacionReversible(string pTexto) //AES
         {
             using (Aes aes = Aes.Create())

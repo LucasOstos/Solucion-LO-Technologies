@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="principal-hero-acciones">
-                        <button type="button" class="principal-accion" onclick="abrirModal('pnlCambiarContrasenia')">
+                        <button type="button" id="btnAbrirCambiarContrasenia" runat="server" class="principal-accion" onclick="abrirModal('pnlCambiarContrasenia')">
                             <span aria-hidden="true">&#128273;</span> Cambiar contraseña
                         </button>
                         <asp:Button ID="btnLogout" runat="server" CssClass="principal-accion principal-accion-salir"

@@ -44,6 +44,7 @@
     <Compile Include="AnalisisProductoBLL.cs" />
     <Compile Include="CategoriaBLL.cs" />
     <Compile Include="ComparacionBLL.cs" />
+    <Compile Include="ControlAcceso.cs" />
     <Compile Include="EmpresaBLL.cs" />
     <Compile Include="EscenarioBLL.cs" />
     <Compile Include="IndicadorBLL.cs" />

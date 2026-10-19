@@ -59,7 +59,7 @@ public partial class PaginaProductos : PaginaSegura
     }
     private void CargarDropdownCategorias()
     {
-        List<CategoriaBE> categorias = categoriaBLL.ObtenerCategorias();
+        List<CategoriaBE> categorias = categoriaBLL.ObtenerCategorias(CodigoLocalActual);
         ddlCategoriaProducto.Items.Clear();
         foreach (CategoriaBE categoria in categorias)
         {
@@ -70,7 +70,7 @@ public partial class PaginaProductos : PaginaSegura
     {
         string busqueda = tbBuscar.Text.Trim();
         int? codigoSector = string.IsNullOrEmpty(ddlFiltroSector.SelectedValue) ? (int?)null : int.Parse(ddlFiltroSector.SelectedValue);
-        List<ProductoListado> productos = productoBLL.ObtenerProductosListado(busqueda, codigoSector);
+        List<ProductoListado> productos = productoBLL.ObtenerProductosListado(CodigoLocalActual, busqueda, codigoSector);
         if (productos.Count == 0)
         {
             rptProductos.Visible = false;
@@ -108,7 +108,7 @@ public partial class PaginaProductos : PaginaSegura
     }
     private void CargarCategorias()
     {
-        List<CategoriaBE> categorias = categoriaBLL.ObtenerCategorias();
+        List<CategoriaBE> categorias = categoriaBLL.ObtenerCategorias(CodigoLocalActual);
         if (categorias.Count == 0)
         {
             rptCategorias.Visible = false;
@@ -132,10 +132,15 @@ public partial class PaginaProductos : PaginaSegura
 
     protected void btnNuevo_Click(object sender, EventArgs e)
     {
+        if (CodigoLocalActual == 0)
+        {
+            MostrarMensaje("Primero registrá un local para poder cargar productos.", esExito: false);
+            return;
+        }
         hfCodigoProducto.Value = "";
         litTituloModalProducto.Text = "Nuevo Producto";
         btnGuardarProducto.Text = "Guardar";
-        int proximoNumero = productoBLL.ObtenerProximoNumeroSerie();
+        int proximoNumero = productoBLL.ObtenerProximoNumeroSerie(CodigoLocalActual);
         hfNumeroSerie.Value = proximoNumero.ToString();
         tbCodigoInterno.Text = $"PROD-{proximoNumero:D3}";
         tbNombreProducto.Text = "";
@@ -172,7 +177,7 @@ public partial class PaginaProductos : PaginaSegura
         }
         else
         {
-            productoBLL.CrearProducto(producto);
+            productoBLL.CrearProducto(producto, CodigoLocalActual);
         }
         pnlModalProducto.Style["display"] = "none";
         MostrarMensaje(esEdicion ? "Producto modificado correctamente." : "Producto creado correctamente.", esExito: true);
@@ -196,6 +201,11 @@ public partial class PaginaProductos : PaginaSegura
     }
     protected void btnNuevaCategoria_Click(object sender, EventArgs e)
     {
+        if (CodigoLocalActual == 0)
+        {
+            MostrarMensaje("Primero registrá un local para poder cargar categorías.", esExito: false);
+            return;
+        }
         hfCodigoCategoria.Value = "";
         litTituloModalCategoria.Text = "Nueva Categoría";
         tbNombreCategoria.Text = "";
@@ -219,7 +229,7 @@ public partial class PaginaProductos : PaginaSegura
         }
         else
         {
-            categoriaBLL.CrearCategoria(categoria);
+            categoriaBLL.CrearCategoria(categoria, CodigoLocalActual);
         }
         pnlModalCategoria.Style["display"] = "none";
         MostrarMensaje(esEdicion ? "Categoría modificada correctamente." : "Categoría creada correctamente.", esExito: true);
@@ -243,6 +253,8 @@ public partial class PaginaProductos : PaginaSegura
     protected void ddlLocal_SelectedIndexChanged(object sender, EventArgs e)
     {
         CargarDropdownSectores();
+        CargarDropdownCategorias();
+        CargarCategorias();
         CargarProductos();
     }
 }

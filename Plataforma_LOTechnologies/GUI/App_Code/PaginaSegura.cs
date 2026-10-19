@@ -43,6 +43,18 @@ public class PaginaSegura : Page
         ClientScript.RegisterClientScriptInclude(typeof(PaginaSegura), "Mensajes", ResolveUrl("~/JS/Mensajes.js"));
         base.OnPreRender(e);
     }
+    protected override void OnError(EventArgs e)
+    {
+        Exception error = Server.GetLastError();
+        if (error != null && error.GetBaseException() is UnauthorizedAccessException)
+        {
+            Server.ClearError();
+            Response.Redirect("~/PaginaPrincipal.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
+            return;
+        }
+        base.OnError(e);
+    }
     private void AplicarPermisosAControles(Control pRaiz)
     {
         foreach (Control control in pRaiz.Controls)

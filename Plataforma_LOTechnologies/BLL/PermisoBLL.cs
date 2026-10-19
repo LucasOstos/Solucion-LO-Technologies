@@ -29,8 +29,18 @@ namespace BLL
         {
             return ObtenerEstructura().Perfiles.FirstOrDefault(p => p.Codigo == pCodigoPerfil);
         }
+        public bool EsPerfilAsignable(Perfil pPerfil)
+        {
+            if (pPerfil == null || !Sesion.Instancia.IsLogueado()) return false;
+            return pPerfil.ObtenerPermisosSimples().Where(p => !PermisoNombres.EsGlobal(p.Nombre)).All(p => Sesion.Instancia.TienePermiso(p.Nombre));
+        }
+        public List<Perfil> ObtenerPerfilesAsignables()
+        {
+            return ObtenerEstructura().Perfiles.Where(EsPerfilAsignable).ToList();
+        }
         public int CrearPerfil(string pNombre, List<int> pCodPermisos, List<int> pCodFamilias)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             string nombre = ValidarNombre(pNombre, estructura.Perfiles.Select(p => p.Nombre), "un perfil");
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
@@ -47,6 +57,7 @@ namespace BLL
         }
         public void AgregarAPerfil(int pCodPerfil, List<int> pCodPermisos, List<int> pCodFamilias)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             Perfil perfil = BuscarPerfil(estructura, pCodPerfil);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
@@ -58,6 +69,7 @@ namespace BLL
         }
         public void QuitarDePerfil(int pCodPerfil, List<int> pCodPermisos, List<int> pCodFamilias)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             Perfil perfil = BuscarPerfil(estructura, pCodPerfil);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
@@ -70,6 +82,7 @@ namespace BLL
         }
         public void EliminarPerfil(int pCodPerfil)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             Perfil perfil = BuscarPerfil(estructura, pCodPerfil);
             accesoDAL.EliminarPerfil(perfil.Codigo);
@@ -78,6 +91,7 @@ namespace BLL
 
         public int CrearFamilia(string pNombre, List<int> pCodPermisos, List<int> pCodFamilias)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             string nombre = ValidarNombre(pNombre, estructura.Familias.Select(f => f.Nombre), "una familia");
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
@@ -90,6 +104,7 @@ namespace BLL
         }
         public void AgregarAFamilia(int pCodFamilia, List<int> pCodPermisos, List<int> pCodFamilias)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             Familia familia = BuscarFamilia(estructura, pCodFamilia);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
@@ -101,6 +116,7 @@ namespace BLL
         }
         public void QuitarDeFamilia(int pCodFamilia, List<int> pCodPermisos, List<int> pCodFamilias)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             Familia familia = BuscarFamilia(estructura, pCodFamilia);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
@@ -113,6 +129,7 @@ namespace BLL
         }
         public void EliminarFamilia(int pCodFamilia)
         {
+            ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             Familia familia = BuscarFamilia(estructura, pCodFamilia);
             List<string> usadaPor = estructura.Perfiles.Where(p => p.ObtenerHijos().Any(h => h.EsMismo(familia))).Select(p => $"perfil '{p.Nombre}'")

@@ -248,7 +248,7 @@ public partial class PaginaReportes : PaginaSegura
         tabla.AddCell("Código"); tabla.AddCell("Producto"); tabla.AddCell("Categoría"); tabla.AddCell("Sector"); tabla.AddCell("Precio");
         foreach (var sector in sectores)
         {
-            List<ProductoListado> productos = productoBLL.ObtenerProductosListado("", sector.CodigoSector);
+            List<ProductoListado> productos = productoBLL.ObtenerProductosListado(CodigoLocalActual, "", sector.CodigoSector);
             foreach (var prod in productos)
             {
                 tabla.AddCell(prod.CodigoInterno);

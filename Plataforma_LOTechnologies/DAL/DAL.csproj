@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="AlcanceDAL.cs" />
     <Compile Include="AnalisisProductoDAL.cs" />
     <Compile Include="BackupRestoreDAL.cs" />
     <Compile Include="CategoriaDAL.cs" />

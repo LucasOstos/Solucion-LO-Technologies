@@ -34,7 +34,8 @@ public partial class PaginaUsuarios : PaginaSegura
     }
     private void CargarPerfiles()
     {
-        List<Perfil> perfiles = permisoBLL.ObtenerEstructura().Perfiles;
+        List<Perfil> perfiles = permisoBLL.ObtenerPerfilesAsignables();
+        //List<Perfil> perfiles = permisoBLL.ObtenerEstructura().Perfiles;
         ddlFiltroRol.Items.Clear();
         ddlFiltroRol.Items.Add(new ListItem("Todos los perfiles", ""));
         ddlRol.Items.Clear();
@@ -47,7 +48,6 @@ public partial class PaginaUsuarios : PaginaSegura
     private void CargarFiltroEmpresas()
     {
         List<EmpresaBE> empresas = empresaBLL.ObtenerEmpresas();
-
         ddlFiltroEmpresa.Items.Clear();
         ddlFiltroEmpresa.Items.Add(new ListItem("Todas las empresas", ""));
         foreach (EmpresaBE emp in empresas)
@@ -60,6 +60,10 @@ public partial class PaginaUsuarios : PaginaSegura
         {
             ddlEmpresa.Items.Add(new ListItem(emp.RazonSocial, emp.CodigoEmpresa.ToString()));
         }
+
+        bool esSuperUsuario = Sesion.Instancia.EsSuperUsuario;
+        ddlFiltroEmpresa.Visible = esSuperUsuario;
+        ddlEmpresa.Enabled = esSuperUsuario;
     }
     private void CargarUsuarios()
     {
@@ -129,10 +133,18 @@ public partial class PaginaUsuarios : PaginaSegura
         tbApellido.Text = usuario.Apellido;
         tbEmail.Text = usuario.Email;
         ddlRol.SelectedValue = usuario.Perfil.Codigo.ToString();
-        if (usuario.CodigoEmpresa > 0)
+        if (ddlRol.Items.FindByValue(usuario.Perfil.Codigo.ToString()) != null)
+        {
+            ddlRol.SelectedValue = usuario.Perfil.Codigo.ToString();
+        }
+        if (ddlEmpresa.Items.FindByValue(usuario.CodigoEmpresa.ToString()) != null)
         {
             ddlEmpresa.SelectedValue = usuario.CodigoEmpresa.ToString();
         }
+        /*if (usuario.CodigoEmpresa > 0)
+        {
+            ddlEmpresa.SelectedValue = usuario.CodigoEmpresa.ToString();
+        }*/
         chkActivo.Checked = usuario.estadoActivo;
         grupoContrasenia.Visible = false;
         rfvContrasenia.Enabled = false;

@@ -21,6 +21,8 @@ namespace BLL
         private DigitoVerificador digitos = new DigitoVerificador();
         public int GuardarComparacion(ComparacionBE pComparacion)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Escenario, pComparacion.CodigoEscenarioA);
+            ControlAcceso.Validar(EntidadEmpresa.Escenario, pComparacion.CodigoEscenarioB);
             int codigoNuevo = comparacionDAL.AgregarComparacion(pComparacion);
             digitos.ActualizarDigitoFila("Comparacion", codigoNuevo);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Comparar escenarios", "Gestión simulación", 2);

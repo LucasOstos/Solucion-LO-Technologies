@@ -53,12 +53,12 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         {
             CargarDropdownLocales();
             int codigoLocalQuery, codigoEscenarioAQuery;
-            if (int.TryParse(Request.QueryString["local"], out codigoLocalQuery))
+            if (int.TryParse(Request.QueryString["local"], out codigoLocalQuery) && ddlLocal.Items.FindByValue(codigoLocalQuery.ToString()) != null)
             {
                 ddlLocal.SelectedValue = codigoLocalQuery.ToString();
             }
             CargarDropdownEscenarios();
-            if (int.TryParse(Request.QueryString["escenarioA"], out codigoEscenarioAQuery))
+            if (int.TryParse(Request.QueryString["escenarioA"], out codigoEscenarioAQuery) && ddlEscenarioA.Items.FindByValue(codigoEscenarioAQuery.ToString()) != null)
             {
                 ddlEscenarioA.SelectedValue = codigoEscenarioAQuery.ToString();
             }

@@ -25,10 +25,12 @@ namespace BLL
         }
         public LocalBE ObtenerLocalPorCodigo(int pCodigoLocal)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             return localDAL.ObtenerLocalPorCodigo(pCodigoLocal);
         }
         public ResultadoGuardarLocal CrearLocal(LocalBE pLocal)
         {
+            pLocal.CodigoEmpresa = ControlAcceso.EmpresaAlcance ?? pLocal.CodigoEmpresa;
             int codigoLocalNuevo = localDAL.AgregarLocal(pLocal);
             digitos.ActualizarDigitoFila("Local", codigoLocalNuevo);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Registrar local", "Gestión locales", 2);
@@ -36,6 +38,8 @@ namespace BLL
         }
         public ResultadoGuardarLocal ModificarLocal(LocalBE pLocal)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pLocal.CodigoLocal);
+            pLocal.CodigoEmpresa = ControlAcceso.EmpresaAlcance ?? pLocal.CodigoEmpresa;
             localDAL.ModificarLocal(pLocal);
             digitos.ActualizarDigitoFila("Local", pLocal.CodigoLocal);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Modificar local", "Gestión locales", 2);
@@ -43,6 +47,7 @@ namespace BLL
         }
         public void CambiarEstado(int pCodigoLocal, string pNuevoEstado)
         {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             localDAL.CambiarEstado(pCodigoLocal, pNuevoEstado);
             digitos.ActualizarDigitoFila("Local", pCodigoLocal);
             string accion = pNuevoEstado == "Activo" ? "Activar local" : "Desactivar local";
