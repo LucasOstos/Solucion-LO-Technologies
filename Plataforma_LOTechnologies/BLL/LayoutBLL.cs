@@ -20,7 +20,7 @@ namespace BLL
         }
         public LayoutBE ObtenerLayoutPorCodigo(int pCodigoLayout)
         {
-            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLayout);
+            ControlAcceso.Validar(EntidadEmpresa.Layout, pCodigoLayout);
             return layoutDAL.ObtenerLayoutPorCodigo(pCodigoLayout);
         }
         public int CrearLayout(LayoutBE pLayout)
@@ -34,7 +34,7 @@ namespace BLL
         }
         public void EliminarLayout(int pCodigoLayout)
         {
-            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLayout);
+            ControlAcceso.Validar(EntidadEmpresa.Layout, pCodigoLayout);
             layoutDAL.EliminarLayout(pCodigoLayout);
             digitos.ActualizarDigitoTabla("Layout");
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Eliminar layout de local", "Gestión locales", 2);

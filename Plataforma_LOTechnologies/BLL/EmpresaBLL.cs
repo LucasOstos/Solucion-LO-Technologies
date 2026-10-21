@@ -21,11 +21,11 @@ namespace BLL
         private EmpresaDAL empresaDAL = new EmpresaDAL();
         public List<EmpresaBE> ObtenerEmpresas()
         {
-            return empresaDAL.ObtenerEmpresas();
+            return FiltrarPorAlcance(empresaDAL.ObtenerEmpresas());
         }
         public List<EmpresaBE> ObtenerEmpresasListado(string pBusqueda, bool? pEstado)
         {
-            return empresaDAL.ObtenerEmpresasListado(pBusqueda, pEstado);
+            return FiltrarPorAlcance(empresaDAL.ObtenerEmpresasListado(pBusqueda, pEstado));
         }
 
         public EmpresaBE ObtenerEmpresaPorCodigo(int pCodigoEmpresa)

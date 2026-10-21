@@ -21,7 +21,7 @@ namespace BLL
 
         public List<LocalListado> ObtenerLocalesListado(string pBusqueda, int? pCodigoEmpresa, string pEstado)
         {
-            return localDAL.ObtenerLocalesListado(pBusqueda, pCodigoEmpresa, pEstado);
+            return localDAL.ObtenerLocalesListado(pBusqueda, ControlAcceso.FiltrarEmpresa(pCodigoEmpresa), pEstado);
         }
         public LocalBE ObtenerLocalPorCodigo(int pCodigoLocal)
         {

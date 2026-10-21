@@ -132,7 +132,7 @@ public partial class PaginaUsuarios : PaginaSegura
         tbNombre.Text = usuario.Nombre;
         tbApellido.Text = usuario.Apellido;
         tbEmail.Text = usuario.Email;
-        ddlRol.SelectedValue = usuario.Perfil.Codigo.ToString();
+        //ddlRol.SelectedValue = usuario.Perfil.Codigo.ToString();
         if (ddlRol.Items.FindByValue(usuario.Perfil.Codigo.ToString()) != null)
         {
             ddlRol.SelectedValue = usuario.Perfil.Codigo.ToString();

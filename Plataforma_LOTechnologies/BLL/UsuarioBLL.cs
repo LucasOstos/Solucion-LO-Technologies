@@ -125,7 +125,7 @@ namespace BLL
         }
         public List<UsuarioListado> ObtenerUsuariosListado(string pBusqueda, int? pCodigoPerfil, int? pCodigoEmpresa)
         {
-            return accesoDAL.ObtenerUsuariosListado(pBusqueda, pCodigoPerfil, pCodigoEmpresa);
+            return accesoDAL.ObtenerUsuariosListado(pBusqueda, pCodigoPerfil, ControlAcceso.FiltrarEmpresa(pCodigoEmpresa));
         }
         public ResultadoGuardarUsuario CrearUsuario(Usuario pUsuario, string pPasswordPlano)
         {
