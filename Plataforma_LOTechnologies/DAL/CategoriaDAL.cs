@@ -18,6 +18,7 @@ namespace DAL
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pCodigoEmpresa);
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {
