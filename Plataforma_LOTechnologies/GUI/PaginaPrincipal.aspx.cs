@@ -10,22 +10,50 @@ using SERVICIO.Logica;
 
 public partial class PaginaPrincipal : PaginaSegura
 {
+    protected override string ClaveTitulo
+    {
+        get { return "principal.titulo"; }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             CargarHeroUsuario();
+            CargarIdiomas();
+        }        
+    }
+    protected override void OnPreRender(EventArgs e)
+    {
+        base.OnPreRender(e);
+        List<Idioma> idiomas = GestorIdioma.Instancia.ObtenerIdiomas();
+        foreach (ListItem item in ddlIdioma.Items)
+        {
+            Idioma idioma = idiomas.FirstOrDefault(i => i.CodigoIdioma.ToString() == item.Value);
+            if (idioma != null) item.Attributes["lang"] = idioma.Codigo;
         }
     }
     #region Funciones
     private void CargarHeroUsuario()
     {
         Usuario usuario = Sesion.Instancia.Usuario;
-
         litNombreUsuario.Text = $"{usuario.Nombre} {usuario.Apellido}";
         litRolUsuario.Text = usuario.Perfil.Nombre;
         btnAbrirCambiarContrasenia.Visible = !usuario.EsSuperUsuario;
         litInicialesUsuario.Text = ObtenerIniciales(usuario.Nombre, usuario.Apellido);
+    }
+    private void CargarIdiomas()
+    {
+        ddlIdioma.Items.Clear();
+        foreach (Idioma idioma in GestorIdioma.Instancia.ObtenerIdiomasActivos())
+        {
+            ddlIdioma.Items.Add(new ListItem(idioma.NombreNativo, idioma.CodigoIdioma.ToString()));
+        }
+        Idioma actual = IdiomaActual;
+        if (actual != null && ddlIdioma.Items.FindByValue(actual.CodigoIdioma.ToString()) != null)
+        {
+            ddlIdioma.SelectedValue = actual.CodigoIdioma.ToString();
+        }
+        pnlIdioma.Visible = ddlIdioma.Items.Count > 1;
     }
     private string ObtenerIniciales(string nombre, string apellido)
     {
@@ -46,6 +74,19 @@ public partial class PaginaPrincipal : PaginaSegura
         lblMensajePrincipal.Visible = true;
     }
     #endregion
+    protected void ddlIdioma_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int codigoIdioma;
+        if (!int.TryParse(ddlIdioma.SelectedValue, out codigoIdioma)) return;
+        try
+        {
+            GestorIdioma.Instancia.CambiarIdioma(codigoIdioma);
+        }
+        catch (ArgumentException)
+        {
+            CargarIdiomas();
+        }
+    }
     protected void btnLogout_Click(object sender, EventArgs e)
     {
         Usuario usuario = Sesion.Instancia.Usuario;

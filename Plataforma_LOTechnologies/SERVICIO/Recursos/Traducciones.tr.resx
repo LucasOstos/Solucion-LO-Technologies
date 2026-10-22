@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="principal.titulo" xml:space="preserve">
+    <value>Ana Sayfa - LO Technologies</value>
+  </data>
+  <data name="principal.saludo" xml:space="preserve">
+    <value>Merhaba,</value>
+  </data>
+  <data name="principal.btnCambiarContrasenia" xml:space="preserve">
+    <value>Şifreyi değiştir</value>
+  </data>
+  <data name="principal.btnCerrarSesion" xml:space="preserve">
+    <value>Oturumu kapat</value>
+  </data>
+  <data name="principal.idioma" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="principal.seccionLocales" xml:space="preserve">
+    <value>Mağazalar ve şirket</value>
+  </data>
+  <data name="principal.seccionSimulacion" xml:space="preserve">
+    <value>Simülasyon ve analiz</value>
+  </data>
+  <data name="principal.seccionAdministracion" xml:space="preserve">
+    <value>Yönetim ve güvenlik</value>
+  </data>
+  <data name="principal.empresas.titulo" xml:space="preserve">
+    <value>Şirketler</value>
+  </data>
+  <data name="principal.empresas.desc" xml:space="preserve">
+    <value>Platformun müşteri şirketleri</value>
+  </data>
+  <data name="principal.locales.titulo" xml:space="preserve">
+    <value>Mağazalar</value>
+  </data>
+  <data name="principal.locales.desc" xml:space="preserve">
+    <value>Her şirketin satış noktaları</value>
+  </data>
+  <data name="principal.layout.titulo" xml:space="preserve">
+    <value>Yerleşim ve reyonlar</value>
+  </data>
+  <data name="principal.layout.desc" xml:space="preserve">
+    <value>Mağaza planı ve alanları</value>
+  </data>
+  <data name="principal.productos.titulo" xml:space="preserve">
+    <value>Ürünler ve kategoriler</value>
+  </data>
+  <data name="principal.productos.desc" xml:space="preserve">
+    <value>Katalog ve reyona göre konum</value>
+  </data>
+  <data name="principal.stockVentas.titulo" xml:space="preserve">
+    <value>Stok ve satışlar</value>
+  </data>
+  <data name="principal.stockVentas.desc" xml:space="preserve">
+    <value>Operasyonel veri girişi</value>
+  </data>
+  <data name="principal.escenarios.titulo" xml:space="preserve">
+    <value>Simülasyon senaryoları</value>
+  </data>
+  <data name="principal.escenarios.desc" xml:space="preserve">
+    <value>Senaryo oluşturma ve düzenleme</value>
+  </data>
+  <data name="principal.comparacion.titulo" xml:space="preserve">
+    <value>Senaryo karşılaştırması</value>
+  </data>
+  <data name="principal.comparacion.desc" xml:space="preserve">
+    <value>İki senaryoyu karşılaştırma</value>
+  </data>
+  <data name="principal.indicadores.titulo" xml:space="preserve">
+    <value>Göstergeler ve öneriler</value>
+  </data>
+  <data name="principal.indicadores.desc" xml:space="preserve">
+    <value>Reyona göre performans</value>
+  </data>
+  <data name="principal.analisisProductos.titulo" xml:space="preserve">
+    <value>Ürün analizi</value>
+  </data>
+  <data name="principal.analisisProductos.desc" xml:space="preserve">
+    <value>Konum ve performans</value>
+  </data>
+  <data name="principal.reportes.titulo" xml:space="preserve">
+    <value>Raporlar</value>
+  </data>
+  <data name="principal.reportes.desc" xml:space="preserve">
+    <value>Sonuçları PDF olarak dışa aktarma</value>
+  </data>
+  <data name="principal.usuarios.titulo" xml:space="preserve">
+    <value>Kullanıcılar</value>
+  </data>
+  <data name="principal.usuarios.desc" xml:space="preserve">
+    <value>Ekleme, düzenleme ve kilit açma</value>
+  </data>
+  <data name="principal.permisos.titulo" xml:space="preserve">
+    <value>Yetkiler</value>
+  </data>
+  <data name="principal.permisos.desc" xml:space="preserve">
+    <value>Profiller ve yetki grupları</value>
+  </data>
+  <data name="principal.bitacora.titulo" xml:space="preserve">
+    <value>Denetim / Günlük</value>
+  </data>
+  <data name="principal.bitacora.desc" xml:space="preserve">
+    <value>Sistemde kaydedilen olaylar</value>
+  </data>
+  <data name="principal.integridad.titulo" xml:space="preserve">
+    <value>Sistem bütünlüğü</value>
+  </data>
+  <data name="principal.integridad.desc" xml:space="preserve">
+    <value>Kontrol haneleri</value>
+  </data>
+  <data name="principal.backup.titulo" xml:space="preserve">
+    <value>Yedekleme / Geri yükleme</value>
+  </data>
+  <data name="principal.backup.desc" xml:space="preserve">
+    <value>Veritabanı yedekleri</value>
+  </data>
+  <data name="principal.idiomas.titulo" xml:space="preserve">
+    <value>Diller</value>
+  </data>
+  <data name="principal.idiomas.desc" xml:space="preserve">
+    <value>Diller ve çeviriler</value>
+  </data>
+  <data name="principal.contraseniaActual" xml:space="preserve">
+    <value>Mevcut şifre *</value>
+  </data>
+  <data name="principal.contraseniaNueva" xml:space="preserve">
+    <value>Yeni şifre *</value>
+  </data>
+  <data name="principal.contraseniaConfirmar" xml:space="preserve">
+    <value>Yeni şifreyi onaylayın *</value>
+  </data>
+  <data name="principal.errContraseniaActual" xml:space="preserve">
+    <value>Mevcut şifrenizi girin</value>
+  </data>
+  <data name="principal.errContraseniaNueva" xml:space="preserve">
+    <value>Yeni şifreyi girin</value>
+  </data>
+  <data name="principal.errContraseniaFormato" xml:space="preserve">
+    <value>En az 8 karakter; büyük harf, rakam ve özel karakter içermelidir</value>
+  </data>
+  <data name="principal.errContraseniaNoCoincide" xml:space="preserve">
+    <value>Şifreler eşleşmiyor</value>
+  </data>
+  <data name="comun.cancelar" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="comun.guardar" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="comun.cerrar" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+</root>

@@ -9,7 +9,7 @@ using SERVICIO.Logica;
 /// <summary>
 /// Descripción breve de PaginaSegura
 /// </summary>
-public class PaginaSegura : Page
+public class PaginaSegura : PaginaBase
 {
     protected virtual bool PermitidaConIntegridadComprometida
     {

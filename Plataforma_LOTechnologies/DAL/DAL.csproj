@@ -50,6 +50,7 @@
     <Compile Include="DigitoVerificadorDAL.cs" />
     <Compile Include="EmpresaDAL.cs" />
     <Compile Include="EscenarioDAL.cs" />
+    <Compile Include="IdiomaDAL.cs" />
     <Compile Include="IndicadorDAL.cs" />
     <Compile Include="LayoutDAL.cs" />
     <Compile Include="LocalDAL.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="StockDAL.cs" />
     <Compile Include="SucesoDAL.cs" />
     <Compile Include="TokenRecuperacionDAL.cs" />
+    <Compile Include="TraduccionDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="VentaDAL.cs" />
   </ItemGroup>

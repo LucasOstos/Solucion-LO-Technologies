@@ -269,5 +269,17 @@ namespace DAL
                 CM.ExecuteNonQuery();
             }
         }
+        public void ActualizarIdioma(int pDNI, int pCodigoIdioma)
+        {
+            string query = "UPDATE Usuario SET UsuarioIdioma = @Idioma WHERE UsuarioDNI = @DNI";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@Idioma", pCodigoIdioma);
+                CM.Parameters.AddWithValue("@DNI", pDNI);
+                CO.Open();
+                CM.ExecuteNonQuery();
+            }
+        }
     }
 }

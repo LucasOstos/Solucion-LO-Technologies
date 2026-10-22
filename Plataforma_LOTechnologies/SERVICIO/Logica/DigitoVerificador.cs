@@ -35,7 +35,9 @@ namespace SERVICIO.Logica
             { "Comparacion", "CodigoComparacion" },
             { "Indicador", "CodigoIndicador" },
             { "Recomendacion", "CodigoRecomendacion" },
-            { "Reporte", "CodigoReporte" }
+            { "Reporte", "CodigoReporte" },
+            { "Idioma", "CodigoIdioma" },
+            { "Traduccion", "CodigoTraduccion" }
         };
         public void ActualizarDigitoTabla(string pNombreTabla)
         {

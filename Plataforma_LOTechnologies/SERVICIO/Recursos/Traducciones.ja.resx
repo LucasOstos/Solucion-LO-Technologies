@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="principal.titulo" xml:space="preserve">
+    <value>ホーム - LO Technologies</value>
+  </data>
+  <data name="principal.saludo" xml:space="preserve">
+    <value>こんにちは、</value>
+  </data>
+  <data name="principal.btnCambiarContrasenia" xml:space="preserve">
+    <value>パスワードの変更</value>
+  </data>
+  <data name="principal.btnCerrarSesion" xml:space="preserve">
+    <value>ログアウト</value>
+  </data>
+  <data name="principal.idioma" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="principal.seccionLocales" xml:space="preserve">
+    <value>店舗と企業</value>
+  </data>
+  <data name="principal.seccionSimulacion" xml:space="preserve">
+    <value>シミュレーションと分析</value>
+  </data>
+  <data name="principal.seccionAdministracion" xml:space="preserve">
+    <value>管理とセキュリティ</value>
+  </data>
+  <data name="principal.empresas.titulo" xml:space="preserve">
+    <value>企業</value>
+  </data>
+  <data name="principal.empresas.desc" xml:space="preserve">
+    <value>プラットフォームの顧客企業</value>
+  </data>
+  <data name="principal.locales.titulo" xml:space="preserve">
+    <value>店舗</value>
+  </data>
+  <data name="principal.locales.desc" xml:space="preserve">
+    <value>各企業の販売拠点</value>
+  </data>
+  <data name="principal.layout.titulo" xml:space="preserve">
+    <value>レイアウトと売り場</value>
+  </data>
+  <data name="principal.layout.desc" xml:space="preserve">
+    <value>店舗の間取りとエリア</value>
+  </data>
+  <data name="principal.productos.titulo" xml:space="preserve">
+    <value>商品とカテゴリ</value>
+  </data>
+  <data name="principal.productos.desc" xml:space="preserve">
+    <value>カタログと売り場別の配置</value>
+  </data>
+  <data name="principal.stockVentas.titulo" xml:space="preserve">
+    <value>在庫と売上</value>
+  </data>
+  <data name="principal.stockVentas.desc" xml:space="preserve">
+    <value>業務データの登録</value>
+  </data>
+  <data name="principal.escenarios.titulo" xml:space="preserve">
+    <value>シミュレーションシナリオ</value>
+  </data>
+  <data name="principal.escenarios.desc" xml:space="preserve">
+    <value>シナリオの作成と編集</value>
+  </data>
+  <data name="principal.comparacion.titulo" xml:space="preserve">
+    <value>シナリオ比較</value>
+  </data>
+  <data name="principal.comparacion.desc" xml:space="preserve">
+    <value>2つのシナリオを比較</value>
+  </data>
+  <data name="principal.indicadores.titulo" xml:space="preserve">
+    <value>指標と推奨事項</value>
+  </data>
+  <data name="principal.indicadores.desc" xml:space="preserve">
+    <value>売り場別の実績</value>
+  </data>
+  <data name="principal.analisisProductos.titulo" xml:space="preserve">
+    <value>商品分析</value>
+  </data>
+  <data name="principal.analisisProductos.desc" xml:space="preserve">
+    <value>配置と実績</value>
+  </data>
+  <data name="principal.reportes.titulo" xml:space="preserve">
+    <value>レポート</value>
+  </data>
+  <data name="principal.reportes.desc" xml:space="preserve">
+    <value>結果をPDFで出力</value>
+  </data>
+  <data name="principal.usuarios.titulo" xml:space="preserve">
+    <value>ユーザー</value>
+  </data>
+  <data name="principal.usuarios.desc" xml:space="preserve">
+    <value>登録、変更、ロック解除</value>
+  </data>
+  <data name="principal.permisos.titulo" xml:space="preserve">
+    <value>権限</value>
+  </data>
+  <data name="principal.permisos.desc" xml:space="preserve">
+    <value>プロファイルと権限グループ</value>
+  </data>
+  <data name="principal.bitacora.titulo" xml:space="preserve">
+    <value>監査 / ログ</value>
+  </data>
+  <data name="principal.bitacora.desc" xml:space="preserve">
+    <value>システムに記録されたイベント</value>
+  </data>
+  <data name="principal.integridad.titulo" xml:space="preserve">
+    <value>システムの整合性</value>
+  </data>
+  <data name="principal.integridad.desc" xml:space="preserve">
+    <value>チェックディジット</value>
+  </data>
+  <data name="principal.backup.titulo" xml:space="preserve">
+    <value>バックアップ / 復元</value>
+  </data>
+  <data name="principal.backup.desc" xml:space="preserve">
+    <value>データベースのバックアップ</value>
+  </data>
+  <data name="principal.idiomas.titulo" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="principal.idiomas.desc" xml:space="preserve">
+    <value>言語と翻訳</value>
+  </data>
+  <data name="principal.contraseniaActual" xml:space="preserve">
+    <value>現在のパスワード *</value>
+  </data>
+  <data name="principal.contraseniaNueva" xml:space="preserve">
+    <value>新しいパスワード *</value>
+  </data>
+  <data name="principal.contraseniaConfirmar" xml:space="preserve">
+    <value>新しいパスワード（確認） *</value>
+  </data>
+  <data name="principal.errContraseniaActual" xml:space="preserve">
+    <value>現在のパスワードを入力してください</value>
+  </data>
+  <data name="principal.errContraseniaNueva" xml:space="preserve">
+    <value>新しいパスワードを入力してください</value>
+  </data>
+  <data name="principal.errContraseniaFormato" xml:space="preserve">
+    <value>8文字以上で、大文字・数字・記号を含めてください</value>
+  </data>
+  <data name="principal.errContraseniaNoCoincide" xml:space="preserve">
+    <value>パスワードが一致しません</value>
+  </data>
+  <data name="comun.cancelar" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="comun.guardar" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="comun.cerrar" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+</root>

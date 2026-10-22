@@ -45,11 +45,14 @@
   <ItemGroup>
     <Compile Include="Logica\BackupRestore.cs" />
     <Compile Include="Logica\DigitoVerificador.cs" />
+    <Compile Include="Logica\GestorIdioma.cs" />
     <Compile Include="Logica\GmailServicio.cs" />
+    <Compile Include="Logica\IObservadorIdioma.cs" />
     <Compile Include="Logica\SucesoServicio.cs" />
     <Compile Include="Logica\Encriptado.cs" />
     <Compile Include="Logica\ResultadoLogin.cs" />
     <Compile Include="Logica\Sesion.cs" />
+    <Compile Include="Logica\Traductor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +64,19 @@
       <Project>{bfc98cfa-d62d-48ef-a93a-3c7388431f9d}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\Traducciones.ar.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.de.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.en.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.fr.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.it.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.ja.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.pt.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.ru.resx" />
+    <EmbeddedResource Include="Recursos\Traducciones.tr.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="principal.titulo" xml:space="preserve">
+    <value>Page d'accueil - LO Technologies</value>
+  </data>
+  <data name="principal.saludo" xml:space="preserve">
+    <value>Bonjour,</value>
+  </data>
+  <data name="principal.btnCambiarContrasenia" xml:space="preserve">
+    <value>Changer le mot de passe</value>
+  </data>
+  <data name="principal.btnCerrarSesion" xml:space="preserve">
+    <value>Se déconnecter</value>
+  </data>
+  <data name="principal.idioma" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="principal.seccionLocales" xml:space="preserve">
+    <value>Magasins et entreprise</value>
+  </data>
+  <data name="principal.seccionSimulacion" xml:space="preserve">
+    <value>Simulation et analyse</value>
+  </data>
+  <data name="principal.seccionAdministracion" xml:space="preserve">
+    <value>Administration et sécurité</value>
+  </data>
+  <data name="principal.empresas.titulo" xml:space="preserve">
+    <value>Entreprises</value>
+  </data>
+  <data name="principal.empresas.desc" xml:space="preserve">
+    <value>Entreprises clientes de la plateforme</value>
+  </data>
+  <data name="principal.locales.titulo" xml:space="preserve">
+    <value>Magasins</value>
+  </data>
+  <data name="principal.locales.desc" xml:space="preserve">
+    <value>Points de vente de chaque entreprise</value>
+  </data>
+  <data name="principal.layout.titulo" xml:space="preserve">
+    <value>Plan et rayons</value>
+  </data>
+  <data name="principal.layout.desc" xml:space="preserve">
+    <value>Plan du magasin et ses zones</value>
+  </data>
+  <data name="principal.productos.titulo" xml:space="preserve">
+    <value>Produits et catégories</value>
+  </data>
+  <data name="principal.productos.desc" xml:space="preserve">
+    <value>Catalogue et emplacement par rayon</value>
+  </data>
+  <data name="principal.stockVentas.titulo" xml:space="preserve">
+    <value>Stock et ventes</value>
+  </data>
+  <data name="principal.stockVentas.desc" xml:space="preserve">
+    <value>Saisie des données opérationnelles</value>
+  </data>
+  <data name="principal.escenarios.titulo" xml:space="preserve">
+    <value>Scénarios de simulation</value>
+  </data>
+  <data name="principal.escenarios.desc" xml:space="preserve">
+    <value>Créer et modifier des scénarios</value>
+  </data>
+  <data name="principal.comparacion.titulo" xml:space="preserve">
+    <value>Comparaison de scénarios</value>
+  </data>
+  <data name="principal.comparacion.desc" xml:space="preserve">
+    <value>Confronter deux scénarios</value>
+  </data>
+  <data name="principal.indicadores.titulo" xml:space="preserve">
+    <value>Indicateurs et recommandations</value>
+  </data>
+  <data name="principal.indicadores.desc" xml:space="preserve">
+    <value>Performance par rayon</value>
+  </data>
+  <data name="principal.analisisProductos.titulo" xml:space="preserve">
+    <value>Analyse des produits</value>
+  </data>
+  <data name="principal.analisisProductos.desc" xml:space="preserve">
+    <value>Emplacement et performance</value>
+  </data>
+  <data name="principal.reportes.titulo" xml:space="preserve">
+    <value>Rapports</value>
+  </data>
+  <data name="principal.reportes.desc" xml:space="preserve">
+    <value>Exporter les résultats en PDF</value>
+  </data>
+  <data name="principal.usuarios.titulo" xml:space="preserve">
+    <value>Utilisateurs</value>
+  </data>
+  <data name="principal.usuarios.desc" xml:space="preserve">
+    <value>Création, modification et déblocage</value>
+  </data>
+  <data name="principal.permisos.titulo" xml:space="preserve">
+    <value>Autorisations</value>
+  </data>
+  <data name="principal.permisos.desc" xml:space="preserve">
+    <value>Profils et familles d'autorisations</value>
+  </data>
+  <data name="principal.bitacora.titulo" xml:space="preserve">
+    <value>Audit / Journal</value>
+  </data>
+  <data name="principal.bitacora.desc" xml:space="preserve">
+    <value>Événements enregistrés dans le système</value>
+  </data>
+  <data name="principal.integridad.titulo" xml:space="preserve">
+    <value>Intégrité du système</value>
+  </data>
+  <data name="principal.integridad.desc" xml:space="preserve">
+    <value>Chiffres de contrôle</value>
+  </data>
+  <data name="principal.backup.titulo" xml:space="preserve">
+    <value>Sauvegarde / Restauration</value>
+  </data>
+  <data name="principal.backup.desc" xml:space="preserve">
+    <value>Sauvegardes de la base de données</value>
+  </data>
+  <data name="principal.idiomas.titulo" xml:space="preserve">
+    <value>Langues</value>
+  </data>
+  <data name="principal.idiomas.desc" xml:space="preserve">
+    <value>Langues et traductions</value>
+  </data>
+  <data name="principal.contraseniaActual" xml:space="preserve">
+    <value>Mot de passe actuel *</value>
+  </data>
+  <data name="principal.contraseniaNueva" xml:space="preserve">
+    <value>Nouveau mot de passe *</value>
+  </data>
+  <data name="principal.contraseniaConfirmar" xml:space="preserve">
+    <value>Confirmer le nouveau mot de passe *</value>
+  </data>
+  <data name="principal.errContraseniaActual" xml:space="preserve">
+    <value>Saisissez votre mot de passe actuel</value>
+  </data>
+  <data name="principal.errContraseniaNueva" xml:space="preserve">
+    <value>Saisissez le nouveau mot de passe</value>
+  </data>
+  <data name="principal.errContraseniaFormato" xml:space="preserve">
+    <value>Au moins 8 caractères, dont une majuscule, un chiffre et un caractère spécial</value>
+  </data>
+  <data name="principal.errContraseniaNoCoincide" xml:space="preserve">
+    <value>Les mots de passe ne correspondent pas</value>
+  </data>
+  <data name="comun.cancelar" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="comun.guardar" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="comun.cerrar" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+</root>
