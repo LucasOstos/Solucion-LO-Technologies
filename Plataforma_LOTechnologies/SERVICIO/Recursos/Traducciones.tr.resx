@@ -1535,4 +1535,406 @@
   <data name="stock.msgRegistrado" xml:space="preserve">
     <value>Veriler başarıyla kaydedildi.</value>
   </data>
+  <data name="comun.localObligatorio" xml:space="preserve">
+    <value>Mağaza *</value>
+  </data>
+  <data name="comun.periodoDesde" xml:space="preserve">
+    <value>Dönem başlangıcı *</value>
+  </data>
+  <data name="comun.periodoHasta" xml:space="preserve">
+    <value>Dönem bitişi *</value>
+  </data>
+  <data name="valor.moverFrente" xml:space="preserve">
+    <value>Öne taşı</value>
+  </data>
+  <data name="valor.moverFondo" xml:space="preserve">
+    <value>Arkaya taşı</value>
+  </data>
+  <data name="valor.ampliarSuperficie" xml:space="preserve">
+    <value>Alanı genişlet</value>
+  </data>
+  <data name="valor.reducirSuperficie" xml:space="preserve">
+    <value>Alanı küçült</value>
+  </data>
+  <data name="valor.reubicarDestacados" xml:space="preserve">
+    <value>Öne çıkan ürünleri yeniden yerleştir</value>
+  </data>
+  <data name="valor.modificacionSector" xml:space="preserve">
+    <value>Reyon değişikliği</value>
+  </data>
+  <data name="valor.base" xml:space="preserve">
+    <value>Temel</value>
+  </data>
+  <data name="valor.enRevision" xml:space="preserve">
+    <value>İncelemede</value>
+  </data>
+  <data name="valor.aprobado" xml:space="preserve">
+    <value>Onaylandı</value>
+  </data>
+  <data name="valor.alto" xml:space="preserve">
+    <value>Yüksek</value>
+  </data>
+  <data name="valor.medio" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="valor.positivo" xml:space="preserve">
+    <value>Olumlu</value>
+  </data>
+  <data name="valor.alta" xml:space="preserve">
+    <value>Yüksek</value>
+  </data>
+  <data name="valor.media" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="valor.baja" xml:space="preserve">
+    <value>Düşük</value>
+  </data>
+  <data name="valor.completo" xml:space="preserve">
+    <value>Tam</value>
+  </data>
+  <data name="valor.comparacion" xml:space="preserve">
+    <value>Karşılaştırma</value>
+  </data>
+  <data name="valor.indicadores" xml:space="preserve">
+    <value>Göstergeler</value>
+  </data>
+  <data name="escenarios.titulo" xml:space="preserve">
+    <value>Simülasyon senaryoları - LO Technologies</value>
+  </data>
+  <data name="escenarios.subtitulo" xml:space="preserve">
+    <value>CUN 007 — Alternatif senaryolar oluşturma ve yönetme</value>
+  </data>
+  <data name="escenarios.btnNuevo" xml:space="preserve">
+    <value>+ Yeni senaryo</value>
+  </data>
+  <data name="escenarios.ventasEst" xml:space="preserve">
+    <value>Tahmini satış</value>
+  </data>
+  <data name="escenarios.satisfaccion" xml:space="preserve">
+    <value>Memnuniyet</value>
+  </data>
+  <data name="escenarios.comparar" xml:space="preserve">
+    <value>Karşılaştır</value>
+  </data>
+  <data name="escenarios.sinEscenarios" xml:space="preserve">
+    <value>Bu mağazada henüz senaryo yok.</value>
+  </data>
+  <data name="escenarios.modalNuevo" xml:space="preserve">
+    <value>Yeni senaryo</value>
+  </data>
+  <data name="escenarios.nombre" xml:space="preserve">
+    <value>Senaryo adı *</value>
+  </data>
+  <data name="escenarios.objetivo" xml:space="preserve">
+    <value>Hedef</value>
+  </data>
+  <data name="escenarios.ejObjetivo" xml:space="preserve">
+    <value>Örn.: Elektronik reyonunda ziyaretçi trafiğini artırmak</value>
+  </data>
+  <data name="escenarios.cambiosPropuestosSectores" xml:space="preserve">
+    <value>Önerilen reyon değişiklikleri</value>
+  </data>
+  <data name="escenarios.sinCambios" xml:space="preserve">
+    <value>Değişiklik yok</value>
+  </data>
+  <data name="escenarios.btnCrear" xml:space="preserve">
+    <value>Senaryo oluştur</value>
+  </data>
+  <data name="escenarios.objetivoDetalle" xml:space="preserve">
+    <value>Hedef:</value>
+  </data>
+  <data name="escenarios.cambiosPropuestos" xml:space="preserve">
+    <value>Önerilen değişiklikler</value>
+  </data>
+  <data name="escenarios.sinCambiosDetalle" xml:space="preserve">
+    <value>Bu senaryoda önerilen değişiklik yok.</value>
+  </data>
+  <data name="escenarios.msgCreado" xml:space="preserve">
+    <value>Senaryo başarıyla oluşturuldu.</value>
+  </data>
+  <data name="comparacion.titulo" xml:space="preserve">
+    <value>Senaryo karşılaştırması - LO Technologies</value>
+  </data>
+  <data name="comparacion.subtitulo" xml:space="preserve">
+    <value>CUN 008 — Mevcut ve önerilen senaryoyu karşılaştırma</value>
+  </data>
+  <data name="comparacion.periodo" xml:space="preserve">
+    <value>Analiz dönemi</value>
+  </data>
+  <data name="comparacion.escenarioActual" xml:space="preserve">
+    <value>Mevcut senaryo *</value>
+  </data>
+  <data name="comparacion.escenarioPropuesto" xml:space="preserve">
+    <value>Önerilen senaryo *</value>
+  </data>
+  <data name="comparacion.btnComparar" xml:space="preserve">
+    <value>Senaryoları karşılaştır</value>
+  </data>
+  <data name="comparacion.actual" xml:space="preserve">
+    <value>(mevcut)</value>
+  </data>
+  <data name="comparacion.propuesto" xml:space="preserve">
+    <value>(önerilen)</value>
+  </data>
+  <data name="comparacion.diferencias" xml:space="preserve">
+    <value>Başlıca farklar</value>
+  </data>
+  <data name="comparacion.colIndicador" xml:space="preserve">
+    <value>Gösterge</value>
+  </data>
+  <data name="comparacion.colActual" xml:space="preserve">
+    <value>Mevcut</value>
+  </data>
+  <data name="comparacion.colPropuesto" xml:space="preserve">
+    <value>Önerilen</value>
+  </data>
+  <data name="comparacion.colDiferencia" xml:space="preserve">
+    <value>Fark</value>
+  </data>
+  <data name="comparacion.btnGuardar" xml:space="preserve">
+    <value>Karşılaştırmayı kaydet</value>
+  </data>
+  <data name="comparacion.ventasEstimadas" xml:space="preserve">
+    <value>Tahmini satışlar</value>
+  </data>
+  <data name="comparacion.circulacionPromedio" xml:space="preserve">
+    <value>Ortalama ziyaretçi trafiği</value>
+  </data>
+  <data name="comparacion.rotacionPromedio" xml:space="preserve">
+    <value>Ortalama devir hızı</value>
+  </data>
+  <data name="comparacion.indicePromedio" xml:space="preserve">
+    <value>Ortalama genel endeks</value>
+  </data>
+  <data name="comparacion.errDistintos" xml:space="preserve">
+    <value>Karşılaştırmak için iki farklı senaryo seçin.</value>
+  </data>
+  <data name="comparacion.errMismoLocal" xml:space="preserve">
+    <value>Senaryolar aynı mağazaya ait olmalıdır.</value>
+  </data>
+  <data name="comparacion.errFaltanDatos" xml:space="preserve">
+    <value>Karşılaştırma için yeterli veri yok.</value>
+  </data>
+  <data name="comparacion.errSinComparacion" xml:space="preserve">
+    <value>Önce bir karşılaştırma oluşturun.</value>
+  </data>
+  <data name="comparacion.msgGuardada" xml:space="preserve">
+    <value>Senaryo karşılaştırması başarıyla kaydedildi.</value>
+  </data>
+  <data name="indicadores.titulo" xml:space="preserve">
+    <value>Göstergeler ve öneriler - LO Technologies</value>
+  </data>
+  <data name="indicadores.subtitulo" xml:space="preserve">
+    <value>CUN 009 — Temel göstergeler ve otomatik öneriler</value>
+  </data>
+  <data name="indicadores.recomendaciones" xml:space="preserve">
+    <value>Otomatik öneriler</value>
+  </data>
+  <data name="indicadores.sinRecomendaciones" xml:space="preserve">
+    <value>Bu dönem için öneri oluşturulmadı.</value>
+  </data>
+  <data name="indicadores.porSector" xml:space="preserve">
+    <value>Reyona göre göstergeler</value>
+  </data>
+  <data name="indicadores.colVentas" xml:space="preserve">
+    <value>Satışlar</value>
+  </data>
+  <data name="indicadores.colRotacion" xml:space="preserve">
+    <value>Devir hızı</value>
+  </data>
+  <data name="indicadores.colIndice" xml:space="preserve">
+    <value>Genel endeks</value>
+  </data>
+  <data name="indicadores.sinIndicadores" xml:space="preserve">
+    <value>Eksiksiz gösterge oluşturmak için yeterli veri yok.</value>
+  </data>
+  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
+    <value>{0} reyonunda düşük ziyaretçi trafiği</value>
+  </data>
+  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
+    <value>{0} reyonunun tahmini ziyaretçi trafiği %{1} ile diğerlerinden düşük. Devir hızı yüksek ürünleri yeniden dağıtmayı düşünün.</value>
+  </data>
+  <data name="recomendacion.superaMeta" xml:space="preserve">
+    <value>{0} satış hedefini aşıyor</value>
+  </data>
+  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
+    <value>{0} reyonu dönemin satış eşiğini aştı. Teşhirinin genişletilmesi önerilir.</value>
+  </data>
+  <data name="recomendacion.stockCritico" xml:space="preserve">
+    <value>{0} için kritik stok</value>
+  </data>
+  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
+    <value>'{0}' için yalnızca {1} adet kaldı. Acil stok yenileme önerilir.</value>
+  </data>
+  <data name="analisis.titulo" xml:space="preserve">
+    <value>Ürün analizi - LO Technologies</value>
+  </data>
+  <data name="analisis.subtitulo" xml:space="preserve">
+    <value>CUN 011 — Ürün yeniden yerleştirme fırsatlarını belirleme</value>
+  </data>
+  <data name="analisis.configurar" xml:space="preserve">
+    <value>Analizi yapılandır</value>
+  </data>
+  <data name="analisis.datosRequeridos" xml:space="preserve">
+    <value>Gerekli veriler: seçilen mağazanın ürünleri, reyonları, satışları, stoku ve ziyaretçi trafiği.</value>
+  </data>
+  <data name="analisis.btnDetectar" xml:space="preserve">
+    <value>Yeniden yerleştirme fırsatlarını bul</value>
+  </data>
+  <data name="analisis.analizados" xml:space="preserve">
+    <value>Analiz edilen ürünler</value>
+  </data>
+  <data name="analisis.prioridadAlta" xml:space="preserve">
+    <value>Yüksek öncelik</value>
+  </data>
+  <data name="analisis.prioridadMedia" xml:space="preserve">
+    <value>Orta öncelik</value>
+  </data>
+  <data name="analisis.prioridadBaja" xml:space="preserve">
+    <value>Düşük öncelik</value>
+  </data>
+  <data name="analisis.buscarPlaceholder" xml:space="preserve">
+    <value>Ürün veya kategori ara...</value>
+  </data>
+  <data name="analisis.todasPrioridades" xml:space="preserve">
+    <value>Tüm öncelikler</value>
+  </data>
+  <data name="analisis.candidatos" xml:space="preserve">
+    <value>Yeniden yerleştirme adayları</value>
+  </data>
+  <data name="analisis.sinCandidatos" xml:space="preserve">
+    <value>Seçilen dönemde yeniden yerleştirme fırsatı olan ürün bulunamadı.</value>
+  </data>
+  <data name="analisis.sinRecomendacion" xml:space="preserve">
+    <value>Öneri olmayan analiz edilmiş ürünler</value>
+  </data>
+  <data name="analisis.bienPosicionados" xml:space="preserve">
+    <value>İyi konumlanmış</value>
+  </data>
+  <data name="analisis.colSectorActual" xml:space="preserve">
+    <value>Mevcut reyon</value>
+  </data>
+  <data name="analisis.optimo" xml:space="preserve">
+    <value>Optimum</value>
+  </data>
+  <data name="analisis.errPeriodo" xml:space="preserve">
+    <value>Geçersiz dönem.</value>
+  </data>
+  <data name="analisis.errSinDatos" xml:space="preserve">
+    <value>Yeniden yerleştirme fırsatlarını belirlemek için yeterli veri yok.</value>
+  </data>
+  <data name="reportes.titulo" xml:space="preserve">
+    <value>Rapor oluşturma - LO Technologies</value>
+  </data>
+  <data name="reportes.encabezado" xml:space="preserve">
+    <value>Rapor oluşturma</value>
+  </data>
+  <data name="reportes.subtitulo" xml:space="preserve">
+    <value>CUN 010 — Analiz, gösterge ve öneri raporları oluşturma</value>
+  </data>
+  <data name="reportes.configurar" xml:space="preserve">
+    <value>Raporu yapılandır</value>
+  </data>
+  <data name="reportes.tipo" xml:space="preserve">
+    <value>Rapor türü *</value>
+  </data>
+  <data name="reportes.escenarioBase" xml:space="preserve">
+    <value>Temel senaryo</value>
+  </data>
+  <data name="reportes.escenarioPropuesto" xml:space="preserve">
+    <value>Önerilen senaryo</value>
+  </data>
+  <data name="reportes.formato" xml:space="preserve">
+    <value>Biçim</value>
+  </data>
+  <data name="reportes.idioma" xml:space="preserve">
+    <value>Rapor dili</value>
+  </data>
+  <data name="reportes.secciones" xml:space="preserve">
+    <value>Dahil edilecek bölümler</value>
+  </data>
+  <data name="reportes.resumen" xml:space="preserve">
+    <value>Yönetici özeti</value>
+  </data>
+  <data name="reportes.detalleSector" xml:space="preserve">
+    <value>Reyona göre ayrıntı</value>
+  </data>
+  <data name="reportes.estadoStock" xml:space="preserve">
+    <value>Stok durumu</value>
+  </data>
+  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
+    <value>Temel göstergeler</value>
+  </data>
+  <data name="reportes.recomendaciones" xml:space="preserve">
+    <value>Öneriler</value>
+  </data>
+  <data name="reportes.detalleProductos" xml:space="preserve">
+    <value>Ürün ayrıntıları</value>
+  </data>
+  <data name="reportes.historialVentas" xml:space="preserve">
+    <value>Satış geçmişi</value>
+  </data>
+  <data name="reportes.btnGenerar" xml:space="preserve">
+    <value>Rapor oluştur</value>
+  </data>
+  <data name="reportes.recientes" xml:space="preserve">
+    <value>Son raporlar</value>
+  </data>
+  <data name="reportes.ver" xml:space="preserve">
+    <value>Görüntüle</value>
+  </data>
+  <data name="reportes.bajar" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="reportes.sinReportes" xml:space="preserve">
+    <value>Henüz rapor oluşturmadınız.</value>
+  </data>
+  <data name="reportes.ninguno" xml:space="preserve">
+    <value>— Hiçbiri —</value>
+  </data>
+  <data name="reportes.errPeriodo" xml:space="preserve">
+    <value>Dönemin başlangıç ve bitişini girin.</value>
+  </data>
+  <data name="reportes.errSinDatos" xml:space="preserve">
+    <value>Rapor oluşturmak için yeterli veri yok.</value>
+  </data>
+  <data name="reportes.msgGenerado" xml:space="preserve">
+    <value>Rapor başarıyla oluşturuldu.</value>
+  </data>
+  <data name="pdf.periodo" xml:space="preserve">
+    <value>Dönem: {0} - {1}</value>
+  </data>
+  <data name="pdf.generado" xml:space="preserve">
+    <value>Oluşturulma: {0}</value>
+  </data>
+  <data name="pdf.ventasTotales" xml:space="preserve">
+    <value>Dönemin toplam satışları: {0}</value>
+  </data>
+  <data name="pdf.circulacionPromedio" xml:space="preserve">
+    <value>Ortalama ziyaretçi trafiği: %{0}</value>
+  </data>
+  <data name="pdf.sectoresAnalizados" xml:space="preserve">
+    <value>Analiz edilen reyonlar: {0}</value>
+  </data>
+  <data name="pdf.colDisponible" xml:space="preserve">
+    <value>Mevcut</value>
+  </data>
+  <data name="pdf.sinRecomendaciones" xml:space="preserve">
+    <value>Bu dönem için öneri yok.</value>
+  </data>
+  <data name="pdf.errEscenarios" xml:space="preserve">
+    <value>Bu bölümü eklemek için bir temel ve bir önerilen senaryo seçin.</value>
+  </data>
+  <data name="pdf.baseVsPropuesto" xml:space="preserve">
+    <value>{0} (temel) - {1} (önerilen)</value>
+  </data>
+  <data name="pdf.ventasBase" xml:space="preserve">
+    <value>Temel satışlar</value>
+  </data>
+  <data name="pdf.ventasPropuesto" xml:space="preserve">
+    <value>Önerilen satışlar</value>
+  </data>
+  <data name="pdf.graficoComparacion" xml:space="preserve">
+    <value>Tahmini satışlar: temel ve önerilen</value>
+  </data>
 </root>

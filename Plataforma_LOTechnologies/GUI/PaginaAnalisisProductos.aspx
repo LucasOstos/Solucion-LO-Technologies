@@ -21,31 +21,31 @@
 
                 <div class="encabezado">
                     <div>
-                        <h1>Análisis de Productos</h1>
-                        <p class="subtitulo">CUN 011 — Detectar oportunidades de reubicación de productos</p>
+                        <h1 runat="server" Clave="principal.analisisProductos.titulo">Análisis de Productos</h1>
+                        <p class="subtitulo" runat="server" Clave="analisis.subtitulo">CUN 011 — Detectar oportunidades de reubicación de productos</p>
                     </div>
                 </div>
 
-                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
 
                 <div class="tarjeta">
-                    <h2>Configurar análisis</h2>
+                    <h2 runat="server" Clave="analisis.configurar">Configurar análisis</h2>
                     <div class="fila-formulario">
                         <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Local *" AssociatedControlID="ddlLocal" />
+                            <asp:Label runat="server" Text="Local *" AssociatedControlID="ddlLocal" Clave="comun.localObligatorio" />
                             <asp:DropDownList ID="ddlLocal" runat="server" CssClass="modal-campo" />
                         </div>
                         <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Período desde *" AssociatedControlID="tbPeriodoDesde" />
+                            <asp:Label runat="server" Text="Período desde *" AssociatedControlID="tbPeriodoDesde" Clave="comun.periodoDesde" />
                             <asp:TextBox ID="tbPeriodoDesde" runat="server" CssClass="modal-campo" TextMode="Date" />
                         </div>
                         <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Período hasta *" AssociatedControlID="tbPeriodoHasta" />
+                            <asp:Label runat="server" Text="Período hasta *" AssociatedControlID="tbPeriodoHasta" Clave="comun.periodoHasta" />
                             <asp:TextBox ID="tbPeriodoHasta" runat="server" CssClass="modal-campo" TextMode="Date" />
                         </div>
                     </div>
-                    <p class="texto-secundario">Datos requeridos: productos, sectores, ventas, stock y circulación del local seleccionado.</p>
-                    <asp:Button ID="btnDetectar" runat="server" CssClass="boton-nuevo" Text="Detectar oportunidades de reubicación" OnClick="btnDetectar_Click" CausesValidation="false" />
+                    <p class="texto-secundario" runat="server" Clave="analisis.datosRequeridos">Datos requeridos: productos, sectores, ventas, stock y circulación del local seleccionado.</p>
+                    <asp:Button ID="btnDetectar" runat="server" CssClass="boton-nuevo" Text="Detectar oportunidades de reubicación" Clave="analisis.btnDetectar" OnClick="btnDetectar_Click" CausesValidation="false" />
                 </div>
 
                 <asp:Panel ID="pnlResultados" runat="server" Visible="false">
@@ -54,44 +54,44 @@
                         <div class="ap-stat-card">
                             <div class="ap-stat-valor">
                                 <asp:Literal ID="litProductosAnalizados" runat="server" Text="0" /></div>
-                            <div class="texto-secundario">Productos analizados</div>
+                            <div class="texto-secundario" runat="server" Clave="analisis.analizados">Productos analizados</div>
                         </div>
                         <div class="ap-stat-card">
                             <div class="ap-stat-valor ap-color-alta">
                                 <asp:Literal ID="litPrioridadAlta" runat="server" Text="0" /></div>
-                            <div class="texto-secundario">Prioridad Alta</div>
+                            <div class="texto-secundario" runat="server" Clave="analisis.prioridadAlta">Prioridad Alta</div>
                         </div>
                         <div class="ap-stat-card">
                             <div class="ap-stat-valor ap-color-media">
                                 <asp:Literal ID="litPrioridadMedia" runat="server" Text="0" /></div>
-                            <div class="texto-secundario">Prioridad Media</div>
+                            <div class="texto-secundario" runat="server" Clave="analisis.prioridadMedia">Prioridad Media</div>
                         </div>
                         <div class="ap-stat-card">
                             <div class="ap-stat-valor ap-color-baja">
                                 <asp:Literal ID="litPrioridadBaja" runat="server" Text="0" /></div>
-                            <div class="texto-secundario">Prioridad Baja</div>
+                            <div class="texto-secundario" runat="server" Clave="analisis.prioridadBaja">Prioridad Baja</div>
                         </div>
                     </div>
 
                     <div class="filtros">
-                        <asp:TextBox ID="tbBuscarProducto" runat="server" CssClass="campo-buscar" placeholder="Buscar producto o categoría..." />
+                        <asp:TextBox ID="tbBuscarProducto" runat="server" CssClass="campo-buscar" placeholder="Buscar producto o categoría..." ClavePlaceholder="analisis.buscarPlaceholder" />
                         <asp:DropDownList ID="ddlFiltroPrioridad" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed">
-                            <asp:ListItem Text="Todas las prioridades" Value="" />
-                            <asp:ListItem Text="Alta" Value="Alta" />
-                            <asp:ListItem Text="Media" Value="Media" />
-                            <asp:ListItem Text="Baja" Value="Baja" />
+                            <asp:ListItem Text="Todas las prioridades" Value="" Clave="analisis.todasPrioridades" />
+                            <asp:ListItem Text="Alta" Value="Alta" Clave="valor.alta" />
+                            <asp:ListItem Text="Media" Value="Media" Clave="valor.media" />
+                            <asp:ListItem Text="Baja" Value="Baja" Clave="valor.baja" />
                         </asp:DropDownList>
                     </div>
 
                     <div class="tarjeta">
-                        <h2>Candidatos a reubicación</h2>
+                        <h2 runat="server" Clave="analisis.candidatos">Candidatos a reubicación</h2>
                         <asp:Repeater ID="rptCandidatos" runat="server">
                             <ItemTemplate>
                                 <div class='<%# "ap-candidato ap-borde-" + Eval("Prioridad").ToString().ToLower() %>'>
                                     <div class="ap-candidato-info">
                                         <div class="texto-principal">
                                             <%# Eval("NombreProducto") %>
-                                            <span class='<%# "etiqueta ap-etiqueta-" + Eval("Prioridad").ToString().ToLower() %>'><%# Eval("Prioridad") %></span>
+                                            <span class='<%# "etiqueta ap-etiqueta-" + Eval("Prioridad").ToString().ToLower() %>'><%# TraducirValor(Eval("Prioridad")) %></span>
                                         </div>
                                         <div class="texto-secundario"><%# Eval("NombreCategoria") %></div>
                                     </div>
@@ -102,30 +102,30 @@
                                     </div>
                                     <div class="ap-candidato-metricas">
                                         <div><span class="texto-principal"><%# Eval("Ventas") %></span><br />
-                                            <span class="texto-secundario">Ventas</span></div>
+                                            <span class="texto-secundario"><%# Traducir("indicadores.colVentas") %></span></div>
                                         <div><span class="texto-principal"><%# Eval("Rotacion") %>%</span><br />
-                                            <span class="texto-secundario">Rotación</span></div>
+                                            <span class="texto-secundario"><%# Traducir("indicadores.colRotacion") %></span></div>
                                         <div><span class="texto-principal"><%# Eval("Circulacion") %>%</span><br />
-                                            <span class="texto-secundario">Circulación</span></div>
+                                            <span class="texto-secundario"><%# Traducir("layout.colCirculacion") %></span></div>
                                     </div>
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-                        <asp:Label ID="lblSinCandidatos" runat="server" Text="No se detectaron productos con oportunidad de reubicación para el período seleccionado." Visible="false" CssClass="sin-resultados" />
+                        <asp:Label ID="lblSinCandidatos" runat="server" Text="No se detectaron productos con oportunidad de reubicación para el período seleccionado." Clave="analisis.sinCandidatos" Visible="false" CssClass="sin-resultados" />
                     </div>
 
                     <div class="tarjeta">
-                        <h2>Productos analizados sin recomendación <span class="etiqueta etiqueta-activo">Bien posicionados</span></h2>
+                        <h2><span runat="server" Clave="analisis.sinRecomendacion">Productos analizados sin recomendación</span> <span class="etiqueta etiqueta-activo" runat="server" Clave="analisis.bienPosicionados">Bien posicionados</span></h2>
                         <table class="tabla">
                             <thead>
                                 <tr>
-                                    <th>Producto</th>
-                                    <th>Categoría</th>
-                                    <th>Sector Actual</th>
-                                    <th>Ventas</th>
-                                    <th>Rotación</th>
-                                    <th>Circulación</th>
-                                    <th>Estado</th>
+                                    <th runat="server" Clave="productos.colProducto">Producto</th>
+                                    <th runat="server" Clave="productos.colCategoria">Categoría</th>
+                                    <th runat="server" Clave="analisis.colSectorActual">Sector Actual</th>
+                                    <th runat="server" Clave="indicadores.colVentas">Ventas</th>
+                                    <th runat="server" Clave="indicadores.colRotacion">Rotación</th>
+                                    <th runat="server" Clave="layout.colCirculacion">Circulación</th>
+                                    <th runat="server" Clave="comun.estado">Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -138,7 +138,7 @@
                                             <td><%# Eval("Ventas") %></td>
                                             <td><%# Eval("Rotacion") %>%</td>
                                             <td><%# Eval("Circulacion") %>%</td>
-                                            <td><span class="etiqueta etiqueta-activo">&#10003; Óptimo</span></td>
+                                            <td><span class="etiqueta etiqueta-activo">&#10003; <%# Traducir("analisis.optimo") %></span></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>

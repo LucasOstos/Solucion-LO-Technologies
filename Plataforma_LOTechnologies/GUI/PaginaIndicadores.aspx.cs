@@ -14,6 +14,10 @@ public partial class PaginaIndicadores : PaginaSegura
     {
         get { return PermisoNombres.VisualizarIndicadores; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "indicadores.titulo"; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private StockBLL stockBLL = new StockBLL();
     private IndicadorBLL indicadorBLL = new IndicadorBLL();
@@ -80,6 +84,14 @@ public partial class PaginaIndicadores : PaginaSegura
             rptRecomendaciones.DataBind();
             recomendacionBLL.GuardarRecomendaciones(recomendaciones);
         }
+    }
+    protected string TextoRecomendacion(object pDato, bool pEsMotivo)
+    {
+        RecomendacionBE recomendacion = pDato as RecomendacionBE;
+        if (recomendacion == null) return "";
+        string clave = pEsMotivo ? recomendacion.ClaveMotivo : recomendacion.ClaveDescripcion;
+        string texto = pEsMotivo ? recomendacion.Motivo : recomendacion.Descripcion;
+        return string.IsNullOrEmpty(clave) ? texto : Traducir(clave, recomendacion.Parametros ?? new object[0]);
     }
     #endregion
 

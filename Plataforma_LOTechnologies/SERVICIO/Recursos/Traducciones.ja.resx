@@ -1535,4 +1535,406 @@
   <data name="stock.msgRegistrado" xml:space="preserve">
     <value>データを登録しました。</value>
   </data>
+  <data name="comun.localObligatorio" xml:space="preserve">
+    <value>店舗 *</value>
+  </data>
+  <data name="comun.periodoDesde" xml:space="preserve">
+    <value>期間（開始） *</value>
+  </data>
+  <data name="comun.periodoHasta" xml:space="preserve">
+    <value>期間（終了） *</value>
+  </data>
+  <data name="valor.moverFrente" xml:space="preserve">
+    <value>手前に移動</value>
+  </data>
+  <data name="valor.moverFondo" xml:space="preserve">
+    <value>奥に移動</value>
+  </data>
+  <data name="valor.ampliarSuperficie" xml:space="preserve">
+    <value>面積を拡大</value>
+  </data>
+  <data name="valor.reducirSuperficie" xml:space="preserve">
+    <value>面積を縮小</value>
+  </data>
+  <data name="valor.reubicarDestacados" xml:space="preserve">
+    <value>注目商品を再配置</value>
+  </data>
+  <data name="valor.modificacionSector" xml:space="preserve">
+    <value>売り場の変更</value>
+  </data>
+  <data name="valor.base" xml:space="preserve">
+    <value>ベース</value>
+  </data>
+  <data name="valor.enRevision" xml:space="preserve">
+    <value>確認中</value>
+  </data>
+  <data name="valor.aprobado" xml:space="preserve">
+    <value>承認済み</value>
+  </data>
+  <data name="valor.alto" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="valor.medio" xml:space="preserve">
+    <value>中</value>
+  </data>
+  <data name="valor.positivo" xml:space="preserve">
+    <value>良好</value>
+  </data>
+  <data name="valor.alta" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="valor.media" xml:space="preserve">
+    <value>中</value>
+  </data>
+  <data name="valor.baja" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="valor.completo" xml:space="preserve">
+    <value>総合</value>
+  </data>
+  <data name="valor.comparacion" xml:space="preserve">
+    <value>比較</value>
+  </data>
+  <data name="valor.indicadores" xml:space="preserve">
+    <value>指標</value>
+  </data>
+  <data name="escenarios.titulo" xml:space="preserve">
+    <value>シミュレーションシナリオ - LO Technologies</value>
+  </data>
+  <data name="escenarios.subtitulo" xml:space="preserve">
+    <value>CUN 007 — 代替シナリオの作成と管理</value>
+  </data>
+  <data name="escenarios.btnNuevo" xml:space="preserve">
+    <value>+ 新規シナリオ</value>
+  </data>
+  <data name="escenarios.ventasEst" xml:space="preserve">
+    <value>推定売上</value>
+  </data>
+  <data name="escenarios.satisfaccion" xml:space="preserve">
+    <value>満足度</value>
+  </data>
+  <data name="escenarios.comparar" xml:space="preserve">
+    <value>比較</value>
+  </data>
+  <data name="escenarios.sinEscenarios" xml:space="preserve">
+    <value>この店舗にはまだシナリオがありません。</value>
+  </data>
+  <data name="escenarios.modalNuevo" xml:space="preserve">
+    <value>新規シナリオ</value>
+  </data>
+  <data name="escenarios.nombre" xml:space="preserve">
+    <value>シナリオ名 *</value>
+  </data>
+  <data name="escenarios.objetivo" xml:space="preserve">
+    <value>目的</value>
+  </data>
+  <data name="escenarios.ejObjetivo" xml:space="preserve">
+    <value>例：家電売り場の回遊率を上げる</value>
+  </data>
+  <data name="escenarios.cambiosPropuestosSectores" xml:space="preserve">
+    <value>売り場の変更案</value>
+  </data>
+  <data name="escenarios.sinCambios" xml:space="preserve">
+    <value>変更なし</value>
+  </data>
+  <data name="escenarios.btnCrear" xml:space="preserve">
+    <value>シナリオを作成</value>
+  </data>
+  <data name="escenarios.objetivoDetalle" xml:space="preserve">
+    <value>目的：</value>
+  </data>
+  <data name="escenarios.cambiosPropuestos" xml:space="preserve">
+    <value>変更案</value>
+  </data>
+  <data name="escenarios.sinCambiosDetalle" xml:space="preserve">
+    <value>このシナリオには変更案がありません。</value>
+  </data>
+  <data name="escenarios.msgCreado" xml:space="preserve">
+    <value>シナリオを作成しました。</value>
+  </data>
+  <data name="comparacion.titulo" xml:space="preserve">
+    <value>シナリオ比較 - LO Technologies</value>
+  </data>
+  <data name="comparacion.subtitulo" xml:space="preserve">
+    <value>CUN 008 — 現行シナリオと提案シナリオの比較</value>
+  </data>
+  <data name="comparacion.periodo" xml:space="preserve">
+    <value>分析期間</value>
+  </data>
+  <data name="comparacion.escenarioActual" xml:space="preserve">
+    <value>現行シナリオ *</value>
+  </data>
+  <data name="comparacion.escenarioPropuesto" xml:space="preserve">
+    <value>提案シナリオ *</value>
+  </data>
+  <data name="comparacion.btnComparar" xml:space="preserve">
+    <value>シナリオを比較</value>
+  </data>
+  <data name="comparacion.actual" xml:space="preserve">
+    <value>（現行）</value>
+  </data>
+  <data name="comparacion.propuesto" xml:space="preserve">
+    <value>（提案）</value>
+  </data>
+  <data name="comparacion.diferencias" xml:space="preserve">
+    <value>主な違い</value>
+  </data>
+  <data name="comparacion.colIndicador" xml:space="preserve">
+    <value>指標</value>
+  </data>
+  <data name="comparacion.colActual" xml:space="preserve">
+    <value>現行</value>
+  </data>
+  <data name="comparacion.colPropuesto" xml:space="preserve">
+    <value>提案</value>
+  </data>
+  <data name="comparacion.colDiferencia" xml:space="preserve">
+    <value>差</value>
+  </data>
+  <data name="comparacion.btnGuardar" xml:space="preserve">
+    <value>比較を保存</value>
+  </data>
+  <data name="comparacion.ventasEstimadas" xml:space="preserve">
+    <value>推定売上</value>
+  </data>
+  <data name="comparacion.circulacionPromedio" xml:space="preserve">
+    <value>平均回遊率</value>
+  </data>
+  <data name="comparacion.rotacionPromedio" xml:space="preserve">
+    <value>平均回転率</value>
+  </data>
+  <data name="comparacion.indicePromedio" xml:space="preserve">
+    <value>平均総合指数</value>
+  </data>
+  <data name="comparacion.errDistintos" xml:space="preserve">
+    <value>比較する2つの異なるシナリオを選択してください。</value>
+  </data>
+  <data name="comparacion.errMismoLocal" xml:space="preserve">
+    <value>シナリオは同じ店舗のものである必要があります。</value>
+  </data>
+  <data name="comparacion.errFaltanDatos" xml:space="preserve">
+    <value>比較に必要なデータが不足しています。</value>
+  </data>
+  <data name="comparacion.errSinComparacion" xml:space="preserve">
+    <value>先に比較を作成してください。</value>
+  </data>
+  <data name="comparacion.msgGuardada" xml:space="preserve">
+    <value>シナリオ比較を保存しました。</value>
+  </data>
+  <data name="indicadores.titulo" xml:space="preserve">
+    <value>指標と推奨事項 - LO Technologies</value>
+  </data>
+  <data name="indicadores.subtitulo" xml:space="preserve">
+    <value>CUN 009 — 主要指標と自動推奨</value>
+  </data>
+  <data name="indicadores.recomendaciones" xml:space="preserve">
+    <value>自動推奨</value>
+  </data>
+  <data name="indicadores.sinRecomendaciones" xml:space="preserve">
+    <value>この期間の推奨はありません。</value>
+  </data>
+  <data name="indicadores.porSector" xml:space="preserve">
+    <value>売り場別の指標</value>
+  </data>
+  <data name="indicadores.colVentas" xml:space="preserve">
+    <value>売上</value>
+  </data>
+  <data name="indicadores.colRotacion" xml:space="preserve">
+    <value>回転率</value>
+  </data>
+  <data name="indicadores.colIndice" xml:space="preserve">
+    <value>総合指数</value>
+  </data>
+  <data name="indicadores.sinIndicadores" xml:space="preserve">
+    <value>完全な指標を作成するためのデータが不足しています。</value>
+  </data>
+  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
+    <value>売り場「{0}」の回遊率が低い</value>
+  </data>
+  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
+    <value>売り場「{0}」の推定回遊率は {1}% で、他より低くなっています。回転率の高い商品の再配置を検討してください。</value>
+  </data>
+  <data name="recomendacion.superaMeta" xml:space="preserve">
+    <value>{0} が売上目標を上回っています</value>
+  </data>
+  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
+    <value>売り場「{0}」は期間の売上基準を上回りました。露出の拡大をおすすめします。</value>
+  </data>
+  <data name="recomendacion.stockCritico" xml:space="preserve">
+    <value>{0} の在庫が危険水準です</value>
+  </data>
+  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
+    <value>「{0}」は残り {1} 個です。至急補充してください。</value>
+  </data>
+  <data name="analisis.titulo" xml:space="preserve">
+    <value>商品分析 - LO Technologies</value>
+  </data>
+  <data name="analisis.subtitulo" xml:space="preserve">
+    <value>CUN 011 — 商品の再配置機会の検出</value>
+  </data>
+  <data name="analisis.configurar" xml:space="preserve">
+    <value>分析の設定</value>
+  </data>
+  <data name="analisis.datosRequeridos" xml:space="preserve">
+    <value>必要なデータ：選択した店舗の商品、売り場、売上、在庫、回遊率。</value>
+  </data>
+  <data name="analisis.btnDetectar" xml:space="preserve">
+    <value>再配置の機会を検出</value>
+  </data>
+  <data name="analisis.analizados" xml:space="preserve">
+    <value>分析した商品</value>
+  </data>
+  <data name="analisis.prioridadAlta" xml:space="preserve">
+    <value>優先度：高</value>
+  </data>
+  <data name="analisis.prioridadMedia" xml:space="preserve">
+    <value>優先度：中</value>
+  </data>
+  <data name="analisis.prioridadBaja" xml:space="preserve">
+    <value>優先度：低</value>
+  </data>
+  <data name="analisis.buscarPlaceholder" xml:space="preserve">
+    <value>商品またはカテゴリを検索...</value>
+  </data>
+  <data name="analisis.todasPrioridades" xml:space="preserve">
+    <value>すべての優先度</value>
+  </data>
+  <data name="analisis.candidatos" xml:space="preserve">
+    <value>再配置の候補</value>
+  </data>
+  <data name="analisis.sinCandidatos" xml:space="preserve">
+    <value>選択した期間に再配置の機会がある商品は見つかりませんでした。</value>
+  </data>
+  <data name="analisis.sinRecomendacion" xml:space="preserve">
+    <value>推奨のない分析済み商品</value>
+  </data>
+  <data name="analisis.bienPosicionados" xml:space="preserve">
+    <value>配置良好</value>
+  </data>
+  <data name="analisis.colSectorActual" xml:space="preserve">
+    <value>現在の売り場</value>
+  </data>
+  <data name="analisis.optimo" xml:space="preserve">
+    <value>最適</value>
+  </data>
+  <data name="analisis.errPeriodo" xml:space="preserve">
+    <value>期間が無効です。</value>
+  </data>
+  <data name="analisis.errSinDatos" xml:space="preserve">
+    <value>再配置の機会を検出するためのデータが不足しています。</value>
+  </data>
+  <data name="reportes.titulo" xml:space="preserve">
+    <value>レポート作成 - LO Technologies</value>
+  </data>
+  <data name="reportes.encabezado" xml:space="preserve">
+    <value>レポート作成</value>
+  </data>
+  <data name="reportes.subtitulo" xml:space="preserve">
+    <value>CUN 010 — 分析・指標・推奨のレポート作成</value>
+  </data>
+  <data name="reportes.configurar" xml:space="preserve">
+    <value>レポートの設定</value>
+  </data>
+  <data name="reportes.tipo" xml:space="preserve">
+    <value>レポートの種類 *</value>
+  </data>
+  <data name="reportes.escenarioBase" xml:space="preserve">
+    <value>ベースシナリオ</value>
+  </data>
+  <data name="reportes.escenarioPropuesto" xml:space="preserve">
+    <value>提案シナリオ</value>
+  </data>
+  <data name="reportes.formato" xml:space="preserve">
+    <value>形式</value>
+  </data>
+  <data name="reportes.idioma" xml:space="preserve">
+    <value>レポートの言語</value>
+  </data>
+  <data name="reportes.secciones" xml:space="preserve">
+    <value>含めるセクション</value>
+  </data>
+  <data name="reportes.resumen" xml:space="preserve">
+    <value>エグゼクティブサマリー</value>
+  </data>
+  <data name="reportes.detalleSector" xml:space="preserve">
+    <value>売り場別の詳細</value>
+  </data>
+  <data name="reportes.estadoStock" xml:space="preserve">
+    <value>在庫状況</value>
+  </data>
+  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
+    <value>主要指標</value>
+  </data>
+  <data name="reportes.recomendaciones" xml:space="preserve">
+    <value>推奨事項</value>
+  </data>
+  <data name="reportes.detalleProductos" xml:space="preserve">
+    <value>商品の詳細</value>
+  </data>
+  <data name="reportes.historialVentas" xml:space="preserve">
+    <value>売上履歴</value>
+  </data>
+  <data name="reportes.btnGenerar" xml:space="preserve">
+    <value>レポートを作成</value>
+  </data>
+  <data name="reportes.recientes" xml:space="preserve">
+    <value>最近のレポート</value>
+  </data>
+  <data name="reportes.ver" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="reportes.bajar" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+  <data name="reportes.sinReportes" xml:space="preserve">
+    <value>まだレポートを作成していません。</value>
+  </data>
+  <data name="reportes.ninguno" xml:space="preserve">
+    <value>— なし —</value>
+  </data>
+  <data name="reportes.errPeriodo" xml:space="preserve">
+    <value>期間の開始と終了を入力してください。</value>
+  </data>
+  <data name="reportes.errSinDatos" xml:space="preserve">
+    <value>レポートを作成するためのデータが不足しています。</value>
+  </data>
+  <data name="reportes.msgGenerado" xml:space="preserve">
+    <value>レポートを作成しました。</value>
+  </data>
+  <data name="pdf.periodo" xml:space="preserve">
+    <value>期間：{0} - {1}</value>
+  </data>
+  <data name="pdf.generado" xml:space="preserve">
+    <value>作成日時：{0}</value>
+  </data>
+  <data name="pdf.ventasTotales" xml:space="preserve">
+    <value>期間の売上合計：{0}</value>
+  </data>
+  <data name="pdf.circulacionPromedio" xml:space="preserve">
+    <value>平均回遊率：{0}%</value>
+  </data>
+  <data name="pdf.sectoresAnalizados" xml:space="preserve">
+    <value>分析した売り場：{0}</value>
+  </data>
+  <data name="pdf.colDisponible" xml:space="preserve">
+    <value>在庫数</value>
+  </data>
+  <data name="pdf.sinRecomendaciones" xml:space="preserve">
+    <value>この期間の推奨はありません。</value>
+  </data>
+  <data name="pdf.errEscenarios" xml:space="preserve">
+    <value>このセクションを含めるには、ベースシナリオと提案シナリオを選択してください。</value>
+  </data>
+  <data name="pdf.baseVsPropuesto" xml:space="preserve">
+    <value>{0}（ベース）対 {1}（提案）</value>
+  </data>
+  <data name="pdf.ventasBase" xml:space="preserve">
+    <value>ベース売上</value>
+  </data>
+  <data name="pdf.ventasPropuesto" xml:space="preserve">
+    <value>提案売上</value>
+  </data>
+  <data name="pdf.graficoComparacion" xml:space="preserve">
+    <value>推定売上：ベース対提案</value>
+  </data>
 </root>

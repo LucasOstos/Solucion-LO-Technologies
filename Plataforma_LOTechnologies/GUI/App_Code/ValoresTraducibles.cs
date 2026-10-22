@@ -45,7 +45,29 @@ public static class ValoresTraducibles
         { "Stock", "valor.stock" },
         { "Crítico", "valor.critico" },
         { "Bajo", "valor.bajo" },
-        { "Normal", "valor.normal" }
+        { "Normal", "valor.normal" },
+        // Estados de escenario
+        { "Base", "valor.base" },
+        { "En revisión", "valor.enRevision" },
+        { "Aprobado", "valor.aprobado" },
+        // Cambios propuestos de un escenario (IndicadorBLL los interpreta en español)
+        { "Modificación de sector", "valor.modificacionSector" },
+        { "Mover al frente", "valor.moverFrente" },
+        { "Mover al fondo", "valor.moverFondo" },
+        { "Ampliar superficie", "valor.ampliarSuperficie" },
+        { "Reducir superficie", "valor.reducirSuperficie" },
+        { "Reubicar productos destacados", "valor.reubicarDestacados" },
+        // Prioridad de recomendaciones y de análisis de productos
+        { "Alto", "valor.alto" },
+        { "Medio", "valor.medio" },
+        { "Positivo", "valor.positivo" },
+        { "Alta", "valor.alta" },
+        { "Media", "valor.media" },
+        { "Baja", "valor.baja" },
+        // Tipo de reporte
+        { "Completo", "valor.completo" },
+        { "Comparación", "valor.comparacion" },
+        { "Indicadores", "valor.indicadores" }
     };
     public static string ObtenerClave(string pValor)
     {

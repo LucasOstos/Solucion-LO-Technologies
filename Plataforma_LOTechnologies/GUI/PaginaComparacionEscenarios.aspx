@@ -21,38 +21,38 @@
 
                 <div class="encabezado">
                     <div>
-                        <h1>Comparación de Escenarios</h1>
-                        <p class="subtitulo">CUN 008 — Comparar escenario actual vs. escenario propuesto</p>
+                        <h1 runat="server" Clave="principal.comparacion.titulo">Comparación de Escenarios</h1>
+                        <p class="subtitulo" runat="server" Clave="comparacion.subtitulo">CUN 008 — Comparar escenario actual vs. escenario propuesto</p>
                     </div>
                 </div>
 
-                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
 
                 <div class="tarjeta">
                     <div class="fila-formulario">
                         <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Local" AssociatedControlID="ddlLocal" />
+                            <asp:Label runat="server" Text="Local" AssociatedControlID="ddlLocal" Clave="comun.local" />
                             <asp:DropDownList ID="ddlLocal" runat="server" CssClass="modal-campo" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
                         </div>
                         <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Período de análisis" AssociatedControlID="ddlPeriodo" />
+                            <asp:Label runat="server" Text="Período de análisis" AssociatedControlID="ddlPeriodo" Clave="comparacion.periodo" />
                             <asp:DropDownList ID="ddlPeriodo" runat="server" CssClass="modal-campo">
-                                <asp:ListItem Text="Último mes" Value="ultimo_mes" />
-                                <asp:ListItem Text="Últimos 3 meses" Value="3_meses" />
+                                <asp:ListItem Text="Último mes" Value="ultimo_mes" Clave="stock.ultimoMes" />
+                                <asp:ListItem Text="Últimos 3 meses" Value="3_meses" Clave="stock.ultimos3" />
                             </asp:DropDownList>
                         </div>
                     </div>
                     <div class="fila-formulario">
                         <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Escenario actual *" AssociatedControlID="ddlEscenarioA" />
+                            <asp:Label runat="server" Text="Escenario actual *" AssociatedControlID="ddlEscenarioA" Clave="comparacion.escenarioActual" />
                             <asp:DropDownList ID="ddlEscenarioA" runat="server" CssClass="modal-campo" />
                         </div>
                         <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Escenario propuesto *" AssociatedControlID="ddlEscenarioB" />
+                            <asp:Label runat="server" Text="Escenario propuesto *" AssociatedControlID="ddlEscenarioB" Clave="comparacion.escenarioPropuesto" />
                             <asp:DropDownList ID="ddlEscenarioB" runat="server" CssClass="modal-campo" />
                         </div>
                     </div>
-                    <asp:Button ID="btnComparar" runat="server" CssClass="boton-nuevo" Text="Comparar Escenarios" OnClick="btnComparar_Click" CausesValidation="false" />
+                    <asp:Button ID="btnComparar" runat="server" CssClass="boton-nuevo" Text="Comparar Escenarios" Clave="comparacion.btnComparar" OnClick="btnComparar_Click" CausesValidation="false" />
                 </div>
 
                 <asp:Panel ID="pnlResultados" runat="server" Visible="false">
@@ -60,7 +60,7 @@
                         <div class="tarjeta">
                             <h2>
                                 <asp:Literal ID="litNombreEscenarioA" runat="server" />
-                                (actual)</h2>
+                                <span runat="server" Clave="comparacion.actual">(actual)</span></h2>
                             <asp:Repeater ID="rptIndicadoresA" runat="server">
                                 <ItemTemplate>
                                     <div class="ce-indicador">
@@ -73,7 +73,7 @@
                         <div class="tarjeta">
                             <h2>
                                 <asp:Literal ID="litNombreEscenarioB" runat="server" />
-                                (propuesto)</h2>
+                                <span runat="server" Clave="comparacion.propuesto">(propuesto)</span></h2>
                             <asp:Repeater ID="rptIndicadoresB" runat="server">
                                 <ItemTemplate>
                                     <div class="ce-indicador">
@@ -86,14 +86,14 @@
                     </div>
 
                     <div class="tarjeta">
-                        <h2>Diferencias principales</h2>
+                        <h2 runat="server" Clave="comparacion.diferencias">Diferencias principales</h2>
                         <table class="tabla">
                             <thead>
                                 <tr>
-                                    <th>Indicador</th>
-                                    <th>Actual</th>
-                                    <th>Propuesto</th>
-                                    <th>Diferencia</th>
+                                    <th runat="server" Clave="layout.colSector">Indicador</th>
+                                    <th runat="server" Clave="comparacion.colActual">Actual</th>
+                                    <th runat="server" Clave="comparacion.colPropuesto">Propuesto</th>
+                                    <th runat="server" Clave="comparacion.colDiferencia">Diferencia</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -111,7 +111,7 @@
                         </table>
                     </div>
 
-                    <asp:Button ID="btnGuardarComparacion" runat="server" CssClass="boton-nuevo" Text="Guardar Comparación" OnClick="btnGuardarComparacion_Click" CausesValidation="false" />
+                    <asp:Button ID="btnGuardarComparacion" runat="server" CssClass="boton-nuevo" Text="Guardar Comparación" Clave="comparacion.btnGuardar" OnClick="btnGuardarComparacion_Click" CausesValidation="false" />
                 </asp:Panel>
             </div>
         </div>

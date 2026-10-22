@@ -1535,4 +1535,406 @@
   <data name="stock.msgRegistrado" xml:space="preserve">
     <value>Dados cadastrados com sucesso.</value>
   </data>
+  <data name="comun.localObligatorio" xml:space="preserve">
+    <value>Loja *</value>
+  </data>
+  <data name="comun.periodoDesde" xml:space="preserve">
+    <value>Período de *</value>
+  </data>
+  <data name="comun.periodoHasta" xml:space="preserve">
+    <value>Período até *</value>
+  </data>
+  <data name="valor.moverFrente" xml:space="preserve">
+    <value>Mover para a frente</value>
+  </data>
+  <data name="valor.moverFondo" xml:space="preserve">
+    <value>Mover para o fundo</value>
+  </data>
+  <data name="valor.ampliarSuperficie" xml:space="preserve">
+    <value>Ampliar área</value>
+  </data>
+  <data name="valor.reducirSuperficie" xml:space="preserve">
+    <value>Reduzir área</value>
+  </data>
+  <data name="valor.reubicarDestacados" xml:space="preserve">
+    <value>Realocar produtos em destaque</value>
+  </data>
+  <data name="valor.modificacionSector" xml:space="preserve">
+    <value>Modificação de setor</value>
+  </data>
+  <data name="valor.base" xml:space="preserve">
+    <value>Base</value>
+  </data>
+  <data name="valor.enRevision" xml:space="preserve">
+    <value>Em revisão</value>
+  </data>
+  <data name="valor.aprobado" xml:space="preserve">
+    <value>Aprovado</value>
+  </data>
+  <data name="valor.alto" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="valor.medio" xml:space="preserve">
+    <value>Médio</value>
+  </data>
+  <data name="valor.positivo" xml:space="preserve">
+    <value>Positivo</value>
+  </data>
+  <data name="valor.alta" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="valor.media" xml:space="preserve">
+    <value>Média</value>
+  </data>
+  <data name="valor.baja" xml:space="preserve">
+    <value>Baixa</value>
+  </data>
+  <data name="valor.completo" xml:space="preserve">
+    <value>Completo</value>
+  </data>
+  <data name="valor.comparacion" xml:space="preserve">
+    <value>Comparação</value>
+  </data>
+  <data name="valor.indicadores" xml:space="preserve">
+    <value>Indicadores</value>
+  </data>
+  <data name="escenarios.titulo" xml:space="preserve">
+    <value>Cenários de simulação - LO Technologies</value>
+  </data>
+  <data name="escenarios.subtitulo" xml:space="preserve">
+    <value>CUN 007 — Criar e gerenciar cenários alternativos</value>
+  </data>
+  <data name="escenarios.btnNuevo" xml:space="preserve">
+    <value>+ Novo cenário</value>
+  </data>
+  <data name="escenarios.ventasEst" xml:space="preserve">
+    <value>Vendas est.</value>
+  </data>
+  <data name="escenarios.satisfaccion" xml:space="preserve">
+    <value>Satisfação</value>
+  </data>
+  <data name="escenarios.comparar" xml:space="preserve">
+    <value>Comparar</value>
+  </data>
+  <data name="escenarios.sinEscenarios" xml:space="preserve">
+    <value>Esta loja ainda não tem cenários criados.</value>
+  </data>
+  <data name="escenarios.modalNuevo" xml:space="preserve">
+    <value>Novo cenário</value>
+  </data>
+  <data name="escenarios.nombre" xml:space="preserve">
+    <value>Nome do cenário *</value>
+  </data>
+  <data name="escenarios.objetivo" xml:space="preserve">
+    <value>Objetivo</value>
+  </data>
+  <data name="escenarios.ejObjetivo" xml:space="preserve">
+    <value>Ex.: Aumentar a circulação no setor de Eletrônicos</value>
+  </data>
+  <data name="escenarios.cambiosPropuestosSectores" xml:space="preserve">
+    <value>Mudanças propostas nos setores</value>
+  </data>
+  <data name="escenarios.sinCambios" xml:space="preserve">
+    <value>Sem mudanças</value>
+  </data>
+  <data name="escenarios.btnCrear" xml:space="preserve">
+    <value>Criar cenário</value>
+  </data>
+  <data name="escenarios.objetivoDetalle" xml:space="preserve">
+    <value>Objetivo:</value>
+  </data>
+  <data name="escenarios.cambiosPropuestos" xml:space="preserve">
+    <value>Mudanças propostas</value>
+  </data>
+  <data name="escenarios.sinCambiosDetalle" xml:space="preserve">
+    <value>Este cenário não tem mudanças propostas.</value>
+  </data>
+  <data name="escenarios.msgCreado" xml:space="preserve">
+    <value>Cenário criado com sucesso.</value>
+  </data>
+  <data name="comparacion.titulo" xml:space="preserve">
+    <value>Comparação de cenários - LO Technologies</value>
+  </data>
+  <data name="comparacion.subtitulo" xml:space="preserve">
+    <value>CUN 008 — Comparar cenário atual vs. cenário proposto</value>
+  </data>
+  <data name="comparacion.periodo" xml:space="preserve">
+    <value>Período de análise</value>
+  </data>
+  <data name="comparacion.escenarioActual" xml:space="preserve">
+    <value>Cenário atual *</value>
+  </data>
+  <data name="comparacion.escenarioPropuesto" xml:space="preserve">
+    <value>Cenário proposto *</value>
+  </data>
+  <data name="comparacion.btnComparar" xml:space="preserve">
+    <value>Comparar cenários</value>
+  </data>
+  <data name="comparacion.actual" xml:space="preserve">
+    <value>(atual)</value>
+  </data>
+  <data name="comparacion.propuesto" xml:space="preserve">
+    <value>(proposto)</value>
+  </data>
+  <data name="comparacion.diferencias" xml:space="preserve">
+    <value>Principais diferenças</value>
+  </data>
+  <data name="comparacion.colIndicador" xml:space="preserve">
+    <value>Indicador</value>
+  </data>
+  <data name="comparacion.colActual" xml:space="preserve">
+    <value>Atual</value>
+  </data>
+  <data name="comparacion.colPropuesto" xml:space="preserve">
+    <value>Proposto</value>
+  </data>
+  <data name="comparacion.colDiferencia" xml:space="preserve">
+    <value>Diferença</value>
+  </data>
+  <data name="comparacion.btnGuardar" xml:space="preserve">
+    <value>Salvar comparação</value>
+  </data>
+  <data name="comparacion.ventasEstimadas" xml:space="preserve">
+    <value>Vendas estimadas</value>
+  </data>
+  <data name="comparacion.circulacionPromedio" xml:space="preserve">
+    <value>Circulação média</value>
+  </data>
+  <data name="comparacion.rotacionPromedio" xml:space="preserve">
+    <value>Giro médio</value>
+  </data>
+  <data name="comparacion.indicePromedio" xml:space="preserve">
+    <value>Índice global médio</value>
+  </data>
+  <data name="comparacion.errDistintos" xml:space="preserve">
+    <value>Selecione dois cenários diferentes para comparar.</value>
+  </data>
+  <data name="comparacion.errMismoLocal" xml:space="preserve">
+    <value>Os cenários devem pertencer à mesma loja.</value>
+  </data>
+  <data name="comparacion.errFaltanDatos" xml:space="preserve">
+    <value>Não há dados suficientes para comparar.</value>
+  </data>
+  <data name="comparacion.errSinComparacion" xml:space="preserve">
+    <value>Primeiro gere uma comparação.</value>
+  </data>
+  <data name="comparacion.msgGuardada" xml:space="preserve">
+    <value>Comparação de cenários salva com sucesso.</value>
+  </data>
+  <data name="indicadores.titulo" xml:space="preserve">
+    <value>Indicadores e recomendações - LO Technologies</value>
+  </data>
+  <data name="indicadores.subtitulo" xml:space="preserve">
+    <value>CUN 009 — Indicadores-chave e recomendações automáticas</value>
+  </data>
+  <data name="indicadores.recomendaciones" xml:space="preserve">
+    <value>Recomendações automáticas</value>
+  </data>
+  <data name="indicadores.sinRecomendaciones" xml:space="preserve">
+    <value>Não há recomendações geradas para este período.</value>
+  </data>
+  <data name="indicadores.porSector" xml:space="preserve">
+    <value>Indicadores por setor</value>
+  </data>
+  <data name="indicadores.colVentas" xml:space="preserve">
+    <value>Vendas</value>
+  </data>
+  <data name="indicadores.colRotacion" xml:space="preserve">
+    <value>Giro</value>
+  </data>
+  <data name="indicadores.colIndice" xml:space="preserve">
+    <value>Índice global</value>
+  </data>
+  <data name="indicadores.sinIndicadores" xml:space="preserve">
+    <value>Não há dados suficientes para gerar indicadores completos.</value>
+  </data>
+  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
+    <value>Baixa circulação no setor {0}</value>
+  </data>
+  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
+    <value>O setor {0} registra {1}% de circulação estimada, abaixo dos demais. Considere redistribuir produtos de alto giro.</value>
+  </data>
+  <data name="recomendacion.superaMeta" xml:space="preserve">
+    <value>{0} supera a meta de vendas</value>
+  </data>
+  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
+    <value>O setor {0} superou o limite de vendas do período. Recomenda-se ampliar sua exposição.</value>
+  </data>
+  <data name="recomendacion.stockCritico" xml:space="preserve">
+    <value>Estoque crítico em {0}</value>
+  </data>
+  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
+    <value>'{0}' tem apenas {1} unidades. Recomenda-se reposição urgente.</value>
+  </data>
+  <data name="analisis.titulo" xml:space="preserve">
+    <value>Análise de produtos - LO Technologies</value>
+  </data>
+  <data name="analisis.subtitulo" xml:space="preserve">
+    <value>CUN 011 — Detectar oportunidades de realocação de produtos</value>
+  </data>
+  <data name="analisis.configurar" xml:space="preserve">
+    <value>Configurar análise</value>
+  </data>
+  <data name="analisis.datosRequeridos" xml:space="preserve">
+    <value>Dados necessários: produtos, setores, vendas, estoque e circulação da loja selecionada.</value>
+  </data>
+  <data name="analisis.btnDetectar" xml:space="preserve">
+    <value>Detectar oportunidades de realocação</value>
+  </data>
+  <data name="analisis.analizados" xml:space="preserve">
+    <value>Produtos analisados</value>
+  </data>
+  <data name="analisis.prioridadAlta" xml:space="preserve">
+    <value>Prioridade alta</value>
+  </data>
+  <data name="analisis.prioridadMedia" xml:space="preserve">
+    <value>Prioridade média</value>
+  </data>
+  <data name="analisis.prioridadBaja" xml:space="preserve">
+    <value>Prioridade baixa</value>
+  </data>
+  <data name="analisis.buscarPlaceholder" xml:space="preserve">
+    <value>Pesquisar produto ou categoria...</value>
+  </data>
+  <data name="analisis.todasPrioridades" xml:space="preserve">
+    <value>Todas as prioridades</value>
+  </data>
+  <data name="analisis.candidatos" xml:space="preserve">
+    <value>Candidatos à realocação</value>
+  </data>
+  <data name="analisis.sinCandidatos" xml:space="preserve">
+    <value>Não foram detectados produtos com oportunidade de realocação no período selecionado.</value>
+  </data>
+  <data name="analisis.sinRecomendacion" xml:space="preserve">
+    <value>Produtos analisados sem recomendação</value>
+  </data>
+  <data name="analisis.bienPosicionados" xml:space="preserve">
+    <value>Bem posicionados</value>
+  </data>
+  <data name="analisis.colSectorActual" xml:space="preserve">
+    <value>Setor atual</value>
+  </data>
+  <data name="analisis.optimo" xml:space="preserve">
+    <value>Ótimo</value>
+  </data>
+  <data name="analisis.errPeriodo" xml:space="preserve">
+    <value>Período inválido.</value>
+  </data>
+  <data name="analisis.errSinDatos" xml:space="preserve">
+    <value>Não há dados suficientes para detectar oportunidades de realocação.</value>
+  </data>
+  <data name="reportes.titulo" xml:space="preserve">
+    <value>Geração de relatórios - LO Technologies</value>
+  </data>
+  <data name="reportes.encabezado" xml:space="preserve">
+    <value>Geração de relatórios</value>
+  </data>
+  <data name="reportes.subtitulo" xml:space="preserve">
+    <value>CUN 010 — Gerar relatórios de análise, indicadores e recomendações</value>
+  </data>
+  <data name="reportes.configurar" xml:space="preserve">
+    <value>Configurar relatório</value>
+  </data>
+  <data name="reportes.tipo" xml:space="preserve">
+    <value>Tipo de relatório *</value>
+  </data>
+  <data name="reportes.escenarioBase" xml:space="preserve">
+    <value>Cenário base</value>
+  </data>
+  <data name="reportes.escenarioPropuesto" xml:space="preserve">
+    <value>Cenário proposto</value>
+  </data>
+  <data name="reportes.formato" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="reportes.idioma" xml:space="preserve">
+    <value>Idioma do relatório</value>
+  </data>
+  <data name="reportes.secciones" xml:space="preserve">
+    <value>Seções a incluir</value>
+  </data>
+  <data name="reportes.resumen" xml:space="preserve">
+    <value>Resumo executivo</value>
+  </data>
+  <data name="reportes.detalleSector" xml:space="preserve">
+    <value>Detalhe por setor</value>
+  </data>
+  <data name="reportes.estadoStock" xml:space="preserve">
+    <value>Situação do estoque</value>
+  </data>
+  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
+    <value>Indicadores principais</value>
+  </data>
+  <data name="reportes.recomendaciones" xml:space="preserve">
+    <value>Recomendações</value>
+  </data>
+  <data name="reportes.detalleProductos" xml:space="preserve">
+    <value>Detalhe de produtos</value>
+  </data>
+  <data name="reportes.historialVentas" xml:space="preserve">
+    <value>Histórico de vendas</value>
+  </data>
+  <data name="reportes.btnGenerar" xml:space="preserve">
+    <value>Gerar relatório</value>
+  </data>
+  <data name="reportes.recientes" xml:space="preserve">
+    <value>Relatórios recentes</value>
+  </data>
+  <data name="reportes.ver" xml:space="preserve">
+    <value>Ver</value>
+  </data>
+  <data name="reportes.bajar" xml:space="preserve">
+    <value>Baixar</value>
+  </data>
+  <data name="reportes.sinReportes" xml:space="preserve">
+    <value>Você ainda não gerou nenhum relatório.</value>
+  </data>
+  <data name="reportes.ninguno" xml:space="preserve">
+    <value>— Nenhum —</value>
+  </data>
+  <data name="reportes.errPeriodo" xml:space="preserve">
+    <value>Preencha o período inicial e final.</value>
+  </data>
+  <data name="reportes.errSinDatos" xml:space="preserve">
+    <value>Não há dados suficientes para gerar o relatório.</value>
+  </data>
+  <data name="reportes.msgGenerado" xml:space="preserve">
+    <value>Relatório gerado com sucesso.</value>
+  </data>
+  <data name="pdf.periodo" xml:space="preserve">
+    <value>Período: {0} - {1}</value>
+  </data>
+  <data name="pdf.generado" xml:space="preserve">
+    <value>Gerado em: {0}</value>
+  </data>
+  <data name="pdf.ventasTotales" xml:space="preserve">
+    <value>Vendas totais do período: {0}</value>
+  </data>
+  <data name="pdf.circulacionPromedio" xml:space="preserve">
+    <value>Circulação média: {0}%</value>
+  </data>
+  <data name="pdf.sectoresAnalizados" xml:space="preserve">
+    <value>Setores analisados: {0}</value>
+  </data>
+  <data name="pdf.colDisponible" xml:space="preserve">
+    <value>Disponível</value>
+  </data>
+  <data name="pdf.sinRecomendaciones" xml:space="preserve">
+    <value>Não há recomendações para este período.</value>
+  </data>
+  <data name="pdf.errEscenarios" xml:space="preserve">
+    <value>Selecione um cenário base e um cenário proposto para incluir esta seção.</value>
+  </data>
+  <data name="pdf.baseVsPropuesto" xml:space="preserve">
+    <value>{0} (base) vs. {1} (proposto)</value>
+  </data>
+  <data name="pdf.ventasBase" xml:space="preserve">
+    <value>Vendas base</value>
+  </data>
+  <data name="pdf.ventasPropuesto" xml:space="preserve">
+    <value>Vendas proposto</value>
+  </data>
+  <data name="pdf.graficoComparacion" xml:space="preserve">
+    <value>Vendas estimadas: base vs. proposto</value>
+  </data>
 </root>

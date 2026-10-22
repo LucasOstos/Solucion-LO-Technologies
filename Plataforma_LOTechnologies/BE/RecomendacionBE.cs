@@ -19,5 +19,8 @@ namespace BE
         public string TipoRecomendacion { get; set; }
         public string Estado {  get; set; }
         public DateTime FechaGeneracion { get; set; }
+        public string ClaveDescripcion { get; set; }
+        public string ClaveMotivo { get; set; }
+        public object[] Parametros { get; set; }
     }
 }

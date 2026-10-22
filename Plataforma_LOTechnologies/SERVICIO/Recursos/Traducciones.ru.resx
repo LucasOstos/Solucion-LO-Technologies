@@ -1535,4 +1535,406 @@
   <data name="stock.msgRegistrado" xml:space="preserve">
     <value>Данные успешно зарегистрированы.</value>
   </data>
+  <data name="comun.localObligatorio" xml:space="preserve">
+    <value>Магазин *</value>
+  </data>
+  <data name="comun.periodoDesde" xml:space="preserve">
+    <value>Период с *</value>
+  </data>
+  <data name="comun.periodoHasta" xml:space="preserve">
+    <value>Период по *</value>
+  </data>
+  <data name="valor.moverFrente" xml:space="preserve">
+    <value>Переместить вперёд</value>
+  </data>
+  <data name="valor.moverFondo" xml:space="preserve">
+    <value>Переместить назад</value>
+  </data>
+  <data name="valor.ampliarSuperficie" xml:space="preserve">
+    <value>Увеличить площадь</value>
+  </data>
+  <data name="valor.reducirSuperficie" xml:space="preserve">
+    <value>Уменьшить площадь</value>
+  </data>
+  <data name="valor.reubicarDestacados" xml:space="preserve">
+    <value>Переместить ключевые товары</value>
+  </data>
+  <data name="valor.modificacionSector" xml:space="preserve">
+    <value>Изменение секции</value>
+  </data>
+  <data name="valor.base" xml:space="preserve">
+    <value>Базовый</value>
+  </data>
+  <data name="valor.enRevision" xml:space="preserve">
+    <value>На рассмотрении</value>
+  </data>
+  <data name="valor.aprobado" xml:space="preserve">
+    <value>Утверждён</value>
+  </data>
+  <data name="valor.alto" xml:space="preserve">
+    <value>Высокий</value>
+  </data>
+  <data name="valor.medio" xml:space="preserve">
+    <value>Средний</value>
+  </data>
+  <data name="valor.positivo" xml:space="preserve">
+    <value>Положительный</value>
+  </data>
+  <data name="valor.alta" xml:space="preserve">
+    <value>Высокий</value>
+  </data>
+  <data name="valor.media" xml:space="preserve">
+    <value>Средний</value>
+  </data>
+  <data name="valor.baja" xml:space="preserve">
+    <value>Низкий</value>
+  </data>
+  <data name="valor.completo" xml:space="preserve">
+    <value>Полный</value>
+  </data>
+  <data name="valor.comparacion" xml:space="preserve">
+    <value>Сравнение</value>
+  </data>
+  <data name="valor.indicadores" xml:space="preserve">
+    <value>Показатели</value>
+  </data>
+  <data name="escenarios.titulo" xml:space="preserve">
+    <value>Сценарии моделирования - LO Technologies</value>
+  </data>
+  <data name="escenarios.subtitulo" xml:space="preserve">
+    <value>CUN 007 — Создание и управление альтернативными сценариями</value>
+  </data>
+  <data name="escenarios.btnNuevo" xml:space="preserve">
+    <value>+ Новый сценарий</value>
+  </data>
+  <data name="escenarios.ventasEst" xml:space="preserve">
+    <value>Прогноз продаж</value>
+  </data>
+  <data name="escenarios.satisfaccion" xml:space="preserve">
+    <value>Удовлетворённость</value>
+  </data>
+  <data name="escenarios.comparar" xml:space="preserve">
+    <value>Сравнить</value>
+  </data>
+  <data name="escenarios.sinEscenarios" xml:space="preserve">
+    <value>У этого магазина ещё нет сценариев.</value>
+  </data>
+  <data name="escenarios.modalNuevo" xml:space="preserve">
+    <value>Новый сценарий</value>
+  </data>
+  <data name="escenarios.nombre" xml:space="preserve">
+    <value>Название сценария *</value>
+  </data>
+  <data name="escenarios.objetivo" xml:space="preserve">
+    <value>Цель</value>
+  </data>
+  <data name="escenarios.ejObjetivo" xml:space="preserve">
+    <value>Например: увеличить проходимость секции «Электроника»</value>
+  </data>
+  <data name="escenarios.cambiosPropuestosSectores" xml:space="preserve">
+    <value>Предлагаемые изменения секций</value>
+  </data>
+  <data name="escenarios.sinCambios" xml:space="preserve">
+    <value>Без изменений</value>
+  </data>
+  <data name="escenarios.btnCrear" xml:space="preserve">
+    <value>Создать сценарий</value>
+  </data>
+  <data name="escenarios.objetivoDetalle" xml:space="preserve">
+    <value>Цель:</value>
+  </data>
+  <data name="escenarios.cambiosPropuestos" xml:space="preserve">
+    <value>Предлагаемые изменения</value>
+  </data>
+  <data name="escenarios.sinCambiosDetalle" xml:space="preserve">
+    <value>В этом сценарии нет предлагаемых изменений.</value>
+  </data>
+  <data name="escenarios.msgCreado" xml:space="preserve">
+    <value>Сценарий успешно создан.</value>
+  </data>
+  <data name="comparacion.titulo" xml:space="preserve">
+    <value>Сравнение сценариев - LO Technologies</value>
+  </data>
+  <data name="comparacion.subtitulo" xml:space="preserve">
+    <value>CUN 008 — Сравнение текущего и предлагаемого сценария</value>
+  </data>
+  <data name="comparacion.periodo" xml:space="preserve">
+    <value>Период анализа</value>
+  </data>
+  <data name="comparacion.escenarioActual" xml:space="preserve">
+    <value>Текущий сценарий *</value>
+  </data>
+  <data name="comparacion.escenarioPropuesto" xml:space="preserve">
+    <value>Предлагаемый сценарий *</value>
+  </data>
+  <data name="comparacion.btnComparar" xml:space="preserve">
+    <value>Сравнить сценарии</value>
+  </data>
+  <data name="comparacion.actual" xml:space="preserve">
+    <value>(текущий)</value>
+  </data>
+  <data name="comparacion.propuesto" xml:space="preserve">
+    <value>(предлагаемый)</value>
+  </data>
+  <data name="comparacion.diferencias" xml:space="preserve">
+    <value>Основные различия</value>
+  </data>
+  <data name="comparacion.colIndicador" xml:space="preserve">
+    <value>Показатель</value>
+  </data>
+  <data name="comparacion.colActual" xml:space="preserve">
+    <value>Текущий</value>
+  </data>
+  <data name="comparacion.colPropuesto" xml:space="preserve">
+    <value>Предлагаемый</value>
+  </data>
+  <data name="comparacion.colDiferencia" xml:space="preserve">
+    <value>Разница</value>
+  </data>
+  <data name="comparacion.btnGuardar" xml:space="preserve">
+    <value>Сохранить сравнение</value>
+  </data>
+  <data name="comparacion.ventasEstimadas" xml:space="preserve">
+    <value>Прогноз продаж</value>
+  </data>
+  <data name="comparacion.circulacionPromedio" xml:space="preserve">
+    <value>Средняя проходимость</value>
+  </data>
+  <data name="comparacion.rotacionPromedio" xml:space="preserve">
+    <value>Средняя оборачиваемость</value>
+  </data>
+  <data name="comparacion.indicePromedio" xml:space="preserve">
+    <value>Средний общий индекс</value>
+  </data>
+  <data name="comparacion.errDistintos" xml:space="preserve">
+    <value>Выберите два разных сценария для сравнения.</value>
+  </data>
+  <data name="comparacion.errMismoLocal" xml:space="preserve">
+    <value>Сценарии должны относиться к одному магазину.</value>
+  </data>
+  <data name="comparacion.errFaltanDatos" xml:space="preserve">
+    <value>Недостаточно данных для сравнения.</value>
+  </data>
+  <data name="comparacion.errSinComparacion" xml:space="preserve">
+    <value>Сначала выполните сравнение.</value>
+  </data>
+  <data name="comparacion.msgGuardada" xml:space="preserve">
+    <value>Сравнение сценариев успешно сохранено.</value>
+  </data>
+  <data name="indicadores.titulo" xml:space="preserve">
+    <value>Показатели и рекомендации - LO Technologies</value>
+  </data>
+  <data name="indicadores.subtitulo" xml:space="preserve">
+    <value>CUN 009 — Ключевые показатели и автоматические рекомендации</value>
+  </data>
+  <data name="indicadores.recomendaciones" xml:space="preserve">
+    <value>Автоматические рекомендации</value>
+  </data>
+  <data name="indicadores.sinRecomendaciones" xml:space="preserve">
+    <value>Для этого периода нет рекомендаций.</value>
+  </data>
+  <data name="indicadores.porSector" xml:space="preserve">
+    <value>Показатели по секциям</value>
+  </data>
+  <data name="indicadores.colVentas" xml:space="preserve">
+    <value>Продажи</value>
+  </data>
+  <data name="indicadores.colRotacion" xml:space="preserve">
+    <value>Оборачиваемость</value>
+  </data>
+  <data name="indicadores.colIndice" xml:space="preserve">
+    <value>Общий индекс</value>
+  </data>
+  <data name="indicadores.sinIndicadores" xml:space="preserve">
+    <value>Недостаточно данных для полных показателей.</value>
+  </data>
+  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
+    <value>Низкая проходимость в секции {0}</value>
+  </data>
+  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
+    <value>Секция {0} имеет расчётную проходимость {1}% — ниже остальных. Рассмотрите перераспределение товаров с высокой оборачиваемостью.</value>
+  </data>
+  <data name="recomendacion.superaMeta" xml:space="preserve">
+    <value>{0} превышает план продаж</value>
+  </data>
+  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
+    <value>Секция {0} превысила порог продаж за период. Рекомендуется расширить её выкладку.</value>
+  </data>
+  <data name="recomendacion.stockCritico" xml:space="preserve">
+    <value>Критический запас: {0}</value>
+  </data>
+  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
+    <value>У «{0}» осталось всего {1} ед. Рекомендуется срочное пополнение.</value>
+  </data>
+  <data name="analisis.titulo" xml:space="preserve">
+    <value>Анализ товаров - LO Technologies</value>
+  </data>
+  <data name="analisis.subtitulo" xml:space="preserve">
+    <value>CUN 011 — Поиск возможностей перемещения товаров</value>
+  </data>
+  <data name="analisis.configurar" xml:space="preserve">
+    <value>Настройка анализа</value>
+  </data>
+  <data name="analisis.datosRequeridos" xml:space="preserve">
+    <value>Необходимые данные: товары, секции, продажи, запасы и проходимость выбранного магазина.</value>
+  </data>
+  <data name="analisis.btnDetectar" xml:space="preserve">
+    <value>Найти возможности перемещения</value>
+  </data>
+  <data name="analisis.analizados" xml:space="preserve">
+    <value>Проанализировано товаров</value>
+  </data>
+  <data name="analisis.prioridadAlta" xml:space="preserve">
+    <value>Высокий приоритет</value>
+  </data>
+  <data name="analisis.prioridadMedia" xml:space="preserve">
+    <value>Средний приоритет</value>
+  </data>
+  <data name="analisis.prioridadBaja" xml:space="preserve">
+    <value>Низкий приоритет</value>
+  </data>
+  <data name="analisis.buscarPlaceholder" xml:space="preserve">
+    <value>Поиск товара или категории...</value>
+  </data>
+  <data name="analisis.todasPrioridades" xml:space="preserve">
+    <value>Все приоритеты</value>
+  </data>
+  <data name="analisis.candidatos" xml:space="preserve">
+    <value>Кандидаты на перемещение</value>
+  </data>
+  <data name="analisis.sinCandidatos" xml:space="preserve">
+    <value>За выбранный период не найдено товаров для перемещения.</value>
+  </data>
+  <data name="analisis.sinRecomendacion" xml:space="preserve">
+    <value>Проанализированные товары без рекомендаций</value>
+  </data>
+  <data name="analisis.bienPosicionados" xml:space="preserve">
+    <value>Хорошо размещены</value>
+  </data>
+  <data name="analisis.colSectorActual" xml:space="preserve">
+    <value>Текущая секция</value>
+  </data>
+  <data name="analisis.optimo" xml:space="preserve">
+    <value>Оптимально</value>
+  </data>
+  <data name="analisis.errPeriodo" xml:space="preserve">
+    <value>Неверный период.</value>
+  </data>
+  <data name="analisis.errSinDatos" xml:space="preserve">
+    <value>Недостаточно данных для поиска возможностей перемещения.</value>
+  </data>
+  <data name="reportes.titulo" xml:space="preserve">
+    <value>Формирование отчётов - LO Technologies</value>
+  </data>
+  <data name="reportes.encabezado" xml:space="preserve">
+    <value>Формирование отчётов</value>
+  </data>
+  <data name="reportes.subtitulo" xml:space="preserve">
+    <value>CUN 010 — Формирование отчётов по анализу, показателям и рекомендациям</value>
+  </data>
+  <data name="reportes.configurar" xml:space="preserve">
+    <value>Настройка отчёта</value>
+  </data>
+  <data name="reportes.tipo" xml:space="preserve">
+    <value>Тип отчёта *</value>
+  </data>
+  <data name="reportes.escenarioBase" xml:space="preserve">
+    <value>Базовый сценарий</value>
+  </data>
+  <data name="reportes.escenarioPropuesto" xml:space="preserve">
+    <value>Предлагаемый сценарий</value>
+  </data>
+  <data name="reportes.formato" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="reportes.idioma" xml:space="preserve">
+    <value>Язык отчёта</value>
+  </data>
+  <data name="reportes.secciones" xml:space="preserve">
+    <value>Включаемые разделы</value>
+  </data>
+  <data name="reportes.resumen" xml:space="preserve">
+    <value>Краткое резюме</value>
+  </data>
+  <data name="reportes.detalleSector" xml:space="preserve">
+    <value>Детализация по секциям</value>
+  </data>
+  <data name="reportes.estadoStock" xml:space="preserve">
+    <value>Состояние запасов</value>
+  </data>
+  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
+    <value>Основные показатели</value>
+  </data>
+  <data name="reportes.recomendaciones" xml:space="preserve">
+    <value>Рекомендации</value>
+  </data>
+  <data name="reportes.detalleProductos" xml:space="preserve">
+    <value>Сведения о товарах</value>
+  </data>
+  <data name="reportes.historialVentas" xml:space="preserve">
+    <value>История продаж</value>
+  </data>
+  <data name="reportes.btnGenerar" xml:space="preserve">
+    <value>Сформировать отчёт</value>
+  </data>
+  <data name="reportes.recientes" xml:space="preserve">
+    <value>Последние отчёты</value>
+  </data>
+  <data name="reportes.ver" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="reportes.bajar" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
+  <data name="reportes.sinReportes" xml:space="preserve">
+    <value>Вы ещё не сформировали ни одного отчёта.</value>
+  </data>
+  <data name="reportes.ninguno" xml:space="preserve">
+    <value>— Нет —</value>
+  </data>
+  <data name="reportes.errPeriodo" xml:space="preserve">
+    <value>Укажите начало и конец периода.</value>
+  </data>
+  <data name="reportes.errSinDatos" xml:space="preserve">
+    <value>Недостаточно данных для формирования отчёта.</value>
+  </data>
+  <data name="reportes.msgGenerado" xml:space="preserve">
+    <value>Отчёт успешно сформирован.</value>
+  </data>
+  <data name="pdf.periodo" xml:space="preserve">
+    <value>Период: {0} - {1}</value>
+  </data>
+  <data name="pdf.generado" xml:space="preserve">
+    <value>Сформирован: {0}</value>
+  </data>
+  <data name="pdf.ventasTotales" xml:space="preserve">
+    <value>Общие продажи за период: {0}</value>
+  </data>
+  <data name="pdf.circulacionPromedio" xml:space="preserve">
+    <value>Средняя проходимость: {0}%</value>
+  </data>
+  <data name="pdf.sectoresAnalizados" xml:space="preserve">
+    <value>Проанализировано секций: {0}</value>
+  </data>
+  <data name="pdf.colDisponible" xml:space="preserve">
+    <value>Доступно</value>
+  </data>
+  <data name="pdf.sinRecomendaciones" xml:space="preserve">
+    <value>Для этого периода нет рекомендаций.</value>
+  </data>
+  <data name="pdf.errEscenarios" xml:space="preserve">
+    <value>Выберите базовый и предлагаемый сценарии, чтобы включить этот раздел.</value>
+  </data>
+  <data name="pdf.baseVsPropuesto" xml:space="preserve">
+    <value>{0} (базовый) и {1} (предлагаемый)</value>
+  </data>
+  <data name="pdf.ventasBase" xml:space="preserve">
+    <value>Продажи (база)</value>
+  </data>
+  <data name="pdf.ventasPropuesto" xml:space="preserve">
+    <value>Продажи (предложение)</value>
+  </data>
+  <data name="pdf.graficoComparacion" xml:space="preserve">
+    <value>Прогноз продаж: база и предложение</value>
+  </data>
 </root>

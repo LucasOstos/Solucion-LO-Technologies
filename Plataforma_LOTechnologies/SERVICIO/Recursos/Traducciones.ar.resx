@@ -1535,4 +1535,406 @@
   <data name="stock.msgRegistrado" xml:space="preserve">
     <value>تم تسجيل البيانات بنجاح.</value>
   </data>
+  <data name="comun.localObligatorio" xml:space="preserve">
+    <value>المتجر *</value>
+  </data>
+  <data name="comun.periodoDesde" xml:space="preserve">
+    <value>الفترة من *</value>
+  </data>
+  <data name="comun.periodoHasta" xml:space="preserve">
+    <value>الفترة إلى *</value>
+  </data>
+  <data name="valor.moverFrente" xml:space="preserve">
+    <value>النقل إلى الأمام</value>
+  </data>
+  <data name="valor.moverFondo" xml:space="preserve">
+    <value>النقل إلى الخلف</value>
+  </data>
+  <data name="valor.ampliarSuperficie" xml:space="preserve">
+    <value>توسيع المساحة</value>
+  </data>
+  <data name="valor.reducirSuperficie" xml:space="preserve">
+    <value>تقليص المساحة</value>
+  </data>
+  <data name="valor.reubicarDestacados" xml:space="preserve">
+    <value>إعادة توزيع المنتجات المميزة</value>
+  </data>
+  <data name="valor.modificacionSector" xml:space="preserve">
+    <value>تعديل القسم</value>
+  </data>
+  <data name="valor.base" xml:space="preserve">
+    <value>أساسي</value>
+  </data>
+  <data name="valor.enRevision" xml:space="preserve">
+    <value>قيد المراجعة</value>
+  </data>
+  <data name="valor.aprobado" xml:space="preserve">
+    <value>معتمد</value>
+  </data>
+  <data name="valor.alto" xml:space="preserve">
+    <value>مرتفع</value>
+  </data>
+  <data name="valor.medio" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="valor.positivo" xml:space="preserve">
+    <value>إيجابي</value>
+  </data>
+  <data name="valor.alta" xml:space="preserve">
+    <value>مرتفعة</value>
+  </data>
+  <data name="valor.media" xml:space="preserve">
+    <value>متوسطة</value>
+  </data>
+  <data name="valor.baja" xml:space="preserve">
+    <value>منخفضة</value>
+  </data>
+  <data name="valor.completo" xml:space="preserve">
+    <value>كامل</value>
+  </data>
+  <data name="valor.comparacion" xml:space="preserve">
+    <value>مقارنة</value>
+  </data>
+  <data name="valor.indicadores" xml:space="preserve">
+    <value>المؤشرات</value>
+  </data>
+  <data name="escenarios.titulo" xml:space="preserve">
+    <value>سيناريوهات المحاكاة - LO Technologies</value>
+  </data>
+  <data name="escenarios.subtitulo" xml:space="preserve">
+    <value>CUN 007 — إنشاء السيناريوهات البديلة وإدارتها</value>
+  </data>
+  <data name="escenarios.btnNuevo" xml:space="preserve">
+    <value>+ سيناريو جديد</value>
+  </data>
+  <data name="escenarios.ventasEst" xml:space="preserve">
+    <value>المبيعات المقدّرة</value>
+  </data>
+  <data name="escenarios.satisfaccion" xml:space="preserve">
+    <value>الرضا</value>
+  </data>
+  <data name="escenarios.comparar" xml:space="preserve">
+    <value>مقارنة</value>
+  </data>
+  <data name="escenarios.sinEscenarios" xml:space="preserve">
+    <value>لا يحتوي هذا المتجر على سيناريوهات بعد.</value>
+  </data>
+  <data name="escenarios.modalNuevo" xml:space="preserve">
+    <value>سيناريو جديد</value>
+  </data>
+  <data name="escenarios.nombre" xml:space="preserve">
+    <value>اسم السيناريو *</value>
+  </data>
+  <data name="escenarios.objetivo" xml:space="preserve">
+    <value>الهدف</value>
+  </data>
+  <data name="escenarios.ejObjetivo" xml:space="preserve">
+    <value>مثال: زيادة الحركة في قسم الإلكترونيات</value>
+  </data>
+  <data name="escenarios.cambiosPropuestosSectores" xml:space="preserve">
+    <value>التغييرات المقترحة على الأقسام</value>
+  </data>
+  <data name="escenarios.sinCambios" xml:space="preserve">
+    <value>بدون تغييرات</value>
+  </data>
+  <data name="escenarios.btnCrear" xml:space="preserve">
+    <value>إنشاء سيناريو</value>
+  </data>
+  <data name="escenarios.objetivoDetalle" xml:space="preserve">
+    <value>الهدف:</value>
+  </data>
+  <data name="escenarios.cambiosPropuestos" xml:space="preserve">
+    <value>التغييرات المقترحة</value>
+  </data>
+  <data name="escenarios.sinCambiosDetalle" xml:space="preserve">
+    <value>لا يحتوي هذا السيناريو على تغييرات مقترحة.</value>
+  </data>
+  <data name="escenarios.msgCreado" xml:space="preserve">
+    <value>تم إنشاء السيناريو بنجاح.</value>
+  </data>
+  <data name="comparacion.titulo" xml:space="preserve">
+    <value>مقارنة السيناريوهات - LO Technologies</value>
+  </data>
+  <data name="comparacion.subtitulo" xml:space="preserve">
+    <value>CUN 008 — مقارنة السيناريو الحالي بالسيناريو المقترح</value>
+  </data>
+  <data name="comparacion.periodo" xml:space="preserve">
+    <value>فترة التحليل</value>
+  </data>
+  <data name="comparacion.escenarioActual" xml:space="preserve">
+    <value>السيناريو الحالي *</value>
+  </data>
+  <data name="comparacion.escenarioPropuesto" xml:space="preserve">
+    <value>السيناريو المقترح *</value>
+  </data>
+  <data name="comparacion.btnComparar" xml:space="preserve">
+    <value>مقارنة السيناريوهات</value>
+  </data>
+  <data name="comparacion.actual" xml:space="preserve">
+    <value>(الحالي)</value>
+  </data>
+  <data name="comparacion.propuesto" xml:space="preserve">
+    <value>(المقترح)</value>
+  </data>
+  <data name="comparacion.diferencias" xml:space="preserve">
+    <value>الاختلافات الرئيسية</value>
+  </data>
+  <data name="comparacion.colIndicador" xml:space="preserve">
+    <value>المؤشر</value>
+  </data>
+  <data name="comparacion.colActual" xml:space="preserve">
+    <value>الحالي</value>
+  </data>
+  <data name="comparacion.colPropuesto" xml:space="preserve">
+    <value>المقترح</value>
+  </data>
+  <data name="comparacion.colDiferencia" xml:space="preserve">
+    <value>الفرق</value>
+  </data>
+  <data name="comparacion.btnGuardar" xml:space="preserve">
+    <value>حفظ المقارنة</value>
+  </data>
+  <data name="comparacion.ventasEstimadas" xml:space="preserve">
+    <value>المبيعات المقدّرة</value>
+  </data>
+  <data name="comparacion.circulacionPromedio" xml:space="preserve">
+    <value>متوسط حركة المرور</value>
+  </data>
+  <data name="comparacion.rotacionPromedio" xml:space="preserve">
+    <value>متوسط الدوران</value>
+  </data>
+  <data name="comparacion.indicePromedio" xml:space="preserve">
+    <value>متوسط المؤشر العام</value>
+  </data>
+  <data name="comparacion.errDistintos" xml:space="preserve">
+    <value>اختر سيناريوهين مختلفين للمقارنة.</value>
+  </data>
+  <data name="comparacion.errMismoLocal" xml:space="preserve">
+    <value>يجب أن تنتمي السيناريوهات إلى المتجر نفسه.</value>
+  </data>
+  <data name="comparacion.errFaltanDatos" xml:space="preserve">
+    <value>لا توجد بيانات كافية للمقارنة.</value>
+  </data>
+  <data name="comparacion.errSinComparacion" xml:space="preserve">
+    <value>أنشئ مقارنة أولًا.</value>
+  </data>
+  <data name="comparacion.msgGuardada" xml:space="preserve">
+    <value>تم حفظ مقارنة السيناريوهات بنجاح.</value>
+  </data>
+  <data name="indicadores.titulo" xml:space="preserve">
+    <value>المؤشرات والتوصيات - LO Technologies</value>
+  </data>
+  <data name="indicadores.subtitulo" xml:space="preserve">
+    <value>CUN 009 — المؤشرات الرئيسية والتوصيات التلقائية</value>
+  </data>
+  <data name="indicadores.recomendaciones" xml:space="preserve">
+    <value>التوصيات التلقائية</value>
+  </data>
+  <data name="indicadores.sinRecomendaciones" xml:space="preserve">
+    <value>لا توجد توصيات لهذه الفترة.</value>
+  </data>
+  <data name="indicadores.porSector" xml:space="preserve">
+    <value>المؤشرات حسب القسم</value>
+  </data>
+  <data name="indicadores.colVentas" xml:space="preserve">
+    <value>المبيعات</value>
+  </data>
+  <data name="indicadores.colRotacion" xml:space="preserve">
+    <value>الدوران</value>
+  </data>
+  <data name="indicadores.colIndice" xml:space="preserve">
+    <value>المؤشر العام</value>
+  </data>
+  <data name="indicadores.sinIndicadores" xml:space="preserve">
+    <value>لا توجد بيانات كافية لإنشاء مؤشرات كاملة.</value>
+  </data>
+  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
+    <value>انخفاض الحركة في قسم {0}</value>
+  </data>
+  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
+    <value>يسجّل قسم {0} حركة مقدّرة بنسبة {1}%، وهي أقل من باقي الأقسام. فكّر في إعادة توزيع المنتجات سريعة الدوران.</value>
+  </data>
+  <data name="recomendacion.superaMeta" xml:space="preserve">
+    <value>{0} يتجاوز هدف المبيعات</value>
+  </data>
+  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
+    <value>تجاوز قسم {0} حدّ المبيعات للفترة. يُنصح بزيادة مساحة عرضه.</value>
+  </data>
+  <data name="recomendacion.stockCritico" xml:space="preserve">
+    <value>مخزون حرج في {0}</value>
+  </data>
+  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
+    <value>لا يتوفر من "{0}" سوى {1} وحدات. يُنصح بإعادة التخزين بشكل عاجل.</value>
+  </data>
+  <data name="analisis.titulo" xml:space="preserve">
+    <value>تحليل المنتجات - LO Technologies</value>
+  </data>
+  <data name="analisis.subtitulo" xml:space="preserve">
+    <value>CUN 011 — اكتشاف فرص إعادة توزيع المنتجات</value>
+  </data>
+  <data name="analisis.configurar" xml:space="preserve">
+    <value>إعداد التحليل</value>
+  </data>
+  <data name="analisis.datosRequeridos" xml:space="preserve">
+    <value>البيانات المطلوبة: المنتجات والأقسام والمبيعات والمخزون وحركة المرور في المتجر المحدد.</value>
+  </data>
+  <data name="analisis.btnDetectar" xml:space="preserve">
+    <value>اكتشاف فرص إعادة التوزيع</value>
+  </data>
+  <data name="analisis.analizados" xml:space="preserve">
+    <value>المنتجات التي تم تحليلها</value>
+  </data>
+  <data name="analisis.prioridadAlta" xml:space="preserve">
+    <value>أولوية مرتفعة</value>
+  </data>
+  <data name="analisis.prioridadMedia" xml:space="preserve">
+    <value>أولوية متوسطة</value>
+  </data>
+  <data name="analisis.prioridadBaja" xml:space="preserve">
+    <value>أولوية منخفضة</value>
+  </data>
+  <data name="analisis.buscarPlaceholder" xml:space="preserve">
+    <value>البحث عن منتج أو فئة...</value>
+  </data>
+  <data name="analisis.todasPrioridades" xml:space="preserve">
+    <value>جميع الأولويات</value>
+  </data>
+  <data name="analisis.candidatos" xml:space="preserve">
+    <value>مرشحون لإعادة التوزيع</value>
+  </data>
+  <data name="analisis.sinCandidatos" xml:space="preserve">
+    <value>لم يُعثر على منتجات قابلة لإعادة التوزيع في الفترة المحددة.</value>
+  </data>
+  <data name="analisis.sinRecomendacion" xml:space="preserve">
+    <value>منتجات تم تحليلها دون توصية</value>
+  </data>
+  <data name="analisis.bienPosicionados" xml:space="preserve">
+    <value>في موقع جيد</value>
+  </data>
+  <data name="analisis.colSectorActual" xml:space="preserve">
+    <value>القسم الحالي</value>
+  </data>
+  <data name="analisis.optimo" xml:space="preserve">
+    <value>مثالي</value>
+  </data>
+  <data name="analisis.errPeriodo" xml:space="preserve">
+    <value>فترة غير صالحة.</value>
+  </data>
+  <data name="analisis.errSinDatos" xml:space="preserve">
+    <value>لا توجد بيانات كافية لاكتشاف فرص إعادة التوزيع.</value>
+  </data>
+  <data name="reportes.titulo" xml:space="preserve">
+    <value>إنشاء التقارير - LO Technologies</value>
+  </data>
+  <data name="reportes.encabezado" xml:space="preserve">
+    <value>إنشاء التقارير</value>
+  </data>
+  <data name="reportes.subtitulo" xml:space="preserve">
+    <value>CUN 010 — إنشاء تقارير التحليل والمؤشرات والتوصيات</value>
+  </data>
+  <data name="reportes.configurar" xml:space="preserve">
+    <value>إعداد التقرير</value>
+  </data>
+  <data name="reportes.tipo" xml:space="preserve">
+    <value>نوع التقرير *</value>
+  </data>
+  <data name="reportes.escenarioBase" xml:space="preserve">
+    <value>السيناريو الأساسي</value>
+  </data>
+  <data name="reportes.escenarioPropuesto" xml:space="preserve">
+    <value>السيناريو المقترح</value>
+  </data>
+  <data name="reportes.formato" xml:space="preserve">
+    <value>التنسيق</value>
+  </data>
+  <data name="reportes.idioma" xml:space="preserve">
+    <value>لغة التقرير</value>
+  </data>
+  <data name="reportes.secciones" xml:space="preserve">
+    <value>الأقسام المضمَّنة</value>
+  </data>
+  <data name="reportes.resumen" xml:space="preserve">
+    <value>الملخص التنفيذي</value>
+  </data>
+  <data name="reportes.detalleSector" xml:space="preserve">
+    <value>التفاصيل حسب القسم</value>
+  </data>
+  <data name="reportes.estadoStock" xml:space="preserve">
+    <value>حالة المخزون</value>
+  </data>
+  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
+    <value>المؤشرات الرئيسية</value>
+  </data>
+  <data name="reportes.recomendaciones" xml:space="preserve">
+    <value>التوصيات</value>
+  </data>
+  <data name="reportes.detalleProductos" xml:space="preserve">
+    <value>تفاصيل المنتجات</value>
+  </data>
+  <data name="reportes.historialVentas" xml:space="preserve">
+    <value>سجل المبيعات</value>
+  </data>
+  <data name="reportes.btnGenerar" xml:space="preserve">
+    <value>إنشاء التقرير</value>
+  </data>
+  <data name="reportes.recientes" xml:space="preserve">
+    <value>التقارير الأخيرة</value>
+  </data>
+  <data name="reportes.ver" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="reportes.bajar" xml:space="preserve">
+    <value>تنزيل</value>
+  </data>
+  <data name="reportes.sinReportes" xml:space="preserve">
+    <value>لم تُنشئ أي تقرير بعد.</value>
+  </data>
+  <data name="reportes.ninguno" xml:space="preserve">
+    <value>— لا شيء —</value>
+  </data>
+  <data name="reportes.errPeriodo" xml:space="preserve">
+    <value>أكمل بداية الفترة ونهايتها.</value>
+  </data>
+  <data name="reportes.errSinDatos" xml:space="preserve">
+    <value>لا توجد بيانات كافية لإنشاء التقرير.</value>
+  </data>
+  <data name="reportes.msgGenerado" xml:space="preserve">
+    <value>تم إنشاء التقرير بنجاح.</value>
+  </data>
+  <data name="pdf.periodo" xml:space="preserve">
+    <value>الفترة: {0} - {1}</value>
+  </data>
+  <data name="pdf.generado" xml:space="preserve">
+    <value>تاريخ الإنشاء: {0}</value>
+  </data>
+  <data name="pdf.ventasTotales" xml:space="preserve">
+    <value>إجمالي مبيعات الفترة: {0}</value>
+  </data>
+  <data name="pdf.circulacionPromedio" xml:space="preserve">
+    <value>متوسط حركة المرور: {0}%</value>
+  </data>
+  <data name="pdf.sectoresAnalizados" xml:space="preserve">
+    <value>الأقسام التي تم تحليلها: {0}</value>
+  </data>
+  <data name="pdf.colDisponible" xml:space="preserve">
+    <value>المتوفر</value>
+  </data>
+  <data name="pdf.sinRecomendaciones" xml:space="preserve">
+    <value>لا توجد توصيات لهذه الفترة.</value>
+  </data>
+  <data name="pdf.errEscenarios" xml:space="preserve">
+    <value>اختر سيناريو أساسيًا وسيناريو مقترحًا لتضمين هذا القسم.</value>
+  </data>
+  <data name="pdf.baseVsPropuesto" xml:space="preserve">
+    <value>{0} (أساسي) مقابل {1} (مقترح)</value>
+  </data>
+  <data name="pdf.ventasBase" xml:space="preserve">
+    <value>مبيعات الأساس</value>
+  </data>
+  <data name="pdf.ventasPropuesto" xml:space="preserve">
+    <value>المبيعات المقترحة</value>
+  </data>
+  <data name="pdf.graficoComparacion" xml:space="preserve">
+    <value>المبيعات المقدّرة: الأساس مقابل المقترح</value>
+  </data>
 </root>

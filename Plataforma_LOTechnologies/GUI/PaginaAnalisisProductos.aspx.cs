@@ -14,6 +14,10 @@ public partial class PaginaAnalisisProductos : PaginaSegura
     {
         get { return PermisoNombres.AnalizarProductos; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "analisis.titulo"; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private AnalisisProductoBLL analisisBLL = new AnalisisProductoBLL();
     private List<ProductoAnalisisListado> ultimoResultado
@@ -97,19 +101,19 @@ public partial class PaginaAnalisisProductos : PaginaSegura
     {
         if (string.IsNullOrEmpty(ddlLocal.SelectedValue))
         {
-            MostrarMensaje("Seleccioná un local.", esExito: false);
+            MostrarMensaje(Traducir("stock.errSeleccionarLocal"), esExito: false);
             return;
         }
         DateTime periodoDesde, periodoHasta;
         if (!DateTime.TryParse(tbPeriodoDesde.Text, out periodoDesde) || !DateTime.TryParse(tbPeriodoHasta.Text, out periodoHasta))
         {
-            MostrarMensaje("Período inválido.", esExito: false);
+            MostrarMensaje(Traducir("analisis.errPeriodo"), esExito: false);
             pnlResultados.Visible = false;
             return;
         }
         if (periodoDesde > periodoHasta)
         {
-            MostrarMensaje("Período inválido.", esExito: false);
+            MostrarMensaje(Traducir("analisis.errPeriodo"), esExito: false);
             pnlResultados.Visible = false;
             return;
         }
@@ -118,7 +122,7 @@ public partial class PaginaAnalisisProductos : PaginaSegura
         List<ProductoAnalisisListado> resultado = analisisBLL.DetectarOportunidades(codigoLocal, periodoDesdeStr);
         if (resultado.Count == 0)
         {
-            MostrarMensaje("No existen datos suficientes para detectar oportunidades de reubicación.", esExito: false);
+            MostrarMensaje(Traducir("analisis.errSinDatos"), esExito: false);
             pnlResultados.Visible = false;
             return;
         }

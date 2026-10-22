@@ -14,6 +14,10 @@ public partial class PaginaEscenarios : PaginaSegura
     {
         get { return PermisoNombres.GestionarEscenarios; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "escenarios.titulo"; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private SectorBLL sectorBLL = new SectorBLL();
     private EscenarioBLL escenarioBLL = new EscenarioBLL();
@@ -67,7 +71,7 @@ public partial class PaginaEscenarios : PaginaSegura
         EscenarioBE escenario = escenarioBLL.ObtenerEscenarioPorCodigo(codigoEscenario);
         List<EscenarioCambio> cambios = escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenario);
         litNombreDetalleEscenario.Text = escenario.Nombre;
-        litEstadoDetalleEscenario.Text = escenario.Estado;
+        litEstadoDetalleEscenario.Text = TraducirValor(escenario.Estado);
         litDescripcionDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Descripcion) ? "-" : escenario.Descripcion;
         litObjetivoDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Objetivo) ? "-" : escenario.Objetivo;
         if (cambios.Count == 0)
@@ -96,6 +100,13 @@ public partial class PaginaEscenarios : PaginaSegura
             default: return "";
         }
     }
+    protected string TraducirCambio(object descripcion)
+    {
+        string texto = descripcion == null ? "" : descripcion.ToString();
+        int separador = texto.LastIndexOf(": ");
+        if (separador < 0) return TraducirValor(texto);
+        return texto.Substring(0, separador + 2) + TraducirValor(texto.Substring(separador + 2));
+    }
     private void MostrarMensaje(string texto, bool esExito)
     {
         lblMensaje.Text = texto;
@@ -109,7 +120,7 @@ public partial class PaginaEscenarios : PaginaSegura
     {
         if (CodigoLocalActual == 0)
         {
-            MostrarMensaje("Seleccioná un local.", esExito: false);
+            MostrarMensaje(Traducir("stock.errSeleccionarLocal"), esExito: false);
             return;
         }
         tbNombreEscenario.Text = "";
@@ -128,7 +139,7 @@ public partial class PaginaEscenarios : PaginaSegura
             pnlModalEscenario.Style["display"] = "flex";
             return;
         }
-        EscenarioBE escenario = new EscenarioBE(CodigoLocalActual, tbNombreEscenario.Text.Trim(), tbDescripcionEscenario.Text.Trim(), tbObjetivoEscenario.Text.Trim(), DateTime.Now, "Borrador");        
+        EscenarioBE escenario = new EscenarioBE(CodigoLocalActual, tbNombreEscenario.Text.Trim(), tbDescripcionEscenario.Text.Trim(), tbObjetivoEscenario.Text.Trim(), DateTime.Now, "Borrador");
         // Recorre cada fila del Repeater y arma un escenario por cada sector donde se haya elegido algo distinto de "Sin cambios".
         var cambios = new List<EscenarioCambio>();
         foreach (RepeaterItem item in rptCambiosPorSector.Items)
@@ -147,7 +158,7 @@ public partial class PaginaEscenarios : PaginaSegura
         }
         escenarioBLL.CrearEscenario(escenario, cambios);
         pnlModalEscenario.Style["display"] = "none";
-        MostrarMensaje("Escenario creado correctamente.", esExito: true);
+        MostrarMensaje(Traducir("escenarios.msgCreado"), esExito: true);
         CargarEscenarios();
     }
     protected void rptEscenarios_ItemCommand(object source, RepeaterCommandEventArgs e)

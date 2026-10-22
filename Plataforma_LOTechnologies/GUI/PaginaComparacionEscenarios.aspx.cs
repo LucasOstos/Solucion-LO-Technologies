@@ -22,7 +22,10 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
     {
         get { return PermisoNombres.CompararEscenarios; }
     }
-
+    protected override string ClaveTitulo
+    {
+        get { return "comparacion.titulo"; }
+    }
     #region Funciones
     private void CargarDropdownLocales()
     {
@@ -74,21 +77,21 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
     {
         if (ddlEscenarioA.Items.Count == 0 || ddlEscenarioB.Items.Count == 0)
         {
-            MostrarMensaje("Complete los datos.", esExito: false);
+            MostrarMensaje(Traducir("comun.completeDatos"), esExito: false);
             return;
         }
         int codigoEscenarioA = int.Parse(ddlEscenarioA.SelectedValue);
         int codigoEscenarioB = int.Parse(ddlEscenarioB.SelectedValue);
         if (codigoEscenarioA == codigoEscenarioB)
         {
-            MostrarMensaje("Seleccioná dos escenarios distintos para comparar.", esExito: false);
+            MostrarMensaje(Traducir("comparacion.errDistintos"), esExito: false);
             return;
         }
         EscenarioBE escenarioA = escenarioBLL.ObtenerEscenarioPorCodigo(codigoEscenarioA);
         EscenarioBE escenarioB = escenarioBLL.ObtenerEscenarioPorCodigo(codigoEscenarioB);
         if (escenarioA.CodigoLocal != escenarioB.CodigoLocal)
         {
-            MostrarMensaje("Los escenarios deben pertenecer al mismo local.", esExito: false);
+            MostrarMensaje(Traducir("comparacion.errMismoLocal"), esExito: false);
             return;
         }
         List<EscenarioCambio> cambiosA = escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenarioA);
@@ -99,7 +102,7 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         List<IndicadorSectorListado> indicadoresReales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesde);
         if (indicadoresReales.Count == 0)
         {
-            MostrarMensaje("Faltan datos suficientes para comparar.", esExito: false);
+            MostrarMensaje(Traducir("comparacion.errFaltanDatos"), esExito: false);
             return;
         }
         List<IndicadorSectorListado> proyectadosA = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosA);
@@ -122,10 +125,10 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         decimal indiceGlobalPromedio = proyectados.Count > 0 ? (decimal)proyectados.Average(p => p.IndiceGlobal) : 0;
         return new List<IndicadorComparado>
         {
-            new IndicadorComparado { Nombre = "Ventas estimadas", Valor = ventasTotales.ToString("$#,##0") },
-            new IndicadorComparado { Nombre = "Circulación promedio", Valor = $"{circulacionPromedio:0.0}%" },
-            new IndicadorComparado { Nombre = "Rotación promedio", Valor = $"{rotacionPromedio:0.0}%" },
-            new IndicadorComparado { Nombre = "Índice Global promedio", Valor = indiceGlobalPromedio.ToString("0") }
+            new IndicadorComparado { Nombre = Traducir("comparacion.ventasEstimadas"), Valor = ventasTotales.ToString("$#,##0") },
+            new IndicadorComparado { Nombre = Traducir("comparacion.circulacionPromedio"), Valor = $"{circulacionPromedio:0.0}%" },
+            new IndicadorComparado { Nombre = Traducir("comparacion.rotacionPromedio"), Valor = $"{rotacionPromedio:0.0}%" },
+            new IndicadorComparado { Nombre = Traducir("comparacion.indicePromedio"), Valor = indiceGlobalPromedio.ToString("0") }
         };
     }
     private List<DiferenciaComparacion> ArmarDiferenciasPorSector(List<IndicadorSectorListado> proyectadosA, List<IndicadorSectorListado> proyectadosB)
@@ -152,12 +155,12 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
     {
         if (ViewState["CodigoEscenarioA"] == null || ViewState["CodigoEscenarioB"] == null)
         {
-            MostrarMensaje("Primero generá una comparación.", esExito: false);
+            MostrarMensaje(Traducir("comparacion.errSinComparacion"), esExito: false);
             return;
         }
-        ComparacionBE comparacion = new ComparacionBE((int)ViewState["CodigoEscenarioA"], (int)ViewState["CodigoEscenarioB"], DateTime.Now, "Comparación basada en cambios propuestos por sector.", "");        
+        ComparacionBE comparacion = new ComparacionBE((int)ViewState["CodigoEscenarioA"], (int)ViewState["CodigoEscenarioB"], DateTime.Now, "Comparación basada en cambios propuestos por sector.", "");
         comparacionBLL.GuardarComparacion(comparacion);
-        MostrarMensaje("Comparación de escenarios guardada correctamente.", esExito: true);
+        MostrarMensaje(Traducir("comparacion.msgGuardada"), esExito: true);
     }
 
     private void MostrarMensaje(string texto, bool esExito)
