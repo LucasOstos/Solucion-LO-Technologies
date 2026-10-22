@@ -20,7 +20,7 @@ public partial class PaginaPrincipal : PaginaSegura
         {
             CargarHeroUsuario();
             CargarIdiomas();
-        }        
+        }
     }
     protected override void OnPreRender(EventArgs e)
     {
@@ -82,9 +82,10 @@ public partial class PaginaPrincipal : PaginaSegura
         {
             GestorIdioma.Instancia.CambiarIdioma(codigoIdioma);
         }
-        catch (ArgumentException)
+        catch (ExcepcionTraducible ex)
         {
             CargarIdiomas();
+            MostrarMensajePrincipal(TraducirError(ex), esExito: false);
         }
     }
     protected void btnLogout_Click(object sender, EventArgs e)
@@ -110,16 +111,16 @@ public partial class PaginaPrincipal : PaginaSegura
         LoginResultado validacionActual = usuarioBLL.ValidarLogin(usuario.Email, tbContraseniaActual.Text.Trim(), pEscribir: false);
         if (validacionActual.Resultado != ResultadoLogin.Exitoso)
         {
-            MostrarMensajeContrasenia("La contraseña actual no es correcta.", esExito: false);
+            MostrarMensajeContrasenia(Traducir("principal.msgContraseniaIncorrecta"), esExito: false);
             pnlCambiarContrasenia.Style["display"] = "flex";
             return;
         }
         usuarioBLL.CambiarContrasenia(usuario.DNI, tbContraseniaNueva.Text.Trim());
         SucesoServicio.Instancia.RegistrarSuceso($"{usuario.Nombre} {usuario.Apellido}", "Cambio de contraseña", "Acceso", 1);
         pnlCambiarContrasenia.Style["display"] = "none";
-        MostrarMensajePrincipal("Contraseña actualizada correctamente.", esExito: true);
+        MostrarMensajePrincipal(Traducir("principal.msgContraseniaActualizada"), esExito: true);
         tbContraseniaActual.Text = "";
         tbContraseniaNueva.Text = "";
         tbConfirmarContrasenia.Text = "";
-    }   
+    }
 }

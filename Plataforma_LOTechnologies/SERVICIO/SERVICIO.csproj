@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Logica\BackupRestore.cs" />
     <Compile Include="Logica\DigitoVerificador.cs" />
+    <Compile Include="Logica\ExcepcionTraducible.cs" />
     <Compile Include="Logica\GestorIdioma.cs" />
     <Compile Include="Logica\GmailServicio.cs" />
     <Compile Include="Logica\IObservadorIdioma.cs" />

@@ -191,4 +191,16 @@
   <data name="comun.cerrar" xml:space="preserve">
     <value>Закрыть</value>
   </data>
+  <data name="principal.msgContraseniaIncorrecta" xml:space="preserve">
+    <value>Текущий пароль указан неверно.</value>
+  </data>
+  <data name="principal.msgContraseniaActualizada" xml:space="preserve">
+    <value>Пароль успешно обновлён.</value>
+  </data>
+  <data name="error.idiomaNoDisponible" xml:space="preserve">
+    <value>Выбранный язык не существует или не активен.</value>
+  </data>
+  <data name="error.inesperado" xml:space="preserve">
+    <value>Произошла непредвиденная ошибка. Повторите попытку.</value>
+  </data>
 </root>

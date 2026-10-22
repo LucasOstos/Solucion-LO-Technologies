@@ -61,6 +61,13 @@ public class PaginaBase : Page, IObservadorIdioma
         try { return string.Format(texto, pValores); }
         catch (FormatException) { return texto; }
     }
+    protected string TraducirError(Exception pError)
+    {
+        ExcepcionTraducible traducible = pError as ExcepcionTraducible;
+        if (traducible == null && pError != null) traducible = pError.GetBaseException() as ExcepcionTraducible;
+        if (traducible != null) return Traducir(traducible.Clave, traducible.Parametros);
+        return Traducir("error.inesperado");
+    }
     private void AplicarIdioma(Idioma pIdioma)
     {
         if (pIdioma == null) return;

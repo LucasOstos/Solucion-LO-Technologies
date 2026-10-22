@@ -191,4 +191,16 @@
   <data name="comun.cerrar" xml:space="preserve">
     <value>إغلاق</value>
   </data>
+  <data name="principal.msgContraseniaIncorrecta" xml:space="preserve">
+    <value>كلمة المرور الحالية غير صحيحة.</value>
+  </data>
+  <data name="principal.msgContraseniaActualizada" xml:space="preserve">
+    <value>تم تحديث كلمة المرور بنجاح.</value>
+  </data>
+  <data name="error.idiomaNoDisponible" xml:space="preserve">
+    <value>اللغة المحددة غير موجودة أو غير مفعّلة.</value>
+  </data>
+  <data name="error.inesperado" xml:space="preserve">
+    <value>حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.</value>
+  </data>
 </root>

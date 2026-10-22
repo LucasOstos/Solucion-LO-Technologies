@@ -191,4 +191,16 @@
   <data name="comun.cerrar" xml:space="preserve">
     <value>Chiudi</value>
   </data>
+  <data name="principal.msgContraseniaIncorrecta" xml:space="preserve">
+    <value>La password attuale non è corretta.</value>
+  </data>
+  <data name="principal.msgContraseniaActualizada" xml:space="preserve">
+    <value>Password aggiornata correttamente.</value>
+  </data>
+  <data name="error.idiomaNoDisponible" xml:space="preserve">
+    <value>La lingua selezionata non esiste o non è attiva.</value>
+  </data>
+  <data name="error.inesperado" xml:space="preserve">
+    <value>Si è verificato un errore imprevisto. Riprova.</value>
+  </data>
 </root>

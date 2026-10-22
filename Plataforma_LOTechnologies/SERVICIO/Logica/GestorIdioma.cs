@@ -85,7 +85,7 @@ namespace SERVICIO.Logica
             Usuario usuario = Sesion.Instancia.Usuario;
             if (usuario == null) throw new InvalidOperationException("No hay una sesión iniciada.");
             Idioma nuevo = ObtenerIdiomasActivos().FirstOrDefault(i => i.CodigoIdioma == pCodigoIdioma);
-            if (nuevo == null) throw new ArgumentException("El idioma seleccionado no existe o no está activo.");
+            if (nuevo == null) throw new ExcepcionTraducible("error.idiomaNoDisponible");
             if (usuario.Idioma == nuevo.CodigoIdioma) return;
             usuario.Idioma = nuevo.CodigoIdioma;
             if (!usuario.EsSuperUsuario)

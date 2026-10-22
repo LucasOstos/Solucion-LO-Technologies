@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <asp:Label ID="lblMensajePrincipal" runat="server" CssClass="mensaje" Visible="false" />
+                <asp:Label ID="lblMensajePrincipal" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
 
                 <div class="principal-seccion">
                     <h2 class="principal-seccion-titulo" runat="server" clave="principal.seccionLocales">Locales y empresa</h2>
@@ -166,7 +166,7 @@
                     <asp:CompareValidator runat="server" ControlToValidate="tbConfirmarContrasenia" ControlToCompare="tbContraseniaNueva"
                         CssClass="campo-error" ErrorMessage="Las contraseñas no coinciden" Clave="principal.errContraseniaNoCoincide" Display="Dynamic" ValidationGroup="vgContrasenia" />
                 </div>
-                <asp:Label ID="lblMensajeContrasenia" runat="server" CssClass="mensaje" Visible="false" />
+                <asp:Label ID="lblMensajeContrasenia" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
                 <div class="modal-botones">
                     <asp:Button ID="btnCancelarContrasenia" runat="server" CssClass="modal-boton-cancelar"
                         Text="Cancelar" Clave="comun.cancelar" OnClick="btnCancelarContrasenia_Click" CausesValidation="false" />
