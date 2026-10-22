@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BE;
 using DAL;
@@ -17,6 +18,14 @@ namespace BLL
         public int ClavesAgregadas { get; set; }
         public int ClavesPendientes { get; set; }
         public int IdiomasActualizados { get; set; }
+    }
+    public class ResultadoGuardarTraducciones
+    {
+        public int Modificadas { get; set; }
+        public List<string> ClavesVacias { get; } = new List<string>();
+        public List<string> ClavesMuyLargas { get; } = new List<string>();
+        public List<string> ClavesMarcadores { get; } = new List<string>();
+        public bool Exitoso { get { return ClavesVacias.Count == 0 && ClavesMuyLargas.Count == 0 && ClavesMarcadores.Count == 0; } }
     }
     public class IdiomaBLL
     {
@@ -116,6 +125,63 @@ namespace BLL
             RegistrarSuceso($"Sincronizar claves de idiomas ({resultado.ClavesAgregadas} agregadas, {resultado.ClavesPendientes} pendientes)", 2);
             GestorIdioma.Instancia.RecargarIdiomas();
             return resultado;
+        }
+
+        public const int LARGO_MAXIMO_TEXTO = 1000;
+        private static readonly Regex MARCADOR = new Regex(@"\{(\d+)[^{}]*\}");
+        public Idioma ObtenerIdioma(int pCodigoIdioma)
+        {
+            ControlAcceso.ValidarSuperUsuario();
+            return idiomaDAL.ListarIdiomas().FirstOrDefault(i => i.CodigoIdioma == pCodigoIdioma);
+        }
+        public List<TraduccionComparada> ObtenerTraducciones(int pCodigoIdioma)
+        {
+            ControlAcceso.ValidarSuperUsuario();
+            Idioma predeterminado = idiomaDAL.ListarIdiomas().First(i => i.Predeterminado);
+            return traduccionDAL.ObtenerComparadas(pCodigoIdioma, predeterminado.CodigoIdioma);
+        }
+        public List<TraduccionComparada> FiltrarTraducciones(List<TraduccionComparada> pTraducciones, string pBusqueda, string pModulo, bool pSoloPendientes)
+        {
+            string busqueda = (pBusqueda ?? "").Trim();
+            return pTraducciones.Where(t => (string.IsNullOrEmpty(pModulo) || t.Modulo == pModulo) && (!pSoloPendientes || t.Pendiente)
+                   && (busqueda.Length == 0 || t.Clave.IndexOf(busqueda, StringComparison.OrdinalIgnoreCase) >= 0 || t.TextoBase.IndexOf(busqueda, StringComparison.OrdinalIgnoreCase) >= 0
+                   || t.TextoTraducido.IndexOf(busqueda, StringComparison.OrdinalIgnoreCase) >= 0)).ToList();
+        }
+        public ResultadoGuardarTraducciones GuardarTraducciones(int pCodigoIdioma, List<Traduccion> pEditadas)
+        {
+            ControlAcceso.ValidarSuperUsuario();
+            ResultadoGuardarTraducciones resultado = new ResultadoGuardarTraducciones();
+            Idioma idioma = idiomaDAL.ListarIdiomas().FirstOrDefault(i => i.CodigoIdioma == pCodigoIdioma);
+            if (idioma == null) return resultado;
+
+            Dictionary<int, TraduccionComparada> actuales = ObtenerTraducciones(pCodigoIdioma).ToDictionary(t => t.CodigoTraduccion);
+            List<Traduccion> cambios = new List<Traduccion>();
+            foreach (Traduccion editada in pEditadas)
+            {
+                TraduccionComparada actual;
+                if (!actuales.TryGetValue(editada.CodigoTraduccion, out actual)) continue;
+                string texto = (editada.Texto ?? "").Trim();
+                bool pendiente = !idioma.Predeterminado && editada.Pendiente;
+                if (texto == actual.TextoTraducido && pendiente == actual.Pendiente) continue;
+                if (texto.Length == 0) { resultado.ClavesVacias.Add(actual.Clave); continue; }
+                if (texto.Length > LARGO_MAXIMO_TEXTO) { resultado.ClavesMuyLargas.Add(actual.Clave); continue; }
+                if (!idioma.Predeterminado && !MismosMarcadores(actual.TextoBase, texto)) { resultado.ClavesMarcadores.Add(actual.Clave); continue; }
+                cambios.Add(new Traduccion(actual.CodigoTraduccion, pCodigoIdioma, actual.Clave, actual.Modulo, texto, pendiente));
+            }
+            if (!resultado.Exitoso || cambios.Count == 0) return resultado;
+
+            traduccionDAL.ActualizarTextos(pCodigoIdioma, cambios);
+            digitos.ActualizarDigitoFilas("Traduccion", cambios.Select(c => (object)c.CodigoTraduccion));
+            Traductor.Instancia.Invalidar(pCodigoIdioma);
+            resultado.Modificadas = cambios.Count;
+            RegistrarSuceso($"Editar traducciones de {idioma.Nombre} ({cambios.Count} modificadas)", 2);
+            return resultado;
+        }
+        private static bool MismosMarcadores(string pTextoBase, string pTexto)
+        {
+            Func<string, string> marcadores = t => string.Join(",", MARCADOR.Matches(t ?? "").Cast<Match>()
+                .Select(m => m.Groups[1].Value).Distinct().OrderBy(v => v));
+            return marcadores(pTextoBase) == marcadores(pTexto);
         }
         private static string ObtenerModulo(string pClave)
         {

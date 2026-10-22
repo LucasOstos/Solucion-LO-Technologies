@@ -1,0 +1,125 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using BE;
+using BLL;
+
+public partial class PaginaEditarTraducciones : PaginaSegura
+{
+    private readonly IdiomaBLL idiomaBLL = new IdiomaBLL();
+    private Idioma idioma;
+    protected override string PermisoRequerido
+    {
+        get { return PermisoNombres.GestionarIdiomas; }
+    }
+    protected bool EsIdiomaBase
+    {
+        get { return idioma != null && idioma.Predeterminado; }
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        volverIdiomas.Texto = "Volver a Idiomas";
+        int codigoIdioma;
+        idioma = int.TryParse(Request.QueryString["idioma"], out codigoIdioma) ? idiomaBLL.ObtenerIdioma(codigoIdioma) : null;
+        if (idioma == null)
+        {
+            Response.Redirect("~/PaginaIdiomas.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
+            return;
+        }
+        if (!IsPostBack)
+        {
+            List<TraduccionComparada> todas = idiomaBLL.ObtenerTraducciones(idioma.CodigoIdioma);
+            CargarModulos(todas);
+            lblAvisoBase.Visible = EsIdiomaBase;
+            spnSoloPendientes.Visible = !EsIdiomaBase;
+            // Si hay pendientes, se empieza por ellas
+            chkSoloPendientes.Checked = !EsIdiomaBase && todas.Any(t => t.Pendiente);
+            CargarTraducciones(todas);
+        }
+    }
+    #region Funciones
+    private void CargarModulos(List<TraduccionComparada> pTodas)
+    {
+        ddlModulo.Items.Clear();
+        ddlModulo.Items.Add(new ListItem("Todos los módulos", ""));
+        foreach (string modulo in pTodas.Select(t => t.Modulo).Distinct().OrderBy(m => m))
+        {
+            ddlModulo.Items.Add(new ListItem(modulo, modulo));
+        }
+    }
+    private void CargarTraducciones(List<TraduccionComparada> pTodas = null)
+    {
+        List<TraduccionComparada> todas = pTodas ?? idiomaBLL.ObtenerTraducciones(idioma.CodigoIdioma);
+        int pendientes = todas.Count(t => t.Pendiente);
+
+        litTitulo.Text = HttpUtility.HtmlEncode($"Traducciones: {idioma.Nombre}")
+                       + $" <span class=\"trd-titulo-nativo\" lang=\"{HttpUtility.HtmlAttributeEncode(idioma.Codigo)}\">{HttpUtility.HtmlEncode(idioma.NombreNativo)}</span>";
+        litResumen.Text = EsIdiomaBase ? $"{todas.Count} claves · idioma base" : $"{todas.Count} claves · {pendientes} {(pendientes == 1 ? "pendiente" : "pendientes")} · {(idioma.Estado ? "activo" : "inactivo")}";
+
+        List<TraduccionComparada> filtradas = idiomaBLL.FiltrarTraducciones(todas, tbBuscar.Text, ddlModulo.SelectedValue, chkSoloPendientes.Checked);
+        rptTraducciones.DataSource = filtradas;
+        rptTraducciones.DataBind();
+        rptTraducciones.Visible = filtradas.Count > 0;
+        lblSinResultados.Visible = filtradas.Count == 0;
+        lblSinResultados.Text = chkSoloPendientes.Checked && pendientes == 0 && tbBuscar.Text.Trim().Length == 0 && ddlModulo.SelectedValue == "" ? "No quedan traducciones pendientes." : "No hay traducciones que coincidan con el filtro.";
+        btnGuardar.Visible = filtradas.Count > 0;
+    }
+    private void MostrarMensaje(string pTexto, bool pEsExito)
+    {
+        lblMensaje.Text = pTexto;
+        lblMensaje.CssClass = pEsExito ? "mensaje" : "mensaje mensaje-error";
+        lblMensaje.Visible = true;
+    }
+    private static string ListarClaves(List<string> pClaves)
+    {
+        string lista = string.Join(", ", pClaves.Take(5));
+        return pClaves.Count > 5 ? $"{lista} y {pClaves.Count - 5} más" : lista;
+    }
+    #endregion
+
+    protected void rptTraducciones_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    {
+        if (e.Item.ItemType != ListItemType.Item && e.Item.ItemType != ListItemType.AlternatingItem) return;
+        TraduccionComparada traduccion = (TraduccionComparada)e.Item.DataItem;
+        TextBox tbTexto = (TextBox)e.Item.FindControl("tbTexto");
+        tbTexto.Attributes["lang"] = idioma.Codigo;
+        tbTexto.Attributes["dir"] = "auto";
+        tbTexto.Attributes["aria-label"] = $"Traducción de {traduccion.Clave}";
+    }
+    protected void btnBuscar_Click(object sender, EventArgs e)
+    {
+        CargarTraducciones();
+    }
+    protected void btnGuardar_Click(object sender, EventArgs e)
+    {
+        List<Traduccion> editadas = new List<Traduccion>();
+        foreach (RepeaterItem item in rptTraducciones.Items)
+        {
+            HiddenField hfCodigo = (HiddenField)item.FindControl("hfCodigo");
+            TextBox tbTexto = (TextBox)item.FindControl("tbTexto");
+            CheckBox chkRevisada = (CheckBox)item.FindControl("chkRevisada");
+            int codigo;
+            if (!int.TryParse(hfCodigo.Value, out codigo)) continue;
+            editadas.Add(new Traduccion { CodigoTraduccion = codigo, Texto = tbTexto.Text, Pendiente = !EsIdiomaBase && !chkRevisada.Checked });
+        }
+
+        ResultadoGuardarTraducciones resultado = idiomaBLL.GuardarTraducciones(idioma.CodigoIdioma, editadas);
+        if (!resultado.Exitoso)
+        {
+            // No se guardó nada, se dejan los textos como los escribió para que los corrija
+            List<string> problemas = new List<string>();
+            if (resultado.ClavesVacias.Count > 0) problemas.Add($"Texto vacío en: {ListarClaves(resultado.ClavesVacias)}.");
+            if (resultado.ClavesMuyLargas.Count > 0) problemas.Add($"Más de {IdiomaBLL.LARGO_MAXIMO_TEXTO} caracteres en: {ListarClaves(resultado.ClavesMuyLargas)}.");
+            if (resultado.ClavesMarcadores.Count > 0) problemas.Add($"Los marcadores {{0}}, {{1}}... tienen que ser los mismos que en español en: {ListarClaves(resultado.ClavesMarcadores)}.");
+            MostrarMensaje("No se guardaron los cambios. " + string.Join(" ", problemas), false);
+            return;
+        }
+
+        MostrarMensaje(resultado.Modificadas == 0 ? "No había cambios para guardar." : resultado.Modificadas == 1 ? "Se guardó 1 traducción" : $"Se guardaron {resultado.Modificadas} traducciones", true);
+        CargarTraducciones();
+    }
+}
