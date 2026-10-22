@@ -50,6 +50,7 @@
     <Compile Include="Logica\GestorIdioma.cs" />
     <Compile Include="Logica\GmailServicio.cs" />
     <Compile Include="Logica\IObservadorIdioma.cs" />
+    <Compile Include="Logica\ISujetoIdioma.cs" />
     <Compile Include="Logica\SucesoServicio.cs" />
     <Compile Include="Logica\Encriptado.cs" />
     <Compile Include="Logica\ResultadoLogin.cs" />

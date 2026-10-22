@@ -68,7 +68,7 @@ namespace BLL
             int codigoIdioma = idiomaDAL.AgregarConTraducciones(idioma, traducciones, out codigosTraduccion);
             digitos.ActualizarDigitoFila("Idioma", codigoIdioma);
             digitos.ActualizarDigitoFilas("Traduccion", codigosTraduccion.Cast<object>());
-            RegistrarSuceso($"Agregar idioma {idioma.Nombre} ({traducciones.Count} claves, {pPendientes} pendientes)", 2);
+            RegistrarSuceso($"Agregar idioma {idioma.Nombre} ({traducciones.Count} claves, {pPendientes} pendientes)", 1);
             GestorIdioma.Instancia.RecargarIdiomas();
             return ResultadoAgregarIdioma.Exitoso;
         }
@@ -92,7 +92,7 @@ namespace BLL
             if (idioma.Estado == pActivar) return ResultadoCambioEstadoIdioma.Exitoso;
             idiomaDAL.CambiarEstado(pCodigoIdioma, pActivar);
             digitos.ActualizarDigitoFila("Idioma", pCodigoIdioma);
-            RegistrarSuceso($"{(pActivar ? "Activar" : "Desactivar")} idioma {idioma.Nombre}", 2);
+            RegistrarSuceso($"{(pActivar ? "Activar" : "Desactivar")} idioma {idioma.Nombre}", 1);
             GestorIdioma.Instancia.RecargarIdiomas();
             return ResultadoCambioEstadoIdioma.Exitoso;
         }
@@ -122,7 +122,7 @@ namespace BLL
             digitos.ActualizarDigitoFilas("Traduccion", codigos.Cast<object>());
             resultado.ClavesAgregadas = nuevas.Count;
             resultado.ClavesPendientes = nuevas.Count(t => t.Pendiente);
-            RegistrarSuceso($"Sincronizar claves de idiomas ({resultado.ClavesAgregadas} agregadas, {resultado.ClavesPendientes} pendientes)", 2);
+            RegistrarSuceso($"Sincronizar claves de idiomas ({resultado.ClavesAgregadas} agregadas, {resultado.ClavesPendientes} pendientes)", 1);
             GestorIdioma.Instancia.RecargarIdiomas();
             return resultado;
         }
@@ -174,7 +174,7 @@ namespace BLL
             digitos.ActualizarDigitoFilas("Traduccion", cambios.Select(c => (object)c.CodigoTraduccion));
             Traductor.Instancia.Invalidar(pCodigoIdioma);
             resultado.Modificadas = cambios.Count;
-            RegistrarSuceso($"Editar traducciones de {idioma.Nombre} ({cambios.Count} modificadas)", 2);
+            RegistrarSuceso($"Editar traducciones de {idioma.Nombre} ({cambios.Count} modificadas)", 1);
             return resultado;
         }
         private static bool MismosMarcadores(string pTextoBase, string pTexto)

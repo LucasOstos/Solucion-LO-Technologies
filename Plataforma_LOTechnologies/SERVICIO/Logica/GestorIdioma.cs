@@ -9,7 +9,7 @@ using DAL;
 
 namespace SERVICIO.Logica
 {
-    public class GestorIdioma
+    public class GestorIdioma : ISujetoIdioma
     {
         private static readonly GestorIdioma instancia = new GestorIdioma();
         public static GestorIdioma Instancia { get { return instancia; } }
@@ -19,7 +19,6 @@ namespace SERVICIO.Logica
         private readonly UsuarioDAL usuarioDAL = new UsuarioDAL();
         private readonly object bloqueo = new object();
         private List<Idioma> idiomas;
-
         private List<IObservadorIdioma> Observadores
         {
             get
@@ -41,14 +40,13 @@ namespace SERVICIO.Logica
         {
             Observadores.Remove(pObservador);
         }
-        private void Notificar(Idioma pIdioma)
+        public void Notificar(Idioma pIdioma)
         {
             foreach (IObservadorIdioma observador in Observadores.ToList())
             {
                 observador.ActualizarIdioma(pIdioma);
             }
         }
-
         public List<Idioma> ObtenerIdiomas()
         {
             lock (bloqueo)
@@ -79,7 +77,6 @@ namespace SERVICIO.Logica
             lock (bloqueo) { idiomas = null; }
             Traductor.Instancia.InvalidarTodo();
         }
-
         public void CambiarIdioma(int pCodigoIdioma)
         {
             Usuario usuario = Sesion.Instancia.Usuario;
@@ -93,7 +90,7 @@ namespace SERVICIO.Logica
                 usuarioDAL.ActualizarIdioma(usuario.DNI, nuevo.CodigoIdioma);
                 new DigitoVerificador().ActualizarDigitoFila("Usuario", usuario.DNI);
             }
-            SucesoServicio.Instancia.RegistrarSuceso($"{usuario.Nombre} {usuario.Apellido}", $"Cambio de idioma a {nuevo.Nombre}", "Idiomas", 1);
+            SucesoServicio.Instancia.RegistrarSuceso($"{usuario.Nombre} {usuario.Apellido}", $"Cambio de idioma a {nuevo.Nombre}", "Idiomas", 3);
             Notificar(nuevo);
         }
         public string Traducir(string pClave)
