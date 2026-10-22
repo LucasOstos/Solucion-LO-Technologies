@@ -20,19 +20,19 @@
                 <uc:BotonVolverMenu ID="volverMenu" runat="server" />
                 <div class="encabezado">
                     <div>
-                        <h1>Layout y Sectores</h1>
+                        <h1 runat="server" Clave="principal.layout.titulo">Layout y Sectores</h1>
                     </div>
-                    <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
+                    <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" ClaveAria="comun.local" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
                 </div>
-                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
                 <div class="pestanias">
-                    <span id="tabLayout" class="pestania pestania-activa" onclick="mostrarPestania('layout')">Layout del Local</span>
-                    <span id="tabSectores" class="pestania" onclick="mostrarPestania('sectores')">Gestión de Sectores</span>
+                    <span id="tabLayout" runat="server" ClientIDMode="Static" class="pestania pestania-activa" onclick="mostrarPestania('layout')" Clave="layout.tabLayout">Layout del Local</span>
+                    <span id="tabSectores" runat="server" ClientIDMode="Static" class="pestania" onclick="mostrarPestania('sectores')" Clave="layout.tabSectores">Gestión de Sectores</span>
                 </div>
                 <div id="panelLayout" class="panel-pestania">
                     <div class="acciones-tab">
                         <asp:Button ID="btnCargarLayout" runat="server" CssClass="boton-nuevo"
-                            Text="Cargar layout" OnClick="btnCargarLayout_Click" CausesValidation="false" />
+                            Text="Cargar layout" Clave="layout.btnCargar" OnClick="btnCargarLayout_Click" CausesValidation="false" />
                     </div>
                     <asp:Repeater ID="rptLayouts" runat="server" OnItemCommand="rptLayouts_ItemCommand">
                         <ItemTemplate>
@@ -41,37 +41,37 @@
                                 <div class="ls-item-info">
                                     <div class="texto-principal">
                                         <%# Eval("Nombre") %>
-                                        <span class='<%# "etiqueta " + ObtenerClaseEstadoLayout(Eval("Estado").ToString()) %>'><%# Eval("Estado") %></span>
+                                        <span class='<%# "etiqueta " + ObtenerClaseEstadoLayout(Eval("Estado").ToString()) %>'><%# TraducirValor(Eval("Estado")) %></span>
                                     </div>
                                     <div class="texto-secundario"><%# Eval("Descripcion") %></div>
                                     <div class="texto-secundario"><%# Eval("Fecha", "{0:yyyy-MM-dd}") %> &middot; <%# Eval("NombreArchivo") %> &middot; <%# Eval("TamanioArchivo") %></div>
                                 </div>
                                 <div class="ls-item-acciones">
-                                    <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Ver detalle"
-                                        CommandName="VerDetalle" CommandArgument='<%# Eval("CodigoLayout") %>'>Ver detalle</asp:LinkButton>
-                                    <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Eliminar"
+                                    <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Ver detalle" ClaveTitle="layout.verDetalle"
+                                        CommandName="VerDetalle" CommandArgument='<%# Eval("CodigoLayout") %>' Text="Ver detalle" Clave="layout.verDetalle" />
+                                    <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Eliminar" ClaveTitle="comun.eliminar"
                                         CommandName="EliminarLayout" CommandArgument='<%# Eval("CodigoLayout") %>'
-                                        OnClientClick="return confirm('¿Confirmás eliminar este layout?');">&#128465;</asp:LinkButton>
+                                        ClaveConfirmar="layout.confirmarEliminar">&#128465;</asp:LinkButton>
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:Label ID="lblSinLayouts" runat="server" Text="Este local todavía no tiene layouts cargados." Visible="false" CssClass="sin-resultados" />
+                    <asp:Label ID="lblSinLayouts" runat="server" Text="Este local todavía no tiene layouts cargados." Clave="layout.sinLayouts" Visible="false" CssClass="sin-resultados" />
                 </div>
                 <div id="panelSectores" class="panel-pestania" style="display: none;">
                     <div class="acciones-tab">
                         <asp:Button ID="btnNuevoSector" runat="server" CssClass="boton-nuevo"
-                            Text="Nuevo Sector" OnClick="btnNuevoSector_Click" CausesValidation="false" />
+                            Text="Nuevo Sector" Clave="layout.btnNuevoSector" OnClick="btnNuevoSector_Click" CausesValidation="false" />
                     </div>
                     <div class="tarjeta">
                         <table class="tabla">
                             <thead>
                                 <tr>
-                                    <th>Sector</th>
-                                    <th>Ubicación</th>
-                                    <th>Circulación</th>
-                                    <th>N° Productos</th>
-                                    <th>Acciones</th>
+                                    <th runat="server" Clave="layout.colSector">Sector</th>
+                                    <th runat="server" Clave="layout.colUbicacion">Ubicación</th>
+                                    <th runat="server" Clave="layout.colCirculacion">Circulación</th>
+                                    <th runat="server" Clave="layout.colProductos">N° Productos</th>
+                                    <th runat="server" Clave="comun.acciones">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,12 +79,12 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td class="texto-principal"><%# Eval("Nombre") %></td>
-                                            <td><%# Eval("Ubicacion") %></td>
+                                            <td><%# TraducirValor(Eval("Ubicacion")) %></td>
                                             <td><%# Eval("Circulacion") %>%</td>
                                             <td><%# Eval("CantidadProductos") %></td>
                                             <td>
-                                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar"
-                                                    CommandName="EditarSector" CommandArgument='<%# Eval("CodigoSector") %>'>Editar</asp:LinkButton>
+                                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar" ClaveTitle="comun.editar"
+                                                    CommandName="EditarSector" CommandArgument='<%# Eval("CodigoSector") %>' Text="Editar" Clave="comun.editar" />
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -92,7 +92,7 @@
                             </tbody>
                         </table>
 
-                        <asp:Label ID="lblSinSectores" runat="server" Text="Este local todavía no tiene sectores cargados." Visible="false" CssClass="sin-resultados" />
+                        <asp:Label ID="lblSinSectores" runat="server" Text="Este local todavía no tiene sectores cargados." Clave="layout.sinSectores" Visible="false" CssClass="sin-resultados" />
                     </div>
                 </div>
 
@@ -102,49 +102,49 @@
         <asp:Panel ID="pnlModalLayout" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
-                    <h3>Cargar Layout del Local</h3>
+                    <h3 runat="server" Clave="layout.modalTitulo">Cargar Layout del Local</h3>
                     <span class="modal-cerrar" onclick="cerrarModal('pnlModalLayout')">&times;</span>
                 </div>
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Nombre del layout *" AssociatedControlID="tbNombreLayout" />
-                    <asp:TextBox ID="tbNombreLayout" runat="server" CssClass="modal-campo" placeholder="Ej: Layout Principal 2026" />
+                    <asp:Label runat="server" Text="Nombre del layout *" AssociatedControlID="tbNombreLayout" Clave="layout.nombre" />
+                    <asp:TextBox ID="tbNombreLayout" runat="server" CssClass="modal-campo" placeholder="Ej: Layout Principal 2026" ClavePlaceholder="layout.ejNombre" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="tbNombreLayout" CssClass="campo-error"
-                        ErrorMessage="Ingrese el nombre del layout" Display="Dynamic" ValidationGroup="vgLayout" />
+                        ErrorMessage="Ingrese el nombre del layout" Clave="layout.errNombre" Display="Dynamic" ValidationGroup="vgLayout" />
                 </div>
                 <div class="fila-formulario">
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Fecha *" AssociatedControlID="tbFechaLayout" />
+                        <asp:Label runat="server" Text="Fecha *" AssociatedControlID="tbFechaLayout" Clave="comun.fechaObligatoria" />
                         <asp:TextBox ID="tbFechaLayout" runat="server" CssClass="modal-campo" TextMode="Date" />
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="tbFechaLayout" CssClass="campo-error"
-                            ErrorMessage="Ingrese la fecha" Display="Dynamic" ValidationGroup="vgLayout" />
+                            ErrorMessage="Ingrese la fecha" Clave="comun.errFecha" Display="Dynamic" ValidationGroup="vgLayout" />
                     </div>
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Estado *" AssociatedControlID="ddlEstadoLayout" />
+                        <asp:Label runat="server" Text="Estado *" AssociatedControlID="ddlEstadoLayout" Clave="comun.estadoObligatorio" />
                         <asp:DropDownList ID="ddlEstadoLayout" runat="server" CssClass="modal-campo">
-                            <asp:ListItem Text="Activo" Value="Activo" />
-                            <asp:ListItem Text="Inactivo" Value="Inactivo" />
-                            <asp:ListItem Text="Borrador" Value="Borrador" />
+                            <asp:ListItem Text="Activo" Value="Activo" Clave="comun.activo" />
+                            <asp:ListItem Text="Inactivo" Value="Inactivo" Clave="comun.inactivo" />
+                            <asp:ListItem Text="Borrador" Value="Borrador" Clave="valor.borrador" />
                         </asp:DropDownList>
                     </div>
                 </div>
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Descripción *" AssociatedControlID="tbDescripcionLayout" />
+                    <asp:Label runat="server" Text="Descripción *" AssociatedControlID="tbDescripcionLayout" Clave="comun.descripcionObligatoria" />
                     <asp:TextBox ID="tbDescripcionLayout" runat="server" CssClass="modal-campo" TextMode="MultiLine" Rows="3"
-                        placeholder="Descripción básica de la distribución del local..." />
+                        placeholder="Descripción básica de la distribución del local..." ClavePlaceholder="layout.ejDescripcion" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="tbDescripcionLayout" CssClass="campo-error"
-                        ErrorMessage="Ingrese la descripción" Display="Dynamic" ValidationGroup="vgLayout" />
+                        ErrorMessage="Ingrese la descripción" Clave="comun.errDescripcion" Display="Dynamic" ValidationGroup="vgLayout" />
                 </div>
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Imagen o plano del local * (PNG, JPG, PDF — max. 5 MB)" AssociatedControlID="fuArchivoLayout" />
+                    <asp:Label runat="server" Text="Imagen o plano del local * (PNG, JPG, PDF — max. 5 MB)" AssociatedControlID="fuArchivoLayout" Clave="layout.archivo" />
                     <asp:FileUpload ID="fuArchivoLayout" runat="server" CssClass="modal-campo" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="fuArchivoLayout" CssClass="campo-error"
-                        ErrorMessage="Adjunte un archivo" Display="Dynamic" ValidationGroup="vgLayout" />
+                        ErrorMessage="Adjunte un archivo" Clave="layout.errArchivo" Display="Dynamic" ValidationGroup="vgLayout" />
                 </div>
                 <div class="modal-botones">
                     <asp:Button ID="btnCancelarLayout" runat="server" CssClass="modal-boton-cancelar"
-                        Text="Cancelar" OnClick="btnCancelarLayout_Click" CausesValidation="false" />
+                        Text="Cancelar" Clave="comun.cancelar" OnClick="btnCancelarLayout_Click" CausesValidation="false" />
                     <asp:Button ID="btnConfirmarLayout" runat="server" CssClass="modal-boton-guardar"
-                        Text="Confirmar carga" OnClick="btnConfirmarLayout_Click" ValidationGroup="vgLayout" />
+                        Text="Confirmar carga" Clave="layout.btnConfirmar" OnClick="btnConfirmarLayout_Click" ValidationGroup="vgLayout" />
                 </div>
             </div>
         </asp:Panel>
@@ -161,58 +161,58 @@
                 <asp:HiddenField ID="hfEsEdicionSector" runat="server" Value="false" />
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Nombre del Sector *" AssociatedControlID="tbNombreSector" />
-                    <asp:TextBox ID="tbNombreSector" runat="server" CssClass="modal-campo" placeholder="Ej: Perfumería" />
+                    <asp:Label runat="server" Text="Nombre del Sector *" AssociatedControlID="tbNombreSector" Clave="layout.nombreSector" />
+                    <asp:TextBox ID="tbNombreSector" runat="server" CssClass="modal-campo" placeholder="Ej: Perfumería" ClavePlaceholder="layout.ejSector" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="tbNombreSector" CssClass="campo-error"
-                        ErrorMessage="Ingrese el nombre del sector" Display="Dynamic" ValidationGroup="vgSector" />
+                        ErrorMessage="Ingrese el nombre del sector" Clave="layout.errNombreSector" Display="Dynamic" ValidationGroup="vgSector" />
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Tipo de sector" AssociatedControlID="ddlTipoSector" />
+                    <asp:Label runat="server" Text="Tipo de sector" AssociatedControlID="ddlTipoSector" Clave="layout.tipoSector" />
                     <asp:DropDownList ID="ddlTipoSector" runat="server" CssClass="modal-campo">
-                        <asp:ListItem Text="Frutería" Value="Frutería" />
-                        <asp:ListItem Text="Carnicería" Value="Carnicería" />
-                        <asp:ListItem Text="Lácteos" Value="Lácteos" />
-                        <asp:ListItem Text="Panadería" Value="Panadería" />
-                        <asp:ListItem Text="Bebidas" Value="Bebidas" />
-                        <asp:ListItem Text="Almacén" Value="Almacén" />
-                        <asp:ListItem Text="Limpieza" Value="Limpieza" />
-                        <asp:ListItem Text="Perfumería" Value="Perfumería" />
-                        <asp:ListItem Text="Electrónica" Value="Electrónica" />
-                        <asp:ListItem Text="Indumentaria" Value="Indumentaria" />
-                        <asp:ListItem Text="Otro" Value="Otro" />
+                        <asp:ListItem Text="Frutería" Value="Frutería" Clave="valor.fruteria" />
+                        <asp:ListItem Text="Carnicería" Value="Carnicería" Clave="valor.carniceria" />
+                        <asp:ListItem Text="Lácteos" Value="Lácteos" Clave="valor.lacteos" />
+                        <asp:ListItem Text="Panadería" Value="Panadería" Clave="valor.panaderia" />
+                        <asp:ListItem Text="Bebidas" Value="Bebidas" Clave="valor.bebidas" />
+                        <asp:ListItem Text="Almacén" Value="Almacén" Clave="valor.almacen" />
+                        <asp:ListItem Text="Limpieza" Value="Limpieza" Clave="valor.limpieza" />
+                        <asp:ListItem Text="Perfumería" Value="Perfumería" Clave="valor.perfumeria" />
+                        <asp:ListItem Text="Electrónica" Value="Electrónica" Clave="valor.electronica" />
+                        <asp:ListItem Text="Indumentaria" Value="Indumentaria" Clave="valor.indumentaria" />
+                        <asp:ListItem Text="Otro" Value="Otro" Clave="valor.otro" />
                     </asp:DropDownList>
                 </div>
 
                 <div class="fila-formulario">
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Circulación estimada (%)" AssociatedControlID="tbCirculacionSector" />
+                        <asp:Label runat="server" Text="Circulación estimada (%)" AssociatedControlID="tbCirculacionSector" Clave="layout.circulacion" />
                         <asp:TextBox ID="tbCirculacionSector" runat="server" CssClass="modal-campo" TextMode="Number" />
                     </div>
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Ubicación" AssociatedControlID="ddlUbicacionSector" />
+                        <asp:Label runat="server" Text="Ubicación" AssociatedControlID="ddlUbicacionSector" Clave="layout.colUbicacion" />
                         <asp:DropDownList ID="ddlUbicacionSector" runat="server" CssClass="modal-campo">
-                            <asp:ListItem Text="Frente - Izquierda" Value="Frente - Izquierda" />
-                            <asp:ListItem Text="Frente - Centro" Value="Frente - Centro" />
-                            <asp:ListItem Text="Frente - Derecha" Value="Frente - Derecha" />
-                            <asp:ListItem Text="Centro - Izquierda" Value="Centro - Izquierda" />
-                            <asp:ListItem Text="Centro - Centro" Value="Centro - Centro" />
-                            <asp:ListItem Text="Centro - Derecha" Value="Centro - Derecha" />
-                            <asp:ListItem Text="Fondo - Izquierda" Value="Fondo - Izquierda" />
-                            <asp:ListItem Text="Fondo - Centro" Value="Fondo - Centro" />
-                            <asp:ListItem Text="Fondo - Derecha" Value="Fondo - Derecha" />
+                            <asp:ListItem Text="Frente - Izquierda" Value="Frente - Izquierda" Clave="valor.frenteIzquierda" />
+                            <asp:ListItem Text="Frente - Centro" Value="Frente - Centro" Clave="valor.frenteCentro" />
+                            <asp:ListItem Text="Frente - Derecha" Value="Frente - Derecha" Clave="valor.frenteDerecha" />
+                            <asp:ListItem Text="Centro - Izquierda" Value="Centro - Izquierda" Clave="valor.centroIzquierda" />
+                            <asp:ListItem Text="Centro - Centro" Value="Centro - Centro" Clave="valor.centroCentro" />
+                            <asp:ListItem Text="Centro - Derecha" Value="Centro - Derecha" Clave="valor.centroDerecha" />
+                            <asp:ListItem Text="Fondo - Izquierda" Value="Fondo - Izquierda" Clave="valor.fondoIzquierda" />
+                            <asp:ListItem Text="Fondo - Centro" Value="Fondo - Centro" Clave="valor.fondoCentro" />
+                            <asp:ListItem Text="Fondo - Derecha" Value="Fondo - Derecha" Clave="valor.fondoDerecha" />
                         </asp:DropDownList>
                     </div>
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Descripción" AssociatedControlID="tbDescripcionSector" />
+                    <asp:Label runat="server" Text="Descripción" AssociatedControlID="tbDescripcionSector" Clave="comun.descripcion" />
                     <asp:TextBox ID="tbDescripcionSector" runat="server" CssClass="modal-campo" TextMode="MultiLine" Rows="3" />
                 </div>
 
                 <div class="modal-botones">
                     <asp:Button ID="btnCancelarSector" runat="server" CssClass="modal-boton-cancelar"
-                        Text="Cancelar" OnClick="btnCancelarSector_Click" CausesValidation="false" />
+                        Text="Cancelar" Clave="comun.cancelar" OnClick="btnCancelarSector_Click" CausesValidation="false" />
                     <asp:Button ID="btnGuardarSector" runat="server" CssClass="modal-boton-guardar"
                         Text="Crear Sector" OnClick="btnGuardarSector_Click" ValidationGroup="vgSector" />
                 </div>
@@ -226,20 +226,20 @@
                     <span class="modal-cerrar" onclick="cerrarModal('pnlDetalleLayout')">&times;</span>
                 </div>
                 <p>
-                    <strong>Fecha:</strong>
+                    <strong runat="server" Clave="layout.fecha">Fecha:</strong>
                     <asp:Literal ID="litFechaDetalle" runat="server" />
                 </p>
                 <p>
-                    <strong>Estado:</strong>
+                    <strong runat="server" Clave="layout.estado">Estado:</strong>
                     <asp:Literal ID="litEstadoDetalle" runat="server" />
                 </p>
                 <p>
-                    <strong>Descripción:</strong>
+                    <strong runat="server" Clave="layout.descripcion">Descripción:</strong>
                     <asp:Literal ID="litDescripcionDetalle" runat="server" />
                 </p>
                 <asp:PlaceHolder ID="phPreview" runat="server" />
                 <div class="modal-botones">
-                    <asp:Button runat="server" CssClass="modal-boton-cancelar" Text="Cerrar"
+                    <asp:Button runat="server" CssClass="modal-boton-cancelar" Text="Cerrar" Clave="comun.cerrar"
                         OnClientClick="cerrarModal('pnlDetalleLayout'); return false;" />
                 </div>
             </div>

@@ -62,6 +62,12 @@ public class PaginaBase : Page, IObservadorIdioma
         try { return string.Format(texto, pValores); }
         catch (FormatException) { return texto; }
     }
+    protected string TraducirValor(object pValor)
+    {
+        string valor = pValor == null ? "" : pValor.ToString();
+        string clave = ValoresTraducibles.ObtenerClave(valor);
+        return clave == null ? valor : Traducir(clave);
+    }
     protected string NombreIdioma(Idioma pIdioma)
     {
         if (pIdioma == null) return "";

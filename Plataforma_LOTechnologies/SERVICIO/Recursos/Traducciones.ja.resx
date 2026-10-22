@@ -1007,4 +1007,532 @@
   <data name="traducciones.msgGuardadas" xml:space="preserve">
     <value>{0} 件の翻訳を保存しました。すでにシステムに反映されています。</value>
   </data>
+  <data name="comun.local" xml:space="preserve">
+    <value>店舗</value>
+  </data>
+  <data name="comun.nombreObligatorio" xml:space="preserve">
+    <value>名前 *</value>
+  </data>
+  <data name="comun.errNombre" xml:space="preserve">
+    <value>名前を入力してください</value>
+  </data>
+  <data name="comun.eliminar" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="comun.fechaObligatoria" xml:space="preserve">
+    <value>日付 *</value>
+  </data>
+  <data name="comun.errFecha" xml:space="preserve">
+    <value>日付を入力してください</value>
+  </data>
+  <data name="comun.estadoObligatorio" xml:space="preserve">
+    <value>状態 *</value>
+  </data>
+  <data name="comun.descripcion" xml:space="preserve">
+    <value>説明</value>
+  </data>
+  <data name="comun.descripcionObligatoria" xml:space="preserve">
+    <value>説明 *</value>
+  </data>
+  <data name="comun.errDescripcion" xml:space="preserve">
+    <value>説明を入力してください</value>
+  </data>
+  <data name="comun.completeDatos" xml:space="preserve">
+    <value>データを入力してください。</value>
+  </data>
+  <data name="comun.aplicar" xml:space="preserve">
+    <value>適用</value>
+  </data>
+  <data name="comun.unidadesAbrev" xml:space="preserve">
+    <value>個</value>
+  </data>
+  <data name="valor.localCalle" xml:space="preserve">
+    <value>路面店</value>
+  </data>
+  <data name="valor.shopping" xml:space="preserve">
+    <value>ショッピングモール</value>
+  </data>
+  <data name="valor.stripCenter" xml:space="preserve">
+    <value>ストリップモール</value>
+  </data>
+  <data name="valor.otro" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="valor.borrador" xml:space="preserve">
+    <value>下書き</value>
+  </data>
+  <data name="valor.fruteria" xml:space="preserve">
+    <value>青果</value>
+  </data>
+  <data name="valor.carniceria" xml:space="preserve">
+    <value>精肉</value>
+  </data>
+  <data name="valor.lacteos" xml:space="preserve">
+    <value>乳製品</value>
+  </data>
+  <data name="valor.panaderia" xml:space="preserve">
+    <value>ベーカリー</value>
+  </data>
+  <data name="valor.bebidas" xml:space="preserve">
+    <value>飲料</value>
+  </data>
+  <data name="valor.almacen" xml:space="preserve">
+    <value>食料品</value>
+  </data>
+  <data name="valor.limpieza" xml:space="preserve">
+    <value>清掃用品</value>
+  </data>
+  <data name="valor.perfumeria" xml:space="preserve">
+    <value>化粧品</value>
+  </data>
+  <data name="valor.electronica" xml:space="preserve">
+    <value>家電</value>
+  </data>
+  <data name="valor.indumentaria" xml:space="preserve">
+    <value>衣料品</value>
+  </data>
+  <data name="valor.frenteIzquierda" xml:space="preserve">
+    <value>手前・左</value>
+  </data>
+  <data name="valor.frenteCentro" xml:space="preserve">
+    <value>手前・中央</value>
+  </data>
+  <data name="valor.frenteDerecha" xml:space="preserve">
+    <value>手前・右</value>
+  </data>
+  <data name="valor.centroIzquierda" xml:space="preserve">
+    <value>中央・左</value>
+  </data>
+  <data name="valor.centroCentro" xml:space="preserve">
+    <value>中央・中央</value>
+  </data>
+  <data name="valor.centroDerecha" xml:space="preserve">
+    <value>中央・右</value>
+  </data>
+  <data name="valor.fondoIzquierda" xml:space="preserve">
+    <value>奥・左</value>
+  </data>
+  <data name="valor.fondoCentro" xml:space="preserve">
+    <value>奥・中央</value>
+  </data>
+  <data name="valor.fondoDerecha" xml:space="preserve">
+    <value>奥・右</value>
+  </data>
+  <data name="valor.venta" xml:space="preserve">
+    <value>売上</value>
+  </data>
+  <data name="valor.stock" xml:space="preserve">
+    <value>在庫</value>
+  </data>
+  <data name="valor.critico" xml:space="preserve">
+    <value>危険</value>
+  </data>
+  <data name="valor.bajo" xml:space="preserve">
+    <value>少ない</value>
+  </data>
+  <data name="valor.normal" xml:space="preserve">
+    <value>通常</value>
+  </data>
+  <data name="locales.titulo" xml:space="preserve">
+    <value>店舗 - LO Technologies</value>
+  </data>
+  <data name="locales.encabezado" xml:space="preserve">
+    <value>店舗一覧</value>
+  </data>
+  <data name="locales.btnNuevo" xml:space="preserve">
+    <value>新規店舗</value>
+  </data>
+  <data name="locales.buscarPlaceholder" xml:space="preserve">
+    <value>店舗を検索...</value>
+  </data>
+  <data name="locales.verLayout" xml:space="preserve">
+    <value>レイアウトを見る</value>
+  </data>
+  <data name="locales.confirmarEstado" xml:space="preserve">
+    <value>この店舗の状態を変更しますか？</value>
+  </data>
+  <data name="locales.sinResultados" xml:space="preserve">
+    <value>検索条件に一致する店舗はありません。</value>
+  </data>
+  <data name="locales.modalEditar" xml:space="preserve">
+    <value>店舗を編集</value>
+  </data>
+  <data name="locales.btnCrear" xml:space="preserve">
+    <value>店舗を作成</value>
+  </data>
+  <data name="locales.empresaCliente" xml:space="preserve">
+    <value>顧客企業 *</value>
+  </data>
+  <data name="locales.direccion" xml:space="preserve">
+    <value>住所 *</value>
+  </data>
+  <data name="locales.errDireccion" xml:space="preserve">
+    <value>住所を入力してください</value>
+  </data>
+  <data name="locales.tipoLocal" xml:space="preserve">
+    <value>店舗の種類</value>
+  </data>
+  <data name="locales.superficie" xml:space="preserve">
+    <value>おおよその面積 (m²)</value>
+  </data>
+  <data name="locales.observaciones" xml:space="preserve">
+    <value>備考</value>
+  </data>
+  <data name="locales.activo" xml:space="preserve">
+    <value>有効な店舗</value>
+  </data>
+  <data name="locales.msgNoExiste" xml:space="preserve">
+    <value>この店舗はもう存在しません。</value>
+  </data>
+  <data name="locales.msgModificado" xml:space="preserve">
+    <value>店舗を更新しました。</value>
+  </data>
+  <data name="locales.msgRegistrado" xml:space="preserve">
+    <value>店舗を登録しました。</value>
+  </data>
+  <data name="locales.msgEstado" xml:space="preserve">
+    <value>店舗の状態を更新しました。</value>
+  </data>
+  <data name="layout.titulo" xml:space="preserve">
+    <value>レイアウトと売り場 - LO Technologies</value>
+  </data>
+  <data name="layout.tabLayout" xml:space="preserve">
+    <value>店舗のレイアウト</value>
+  </data>
+  <data name="layout.tabSectores" xml:space="preserve">
+    <value>売り場の管理</value>
+  </data>
+  <data name="layout.btnCargar" xml:space="preserve">
+    <value>レイアウトをアップロード</value>
+  </data>
+  <data name="layout.verDetalle" xml:space="preserve">
+    <value>詳細を見る</value>
+  </data>
+  <data name="layout.confirmarEliminar" xml:space="preserve">
+    <value>このレイアウトを削除しますか？</value>
+  </data>
+  <data name="layout.sinLayouts" xml:space="preserve">
+    <value>この店舗にはまだレイアウトがありません。</value>
+  </data>
+  <data name="layout.btnNuevoSector" xml:space="preserve">
+    <value>新規売り場</value>
+  </data>
+  <data name="layout.colSector" xml:space="preserve">
+    <value>売り場</value>
+  </data>
+  <data name="layout.colUbicacion" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="layout.colCirculacion" xml:space="preserve">
+    <value>回遊率</value>
+  </data>
+  <data name="layout.colProductos" xml:space="preserve">
+    <value>商品数</value>
+  </data>
+  <data name="layout.sinSectores" xml:space="preserve">
+    <value>この店舗にはまだ売り場がありません。</value>
+  </data>
+  <data name="layout.modalTitulo" xml:space="preserve">
+    <value>店舗レイアウトのアップロード</value>
+  </data>
+  <data name="layout.nombre" xml:space="preserve">
+    <value>レイアウト名 *</value>
+  </data>
+  <data name="layout.ejNombre" xml:space="preserve">
+    <value>例：メインレイアウト 2026</value>
+  </data>
+  <data name="layout.errNombre" xml:space="preserve">
+    <value>レイアウト名を入力してください</value>
+  </data>
+  <data name="layout.ejDescripcion" xml:space="preserve">
+    <value>店舗の配置の簡単な説明...</value>
+  </data>
+  <data name="layout.archivo" xml:space="preserve">
+    <value>店舗の画像または平面図 *（PNG、JPG、PDF — 最大 5 MB）</value>
+  </data>
+  <data name="layout.errArchivo" xml:space="preserve">
+    <value>ファイルを添付してください</value>
+  </data>
+  <data name="layout.btnConfirmar" xml:space="preserve">
+    <value>アップロードを確定</value>
+  </data>
+  <data name="layout.modalSectorEditar" xml:space="preserve">
+    <value>売り場を編集</value>
+  </data>
+  <data name="layout.btnCrearSector" xml:space="preserve">
+    <value>売り場を作成</value>
+  </data>
+  <data name="layout.nombreSector" xml:space="preserve">
+    <value>売り場名 *</value>
+  </data>
+  <data name="layout.ejSector" xml:space="preserve">
+    <value>例：化粧品</value>
+  </data>
+  <data name="layout.errNombreSector" xml:space="preserve">
+    <value>売り場名を入力してください</value>
+  </data>
+  <data name="layout.tipoSector" xml:space="preserve">
+    <value>売り場の種類</value>
+  </data>
+  <data name="layout.circulacion" xml:space="preserve">
+    <value>推定回遊率 (%)</value>
+  </data>
+  <data name="layout.fecha" xml:space="preserve">
+    <value>日付：</value>
+  </data>
+  <data name="layout.estado" xml:space="preserve">
+    <value>状態：</value>
+  </data>
+  <data name="layout.descripcion" xml:space="preserve">
+    <value>説明：</value>
+  </data>
+  <data name="layout.abrirPdf" xml:space="preserve">
+    <value>PDF を新しいタブで開く</value>
+  </data>
+  <data name="layout.errSinArchivo" xml:space="preserve">
+    <value>画像または平面図のファイルを添付してください。</value>
+  </data>
+  <data name="layout.errFormato" xml:space="preserve">
+    <value>添付ファイルの形式が無効です。使用できる形式：PNG、JPG、PDF。</value>
+  </data>
+  <data name="layout.errTamanio" xml:space="preserve">
+    <value>画像または平面図のサイズが大きすぎます。上限は 5 MB です。</value>
+  </data>
+  <data name="layout.msgRegistrado" xml:space="preserve">
+    <value>レイアウトを登録しました。</value>
+  </data>
+  <data name="layout.msgSectorModificado" xml:space="preserve">
+    <value>売り場を更新しました。</value>
+  </data>
+  <data name="layout.msgSectorCreado" xml:space="preserve">
+    <value>売り場を作成しました。</value>
+  </data>
+  <data name="layout.msgEliminado" xml:space="preserve">
+    <value>レイアウトを削除しました。</value>
+  </data>
+  <data name="productos.titulo" xml:space="preserve">
+    <value>商品とカテゴリ - LO Technologies</value>
+  </data>
+  <data name="productos.btnNuevo" xml:space="preserve">
+    <value>新規商品</value>
+  </data>
+  <data name="productos.tabCategorias" xml:space="preserve">
+    <value>カテゴリ</value>
+  </data>
+  <data name="productos.tabProductos" xml:space="preserve">
+    <value>商品</value>
+  </data>
+  <data name="productos.buscarPlaceholder" xml:space="preserve">
+    <value>商品を検索...</value>
+  </data>
+  <data name="productos.todosSectores" xml:space="preserve">
+    <value>すべての売り場</value>
+  </data>
+  <data name="productos.colCodigo" xml:space="preserve">
+    <value>コード</value>
+  </data>
+  <data name="productos.colProducto" xml:space="preserve">
+    <value>商品</value>
+  </data>
+  <data name="productos.colCategoria" xml:space="preserve">
+    <value>カテゴリ</value>
+  </data>
+  <data name="productos.colPrecio" xml:space="preserve">
+    <value>価格</value>
+  </data>
+  <data name="productos.colStock" xml:space="preserve">
+    <value>在庫</value>
+  </data>
+  <data name="productos.confirmarEstado" xml:space="preserve">
+    <value>この商品の状態を変更しますか？</value>
+  </data>
+  <data name="productos.sinProductos" xml:space="preserve">
+    <value>検索条件に一致する商品はありません。</value>
+  </data>
+  <data name="productos.btnNuevaCategoria" xml:space="preserve">
+    <value>新規カテゴリ</value>
+  </data>
+  <data name="productos.sinCategorias" xml:space="preserve">
+    <value>カテゴリはまだありません。</value>
+  </data>
+  <data name="productos.modalEditar" xml:space="preserve">
+    <value>商品を編集</value>
+  </data>
+  <data name="productos.codigoInterno" xml:space="preserve">
+    <value>社内コード</value>
+  </data>
+  <data name="productos.nombre" xml:space="preserve">
+    <value>商品名 *</value>
+  </data>
+  <data name="productos.categoriaObligatoria" xml:space="preserve">
+    <value>カテゴリ *</value>
+  </data>
+  <data name="productos.sinSector" xml:space="preserve">
+    <value>— 売り場未設定 —</value>
+  </data>
+  <data name="productos.activo" xml:space="preserve">
+    <value>有効な商品</value>
+  </data>
+  <data name="productos.modalCategoriaEditar" xml:space="preserve">
+    <value>カテゴリを編集</value>
+  </data>
+  <data name="productos.categoriaActiva" xml:space="preserve">
+    <value>有効なカテゴリ</value>
+  </data>
+  <data name="productos.msgNoExiste" xml:space="preserve">
+    <value>この商品はもう存在しません。</value>
+  </data>
+  <data name="productos.errSinLocalProductos" xml:space="preserve">
+    <value>商品を登録するには、先に店舗を登録してください。</value>
+  </data>
+  <data name="productos.errSinLocalCategorias" xml:space="preserve">
+    <value>カテゴリを登録するには、先に店舗を登録してください。</value>
+  </data>
+  <data name="productos.msgModificado" xml:space="preserve">
+    <value>商品を更新しました。</value>
+  </data>
+  <data name="productos.msgCreado" xml:space="preserve">
+    <value>商品を作成しました。</value>
+  </data>
+  <data name="productos.msgEstado" xml:space="preserve">
+    <value>商品の状態を更新しました。</value>
+  </data>
+  <data name="productos.msgCategoriaModificada" xml:space="preserve">
+    <value>カテゴリを更新しました。</value>
+  </data>
+  <data name="productos.msgCategoriaCreada" xml:space="preserve">
+    <value>カテゴリを作成しました。</value>
+  </data>
+  <data name="productos.errLocalProducto" xml:space="preserve">
+    <value>商品の所属企業を判断するため、店舗を選択してください。</value>
+  </data>
+  <data name="productos.errLocalCategoria" xml:space="preserve">
+    <value>カテゴリの所属企業を判断するため、店舗を選択してください。</value>
+  </data>
+  <data name="stock.titulo" xml:space="preserve">
+    <value>在庫と売上 - LO Technologies</value>
+  </data>
+  <data name="stock.subtitulo" xml:space="preserve">
+    <value>CUN 006 — 売上・在庫データの登録と管理</value>
+  </data>
+  <data name="stock.btnImportar" xml:space="preserve">
+    <value>CSV をインポート</value>
+  </data>
+  <data name="stock.btnCargaManual" xml:space="preserve">
+    <value>手動登録</value>
+  </data>
+  <data name="stock.ultimoMes" xml:space="preserve">
+    <value>直近1か月</value>
+  </data>
+  <data name="stock.ultimos3" xml:space="preserve">
+    <value>直近3か月</value>
+  </data>
+  <data name="stock.ultimos5" xml:space="preserve">
+    <value>直近5か月</value>
+  </data>
+  <data name="stock.porSector" xml:space="preserve">
+    <value>売り場別</value>
+  </data>
+  <data name="stock.porCategoria" xml:space="preserve">
+    <value>カテゴリ別</value>
+  </data>
+  <data name="stock.porProducto" xml:space="preserve">
+    <value>商品別</value>
+  </data>
+  <data name="stock.tabVentas" xml:space="preserve">
+    <value>売上データ</value>
+  </data>
+  <data name="stock.tabStock" xml:space="preserve">
+    <value>在庫データ</value>
+  </data>
+  <data name="stock.totalVentas" xml:space="preserve">
+    <value>売上合計（月）</value>
+  </data>
+  <data name="stock.ticketPromedio" xml:space="preserve">
+    <value>平均客単価</value>
+  </data>
+  <data name="stock.unidadesVendidas" xml:space="preserve">
+    <value>販売数量</value>
+  </data>
+  <data name="stock.margenTotal" xml:space="preserve">
+    <value>総利益率</value>
+  </data>
+  <data name="stock.ventasPorSector" xml:space="preserve">
+    <value>売り場別の売上</value>
+  </data>
+  <data name="stock.graficoPendiente" xml:space="preserve">
+    <value>売り場別売上グラフ（準備中）</value>
+  </data>
+  <data name="stock.detalleVentas" xml:space="preserve">
+    <value>売上明細</value>
+  </data>
+  <data name="stock.colPeriodo" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="stock.colUnidades" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="stock.colMonto" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="stock.colMargen" xml:space="preserve">
+    <value>利益率</value>
+  </data>
+  <data name="stock.sinVentas" xml:space="preserve">
+    <value>選択した期間の売上はありません。</value>
+  </data>
+  <data name="stock.inventario" xml:space="preserve">
+    <value>商品別在庫</value>
+  </data>
+  <data name="stock.colStockActual" xml:space="preserve">
+    <value>現在庫</value>
+  </data>
+  <data name="stock.colMinimo" xml:space="preserve">
+    <value>最小</value>
+  </data>
+  <data name="stock.colMaximo" xml:space="preserve">
+    <value>最大</value>
+  </data>
+  <data name="stock.colAccion" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="stock.actualizar" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="stock.sinStock" xml:space="preserve">
+    <value>在庫データはまだありません。</value>
+  </data>
+  <data name="stock.tipoDato" xml:space="preserve">
+    <value>データの種類 *</value>
+  </data>
+  <data name="stock.productoCategoria" xml:space="preserve">
+    <value>商品 / カテゴリ *</value>
+  </data>
+  <data name="stock.cantidad" xml:space="preserve">
+    <value>数量 *</value>
+  </data>
+  <data name="stock.errCantidad" xml:space="preserve">
+    <value>数量を入力してください</value>
+  </data>
+  <data name="stock.importe" xml:space="preserve">
+    <value>合計金額（売上の場合）</value>
+  </data>
+  <data name="stock.minimo" xml:space="preserve">
+    <value>最小在庫（在庫の場合）</value>
+  </data>
+  <data name="stock.maximo" xml:space="preserve">
+    <value>最大在庫（在庫の場合）</value>
+  </data>
+  <data name="stock.fecha" xml:space="preserve">
+    <value>期間 / 日付 *</value>
+  </data>
+  <data name="stock.errImportarCsv" xml:space="preserve">
+    <value>CSV のインポートはまだ利用できません。</value>
+  </data>
+  <data name="stock.errSeleccionarLocal" xml:space="preserve">
+    <value>店舗を選択してください。</value>
+  </data>
+  <data name="stock.msgRegistrado" xml:space="preserve">
+    <value>データを登録しました。</value>
+  </data>
 </root>

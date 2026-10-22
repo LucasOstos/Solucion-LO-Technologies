@@ -21,25 +21,25 @@
 
                 <div class="encabezado">
                     <div>
-                        <h1>Locales Comerciales</h1>
+                        <h1 runat="server" clave="locales.encabezado">Locales Comerciales</h1>
                     </div>
                     <asp:Button ID="btnNuevoLocal" runat="server" CssClass="boton-nuevo"
-                        Text="Nuevo Local" OnClick="btnNuevoLocal_Click" CausesValidation="false" />
+                        Text="Nuevo Local" Clave="locales.btnNuevo" OnClick="btnNuevoLocal_Click" CausesValidation="false" />
                 </div>
 
-                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" />
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
 
                 <div class="filtros">
-                    <asp:TextBox ID="tbBuscar" runat="server" CssClass="campo-buscar" placeholder="Buscar local..." />
+                    <asp:TextBox ID="tbBuscar" runat="server" CssClass="campo-buscar" placeholder="Buscar local..." ClavePlaceholder="locales.buscarPlaceholder" />
                     <asp:DropDownList ID="ddlFiltroEmpresa" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed">
                         <asp:ListItem Text="Todas las empresas" Value="" />
                     </asp:DropDownList>
                     <asp:DropDownList ID="ddlFiltroEstado" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed">
-                        <asp:ListItem Text="Todos los estados" Value="" />
-                        <asp:ListItem Text="Activo" Value="Activo" />
-                        <asp:ListItem Text="Inactivo" Value="Inactivo" />
+                        <asp:ListItem Text="Todos los estados" Value="" Clave="comun.todosEstados" />
+                        <asp:ListItem Text="Activo" Value="Activo" Clave="comun.activo" />
+                        <asp:ListItem Text="Inactivo" Value="Inactivo" Clave="comun.inactivo" />
                     </asp:DropDownList>
-                    <asp:Button ID="btnBuscar" runat="server" CssClass="boton-buscar" Text="Buscar" OnClick="btnBuscar_Click" CausesValidation="false" />
+                    <asp:Button ID="btnBuscar" runat="server" CssClass="boton-buscar" Text="Buscar" Clave="comun.buscar" OnClick="btnBuscar_Click" CausesValidation="false" />
                 </div>
 
                 <asp:Repeater ID="rptLocales" runat="server" OnItemCommand="rptLocales_ItemCommand">
@@ -51,32 +51,32 @@
                             <div class="loc-tarjeta-header">
                                 <span class="avatar avatar-cuadrado">&#127970;</span>
                                 <span class='<%# (int)Eval("Estado") == 1 ? "loc-estado-punto loc-activo" : "loc-estado-punto loc-inactivo" %>'
-                                    title='<%# (int)Eval("Estado") == 1 ? "Activo" : "Inactivo" %>'></span>
+                                    title='<%# Traducir((int)Eval("Estado") == 1 ? "comun.activo" : "comun.inactivo") %>'></span>
                             </div>
                             <div class="texto-principal"><%# Eval("Nombre") %></div>
                             <div class="texto-secundario"><%# Eval("NombreEmpresa") %></div>
                             <div class="loc-direccion">&#128205; <%# Eval("Direccion") %></div>
                             <div class="loc-stats">
                                 <span><%# Eval("SuperficieAprox") %> m&sup2;</span>
-                                <span><%# Eval("TipoLocal") %></span>
+                                <span><%# TraducirValor(Eval("TipoLocal")) %></span>
                             </div>
 
-                            <asp:LinkButton runat="server" CssClass="loc-boton-layout" ToolTip="Ver Layout"
-                                CommandName="VerLayout" CommandArgument='<%# Eval("CodigoLocal") %>'>Ver Layout</asp:LinkButton>
+                            <asp:LinkButton runat="server" CssClass="loc-boton-layout" ToolTip="Ver Layout" ClaveTitle="locales.verLayout"
+                                CommandName="VerLayout" CommandArgument='<%# Eval("CodigoLocal") %>' Text="Ver Layout" Clave="locales.verLayout" />
 
                             <div class="loc-acciones">
-                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar"
+                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar" ClaveTitle="comun.editar"
                                     CommandName="Editar" CommandArgument='<%# Eval("CodigoLocal") %>'>&#9998;</asp:LinkButton>
-                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Activar/Desactivar"
+                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Activar/Desactivar" ClaveTitle="comun.activarDesactivar"
                                     CommandName="CambiarEstado" CommandArgument='<%# Eval("CodigoLocal") %>'
-                                    OnClientClick="return confirm('¿Confirmás cambiar el estado de este local?');">&#8635;</asp:LinkButton>
+                                    ClaveConfirmar="locales.confirmarEstado">&#8635;</asp:LinkButton>
                             </div>
                         </div>
                     </ItemTemplate>
                     <FooterTemplate></div></FooterTemplate>
                 </asp:Repeater>
 
-                <asp:Label ID="lblSinLocales" runat="server" Text="No hay locales que coincidan con la búsqueda." Visible="false" CssClass="sin-resultados" />
+                <asp:Label ID="lblSinLocales" runat="server" Text="No hay locales que coincidan con la búsqueda." Clave="locales.sinResultados" Visible="false" CssClass="sin-resultados" />
 
             </div>
         </div>
@@ -93,66 +93,65 @@
                 <asp:HiddenField ID="hfEsEdicion" runat="server" Value="false" />
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Nombre *" AssociatedControlID="tbNombre" />
+                    <asp:Label runat="server" Text="Nombre *" AssociatedControlID="tbNombre" Clave="comun.nombreObligatorio" />
                     <asp:TextBox ID="tbNombre" runat="server" CssClass="modal-campo" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="tbNombre" CssClass="campo-error"
-                        ErrorMessage="Ingrese el nombre" Display="Dynamic" ValidationGroup="vgLocal" />
+                        ErrorMessage="Ingrese el nombre" Clave="comun.errNombre" Display="Dynamic" ValidationGroup="vgLocal" />
                 </div>
 
                 <div class="fila-formulario">
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Empresa Cliente *" AssociatedControlID="ddlEmpresa" />
+                        <asp:Label runat="server" Text="Empresa Cliente *" AssociatedControlID="ddlEmpresa" Clave="locales.empresaCliente" />
                         <asp:DropDownList ID="ddlEmpresa" runat="server" CssClass="modal-campo" />
                     </div>
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Dirección *" AssociatedControlID="tbDireccion" />
+                    <asp:Label runat="server" Text="Dirección *" AssociatedControlID="tbDireccion" Clave="locales.direccion" />
                     <asp:TextBox ID="tbDireccion" runat="server" CssClass="modal-campo" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="tbDireccion" CssClass="campo-error"
-                        ErrorMessage="Ingrese la dirección" Display="Dynamic" ValidationGroup="vgLocal" />
+                        ErrorMessage="Ingrese la dirección" Clave="locales.errDireccion" Display="Dynamic" ValidationGroup="vgLocal" />
                 </div>
 
                 <div class="fila-formulario">
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Tipo de local" AssociatedControlID="ddlTipoLocal" />
+                        <asp:Label runat="server" Text="Tipo de local" AssociatedControlID="ddlTipoLocal" Clave="locales.tipoLocal" />
                         <asp:DropDownList ID="ddlTipoLocal" runat="server" CssClass="modal-campo">
-                            <asp:ListItem Text="Local a la calle" Value="Local a la calle" />
-                            <asp:ListItem Text="Shopping" Value="Shopping" />
-                            <asp:ListItem Text="Strip Center" Value="Strip Center" />
-                            <asp:ListItem Text="Otro" Value="Otro" />
+                            <asp:ListItem Text="Local a la calle" Value="Local a la calle" Clave="valor.localCalle" />
+                            <asp:ListItem Text="Shopping" Value="Shopping" Clave="valor.shopping" />
+                            <asp:ListItem Text="Strip Center" Value="Strip Center" Clave="valor.stripCenter" />
+                            <asp:ListItem Text="Otro" Value="Otro" Clave="valor.otro" />
                         </asp:DropDownList>
                     </div>
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Superficie aprox. (m&sup2;)" AssociatedControlID="tbSuperficie" />
+                        <asp:Label runat="server" Text="Superficie aprox. (m&sup2;)" AssociatedControlID="tbSuperficie" Clave="locales.superficie" />
                         <asp:TextBox ID="tbSuperficie" runat="server" CssClass="modal-campo" TextMode="Number" />
                     </div>
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Teléfono" AssociatedControlID="tbTelefono" />
+                    <asp:Label runat="server" Text="Teléfono" AssociatedControlID="tbTelefono" Clave="comun.telefono" />
                     <asp:TextBox ID="tbTelefono" runat="server" CssClass="modal-campo" placeholder="+54 11 0000-0000" />
                 </div>
 
                 <div class="grupo-campo">
-                    <asp:Label runat="server" Text="Observaciones" AssociatedControlID="tbObservaciones" />
+                    <asp:Label runat="server" Text="Observaciones" AssociatedControlID="tbObservaciones" Clave="locales.observaciones" />
                     <asp:TextBox ID="tbObservaciones" runat="server" CssClass="modal-campo" TextMode="MultiLine" Rows="3" />
                 </div>
 
                 <div class="grupo-campo grupo-casilla">
                     <asp:CheckBox ID="chkActivo" runat="server" Checked="true" />
-                    <asp:Label runat="server" Text="Local activo" AssociatedControlID="chkActivo" />
+                    <asp:Label runat="server" Text="Local activo" AssociatedControlID="chkActivo" Clave="locales.activo" />
                 </div>
 
                 <div class="modal-botones">
                     <asp:Button ID="btnCancelarModal" runat="server" CssClass="modal-boton-cancelar"
-                        Text="Cancelar" OnClick="btnCancelarModal_Click" CausesValidation="false" />
+                        Text="Cancelar" Clave="comun.cancelar" OnClick="btnCancelarModal_Click" CausesValidation="false" />
                     <asp:Button ID="btnGuardarLocal" runat="server" CssClass="modal-boton-guardar"
                         Text="Crear Local" OnClick="btnGuardarLocal_Click" ValidationGroup="vgLocal" />
                 </div>
             </div>
         </asp:Panel>
-
     </form>
 </body>
 </html>

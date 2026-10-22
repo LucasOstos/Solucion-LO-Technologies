@@ -14,6 +14,10 @@ public partial class PaginaProductos : PaginaSegura
     {
         get { return PermisoNombres.GestionarProductos; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "productos.titulo"; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private SectorBLL sectorBLL = new SectorBLL();
     private CategoriaBLL categoriaBLL = new CategoriaBLL();
@@ -48,9 +52,9 @@ public partial class PaginaProductos : PaginaSegura
     {
         List<SectorListado> sectores = CodigoLocalActual > 0 ? sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual) : new List<SectorListado>();
         ddlFiltroSector.Items.Clear();
-        ddlFiltroSector.Items.Add(new ListItem("Todos los sectores", ""));
+        ddlFiltroSector.Items.Add(new ListItem(Traducir("productos.todosSectores"), ""));
         ddlSectorProducto.Items.Clear();
-        ddlSectorProducto.Items.Add(new ListItem("— Sin sector asignado —", ""));
+        ddlSectorProducto.Items.Add(new ListItem(Traducir("productos.sinSector"), ""));
         foreach (SectorListado sector in sectores)
         {
             ddlFiltroSector.Items.Add(new ListItem(sector.Nombre, sector.CodigoSector.ToString()));
@@ -89,14 +93,14 @@ public partial class PaginaProductos : PaginaSegura
         ProductoBE producto = productoBLL.ObtenerProductoPorCodigo(codigoProducto);
         if (producto == null)
         {
-            MostrarMensaje("El producto ya no existe.", esExito: false);
+            MostrarMensaje(Traducir("productos.msgNoExiste"), esExito: false);
             CargarProductos();
             return;
         }
         hfCodigoProducto.Value = producto.CodigoProducto.ToString();
         hfNumeroSerie.Value = producto.NumeroSerie.ToString();
-        litTituloModalProducto.Text = "Editar Producto";
-        btnGuardarProducto.Text = "Guardar Cambios";
+        litTituloModalProducto.Text = Traducir("productos.modalEditar");
+        btnGuardarProducto.Text = Traducir("comun.guardarCambios");
         tbCodigoInterno.Text = $"PROD-{producto.NumeroSerie:D3}";
         tbNombreProducto.Text = producto.Nombre;
         tbDescripcionProducto.Text = producto.Descripcion;
@@ -134,12 +138,12 @@ public partial class PaginaProductos : PaginaSegura
     {
         if (CodigoLocalActual == 0)
         {
-            MostrarMensaje("Primero registrá un local para poder cargar productos.", esExito: false);
+            MostrarMensaje(Traducir("productos.errSinLocalProductos"), esExito: false);
             return;
         }
         hfCodigoProducto.Value = "";
-        litTituloModalProducto.Text = "Nuevo Producto";
-        btnGuardarProducto.Text = "Guardar";
+        litTituloModalProducto.Text = Traducir("productos.btnNuevo");
+        btnGuardarProducto.Text = Traducir("comun.guardar");
         int proximoNumero = productoBLL.ObtenerProximoNumeroSerie(CodigoLocalActual);
         hfNumeroSerie.Value = proximoNumero.ToString();
         tbCodigoInterno.Text = $"PROD-{proximoNumero:D3}";
@@ -180,7 +184,7 @@ public partial class PaginaProductos : PaginaSegura
             productoBLL.CrearProducto(producto, CodigoLocalActual);
         }
         pnlModalProducto.Style["display"] = "none";
-        MostrarMensaje(esEdicion ? "Producto modificado correctamente." : "Producto creado correctamente.", esExito: true);
+        MostrarMensaje(Traducir(esEdicion ? "productos.msgModificado" : "productos.msgCreado"), esExito: true);
         CargarProductos();
     }
     protected void rptProductos_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -194,7 +198,7 @@ public partial class PaginaProductos : PaginaSegura
             case "CambiarEstado":
                 ProductoBE producto = productoBLL.ObtenerProductoPorCodigo(codigoProducto);
                 productoBLL.CambiarEstado(codigoProducto, !producto.Estado);
-                MostrarMensaje("Estado del producto actualizado.", esExito: true);
+                MostrarMensaje(Traducir("productos.msgEstado"), esExito: true);
                 CargarProductos();
                 break;
         }
@@ -203,11 +207,11 @@ public partial class PaginaProductos : PaginaSegura
     {
         if (CodigoLocalActual == 0)
         {
-            MostrarMensaje("Primero registrá un local para poder cargar categorías.", esExito: false);
+            MostrarMensaje(Traducir("productos.errSinLocalCategorias"), esExito: false);
             return;
         }
         hfCodigoCategoria.Value = "";
-        litTituloModalCategoria.Text = "Nueva Categoría";
+        litTituloModalCategoria.Text = Traducir("productos.btnNuevaCategoria");
         tbNombreCategoria.Text = "";
         tbDescripcionCategoria.Text = "";
         chkActivoCategoria.Checked = true;
@@ -222,7 +226,7 @@ public partial class PaginaProductos : PaginaSegura
             return;
         }
         bool esEdicion = !string.IsNullOrEmpty(hfCodigoCategoria.Value);
-        CategoriaBE categoria = new CategoriaBE(esEdicion ? int.Parse(hfCodigoCategoria.Value) : 0, tbNombreCategoria.Text.Trim(), tbDescripcionCategoria.Text.Trim(), chkActivoCategoria.Checked);        
+        CategoriaBE categoria = new CategoriaBE(esEdicion ? int.Parse(hfCodigoCategoria.Value) : 0, tbNombreCategoria.Text.Trim(), tbDescripcionCategoria.Text.Trim(), chkActivoCategoria.Checked);
         if (esEdicion)
         {
             categoriaBLL.ModificarCategoria(categoria);
@@ -232,7 +236,7 @@ public partial class PaginaProductos : PaginaSegura
             categoriaBLL.CrearCategoria(categoria, CodigoLocalActual);
         }
         pnlModalCategoria.Style["display"] = "none";
-        MostrarMensaje(esEdicion ? "Categoría modificada correctamente." : "Categoría creada correctamente.", esExito: true);
+        MostrarMensaje(Traducir(esEdicion ? "productos.msgCategoriaModificada" : "productos.msgCategoriaCreada"), esExito: true);
         CargarCategorias();
         CargarDropdownCategorias();
     }
@@ -243,7 +247,7 @@ public partial class PaginaProductos : PaginaSegura
             int codigoCategoria = int.Parse(e.CommandArgument.ToString());
             CategoriaBE categoria = categoriaBLL.ObtenerCategoriaPorCodigo(codigoCategoria);
             hfCodigoCategoria.Value = categoria.CodigoCategoria.ToString();
-            litTituloModalCategoria.Text = "Editar Categoría";
+            litTituloModalCategoria.Text = Traducir("productos.modalCategoriaEditar");
             tbNombreCategoria.Text = categoria.Nombre;
             tbDescripcionCategoria.Text = categoria.Descripcion;
             chkActivoCategoria.Checked = categoria.Estado;

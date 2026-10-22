@@ -1007,4 +1007,532 @@
   <data name="traducciones.msgGuardadas" xml:space="preserve">
     <value>Se guardaron {0} traducciones. Ya se ven en el sistema.</value>
   </data>
+  <data name="comun.local" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="comun.nombreObligatorio" xml:space="preserve">
+    <value>Nombre *</value>
+  </data>
+  <data name="comun.errNombre" xml:space="preserve">
+    <value>Ingrese el nombre</value>
+  </data>
+  <data name="comun.eliminar" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="comun.fechaObligatoria" xml:space="preserve">
+    <value>Fecha *</value>
+  </data>
+  <data name="comun.errFecha" xml:space="preserve">
+    <value>Ingrese la fecha</value>
+  </data>
+  <data name="comun.estadoObligatorio" xml:space="preserve">
+    <value>Estado *</value>
+  </data>
+  <data name="comun.descripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="comun.descripcionObligatoria" xml:space="preserve">
+    <value>Descripción *</value>
+  </data>
+  <data name="comun.errDescripcion" xml:space="preserve">
+    <value>Ingrese la descripción</value>
+  </data>
+  <data name="comun.completeDatos" xml:space="preserve">
+    <value>Complete los datos.</value>
+  </data>
+  <data name="comun.aplicar" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="comun.unidadesAbrev" xml:space="preserve">
+    <value>u.</value>
+  </data>
+  <data name="valor.localCalle" xml:space="preserve">
+    <value>Local a la calle</value>
+  </data>
+  <data name="valor.shopping" xml:space="preserve">
+    <value>Shopping</value>
+  </data>
+  <data name="valor.stripCenter" xml:space="preserve">
+    <value>Strip Center</value>
+  </data>
+  <data name="valor.otro" xml:space="preserve">
+    <value>Otro</value>
+  </data>
+  <data name="valor.borrador" xml:space="preserve">
+    <value>Borrador</value>
+  </data>
+  <data name="valor.fruteria" xml:space="preserve">
+    <value>Frutería</value>
+  </data>
+  <data name="valor.carniceria" xml:space="preserve">
+    <value>Carnicería</value>
+  </data>
+  <data name="valor.lacteos" xml:space="preserve">
+    <value>Lácteos</value>
+  </data>
+  <data name="valor.panaderia" xml:space="preserve">
+    <value>Panadería</value>
+  </data>
+  <data name="valor.bebidas" xml:space="preserve">
+    <value>Bebidas</value>
+  </data>
+  <data name="valor.almacen" xml:space="preserve">
+    <value>Almacén</value>
+  </data>
+  <data name="valor.limpieza" xml:space="preserve">
+    <value>Limpieza</value>
+  </data>
+  <data name="valor.perfumeria" xml:space="preserve">
+    <value>Perfumería</value>
+  </data>
+  <data name="valor.electronica" xml:space="preserve">
+    <value>Electrónica</value>
+  </data>
+  <data name="valor.indumentaria" xml:space="preserve">
+    <value>Indumentaria</value>
+  </data>
+  <data name="valor.frenteIzquierda" xml:space="preserve">
+    <value>Frente - Izquierda</value>
+  </data>
+  <data name="valor.frenteCentro" xml:space="preserve">
+    <value>Frente - Centro</value>
+  </data>
+  <data name="valor.frenteDerecha" xml:space="preserve">
+    <value>Frente - Derecha</value>
+  </data>
+  <data name="valor.centroIzquierda" xml:space="preserve">
+    <value>Centro - Izquierda</value>
+  </data>
+  <data name="valor.centroCentro" xml:space="preserve">
+    <value>Centro - Centro</value>
+  </data>
+  <data name="valor.centroDerecha" xml:space="preserve">
+    <value>Centro - Derecha</value>
+  </data>
+  <data name="valor.fondoIzquierda" xml:space="preserve">
+    <value>Fondo - Izquierda</value>
+  </data>
+  <data name="valor.fondoCentro" xml:space="preserve">
+    <value>Fondo - Centro</value>
+  </data>
+  <data name="valor.fondoDerecha" xml:space="preserve">
+    <value>Fondo - Derecha</value>
+  </data>
+  <data name="valor.venta" xml:space="preserve">
+    <value>Venta</value>
+  </data>
+  <data name="valor.stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="valor.critico" xml:space="preserve">
+    <value>Crítico</value>
+  </data>
+  <data name="valor.bajo" xml:space="preserve">
+    <value>Bajo</value>
+  </data>
+  <data name="valor.normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="locales.titulo" xml:space="preserve">
+    <value>Locales - LO Technologies</value>
+  </data>
+  <data name="locales.encabezado" xml:space="preserve">
+    <value>Locales comerciales</value>
+  </data>
+  <data name="locales.btnNuevo" xml:space="preserve">
+    <value>Nuevo local</value>
+  </data>
+  <data name="locales.buscarPlaceholder" xml:space="preserve">
+    <value>Buscar local...</value>
+  </data>
+  <data name="locales.verLayout" xml:space="preserve">
+    <value>Ver layout</value>
+  </data>
+  <data name="locales.confirmarEstado" xml:space="preserve">
+    <value>¿Confirmás cambiar el estado de este local?</value>
+  </data>
+  <data name="locales.sinResultados" xml:space="preserve">
+    <value>No hay locales que coincidan con la búsqueda.</value>
+  </data>
+  <data name="locales.modalEditar" xml:space="preserve">
+    <value>Editar local</value>
+  </data>
+  <data name="locales.btnCrear" xml:space="preserve">
+    <value>Crear local</value>
+  </data>
+  <data name="locales.empresaCliente" xml:space="preserve">
+    <value>Empresa cliente *</value>
+  </data>
+  <data name="locales.direccion" xml:space="preserve">
+    <value>Dirección *</value>
+  </data>
+  <data name="locales.errDireccion" xml:space="preserve">
+    <value>Ingrese la dirección</value>
+  </data>
+  <data name="locales.tipoLocal" xml:space="preserve">
+    <value>Tipo de local</value>
+  </data>
+  <data name="locales.superficie" xml:space="preserve">
+    <value>Superficie aprox. (m²)</value>
+  </data>
+  <data name="locales.observaciones" xml:space="preserve">
+    <value>Observaciones</value>
+  </data>
+  <data name="locales.activo" xml:space="preserve">
+    <value>Local activo</value>
+  </data>
+  <data name="locales.msgNoExiste" xml:space="preserve">
+    <value>El local ya no existe.</value>
+  </data>
+  <data name="locales.msgModificado" xml:space="preserve">
+    <value>Local modificado correctamente.</value>
+  </data>
+  <data name="locales.msgRegistrado" xml:space="preserve">
+    <value>Local registrado correctamente.</value>
+  </data>
+  <data name="locales.msgEstado" xml:space="preserve">
+    <value>Estado del local actualizado.</value>
+  </data>
+  <data name="layout.titulo" xml:space="preserve">
+    <value>Layout y sectores - LO Technologies</value>
+  </data>
+  <data name="layout.tabLayout" xml:space="preserve">
+    <value>Layout del local</value>
+  </data>
+  <data name="layout.tabSectores" xml:space="preserve">
+    <value>Gestión de sectores</value>
+  </data>
+  <data name="layout.btnCargar" xml:space="preserve">
+    <value>Cargar layout</value>
+  </data>
+  <data name="layout.verDetalle" xml:space="preserve">
+    <value>Ver detalle</value>
+  </data>
+  <data name="layout.confirmarEliminar" xml:space="preserve">
+    <value>¿Confirmás eliminar este layout?</value>
+  </data>
+  <data name="layout.sinLayouts" xml:space="preserve">
+    <value>Este local todavía no tiene layouts cargados.</value>
+  </data>
+  <data name="layout.btnNuevoSector" xml:space="preserve">
+    <value>Nuevo sector</value>
+  </data>
+  <data name="layout.colSector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="layout.colUbicacion" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="layout.colCirculacion" xml:space="preserve">
+    <value>Circulación</value>
+  </data>
+  <data name="layout.colProductos" xml:space="preserve">
+    <value>N° productos</value>
+  </data>
+  <data name="layout.sinSectores" xml:space="preserve">
+    <value>Este local todavía no tiene sectores cargados.</value>
+  </data>
+  <data name="layout.modalTitulo" xml:space="preserve">
+    <value>Cargar layout del local</value>
+  </data>
+  <data name="layout.nombre" xml:space="preserve">
+    <value>Nombre del layout *</value>
+  </data>
+  <data name="layout.ejNombre" xml:space="preserve">
+    <value>Ej: Layout Principal 2026</value>
+  </data>
+  <data name="layout.errNombre" xml:space="preserve">
+    <value>Ingrese el nombre del layout</value>
+  </data>
+  <data name="layout.ejDescripcion" xml:space="preserve">
+    <value>Descripción básica de la distribución del local...</value>
+  </data>
+  <data name="layout.archivo" xml:space="preserve">
+    <value>Imagen o plano del local * (PNG, JPG, PDF — máx. 5 MB)</value>
+  </data>
+  <data name="layout.errArchivo" xml:space="preserve">
+    <value>Adjunte un archivo</value>
+  </data>
+  <data name="layout.btnConfirmar" xml:space="preserve">
+    <value>Confirmar carga</value>
+  </data>
+  <data name="layout.modalSectorEditar" xml:space="preserve">
+    <value>Editar sector</value>
+  </data>
+  <data name="layout.btnCrearSector" xml:space="preserve">
+    <value>Crear sector</value>
+  </data>
+  <data name="layout.nombreSector" xml:space="preserve">
+    <value>Nombre del sector *</value>
+  </data>
+  <data name="layout.ejSector" xml:space="preserve">
+    <value>Ej: Perfumería</value>
+  </data>
+  <data name="layout.errNombreSector" xml:space="preserve">
+    <value>Ingrese el nombre del sector</value>
+  </data>
+  <data name="layout.tipoSector" xml:space="preserve">
+    <value>Tipo de sector</value>
+  </data>
+  <data name="layout.circulacion" xml:space="preserve">
+    <value>Circulación estimada (%)</value>
+  </data>
+  <data name="layout.fecha" xml:space="preserve">
+    <value>Fecha:</value>
+  </data>
+  <data name="layout.estado" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="layout.descripcion" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="layout.abrirPdf" xml:space="preserve">
+    <value>Abrir PDF en una pestaña nueva</value>
+  </data>
+  <data name="layout.errSinArchivo" xml:space="preserve">
+    <value>Adjunte un archivo de imagen o plano.</value>
+  </data>
+  <data name="layout.errFormato" xml:space="preserve">
+    <value>El archivo adjunto no tiene formato válido. Formatos aceptados: PNG, JPG, PDF.</value>
+  </data>
+  <data name="layout.errTamanio" xml:space="preserve">
+    <value>Tamaño de la imagen o plano muy grande. El máximo permitido es 5 MB.</value>
+  </data>
+  <data name="layout.msgRegistrado" xml:space="preserve">
+    <value>Layout registrado correctamente.</value>
+  </data>
+  <data name="layout.msgSectorModificado" xml:space="preserve">
+    <value>Sector modificado correctamente.</value>
+  </data>
+  <data name="layout.msgSectorCreado" xml:space="preserve">
+    <value>Sector creado correctamente.</value>
+  </data>
+  <data name="layout.msgEliminado" xml:space="preserve">
+    <value>Layout eliminado.</value>
+  </data>
+  <data name="productos.titulo" xml:space="preserve">
+    <value>Productos y categorías - LO Technologies</value>
+  </data>
+  <data name="productos.btnNuevo" xml:space="preserve">
+    <value>Nuevo producto</value>
+  </data>
+  <data name="productos.tabCategorias" xml:space="preserve">
+    <value>Categorías</value>
+  </data>
+  <data name="productos.tabProductos" xml:space="preserve">
+    <value>Productos</value>
+  </data>
+  <data name="productos.buscarPlaceholder" xml:space="preserve">
+    <value>Buscar productos...</value>
+  </data>
+  <data name="productos.todosSectores" xml:space="preserve">
+    <value>Todos los sectores</value>
+  </data>
+  <data name="productos.colCodigo" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="productos.colProducto" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="productos.colCategoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="productos.colPrecio" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="productos.colStock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="productos.confirmarEstado" xml:space="preserve">
+    <value>¿Confirmás cambiar el estado de este producto?</value>
+  </data>
+  <data name="productos.sinProductos" xml:space="preserve">
+    <value>No hay productos que coincidan con la búsqueda.</value>
+  </data>
+  <data name="productos.btnNuevaCategoria" xml:space="preserve">
+    <value>Nueva categoría</value>
+  </data>
+  <data name="productos.sinCategorias" xml:space="preserve">
+    <value>No hay categorías cargadas.</value>
+  </data>
+  <data name="productos.modalEditar" xml:space="preserve">
+    <value>Editar producto</value>
+  </data>
+  <data name="productos.codigoInterno" xml:space="preserve">
+    <value>Código interno</value>
+  </data>
+  <data name="productos.nombre" xml:space="preserve">
+    <value>Nombre del producto *</value>
+  </data>
+  <data name="productos.categoriaObligatoria" xml:space="preserve">
+    <value>Categoría *</value>
+  </data>
+  <data name="productos.sinSector" xml:space="preserve">
+    <value>— Sin sector asignado —</value>
+  </data>
+  <data name="productos.activo" xml:space="preserve">
+    <value>Producto activo</value>
+  </data>
+  <data name="productos.modalCategoriaEditar" xml:space="preserve">
+    <value>Editar categoría</value>
+  </data>
+  <data name="productos.categoriaActiva" xml:space="preserve">
+    <value>Categoría activa</value>
+  </data>
+  <data name="productos.msgNoExiste" xml:space="preserve">
+    <value>El producto ya no existe.</value>
+  </data>
+  <data name="productos.errSinLocalProductos" xml:space="preserve">
+    <value>Primero registrá un local para poder cargar productos.</value>
+  </data>
+  <data name="productos.errSinLocalCategorias" xml:space="preserve">
+    <value>Primero registrá un local para poder cargar categorías.</value>
+  </data>
+  <data name="productos.msgModificado" xml:space="preserve">
+    <value>Producto modificado correctamente.</value>
+  </data>
+  <data name="productos.msgCreado" xml:space="preserve">
+    <value>Producto creado correctamente.</value>
+  </data>
+  <data name="productos.msgEstado" xml:space="preserve">
+    <value>Estado del producto actualizado.</value>
+  </data>
+  <data name="productos.msgCategoriaModificada" xml:space="preserve">
+    <value>Categoría modificada correctamente.</value>
+  </data>
+  <data name="productos.msgCategoriaCreada" xml:space="preserve">
+    <value>Categoría creada correctamente.</value>
+  </data>
+  <data name="productos.errLocalProducto" xml:space="preserve">
+    <value>Seleccioná un local para saber a qué empresa pertenece el producto.</value>
+  </data>
+  <data name="productos.errLocalCategoria" xml:space="preserve">
+    <value>Seleccioná un local para saber a qué empresa pertenece la categoría.</value>
+  </data>
+  <data name="stock.titulo" xml:space="preserve">
+    <value>Stock y ventas - LO Technologies</value>
+  </data>
+  <data name="stock.subtitulo" xml:space="preserve">
+    <value>CUN 006 — Carga y gestión de datos de ventas y stock</value>
+  </data>
+  <data name="stock.btnImportar" xml:space="preserve">
+    <value>Importar CSV</value>
+  </data>
+  <data name="stock.btnCargaManual" xml:space="preserve">
+    <value>Carga manual</value>
+  </data>
+  <data name="stock.ultimoMes" xml:space="preserve">
+    <value>Último mes</value>
+  </data>
+  <data name="stock.ultimos3" xml:space="preserve">
+    <value>Últimos 3 meses</value>
+  </data>
+  <data name="stock.ultimos5" xml:space="preserve">
+    <value>Últimos 5 meses</value>
+  </data>
+  <data name="stock.porSector" xml:space="preserve">
+    <value>Por sector</value>
+  </data>
+  <data name="stock.porCategoria" xml:space="preserve">
+    <value>Por categoría</value>
+  </data>
+  <data name="stock.porProducto" xml:space="preserve">
+    <value>Por producto</value>
+  </data>
+  <data name="stock.tabVentas" xml:space="preserve">
+    <value>Datos de ventas</value>
+  </data>
+  <data name="stock.tabStock" xml:space="preserve">
+    <value>Datos de stock</value>
+  </data>
+  <data name="stock.totalVentas" xml:space="preserve">
+    <value>Total ventas (mes)</value>
+  </data>
+  <data name="stock.ticketPromedio" xml:space="preserve">
+    <value>Ticket promedio</value>
+  </data>
+  <data name="stock.unidadesVendidas" xml:space="preserve">
+    <value>Unidades vendidas</value>
+  </data>
+  <data name="stock.margenTotal" xml:space="preserve">
+    <value>Margen total</value>
+  </data>
+  <data name="stock.ventasPorSector" xml:space="preserve">
+    <value>Ventas por sector</value>
+  </data>
+  <data name="stock.graficoPendiente" xml:space="preserve">
+    <value>Gráfico de ventas por sector (pendiente)</value>
+  </data>
+  <data name="stock.detalleVentas" xml:space="preserve">
+    <value>Detalle de ventas</value>
+  </data>
+  <data name="stock.colPeriodo" xml:space="preserve">
+    <value>Período</value>
+  </data>
+  <data name="stock.colUnidades" xml:space="preserve">
+    <value>Unidades</value>
+  </data>
+  <data name="stock.colMonto" xml:space="preserve">
+    <value>Monto</value>
+  </data>
+  <data name="stock.colMargen" xml:space="preserve">
+    <value>Margen</value>
+  </data>
+  <data name="stock.sinVentas" xml:space="preserve">
+    <value>No hay ventas cargadas para el período seleccionado.</value>
+  </data>
+  <data name="stock.inventario" xml:space="preserve">
+    <value>Inventario por producto</value>
+  </data>
+  <data name="stock.colStockActual" xml:space="preserve">
+    <value>Stock actual</value>
+  </data>
+  <data name="stock.colMinimo" xml:space="preserve">
+    <value>Mínimo</value>
+  </data>
+  <data name="stock.colMaximo" xml:space="preserve">
+    <value>Máximo</value>
+  </data>
+  <data name="stock.colAccion" xml:space="preserve">
+    <value>Acción</value>
+  </data>
+  <data name="stock.actualizar" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="stock.sinStock" xml:space="preserve">
+    <value>No hay datos de stock cargados.</value>
+  </data>
+  <data name="stock.tipoDato" xml:space="preserve">
+    <value>Tipo de dato *</value>
+  </data>
+  <data name="stock.productoCategoria" xml:space="preserve">
+    <value>Producto / Categoría *</value>
+  </data>
+  <data name="stock.cantidad" xml:space="preserve">
+    <value>Cantidad *</value>
+  </data>
+  <data name="stock.errCantidad" xml:space="preserve">
+    <value>Ingrese la cantidad</value>
+  </data>
+  <data name="stock.importe" xml:space="preserve">
+    <value>Importe total (si es venta)</value>
+  </data>
+  <data name="stock.minimo" xml:space="preserve">
+    <value>Stock mínimo (si es stock)</value>
+  </data>
+  <data name="stock.maximo" xml:space="preserve">
+    <value>Stock máximo (si es stock)</value>
+  </data>
+  <data name="stock.fecha" xml:space="preserve">
+    <value>Período / Fecha *</value>
+  </data>
+  <data name="stock.errImportarCsv" xml:space="preserve">
+    <value>La importación por CSV todavía no está disponible.</value>
+  </data>
+  <data name="stock.errSeleccionarLocal" xml:space="preserve">
+    <value>Seleccioná un local.</value>
+  </data>
+  <data name="stock.msgRegistrado" xml:space="preserve">
+    <value>Datos registrados correctamente.</value>
+  </data>
 </root>

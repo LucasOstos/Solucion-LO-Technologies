@@ -26,7 +26,7 @@ namespace BLL
         public void CrearCategoria(CategoriaBE pCategoria, int pCodigoLocal)
         {
             pCategoria.CodigoEmpresa = ControlAcceso.ResolverEmpresaPorLocal(pCodigoLocal);
-            if (pCategoria.CodigoEmpresa <= 0) throw new InvalidOperationException("Seleccioná un local para saber a qué empresa pertenece la categoría.");
+            if (pCategoria.CodigoEmpresa <= 0) throw new ExcepcionTraducible("productos.errLocalCategoria");
             int codigoNuevo = categoriaDAL.AgregarCategoria(pCategoria);
             digitos.ActualizarDigitoFila("Categoria", codigoNuevo);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "ABM de productos y/o categorías", "Gestión productos", 2);

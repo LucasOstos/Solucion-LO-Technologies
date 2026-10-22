@@ -33,7 +33,7 @@ namespace BLL
         public void CrearProducto(ProductoBE pProducto, int pCodigoLocal)
         {
             pProducto.CodigoEmpresa = ControlAcceso.ResolverEmpresaPorLocal(pCodigoLocal);
-            if (pProducto.CodigoEmpresa <= 0) throw new InvalidOperationException("Seleccioná un local para saber a qué empresa pertenece el producto.");
+            if (pProducto.CodigoEmpresa <= 0) throw new ExcepcionTraducible("productos.errLocalProducto");
             ValidarCategoriaYSector(pProducto);
             int codigoNuevo = productoDAL.AgregarProducto(pProducto);
             digitos.ActualizarDigitoFila("Producto", codigoNuevo);

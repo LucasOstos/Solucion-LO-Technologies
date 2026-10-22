@@ -14,6 +14,10 @@ public partial class PaginaLocales : PaginaSegura
     {
         get { return PermisoNombres.GestionarLocales; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "locales.titulo"; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private EmpresaBLL empresaBLL = new EmpresaBLL();
     protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +34,7 @@ public partial class PaginaLocales : PaginaSegura
     {
         List<EmpresaBE> empresas = empresaBLL.ObtenerEmpresasListado("", true);
         ddlFiltroEmpresa.Items.Clear();
-        ddlFiltroEmpresa.Items.Add(new ListItem("Todas las empresas", ""));
+        ddlFiltroEmpresa.Items.Add(new ListItem(Traducir("comun.todasEmpresas"), ""));
         foreach (EmpresaBE emp in empresas)
         {
             ddlFiltroEmpresa.Items.Add(new ListItem(emp.RazonSocial, emp.CodigoEmpresa.ToString()));
@@ -92,14 +96,14 @@ public partial class PaginaLocales : PaginaSegura
         LocalBE local = localBLL.ObtenerLocalPorCodigo(codigoLocal);
         if (local == null)
         {
-            MostrarMensaje("El local ya no existe.", esExito: false);
+            MostrarMensaje(Traducir("locales.msgNoExiste"), esExito: false);
             CargarLocales();
             return;
         }
         hfEsEdicion.Value = "true";
         hfCodigoLocal.Value = local.CodigoLocal.ToString();
-        litTituloModal.Text = "Editar Local";
-        btnGuardarLocal.Text = "Guardar Cambios";
+        litTituloModal.Text = Traducir("locales.modalEditar");
+        btnGuardarLocal.Text = Traducir("comun.guardarCambios");
         tbNombre.Text = local.Nombre;
         ddlEmpresa.SelectedValue = local.CodigoEmpresa.ToString();
         tbDireccion.Text = local.Direccion;
@@ -141,11 +145,11 @@ public partial class PaginaLocales : PaginaSegura
         {
             case ResultadoGuardarLocal.Exitoso:
                 pnlModalLocal.Style["display"] = "none";
-                MostrarMensaje(esEdicion ? "Local modificado correctamente." : "Local registrado correctamente.", esExito: true);
+                MostrarMensaje(Traducir(esEdicion ? "locales.msgModificado" : "locales.msgRegistrado"), esExito: true);
                 CargarLocales();
                 break;
             case ResultadoGuardarLocal.DatosInvalidos:
-                MostrarMensaje("Datos inválidos.", esExito: false);
+                MostrarMensaje(Traducir("comun.datosInvalidos"), esExito: false);
                 AbrirModal();
                 break;
         }
@@ -170,7 +174,7 @@ public partial class PaginaLocales : PaginaSegura
                 LocalBE local = localBLL.ObtenerLocalPorCodigo(codigoLocal);
                 string nuevoEstado = local.Estado == "Activo" ? "Inactivo" : "Activo";
                 localBLL.CambiarEstado(codigoLocal, nuevoEstado);
-                MostrarMensaje("Estado del local actualizado.", esExito: true);
+                MostrarMensaje(Traducir("locales.msgEstado"), esExito: true);
                 CargarLocales();
                 break;
             case "VerLayout":

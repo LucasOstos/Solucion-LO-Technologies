@@ -15,6 +15,10 @@ public partial class PaginaLayoutSectores : PaginaSegura
     {
         get { return PermisoNombres.GestionarLayoutSectores; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "layout.titulo"; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private LayoutBLL layoutBLL = new LayoutBLL();
     private SectorBLL sectorBLL = new SectorBLL();
@@ -107,19 +111,17 @@ public partial class PaginaLayoutSectores : PaginaSegura
     private void MostrarDetalleLayout(int codigoLayout)
     {
         LayoutBE layout = layoutBLL.ObtenerLayoutPorCodigo(codigoLayout);
-
         litNombreDetalle.Text = layout.Nombre;
         litFechaDetalle.Text = layout.Fecha.ToString("dd/MM/yyyy");
-        litEstadoDetalle.Text = layout.Estado;
+        litEstadoDetalle.Text = TraducirValor(layout.Estado);
         litDescripcionDetalle.Text = layout.Descripcion;
-
         phPreview.Controls.Clear();
         string ruta = $"~/Subidas/Layouts/{layout.NombreArchivo}";
 
         if (layout.NombreArchivo.ToLower().EndsWith(".pdf"))
         {
             phPreview.Controls.Add(new LiteralControl(
-                $"<a href='{ResolveUrl(ruta)}' target='_blank'>Abrir PDF en una pestaña nueva</a>"));
+                $"<a href='{ResolveUrl(ruta)}' target='_blank'>{HttpUtility.HtmlEncode(Traducir("layout.abrirPdf"))}</a>"));
         }
         else
         {
@@ -129,7 +131,6 @@ public partial class PaginaLayoutSectores : PaginaSegura
                 CssClass = "et-preview-imagen"
             });
         }
-
         pnlDetalleLayout.Style["display"] = "flex";
     }
     private string GenerarHtmlTreemap(List<SectorListado> sectores)
@@ -185,22 +186,21 @@ public partial class PaginaLayoutSectores : PaginaSegura
         }
         if (!fuArchivoLayout.HasFile)
         {
-            MostrarMensaje("Adjunte un archivo de imagen o plano.", esExito: false);
+            MostrarMensaje(Traducir("layout.errSinArchivo"), esExito: false);
             pnlModalLayout.Style["display"] = "flex";
             return;
         }
-
         string extension = Path.GetExtension(fuArchivoLayout.FileName).ToLower();
         if (!extensionesValidas.Contains(extension))
         {
-            MostrarMensaje("El archivo adjunto no tiene formato válido. Formatos aceptados: PNG, JPG, PDF.", esExito: false);
+            MostrarMensaje(Traducir("layout.errFormato"), esExito: false);
             pnlModalLayout.Style["display"] = "flex";
             return;
         }
         int tamanioBytes = fuArchivoLayout.PostedFile.ContentLength;
         if (tamanioBytes > 5 * 1024 * 1024) //5MB MAXIMO
         {
-            MostrarMensaje("Tamaño de la imagen o plano muy grande. El máximo permitido es 5 MB.", esExito: false);
+            MostrarMensaje(Traducir("layout.errTamanio"), esExito: false);
             pnlModalLayout.Style["display"] = "flex";
             return;
         }
@@ -214,7 +214,7 @@ public partial class PaginaLayoutSectores : PaginaSegura
         DateTime fechaLayout;
         if (!DateTime.TryParse(tbFechaLayout.Text, out fechaLayout))
         {
-            MostrarMensaje("Complete los datos.", esExito: false);
+            MostrarMensaje(Traducir("comun.completeDatos"), esExito: false);
             pnlModalLayout.Style["display"] = "flex";
             return;
         }
@@ -230,15 +230,15 @@ public partial class PaginaLayoutSectores : PaginaSegura
         };
         layoutBLL.CrearLayout(layout);
         pnlModalLayout.Style["display"] = "none";
-        MostrarMensaje("Layout registrado correctamente.", esExito: true);
+        MostrarMensaje(Traducir("layout.msgRegistrado"), esExito: true);
         CargarLayouts();
     }
     protected void btnNuevoSector_Click(object sender, EventArgs e)
     {
         hfCodigoSector.Value = "";
         hfEsEdicionSector.Value = "false";
-        litTituloModalSector.Text = "Nuevo Sector";
-        btnGuardarSector.Text = "Crear Sector";
+        litTituloModalSector.Text = Traducir("layout.btnNuevoSector");
+        btnGuardarSector.Text = Traducir("layout.btnCrearSector");
         tbNombreSector.Text = "";
         tbCirculacionSector.Text = "";
         ddlUbicacionSector.SelectedIndex = 0;
@@ -267,7 +267,7 @@ public partial class PaginaLayoutSectores : PaginaSegura
         if (esEdicion) { sectorBLL.ModificarSector(sector); }
         else { sectorBLL.CrearSector(sector); }
         pnlModalSector.Style["display"] = "none";
-        MostrarMensaje(esEdicion ? "Sector modificado correctamente." : "Sector creado correctamente.", esExito: true);
+        MostrarMensaje(Traducir(esEdicion ? "layout.msgSectorModificado" : "layout.msgSectorCreado"), esExito: true);
         CargarSectores();
     }
     protected void rptLayouts_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -280,7 +280,7 @@ public partial class PaginaLayoutSectores : PaginaSegura
                 break;
             case "EliminarLayout":
                 layoutBLL.EliminarLayout(codigoLayout);
-                MostrarMensaje("Layout eliminado.", esExito: true);
+                MostrarMensaje(Traducir("layout.msgEliminado"), esExito: true);
                 CargarLayouts();
                 break;
         }
@@ -293,8 +293,8 @@ public partial class PaginaLayoutSectores : PaginaSegura
             SectorBE sector = sectorBLL.ObtenerSectorPorCodigo(codigoSector);
             hfEsEdicionSector.Value = "true";
             hfCodigoSector.Value = sector.CodigoSector.ToString();
-            litTituloModalSector.Text = "Editar Sector";
-            btnGuardarSector.Text = "Guardar Cambios";
+            litTituloModalSector.Text = Traducir("layout.modalSectorEditar");
+            btnGuardarSector.Text = Traducir("comun.guardarCambios");
             tbNombreSector.Text = sector.Nombre;
             ddlUbicacionSector.SelectedValue = sector.Ubicacion;
             tbCirculacionSector.Text = sector.Circulacion?.ToString() ?? "";

@@ -1007,4 +1007,532 @@
   <data name="traducciones.msgGuardadas" xml:space="preserve">
     <value>{0} çeviri kaydedildi. Sistemde görünüyorlar.</value>
   </data>
+  <data name="comun.local" xml:space="preserve">
+    <value>Mağaza</value>
+  </data>
+  <data name="comun.nombreObligatorio" xml:space="preserve">
+    <value>Ad *</value>
+  </data>
+  <data name="comun.errNombre" xml:space="preserve">
+    <value>Adı girin</value>
+  </data>
+  <data name="comun.eliminar" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="comun.fechaObligatoria" xml:space="preserve">
+    <value>Tarih *</value>
+  </data>
+  <data name="comun.errFecha" xml:space="preserve">
+    <value>Tarihi girin</value>
+  </data>
+  <data name="comun.estadoObligatorio" xml:space="preserve">
+    <value>Durum *</value>
+  </data>
+  <data name="comun.descripcion" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="comun.descripcionObligatoria" xml:space="preserve">
+    <value>Açıklama *</value>
+  </data>
+  <data name="comun.errDescripcion" xml:space="preserve">
+    <value>Açıklamayı girin</value>
+  </data>
+  <data name="comun.completeDatos" xml:space="preserve">
+    <value>Bilgileri tamamlayın.</value>
+  </data>
+  <data name="comun.aplicar" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="comun.unidadesAbrev" xml:space="preserve">
+    <value>adet</value>
+  </data>
+  <data name="valor.localCalle" xml:space="preserve">
+    <value>Cadde mağazası</value>
+  </data>
+  <data name="valor.shopping" xml:space="preserve">
+    <value>Alışveriş merkezi</value>
+  </data>
+  <data name="valor.stripCenter" xml:space="preserve">
+    <value>Açık çarşı</value>
+  </data>
+  <data name="valor.otro" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="valor.borrador" xml:space="preserve">
+    <value>Taslak</value>
+  </data>
+  <data name="valor.fruteria" xml:space="preserve">
+    <value>Manav</value>
+  </data>
+  <data name="valor.carniceria" xml:space="preserve">
+    <value>Kasap</value>
+  </data>
+  <data name="valor.lacteos" xml:space="preserve">
+    <value>Süt ürünleri</value>
+  </data>
+  <data name="valor.panaderia" xml:space="preserve">
+    <value>Fırın</value>
+  </data>
+  <data name="valor.bebidas" xml:space="preserve">
+    <value>İçecekler</value>
+  </data>
+  <data name="valor.almacen" xml:space="preserve">
+    <value>Bakkal</value>
+  </data>
+  <data name="valor.limpieza" xml:space="preserve">
+    <value>Temizlik</value>
+  </data>
+  <data name="valor.perfumeria" xml:space="preserve">
+    <value>Parfümeri</value>
+  </data>
+  <data name="valor.electronica" xml:space="preserve">
+    <value>Elektronik</value>
+  </data>
+  <data name="valor.indumentaria" xml:space="preserve">
+    <value>Giyim</value>
+  </data>
+  <data name="valor.frenteIzquierda" xml:space="preserve">
+    <value>Ön - Sol</value>
+  </data>
+  <data name="valor.frenteCentro" xml:space="preserve">
+    <value>Ön - Orta</value>
+  </data>
+  <data name="valor.frenteDerecha" xml:space="preserve">
+    <value>Ön - Sağ</value>
+  </data>
+  <data name="valor.centroIzquierda" xml:space="preserve">
+    <value>Orta - Sol</value>
+  </data>
+  <data name="valor.centroCentro" xml:space="preserve">
+    <value>Orta - Orta</value>
+  </data>
+  <data name="valor.centroDerecha" xml:space="preserve">
+    <value>Orta - Sağ</value>
+  </data>
+  <data name="valor.fondoIzquierda" xml:space="preserve">
+    <value>Arka - Sol</value>
+  </data>
+  <data name="valor.fondoCentro" xml:space="preserve">
+    <value>Arka - Orta</value>
+  </data>
+  <data name="valor.fondoDerecha" xml:space="preserve">
+    <value>Arka - Sağ</value>
+  </data>
+  <data name="valor.venta" xml:space="preserve">
+    <value>Satış</value>
+  </data>
+  <data name="valor.stock" xml:space="preserve">
+    <value>Stok</value>
+  </data>
+  <data name="valor.critico" xml:space="preserve">
+    <value>Kritik</value>
+  </data>
+  <data name="valor.bajo" xml:space="preserve">
+    <value>Düşük</value>
+  </data>
+  <data name="valor.normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="locales.titulo" xml:space="preserve">
+    <value>Mağazalar - LO Technologies</value>
+  </data>
+  <data name="locales.encabezado" xml:space="preserve">
+    <value>Mağazalar</value>
+  </data>
+  <data name="locales.btnNuevo" xml:space="preserve">
+    <value>Yeni mağaza</value>
+  </data>
+  <data name="locales.buscarPlaceholder" xml:space="preserve">
+    <value>Mağaza ara...</value>
+  </data>
+  <data name="locales.verLayout" xml:space="preserve">
+    <value>Yerleşimi gör</value>
+  </data>
+  <data name="locales.confirmarEstado" xml:space="preserve">
+    <value>Bu mağazanın durumunu değiştirmek istiyor musunuz?</value>
+  </data>
+  <data name="locales.sinResultados" xml:space="preserve">
+    <value>Aramayla eşleşen mağaza yok.</value>
+  </data>
+  <data name="locales.modalEditar" xml:space="preserve">
+    <value>Mağazayı düzenle</value>
+  </data>
+  <data name="locales.btnCrear" xml:space="preserve">
+    <value>Mağaza oluştur</value>
+  </data>
+  <data name="locales.empresaCliente" xml:space="preserve">
+    <value>Müşteri şirket *</value>
+  </data>
+  <data name="locales.direccion" xml:space="preserve">
+    <value>Adres *</value>
+  </data>
+  <data name="locales.errDireccion" xml:space="preserve">
+    <value>Adresi girin</value>
+  </data>
+  <data name="locales.tipoLocal" xml:space="preserve">
+    <value>Mağaza türü</value>
+  </data>
+  <data name="locales.superficie" xml:space="preserve">
+    <value>Yaklaşık alan (m²)</value>
+  </data>
+  <data name="locales.observaciones" xml:space="preserve">
+    <value>Notlar</value>
+  </data>
+  <data name="locales.activo" xml:space="preserve">
+    <value>Aktif mağaza</value>
+  </data>
+  <data name="locales.msgNoExiste" xml:space="preserve">
+    <value>Mağaza artık mevcut değil.</value>
+  </data>
+  <data name="locales.msgModificado" xml:space="preserve">
+    <value>Mağaza başarıyla güncellendi.</value>
+  </data>
+  <data name="locales.msgRegistrado" xml:space="preserve">
+    <value>Mağaza başarıyla kaydedildi.</value>
+  </data>
+  <data name="locales.msgEstado" xml:space="preserve">
+    <value>Mağaza durumu güncellendi.</value>
+  </data>
+  <data name="layout.titulo" xml:space="preserve">
+    <value>Yerleşim ve reyonlar - LO Technologies</value>
+  </data>
+  <data name="layout.tabLayout" xml:space="preserve">
+    <value>Mağaza yerleşimi</value>
+  </data>
+  <data name="layout.tabSectores" xml:space="preserve">
+    <value>Reyon yönetimi</value>
+  </data>
+  <data name="layout.btnCargar" xml:space="preserve">
+    <value>Yerleşim yükle</value>
+  </data>
+  <data name="layout.verDetalle" xml:space="preserve">
+    <value>Ayrıntıyı gör</value>
+  </data>
+  <data name="layout.confirmarEliminar" xml:space="preserve">
+    <value>Bu yerleşimi silmek istiyor musunuz?</value>
+  </data>
+  <data name="layout.sinLayouts" xml:space="preserve">
+    <value>Bu mağazada henüz yerleşim yok.</value>
+  </data>
+  <data name="layout.btnNuevoSector" xml:space="preserve">
+    <value>Yeni reyon</value>
+  </data>
+  <data name="layout.colSector" xml:space="preserve">
+    <value>Reyon</value>
+  </data>
+  <data name="layout.colUbicacion" xml:space="preserve">
+    <value>Konum</value>
+  </data>
+  <data name="layout.colCirculacion" xml:space="preserve">
+    <value>Ziyaretçi trafiği</value>
+  </data>
+  <data name="layout.colProductos" xml:space="preserve">
+    <value>Ürün sayısı</value>
+  </data>
+  <data name="layout.sinSectores" xml:space="preserve">
+    <value>Bu mağazada henüz reyon yok.</value>
+  </data>
+  <data name="layout.modalTitulo" xml:space="preserve">
+    <value>Mağaza yerleşimini yükle</value>
+  </data>
+  <data name="layout.nombre" xml:space="preserve">
+    <value>Yerleşim adı *</value>
+  </data>
+  <data name="layout.ejNombre" xml:space="preserve">
+    <value>Örn.: Ana yerleşim 2026</value>
+  </data>
+  <data name="layout.errNombre" xml:space="preserve">
+    <value>Yerleşim adını girin</value>
+  </data>
+  <data name="layout.ejDescripcion" xml:space="preserve">
+    <value>Mağaza yerleşiminin kısa açıklaması...</value>
+  </data>
+  <data name="layout.archivo" xml:space="preserve">
+    <value>Mağaza görseli veya planı * (PNG, JPG, PDF — en fazla 5 MB)</value>
+  </data>
+  <data name="layout.errArchivo" xml:space="preserve">
+    <value>Bir dosya ekleyin</value>
+  </data>
+  <data name="layout.btnConfirmar" xml:space="preserve">
+    <value>Yüklemeyi onayla</value>
+  </data>
+  <data name="layout.modalSectorEditar" xml:space="preserve">
+    <value>Reyonu düzenle</value>
+  </data>
+  <data name="layout.btnCrearSector" xml:space="preserve">
+    <value>Reyon oluştur</value>
+  </data>
+  <data name="layout.nombreSector" xml:space="preserve">
+    <value>Reyon adı *</value>
+  </data>
+  <data name="layout.ejSector" xml:space="preserve">
+    <value>Örn.: Parfümeri</value>
+  </data>
+  <data name="layout.errNombreSector" xml:space="preserve">
+    <value>Reyon adını girin</value>
+  </data>
+  <data name="layout.tipoSector" xml:space="preserve">
+    <value>Reyon türü</value>
+  </data>
+  <data name="layout.circulacion" xml:space="preserve">
+    <value>Tahmini ziyaretçi trafiği (%)</value>
+  </data>
+  <data name="layout.fecha" xml:space="preserve">
+    <value>Tarih:</value>
+  </data>
+  <data name="layout.estado" xml:space="preserve">
+    <value>Durum:</value>
+  </data>
+  <data name="layout.descripcion" xml:space="preserve">
+    <value>Açıklama:</value>
+  </data>
+  <data name="layout.abrirPdf" xml:space="preserve">
+    <value>PDF'yi yeni sekmede aç</value>
+  </data>
+  <data name="layout.errSinArchivo" xml:space="preserve">
+    <value>Bir görsel veya plan dosyası ekleyin.</value>
+  </data>
+  <data name="layout.errFormato" xml:space="preserve">
+    <value>Ekli dosyanın biçimi geçersiz. Kabul edilen biçimler: PNG, JPG, PDF.</value>
+  </data>
+  <data name="layout.errTamanio" xml:space="preserve">
+    <value>Görsel veya plan çok büyük. İzin verilen en fazla boyut 5 MB.</value>
+  </data>
+  <data name="layout.msgRegistrado" xml:space="preserve">
+    <value>Yerleşim başarıyla kaydedildi.</value>
+  </data>
+  <data name="layout.msgSectorModificado" xml:space="preserve">
+    <value>Reyon başarıyla güncellendi.</value>
+  </data>
+  <data name="layout.msgSectorCreado" xml:space="preserve">
+    <value>Reyon başarıyla oluşturuldu.</value>
+  </data>
+  <data name="layout.msgEliminado" xml:space="preserve">
+    <value>Yerleşim silindi.</value>
+  </data>
+  <data name="productos.titulo" xml:space="preserve">
+    <value>Ürünler ve kategoriler - LO Technologies</value>
+  </data>
+  <data name="productos.btnNuevo" xml:space="preserve">
+    <value>Yeni ürün</value>
+  </data>
+  <data name="productos.tabCategorias" xml:space="preserve">
+    <value>Kategoriler</value>
+  </data>
+  <data name="productos.tabProductos" xml:space="preserve">
+    <value>Ürünler</value>
+  </data>
+  <data name="productos.buscarPlaceholder" xml:space="preserve">
+    <value>Ürün ara...</value>
+  </data>
+  <data name="productos.todosSectores" xml:space="preserve">
+    <value>Tüm reyonlar</value>
+  </data>
+  <data name="productos.colCodigo" xml:space="preserve">
+    <value>Kod</value>
+  </data>
+  <data name="productos.colProducto" xml:space="preserve">
+    <value>Ürün</value>
+  </data>
+  <data name="productos.colCategoria" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="productos.colPrecio" xml:space="preserve">
+    <value>Fiyat</value>
+  </data>
+  <data name="productos.colStock" xml:space="preserve">
+    <value>Stok</value>
+  </data>
+  <data name="productos.confirmarEstado" xml:space="preserve">
+    <value>Bu ürünün durumunu değiştirmek istiyor musunuz?</value>
+  </data>
+  <data name="productos.sinProductos" xml:space="preserve">
+    <value>Aramayla eşleşen ürün yok.</value>
+  </data>
+  <data name="productos.btnNuevaCategoria" xml:space="preserve">
+    <value>Yeni kategori</value>
+  </data>
+  <data name="productos.sinCategorias" xml:space="preserve">
+    <value>Henüz kategori yok.</value>
+  </data>
+  <data name="productos.modalEditar" xml:space="preserve">
+    <value>Ürünü düzenle</value>
+  </data>
+  <data name="productos.codigoInterno" xml:space="preserve">
+    <value>Dahili kod</value>
+  </data>
+  <data name="productos.nombre" xml:space="preserve">
+    <value>Ürün adı *</value>
+  </data>
+  <data name="productos.categoriaObligatoria" xml:space="preserve">
+    <value>Kategori *</value>
+  </data>
+  <data name="productos.sinSector" xml:space="preserve">
+    <value>— Reyon atanmadı —</value>
+  </data>
+  <data name="productos.activo" xml:space="preserve">
+    <value>Aktif ürün</value>
+  </data>
+  <data name="productos.modalCategoriaEditar" xml:space="preserve">
+    <value>Kategoriyi düzenle</value>
+  </data>
+  <data name="productos.categoriaActiva" xml:space="preserve">
+    <value>Aktif kategori</value>
+  </data>
+  <data name="productos.msgNoExiste" xml:space="preserve">
+    <value>Ürün artık mevcut değil.</value>
+  </data>
+  <data name="productos.errSinLocalProductos" xml:space="preserve">
+    <value>Ürün ekleyebilmek için önce bir mağaza kaydedin.</value>
+  </data>
+  <data name="productos.errSinLocalCategorias" xml:space="preserve">
+    <value>Kategori ekleyebilmek için önce bir mağaza kaydedin.</value>
+  </data>
+  <data name="productos.msgModificado" xml:space="preserve">
+    <value>Ürün başarıyla güncellendi.</value>
+  </data>
+  <data name="productos.msgCreado" xml:space="preserve">
+    <value>Ürün başarıyla oluşturuldu.</value>
+  </data>
+  <data name="productos.msgEstado" xml:space="preserve">
+    <value>Ürün durumu güncellendi.</value>
+  </data>
+  <data name="productos.msgCategoriaModificada" xml:space="preserve">
+    <value>Kategori başarıyla güncellendi.</value>
+  </data>
+  <data name="productos.msgCategoriaCreada" xml:space="preserve">
+    <value>Kategori başarıyla oluşturuldu.</value>
+  </data>
+  <data name="productos.errLocalProducto" xml:space="preserve">
+    <value>Ürünün hangi şirkete ait olduğunu belirlemek için bir mağaza seçin.</value>
+  </data>
+  <data name="productos.errLocalCategoria" xml:space="preserve">
+    <value>Kategorinin hangi şirkete ait olduğunu belirlemek için bir mağaza seçin.</value>
+  </data>
+  <data name="stock.titulo" xml:space="preserve">
+    <value>Stok ve satışlar - LO Technologies</value>
+  </data>
+  <data name="stock.subtitulo" xml:space="preserve">
+    <value>CUN 006 — Satış ve stok verilerinin girişi ve yönetimi</value>
+  </data>
+  <data name="stock.btnImportar" xml:space="preserve">
+    <value>CSV içe aktar</value>
+  </data>
+  <data name="stock.btnCargaManual" xml:space="preserve">
+    <value>Manuel giriş</value>
+  </data>
+  <data name="stock.ultimoMes" xml:space="preserve">
+    <value>Son ay</value>
+  </data>
+  <data name="stock.ultimos3" xml:space="preserve">
+    <value>Son 3 ay</value>
+  </data>
+  <data name="stock.ultimos5" xml:space="preserve">
+    <value>Son 5 ay</value>
+  </data>
+  <data name="stock.porSector" xml:space="preserve">
+    <value>Reyona göre</value>
+  </data>
+  <data name="stock.porCategoria" xml:space="preserve">
+    <value>Kategoriye göre</value>
+  </data>
+  <data name="stock.porProducto" xml:space="preserve">
+    <value>Ürüne göre</value>
+  </data>
+  <data name="stock.tabVentas" xml:space="preserve">
+    <value>Satış verileri</value>
+  </data>
+  <data name="stock.tabStock" xml:space="preserve">
+    <value>Stok verileri</value>
+  </data>
+  <data name="stock.totalVentas" xml:space="preserve">
+    <value>Toplam satış (ay)</value>
+  </data>
+  <data name="stock.ticketPromedio" xml:space="preserve">
+    <value>Ortalama fiş</value>
+  </data>
+  <data name="stock.unidadesVendidas" xml:space="preserve">
+    <value>Satılan adet</value>
+  </data>
+  <data name="stock.margenTotal" xml:space="preserve">
+    <value>Toplam marj</value>
+  </data>
+  <data name="stock.ventasPorSector" xml:space="preserve">
+    <value>Reyona göre satışlar</value>
+  </data>
+  <data name="stock.graficoPendiente" xml:space="preserve">
+    <value>Reyona göre satış grafiği (yakında)</value>
+  </data>
+  <data name="stock.detalleVentas" xml:space="preserve">
+    <value>Satış ayrıntıları</value>
+  </data>
+  <data name="stock.colPeriodo" xml:space="preserve">
+    <value>Dönem</value>
+  </data>
+  <data name="stock.colUnidades" xml:space="preserve">
+    <value>Adet</value>
+  </data>
+  <data name="stock.colMonto" xml:space="preserve">
+    <value>Tutar</value>
+  </data>
+  <data name="stock.colMargen" xml:space="preserve">
+    <value>Marj</value>
+  </data>
+  <data name="stock.sinVentas" xml:space="preserve">
+    <value>Seçilen dönem için satış yok.</value>
+  </data>
+  <data name="stock.inventario" xml:space="preserve">
+    <value>Ürüne göre envanter</value>
+  </data>
+  <data name="stock.colStockActual" xml:space="preserve">
+    <value>Mevcut stok</value>
+  </data>
+  <data name="stock.colMinimo" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="stock.colMaximo" xml:space="preserve">
+    <value>Maksimum</value>
+  </data>
+  <data name="stock.colAccion" xml:space="preserve">
+    <value>İşlem</value>
+  </data>
+  <data name="stock.actualizar" xml:space="preserve">
+    <value>Güncelle</value>
+  </data>
+  <data name="stock.sinStock" xml:space="preserve">
+    <value>Henüz stok verisi yok.</value>
+  </data>
+  <data name="stock.tipoDato" xml:space="preserve">
+    <value>Veri türü *</value>
+  </data>
+  <data name="stock.productoCategoria" xml:space="preserve">
+    <value>Ürün / Kategori *</value>
+  </data>
+  <data name="stock.cantidad" xml:space="preserve">
+    <value>Miktar *</value>
+  </data>
+  <data name="stock.errCantidad" xml:space="preserve">
+    <value>Miktarı girin</value>
+  </data>
+  <data name="stock.importe" xml:space="preserve">
+    <value>Toplam tutar (satışsa)</value>
+  </data>
+  <data name="stock.minimo" xml:space="preserve">
+    <value>Minimum stok (stoksa)</value>
+  </data>
+  <data name="stock.maximo" xml:space="preserve">
+    <value>Maksimum stok (stoksa)</value>
+  </data>
+  <data name="stock.fecha" xml:space="preserve">
+    <value>Dönem / Tarih *</value>
+  </data>
+  <data name="stock.errImportarCsv" xml:space="preserve">
+    <value>CSV içe aktarma henüz kullanılamıyor.</value>
+  </data>
+  <data name="stock.errSeleccionarLocal" xml:space="preserve">
+    <value>Bir mağaza seçin.</value>
+  </data>
+  <data name="stock.msgRegistrado" xml:space="preserve">
+    <value>Veriler başarıyla kaydedildi.</value>
+  </data>
 </root>

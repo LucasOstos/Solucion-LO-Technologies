@@ -1007,4 +1007,532 @@
   <data name="traducciones.msgGuardadas" xml:space="preserve">
     <value>{0} Übersetzungen wurden gespeichert. Sie sind bereits im System sichtbar.</value>
   </data>
+  <data name="comun.local" xml:space="preserve">
+    <value>Filiale</value>
+  </data>
+  <data name="comun.nombreObligatorio" xml:space="preserve">
+    <value>Name *</value>
+  </data>
+  <data name="comun.errNombre" xml:space="preserve">
+    <value>Geben Sie den Namen ein</value>
+  </data>
+  <data name="comun.eliminar" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="comun.fechaObligatoria" xml:space="preserve">
+    <value>Datum *</value>
+  </data>
+  <data name="comun.errFecha" xml:space="preserve">
+    <value>Geben Sie das Datum ein</value>
+  </data>
+  <data name="comun.estadoObligatorio" xml:space="preserve">
+    <value>Status *</value>
+  </data>
+  <data name="comun.descripcion" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="comun.descripcionObligatoria" xml:space="preserve">
+    <value>Beschreibung *</value>
+  </data>
+  <data name="comun.errDescripcion" xml:space="preserve">
+    <value>Geben Sie die Beschreibung ein</value>
+  </data>
+  <data name="comun.completeDatos" xml:space="preserve">
+    <value>Bitte füllen Sie die Daten aus.</value>
+  </data>
+  <data name="comun.aplicar" xml:space="preserve">
+    <value>Anwenden</value>
+  </data>
+  <data name="comun.unidadesAbrev" xml:space="preserve">
+    <value>Stk.</value>
+  </data>
+  <data name="valor.localCalle" xml:space="preserve">
+    <value>Straßengeschäft</value>
+  </data>
+  <data name="valor.shopping" xml:space="preserve">
+    <value>Einkaufszentrum</value>
+  </data>
+  <data name="valor.stripCenter" xml:space="preserve">
+    <value>Fachmarktzentrum</value>
+  </data>
+  <data name="valor.otro" xml:space="preserve">
+    <value>Sonstiges</value>
+  </data>
+  <data name="valor.borrador" xml:space="preserve">
+    <value>Entwurf</value>
+  </data>
+  <data name="valor.fruteria" xml:space="preserve">
+    <value>Obst und Gemüse</value>
+  </data>
+  <data name="valor.carniceria" xml:space="preserve">
+    <value>Metzgerei</value>
+  </data>
+  <data name="valor.lacteos" xml:space="preserve">
+    <value>Molkereiprodukte</value>
+  </data>
+  <data name="valor.panaderia" xml:space="preserve">
+    <value>Bäckerei</value>
+  </data>
+  <data name="valor.bebidas" xml:space="preserve">
+    <value>Getränke</value>
+  </data>
+  <data name="valor.almacen" xml:space="preserve">
+    <value>Lebensmittel</value>
+  </data>
+  <data name="valor.limpieza" xml:space="preserve">
+    <value>Reinigung</value>
+  </data>
+  <data name="valor.perfumeria" xml:space="preserve">
+    <value>Parfümerie</value>
+  </data>
+  <data name="valor.electronica" xml:space="preserve">
+    <value>Elektronik</value>
+  </data>
+  <data name="valor.indumentaria" xml:space="preserve">
+    <value>Bekleidung</value>
+  </data>
+  <data name="valor.frenteIzquierda" xml:space="preserve">
+    <value>Vorne - Links</value>
+  </data>
+  <data name="valor.frenteCentro" xml:space="preserve">
+    <value>Vorne - Mitte</value>
+  </data>
+  <data name="valor.frenteDerecha" xml:space="preserve">
+    <value>Vorne - Rechts</value>
+  </data>
+  <data name="valor.centroIzquierda" xml:space="preserve">
+    <value>Mitte - Links</value>
+  </data>
+  <data name="valor.centroCentro" xml:space="preserve">
+    <value>Mitte - Mitte</value>
+  </data>
+  <data name="valor.centroDerecha" xml:space="preserve">
+    <value>Mitte - Rechts</value>
+  </data>
+  <data name="valor.fondoIzquierda" xml:space="preserve">
+    <value>Hinten - Links</value>
+  </data>
+  <data name="valor.fondoCentro" xml:space="preserve">
+    <value>Hinten - Mitte</value>
+  </data>
+  <data name="valor.fondoDerecha" xml:space="preserve">
+    <value>Hinten - Rechts</value>
+  </data>
+  <data name="valor.venta" xml:space="preserve">
+    <value>Verkauf</value>
+  </data>
+  <data name="valor.stock" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="valor.critico" xml:space="preserve">
+    <value>Kritisch</value>
+  </data>
+  <data name="valor.bajo" xml:space="preserve">
+    <value>Niedrig</value>
+  </data>
+  <data name="valor.normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="locales.titulo" xml:space="preserve">
+    <value>Filialen - LO Technologies</value>
+  </data>
+  <data name="locales.encabezado" xml:space="preserve">
+    <value>Ladengeschäfte</value>
+  </data>
+  <data name="locales.btnNuevo" xml:space="preserve">
+    <value>Neue Filiale</value>
+  </data>
+  <data name="locales.buscarPlaceholder" xml:space="preserve">
+    <value>Filiale suchen...</value>
+  </data>
+  <data name="locales.verLayout" xml:space="preserve">
+    <value>Grundriss ansehen</value>
+  </data>
+  <data name="locales.confirmarEstado" xml:space="preserve">
+    <value>Status dieser Filiale wirklich ändern?</value>
+  </data>
+  <data name="locales.sinResultados" xml:space="preserve">
+    <value>Keine Filialen entsprechen der Suche.</value>
+  </data>
+  <data name="locales.modalEditar" xml:space="preserve">
+    <value>Filiale bearbeiten</value>
+  </data>
+  <data name="locales.btnCrear" xml:space="preserve">
+    <value>Filiale anlegen</value>
+  </data>
+  <data name="locales.empresaCliente" xml:space="preserve">
+    <value>Kundenunternehmen *</value>
+  </data>
+  <data name="locales.direccion" xml:space="preserve">
+    <value>Adresse *</value>
+  </data>
+  <data name="locales.errDireccion" xml:space="preserve">
+    <value>Geben Sie die Adresse ein</value>
+  </data>
+  <data name="locales.tipoLocal" xml:space="preserve">
+    <value>Filialtyp</value>
+  </data>
+  <data name="locales.superficie" xml:space="preserve">
+    <value>Fläche ca. (m²)</value>
+  </data>
+  <data name="locales.observaciones" xml:space="preserve">
+    <value>Bemerkungen</value>
+  </data>
+  <data name="locales.activo" xml:space="preserve">
+    <value>Filiale aktiv</value>
+  </data>
+  <data name="locales.msgNoExiste" xml:space="preserve">
+    <value>Die Filiale existiert nicht mehr.</value>
+  </data>
+  <data name="locales.msgModificado" xml:space="preserve">
+    <value>Filiale erfolgreich geändert.</value>
+  </data>
+  <data name="locales.msgRegistrado" xml:space="preserve">
+    <value>Filiale erfolgreich registriert.</value>
+  </data>
+  <data name="locales.msgEstado" xml:space="preserve">
+    <value>Filialstatus aktualisiert.</value>
+  </data>
+  <data name="layout.titulo" xml:space="preserve">
+    <value>Grundriss und Bereiche - LO Technologies</value>
+  </data>
+  <data name="layout.tabLayout" xml:space="preserve">
+    <value>Grundriss der Filiale</value>
+  </data>
+  <data name="layout.tabSectores" xml:space="preserve">
+    <value>Bereichsverwaltung</value>
+  </data>
+  <data name="layout.btnCargar" xml:space="preserve">
+    <value>Grundriss hochladen</value>
+  </data>
+  <data name="layout.verDetalle" xml:space="preserve">
+    <value>Details ansehen</value>
+  </data>
+  <data name="layout.confirmarEliminar" xml:space="preserve">
+    <value>Diesen Grundriss wirklich löschen?</value>
+  </data>
+  <data name="layout.sinLayouts" xml:space="preserve">
+    <value>Diese Filiale hat noch keine Grundrisse.</value>
+  </data>
+  <data name="layout.btnNuevoSector" xml:space="preserve">
+    <value>Neuer Bereich</value>
+  </data>
+  <data name="layout.colSector" xml:space="preserve">
+    <value>Bereich</value>
+  </data>
+  <data name="layout.colUbicacion" xml:space="preserve">
+    <value>Lage</value>
+  </data>
+  <data name="layout.colCirculacion" xml:space="preserve">
+    <value>Kundenfrequenz</value>
+  </data>
+  <data name="layout.colProductos" xml:space="preserve">
+    <value>Anzahl Produkte</value>
+  </data>
+  <data name="layout.sinSectores" xml:space="preserve">
+    <value>Diese Filiale hat noch keine Bereiche.</value>
+  </data>
+  <data name="layout.modalTitulo" xml:space="preserve">
+    <value>Grundriss der Filiale hochladen</value>
+  </data>
+  <data name="layout.nombre" xml:space="preserve">
+    <value>Name des Grundrisses *</value>
+  </data>
+  <data name="layout.ejNombre" xml:space="preserve">
+    <value>z. B.: Hauptgrundriss 2026</value>
+  </data>
+  <data name="layout.errNombre" xml:space="preserve">
+    <value>Geben Sie den Namen des Grundrisses ein</value>
+  </data>
+  <data name="layout.ejDescripcion" xml:space="preserve">
+    <value>Kurze Beschreibung der Raumaufteilung...</value>
+  </data>
+  <data name="layout.archivo" xml:space="preserve">
+    <value>Bild oder Grundriss der Filiale * (PNG, JPG, PDF — max. 5 MB)</value>
+  </data>
+  <data name="layout.errArchivo" xml:space="preserve">
+    <value>Hängen Sie eine Datei an</value>
+  </data>
+  <data name="layout.btnConfirmar" xml:space="preserve">
+    <value>Hochladen bestätigen</value>
+  </data>
+  <data name="layout.modalSectorEditar" xml:space="preserve">
+    <value>Bereich bearbeiten</value>
+  </data>
+  <data name="layout.btnCrearSector" xml:space="preserve">
+    <value>Bereich anlegen</value>
+  </data>
+  <data name="layout.nombreSector" xml:space="preserve">
+    <value>Name des Bereichs *</value>
+  </data>
+  <data name="layout.ejSector" xml:space="preserve">
+    <value>z. B.: Parfümerie</value>
+  </data>
+  <data name="layout.errNombreSector" xml:space="preserve">
+    <value>Geben Sie den Namen des Bereichs ein</value>
+  </data>
+  <data name="layout.tipoSector" xml:space="preserve">
+    <value>Bereichstyp</value>
+  </data>
+  <data name="layout.circulacion" xml:space="preserve">
+    <value>Geschätzte Kundenfrequenz (%)</value>
+  </data>
+  <data name="layout.fecha" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
+  <data name="layout.estado" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="layout.descripcion" xml:space="preserve">
+    <value>Beschreibung:</value>
+  </data>
+  <data name="layout.abrirPdf" xml:space="preserve">
+    <value>PDF in neuem Tab öffnen</value>
+  </data>
+  <data name="layout.errSinArchivo" xml:space="preserve">
+    <value>Hängen Sie ein Bild oder einen Grundriss an.</value>
+  </data>
+  <data name="layout.errFormato" xml:space="preserve">
+    <value>Die angehängte Datei hat kein gültiges Format. Zulässig: PNG, JPG, PDF.</value>
+  </data>
+  <data name="layout.errTamanio" xml:space="preserve">
+    <value>Das Bild oder der Grundriss ist zu groß. Maximal erlaubt sind 5 MB.</value>
+  </data>
+  <data name="layout.msgRegistrado" xml:space="preserve">
+    <value>Grundriss erfolgreich registriert.</value>
+  </data>
+  <data name="layout.msgSectorModificado" xml:space="preserve">
+    <value>Bereich erfolgreich geändert.</value>
+  </data>
+  <data name="layout.msgSectorCreado" xml:space="preserve">
+    <value>Bereich erfolgreich angelegt.</value>
+  </data>
+  <data name="layout.msgEliminado" xml:space="preserve">
+    <value>Grundriss gelöscht.</value>
+  </data>
+  <data name="productos.titulo" xml:space="preserve">
+    <value>Produkte und Kategorien - LO Technologies</value>
+  </data>
+  <data name="productos.btnNuevo" xml:space="preserve">
+    <value>Neues Produkt</value>
+  </data>
+  <data name="productos.tabCategorias" xml:space="preserve">
+    <value>Kategorien</value>
+  </data>
+  <data name="productos.tabProductos" xml:space="preserve">
+    <value>Produkte</value>
+  </data>
+  <data name="productos.buscarPlaceholder" xml:space="preserve">
+    <value>Produkte suchen...</value>
+  </data>
+  <data name="productos.todosSectores" xml:space="preserve">
+    <value>Alle Bereiche</value>
+  </data>
+  <data name="productos.colCodigo" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="productos.colProducto" xml:space="preserve">
+    <value>Produkt</value>
+  </data>
+  <data name="productos.colCategoria" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="productos.colPrecio" xml:space="preserve">
+    <value>Preis</value>
+  </data>
+  <data name="productos.colStock" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="productos.confirmarEstado" xml:space="preserve">
+    <value>Status dieses Produkts wirklich ändern?</value>
+  </data>
+  <data name="productos.sinProductos" xml:space="preserve">
+    <value>Keine Produkte entsprechen der Suche.</value>
+  </data>
+  <data name="productos.btnNuevaCategoria" xml:space="preserve">
+    <value>Neue Kategorie</value>
+  </data>
+  <data name="productos.sinCategorias" xml:space="preserve">
+    <value>Keine Kategorien vorhanden.</value>
+  </data>
+  <data name="productos.modalEditar" xml:space="preserve">
+    <value>Produkt bearbeiten</value>
+  </data>
+  <data name="productos.codigoInterno" xml:space="preserve">
+    <value>Interner Code</value>
+  </data>
+  <data name="productos.nombre" xml:space="preserve">
+    <value>Produktname *</value>
+  </data>
+  <data name="productos.categoriaObligatoria" xml:space="preserve">
+    <value>Kategorie *</value>
+  </data>
+  <data name="productos.sinSector" xml:space="preserve">
+    <value>— Kein Bereich zugewiesen —</value>
+  </data>
+  <data name="productos.activo" xml:space="preserve">
+    <value>Produkt aktiv</value>
+  </data>
+  <data name="productos.modalCategoriaEditar" xml:space="preserve">
+    <value>Kategorie bearbeiten</value>
+  </data>
+  <data name="productos.categoriaActiva" xml:space="preserve">
+    <value>Kategorie aktiv</value>
+  </data>
+  <data name="productos.msgNoExiste" xml:space="preserve">
+    <value>Das Produkt existiert nicht mehr.</value>
+  </data>
+  <data name="productos.errSinLocalProductos" xml:space="preserve">
+    <value>Legen Sie zuerst eine Filiale an, um Produkte erfassen zu können.</value>
+  </data>
+  <data name="productos.errSinLocalCategorias" xml:space="preserve">
+    <value>Legen Sie zuerst eine Filiale an, um Kategorien erfassen zu können.</value>
+  </data>
+  <data name="productos.msgModificado" xml:space="preserve">
+    <value>Produkt erfolgreich geändert.</value>
+  </data>
+  <data name="productos.msgCreado" xml:space="preserve">
+    <value>Produkt erfolgreich angelegt.</value>
+  </data>
+  <data name="productos.msgEstado" xml:space="preserve">
+    <value>Produktstatus aktualisiert.</value>
+  </data>
+  <data name="productos.msgCategoriaModificada" xml:space="preserve">
+    <value>Kategorie erfolgreich geändert.</value>
+  </data>
+  <data name="productos.msgCategoriaCreada" xml:space="preserve">
+    <value>Kategorie erfolgreich angelegt.</value>
+  </data>
+  <data name="productos.errLocalProducto" xml:space="preserve">
+    <value>Wählen Sie eine Filiale, um festzulegen, zu welchem Unternehmen das Produkt gehört.</value>
+  </data>
+  <data name="productos.errLocalCategoria" xml:space="preserve">
+    <value>Wählen Sie eine Filiale, um festzulegen, zu welchem Unternehmen die Kategorie gehört.</value>
+  </data>
+  <data name="stock.titulo" xml:space="preserve">
+    <value>Bestand und Verkäufe - LO Technologies</value>
+  </data>
+  <data name="stock.subtitulo" xml:space="preserve">
+    <value>CUN 006 — Erfassung und Verwaltung von Verkaufs- und Bestandsdaten</value>
+  </data>
+  <data name="stock.btnImportar" xml:space="preserve">
+    <value>CSV importieren</value>
+  </data>
+  <data name="stock.btnCargaManual" xml:space="preserve">
+    <value>Manuelle Erfassung</value>
+  </data>
+  <data name="stock.ultimoMes" xml:space="preserve">
+    <value>Letzter Monat</value>
+  </data>
+  <data name="stock.ultimos3" xml:space="preserve">
+    <value>Letzte 3 Monate</value>
+  </data>
+  <data name="stock.ultimos5" xml:space="preserve">
+    <value>Letzte 5 Monate</value>
+  </data>
+  <data name="stock.porSector" xml:space="preserve">
+    <value>Nach Bereich</value>
+  </data>
+  <data name="stock.porCategoria" xml:space="preserve">
+    <value>Nach Kategorie</value>
+  </data>
+  <data name="stock.porProducto" xml:space="preserve">
+    <value>Nach Produkt</value>
+  </data>
+  <data name="stock.tabVentas" xml:space="preserve">
+    <value>Verkaufsdaten</value>
+  </data>
+  <data name="stock.tabStock" xml:space="preserve">
+    <value>Bestandsdaten</value>
+  </data>
+  <data name="stock.totalVentas" xml:space="preserve">
+    <value>Gesamtumsatz (Monat)</value>
+  </data>
+  <data name="stock.ticketPromedio" xml:space="preserve">
+    <value>Durchschnittsbon</value>
+  </data>
+  <data name="stock.unidadesVendidas" xml:space="preserve">
+    <value>Verkaufte Einheiten</value>
+  </data>
+  <data name="stock.margenTotal" xml:space="preserve">
+    <value>Gesamtmarge</value>
+  </data>
+  <data name="stock.ventasPorSector" xml:space="preserve">
+    <value>Umsatz nach Bereich</value>
+  </data>
+  <data name="stock.graficoPendiente" xml:space="preserve">
+    <value>Diagramm Umsatz nach Bereich (in Arbeit)</value>
+  </data>
+  <data name="stock.detalleVentas" xml:space="preserve">
+    <value>Verkaufsdetails</value>
+  </data>
+  <data name="stock.colPeriodo" xml:space="preserve">
+    <value>Zeitraum</value>
+  </data>
+  <data name="stock.colUnidades" xml:space="preserve">
+    <value>Einheiten</value>
+  </data>
+  <data name="stock.colMonto" xml:space="preserve">
+    <value>Betrag</value>
+  </data>
+  <data name="stock.colMargen" xml:space="preserve">
+    <value>Marge</value>
+  </data>
+  <data name="stock.sinVentas" xml:space="preserve">
+    <value>Für den gewählten Zeitraum sind keine Verkäufe erfasst.</value>
+  </data>
+  <data name="stock.inventario" xml:space="preserve">
+    <value>Bestand nach Produkt</value>
+  </data>
+  <data name="stock.colStockActual" xml:space="preserve">
+    <value>Aktueller Bestand</value>
+  </data>
+  <data name="stock.colMinimo" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="stock.colMaximo" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="stock.colAccion" xml:space="preserve">
+    <value>Aktion</value>
+  </data>
+  <data name="stock.actualizar" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="stock.sinStock" xml:space="preserve">
+    <value>Keine Bestandsdaten vorhanden.</value>
+  </data>
+  <data name="stock.tipoDato" xml:space="preserve">
+    <value>Datentyp *</value>
+  </data>
+  <data name="stock.productoCategoria" xml:space="preserve">
+    <value>Produkt / Kategorie *</value>
+  </data>
+  <data name="stock.cantidad" xml:space="preserve">
+    <value>Menge *</value>
+  </data>
+  <data name="stock.errCantidad" xml:space="preserve">
+    <value>Geben Sie die Menge ein</value>
+  </data>
+  <data name="stock.importe" xml:space="preserve">
+    <value>Gesamtbetrag (bei Verkauf)</value>
+  </data>
+  <data name="stock.minimo" xml:space="preserve">
+    <value>Mindestbestand (bei Bestand)</value>
+  </data>
+  <data name="stock.maximo" xml:space="preserve">
+    <value>Höchstbestand (bei Bestand)</value>
+  </data>
+  <data name="stock.fecha" xml:space="preserve">
+    <value>Zeitraum / Datum *</value>
+  </data>
+  <data name="stock.errImportarCsv" xml:space="preserve">
+    <value>Der CSV-Import ist noch nicht verfügbar.</value>
+  </data>
+  <data name="stock.errSeleccionarLocal" xml:space="preserve">
+    <value>Wählen Sie eine Filiale.</value>
+  </data>
+  <data name="stock.msgRegistrado" xml:space="preserve">
+    <value>Daten erfolgreich erfasst.</value>
+  </data>
 </root>

@@ -14,6 +14,10 @@ public partial class PaginaStockVentas : PaginaSegura
     {
         get { return PermisoNombres.CargarStockVentas; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "stock.titulo"; }
+    }
     private LocalBLL localBLL = new LocalBLL();
     private ProductoBLL productoBLL = new ProductoBLL();
     private VentaBLL ventaBLL = new VentaBLL();
@@ -66,7 +70,6 @@ public partial class PaginaStockVentas : PaginaSegura
     private void ActualizarVistas()
     {
         if (CodigoLocalActual == 0) return;
-
         CargarEstadisticasVentas();
         CargarDetalleVentas();
         CargarStock();
@@ -80,7 +83,7 @@ public partial class PaginaStockVentas : PaginaSegura
         litTotalVentas.Text = totalVentas.ToString("$#,##0");
         litTicketPromedio.Text = ticketPromedio.ToString("$#,##0");
         litUnidadesVendidas.Text = unidadesVendidas.ToString();
-        litMargenTotal.Text = "-"; // TODO: sin dato de costo modelado todavía
+        litMargenTotal.Text = "-";
     }
     private void CargarDetalleVentas()
     {
@@ -123,7 +126,10 @@ public partial class PaginaStockVentas : PaginaSegura
     }
     #endregion
 
-    protected void btnImportarCSV_Click(object sender, EventArgs e) { MostrarMensaje("La importación por CSV todavía no está disponible.", esExito: false); }
+    protected void btnImportarCSV_Click(object sender, EventArgs e)
+    {
+        MostrarMensaje(Traducir("stock.errImportarCsv"), esExito: false);
+    }
     protected void btnCargaManual_Click(object sender, EventArgs e)
     {
         hfCodigoStockEdicion.Value = "";
@@ -135,7 +141,6 @@ public partial class PaginaStockVentas : PaginaSegura
         pnlModalCarga.Style["display"] = "flex";
     }
     protected void btnAplicar_Click(object sender, EventArgs e) { ActualizarVistas(); }
-
     protected void btnCancelarCarga_Click(object sender, EventArgs e) { pnlModalCarga.Style["display"] = "none"; }
     protected void btnGuardarCarga_Click(object sender, EventArgs e)
     {
@@ -146,21 +151,21 @@ public partial class PaginaStockVentas : PaginaSegura
         }
         if (CodigoLocalActual == 0)
         {
-            MostrarMensaje("Seleccioná un local.", esExito: false);
+            MostrarMensaje(Traducir("stock.errSeleccionarLocal"), esExito: false);
             pnlModalCarga.Style["display"] = "flex";
             return;
         }
         int cantidad;
         if (!int.TryParse(tbCantidadCarga.Text.Trim(), out cantidad))
         {
-            MostrarMensaje("Datos inválidos.", esExito: false);
+            MostrarMensaje(Traducir("comun.datosInvalidos"), esExito: false);
             pnlModalCarga.Style["display"] = "flex";
             return;
         }
         DateTime fecha;
         if (!DateTime.TryParse(tbFechaCarga.Text, out fecha))
         {
-            MostrarMensaje("Complete los datos.", esExito: false);
+            MostrarMensaje(Traducir("comun.completeDatos"), esExito: false);
             pnlModalCarga.Style["display"] = "flex";
             return;
         }
@@ -171,7 +176,7 @@ public partial class PaginaStockVentas : PaginaSegura
             decimal importe;
             decimal.TryParse(tbImporteCarga.Text.Trim(), out importe);
             decimal precioUnitario = cantidad > 0 ? importe / cantidad : 0;
-            VentaBE venta = new VentaBE(CodigoLocalActual, codigoProducto, fecha, cantidad, precioUnitario, importe, periodo);            
+            VentaBE venta = new VentaBE(CodigoLocalActual, codigoProducto, fecha, cantidad, precioUnitario, importe, periodo);
             ventaBLL.CrearVenta(venta);
         }
         else //Stock
@@ -187,10 +192,9 @@ public partial class PaginaStockVentas : PaginaSegura
             stockBLL.GuardarStock(stock);
         }
         pnlModalCarga.Style["display"] = "none";
-        MostrarMensaje("Datos registrados correctamente.", esExito: true);
+        MostrarMensaje(Traducir("stock.msgRegistrado"), esExito: true);
         ActualizarVistas();
     }
-
     protected void rptStock_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         if (e.CommandName == "ActualizarStock")
