@@ -14,6 +14,10 @@ public partial class PaginaIdiomas : PaginaSegura
     {
         get { return PermisoNombres.GestionarIdiomas; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "idiomas.titulo"; }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -27,7 +31,7 @@ public partial class PaginaIdiomas : PaginaSegura
         rptIdiomas.DataSource = idiomaBLL.ObtenerIdiomas();
         rptIdiomas.DataBind();
         btnAgregarIdioma.Enabled = idiomaBLL.ObtenerIdiomasParaAgregar().Count > 0;
-        btnAgregarIdioma.ToolTip = btnAgregarIdioma.Enabled ? "" : "Todos los idiomas del catálogo ya están agregados";
+        btnAgregarIdioma.ToolTip = btnAgregarIdioma.Enabled ? "" : Traducir("idiomas.todosAgregados");
     }
     private void MostrarMensaje(string pTexto, bool pEsExito)
     {
@@ -53,11 +57,11 @@ public partial class PaginaIdiomas : PaginaSegura
         ddlNuevoIdioma.Items.Clear();
         foreach (Idioma idioma in idiomaBLL.ObtenerIdiomasParaAgregar())
         {
-            ddlNuevoIdioma.Items.Add(new ListItem($"{idioma.Nombre} — {idioma.NombreNativo}", idioma.Codigo));
+            ddlNuevoIdioma.Items.Add(new ListItem($"{NombreIdioma(idioma)} — {idioma.NombreNativo}", idioma.Codigo));
         }
         if (ddlNuevoIdioma.Items.Count == 0)
         {
-            MostrarMensaje("Todos los idiomas del catálogo ya están agregados.", false);
+            MostrarMensaje(Traducir("idiomas.todosAgregados"), false);
             return;
         }
         MostrarModal(true);
@@ -70,21 +74,21 @@ public partial class PaginaIdiomas : PaginaSegura
     protected void btnGuardarIdioma_Click(object sender, EventArgs e)
     {
         string codigo = ddlNuevoIdioma.SelectedValue;
-        string nombre = ddlNuevoIdioma.SelectedItem == null ? codigo : ddlNuevoIdioma.SelectedItem.Text;
+        string nombre = NombreIdioma(new Idioma { Codigo = codigo, Nombre = codigo });
         int pendientes;
         ResultadoAgregarIdioma resultado = idiomaBLL.AgregarIdioma(codigo, out pendientes);
         MostrarModal(false);
         switch (resultado)
         {
             case ResultadoAgregarIdioma.Exitoso:
-                MostrarMensaje(pendientes == 0 ? $"Se agregó {nombre} con todas sus traducciones. Revisalas y activá el idioma."
-                : $"Se agregó {nombre}. {pendientes} traducciones quedaron pendientes (con el texto en español): completalas desde \"Editar traducciones\" antes de activarlo.", true);
+                MostrarMensaje(pendientes == 0 ? Traducir("idiomas.msgAgregadoCompleto", nombre)
+                : Traducir("idiomas.msgAgregadoPendientes", nombre, pendientes), true);
                 break;
             case ResultadoAgregarIdioma.YaExiste:
-                MostrarMensaje($"{nombre} ya estaba agregado.", false);
+                MostrarMensaje(Traducir("idiomas.errYaExiste", nombre), false);
                 break;
             default:
-                MostrarMensaje("El idioma seleccionado no está en el catálogo.", false);
+                MostrarMensaje(Traducir("idiomas.errNoCatalogo"), false);
                 break;
         }
         CargarIdiomas();
@@ -109,12 +113,12 @@ public partial class PaginaIdiomas : PaginaSegura
         ResultadoSincronizacion resultado = idiomaBLL.SincronizarClaves();
         if (resultado.ClavesAgregadas == 0)
         {
-            MostrarMensaje("Todos los idiomas ya tienen todas las claves del catálogo.", true);
+            MostrarMensaje(Traducir("idiomas.msgSincronizadoNada"), true);
         }
         else
         {
-            string pendientes = resultado.ClavesPendientes == 0 ? "" : $" {resultado.ClavesPendientes} quedaron pendientes (con el texto en español).";
-            MostrarMensaje($"Se agregaron {resultado.ClavesAgregadas} traducciones en {resultado.IdiomasActualizados} idioma(s).{pendientes}", true);
+            string pendientes = resultado.ClavesPendientes == 0 ? "" : " " + Traducir("idiomas.msgSincronizadoPendientes", resultado.ClavesPendientes);
+            MostrarMensaje(Traducir("idiomas.msgSincronizado", resultado.ClavesAgregadas, resultado.IdiomasActualizados) + pendientes, true);
         }
         CargarIdiomas();
     }
@@ -125,20 +129,18 @@ public partial class PaginaIdiomas : PaginaSegura
         switch (resultado)
         {
             case ResultadoCambioEstadoIdioma.Exitoso:
-                if (!pActivar) MostrarMensaje("Idioma desactivado: ya no aparece en el selector de idioma.", true);
-                else if (pendientes == 0) MostrarMensaje("Idioma activado: los usuarios ya lo pueden elegir.", true);
-                else MostrarMensaje($"Idioma activado. Tiene {pendientes} traducciones pendientes que se van a mostrar en español.", true);
+                if (!pActivar) MostrarMensaje(Traducir("idiomas.msgDesactivado"), true);
+                else if (pendientes == 0) MostrarMensaje(Traducir("idiomas.msgActivado"), true);
+                else MostrarMensaje(Traducir("idiomas.msgActivadoPendientes", pendientes), true);
                 break;
             case ResultadoCambioEstadoIdioma.EsPredeterminado:
-                MostrarMensaje("El idioma predeterminado no se puede desactivar.", false);
+                MostrarMensaje(Traducir("idiomas.errPredeterminado"), false);
                 break;
             case ResultadoCambioEstadoIdioma.EnUso:
-                MostrarMensaje(usuarios == 1
-                    ? "No se puede desactivar: 1 usuario tiene asignado este idioma."
-                    : $"No se puede desactivar: {usuarios} usuarios tienen asignado este idioma.", false);
+                MostrarMensaje(Traducir("idiomas.errEnUso", usuarios), false);
                 break;
             default:
-                MostrarMensaje("El idioma no existe.", false);
+                MostrarMensaje(Traducir("idiomas.errNoExiste"), false);
                 break;
         }
         CargarIdiomas();

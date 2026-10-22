@@ -14,13 +14,17 @@ public partial class PaginaAuditorias : PaginaSegura
     {
         get { return PermisoNombres.ConsultarBitacora; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "auditoria.titulo"; }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             CargarDropdownTipos();
             CargarBitacora(SucesoServicio.Instancia.ObtenerSucesosUltimosTresDias());
-            lblMostrando.Text = "Mostrando los últimos 3 días";
+            lblMostrando.Text = Traducir("auditoria.ultimosTresDias");
         }
     }
 
@@ -29,7 +33,7 @@ public partial class PaginaAuditorias : PaginaSegura
     {
         List<string> tipos = SucesoServicio.Instancia.ObtenerTiposSuceso();
         ddlTipoSuceso.Items.Clear();
-        ddlTipoSuceso.Items.Add(new System.Web.UI.WebControls.ListItem("Todas las acciones", ""));
+        ddlTipoSuceso.Items.Add(new System.Web.UI.WebControls.ListItem(Traducir("auditoria.todasAcciones"), ""));
         foreach (string tipo in tipos)
         {
             ddlTipoSuceso.Items.Add(new System.Web.UI.WebControls.ListItem(tipo, tipo));
@@ -82,24 +86,24 @@ public partial class PaginaAuditorias : PaginaSegura
         bool hayAlgunFiltro = !string.IsNullOrEmpty(busqueda) || desde.HasValue || hasta.HasValue || !string.IsNullOrEmpty(tipoSuceso) || criticidad.HasValue;
         if (!hayAlgunFiltro)
         {
-            MostrarMensaje("Debe elegir mínimo un filtro.", esExito: false);
+            MostrarMensaje(Traducir("auditoria.errSinFiltro"), esExito: false);
             return;
         }
         if (desde.HasValue && hasta.HasValue && desde.Value > hasta.Value)
         {
-            MostrarMensaje("La fecha DESDE no puede ser mayor a la fecha HASTA.", esExito: false);
+            MostrarMensaje(Traducir("auditoria.errFechas"), esExito: false);
             return;
         }
         List<Suceso> resultado = SucesoServicio.Instancia.FiltrarSucesos(desde, hasta, busqueda, tipoSuceso, criticidad);
         if (resultado.Count == 0)
         {
-            MostrarMensaje("No hay sucesos.", esExito: true);
+            MostrarMensaje(Traducir("auditoria.msgSinSucesos"), esExito: true);
         }
         else
         {
             lblMensaje.Visible = false;
         }
-        lblMostrando.Text = $"Mostrando {resultado.Count} resultado(s) filtrado(s)";
+        lblMostrando.Text = Traducir("auditoria.mostrandoFiltrados", resultado.Count);
         CargarBitacora(resultado);
     }
 
@@ -108,13 +112,13 @@ public partial class PaginaAuditorias : PaginaSegura
         List<Suceso> sucesos = SucesoServicio.Instancia.ObtenerSucesos();
         using (var workbook = new XLWorkbook())
         {
-            var hoja = workbook.Worksheets.Add("Auditoría");
+            var hoja = workbook.Worksheets.Add(Traducir("auditoria.hoja"));
             // Encabezados
-            hoja.Cell(1, 1).Value = "Fecha";
-            hoja.Cell(1, 2).Value = "Usuario";
-            hoja.Cell(1, 3).Value = "Tipo de Suceso";
-            hoja.Cell(1, 4).Value = "Descripción";
-            hoja.Cell(1, 5).Value = "Criticidad";
+            hoja.Cell(1, 1).Value = Traducir("auditoria.colFecha");
+            hoja.Cell(1, 2).Value = Traducir("usuarios.colUsuario");
+            hoja.Cell(1, 3).Value = Traducir("auditoria.colTipo");
+            hoja.Cell(1, 4).Value = Traducir("auditoria.colDetalle");
+            hoja.Cell(1, 5).Value = Traducir("auditoria.colNivel");
             hoja.Range(1, 1, 1, 5).Style.Font.Bold = true;
             // Filas
             int fila = 2;

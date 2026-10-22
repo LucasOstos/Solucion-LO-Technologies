@@ -19,9 +19,16 @@ public partial class PaginaEditarTraducciones : PaginaSegura
     {
         get { return idioma != null && idioma.Predeterminado; }
     }
+    protected string NombreIdiomaBase
+    {
+        get { return NombreIdioma(SERVICIO.Logica.GestorIdioma.Instancia.IdiomaPredeterminado); }
+    }
+    protected override string ClaveTitulo
+    {
+        get { return "traducciones.titulo"; }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
-        volverIdiomas.Texto = "Volver a Idiomas";
         int codigoIdioma;
         idioma = int.TryParse(Request.QueryString["idioma"], out codigoIdioma) ? idiomaBLL.ObtenerIdioma(codigoIdioma) : null;
         if (idioma == null)
@@ -36,7 +43,6 @@ public partial class PaginaEditarTraducciones : PaginaSegura
             CargarModulos(todas);
             lblAvisoBase.Visible = EsIdiomaBase;
             spnSoloPendientes.Visible = !EsIdiomaBase;
-            // Si hay pendientes, se empieza por ellas
             chkSoloPendientes.Checked = !EsIdiomaBase && todas.Any(t => t.Pendiente);
             CargarTraducciones(todas);
         }
@@ -45,7 +51,7 @@ public partial class PaginaEditarTraducciones : PaginaSegura
     private void CargarModulos(List<TraduccionComparada> pTodas)
     {
         ddlModulo.Items.Clear();
-        ddlModulo.Items.Add(new ListItem("Todos los módulos", ""));
+        ddlModulo.Items.Add(new ListItem(Traducir("traducciones.todosModulos"), ""));
         foreach (string modulo in pTodas.Select(t => t.Modulo).Distinct().OrderBy(m => m))
         {
             ddlModulo.Items.Add(new ListItem(modulo, modulo));
@@ -56,16 +62,18 @@ public partial class PaginaEditarTraducciones : PaginaSegura
         List<TraduccionComparada> todas = pTodas ?? idiomaBLL.ObtenerTraducciones(idioma.CodigoIdioma);
         int pendientes = todas.Count(t => t.Pendiente);
 
-        litTitulo.Text = HttpUtility.HtmlEncode($"Traducciones: {idioma.Nombre}")
+        litTitulo.Text = HttpUtility.HtmlEncode(Traducir("traducciones.encabezado", NombreIdioma(idioma)))
                        + $" <span class=\"trd-titulo-nativo\" lang=\"{HttpUtility.HtmlAttributeEncode(idioma.Codigo)}\">{HttpUtility.HtmlEncode(idioma.NombreNativo)}</span>";
-        litResumen.Text = EsIdiomaBase ? $"{todas.Count} claves · idioma base" : $"{todas.Count} claves · {pendientes} {(pendientes == 1 ? "pendiente" : "pendientes")} · {(idioma.Estado ? "activo" : "inactivo")}";
+        litResumen.Text = EsIdiomaBase ? Traducir("traducciones.resumenBase", todas.Count)
+            : Traducir("traducciones.resumen", todas.Count, pendientes, Traducir(idioma.Estado ? "comun.activo" : "comun.inactivo"));
 
         List<TraduccionComparada> filtradas = idiomaBLL.FiltrarTraducciones(todas, tbBuscar.Text, ddlModulo.SelectedValue, chkSoloPendientes.Checked);
         rptTraducciones.DataSource = filtradas;
         rptTraducciones.DataBind();
         rptTraducciones.Visible = filtradas.Count > 0;
         lblSinResultados.Visible = filtradas.Count == 0;
-        lblSinResultados.Text = chkSoloPendientes.Checked && pendientes == 0 && tbBuscar.Text.Trim().Length == 0 && ddlModulo.SelectedValue == "" ? "No quedan traducciones pendientes." : "No hay traducciones que coincidan con el filtro.";
+        lblSinResultados.Text = chkSoloPendientes.Checked && pendientes == 0 && tbBuscar.Text.Trim().Length == 0 && ddlModulo.SelectedValue == ""
+            ? Traducir("traducciones.sinPendientes") : Traducir("traducciones.sinResultados");
         btnGuardar.Visible = filtradas.Count > 0;
     }
     private void MostrarMensaje(string pTexto, bool pEsExito)
@@ -74,10 +82,10 @@ public partial class PaginaEditarTraducciones : PaginaSegura
         lblMensaje.CssClass = pEsExito ? "mensaje" : "mensaje mensaje-error";
         lblMensaje.Visible = true;
     }
-    private static string ListarClaves(List<string> pClaves)
+    private string ListarClaves(List<string> pClaves)
     {
         string lista = string.Join(", ", pClaves.Take(5));
-        return pClaves.Count > 5 ? $"{lista} y {pClaves.Count - 5} más" : lista;
+        return pClaves.Count > 5 ? Traducir("traducciones.yMas", lista, pClaves.Count - 5) : lista;
     }
     #endregion
 
@@ -88,7 +96,7 @@ public partial class PaginaEditarTraducciones : PaginaSegura
         TextBox tbTexto = (TextBox)e.Item.FindControl("tbTexto");
         tbTexto.Attributes["lang"] = idioma.Codigo;
         tbTexto.Attributes["dir"] = "auto";
-        tbTexto.Attributes["aria-label"] = $"Traducción de {traduccion.Clave}";
+        tbTexto.Attributes["aria-label"] = Traducir("traducciones.ariaTraduccion", traduccion.Clave);
     }
     protected void btnBuscar_Click(object sender, EventArgs e)
     {
@@ -112,14 +120,13 @@ public partial class PaginaEditarTraducciones : PaginaSegura
         {
             // No se guardó nada, se dejan los textos como los escribió para que los corrija
             List<string> problemas = new List<string>();
-            if (resultado.ClavesVacias.Count > 0) problemas.Add($"Texto vacío en: {ListarClaves(resultado.ClavesVacias)}.");
-            if (resultado.ClavesMuyLargas.Count > 0) problemas.Add($"Más de {IdiomaBLL.LARGO_MAXIMO_TEXTO} caracteres en: {ListarClaves(resultado.ClavesMuyLargas)}.");
-            if (resultado.ClavesMarcadores.Count > 0) problemas.Add($"Los marcadores {{0}}, {{1}}... tienen que ser los mismos que en español en: {ListarClaves(resultado.ClavesMarcadores)}.");
-            MostrarMensaje("No se guardaron los cambios. " + string.Join(" ", problemas), false);
+            if (resultado.ClavesVacias.Count > 0) problemas.Add(Traducir("traducciones.errVacio", ListarClaves(resultado.ClavesVacias)));
+            if (resultado.ClavesMuyLargas.Count > 0) problemas.Add(Traducir("traducciones.errLargo", IdiomaBLL.LARGO_MAXIMO_TEXTO, ListarClaves(resultado.ClavesMuyLargas)));
+            if (resultado.ClavesMarcadores.Count > 0) problemas.Add(Traducir("traducciones.errMarcadores", ListarClaves(resultado.ClavesMarcadores)));
+            MostrarMensaje(Traducir("traducciones.errNoGuardado") + " " + string.Join(" ", problemas), false);
             return;
         }
-
-        MostrarMensaje(resultado.Modificadas == 0 ? "No había cambios para guardar." : resultado.Modificadas == 1 ? "Se guardó 1 traducción" : $"Se guardaron {resultado.Modificadas} traducciones", true);
+        MostrarMensaje(resultado.Modificadas == 0 ? Traducir("traducciones.msgSinCambios") : resultado.Modificadas == 1 ? Traducir("traducciones.msgGuardada") : Traducir("traducciones.msgGuardadas", resultado.Modificadas), true);
         CargarTraducciones();
     }
 }

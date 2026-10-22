@@ -578,4 +578,433 @@
   <data name="permisos.errAutoBloqueo" xml:space="preserve">
     <value>Это изменение лишит вас разрешения «{0}», и вы потеряете доступ к этому экрану.</value>
   </data>
+  <data name="comun.filtrar" xml:space="preserve">
+    <value>Фильтровать</value>
+  </data>
+  <data name="comun.anterior" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="comun.siguiente" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="comun.errRestaurar" xml:space="preserve">
+    <value>Не удалось восстановить базу данных.</value>
+  </data>
+  <data name="auditoria.titulo" xml:space="preserve">
+    <value>Аудит / Журнал - LO Technologies</value>
+  </data>
+  <data name="auditoria.subtitulo" xml:space="preserve">
+    <value>CUS 015 — Журнал действий для аудита и безопасности</value>
+  </data>
+  <data name="auditoria.btnExportar" xml:space="preserve">
+    <value>Экспорт журнала</value>
+  </data>
+  <data name="auditoria.buscarPlaceholder" xml:space="preserve">
+    <value>Поиск по пользователю, действию, объекту...</value>
+  </data>
+  <data name="auditoria.fechaDesde" xml:space="preserve">
+    <value>Дата с</value>
+  </data>
+  <data name="auditoria.fechaHasta" xml:space="preserve">
+    <value>Дата по</value>
+  </data>
+  <data name="auditoria.todasAcciones" xml:space="preserve">
+    <value>Все действия</value>
+  </data>
+  <data name="auditoria.todosNiveles" xml:space="preserve">
+    <value>Все уровни</value>
+  </data>
+  <data name="auditoria.nivelInfo" xml:space="preserve">
+    <value>Информация (1)</value>
+  </data>
+  <data name="auditoria.nivelAdvertencia" xml:space="preserve">
+    <value>Предупреждение (2)</value>
+  </data>
+  <data name="auditoria.nivelError" xml:space="preserve">
+    <value>Ошибка (3)</value>
+  </data>
+  <data name="auditoria.colFecha" xml:space="preserve">
+    <value>Дата/время</value>
+  </data>
+  <data name="auditoria.colTipo" xml:space="preserve">
+    <value>Тип события</value>
+  </data>
+  <data name="auditoria.colDetalle" xml:space="preserve">
+    <value>Подробности</value>
+  </data>
+  <data name="auditoria.colNivel" xml:space="preserve">
+    <value>Уровень</value>
+  </data>
+  <data name="auditoria.sinResultados" xml:space="preserve">
+    <value>Нет событий, соответствующих фильтрам.</value>
+  </data>
+  <data name="auditoria.ultimosTresDias" xml:space="preserve">
+    <value>Показаны последние 3 дня</value>
+  </data>
+  <data name="auditoria.errSinFiltro" xml:space="preserve">
+    <value>Выберите хотя бы один фильтр.</value>
+  </data>
+  <data name="auditoria.errFechas" xml:space="preserve">
+    <value>Дата «С» не может быть позже даты «ПО».</value>
+  </data>
+  <data name="auditoria.msgSinSucesos" xml:space="preserve">
+    <value>Событий нет.</value>
+  </data>
+  <data name="auditoria.mostrandoFiltrados" xml:space="preserve">
+    <value>Найдено результатов: {0}</value>
+  </data>
+  <data name="auditoria.hoja" xml:space="preserve">
+    <value>Аудит</value>
+  </data>
+  <data name="integridad.titulo" xml:space="preserve">
+    <value>Целостность системы - LO Technologies</value>
+  </data>
+  <data name="integridad.encabezado" xml:space="preserve">
+    <value>Целостность данных</value>
+  </data>
+  <data name="integridad.inconsistencias" xml:space="preserve">
+    <value>Обнаруженные несоответствия</value>
+  </data>
+  <data name="integridad.colTabla" xml:space="preserve">
+    <value>Таблица</value>
+  </data>
+  <data name="integridad.colRegistro" xml:space="preserve">
+    <value>Запись</value>
+  </data>
+  <data name="integridad.colProblema" xml:space="preserve">
+    <value>Проблема</value>
+  </data>
+  <data name="integridad.todaLaTabla" xml:space="preserve">
+    <value>Вся таблица</value>
+  </data>
+  <data name="integridad.sinDvv" xml:space="preserve">
+    <value>Вертикальная контрольная цифра (DVV) таблицы отсутствует. Возможно, она была удалена из таблицы DigitoVerificador.</value>
+  </data>
+  <data name="integridad.sinDvh" xml:space="preserve">
+    <value>У записи нет контрольной цифры (DVH). Возможно, она добавлена в обход системы.</value>
+  </data>
+  <data name="integridad.dvhDistinto" xml:space="preserve">
+    <value>DVH не совпадает с данными записи. Изменено значение или сама DVH.</value>
+  </data>
+  <data name="integridad.cantidadDistinta" xml:space="preserve">
+    <value>В таблице {0} записей, ожидалось {1}. Записи были добавлены или удалены в обход системы.</value>
+  </data>
+  <data name="integridad.dvvDistinto" xml:space="preserve">
+    <value>Вертикальная контрольная цифра (DVV) не совпадает. Записи изменены с пересчётом DVH, либо изменена сохранённая DVV.</value>
+  </data>
+  <data name="integridad.sinInconsistencias" xml:space="preserve">
+    <value>Несоответствий не обнаружено.</value>
+  </data>
+  <data name="integridad.btnRecalcular" xml:space="preserve">
+    <value>Пересчитать контрольные цифры</value>
+  </data>
+  <data name="integridad.confirmarRecalcular" xml:space="preserve">
+    <value>Пересчитать контрольные цифры всех таблиц?</value>
+  </data>
+  <data name="integridad.btnRestaurar" xml:space="preserve">
+    <value>Восстановить базу данных</value>
+  </data>
+  <data name="integridad.confirmarRestaurar" xml:space="preserve">
+    <value>Восстановить базу данных из резервной копии? Текущие данные будут заменены.</value>
+  </data>
+  <data name="integridad.btnSalir" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="integridad.msgRecalculado" xml:space="preserve">
+    <value>Контрольные цифры успешно рассчитаны</value>
+  </data>
+  <data name="integridad.errRecalcular" xml:space="preserve">
+    <value>Не удалось пересчитать контрольные цифры</value>
+  </data>
+  <data name="integridad.errSinBackup" xml:space="preserve">
+    <value>Нет доступных резервных копий для восстановления.</value>
+  </data>
+  <data name="integridad.msgRestaurada" xml:space="preserve">
+    <value>База данных восстановлена. Попробуйте войти снова.</value>
+  </data>
+  <data name="backup.titulo" xml:space="preserve">
+    <value>Резервное копирование / Восстановление - LO Technologies</value>
+  </data>
+  <data name="backup.btnCrear" xml:space="preserve">
+    <value>Создать резервную копию</value>
+  </data>
+  <data name="backup.ultimo" xml:space="preserve">
+    <value>Последняя резервная копия</value>
+  </data>
+  <data name="backup.frecuencia" xml:space="preserve">
+    <value>Частота</value>
+  </data>
+  <data name="backup.semanal" xml:space="preserve">
+    <value>Еженедельно</value>
+  </data>
+  <data name="backup.retencion" xml:space="preserve">
+    <value>Срок хранения</value>
+  </data>
+  <data name="backup.treintaDias" xml:space="preserve">
+    <value>30 дней</value>
+  </data>
+  <data name="backup.historial" xml:space="preserve">
+    <value>История резервных копий</value>
+  </data>
+  <data name="backup.colNombre" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="backup.colFecha" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="backup.colTamanio" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="backup.colTipo" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="backup.tipoManual" xml:space="preserve">
+    <value>Вручную</value>
+  </data>
+  <data name="backup.ok" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="backup.error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="backup.descargar" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
+  <data name="backup.restaurar" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="backup.sinBackups" xml:space="preserve">
+    <value>Резервные копии ещё не создавались.</value>
+  </data>
+  <data name="backup.confirmarTitulo" xml:space="preserve">
+    <value>Подтверждение восстановления</value>
+  </data>
+  <data name="backup.alertaTitulo" xml:space="preserve">
+    <value>Необратимое действие.</value>
+  </data>
+  <data name="backup.alertaTexto" xml:space="preserve">
+    <value>При восстановлении этой копии все текущие данные будут заменены данными выбранной точки восстановления. Это действие нельзя отменить.</value>
+  </data>
+  <data name="backup.puntoRestauracion" xml:space="preserve">
+    <value>Точка восстановления:</value>
+  </data>
+  <data name="backup.tamanio" xml:space="preserve">
+    <value>Размер:</value>
+  </data>
+  <data name="backup.escribiConfirmar" xml:space="preserve">
+    <value>Введите «{0}», чтобы продолжить</value>
+  </data>
+  <data name="backup.palabraConfirmar" xml:space="preserve">
+    <value>ПОДТВЕРДИТЬ</value>
+  </data>
+  <data name="backup.btnRestaurar" xml:space="preserve">
+    <value>Восстановить копию</value>
+  </data>
+  <data name="backup.msgRealizado" xml:space="preserve">
+    <value>Резервная копия успешно создана.</value>
+  </data>
+  <data name="backup.errRealizar" xml:space="preserve">
+    <value>Не удалось создать резервную копию.</value>
+  </data>
+  <data name="backup.errEscribirConfirmar" xml:space="preserve">
+    <value>Чтобы продолжить, введите {0}.</value>
+  </data>
+  <data name="backup.msgRestaurada" xml:space="preserve">
+    <value>База данных успешно восстановлена.</value>
+  </data>
+  <data name="idioma.es" xml:space="preserve">
+    <value>Испанский</value>
+  </data>
+  <data name="idioma.en" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="idioma.pt" xml:space="preserve">
+    <value>Португальский</value>
+  </data>
+  <data name="idioma.fr" xml:space="preserve">
+    <value>Французский</value>
+  </data>
+  <data name="idioma.de" xml:space="preserve">
+    <value>Немецкий</value>
+  </data>
+  <data name="idioma.it" xml:space="preserve">
+    <value>Итальянский</value>
+  </data>
+  <data name="idioma.ja" xml:space="preserve">
+    <value>Японский</value>
+  </data>
+  <data name="idioma.ru" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="idioma.ar" xml:space="preserve">
+    <value>Арабский</value>
+  </data>
+  <data name="idioma.tr" xml:space="preserve">
+    <value>Турецкий</value>
+  </data>
+  <data name="idiomas.titulo" xml:space="preserve">
+    <value>Управление языками - LO Technologies</value>
+  </data>
+  <data name="idiomas.encabezado" xml:space="preserve">
+    <value>Управление языками</value>
+  </data>
+  <data name="idiomas.subtitulo" xml:space="preserve">
+    <value>Добавляйте языки из каталога, проверяйте переводы и включайте их для пользователей.</value>
+  </data>
+  <data name="idiomas.btnSincronizar" xml:space="preserve">
+    <value>Синхронизировать ключи</value>
+  </data>
+  <data name="idiomas.ayudaSincronizar" xml:space="preserve">
+    <value>Добавляет во все языки новые ключи из каталога, не изменяя существующие переводы</value>
+  </data>
+  <data name="idiomas.btnAgregar" xml:space="preserve">
+    <value>Добавить язык</value>
+  </data>
+  <data name="idiomas.predeterminado" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="idiomas.revisadas" xml:space="preserve">
+    <value>Проверенные переводы</value>
+  </data>
+  <data name="idiomas.revisadasDe" xml:space="preserve">
+    <value>Проверенные переводы: {0}</value>
+  </data>
+  <data name="idiomas.editarTraducciones" xml:space="preserve">
+    <value>Изменить переводы</value>
+  </data>
+  <data name="idiomas.activar" xml:space="preserve">
+    <value>Включить</value>
+  </data>
+  <data name="idiomas.desactivar" xml:space="preserve">
+    <value>Отключить</value>
+  </data>
+  <data name="idiomas.idiomaBase" xml:space="preserve">
+    <value>Базовый язык: отключить нельзя</value>
+  </data>
+  <data name="idiomas.idioma" xml:space="preserve">
+    <value>Язык *</value>
+  </data>
+  <data name="idiomas.ayudaAgregar" xml:space="preserve">
+    <value>Загружаются все ключи системы с текстами из каталога этого языка. Ключи, которых нет в каталоге, получают испанский текст и помечаются как ожидающие. Язык остаётся отключённым: проверьте переводы в разделе «Изменить переводы», затем включите его.</value>
+  </data>
+  <data name="idiomas.todosAgregados" xml:space="preserve">
+    <value>Все языки каталога уже добавлены.</value>
+  </data>
+  <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
+    <value>Язык «{0}» добавлен со всеми переводами. Проверьте их и включите язык.</value>
+  </data>
+  <data name="idiomas.msgAgregadoPendientes" xml:space="preserve">
+    <value>Язык «{0}» добавлен. Ожидают перевода: {1} (с испанским текстом). Завершите их в разделе «Изменить переводы» перед включением.</value>
+  </data>
+  <data name="idiomas.errYaExiste" xml:space="preserve">
+    <value>Язык «{0}» уже был добавлен.</value>
+  </data>
+  <data name="idiomas.errNoCatalogo" xml:space="preserve">
+    <value>Выбранного языка нет в каталоге.</value>
+  </data>
+  <data name="idiomas.msgDesactivado" xml:space="preserve">
+    <value>Язык отключён: он больше не отображается в списке выбора языка.</value>
+  </data>
+  <data name="idiomas.msgActivado" xml:space="preserve">
+    <value>Язык включён: пользователи уже могут его выбрать.</value>
+  </data>
+  <data name="idiomas.msgActivadoPendientes" xml:space="preserve">
+    <value>Язык включён. Ожидают перевода: {0}; они будут показаны на испанском.</value>
+  </data>
+  <data name="idiomas.errPredeterminado" xml:space="preserve">
+    <value>Язык по умолчанию нельзя отключить.</value>
+  </data>
+  <data name="idiomas.errEnUso" xml:space="preserve">
+    <value>Невозможно отключить: этот язык назначен пользователям ({0}).</value>
+  </data>
+  <data name="idiomas.errNoExiste" xml:space="preserve">
+    <value>Язык не существует.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoNada" xml:space="preserve">
+    <value>Во всех языках уже есть все ключи каталога.</value>
+  </data>
+  <data name="idiomas.msgSincronizado" xml:space="preserve">
+    <value>Добавлено переводов: {0}, языков: {1}.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoPendientes" xml:space="preserve">
+    <value>Ожидают перевода: {0} (с испанским текстом).</value>
+  </data>
+  <data name="traducciones.titulo" xml:space="preserve">
+    <value>Изменить переводы - LO Technologies</value>
+  </data>
+  <data name="traducciones.volver" xml:space="preserve">
+    <value>Назад к языкам</value>
+  </data>
+  <data name="traducciones.encabezado" xml:space="preserve">
+    <value>Переводы: {0}</value>
+  </data>
+  <data name="traducciones.resumenBase" xml:space="preserve">
+    <value>Ключей: {0} · базовый язык</value>
+  </data>
+  <data name="traducciones.resumen" xml:space="preserve">
+    <value>Ключей: {0} · ожидают: {1} · {2}</value>
+  </data>
+  <data name="traducciones.avisoBase" xml:space="preserve">
+    <value>Вы редактируете базовый язык. Эти тексты показываются, когда в другом языке нет перевода.</value>
+  </data>
+  <data name="traducciones.buscarPlaceholder" xml:space="preserve">
+    <value>Поиск по ключу или тексту...</value>
+  </data>
+  <data name="traducciones.modulo" xml:space="preserve">
+    <value>Модуль</value>
+  </data>
+  <data name="traducciones.todosModulos" xml:space="preserve">
+    <value>Все модули</value>
+  </data>
+  <data name="traducciones.soloPendientes" xml:space="preserve">
+    <value>Только ожидающие</value>
+  </data>
+  <data name="traducciones.colClave" xml:space="preserve">
+    <value>Ключ</value>
+  </data>
+  <data name="traducciones.colTexto" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="traducciones.colTraduccion" xml:space="preserve">
+    <value>Перевод</value>
+  </data>
+  <data name="traducciones.revisada" xml:space="preserve">
+    <value>Проверено</value>
+  </data>
+  <data name="traducciones.sinResultados" xml:space="preserve">
+    <value>Нет переводов, соответствующих фильтру.</value>
+  </data>
+  <data name="traducciones.sinPendientes" xml:space="preserve">
+    <value>Ожидающих переводов не осталось.</value>
+  </data>
+  <data name="traducciones.ayudaGuardar" xml:space="preserve">
+    <value>При вводе перевода он отмечается как проверенный. Изменения сохраняются вместе.</value>
+  </data>
+  <data name="traducciones.ariaTraduccion" xml:space="preserve">
+    <value>Перевод {0}</value>
+  </data>
+  <data name="traducciones.errNoGuardado" xml:space="preserve">
+    <value>Изменения не сохранены.</value>
+  </data>
+  <data name="traducciones.errVacio" xml:space="preserve">
+    <value>Пустой текст: {0}.</value>
+  </data>
+  <data name="traducciones.errLargo" xml:space="preserve">
+    <value>Более {0} символов: {1}.</value>
+  </data>
+  <data name="traducciones.errMarcadores" xml:space="preserve">
+    <value>Заполнители в фигурных скобках должны совпадать с испанскими: {0}.</value>
+  </data>
+  <data name="traducciones.yMas" xml:space="preserve">
+    <value>{0} и ещё {1}</value>
+  </data>
+  <data name="traducciones.msgSinCambios" xml:space="preserve">
+    <value>Изменений для сохранения не было.</value>
+  </data>
+  <data name="traducciones.msgGuardada" xml:space="preserve">
+    <value>Сохранён 1 перевод. Он уже отображается в системе.</value>
+  </data>
+  <data name="traducciones.msgGuardadas" xml:space="preserve">
+    <value>Сохранено переводов: {0}. Они уже отображаются в системе.</value>
+  </data>
 </root>

@@ -578,4 +578,433 @@
   <data name="permisos.errAutoBloqueo" xml:space="preserve">
     <value>Questa modifica ti toglierebbe il permesso '{0}' e perderesti l'accesso a questa schermata.</value>
   </data>
+  <data name="comun.filtrar" xml:space="preserve">
+    <value>Filtra</value>
+  </data>
+  <data name="comun.anterior" xml:space="preserve">
+    <value>Precedente</value>
+  </data>
+  <data name="comun.siguiente" xml:space="preserve">
+    <value>Successivo</value>
+  </data>
+  <data name="comun.errRestaurar" xml:space="preserve">
+    <value>Impossibile ripristinare il database.</value>
+  </data>
+  <data name="auditoria.titulo" xml:space="preserve">
+    <value>Audit / Registro eventi - LO Technologies</value>
+  </data>
+  <data name="auditoria.subtitulo" xml:space="preserve">
+    <value>CUS 015 — Registro delle azioni per audit e sicurezza</value>
+  </data>
+  <data name="auditoria.btnExportar" xml:space="preserve">
+    <value>Esporta log</value>
+  </data>
+  <data name="auditoria.buscarPlaceholder" xml:space="preserve">
+    <value>Cerca per utente, azione, entità...</value>
+  </data>
+  <data name="auditoria.fechaDesde" xml:space="preserve">
+    <value>Data da</value>
+  </data>
+  <data name="auditoria.fechaHasta" xml:space="preserve">
+    <value>Data a</value>
+  </data>
+  <data name="auditoria.todasAcciones" xml:space="preserve">
+    <value>Tutte le azioni</value>
+  </data>
+  <data name="auditoria.todosNiveles" xml:space="preserve">
+    <value>Tutti i livelli</value>
+  </data>
+  <data name="auditoria.nivelInfo" xml:space="preserve">
+    <value>Info (1)</value>
+  </data>
+  <data name="auditoria.nivelAdvertencia" xml:space="preserve">
+    <value>Avviso (2)</value>
+  </data>
+  <data name="auditoria.nivelError" xml:space="preserve">
+    <value>Errore (3)</value>
+  </data>
+  <data name="auditoria.colFecha" xml:space="preserve">
+    <value>Data/Ora</value>
+  </data>
+  <data name="auditoria.colTipo" xml:space="preserve">
+    <value>Tipo di evento</value>
+  </data>
+  <data name="auditoria.colDetalle" xml:space="preserve">
+    <value>Dettaglio</value>
+  </data>
+  <data name="auditoria.colNivel" xml:space="preserve">
+    <value>Livello</value>
+  </data>
+  <data name="auditoria.sinResultados" xml:space="preserve">
+    <value>Nessun evento corrisponde ai filtri applicati.</value>
+  </data>
+  <data name="auditoria.ultimosTresDias" xml:space="preserve">
+    <value>Ultimi 3 giorni</value>
+  </data>
+  <data name="auditoria.errSinFiltro" xml:space="preserve">
+    <value>Scegli almeno un filtro.</value>
+  </data>
+  <data name="auditoria.errFechas" xml:space="preserve">
+    <value>La data DA non può essere successiva alla data A.</value>
+  </data>
+  <data name="auditoria.msgSinSucesos" xml:space="preserve">
+    <value>Nessun evento.</value>
+  </data>
+  <data name="auditoria.mostrandoFiltrados" xml:space="preserve">
+    <value>{0} risultato/i filtrato/i</value>
+  </data>
+  <data name="auditoria.hoja" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="integridad.titulo" xml:space="preserve">
+    <value>Integrità del sistema - LO Technologies</value>
+  </data>
+  <data name="integridad.encabezado" xml:space="preserve">
+    <value>Integrità dei dati</value>
+  </data>
+  <data name="integridad.inconsistencias" xml:space="preserve">
+    <value>Incoerenze rilevate</value>
+  </data>
+  <data name="integridad.colTabla" xml:space="preserve">
+    <value>Tabella</value>
+  </data>
+  <data name="integridad.colRegistro" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="integridad.colProblema" xml:space="preserve">
+    <value>Problema</value>
+  </data>
+  <data name="integridad.todaLaTabla" xml:space="preserve">
+    <value>Intera tabella</value>
+  </data>
+  <data name="integridad.sinDvv" xml:space="preserve">
+    <value>La cifra di controllo verticale (DVV) della tabella non esiste. Potrebbe essere stata eliminata dalla tabella DigitoVerificador.</value>
+  </data>
+  <data name="integridad.sinDvh" xml:space="preserve">
+    <value>Il record non ha la cifra di controllo (DVH). Potrebbe essere stato inserito fuori dal sistema.</value>
+  </data>
+  <data name="integridad.dvhDistinto" xml:space="preserve">
+    <value>Il DVH non corrisponde ai dati del record. È stato modificato un dato o il DVH stesso.</value>
+  </data>
+  <data name="integridad.cantidadDistinta" xml:space="preserve">
+    <value>La tabella ha {0} record e se ne attendevano {1}. Sono stati aggiunti o eliminati record fuori dal sistema.</value>
+  </data>
+  <data name="integridad.dvvDistinto" xml:space="preserve">
+    <value>La cifra di controllo verticale (DVV) non corrisponde. Sono stati modificati record ricalcolando il loro DVH, oppure è stato alterato il DVV salvato.</value>
+  </data>
+  <data name="integridad.sinInconsistencias" xml:space="preserve">
+    <value>Nessuna incoerenza rilevata.</value>
+  </data>
+  <data name="integridad.btnRecalcular" xml:space="preserve">
+    <value>Ricalcola cifre di controllo</value>
+  </data>
+  <data name="integridad.confirmarRecalcular" xml:space="preserve">
+    <value>Confermi di voler ricalcolare le cifre di controllo di tutte le tabelle?</value>
+  </data>
+  <data name="integridad.btnRestaurar" xml:space="preserve">
+    <value>Ripristina database</value>
+  </data>
+  <data name="integridad.confirmarRestaurar" xml:space="preserve">
+    <value>Confermi di voler ripristinare il database da un backup? Questa azione sostituisce i dati attuali.</value>
+  </data>
+  <data name="integridad.btnSalir" xml:space="preserve">
+    <value>Esci</value>
+  </data>
+  <data name="integridad.msgRecalculado" xml:space="preserve">
+    <value>Cifre di controllo calcolate correttamente</value>
+  </data>
+  <data name="integridad.errRecalcular" xml:space="preserve">
+    <value>Impossibile ricalcolare le cifre di controllo</value>
+  </data>
+  <data name="integridad.errSinBackup" xml:space="preserve">
+    <value>Non è disponibile alcun backup da ripristinare.</value>
+  </data>
+  <data name="integridad.msgRestaurada" xml:space="preserve">
+    <value>Database ripristinato. Prova di nuovo ad accedere.</value>
+  </data>
+  <data name="backup.titulo" xml:space="preserve">
+    <value>Backup / Ripristino - LO Technologies</value>
+  </data>
+  <data name="backup.btnCrear" xml:space="preserve">
+    <value>Crea backup</value>
+  </data>
+  <data name="backup.ultimo" xml:space="preserve">
+    <value>Ultimo backup</value>
+  </data>
+  <data name="backup.frecuencia" xml:space="preserve">
+    <value>Frequenza</value>
+  </data>
+  <data name="backup.semanal" xml:space="preserve">
+    <value>Settimanale</value>
+  </data>
+  <data name="backup.retencion" xml:space="preserve">
+    <value>Conservazione</value>
+  </data>
+  <data name="backup.treintaDias" xml:space="preserve">
+    <value>30 giorni</value>
+  </data>
+  <data name="backup.historial" xml:space="preserve">
+    <value>Cronologia dei backup</value>
+  </data>
+  <data name="backup.colNombre" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="backup.colFecha" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="backup.colTamanio" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="backup.colTipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="backup.tipoManual" xml:space="preserve">
+    <value>Manuale</value>
+  </data>
+  <data name="backup.ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="backup.error" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="backup.descargar" xml:space="preserve">
+    <value>Scarica</value>
+  </data>
+  <data name="backup.restaurar" xml:space="preserve">
+    <value>Ripristina</value>
+  </data>
+  <data name="backup.sinBackups" xml:space="preserve">
+    <value>Non è ancora stato generato alcun backup.</value>
+  </data>
+  <data name="backup.confirmarTitulo" xml:space="preserve">
+    <value>Conferma ripristino</value>
+  </data>
+  <data name="backup.alertaTitulo" xml:space="preserve">
+    <value>Azione distruttiva.</value>
+  </data>
+  <data name="backup.alertaTexto" xml:space="preserve">
+    <value>Ripristinando questo backup, tutti i dati attuali saranno sostituiti da quelli del punto di ripristino selezionato. L'azione non può essere annullata.</value>
+  </data>
+  <data name="backup.puntoRestauracion" xml:space="preserve">
+    <value>Punto di ripristino:</value>
+  </data>
+  <data name="backup.tamanio" xml:space="preserve">
+    <value>Dimensione:</value>
+  </data>
+  <data name="backup.escribiConfirmar" xml:space="preserve">
+    <value>Scrivi "{0}" per procedere</value>
+  </data>
+  <data name="backup.palabraConfirmar" xml:space="preserve">
+    <value>CONFERMA</value>
+  </data>
+  <data name="backup.btnRestaurar" xml:space="preserve">
+    <value>Ripristina backup</value>
+  </data>
+  <data name="backup.msgRealizado" xml:space="preserve">
+    <value>Backup eseguito correttamente.</value>
+  </data>
+  <data name="backup.errRealizar" xml:space="preserve">
+    <value>Impossibile generare il backup.</value>
+  </data>
+  <data name="backup.errEscribirConfirmar" xml:space="preserve">
+    <value>Devi scrivere {0} per procedere.</value>
+  </data>
+  <data name="backup.msgRestaurada" xml:space="preserve">
+    <value>Database ripristinato correttamente.</value>
+  </data>
+  <data name="idioma.es" xml:space="preserve">
+    <value>Spagnolo</value>
+  </data>
+  <data name="idioma.en" xml:space="preserve">
+    <value>Inglese</value>
+  </data>
+  <data name="idioma.pt" xml:space="preserve">
+    <value>Portoghese</value>
+  </data>
+  <data name="idioma.fr" xml:space="preserve">
+    <value>Francese</value>
+  </data>
+  <data name="idioma.de" xml:space="preserve">
+    <value>Tedesco</value>
+  </data>
+  <data name="idioma.it" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="idioma.ja" xml:space="preserve">
+    <value>Giapponese</value>
+  </data>
+  <data name="idioma.ru" xml:space="preserve">
+    <value>Russo</value>
+  </data>
+  <data name="idioma.ar" xml:space="preserve">
+    <value>Arabo</value>
+  </data>
+  <data name="idioma.tr" xml:space="preserve">
+    <value>Turco</value>
+  </data>
+  <data name="idiomas.titulo" xml:space="preserve">
+    <value>Gestione lingue - LO Technologies</value>
+  </data>
+  <data name="idiomas.encabezado" xml:space="preserve">
+    <value>Gestione lingue</value>
+  </data>
+  <data name="idiomas.subtitulo" xml:space="preserve">
+    <value>Aggiungi lingue dal catalogo, controlla le traduzioni e attivale per gli utenti.</value>
+  </data>
+  <data name="idiomas.btnSincronizar" xml:space="preserve">
+    <value>Sincronizza chiavi</value>
+  </data>
+  <data name="idiomas.ayudaSincronizar" xml:space="preserve">
+    <value>Aggiunge a tutte le lingue le nuove chiavi del catalogo, senza modificare le traduzioni esistenti</value>
+  </data>
+  <data name="idiomas.btnAgregar" xml:space="preserve">
+    <value>Aggiungi lingua</value>
+  </data>
+  <data name="idiomas.predeterminado" xml:space="preserve">
+    <value>Predefinita</value>
+  </data>
+  <data name="idiomas.revisadas" xml:space="preserve">
+    <value>Traduzioni verificate</value>
+  </data>
+  <data name="idiomas.revisadasDe" xml:space="preserve">
+    <value>Traduzioni verificate di {0}</value>
+  </data>
+  <data name="idiomas.editarTraducciones" xml:space="preserve">
+    <value>Modifica traduzioni</value>
+  </data>
+  <data name="idiomas.activar" xml:space="preserve">
+    <value>Attiva</value>
+  </data>
+  <data name="idiomas.desactivar" xml:space="preserve">
+    <value>Disattiva</value>
+  </data>
+  <data name="idiomas.idiomaBase" xml:space="preserve">
+    <value>Lingua base: non si può disattivare</value>
+  </data>
+  <data name="idiomas.idioma" xml:space="preserve">
+    <value>Lingua *</value>
+  </data>
+  <data name="idiomas.ayudaAgregar" xml:space="preserve">
+    <value>Vengono caricate tutte le chiavi del sistema con i testi del catalogo di quella lingua. Quelle assenti dal catalogo mantengono il testo in spagnolo e sono contrassegnate come da completare. La lingua resta inattiva: controlla le traduzioni da "Modifica traduzioni" e poi attivala.</value>
+  </data>
+  <data name="idiomas.todosAgregados" xml:space="preserve">
+    <value>Tutte le lingue del catalogo sono già state aggiunte.</value>
+  </data>
+  <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
+    <value>{0} è stata aggiunta con tutte le traduzioni. Controllale e attiva la lingua.</value>
+  </data>
+  <data name="idiomas.msgAgregadoPendientes" xml:space="preserve">
+    <value>{0} è stata aggiunta. {1} traduzioni sono da completare (con il testo in spagnolo): completale da "Modifica traduzioni" prima di attivarla.</value>
+  </data>
+  <data name="idiomas.errYaExiste" xml:space="preserve">
+    <value>{0} era già stata aggiunta.</value>
+  </data>
+  <data name="idiomas.errNoCatalogo" xml:space="preserve">
+    <value>La lingua selezionata non è nel catalogo.</value>
+  </data>
+  <data name="idiomas.msgDesactivado" xml:space="preserve">
+    <value>Lingua disattivata: non compare più nel selettore della lingua.</value>
+  </data>
+  <data name="idiomas.msgActivado" xml:space="preserve">
+    <value>Lingua attivata: gli utenti possono già sceglierla.</value>
+  </data>
+  <data name="idiomas.msgActivadoPendientes" xml:space="preserve">
+    <value>Lingua attivata. Ha {0} traduzioni da completare che verranno mostrate in spagnolo.</value>
+  </data>
+  <data name="idiomas.errPredeterminado" xml:space="preserve">
+    <value>La lingua predefinita non può essere disattivata.</value>
+  </data>
+  <data name="idiomas.errEnUso" xml:space="preserve">
+    <value>Impossibile disattivare: {0} utente/i hanno questa lingua assegnata.</value>
+  </data>
+  <data name="idiomas.errNoExiste" xml:space="preserve">
+    <value>La lingua non esiste.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoNada" xml:space="preserve">
+    <value>Tutte le lingue hanno già tutte le chiavi del catalogo.</value>
+  </data>
+  <data name="idiomas.msgSincronizado" xml:space="preserve">
+    <value>Sono state aggiunte {0} traduzioni in {1} lingua/e.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoPendientes" xml:space="preserve">
+    <value>{0} sono da completare (con il testo in spagnolo).</value>
+  </data>
+  <data name="traducciones.titulo" xml:space="preserve">
+    <value>Modifica traduzioni - LO Technologies</value>
+  </data>
+  <data name="traducciones.volver" xml:space="preserve">
+    <value>Torna alle lingue</value>
+  </data>
+  <data name="traducciones.encabezado" xml:space="preserve">
+    <value>Traduzioni: {0}</value>
+  </data>
+  <data name="traducciones.resumenBase" xml:space="preserve">
+    <value>{0} chiavi · lingua base</value>
+  </data>
+  <data name="traducciones.resumen" xml:space="preserve">
+    <value>{0} chiavi · {1} da completare · {2}</value>
+  </data>
+  <data name="traducciones.avisoBase" xml:space="preserve">
+    <value>Stai modificando la lingua base. Questi testi vengono mostrati quando manca una traduzione in un'altra lingua.</value>
+  </data>
+  <data name="traducciones.buscarPlaceholder" xml:space="preserve">
+    <value>Cerca per chiave o testo...</value>
+  </data>
+  <data name="traducciones.modulo" xml:space="preserve">
+    <value>Modulo</value>
+  </data>
+  <data name="traducciones.todosModulos" xml:space="preserve">
+    <value>Tutti i moduli</value>
+  </data>
+  <data name="traducciones.soloPendientes" xml:space="preserve">
+    <value>Solo da completare</value>
+  </data>
+  <data name="traducciones.colClave" xml:space="preserve">
+    <value>Chiave</value>
+  </data>
+  <data name="traducciones.colTexto" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="traducciones.colTraduccion" xml:space="preserve">
+    <value>Traduzione</value>
+  </data>
+  <data name="traducciones.revisada" xml:space="preserve">
+    <value>Verificata</value>
+  </data>
+  <data name="traducciones.sinResultados" xml:space="preserve">
+    <value>Nessuna traduzione corrisponde al filtro.</value>
+  </data>
+  <data name="traducciones.sinPendientes" xml:space="preserve">
+    <value>Non ci sono più traduzioni da completare.</value>
+  </data>
+  <data name="traducciones.ayudaGuardar" xml:space="preserve">
+    <value>Scrivendo in una traduzione, questa viene segnata come verificata. Le modifiche si salvano insieme.</value>
+  </data>
+  <data name="traducciones.ariaTraduccion" xml:space="preserve">
+    <value>Traduzione di {0}</value>
+  </data>
+  <data name="traducciones.errNoGuardado" xml:space="preserve">
+    <value>Le modifiche non sono state salvate.</value>
+  </data>
+  <data name="traducciones.errVacio" xml:space="preserve">
+    <value>Testo vuoto in: {0}.</value>
+  </data>
+  <data name="traducciones.errLargo" xml:space="preserve">
+    <value>Più di {0} caratteri in: {1}.</value>
+  </data>
+  <data name="traducciones.errMarcadores" xml:space="preserve">
+    <value>I segnaposto tra parentesi graffe devono essere gli stessi dello spagnolo in: {0}.</value>
+  </data>
+  <data name="traducciones.yMas" xml:space="preserve">
+    <value>{0} e altri {1}</value>
+  </data>
+  <data name="traducciones.msgSinCambios" xml:space="preserve">
+    <value>Non c'erano modifiche da salvare.</value>
+  </data>
+  <data name="traducciones.msgGuardada" xml:space="preserve">
+    <value>È stata salvata 1 traduzione. È già visibile nel sistema.</value>
+  </data>
+  <data name="traducciones.msgGuardadas" xml:space="preserve">
+    <value>Sono state salvate {0} traduzioni. Sono già visibili nel sistema.</value>
+  </data>
 </root>

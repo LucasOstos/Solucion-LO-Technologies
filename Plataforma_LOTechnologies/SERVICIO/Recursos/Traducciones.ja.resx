@@ -578,4 +578,433 @@
   <data name="permisos.errAutoBloqueo" xml:space="preserve">
     <value>この変更により「{0}」の権限が失われ、この画面にアクセスできなくなります。</value>
   </data>
+  <data name="comun.filtrar" xml:space="preserve">
+    <value>絞り込む</value>
+  </data>
+  <data name="comun.anterior" xml:space="preserve">
+    <value>前へ</value>
+  </data>
+  <data name="comun.siguiente" xml:space="preserve">
+    <value>次へ</value>
+  </data>
+  <data name="comun.errRestaurar" xml:space="preserve">
+    <value>データベースを復元できませんでした。</value>
+  </data>
+  <data name="auditoria.titulo" xml:space="preserve">
+    <value>監査 / ログ - LO Technologies</value>
+  </data>
+  <data name="auditoria.subtitulo" xml:space="preserve">
+    <value>CUS 015 — 監査とセキュリティのための操作記録</value>
+  </data>
+  <data name="auditoria.btnExportar" xml:space="preserve">
+    <value>ログをエクスポート</value>
+  </data>
+  <data name="auditoria.buscarPlaceholder" xml:space="preserve">
+    <value>ユーザー、操作、対象で検索...</value>
+  </data>
+  <data name="auditoria.fechaDesde" xml:space="preserve">
+    <value>開始日</value>
+  </data>
+  <data name="auditoria.fechaHasta" xml:space="preserve">
+    <value>終了日</value>
+  </data>
+  <data name="auditoria.todasAcciones" xml:space="preserve">
+    <value>すべての操作</value>
+  </data>
+  <data name="auditoria.todosNiveles" xml:space="preserve">
+    <value>すべてのレベル</value>
+  </data>
+  <data name="auditoria.nivelInfo" xml:space="preserve">
+    <value>情報 (1)</value>
+  </data>
+  <data name="auditoria.nivelAdvertencia" xml:space="preserve">
+    <value>警告 (2)</value>
+  </data>
+  <data name="auditoria.nivelError" xml:space="preserve">
+    <value>エラー (3)</value>
+  </data>
+  <data name="auditoria.colFecha" xml:space="preserve">
+    <value>日時</value>
+  </data>
+  <data name="auditoria.colTipo" xml:space="preserve">
+    <value>イベントの種類</value>
+  </data>
+  <data name="auditoria.colDetalle" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="auditoria.colNivel" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="auditoria.sinResultados" xml:space="preserve">
+    <value>適用したフィルターに一致するイベントはありません。</value>
+  </data>
+  <data name="auditoria.ultimosTresDias" xml:space="preserve">
+    <value>直近3日間を表示中</value>
+  </data>
+  <data name="auditoria.errSinFiltro" xml:space="preserve">
+    <value>フィルターを1つ以上選択してください。</value>
+  </data>
+  <data name="auditoria.errFechas" xml:space="preserve">
+    <value>開始日を終了日より後にすることはできません。</value>
+  </data>
+  <data name="auditoria.msgSinSucesos" xml:space="preserve">
+    <value>イベントはありません。</value>
+  </data>
+  <data name="auditoria.mostrandoFiltrados" xml:space="preserve">
+    <value>絞り込み結果：{0} 件</value>
+  </data>
+  <data name="auditoria.hoja" xml:space="preserve">
+    <value>監査</value>
+  </data>
+  <data name="integridad.titulo" xml:space="preserve">
+    <value>システムの整合性 - LO Technologies</value>
+  </data>
+  <data name="integridad.encabezado" xml:space="preserve">
+    <value>データの整合性</value>
+  </data>
+  <data name="integridad.inconsistencias" xml:space="preserve">
+    <value>検出された不整合</value>
+  </data>
+  <data name="integridad.colTabla" xml:space="preserve">
+    <value>テーブル</value>
+  </data>
+  <data name="integridad.colRegistro" xml:space="preserve">
+    <value>レコード</value>
+  </data>
+  <data name="integridad.colProblema" xml:space="preserve">
+    <value>問題</value>
+  </data>
+  <data name="integridad.todaLaTabla" xml:space="preserve">
+    <value>テーブル全体</value>
+  </data>
+  <data name="integridad.sinDvv" xml:space="preserve">
+    <value>テーブルの垂直チェックディジット（DVV）が存在しません。DigitoVerificador テーブルから削除された可能性があります。</value>
+  </data>
+  <data name="integridad.sinDvh" xml:space="preserve">
+    <value>レコードにチェックディジット（DVH）がありません。システム外で追加された可能性があります。</value>
+  </data>
+  <data name="integridad.dvhDistinto" xml:space="preserve">
+    <value>DVH がレコードのデータと一致しません。データまたは DVH 自体が変更されています。</value>
+  </data>
+  <data name="integridad.cantidadDistinta" xml:space="preserve">
+    <value>テーブルのレコード数は {0} 件ですが、{1} 件のはずです。システム外でレコードが追加または削除されました。</value>
+  </data>
+  <data name="integridad.dvvDistinto" xml:space="preserve">
+    <value>垂直チェックディジット（DVV）が一致しません。DVH を再計算してレコードが変更されたか、保存された DVV が改ざんされています。</value>
+  </data>
+  <data name="integridad.sinInconsistencias" xml:space="preserve">
+    <value>不整合は検出されませんでした。</value>
+  </data>
+  <data name="integridad.btnRecalcular" xml:space="preserve">
+    <value>チェックディジットを再計算</value>
+  </data>
+  <data name="integridad.confirmarRecalcular" xml:space="preserve">
+    <value>すべてのテーブルのチェックディジットを再計算しますか？</value>
+  </data>
+  <data name="integridad.btnRestaurar" xml:space="preserve">
+    <value>データベースを復元</value>
+  </data>
+  <data name="integridad.confirmarRestaurar" xml:space="preserve">
+    <value>バックアップからデータベースを復元しますか？現在のデータは置き換えられます。</value>
+  </data>
+  <data name="integridad.btnSalir" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="integridad.msgRecalculado" xml:space="preserve">
+    <value>チェックディジットを計算しました</value>
+  </data>
+  <data name="integridad.errRecalcular" xml:space="preserve">
+    <value>チェックディジットを再計算できませんでした</value>
+  </data>
+  <data name="integridad.errSinBackup" xml:space="preserve">
+    <value>復元できるバックアップがありません。</value>
+  </data>
+  <data name="integridad.msgRestaurada" xml:space="preserve">
+    <value>データベースを復元しました。もう一度ログインしてください。</value>
+  </data>
+  <data name="backup.titulo" xml:space="preserve">
+    <value>バックアップ / 復元 - LO Technologies</value>
+  </data>
+  <data name="backup.btnCrear" xml:space="preserve">
+    <value>バックアップを作成</value>
+  </data>
+  <data name="backup.ultimo" xml:space="preserve">
+    <value>最新のバックアップ</value>
+  </data>
+  <data name="backup.frecuencia" xml:space="preserve">
+    <value>頻度</value>
+  </data>
+  <data name="backup.semanal" xml:space="preserve">
+    <value>毎週</value>
+  </data>
+  <data name="backup.retencion" xml:space="preserve">
+    <value>保存期間</value>
+  </data>
+  <data name="backup.treintaDias" xml:space="preserve">
+    <value>30日</value>
+  </data>
+  <data name="backup.historial" xml:space="preserve">
+    <value>バックアップ履歴</value>
+  </data>
+  <data name="backup.colNombre" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="backup.colFecha" xml:space="preserve">
+    <value>日付</value>
+  </data>
+  <data name="backup.colTamanio" xml:space="preserve">
+    <value>サイズ</value>
+  </data>
+  <data name="backup.colTipo" xml:space="preserve">
+    <value>種類</value>
+  </data>
+  <data name="backup.tipoManual" xml:space="preserve">
+    <value>手動</value>
+  </data>
+  <data name="backup.ok" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="backup.error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="backup.descargar" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+  <data name="backup.restaurar" xml:space="preserve">
+    <value>復元</value>
+  </data>
+  <data name="backup.sinBackups" xml:space="preserve">
+    <value>まだバックアップは作成されていません。</value>
+  </data>
+  <data name="backup.confirmarTitulo" xml:space="preserve">
+    <value>復元の確認</value>
+  </data>
+  <data name="backup.alertaTitulo" xml:space="preserve">
+    <value>取り消せない操作です。</value>
+  </data>
+  <data name="backup.alertaTexto" xml:space="preserve">
+    <value>このバックアップを復元すると、現在のデータはすべて選択した復元ポイントのデータに置き換えられます。この操作は元に戻せません。</value>
+  </data>
+  <data name="backup.puntoRestauracion" xml:space="preserve">
+    <value>復元ポイント：</value>
+  </data>
+  <data name="backup.tamanio" xml:space="preserve">
+    <value>サイズ：</value>
+  </data>
+  <data name="backup.escribiConfirmar" xml:space="preserve">
+    <value>続行するには「{0}」と入力してください</value>
+  </data>
+  <data name="backup.palabraConfirmar" xml:space="preserve">
+    <value>CONFIRM</value>
+  </data>
+  <data name="backup.btnRestaurar" xml:space="preserve">
+    <value>バックアップを復元</value>
+  </data>
+  <data name="backup.msgRealizado" xml:space="preserve">
+    <value>バックアップを作成しました。</value>
+  </data>
+  <data name="backup.errRealizar" xml:space="preserve">
+    <value>バックアップを作成できませんでした。</value>
+  </data>
+  <data name="backup.errEscribirConfirmar" xml:space="preserve">
+    <value>続行するには {0} と入力する必要があります。</value>
+  </data>
+  <data name="backup.msgRestaurada" xml:space="preserve">
+    <value>データベースを復元しました。</value>
+  </data>
+  <data name="idioma.es" xml:space="preserve">
+    <value>スペイン語</value>
+  </data>
+  <data name="idioma.en" xml:space="preserve">
+    <value>英語</value>
+  </data>
+  <data name="idioma.pt" xml:space="preserve">
+    <value>ポルトガル語</value>
+  </data>
+  <data name="idioma.fr" xml:space="preserve">
+    <value>フランス語</value>
+  </data>
+  <data name="idioma.de" xml:space="preserve">
+    <value>ドイツ語</value>
+  </data>
+  <data name="idioma.it" xml:space="preserve">
+    <value>イタリア語</value>
+  </data>
+  <data name="idioma.ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="idioma.ru" xml:space="preserve">
+    <value>ロシア語</value>
+  </data>
+  <data name="idioma.ar" xml:space="preserve">
+    <value>アラビア語</value>
+  </data>
+  <data name="idioma.tr" xml:space="preserve">
+    <value>トルコ語</value>
+  </data>
+  <data name="idiomas.titulo" xml:space="preserve">
+    <value>言語管理 - LO Technologies</value>
+  </data>
+  <data name="idiomas.encabezado" xml:space="preserve">
+    <value>言語管理</value>
+  </data>
+  <data name="idiomas.subtitulo" xml:space="preserve">
+    <value>カタログから言語を追加し、翻訳を確認してからユーザー向けに有効にします。</value>
+  </data>
+  <data name="idiomas.btnSincronizar" xml:space="preserve">
+    <value>キーを同期</value>
+  </data>
+  <data name="idiomas.ayudaSincronizar" xml:space="preserve">
+    <value>既存の翻訳を変更せずに、カタログの新しいキーをすべての言語に追加します</value>
+  </data>
+  <data name="idiomas.btnAgregar" xml:space="preserve">
+    <value>言語を追加</value>
+  </data>
+  <data name="idiomas.predeterminado" xml:space="preserve">
+    <value>既定</value>
+  </data>
+  <data name="idiomas.revisadas" xml:space="preserve">
+    <value>確認済みの翻訳</value>
+  </data>
+  <data name="idiomas.revisadasDe" xml:space="preserve">
+    <value>{0} の確認済みの翻訳</value>
+  </data>
+  <data name="idiomas.editarTraducciones" xml:space="preserve">
+    <value>翻訳を編集</value>
+  </data>
+  <data name="idiomas.activar" xml:space="preserve">
+    <value>有効にする</value>
+  </data>
+  <data name="idiomas.desactivar" xml:space="preserve">
+    <value>無効にする</value>
+  </data>
+  <data name="idiomas.idiomaBase" xml:space="preserve">
+    <value>基本言語：無効にできません</value>
+  </data>
+  <data name="idiomas.idioma" xml:space="preserve">
+    <value>言語 *</value>
+  </data>
+  <data name="idiomas.ayudaAgregar" xml:space="preserve">
+    <value>システムのすべてのキーが、その言語のカタログの文言で読み込まれます。カタログにないキーはスペイン語のまま「未確認」になります。言語は無効のままです。「翻訳を編集」で翻訳を確認してから有効にしてください。</value>
+  </data>
+  <data name="idiomas.todosAgregados" xml:space="preserve">
+    <value>カタログのすべての言語が既に追加されています。</value>
+  </data>
+  <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
+    <value>{0} をすべての翻訳とともに追加しました。確認してから言語を有効にしてください。</value>
+  </data>
+  <data name="idiomas.msgAgregadoPendientes" xml:space="preserve">
+    <value>{0} を追加しました。{1} 件の翻訳が未確認（スペイン語のまま）です。有効にする前に「翻訳を編集」で完成させてください。</value>
+  </data>
+  <data name="idiomas.errYaExiste" xml:space="preserve">
+    <value>{0} は既に追加されています。</value>
+  </data>
+  <data name="idiomas.errNoCatalogo" xml:space="preserve">
+    <value>選択した言語はカタログにありません。</value>
+  </data>
+  <data name="idiomas.msgDesactivado" xml:space="preserve">
+    <value>言語を無効にしました。言語の選択肢に表示されなくなります。</value>
+  </data>
+  <data name="idiomas.msgActivado" xml:space="preserve">
+    <value>言語を有効にしました。ユーザーが選択できるようになりました。</value>
+  </data>
+  <data name="idiomas.msgActivadoPendientes" xml:space="preserve">
+    <value>言語を有効にしました。未確認の翻訳が {0} 件あり、スペイン語で表示されます。</value>
+  </data>
+  <data name="idiomas.errPredeterminado" xml:space="preserve">
+    <value>既定の言語は無効にできません。</value>
+  </data>
+  <data name="idiomas.errEnUso" xml:space="preserve">
+    <value>無効にできません：{0} 人のユーザーにこの言語が割り当てられています。</value>
+  </data>
+  <data name="idiomas.errNoExiste" xml:space="preserve">
+    <value>この言語は存在しません。</value>
+  </data>
+  <data name="idiomas.msgSincronizadoNada" xml:space="preserve">
+    <value>すべての言語にカタログのキーがすべてそろっています。</value>
+  </data>
+  <data name="idiomas.msgSincronizado" xml:space="preserve">
+    <value>{1} 言語に {0} 件の翻訳を追加しました。</value>
+  </data>
+  <data name="idiomas.msgSincronizadoPendientes" xml:space="preserve">
+    <value>うち {0} 件は未確認（スペイン語のまま）です。</value>
+  </data>
+  <data name="traducciones.titulo" xml:space="preserve">
+    <value>翻訳を編集 - LO Technologies</value>
+  </data>
+  <data name="traducciones.volver" xml:space="preserve">
+    <value>言語一覧に戻る</value>
+  </data>
+  <data name="traducciones.encabezado" xml:space="preserve">
+    <value>翻訳：{0}</value>
+  </data>
+  <data name="traducciones.resumenBase" xml:space="preserve">
+    <value>キー {0} 件・基本言語</value>
+  </data>
+  <data name="traducciones.resumen" xml:space="preserve">
+    <value>キー {0} 件・未確認 {1} 件・{2}</value>
+  </data>
+  <data name="traducciones.avisoBase" xml:space="preserve">
+    <value>基本言語を編集しています。他の言語で翻訳がない場合にこの文言が表示されます。</value>
+  </data>
+  <data name="traducciones.buscarPlaceholder" xml:space="preserve">
+    <value>キーまたは文言で検索...</value>
+  </data>
+  <data name="traducciones.modulo" xml:space="preserve">
+    <value>モジュール</value>
+  </data>
+  <data name="traducciones.todosModulos" xml:space="preserve">
+    <value>すべてのモジュール</value>
+  </data>
+  <data name="traducciones.soloPendientes" xml:space="preserve">
+    <value>未確認のみ</value>
+  </data>
+  <data name="traducciones.colClave" xml:space="preserve">
+    <value>キー</value>
+  </data>
+  <data name="traducciones.colTexto" xml:space="preserve">
+    <value>文言</value>
+  </data>
+  <data name="traducciones.colTraduccion" xml:space="preserve">
+    <value>翻訳</value>
+  </data>
+  <data name="traducciones.revisada" xml:space="preserve">
+    <value>確認済み</value>
+  </data>
+  <data name="traducciones.sinResultados" xml:space="preserve">
+    <value>条件に一致する翻訳はありません。</value>
+  </data>
+  <data name="traducciones.sinPendientes" xml:space="preserve">
+    <value>未確認の翻訳はありません。</value>
+  </data>
+  <data name="traducciones.ayudaGuardar" xml:space="preserve">
+    <value>翻訳を入力すると確認済みになります。変更はまとめて保存されます。</value>
+  </data>
+  <data name="traducciones.ariaTraduccion" xml:space="preserve">
+    <value>{0} の翻訳</value>
+  </data>
+  <data name="traducciones.errNoGuardado" xml:space="preserve">
+    <value>変更は保存されませんでした。</value>
+  </data>
+  <data name="traducciones.errVacio" xml:space="preserve">
+    <value>空の文言：{0}。</value>
+  </data>
+  <data name="traducciones.errLargo" xml:space="preserve">
+    <value>{0} 文字を超えています：{1}。</value>
+  </data>
+  <data name="traducciones.errMarcadores" xml:space="preserve">
+    <value>波かっこのプレースホルダーはスペイン語と同じにする必要があります：{0}。</value>
+  </data>
+  <data name="traducciones.yMas" xml:space="preserve">
+    <value>{0} ほか {1} 件</value>
+  </data>
+  <data name="traducciones.msgSinCambios" xml:space="preserve">
+    <value>保存する変更はありませんでした。</value>
+  </data>
+  <data name="traducciones.msgGuardada" xml:space="preserve">
+    <value>1 件の翻訳を保存しました。すでにシステムに反映されています。</value>
+  </data>
+  <data name="traducciones.msgGuardadas" xml:space="preserve">
+    <value>{0} 件の翻訳を保存しました。すでにシステムに反映されています。</value>
+  </data>
 </root>

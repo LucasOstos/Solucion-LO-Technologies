@@ -18,29 +18,30 @@
         <div class="pagina">
             <div class="contenedor">
 
-                <uc:BotonVolverMenu ID="volverIdiomas" runat="server" UrlDestino="PaginaIdiomas.aspx" />
+                <uc:BotonVolverMenu ID="volverIdiomas" runat="server" UrlDestino="PaginaIdiomas.aspx" ClaveTexto="traducciones.volver" />
 
                 <div class="encabezado">
                     <div>
                         <h1>
                             <asp:Literal ID="litTitulo" runat="server" /></h1>
                         <p class="subtitulo">
-                            <asp:Literal ID="litResumen" runat="server" /></p>
+                            <asp:Literal ID="litResumen" runat="server" />
+                        </p>
                     </div>
                 </div>
 
                 <asp:Label ID="lblAvisoBase" runat="server" CssClass="mensaje trd-aviso" Visible="false"
-                    Text="Estás editando el idioma base. Estos textos se muestran cuando falta una traducción en otro idioma." />
+                    Text="Estás editando el idioma base. Estos textos se muestran cuando falta una traducción en otro idioma." Clave="traducciones.avisoBase" />
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
 
                 <div class="filtros">
-                    <asp:TextBox ID="tbBuscar" runat="server" CssClass="campo-buscar" placeholder="Buscar por clave o texto..."
-                        aria-label="Buscar por clave o texto" />
-                    <asp:DropDownList ID="ddlModulo" runat="server" CssClass="selector" aria-label="Módulo" />
+                    <asp:TextBox ID="tbBuscar" runat="server" CssClass="campo-buscar" placeholder="Buscar por clave o texto..." ClavePlaceholder="traducciones.buscarPlaceholder"
+                        aria-label="Buscar por clave o texto" ClaveAria="traducciones.buscarPlaceholder" />
+                    <asp:DropDownList ID="ddlModulo" runat="server" CssClass="selector" aria-label="Módulo" ClaveAria="traducciones.modulo" />
                     <span class="trd-filtro-pendientes" id="spnSoloPendientes" runat="server">
-                        <asp:CheckBox ID="chkSoloPendientes" runat="server" Text="Solo pendientes" />
+                        <asp:CheckBox ID="chkSoloPendientes" runat="server" Text="Solo pendientes" Clave="traducciones.soloPendientes" />
                     </span>
-                    <asp:Button ID="btnBuscar" runat="server" CssClass="boton-buscar" Text="Filtrar" OnClick="btnBuscar_Click" CausesValidation="false" />
+                    <asp:Button ID="btnBuscar" runat="server" CssClass="boton-buscar" Text="Filtrar" Clave="comun.filtrar" OnClick="btnBuscar_Click" CausesValidation="false" />
                 </div>
 
                 <div class="tarjeta">
@@ -49,10 +50,10 @@
                             <table class="tabla trd-tabla">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Clave</th>
-                                        <th scope="col" runat="server" visible='<%# !EsIdiomaBase %>'>Español</th>
-                                        <th scope="col"><%# EsIdiomaBase ? "Texto" : "Traducción" %></th>
-                                        <th scope="col" runat="server" visible='<%# !EsIdiomaBase %>'>Estado</th>
+                                        <th scope="col"><%# Traducir("traducciones.colClave") %></th>
+                                        <th scope="col" runat="server" visible='<%# !EsIdiomaBase %>'><%# NombreIdiomaBase %></th>
+                                        <th scope="col"><%# Traducir(EsIdiomaBase ? "traducciones.colTexto" : "traducciones.colTraduccion") %></th>
+                                        <th scope="col" runat="server" visible='<%# !EsIdiomaBase %>'><%# Traducir("comun.estado") %></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,7 +72,7 @@
                                 </td>
                                 <td class="trd-col-estado" runat="server" visible='<%# !EsIdiomaBase %>'>
                                     <span class="trd-revisada">
-                                        <asp:CheckBox ID="chkRevisada" runat="server" Text="Revisada" Checked='<%# !(bool)Eval("Pendiente") %>' />
+                                        <asp:CheckBox ID="chkRevisada" runat="server" Text="Revisada" Clave="traducciones.revisada" Checked='<%# !(bool)Eval("Pendiente") %>' />
                                     </span>
                                 </td>
                             </tr>
@@ -86,8 +87,8 @@
                 </div>
 
                 <div class="trd-barra-guardar">
-                    <span class="texto-secundario">Al escribir en una traducción se marca como revisada. Los cambios se guardan juntos.</span>
-                    <asp:Button ID="btnGuardar" runat="server" CssClass="boton-nuevo" Text="Guardar cambios"
+                    <span class="texto-secundario" runat="server" clave="traducciones.ayudaGuardar">Al escribir en una traducción se marca como revisada. Los cambios se guardan juntos.</span>
+                    <asp:Button ID="btnGuardar" runat="server" CssClass="boton-nuevo" Text="Guardar cambios" Clave="comun.guardarCambios"
                         OnClick="btnGuardar_Click" OnClientClick="trdGuardando();" CausesValidation="false" />
                 </div>
 

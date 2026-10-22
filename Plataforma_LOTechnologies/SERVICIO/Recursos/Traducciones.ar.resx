@@ -578,4 +578,433 @@
   <data name="permisos.errAutoBloqueo" xml:space="preserve">
     <value>سيؤدي هذا التغيير إلى إزالة صلاحية "{0}" وستفقد الوصول إلى هذه الشاشة.</value>
   </data>
+  <data name="comun.filtrar" xml:space="preserve">
+    <value>تصفية</value>
+  </data>
+  <data name="comun.anterior" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="comun.siguiente" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="comun.errRestaurar" xml:space="preserve">
+    <value>تعذّرت استعادة قاعدة البيانات.</value>
+  </data>
+  <data name="auditoria.titulo" xml:space="preserve">
+    <value>التدقيق / السجل - LO Technologies</value>
+  </data>
+  <data name="auditoria.subtitulo" xml:space="preserve">
+    <value>CUS 015 — سجل الإجراءات للتدقيق والأمان</value>
+  </data>
+  <data name="auditoria.btnExportar" xml:space="preserve">
+    <value>تصدير السجل</value>
+  </data>
+  <data name="auditoria.buscarPlaceholder" xml:space="preserve">
+    <value>البحث حسب المستخدم أو الإجراء أو الكيان...</value>
+  </data>
+  <data name="auditoria.fechaDesde" xml:space="preserve">
+    <value>من تاريخ</value>
+  </data>
+  <data name="auditoria.fechaHasta" xml:space="preserve">
+    <value>إلى تاريخ</value>
+  </data>
+  <data name="auditoria.todasAcciones" xml:space="preserve">
+    <value>جميع الإجراءات</value>
+  </data>
+  <data name="auditoria.todosNiveles" xml:space="preserve">
+    <value>جميع المستويات</value>
+  </data>
+  <data name="auditoria.nivelInfo" xml:space="preserve">
+    <value>معلومات (1)</value>
+  </data>
+  <data name="auditoria.nivelAdvertencia" xml:space="preserve">
+    <value>تحذير (2)</value>
+  </data>
+  <data name="auditoria.nivelError" xml:space="preserve">
+    <value>خطأ (3)</value>
+  </data>
+  <data name="auditoria.colFecha" xml:space="preserve">
+    <value>التاريخ/الوقت</value>
+  </data>
+  <data name="auditoria.colTipo" xml:space="preserve">
+    <value>نوع الحدث</value>
+  </data>
+  <data name="auditoria.colDetalle" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="auditoria.colNivel" xml:space="preserve">
+    <value>المستوى</value>
+  </data>
+  <data name="auditoria.sinResultados" xml:space="preserve">
+    <value>لا توجد أحداث تطابق عوامل التصفية.</value>
+  </data>
+  <data name="auditoria.ultimosTresDias" xml:space="preserve">
+    <value>عرض آخر 3 أيام</value>
+  </data>
+  <data name="auditoria.errSinFiltro" xml:space="preserve">
+    <value>اختر عامل تصفية واحدًا على الأقل.</value>
+  </data>
+  <data name="auditoria.errFechas" xml:space="preserve">
+    <value>لا يمكن أن يكون تاريخ البداية بعد تاريخ النهاية.</value>
+  </data>
+  <data name="auditoria.msgSinSucesos" xml:space="preserve">
+    <value>لا توجد أحداث.</value>
+  </data>
+  <data name="auditoria.mostrandoFiltrados" xml:space="preserve">
+    <value>عرض {0} نتيجة مصفّاة</value>
+  </data>
+  <data name="auditoria.hoja" xml:space="preserve">
+    <value>التدقيق</value>
+  </data>
+  <data name="integridad.titulo" xml:space="preserve">
+    <value>سلامة النظام - LO Technologies</value>
+  </data>
+  <data name="integridad.encabezado" xml:space="preserve">
+    <value>سلامة البيانات</value>
+  </data>
+  <data name="integridad.inconsistencias" xml:space="preserve">
+    <value>حالات عدم الاتساق المكتشفة</value>
+  </data>
+  <data name="integridad.colTabla" xml:space="preserve">
+    <value>الجدول</value>
+  </data>
+  <data name="integridad.colRegistro" xml:space="preserve">
+    <value>السجل</value>
+  </data>
+  <data name="integridad.colProblema" xml:space="preserve">
+    <value>المشكلة</value>
+  </data>
+  <data name="integridad.todaLaTabla" xml:space="preserve">
+    <value>الجدول بأكمله</value>
+  </data>
+  <data name="integridad.sinDvv" xml:space="preserve">
+    <value>رقم التحقق العمودي (DVV) للجدول غير موجود. ربما حُذف من جدول DigitoVerificador.</value>
+  </data>
+  <data name="integridad.sinDvh" xml:space="preserve">
+    <value>لا يحتوي السجل على رقم تحقق (DVH). ربما أُدرج من خارج النظام.</value>
+  </data>
+  <data name="integridad.dvhDistinto" xml:space="preserve">
+    <value>لا يتطابق DVH مع بيانات السجل. تم تعديل قيمة أو DVH نفسه.</value>
+  </data>
+  <data name="integridad.cantidadDistinta" xml:space="preserve">
+    <value>يحتوي الجدول على {0} سجلات بينما كان المتوقع {1}. أُضيفت سجلات أو حُذفت من خارج النظام.</value>
+  </data>
+  <data name="integridad.dvvDistinto" xml:space="preserve">
+    <value>رقم التحقق العمودي (DVV) غير متطابق. عُدّلت سجلات مع إعادة حساب DVH، أو تم تغيير DVV المحفوظ.</value>
+  </data>
+  <data name="integridad.sinInconsistencias" xml:space="preserve">
+    <value>لم يتم اكتشاف أي حالات عدم اتساق.</value>
+  </data>
+  <data name="integridad.btnRecalcular" xml:space="preserve">
+    <value>إعادة حساب أرقام التحقق</value>
+  </data>
+  <data name="integridad.confirmarRecalcular" xml:space="preserve">
+    <value>هل تريد إعادة حساب أرقام التحقق لجميع الجداول؟</value>
+  </data>
+  <data name="integridad.btnRestaurar" xml:space="preserve">
+    <value>استعادة قاعدة البيانات</value>
+  </data>
+  <data name="integridad.confirmarRestaurar" xml:space="preserve">
+    <value>هل تريد استعادة قاعدة البيانات من نسخة احتياطية؟ سيؤدي ذلك إلى استبدال البيانات الحالية.</value>
+  </data>
+  <data name="integridad.btnSalir" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="integridad.msgRecalculado" xml:space="preserve">
+    <value>تم حساب أرقام التحقق بنجاح</value>
+  </data>
+  <data name="integridad.errRecalcular" xml:space="preserve">
+    <value>تعذّرت إعادة حساب أرقام التحقق</value>
+  </data>
+  <data name="integridad.errSinBackup" xml:space="preserve">
+    <value>لا توجد نسخة احتياطية متاحة للاستعادة.</value>
+  </data>
+  <data name="integridad.msgRestaurada" xml:space="preserve">
+    <value>تمت استعادة قاعدة البيانات. حاول تسجيل الدخول مرة أخرى.</value>
+  </data>
+  <data name="backup.titulo" xml:space="preserve">
+    <value>النسخ الاحتياطي / الاستعادة - LO Technologies</value>
+  </data>
+  <data name="backup.btnCrear" xml:space="preserve">
+    <value>إنشاء نسخة احتياطية</value>
+  </data>
+  <data name="backup.ultimo" xml:space="preserve">
+    <value>آخر نسخة احتياطية</value>
+  </data>
+  <data name="backup.frecuencia" xml:space="preserve">
+    <value>التكرار</value>
+  </data>
+  <data name="backup.semanal" xml:space="preserve">
+    <value>أسبوعي</value>
+  </data>
+  <data name="backup.retencion" xml:space="preserve">
+    <value>مدة الاحتفاظ</value>
+  </data>
+  <data name="backup.treintaDias" xml:space="preserve">
+    <value>30 يومًا</value>
+  </data>
+  <data name="backup.historial" xml:space="preserve">
+    <value>سجل النسخ الاحتياطية</value>
+  </data>
+  <data name="backup.colNombre" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="backup.colFecha" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="backup.colTamanio" xml:space="preserve">
+    <value>الحجم</value>
+  </data>
+  <data name="backup.colTipo" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="backup.tipoManual" xml:space="preserve">
+    <value>يدوي</value>
+  </data>
+  <data name="backup.ok" xml:space="preserve">
+    <value>ناجح</value>
+  </data>
+  <data name="backup.error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="backup.descargar" xml:space="preserve">
+    <value>تنزيل</value>
+  </data>
+  <data name="backup.restaurar" xml:space="preserve">
+    <value>استعادة</value>
+  </data>
+  <data name="backup.sinBackups" xml:space="preserve">
+    <value>لم يتم إنشاء أي نسخة احتياطية بعد.</value>
+  </data>
+  <data name="backup.confirmarTitulo" xml:space="preserve">
+    <value>تأكيد الاستعادة</value>
+  </data>
+  <data name="backup.alertaTitulo" xml:space="preserve">
+    <value>إجراء مدمِّر.</value>
+  </data>
+  <data name="backup.alertaTexto" xml:space="preserve">
+    <value>عند استعادة هذه النسخة الاحتياطية، ستُستبدل جميع البيانات الحالية ببيانات نقطة الاستعادة المحددة. لا يمكن التراجع عن هذا الإجراء.</value>
+  </data>
+  <data name="backup.puntoRestauracion" xml:space="preserve">
+    <value>نقطة الاستعادة:</value>
+  </data>
+  <data name="backup.tamanio" xml:space="preserve">
+    <value>الحجم:</value>
+  </data>
+  <data name="backup.escribiConfirmar" xml:space="preserve">
+    <value>اكتب "{0}" للمتابعة</value>
+  </data>
+  <data name="backup.palabraConfirmar" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="backup.btnRestaurar" xml:space="preserve">
+    <value>استعادة النسخة الاحتياطية</value>
+  </data>
+  <data name="backup.msgRealizado" xml:space="preserve">
+    <value>تم إنشاء النسخة الاحتياطية بنجاح.</value>
+  </data>
+  <data name="backup.errRealizar" xml:space="preserve">
+    <value>تعذّر إنشاء النسخة الاحتياطية.</value>
+  </data>
+  <data name="backup.errEscribirConfirmar" xml:space="preserve">
+    <value>يجب كتابة {0} للمتابعة.</value>
+  </data>
+  <data name="backup.msgRestaurada" xml:space="preserve">
+    <value>تمت استعادة قاعدة البيانات بنجاح.</value>
+  </data>
+  <data name="idioma.es" xml:space="preserve">
+    <value>الإسبانية</value>
+  </data>
+  <data name="idioma.en" xml:space="preserve">
+    <value>الإنجليزية</value>
+  </data>
+  <data name="idioma.pt" xml:space="preserve">
+    <value>البرتغالية</value>
+  </data>
+  <data name="idioma.fr" xml:space="preserve">
+    <value>الفرنسية</value>
+  </data>
+  <data name="idioma.de" xml:space="preserve">
+    <value>الألمانية</value>
+  </data>
+  <data name="idioma.it" xml:space="preserve">
+    <value>الإيطالية</value>
+  </data>
+  <data name="idioma.ja" xml:space="preserve">
+    <value>اليابانية</value>
+  </data>
+  <data name="idioma.ru" xml:space="preserve">
+    <value>الروسية</value>
+  </data>
+  <data name="idioma.ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="idioma.tr" xml:space="preserve">
+    <value>التركية</value>
+  </data>
+  <data name="idiomas.titulo" xml:space="preserve">
+    <value>إدارة اللغات - LO Technologies</value>
+  </data>
+  <data name="idiomas.encabezado" xml:space="preserve">
+    <value>إدارة اللغات</value>
+  </data>
+  <data name="idiomas.subtitulo" xml:space="preserve">
+    <value>أضف لغات من الكتالوج وراجع ترجماتها ثم فعّلها للمستخدمين.</value>
+  </data>
+  <data name="idiomas.btnSincronizar" xml:space="preserve">
+    <value>مزامنة المفاتيح</value>
+  </data>
+  <data name="idiomas.ayudaSincronizar" xml:space="preserve">
+    <value>يضيف المفاتيح الجديدة من الكتالوج إلى جميع اللغات دون تعديل الترجمات الحالية</value>
+  </data>
+  <data name="idiomas.btnAgregar" xml:space="preserve">
+    <value>إضافة لغة</value>
+  </data>
+  <data name="idiomas.predeterminado" xml:space="preserve">
+    <value>افتراضية</value>
+  </data>
+  <data name="idiomas.revisadas" xml:space="preserve">
+    <value>الترجمات المراجَعة</value>
+  </data>
+  <data name="idiomas.revisadasDe" xml:space="preserve">
+    <value>الترجمات المراجَعة لـ {0}</value>
+  </data>
+  <data name="idiomas.editarTraducciones" xml:space="preserve">
+    <value>تعديل الترجمات</value>
+  </data>
+  <data name="idiomas.activar" xml:space="preserve">
+    <value>تفعيل</value>
+  </data>
+  <data name="idiomas.desactivar" xml:space="preserve">
+    <value>إلغاء التفعيل</value>
+  </data>
+  <data name="idiomas.idiomaBase" xml:space="preserve">
+    <value>اللغة الأساسية: لا يمكن إلغاء تفعيلها</value>
+  </data>
+  <data name="idiomas.idioma" xml:space="preserve">
+    <value>اللغة *</value>
+  </data>
+  <data name="idiomas.ayudaAgregar" xml:space="preserve">
+    <value>تُحمَّل جميع مفاتيح النظام بنصوص كتالوج تلك اللغة. المفاتيح غير الموجودة في الكتالوج تبقى بالنص الإسباني وتُعلَّم كمعلّقة. تبقى اللغة غير مفعّلة: راجع الترجمات من "تعديل الترجمات" ثم فعّلها.</value>
+  </data>
+  <data name="idiomas.todosAgregados" xml:space="preserve">
+    <value>تمت إضافة جميع لغات الكتالوج بالفعل.</value>
+  </data>
+  <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
+    <value>تمت إضافة {0} بجميع ترجماتها. راجعها ثم فعّل اللغة.</value>
+  </data>
+  <data name="idiomas.msgAgregadoPendientes" xml:space="preserve">
+    <value>تمت إضافة {0}. بقيت {1} ترجمات معلّقة (بالنص الإسباني): أكملها من "تعديل الترجمات" قبل التفعيل.</value>
+  </data>
+  <data name="idiomas.errYaExiste" xml:space="preserve">
+    <value>{0} مضافة بالفعل.</value>
+  </data>
+  <data name="idiomas.errNoCatalogo" xml:space="preserve">
+    <value>اللغة المحددة غير موجودة في الكتالوج.</value>
+  </data>
+  <data name="idiomas.msgDesactivado" xml:space="preserve">
+    <value>تم إلغاء تفعيل اللغة: لم تعد تظهر في محدد اللغة.</value>
+  </data>
+  <data name="idiomas.msgActivado" xml:space="preserve">
+    <value>تم تفعيل اللغة: يمكن للمستخدمين اختيارها الآن.</value>
+  </data>
+  <data name="idiomas.msgActivadoPendientes" xml:space="preserve">
+    <value>تم تفعيل اللغة. لديها {0} ترجمات معلّقة ستُعرض بالإسبانية.</value>
+  </data>
+  <data name="idiomas.errPredeterminado" xml:space="preserve">
+    <value>لا يمكن إلغاء تفعيل اللغة الافتراضية.</value>
+  </data>
+  <data name="idiomas.errEnUso" xml:space="preserve">
+    <value>لا يمكن إلغاء التفعيل: {0} مستخدم(ين) لديهم هذه اللغة.</value>
+  </data>
+  <data name="idiomas.errNoExiste" xml:space="preserve">
+    <value>اللغة غير موجودة.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoNada" xml:space="preserve">
+    <value>جميع اللغات تحتوي بالفعل على كل مفاتيح الكتالوج.</value>
+  </data>
+  <data name="idiomas.msgSincronizado" xml:space="preserve">
+    <value>تمت إضافة {0} ترجمات في {1} لغة.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoPendientes" xml:space="preserve">
+    <value>بقيت {0} معلّقة (بالنص الإسباني).</value>
+  </data>
+  <data name="traducciones.titulo" xml:space="preserve">
+    <value>تعديل الترجمات - LO Technologies</value>
+  </data>
+  <data name="traducciones.volver" xml:space="preserve">
+    <value>العودة إلى اللغات</value>
+  </data>
+  <data name="traducciones.encabezado" xml:space="preserve">
+    <value>الترجمات: {0}</value>
+  </data>
+  <data name="traducciones.resumenBase" xml:space="preserve">
+    <value>{0} مفاتيح · اللغة الأساسية</value>
+  </data>
+  <data name="traducciones.resumen" xml:space="preserve">
+    <value>{0} مفاتيح · {1} معلّقة · {2}</value>
+  </data>
+  <data name="traducciones.avisoBase" xml:space="preserve">
+    <value>أنت تعدّل اللغة الأساسية. تُعرض هذه النصوص عندما تكون الترجمة مفقودة في لغة أخرى.</value>
+  </data>
+  <data name="traducciones.buscarPlaceholder" xml:space="preserve">
+    <value>البحث بالمفتاح أو النص...</value>
+  </data>
+  <data name="traducciones.modulo" xml:space="preserve">
+    <value>الوحدة</value>
+  </data>
+  <data name="traducciones.todosModulos" xml:space="preserve">
+    <value>جميع الوحدات</value>
+  </data>
+  <data name="traducciones.soloPendientes" xml:space="preserve">
+    <value>المعلّقة فقط</value>
+  </data>
+  <data name="traducciones.colClave" xml:space="preserve">
+    <value>المفتاح</value>
+  </data>
+  <data name="traducciones.colTexto" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="traducciones.colTraduccion" xml:space="preserve">
+    <value>الترجمة</value>
+  </data>
+  <data name="traducciones.revisada" xml:space="preserve">
+    <value>تمت المراجعة</value>
+  </data>
+  <data name="traducciones.sinResultados" xml:space="preserve">
+    <value>لا توجد ترجمات تطابق عامل التصفية.</value>
+  </data>
+  <data name="traducciones.sinPendientes" xml:space="preserve">
+    <value>لم تتبقَّ أي ترجمات معلّقة.</value>
+  </data>
+  <data name="traducciones.ayudaGuardar" xml:space="preserve">
+    <value>عند الكتابة في ترجمة تُعلَّم كمراجَعة. تُحفظ التغييرات معًا.</value>
+  </data>
+  <data name="traducciones.ariaTraduccion" xml:space="preserve">
+    <value>ترجمة {0}</value>
+  </data>
+  <data name="traducciones.errNoGuardado" xml:space="preserve">
+    <value>لم يتم حفظ التغييرات.</value>
+  </data>
+  <data name="traducciones.errVacio" xml:space="preserve">
+    <value>نص فارغ في: {0}.</value>
+  </data>
+  <data name="traducciones.errLargo" xml:space="preserve">
+    <value>أكثر من {0} حرف في: {1}.</value>
+  </data>
+  <data name="traducciones.errMarcadores" xml:space="preserve">
+    <value>يجب أن تكون العناصر النائبة بين الأقواس المعقوصة مثل الإسبانية في: {0}.</value>
+  </data>
+  <data name="traducciones.yMas" xml:space="preserve">
+    <value>{0} و{1} أخرى</value>
+  </data>
+  <data name="traducciones.msgSinCambios" xml:space="preserve">
+    <value>لم تكن هناك تغييرات للحفظ.</value>
+  </data>
+  <data name="traducciones.msgGuardada" xml:space="preserve">
+    <value>تم حفظ ترجمة واحدة. أصبحت ظاهرة في النظام.</value>
+  </data>
+  <data name="traducciones.msgGuardadas" xml:space="preserve">
+    <value>تم حفظ {0} ترجمات. أصبحت ظاهرة في النظام.</value>
+  </data>
 </root>

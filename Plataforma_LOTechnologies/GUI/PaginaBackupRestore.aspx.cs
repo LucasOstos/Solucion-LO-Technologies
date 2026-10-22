@@ -13,6 +13,14 @@ public partial class PaginaBackupRestore : PaginaSegura
     {
         get { return PermisoNombres.RealizarBackupRestore; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "backup.titulo"; }
+    }
+    private string PalabraConfirmar
+    {
+        get { return Traducir("backup.palabraConfirmar"); }
+    }
     private BackupRestore gestorBackup = new BackupRestore();
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -49,6 +57,8 @@ public partial class PaginaBackupRestore : PaginaSegura
         litFechaRestaurar.Text = backup.Fecha.ToString("dd/MM/yyyy HH:mm");
         litTamanioRestaurar.Text = backup.Tamanio;
         tbConfirmarRestauracion.Text = "";
+        lblConfirmarRestauracion.Text = Traducir("backup.escribiConfirmar", PalabraConfirmar);
+        tbConfirmarRestauracion.Attributes["placeholder"] = PalabraConfirmar;
         pnlModalRestaurar.Style["display"] = "flex";
     }
     private void MostrarMensaje(string texto, bool esExito)
@@ -64,11 +74,11 @@ public partial class PaginaBackupRestore : PaginaSegura
         try
         {
             gestorBackup.RealizarBackup();
-            MostrarMensaje("Backup realizado correctamente.", esExito: true);
+            MostrarMensaje(Traducir("backup.msgRealizado"), esExito: true);
         }
         catch (Exception)
         {
-            MostrarMensaje("No fue posible generar el backup.", esExito: false);
+            MostrarMensaje(Traducir("backup.errRealizar"), esExito: false);
         }
         CargarBackups();
     }
@@ -95,9 +105,9 @@ public partial class PaginaBackupRestore : PaginaSegura
 
     protected void btnConfirmarRestaurar_Click(object sender, EventArgs e)
     {
-        if (tbConfirmarRestauracion.Text.Trim() != "CONFIRMAR")
+        if (!string.Equals(tbConfirmarRestauracion.Text.Trim(), PalabraConfirmar, StringComparison.CurrentCultureIgnoreCase))
         {
-            MostrarMensaje("Tenés que escribir CONFIRMAR para proceder.", esExito: false);
+            MostrarMensaje(Traducir("backup.errEscribirConfirmar", PalabraConfirmar), esExito: false);
             pnlModalRestaurar.Style["display"] = "flex";
             return;
         }
@@ -105,12 +115,13 @@ public partial class PaginaBackupRestore : PaginaSegura
         {
             gestorBackup.RealizarRestore(hfNombreArchivo.Value);
             pnlModalRestaurar.Style["display"] = "none";
-            MostrarMensaje("Base de datos restaurada correctamente.", esExito: true);
+            GestorIdioma.Instancia.RecargarIdiomas();
+            MostrarMensaje(Traducir("backup.msgRestaurada"), esExito: true);
         }
         catch (Exception)
         {
             pnlModalRestaurar.Style["display"] = "none";
-            MostrarMensaje("No fue posible restaurar la base de datos.", esExito: false);
+            MostrarMensaje(Traducir("comun.errRestaurar"), esExito: false);
         }
         CargarBackups();
     }

@@ -13,6 +13,10 @@ public partial class PaginaDigitosVerificadores : PaginaSegura
     {
         get { return PermisoNombres.RecalcularDigitos; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "integridad.titulo"; }
+    }
     protected override bool PermitidaConIntegridadComprometida
     {
         get { return true; }
@@ -47,8 +51,8 @@ public partial class PaginaDigitosVerificadores : PaginaSegura
     protected void btnRecalcular_Click(object sender, EventArgs e)
     {
         bool exito = digitos.CalcularTablas();
-        if (exito) { MostrarMensaje("Digitos calculados correctamente", esExito: true); CargarRegistrosCorruptos(); }
-        else { MostrarMensaje("No fue posible recalcular los digitos verificadores", esExito: false); }
+        if (exito) { MostrarMensaje(Traducir("integridad.msgRecalculado"), esExito: true); CargarRegistrosCorruptos(); }
+        else { MostrarMensaje(Traducir("integridad.errRecalcular"), esExito: false); }
     }
 
     protected void btnRestore_Click(object sender, EventArgs e)
@@ -57,17 +61,18 @@ public partial class PaginaDigitosVerificadores : PaginaSegura
         var ultimoExitoso = backups.Find(b => b.Exitoso);
         if (ultimoExitoso == null)
         {
-            MostrarMensaje("No hay ningún backup disponible para restaurar.", esExito: false);
+            MostrarMensaje(Traducir("integridad.errSinBackup"), esExito: false);
             return;
         }
         try
         {
             gestorBackup.RealizarRestoreDigito(ultimoExitoso.RutaArchivo);
-            MostrarMensaje("Base de datos restaurada. Volvé a intentar iniciar sesión.", esExito: true);
+            GestorIdioma.Instancia.RecargarIdiomas();
+            MostrarMensaje(Traducir("integridad.msgRestaurada"), esExito: true);
         }
         catch (Exception)
         {
-            MostrarMensaje("No fue posible restaurar la base de datos.", esExito: false);
+            MostrarMensaje(Traducir("comun.errRestaurar"), esExito: false);
         }
     }
 

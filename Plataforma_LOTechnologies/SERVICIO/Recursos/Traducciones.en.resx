@@ -578,4 +578,433 @@
   <data name="permisos.errAutoBloqueo" xml:space="preserve">
     <value>This change would remove your '{0}' permission and you would lose access to this screen.</value>
   </data>
+  <data name="comun.filtrar" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="comun.anterior" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="comun.siguiente" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="comun.errRestaurar" xml:space="preserve">
+    <value>The database could not be restored.</value>
+  </data>
+  <data name="auditoria.titulo" xml:space="preserve">
+    <value>Audit / Log - LO Technologies</value>
+  </data>
+  <data name="auditoria.subtitulo" xml:space="preserve">
+    <value>CUS 015 — Activity log for auditing and security</value>
+  </data>
+  <data name="auditoria.btnExportar" xml:space="preserve">
+    <value>Export log</value>
+  </data>
+  <data name="auditoria.buscarPlaceholder" xml:space="preserve">
+    <value>Search by user, action, entity...</value>
+  </data>
+  <data name="auditoria.fechaDesde" xml:space="preserve">
+    <value>From date</value>
+  </data>
+  <data name="auditoria.fechaHasta" xml:space="preserve">
+    <value>To date</value>
+  </data>
+  <data name="auditoria.todasAcciones" xml:space="preserve">
+    <value>All actions</value>
+  </data>
+  <data name="auditoria.todosNiveles" xml:space="preserve">
+    <value>All levels</value>
+  </data>
+  <data name="auditoria.nivelInfo" xml:space="preserve">
+    <value>Info (1)</value>
+  </data>
+  <data name="auditoria.nivelAdvertencia" xml:space="preserve">
+    <value>Warning (2)</value>
+  </data>
+  <data name="auditoria.nivelError" xml:space="preserve">
+    <value>Error (3)</value>
+  </data>
+  <data name="auditoria.colFecha" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="auditoria.colTipo" xml:space="preserve">
+    <value>Event type</value>
+  </data>
+  <data name="auditoria.colDetalle" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="auditoria.colNivel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="auditoria.sinResultados" xml:space="preserve">
+    <value>No events match the applied filters.</value>
+  </data>
+  <data name="auditoria.ultimosTresDias" xml:space="preserve">
+    <value>Showing the last 3 days</value>
+  </data>
+  <data name="auditoria.errSinFiltro" xml:space="preserve">
+    <value>Choose at least one filter.</value>
+  </data>
+  <data name="auditoria.errFechas" xml:space="preserve">
+    <value>The FROM date cannot be later than the TO date.</value>
+  </data>
+  <data name="auditoria.msgSinSucesos" xml:space="preserve">
+    <value>No events.</value>
+  </data>
+  <data name="auditoria.mostrandoFiltrados" xml:space="preserve">
+    <value>Showing {0} filtered result(s)</value>
+  </data>
+  <data name="auditoria.hoja" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="integridad.titulo" xml:space="preserve">
+    <value>System integrity - LO Technologies</value>
+  </data>
+  <data name="integridad.encabezado" xml:space="preserve">
+    <value>Data integrity</value>
+  </data>
+  <data name="integridad.inconsistencias" xml:space="preserve">
+    <value>Inconsistencies found</value>
+  </data>
+  <data name="integridad.colTabla" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="integridad.colRegistro" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="integridad.colProblema" xml:space="preserve">
+    <value>Problem</value>
+  </data>
+  <data name="integridad.todaLaTabla" xml:space="preserve">
+    <value>Whole table</value>
+  </data>
+  <data name="integridad.sinDvv" xml:space="preserve">
+    <value>The table's vertical check digit (DVV) does not exist. It may have been deleted from the DigitoVerificador table.</value>
+  </data>
+  <data name="integridad.sinDvh" xml:space="preserve">
+    <value>The record has no check digit (DVH). It may have been inserted outside the system.</value>
+  </data>
+  <data name="integridad.dvhDistinto" xml:space="preserve">
+    <value>The DVH does not match the record's data. A value or the DVH itself was modified.</value>
+  </data>
+  <data name="integridad.cantidadDistinta" xml:space="preserve">
+    <value>The table has {0} records but {1} were expected. Records were added or deleted outside the system.</value>
+  </data>
+  <data name="integridad.dvvDistinto" xml:space="preserve">
+    <value>The vertical check digit (DVV) does not match. Records were modified and their DVH recalculated, or the stored DVV was altered.</value>
+  </data>
+  <data name="integridad.sinInconsistencias" xml:space="preserve">
+    <value>No inconsistencies were found.</value>
+  </data>
+  <data name="integridad.btnRecalcular" xml:space="preserve">
+    <value>Recalculate check digits</value>
+  </data>
+  <data name="integridad.confirmarRecalcular" xml:space="preserve">
+    <value>Recalculate the check digits of all tables?</value>
+  </data>
+  <data name="integridad.btnRestaurar" xml:space="preserve">
+    <value>Restore database</value>
+  </data>
+  <data name="integridad.confirmarRestaurar" xml:space="preserve">
+    <value>Restore the database from a backup? This replaces the current data.</value>
+  </data>
+  <data name="integridad.btnSalir" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="integridad.msgRecalculado" xml:space="preserve">
+    <value>Check digits calculated successfully</value>
+  </data>
+  <data name="integridad.errRecalcular" xml:space="preserve">
+    <value>The check digits could not be recalculated</value>
+  </data>
+  <data name="integridad.errSinBackup" xml:space="preserve">
+    <value>There is no backup available to restore.</value>
+  </data>
+  <data name="integridad.msgRestaurada" xml:space="preserve">
+    <value>Database restored. Please try logging in again.</value>
+  </data>
+  <data name="backup.titulo" xml:space="preserve">
+    <value>Backup / Restore - LO Technologies</value>
+  </data>
+  <data name="backup.btnCrear" xml:space="preserve">
+    <value>Create backup</value>
+  </data>
+  <data name="backup.ultimo" xml:space="preserve">
+    <value>Last backup</value>
+  </data>
+  <data name="backup.frecuencia" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="backup.semanal" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="backup.retencion" xml:space="preserve">
+    <value>Retention</value>
+  </data>
+  <data name="backup.treintaDias" xml:space="preserve">
+    <value>30 days</value>
+  </data>
+  <data name="backup.historial" xml:space="preserve">
+    <value>Backup history</value>
+  </data>
+  <data name="backup.colNombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="backup.colFecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="backup.colTamanio" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="backup.colTipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="backup.tipoManual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="backup.ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="backup.error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="backup.descargar" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="backup.restaurar" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="backup.sinBackups" xml:space="preserve">
+    <value>No backup has been created yet.</value>
+  </data>
+  <data name="backup.confirmarTitulo" xml:space="preserve">
+    <value>Confirm restore</value>
+  </data>
+  <data name="backup.alertaTitulo" xml:space="preserve">
+    <value>Destructive action.</value>
+  </data>
+  <data name="backup.alertaTexto" xml:space="preserve">
+    <value>Restoring this backup will replace all current data with the data from the selected restore point. This action cannot be undone.</value>
+  </data>
+  <data name="backup.puntoRestauracion" xml:space="preserve">
+    <value>Restore point:</value>
+  </data>
+  <data name="backup.tamanio" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="backup.escribiConfirmar" xml:space="preserve">
+    <value>Type "{0}" to continue</value>
+  </data>
+  <data name="backup.palabraConfirmar" xml:space="preserve">
+    <value>CONFIRM</value>
+  </data>
+  <data name="backup.btnRestaurar" xml:space="preserve">
+    <value>Restore backup</value>
+  </data>
+  <data name="backup.msgRealizado" xml:space="preserve">
+    <value>Backup completed successfully.</value>
+  </data>
+  <data name="backup.errRealizar" xml:space="preserve">
+    <value>The backup could not be created.</value>
+  </data>
+  <data name="backup.errEscribirConfirmar" xml:space="preserve">
+    <value>You must type {0} to continue.</value>
+  </data>
+  <data name="backup.msgRestaurada" xml:space="preserve">
+    <value>Database restored successfully.</value>
+  </data>
+  <data name="idioma.es" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="idioma.en" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="idioma.pt" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="idioma.fr" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="idioma.de" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="idioma.it" xml:space="preserve">
+    <value>Italian</value>
+  </data>
+  <data name="idioma.ja" xml:space="preserve">
+    <value>Japanese</value>
+  </data>
+  <data name="idioma.ru" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="idioma.ar" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="idioma.tr" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="idiomas.titulo" xml:space="preserve">
+    <value>Language management - LO Technologies</value>
+  </data>
+  <data name="idiomas.encabezado" xml:space="preserve">
+    <value>Language management</value>
+  </data>
+  <data name="idiomas.subtitulo" xml:space="preserve">
+    <value>Add languages from the catalog, review their translations and activate them for users.</value>
+  </data>
+  <data name="idiomas.btnSincronizar" xml:space="preserve">
+    <value>Sync keys</value>
+  </data>
+  <data name="idiomas.ayudaSincronizar" xml:space="preserve">
+    <value>Adds the catalog's new keys to all languages without changing existing translations</value>
+  </data>
+  <data name="idiomas.btnAgregar" xml:space="preserve">
+    <value>Add language</value>
+  </data>
+  <data name="idiomas.predeterminado" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="idiomas.revisadas" xml:space="preserve">
+    <value>Reviewed translations</value>
+  </data>
+  <data name="idiomas.revisadasDe" xml:space="preserve">
+    <value>Reviewed translations for {0}</value>
+  </data>
+  <data name="idiomas.editarTraducciones" xml:space="preserve">
+    <value>Edit translations</value>
+  </data>
+  <data name="idiomas.activar" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="idiomas.desactivar" xml:space="preserve">
+    <value>Deactivate</value>
+  </data>
+  <data name="idiomas.idiomaBase" xml:space="preserve">
+    <value>Base language: cannot be deactivated</value>
+  </data>
+  <data name="idiomas.idioma" xml:space="preserve">
+    <value>Language *</value>
+  </data>
+  <data name="idiomas.ayudaAgregar" xml:space="preserve">
+    <value>All system keys are loaded with the texts from that language's catalog. Keys missing from the catalog keep the Spanish text and are marked as pending. The language stays inactive: review the translations in "Edit translations" and then activate it.</value>
+  </data>
+  <data name="idiomas.todosAgregados" xml:space="preserve">
+    <value>All catalog languages have already been added.</value>
+  </data>
+  <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
+    <value>{0} was added with all its translations. Review them and activate the language.</value>
+  </data>
+  <data name="idiomas.msgAgregadoPendientes" xml:space="preserve">
+    <value>{0} was added. {1} translations are pending (with the Spanish text): complete them in "Edit translations" before activating it.</value>
+  </data>
+  <data name="idiomas.errYaExiste" xml:space="preserve">
+    <value>{0} had already been added.</value>
+  </data>
+  <data name="idiomas.errNoCatalogo" xml:space="preserve">
+    <value>The selected language is not in the catalog.</value>
+  </data>
+  <data name="idiomas.msgDesactivado" xml:space="preserve">
+    <value>Language deactivated: it no longer appears in the language selector.</value>
+  </data>
+  <data name="idiomas.msgActivado" xml:space="preserve">
+    <value>Language activated: users can now choose it.</value>
+  </data>
+  <data name="idiomas.msgActivadoPendientes" xml:space="preserve">
+    <value>Language activated. It has {0} pending translations that will be shown in Spanish.</value>
+  </data>
+  <data name="idiomas.errPredeterminado" xml:space="preserve">
+    <value>The default language cannot be deactivated.</value>
+  </data>
+  <data name="idiomas.errEnUso" xml:space="preserve">
+    <value>It cannot be deactivated: {0} user(s) have this language assigned.</value>
+  </data>
+  <data name="idiomas.errNoExiste" xml:space="preserve">
+    <value>The language does not exist.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoNada" xml:space="preserve">
+    <value>All languages already have every catalog key.</value>
+  </data>
+  <data name="idiomas.msgSincronizado" xml:space="preserve">
+    <value>{0} translations were added in {1} language(s).</value>
+  </data>
+  <data name="idiomas.msgSincronizadoPendientes" xml:space="preserve">
+    <value>{0} are pending (with the Spanish text).</value>
+  </data>
+  <data name="traducciones.titulo" xml:space="preserve">
+    <value>Edit translations - LO Technologies</value>
+  </data>
+  <data name="traducciones.volver" xml:space="preserve">
+    <value>Back to languages</value>
+  </data>
+  <data name="traducciones.encabezado" xml:space="preserve">
+    <value>Translations: {0}</value>
+  </data>
+  <data name="traducciones.resumenBase" xml:space="preserve">
+    <value>{0} keys · base language</value>
+  </data>
+  <data name="traducciones.resumen" xml:space="preserve">
+    <value>{0} keys · {1} pending · {2}</value>
+  </data>
+  <data name="traducciones.avisoBase" xml:space="preserve">
+    <value>You are editing the base language. These texts are shown when a translation is missing in another language.</value>
+  </data>
+  <data name="traducciones.buscarPlaceholder" xml:space="preserve">
+    <value>Search by key or text...</value>
+  </data>
+  <data name="traducciones.modulo" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="traducciones.todosModulos" xml:space="preserve">
+    <value>All modules</value>
+  </data>
+  <data name="traducciones.soloPendientes" xml:space="preserve">
+    <value>Pending only</value>
+  </data>
+  <data name="traducciones.colClave" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="traducciones.colTexto" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="traducciones.colTraduccion" xml:space="preserve">
+    <value>Translation</value>
+  </data>
+  <data name="traducciones.revisada" xml:space="preserve">
+    <value>Reviewed</value>
+  </data>
+  <data name="traducciones.sinResultados" xml:space="preserve">
+    <value>No translations match the filter.</value>
+  </data>
+  <data name="traducciones.sinPendientes" xml:space="preserve">
+    <value>There are no pending translations left.</value>
+  </data>
+  <data name="traducciones.ayudaGuardar" xml:space="preserve">
+    <value>Typing in a translation marks it as reviewed. All changes are saved together.</value>
+  </data>
+  <data name="traducciones.ariaTraduccion" xml:space="preserve">
+    <value>Translation of {0}</value>
+  </data>
+  <data name="traducciones.errNoGuardado" xml:space="preserve">
+    <value>The changes were not saved.</value>
+  </data>
+  <data name="traducciones.errVacio" xml:space="preserve">
+    <value>Empty text in: {0}.</value>
+  </data>
+  <data name="traducciones.errLargo" xml:space="preserve">
+    <value>More than {0} characters in: {1}.</value>
+  </data>
+  <data name="traducciones.errMarcadores" xml:space="preserve">
+    <value>Placeholders in braces must be the same as in Spanish in: {0}.</value>
+  </data>
+  <data name="traducciones.yMas" xml:space="preserve">
+    <value>{0} and {1} more</value>
+  </data>
+  <data name="traducciones.msgSinCambios" xml:space="preserve">
+    <value>There were no changes to save.</value>
+  </data>
+  <data name="traducciones.msgGuardada" xml:space="preserve">
+    <value>1 translation was saved. It is already visible in the system.</value>
+  </data>
+  <data name="traducciones.msgGuardadas" xml:space="preserve">
+    <value>{0} translations were saved. They are already visible in the system.</value>
+  </data>
 </root>

@@ -16,18 +16,18 @@
         <div class="dv-pagina">
             <div class="dv-wrapper">
                 <uc:BotonVolverMenu ID="volverMenu" runat="server" />
-                <h1>Integridad de datos</h1>
+                <h1 runat="server" clave="integridad.encabezado">Integridad de datos</h1>
                 <asp:Label ID="lbMensaje" runat="server" CssClass="dv-mensaje" Visible="false" EnableViewState="false"></asp:Label>
                 <div class="dv-tarjeta">
-                    <h2>Inconsistencias detectadas</h2>
+                    <h2 runat="server" clave="integridad.inconsistencias">Inconsistencias detectadas</h2>
                     <asp:Repeater ID="rptCorruptos" runat="server">
                         <HeaderTemplate>
                             <table class="dv-tabla">
                                 <thead>
                                     <tr>
-                                        <th>Tabla</th>
-                                        <th>Registro</th>
-                                        <th>Problema</th>
+                                        <th><%# Traducir("integridad.colTabla") %></th>
+                                        <th><%# Traducir("integridad.colRegistro") %></th>
+                                        <th><%# Traducir("integridad.colProblema") %></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,8 +35,8 @@
                         <ItemTemplate>
                             <tr>
                                 <td><%# Eval("NombreTabla") %></td>
-                                <td class="dv-registro"><%# Eval("CodigoRegistro") %></td>
-                                <td><%# Eval("Problema") %></td>
+                                <td class="dv-registro"><%# (bool)Eval("EsTablaCompleta") ? Traducir("integridad.todaLaTabla") : Eval("CodigoRegistro") %></td>
+                                <td><%# Traducir((string)Eval("ClaveProblema"), (object[])Eval("Parametros")) %></td>
                             </tr>
                         </ItemTemplate>
                         <FooterTemplate>
@@ -44,16 +44,16 @@
                             </table>
                         </FooterTemplate>
                     </asp:Repeater>
-                    <asp:Label ID="lbIntegridadOK" runat="server" Text="No se detectaron inconsistencias." Visible="false"></asp:Label>
+                    <asp:Label ID="lbIntegridadOK" runat="server" Text="No se detectaron inconsistencias." Clave="integridad.sinInconsistencias" Visible="false"></asp:Label>
                 </div>
                 <div class="dv-acciones">
-                    <asp:Button ID="btnRecalcular" runat="server" CssClass="dv-btn dv-btn-primary" Text="Recalcular dígitos verificadores" OnClick="btnRecalcular_Click"
-                        OnClientClick="return confirmarAccion('¿Confirmás que querés recalcular los dígitos verificadores de todas las tablas?');" />
+                    <asp:Button ID="btnRecalcular" runat="server" CssClass="dv-btn dv-btn-primary" Text="Recalcular dígitos verificadores" Clave="integridad.btnRecalcular" OnClick="btnRecalcular_Click"
+                        ClaveConfirmar="integridad.confirmarRecalcular" />
 
-                    <asp:Button ID="btnRestore" runat="server" CssClass="dv-btn dv-btn-secundario" Text="Restaurar base de datos" OnClick="btnRestore_Click"
-                        OnClientClick="return confirmarAccion('¿Confirmás que querés restaurar la base de datos desde un backup? Esta acción reemplaza los datos actuales.');" />
+                    <asp:Button ID="btnRestore" runat="server" CssClass="dv-btn dv-btn-secundario" Text="Restaurar base de datos" Clave="integridad.btnRestaurar" OnClick="btnRestore_Click"
+                        ClaveConfirmar="integridad.confirmarRestaurar" />
 
-                    <asp:Button ID="btnCancelar" runat="server" CssClass="dv-btn dv-btn-cancelar" Text="Salir" OnClick="btnCancelar_Click" CausesValidation="false" />
+                    <asp:Button ID="btnCancelar" runat="server" CssClass="dv-btn dv-btn-cancelar" Text="Salir" Clave="integridad.btnSalir" OnClick="btnCancelar_Click" CausesValidation="false" />
                 </div>
             </div>
         </div>

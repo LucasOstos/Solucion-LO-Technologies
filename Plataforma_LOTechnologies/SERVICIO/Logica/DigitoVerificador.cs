@@ -14,7 +14,10 @@ namespace SERVICIO.Logica
     {
         public string NombreTabla { get; set; }
         public string CodigoRegistro { get; set; }
-        public string Problema { get; set; }
+        public string Problema { get; set; }       // texto en español (bitácora, documentación)
+        public string ClaveProblema { get; set; }  // clave para mostrarlo en el idioma del usuario
+        public object[] Parametros { get; set; } = new object[0];
+        public bool EsTablaCompleta { get; set; }
     }
     public class DigitoVerificador
     {
@@ -141,7 +144,7 @@ namespace SERVICIO.Logica
             if (dvvGuardado == null)
             {
                 problemas.Add(NuevoProblema(pNombreTabla, TODA_LA_TABLA,
-                    "No existe el dígito verificador vertical (DVV) de la tabla. Pudo haber sido eliminado de la tabla DigitoVerificador."));
+                    "No existe el dígito verificador vertical (DVV) de la tabla. Pudo haber sido eliminado de la tabla DigitoVerificador.", "integridad.sinDvv"));
                 return problemas;
             }
             DataTable DT = accesoDAL.ObtenerTabla(pNombreTabla, pColumnaPK);
@@ -154,31 +157,40 @@ namespace SERVICIO.Logica
                 if (dvhGuardado == null)
                 {
                     problemas.Add(NuevoProblema(pNombreTabla, DR[pColumnaPK].ToString(),
-                        "El registro no tiene dígito verificador (DVH). Pudo haber sido insertado por fuera del sistema."));
+                        "El registro no tiene dígito verificador (DVH). Pudo haber sido insertado por fuera del sistema.", "integridad.sinDvh"));
                 }
                 else if (dvhGuardado != dvhRecalculado)
                 {
                     problemas.Add(NuevoProblema(pNombreTabla, DR[pColumnaPK].ToString(),
-                        "El DVH no coincide con los datos del registro. Se modificó un dato o el propio DVH."));
+                        "El DVH no coincide con los datos del registro. Se modificó un dato o el propio DVH.", "integridad.dvhDistinto"));
                 }
             }
             int cantidadGuardada = dvvGuardado.Value.pCantidadRegistros;
             if (DT.Rows.Count != cantidadGuardada)
             {
                 problemas.Add(NuevoProblema(pNombreTabla, TODA_LA_TABLA,
-                    $"La tabla tiene {DT.Rows.Count} registros y se esperaban {cantidadGuardada}. Se agregaron o eliminaron registros por fuera del sistema."));
+                    $"La tabla tiene {DT.Rows.Count} registros y se esperaban {cantidadGuardada}. Se agregaron o eliminaron registros por fuera del sistema.",
+                    "integridad.cantidadDistinta", DT.Rows.Count, cantidadGuardada));
             }
             else if (CalcularDVV(dvhsRecalculados) != dvvGuardado.Value.pDVV && problemas.Count == 0)
             {
                 problemas.Add(NuevoProblema(pNombreTabla, TODA_LA_TABLA,
-                    "El dígito verificador vertical (DVV) no coincide. Se modificaron registros recalculando su DVH, o se alteró el DVV guardado."));
+                    "El dígito verificador vertical (DVV) no coincide. Se modificaron registros recalculando su DVH, o se alteró el DVV guardado.", "integridad.dvvDistinto"));
             }
             return problemas;
         }
-        private RegistroCorrupto NuevoProblema(string pNombreTabla, string pRegistro, string pProblema)
+        private RegistroCorrupto NuevoProblema(string pNombreTabla, string pRegistro, string pProblema, string pClaveProblema, params object[] pParametros)
         {
-            return new RegistroCorrupto { NombreTabla = pNombreTabla, CodigoRegistro = pRegistro, Problema = pProblema };
-        }        
+            return new RegistroCorrupto
+            {
+                NombreTabla = pNombreTabla,
+                CodigoRegistro = pRegistro,
+                Problema = pProblema,
+                ClaveProblema = pClaveProblema,
+                Parametros = pParametros ?? new object[0],
+                EsTablaCompleta = pRegistro == TODA_LA_TABLA
+            };
+        }
         public List<RegistroCorrupto> ObtenerRegistrosCorruptos()
         {
             List<RegistroCorrupto> corruptos = new List<RegistroCorrupto>();

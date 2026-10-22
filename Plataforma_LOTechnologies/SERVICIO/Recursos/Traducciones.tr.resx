@@ -578,4 +578,433 @@
   <data name="permisos.errAutoBloqueo" xml:space="preserve">
     <value>Bu değişiklik '{0}' yetkinizi kaldırır ve bu ekrana erişiminizi kaybedersiniz.</value>
   </data>
+  <data name="comun.filtrar" xml:space="preserve">
+    <value>Filtrele</value>
+  </data>
+  <data name="comun.anterior" xml:space="preserve">
+    <value>Önceki</value>
+  </data>
+  <data name="comun.siguiente" xml:space="preserve">
+    <value>Sonraki</value>
+  </data>
+  <data name="comun.errRestaurar" xml:space="preserve">
+    <value>Veritabanı geri yüklenemedi.</value>
+  </data>
+  <data name="auditoria.titulo" xml:space="preserve">
+    <value>Denetim / Günlük - LO Technologies</value>
+  </data>
+  <data name="auditoria.subtitulo" xml:space="preserve">
+    <value>CUS 015 — Denetim ve güvenlik için işlem kaydı</value>
+  </data>
+  <data name="auditoria.btnExportar" xml:space="preserve">
+    <value>Günlüğü dışa aktar</value>
+  </data>
+  <data name="auditoria.buscarPlaceholder" xml:space="preserve">
+    <value>Kullanıcı, işlem, varlık ile ara...</value>
+  </data>
+  <data name="auditoria.fechaDesde" xml:space="preserve">
+    <value>Başlangıç tarihi</value>
+  </data>
+  <data name="auditoria.fechaHasta" xml:space="preserve">
+    <value>Bitiş tarihi</value>
+  </data>
+  <data name="auditoria.todasAcciones" xml:space="preserve">
+    <value>Tüm işlemler</value>
+  </data>
+  <data name="auditoria.todosNiveles" xml:space="preserve">
+    <value>Tüm seviyeler</value>
+  </data>
+  <data name="auditoria.nivelInfo" xml:space="preserve">
+    <value>Bilgi (1)</value>
+  </data>
+  <data name="auditoria.nivelAdvertencia" xml:space="preserve">
+    <value>Uyarı (2)</value>
+  </data>
+  <data name="auditoria.nivelError" xml:space="preserve">
+    <value>Hata (3)</value>
+  </data>
+  <data name="auditoria.colFecha" xml:space="preserve">
+    <value>Tarih/Saat</value>
+  </data>
+  <data name="auditoria.colTipo" xml:space="preserve">
+    <value>Olay türü</value>
+  </data>
+  <data name="auditoria.colDetalle" xml:space="preserve">
+    <value>Ayrıntı</value>
+  </data>
+  <data name="auditoria.colNivel" xml:space="preserve">
+    <value>Seviye</value>
+  </data>
+  <data name="auditoria.sinResultados" xml:space="preserve">
+    <value>Uygulanan filtrelerle eşleşen olay yok.</value>
+  </data>
+  <data name="auditoria.ultimosTresDias" xml:space="preserve">
+    <value>Son 3 gün gösteriliyor</value>
+  </data>
+  <data name="auditoria.errSinFiltro" xml:space="preserve">
+    <value>En az bir filtre seçin.</value>
+  </data>
+  <data name="auditoria.errFechas" xml:space="preserve">
+    <value>BAŞLANGIÇ tarihi BİTİŞ tarihinden sonra olamaz.</value>
+  </data>
+  <data name="auditoria.msgSinSucesos" xml:space="preserve">
+    <value>Olay yok.</value>
+  </data>
+  <data name="auditoria.mostrandoFiltrados" xml:space="preserve">
+    <value>{0} filtrelenmiş sonuç gösteriliyor</value>
+  </data>
+  <data name="auditoria.hoja" xml:space="preserve">
+    <value>Denetim</value>
+  </data>
+  <data name="integridad.titulo" xml:space="preserve">
+    <value>Sistem bütünlüğü - LO Technologies</value>
+  </data>
+  <data name="integridad.encabezado" xml:space="preserve">
+    <value>Veri bütünlüğü</value>
+  </data>
+  <data name="integridad.inconsistencias" xml:space="preserve">
+    <value>Tespit edilen tutarsızlıklar</value>
+  </data>
+  <data name="integridad.colTabla" xml:space="preserve">
+    <value>Tablo</value>
+  </data>
+  <data name="integridad.colRegistro" xml:space="preserve">
+    <value>Kayıt</value>
+  </data>
+  <data name="integridad.colProblema" xml:space="preserve">
+    <value>Sorun</value>
+  </data>
+  <data name="integridad.todaLaTabla" xml:space="preserve">
+    <value>Tüm tablo</value>
+  </data>
+  <data name="integridad.sinDvv" xml:space="preserve">
+    <value>Tablonun dikey kontrol hanesi (DVV) yok. DigitoVerificador tablosundan silinmiş olabilir.</value>
+  </data>
+  <data name="integridad.sinDvh" xml:space="preserve">
+    <value>Kaydın kontrol hanesi (DVH) yok. Sistem dışından eklenmiş olabilir.</value>
+  </data>
+  <data name="integridad.dvhDistinto" xml:space="preserve">
+    <value>DVH kaydın verileriyle eşleşmiyor. Bir değer veya DVH'nin kendisi değiştirildi.</value>
+  </data>
+  <data name="integridad.cantidadDistinta" xml:space="preserve">
+    <value>Tabloda {0} kayıt var, {1} bekleniyordu. Sistem dışından kayıt eklendi veya silindi.</value>
+  </data>
+  <data name="integridad.dvvDistinto" xml:space="preserve">
+    <value>Dikey kontrol hanesi (DVV) eşleşmiyor. Kayıtlar DVH'leri yeniden hesaplanarak değiştirildi veya kayıtlı DVV değiştirildi.</value>
+  </data>
+  <data name="integridad.sinInconsistencias" xml:space="preserve">
+    <value>Tutarsızlık tespit edilmedi.</value>
+  </data>
+  <data name="integridad.btnRecalcular" xml:space="preserve">
+    <value>Kontrol hanelerini yeniden hesapla</value>
+  </data>
+  <data name="integridad.confirmarRecalcular" xml:space="preserve">
+    <value>Tüm tabloların kontrol hanelerini yeniden hesaplamak istiyor musunuz?</value>
+  </data>
+  <data name="integridad.btnRestaurar" xml:space="preserve">
+    <value>Veritabanını geri yükle</value>
+  </data>
+  <data name="integridad.confirmarRestaurar" xml:space="preserve">
+    <value>Veritabanını bir yedekten geri yüklemek istiyor musunuz? Bu işlem mevcut verilerin yerini alır.</value>
+  </data>
+  <data name="integridad.btnSalir" xml:space="preserve">
+    <value>Çık</value>
+  </data>
+  <data name="integridad.msgRecalculado" xml:space="preserve">
+    <value>Kontrol haneleri başarıyla hesaplandı</value>
+  </data>
+  <data name="integridad.errRecalcular" xml:space="preserve">
+    <value>Kontrol haneleri yeniden hesaplanamadı</value>
+  </data>
+  <data name="integridad.errSinBackup" xml:space="preserve">
+    <value>Geri yüklenecek yedek yok.</value>
+  </data>
+  <data name="integridad.msgRestaurada" xml:space="preserve">
+    <value>Veritabanı geri yüklendi. Tekrar giriş yapmayı deneyin.</value>
+  </data>
+  <data name="backup.titulo" xml:space="preserve">
+    <value>Yedekleme / Geri yükleme - LO Technologies</value>
+  </data>
+  <data name="backup.btnCrear" xml:space="preserve">
+    <value>Yedek oluştur</value>
+  </data>
+  <data name="backup.ultimo" xml:space="preserve">
+    <value>Son yedek</value>
+  </data>
+  <data name="backup.frecuencia" xml:space="preserve">
+    <value>Sıklık</value>
+  </data>
+  <data name="backup.semanal" xml:space="preserve">
+    <value>Haftalık</value>
+  </data>
+  <data name="backup.retencion" xml:space="preserve">
+    <value>Saklama süresi</value>
+  </data>
+  <data name="backup.treintaDias" xml:space="preserve">
+    <value>30 gün</value>
+  </data>
+  <data name="backup.historial" xml:space="preserve">
+    <value>Yedek geçmişi</value>
+  </data>
+  <data name="backup.colNombre" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="backup.colFecha" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="backup.colTamanio" xml:space="preserve">
+    <value>Boyut</value>
+  </data>
+  <data name="backup.colTipo" xml:space="preserve">
+    <value>Tür</value>
+  </data>
+  <data name="backup.tipoManual" xml:space="preserve">
+    <value>Manuel</value>
+  </data>
+  <data name="backup.ok" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="backup.error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="backup.descargar" xml:space="preserve">
+    <value>İndir</value>
+  </data>
+  <data name="backup.restaurar" xml:space="preserve">
+    <value>Geri yükle</value>
+  </data>
+  <data name="backup.sinBackups" xml:space="preserve">
+    <value>Henüz yedek oluşturulmadı.</value>
+  </data>
+  <data name="backup.confirmarTitulo" xml:space="preserve">
+    <value>Geri yüklemeyi onayla</value>
+  </data>
+  <data name="backup.alertaTitulo" xml:space="preserve">
+    <value>Geri alınamaz işlem.</value>
+  </data>
+  <data name="backup.alertaTexto" xml:space="preserve">
+    <value>Bu yedeği geri yüklediğinizde tüm mevcut veriler seçilen geri yükleme noktasının verileriyle değiştirilir. Bu işlem geri alınamaz.</value>
+  </data>
+  <data name="backup.puntoRestauracion" xml:space="preserve">
+    <value>Geri yükleme noktası:</value>
+  </data>
+  <data name="backup.tamanio" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="backup.escribiConfirmar" xml:space="preserve">
+    <value>Devam etmek için "{0}" yazın</value>
+  </data>
+  <data name="backup.palabraConfirmar" xml:space="preserve">
+    <value>ONAYLA</value>
+  </data>
+  <data name="backup.btnRestaurar" xml:space="preserve">
+    <value>Yedeği geri yükle</value>
+  </data>
+  <data name="backup.msgRealizado" xml:space="preserve">
+    <value>Yedekleme başarıyla tamamlandı.</value>
+  </data>
+  <data name="backup.errRealizar" xml:space="preserve">
+    <value>Yedek oluşturulamadı.</value>
+  </data>
+  <data name="backup.errEscribirConfirmar" xml:space="preserve">
+    <value>Devam etmek için {0} yazmanız gerekir.</value>
+  </data>
+  <data name="backup.msgRestaurada" xml:space="preserve">
+    <value>Veritabanı başarıyla geri yüklendi.</value>
+  </data>
+  <data name="idioma.es" xml:space="preserve">
+    <value>İspanyolca</value>
+  </data>
+  <data name="idioma.en" xml:space="preserve">
+    <value>İngilizce</value>
+  </data>
+  <data name="idioma.pt" xml:space="preserve">
+    <value>Portekizce</value>
+  </data>
+  <data name="idioma.fr" xml:space="preserve">
+    <value>Fransızca</value>
+  </data>
+  <data name="idioma.de" xml:space="preserve">
+    <value>Almanca</value>
+  </data>
+  <data name="idioma.it" xml:space="preserve">
+    <value>İtalyanca</value>
+  </data>
+  <data name="idioma.ja" xml:space="preserve">
+    <value>Japonca</value>
+  </data>
+  <data name="idioma.ru" xml:space="preserve">
+    <value>Rusça</value>
+  </data>
+  <data name="idioma.ar" xml:space="preserve">
+    <value>Arapça</value>
+  </data>
+  <data name="idioma.tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="idiomas.titulo" xml:space="preserve">
+    <value>Dil yönetimi - LO Technologies</value>
+  </data>
+  <data name="idiomas.encabezado" xml:space="preserve">
+    <value>Dil yönetimi</value>
+  </data>
+  <data name="idiomas.subtitulo" xml:space="preserve">
+    <value>Katalogdan dil ekleyin, çevirilerini gözden geçirin ve kullanıcılar için etkinleştirin.</value>
+  </data>
+  <data name="idiomas.btnSincronizar" xml:space="preserve">
+    <value>Anahtarları eşitle</value>
+  </data>
+  <data name="idiomas.ayudaSincronizar" xml:space="preserve">
+    <value>Mevcut çevirileri değiştirmeden katalogdaki yeni anahtarları tüm dillere ekler</value>
+  </data>
+  <data name="idiomas.btnAgregar" xml:space="preserve">
+    <value>Dil ekle</value>
+  </data>
+  <data name="idiomas.predeterminado" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="idiomas.revisadas" xml:space="preserve">
+    <value>Gözden geçirilmiş çeviriler</value>
+  </data>
+  <data name="idiomas.revisadasDe" xml:space="preserve">
+    <value>{0} için gözden geçirilmiş çeviriler</value>
+  </data>
+  <data name="idiomas.editarTraducciones" xml:space="preserve">
+    <value>Çevirileri düzenle</value>
+  </data>
+  <data name="idiomas.activar" xml:space="preserve">
+    <value>Etkinleştir</value>
+  </data>
+  <data name="idiomas.desactivar" xml:space="preserve">
+    <value>Devre dışı bırak</value>
+  </data>
+  <data name="idiomas.idiomaBase" xml:space="preserve">
+    <value>Temel dil: devre dışı bırakılamaz</value>
+  </data>
+  <data name="idiomas.idioma" xml:space="preserve">
+    <value>Dil *</value>
+  </data>
+  <data name="idiomas.ayudaAgregar" xml:space="preserve">
+    <value>Sistemin tüm anahtarları o dilin katalog metinleriyle yüklenir. Katalogda olmayanlar İspanyolca metinle kalır ve bekleyen olarak işaretlenir. Dil etkin değildir: çevirileri "Çevirileri düzenle" bölümünden gözden geçirip ardından etkinleştirin.</value>
+  </data>
+  <data name="idiomas.todosAgregados" xml:space="preserve">
+    <value>Katalogdaki tüm diller zaten eklendi.</value>
+  </data>
+  <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
+    <value>{0} tüm çevirileriyle eklendi. Gözden geçirip dili etkinleştirin.</value>
+  </data>
+  <data name="idiomas.msgAgregadoPendientes" xml:space="preserve">
+    <value>{0} eklendi. {1} çeviri bekliyor (İspanyolca metinle): etkinleştirmeden önce "Çevirileri düzenle" bölümünden tamamlayın.</value>
+  </data>
+  <data name="idiomas.errYaExiste" xml:space="preserve">
+    <value>{0} zaten eklenmişti.</value>
+  </data>
+  <data name="idiomas.errNoCatalogo" xml:space="preserve">
+    <value>Seçilen dil katalogda yok.</value>
+  </data>
+  <data name="idiomas.msgDesactivado" xml:space="preserve">
+    <value>Dil devre dışı bırakıldı: artık dil seçicide görünmüyor.</value>
+  </data>
+  <data name="idiomas.msgActivado" xml:space="preserve">
+    <value>Dil etkinleştirildi: kullanıcılar artık seçebilir.</value>
+  </data>
+  <data name="idiomas.msgActivadoPendientes" xml:space="preserve">
+    <value>Dil etkinleştirildi. İspanyolca gösterilecek {0} bekleyen çevirisi var.</value>
+  </data>
+  <data name="idiomas.errPredeterminado" xml:space="preserve">
+    <value>Varsayılan dil devre dışı bırakılamaz.</value>
+  </data>
+  <data name="idiomas.errEnUso" xml:space="preserve">
+    <value>Devre dışı bırakılamaz: {0} kullanıcıya bu dil atanmış.</value>
+  </data>
+  <data name="idiomas.errNoExiste" xml:space="preserve">
+    <value>Dil mevcut değil.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoNada" xml:space="preserve">
+    <value>Tüm dillerde katalogdaki tüm anahtarlar zaten var.</value>
+  </data>
+  <data name="idiomas.msgSincronizado" xml:space="preserve">
+    <value>{1} dilde {0} çeviri eklendi.</value>
+  </data>
+  <data name="idiomas.msgSincronizadoPendientes" xml:space="preserve">
+    <value>{0} tanesi bekliyor (İspanyolca metinle).</value>
+  </data>
+  <data name="traducciones.titulo" xml:space="preserve">
+    <value>Çevirileri düzenle - LO Technologies</value>
+  </data>
+  <data name="traducciones.volver" xml:space="preserve">
+    <value>Dillere dön</value>
+  </data>
+  <data name="traducciones.encabezado" xml:space="preserve">
+    <value>Çeviriler: {0}</value>
+  </data>
+  <data name="traducciones.resumenBase" xml:space="preserve">
+    <value>{0} anahtar · temel dil</value>
+  </data>
+  <data name="traducciones.resumen" xml:space="preserve">
+    <value>{0} anahtar · {1} bekleyen · {2}</value>
+  </data>
+  <data name="traducciones.avisoBase" xml:space="preserve">
+    <value>Temel dili düzenliyorsunuz. Bu metinler başka bir dilde çeviri eksik olduğunda gösterilir.</value>
+  </data>
+  <data name="traducciones.buscarPlaceholder" xml:space="preserve">
+    <value>Anahtar veya metin ile ara...</value>
+  </data>
+  <data name="traducciones.modulo" xml:space="preserve">
+    <value>Modül</value>
+  </data>
+  <data name="traducciones.todosModulos" xml:space="preserve">
+    <value>Tüm modüller</value>
+  </data>
+  <data name="traducciones.soloPendientes" xml:space="preserve">
+    <value>Yalnızca bekleyenler</value>
+  </data>
+  <data name="traducciones.colClave" xml:space="preserve">
+    <value>Anahtar</value>
+  </data>
+  <data name="traducciones.colTexto" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="traducciones.colTraduccion" xml:space="preserve">
+    <value>Çeviri</value>
+  </data>
+  <data name="traducciones.revisada" xml:space="preserve">
+    <value>Gözden geçirildi</value>
+  </data>
+  <data name="traducciones.sinResultados" xml:space="preserve">
+    <value>Filtreyle eşleşen çeviri yok.</value>
+  </data>
+  <data name="traducciones.sinPendientes" xml:space="preserve">
+    <value>Bekleyen çeviri kalmadı.</value>
+  </data>
+  <data name="traducciones.ayudaGuardar" xml:space="preserve">
+    <value>Bir çeviriye yazdığınızda gözden geçirildi olarak işaretlenir. Değişiklikler birlikte kaydedilir.</value>
+  </data>
+  <data name="traducciones.ariaTraduccion" xml:space="preserve">
+    <value>{0} çevirisi</value>
+  </data>
+  <data name="traducciones.errNoGuardado" xml:space="preserve">
+    <value>Değişiklikler kaydedilmedi.</value>
+  </data>
+  <data name="traducciones.errVacio" xml:space="preserve">
+    <value>Boş metin: {0}.</value>
+  </data>
+  <data name="traducciones.errLargo" xml:space="preserve">
+    <value>{0} karakterden uzun: {1}.</value>
+  </data>
+  <data name="traducciones.errMarcadores" xml:space="preserve">
+    <value>Süslü parantez içindeki yer tutucular İspanyolcadakiyle aynı olmalı: {0}.</value>
+  </data>
+  <data name="traducciones.yMas" xml:space="preserve">
+    <value>{0} ve {1} tane daha</value>
+  </data>
+  <data name="traducciones.msgSinCambios" xml:space="preserve">
+    <value>Kaydedilecek değişiklik yoktu.</value>
+  </data>
+  <data name="traducciones.msgGuardada" xml:space="preserve">
+    <value>1 çeviri kaydedildi. Sistemde görünüyor.</value>
+  </data>
+  <data name="traducciones.msgGuardadas" xml:space="preserve">
+    <value>{0} çeviri kaydedildi. Sistemde görünüyorlar.</value>
+  </data>
 </root>
