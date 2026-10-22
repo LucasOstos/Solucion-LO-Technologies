@@ -14,6 +14,10 @@ public partial class PaginaUsuarios : PaginaSegura
     {
         get { return PermisoNombres.GestionarUsuarios; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "usuarios.titulo"; }
+    }
     private UsuarioBLL usuarioBLL = new UsuarioBLL();
     private EmpresaBLL empresaBLL = new EmpresaBLL();
     private PermisoBLL permisoBLL = new PermisoBLL();
@@ -37,7 +41,7 @@ public partial class PaginaUsuarios : PaginaSegura
         List<Perfil> perfiles = permisoBLL.ObtenerPerfilesAsignables();
         //List<Perfil> perfiles = permisoBLL.ObtenerEstructura().Perfiles;
         ddlFiltroRol.Items.Clear();
-        ddlFiltroRol.Items.Add(new ListItem("Todos los perfiles", ""));
+        ddlFiltroRol.Items.Add(new ListItem(Traducir("usuarios.todosPerfiles"), ""));
         ddlRol.Items.Clear();
         foreach (Perfil perfil in perfiles)
         {
@@ -49,18 +53,16 @@ public partial class PaginaUsuarios : PaginaSegura
     {
         List<EmpresaBE> empresas = empresaBLL.ObtenerEmpresas();
         ddlFiltroEmpresa.Items.Clear();
-        ddlFiltroEmpresa.Items.Add(new ListItem("Todas las empresas", ""));
+        ddlFiltroEmpresa.Items.Add(new ListItem(Traducir("comun.todasEmpresas"), ""));
         foreach (EmpresaBE emp in empresas)
         {
             ddlFiltroEmpresa.Items.Add(new ListItem(emp.RazonSocial, emp.CodigoEmpresa.ToString()));
         }
-
         ddlEmpresa.Items.Clear();
         foreach (EmpresaBE emp in empresas)
         {
             ddlEmpresa.Items.Add(new ListItem(emp.RazonSocial, emp.CodigoEmpresa.ToString()));
         }
-
         bool esSuperUsuario = Sesion.Instancia.EsSuperUsuario;
         ddlFiltroEmpresa.Visible = esSuperUsuario;
         ddlEmpresa.Enabled = esSuperUsuario;
@@ -119,14 +121,14 @@ public partial class PaginaUsuarios : PaginaSegura
         Usuario usuario = usuarioBLL.ObtenerUsuarioPorDNI(dni);
         if (usuario == null)
         {
-            MostrarMensaje("El usuario ya no existe.", esExito: false);
+            MostrarMensaje(Traducir("usuarios.msgNoExiste"), esExito: false);
             CargarUsuarios();
             return;
         }
         hfEsEdicion.Value = "true";
         hfDNI.Value = usuario.DNI.ToString();
-        litTituloModal.Text = "Editar Usuario";
-        btnGuardarUsuario.Text = "Guardar Cambios";
+        litTituloModal.Text = Traducir("usuarios.modalEditar");
+        btnGuardarUsuario.Text = Traducir("comun.guardarCambios");
         tbDNI.Text = usuario.DNI.ToString();
         tbDNI.Enabled = false;
         tbNombre.Text = usuario.Nombre;
@@ -157,8 +159,8 @@ public partial class PaginaUsuarios : PaginaSegura
     {
         LimpiarModal();
         hfEsEdicion.Value = "false";
-        litTituloModal.Text = "Nuevo Usuario";
-        btnGuardarUsuario.Text = "Crear Usuario";
+        litTituloModal.Text = Traducir("usuarios.modalNuevo");
+        btnGuardarUsuario.Text = Traducir("usuarios.btnCrear");
         tbDNI.Enabled = true;
         grupoContrasenia.Visible = true;
         rfvContrasenia.Enabled = true;
@@ -174,29 +176,27 @@ public partial class PaginaUsuarios : PaginaSegura
     protected void rptUsuarios_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         int dni = int.Parse(e.CommandArgument.ToString());
-
         switch (e.CommandName)
         {
             case "Editar":
                 CargarUsuarioEnModal(dni);
                 break;
-
             case "CambiarEstado":
                 Usuario usuario = usuarioBLL.ObtenerUsuarioPorDNI(dni);
                 usuarioBLL.CambiarEstadoActivo(dni, !usuario.estadoActivo);
-                MostrarMensaje("Estado del usuario actualizado.", esExito: true);
+                MostrarMensaje(Traducir("usuarios.msgEstado"), esExito: true);
                 CargarUsuarios();
                 break;
             case "Desbloquear":
                 Usuario usuarioADesbloquear = usuarioBLL.ObtenerUsuarioPorDNI(dni);
                 if (!usuarioADesbloquear.estadoBloqueado)
                 {
-                    MostrarMensaje("El usuario no está bloqueado.", esExito: true);
+                    MostrarMensaje(Traducir("usuarios.msgNoBloqueado"), esExito: true);
                 }
                 else
                 {
                     usuarioBLL.DesbloquearUsuario(dni);
-                    MostrarMensaje("Usuario desbloqueado. Se le envió un mail para que defina su nueva contraseña.", esExito: true);
+                    MostrarMensaje(Traducir("usuarios.msgDesbloqueado"), esExito: true);
                     CargarUsuarios();
                 }
                 break;
@@ -223,7 +223,7 @@ public partial class PaginaUsuarios : PaginaSegura
         int dni;
         if (!int.TryParse(tbDNI.Text.Trim(), out dni))
         {
-            MostrarMensajeModal("DNI inválido.");
+            MostrarMensajeModal(Traducir("usuarios.errDniInvalido"));
             AbrirModal();
             return;
         }
@@ -239,30 +239,36 @@ public partial class PaginaUsuarios : PaginaSegura
         };
         bool esEdicion = hfEsEdicion.Value == "true";
         ResultadoGuardarUsuario resultado;
-
-        if (esEdicion)
+        try
         {
-            resultado = usuarioBLL.ModificarUsuario(usuario);
+            if (esEdicion)
+            {
+                resultado = usuarioBLL.ModificarUsuario(usuario);
+            }
+            else
+            {
+                resultado = usuarioBLL.CrearUsuario(usuario, tbContrasenia.Text);
+            }
         }
-        else
+        catch (ExcepcionTraducible ex)
         {
-            resultado = usuarioBLL.CrearUsuario(usuario, tbContrasenia.Text);
+            MostrarMensajeModal(TraducirError(ex));
+            AbrirModal();
+            return;
         }
         switch (resultado)
         {
             case ResultadoGuardarUsuario.Exitoso:
                 pnlModalUsuario.Style["display"] = "none";
-                MostrarMensaje(esEdicion ? "Usuario modificado correctamente." : "Usuario creado correctamente.", esExito: true);
+                MostrarMensaje(Traducir(esEdicion ? "usuarios.msgModificado" : "usuarios.msgCreado"), esExito: true);
                 CargarUsuarios();
                 break;
-
             case ResultadoGuardarUsuario.DniYaRegistrado:
-                MostrarMensajeModal("Ya existe un usuario registrado con ese DNI.");
+                MostrarMensajeModal(Traducir("usuarios.msgDniExiste"));
                 AbrirModal();
                 break;
-
             case ResultadoGuardarUsuario.DatosInvalidos:
-                MostrarMensajeModal("Datos inválidos. Revisá los campos.");
+                MostrarMensajeModal(Traducir("comun.datosInvalidos"));
                 AbrirModal();
                 break;
         }

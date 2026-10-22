@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SERVICIO.Logica
 {
-    public class ExcepcionTraducible : Exception
+    public class ExcepcionTraducible : InvalidOperationException
     {
         public string Clave { get; private set; }
         public object[] Parametros { get; private set; }

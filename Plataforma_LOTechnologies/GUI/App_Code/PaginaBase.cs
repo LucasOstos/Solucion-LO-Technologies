@@ -17,7 +17,8 @@ public class PaginaBase : Page, IObservadorIdioma
     private const string ATR_PLACEHOLDER = "ClavePlaceholder";
     private const string ATR_TITLE = "ClaveTitle";
     private const string ATR_ARIA = "ClaveAria";
-    private static readonly string[] ATRIBUTOS_CLAVE = { ATR_CLAVE, ATR_PLACEHOLDER, ATR_TITLE, ATR_ARIA };
+    private const string ATR_CONFIRMAR = "ClaveConfirmar";
+    private static readonly string[] ATRIBUTOS_CLAVE = { ATR_CLAVE, ATR_PLACEHOLDER, ATR_TITLE, ATR_ARIA, ATR_CONFIRMAR };
     private static readonly string[] IDIOMAS_DERECHA_A_IZQUIERDA = { "ar", "he", "fa", "ur" };
     protected virtual string ClaveTitulo
     {
@@ -85,8 +86,20 @@ public class PaginaBase : Page, IObservadorIdioma
                 string clave = atributos[ATR_CLAVE];
                 if (!string.IsNullOrEmpty(clave)) AsignarTexto(control, Traducir(clave));
                 TraducirAtributo(atributos, ATR_PLACEHOLDER, "placeholder");
-                TraducirAtributo(atributos, ATR_TITLE, "title");
                 TraducirAtributo(atributos, ATR_ARIA, "aria-label");
+                string claveTitulo = atributos[ATR_TITLE];
+                if (!string.IsNullOrEmpty(claveTitulo))
+                {
+                    if (control is WebControl) ((WebControl)control).ToolTip = Traducir(claveTitulo);
+                    else atributos["title"] = Traducir(claveTitulo);
+                }
+                string claveConfirmar = atributos[ATR_CONFIRMAR];
+                if (!string.IsNullOrEmpty(claveConfirmar))
+                {
+                    string script = "return confirm(" + HttpUtility.JavaScriptStringEncode(Traducir(claveConfirmar), true) + ");";
+                    if (control is Button) ((Button)control).OnClientClick = script;
+                    else if (control is LinkButton) ((LinkButton)control).OnClientClick = script;
+                }
             }
             ListControl lista = control as ListControl;
             if (lista != null)
@@ -154,8 +167,7 @@ public class PaginaBase : Page, IObservadorIdioma
         }
         else
         {
-            string script = "document.documentElement.lang='" + HttpUtility.JavaScriptStringEncode(codigo)
-                          + "';document.documentElement.dir='" + direccion + "';";
+            string script = "document.documentElement.lang='" + HttpUtility.JavaScriptStringEncode(codigo) + "';document.documentElement.dir='" + direccion + "';";
             ClientScript.RegisterStartupScript(typeof(PaginaBase), "IdiomaHtml", script, true);
         }
     }
@@ -182,5 +194,5 @@ public class PaginaBase : Page, IObservadorIdioma
             }
             if (control.HasControls()) QuitarAtributosClave(control);
         }
-    }    
+    }
 }

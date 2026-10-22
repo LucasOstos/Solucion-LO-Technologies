@@ -203,4 +203,379 @@
   <data name="error.inesperado" xml:space="preserve">
     <value>Произошла непредвиденная ошибка. Повторите попытку.</value>
   </data>
+  <data name="comun.volverMenu" xml:space="preserve">
+    <value>Вернуться в меню</value>
+  </data>
+  <data name="comun.buscar" xml:space="preserve">
+    <value>Найти</value>
+  </data>
+  <data name="comun.activo" xml:space="preserve">
+    <value>Активен</value>
+  </data>
+  <data name="comun.inactivo" xml:space="preserve">
+    <value>Неактивен</value>
+  </data>
+  <data name="comun.todosEstados" xml:space="preserve">
+    <value>Все статусы</value>
+  </data>
+  <data name="comun.estado" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="comun.acciones" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="comun.editar" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="comun.activarDesactivar" xml:space="preserve">
+    <value>Активировать/Деактивировать</value>
+  </data>
+  <data name="comun.guardarCambios" xml:space="preserve">
+    <value>Сохранить изменения</value>
+  </data>
+  <data name="comun.empresa" xml:space="preserve">
+    <value>Компания</value>
+  </data>
+  <data name="comun.todasEmpresas" xml:space="preserve">
+    <value>Все компании</value>
+  </data>
+  <data name="comun.seleccionar" xml:space="preserve">
+    <value>— Выбрать —</value>
+  </data>
+  <data name="comun.datosInvalidos" xml:space="preserve">
+    <value>Неверные данные. Проверьте поля.</value>
+  </data>
+  <data name="comun.telefono" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="comun.direccion" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="usuarios.titulo" xml:space="preserve">
+    <value>Управление пользователями - LO Technologies</value>
+  </data>
+  <data name="usuarios.encabezado" xml:space="preserve">
+    <value>Управление пользователями</value>
+  </data>
+  <data name="usuarios.btnAgregar" xml:space="preserve">
+    <value>Добавить пользователя</value>
+  </data>
+  <data name="usuarios.buscarPlaceholder" xml:space="preserve">
+    <value>Поиск пользователя...</value>
+  </data>
+  <data name="usuarios.todosPerfiles" xml:space="preserve">
+    <value>Все профили</value>
+  </data>
+  <data name="usuarios.colUsuario" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="usuarios.colPerfil" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="usuarios.colUltimoAcceso" xml:space="preserve">
+    <value>Последний вход</value>
+  </data>
+  <data name="usuarios.bloqueado" xml:space="preserve">
+    <value>Заблокирован</value>
+  </data>
+  <data name="usuarios.desbloquear" xml:space="preserve">
+    <value>Разблокировать</value>
+  </data>
+  <data name="usuarios.confirmarEstado" xml:space="preserve">
+    <value>Изменить статус этого пользователя?</value>
+  </data>
+  <data name="usuarios.confirmarDesbloqueo" xml:space="preserve">
+    <value>Разблокировать этого пользователя? Ему будет отправлено письмо для установки нового пароля.</value>
+  </data>
+  <data name="usuarios.sinResultados" xml:space="preserve">
+    <value>Нет пользователей, соответствующих запросу.</value>
+  </data>
+  <data name="usuarios.modalNuevo" xml:space="preserve">
+    <value>Новый пользователь</value>
+  </data>
+  <data name="usuarios.modalEditar" xml:space="preserve">
+    <value>Изменить пользователя</value>
+  </data>
+  <data name="usuarios.btnCrear" xml:space="preserve">
+    <value>Создать пользователя</value>
+  </data>
+  <data name="usuarios.dni" xml:space="preserve">
+    <value>Номер документа (DNI) *</value>
+  </data>
+  <data name="usuarios.errDni" xml:space="preserve">
+    <value>Введите номер документа</value>
+  </data>
+  <data name="usuarios.errDniInvalido" xml:space="preserve">
+    <value>Неверный номер документа</value>
+  </data>
+  <data name="usuarios.nombre" xml:space="preserve">
+    <value>Имя *</value>
+  </data>
+  <data name="usuarios.errNombre" xml:space="preserve">
+    <value>Введите имя</value>
+  </data>
+  <data name="usuarios.apellido" xml:space="preserve">
+    <value>Фамилия *</value>
+  </data>
+  <data name="usuarios.errApellido" xml:space="preserve">
+    <value>Введите фамилию</value>
+  </data>
+  <data name="usuarios.email" xml:space="preserve">
+    <value>Электронная почта *</value>
+  </data>
+  <data name="usuarios.errEmail" xml:space="preserve">
+    <value>Введите адрес электронной почты</value>
+  </data>
+  <data name="usuarios.rol" xml:space="preserve">
+    <value>Роль</value>
+  </data>
+  <data name="usuarios.contrasenia" xml:space="preserve">
+    <value>Пароль *</value>
+  </data>
+  <data name="usuarios.errContrasenia" xml:space="preserve">
+    <value>Введите пароль</value>
+  </data>
+  <data name="usuarios.activo" xml:space="preserve">
+    <value>Активный пользователь</value>
+  </data>
+  <data name="usuarios.msgNoExiste" xml:space="preserve">
+    <value>Пользователь больше не существует.</value>
+  </data>
+  <data name="usuarios.msgEstado" xml:space="preserve">
+    <value>Статус пользователя обновлён.</value>
+  </data>
+  <data name="usuarios.msgNoBloqueado" xml:space="preserve">
+    <value>Пользователь не заблокирован.</value>
+  </data>
+  <data name="usuarios.msgDesbloqueado" xml:space="preserve">
+    <value>Пользователь разблокирован. Ему отправлено письмо для установки нового пароля.</value>
+  </data>
+  <data name="usuarios.msgModificado" xml:space="preserve">
+    <value>Пользователь успешно изменён.</value>
+  </data>
+  <data name="usuarios.msgCreado" xml:space="preserve">
+    <value>Пользователь успешно создан.</value>
+  </data>
+  <data name="usuarios.msgDniExiste" xml:space="preserve">
+    <value>Пользователь с таким номером документа уже существует.</value>
+  </data>
+  <data name="usuarios.errSinEmpresa" xml:space="preserve">
+    <value>Пользователь должен принадлежать компании.</value>
+  </data>
+  <data name="empresas.titulo" xml:space="preserve">
+    <value>Управление компаниями - LO Technologies</value>
+  </data>
+  <data name="empresas.encabezado" xml:space="preserve">
+    <value>Управление компаниями</value>
+  </data>
+  <data name="empresas.btnNueva" xml:space="preserve">
+    <value>Новая компания</value>
+  </data>
+  <data name="empresas.buscarPlaceholder" xml:space="preserve">
+    <value>Поиск по названию или CUIT...</value>
+  </data>
+  <data name="empresas.colCorreo" xml:space="preserve">
+    <value>Эл. почта</value>
+  </data>
+  <data name="empresas.confirmarEstado" xml:space="preserve">
+    <value>Изменить статус этой компании?</value>
+  </data>
+  <data name="empresas.sinResultados" xml:space="preserve">
+    <value>Нет компаний, соответствующих запросу.</value>
+  </data>
+  <data name="empresas.modalEditar" xml:space="preserve">
+    <value>Изменить компанию</value>
+  </data>
+  <data name="empresas.btnCrear" xml:space="preserve">
+    <value>Создать компанию</value>
+  </data>
+  <data name="empresas.razonSocial" xml:space="preserve">
+    <value>Название организации *</value>
+  </data>
+  <data name="empresas.errRazonSocial" xml:space="preserve">
+    <value>Введите название организации</value>
+  </data>
+  <data name="empresas.errCuit" xml:space="preserve">
+    <value>Введите CUIT</value>
+  </data>
+  <data name="empresas.correo" xml:space="preserve">
+    <value>Эл. почта *</value>
+  </data>
+  <data name="empresas.errCorreo" xml:space="preserve">
+    <value>Введите эл. почту</value>
+  </data>
+  <data name="empresas.activa" xml:space="preserve">
+    <value>Активная компания</value>
+  </data>
+  <data name="empresas.msgNoExiste" xml:space="preserve">
+    <value>Компания больше не существует.</value>
+  </data>
+  <data name="empresas.msgModificada" xml:space="preserve">
+    <value>Компания успешно изменена.</value>
+  </data>
+  <data name="empresas.msgRegistrada" xml:space="preserve">
+    <value>Компания успешно зарегистрирована.</value>
+  </data>
+  <data name="empresas.msgCuitExiste" xml:space="preserve">
+    <value>Компания уже зарегистрирована.</value>
+  </data>
+  <data name="empresas.msgEstado" xml:space="preserve">
+    <value>Статус компании обновлён.</value>
+  </data>
+  <data name="permisos.titulo" xml:space="preserve">
+    <value>Управление разрешениями - LO Technologies</value>
+  </data>
+  <data name="permisos.encabezado" xml:space="preserve">
+    <value>Управление разрешениями</value>
+  </data>
+  <data name="permisos.perfiles" xml:space="preserve">
+    <value>Профили</value>
+  </data>
+  <data name="permisos.nombrePerfilNuevo" xml:space="preserve">
+    <value>Название нового профиля</value>
+  </data>
+  <data name="permisos.ejPerfil" xml:space="preserve">
+    <value>Например: Управляющий магазином</value>
+  </data>
+  <data name="permisos.permisosDisponibles" xml:space="preserve">
+    <value>Доступные разрешения</value>
+  </data>
+  <data name="permisos.familiasDisponibles" xml:space="preserve">
+    <value>Доступные группы</value>
+  </data>
+  <data name="permisos.perfilSeleccionado" xml:space="preserve">
+    <value>Выбранный профиль</value>
+  </data>
+  <data name="permisos.contenidoAsignado" xml:space="preserve">
+    <value>Назначенное содержимое</value>
+  </data>
+  <data name="permisos.ayudaQuitarPerfil" xml:space="preserve">
+    <value>Отметьте то, что нужно удалить из профиля.</value>
+  </data>
+  <data name="permisos.btnCrearPerfil" xml:space="preserve">
+    <value>Создать профиль</value>
+  </data>
+  <data name="permisos.btnAgregarPermisos" xml:space="preserve">
+    <value>Добавить разрешения</value>
+  </data>
+  <data name="permisos.btnQuitarPermisos" xml:space="preserve">
+    <value>Удалить разрешения</value>
+  </data>
+  <data name="permisos.btnBorrarPerfil" xml:space="preserve">
+    <value>Удалить профиль</value>
+  </data>
+  <data name="permisos.familias" xml:space="preserve">
+    <value>Группы</value>
+  </data>
+  <data name="permisos.nombreFamiliaNueva" xml:space="preserve">
+    <value>Название новой группы</value>
+  </data>
+  <data name="permisos.ejFamilia" xml:space="preserve">
+    <value>Например: Общее администрирование</value>
+  </data>
+  <data name="permisos.familiaSeleccionada" xml:space="preserve">
+    <value>Выбранная группа</value>
+  </data>
+  <data name="permisos.ayudaQuitarFamilia" xml:space="preserve">
+    <value>Отметьте то, что нужно удалить из группы.</value>
+  </data>
+  <data name="permisos.btnCrearFamilia" xml:space="preserve">
+    <value>Создать группу</value>
+  </data>
+  <data name="permisos.btnBorrarFamilia" xml:space="preserve">
+    <value>Удалить группу</value>
+  </data>
+  <data name="permisos.itemPermiso" xml:space="preserve">
+    <value>Разрешение: {0}</value>
+  </data>
+  <data name="permisos.itemFamilia" xml:space="preserve">
+    <value>Группа: {0} (разрешений: {1})</value>
+  </data>
+  <data name="permisos.msgPerfilCreado" xml:space="preserve">
+    <value>Профиль успешно создан.</value>
+  </data>
+  <data name="permisos.errElegirPerfilAgregar" xml:space="preserve">
+    <value>Выберите профиль в списке «Профили», чтобы добавить ему разрешения.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosPerfil" xml:space="preserve">
+    <value>Разрешения добавлены в профиль.</value>
+  </data>
+  <data name="permisos.errElegirPerfilQuitar" xml:space="preserve">
+    <value>Выберите профиль в списке «Профили», чтобы удалить у него разрешения.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosPerfil" xml:space="preserve">
+    <value>Разрешения удалены из профиля.</value>
+  </data>
+  <data name="permisos.errElegirPerfilBorrar" xml:space="preserve">
+    <value>Выберите в списке «Профили» профиль, который нужно удалить.</value>
+  </data>
+  <data name="permisos.msgPerfilBorrado" xml:space="preserve">
+    <value>Профиль успешно удалён.</value>
+  </data>
+  <data name="permisos.msgFamiliaCreada" xml:space="preserve">
+    <value>Группа успешно создана.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaAgregar" xml:space="preserve">
+    <value>Выберите группу в списке «Группы», чтобы добавить ей разрешения.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosFamilia" xml:space="preserve">
+    <value>Разрешения добавлены в группу.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaQuitar" xml:space="preserve">
+    <value>Выберите группу в списке «Группы», чтобы удалить у неё разрешения.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosFamilia" xml:space="preserve">
+    <value>Разрешения удалены из группы.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaBorrar" xml:space="preserve">
+    <value>Выберите в списке «Группы» группу, которую нужно удалить.</value>
+  </data>
+  <data name="permisos.msgFamiliaBorrada" xml:space="preserve">
+    <value>Группа успешно удалена.</value>
+  </data>
+  <data name="permisos.errSinSeleccionPerfil" xml:space="preserve">
+    <value>Выберите хотя бы одно разрешение или группу для профиля.</value>
+  </data>
+  <data name="permisos.errSinSeleccionAgregar" xml:space="preserve">
+    <value>Отметьте хотя бы одно разрешение или группу для добавления.</value>
+  </data>
+  <data name="permisos.errSinSeleccionQuitar" xml:space="preserve">
+    <value>Выберите в разделе «Назначенное содержимое» то, что нужно удалить.</value>
+  </data>
+  <data name="permisos.errSinSeleccionFamilia" xml:space="preserve">
+    <value>Выберите хотя бы одно разрешение или группу для новой группы.</value>
+  </data>
+  <data name="permisos.errFamiliaEnUso" xml:space="preserve">
+    <value>Невозможно удалить «{0}», так как она назначена: {1}. Сначала удалите её оттуда.</value>
+  </data>
+  <data name="permisos.errYaIncluido" xml:space="preserve">
+    <value>«{0}» уже входит в «{1}» (напрямую или через группу).</value>
+  </data>
+  <data name="permisos.errPermisoNoExiste" xml:space="preserve">
+    <value>Одно из выбранных разрешений больше не существует. Перезагрузите страницу.</value>
+  </data>
+  <data name="permisos.errFamiliaSelNoExiste" xml:space="preserve">
+    <value>Одна из выбранных групп больше не существует. Перезагрузите страницу.</value>
+  </data>
+  <data name="permisos.errPerfilNoExiste" xml:space="preserve">
+    <value>Выбранный профиль больше не существует.</value>
+  </data>
+  <data name="permisos.errFamiliaNoExiste" xml:space="preserve">
+    <value>Выбранная группа больше не существует.</value>
+  </data>
+  <data name="permisos.errNombreVacio" xml:space="preserve">
+    <value>Введите название.</value>
+  </data>
+  <data name="permisos.errNombreLargo" xml:space="preserve">
+    <value>Название не может превышать {0} символов.</value>
+  </data>
+  <data name="permisos.errPerfilExiste" xml:space="preserve">
+    <value>Профиль с таким названием уже существует.</value>
+  </data>
+  <data name="permisos.errFamiliaExiste" xml:space="preserve">
+    <value>Группа с таким названием уже существует.</value>
+  </data>
+  <data name="permisos.errAutoBloqueo" xml:space="preserve">
+    <value>Это изменение лишит вас разрешения «{0}», и вы потеряете доступ к этому экрану.</value>
+  </data>
 </root>

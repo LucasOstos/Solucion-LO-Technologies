@@ -203,4 +203,379 @@
   <data name="error.inesperado" xml:space="preserve">
     <value>حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.</value>
   </data>
+  <data name="comun.volverMenu" xml:space="preserve">
+    <value>العودة إلى القائمة</value>
+  </data>
+  <data name="comun.buscar" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="comun.activo" xml:space="preserve">
+    <value>نشط</value>
+  </data>
+  <data name="comun.inactivo" xml:space="preserve">
+    <value>غير نشط</value>
+  </data>
+  <data name="comun.todosEstados" xml:space="preserve">
+    <value>جميع الحالات</value>
+  </data>
+  <data name="comun.estado" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="comun.acciones" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="comun.editar" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="comun.activarDesactivar" xml:space="preserve">
+    <value>تفعيل/إلغاء التفعيل</value>
+  </data>
+  <data name="comun.guardarCambios" xml:space="preserve">
+    <value>حفظ التغييرات</value>
+  </data>
+  <data name="comun.empresa" xml:space="preserve">
+    <value>الشركة</value>
+  </data>
+  <data name="comun.todasEmpresas" xml:space="preserve">
+    <value>جميع الشركات</value>
+  </data>
+  <data name="comun.seleccionar" xml:space="preserve">
+    <value>— اختيار —</value>
+  </data>
+  <data name="comun.datosInvalidos" xml:space="preserve">
+    <value>بيانات غير صالحة. يرجى مراجعة الحقول.</value>
+  </data>
+  <data name="comun.telefono" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="comun.direccion" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="usuarios.titulo" xml:space="preserve">
+    <value>إدارة المستخدمين - LO Technologies</value>
+  </data>
+  <data name="usuarios.encabezado" xml:space="preserve">
+    <value>إدارة المستخدمين</value>
+  </data>
+  <data name="usuarios.btnAgregar" xml:space="preserve">
+    <value>إضافة مستخدم</value>
+  </data>
+  <data name="usuarios.buscarPlaceholder" xml:space="preserve">
+    <value>البحث عن مستخدم...</value>
+  </data>
+  <data name="usuarios.todosPerfiles" xml:space="preserve">
+    <value>جميع ملفات التعريف</value>
+  </data>
+  <data name="usuarios.colUsuario" xml:space="preserve">
+    <value>المستخدم</value>
+  </data>
+  <data name="usuarios.colPerfil" xml:space="preserve">
+    <value>ملف التعريف</value>
+  </data>
+  <data name="usuarios.colUltimoAcceso" xml:space="preserve">
+    <value>آخر دخول</value>
+  </data>
+  <data name="usuarios.bloqueado" xml:space="preserve">
+    <value>محظور</value>
+  </data>
+  <data name="usuarios.desbloquear" xml:space="preserve">
+    <value>إلغاء الحظر</value>
+  </data>
+  <data name="usuarios.confirmarEstado" xml:space="preserve">
+    <value>هل تريد تغيير حالة هذا المستخدم؟</value>
+  </data>
+  <data name="usuarios.confirmarDesbloqueo" xml:space="preserve">
+    <value>هل تريد إلغاء حظر هذا المستخدم؟ سيتم إرسال بريد إلكتروني إليه لتعيين كلمة مرور جديدة.</value>
+  </data>
+  <data name="usuarios.sinResultados" xml:space="preserve">
+    <value>لا يوجد مستخدمون يطابقون البحث.</value>
+  </data>
+  <data name="usuarios.modalNuevo" xml:space="preserve">
+    <value>مستخدم جديد</value>
+  </data>
+  <data name="usuarios.modalEditar" xml:space="preserve">
+    <value>تعديل المستخدم</value>
+  </data>
+  <data name="usuarios.btnCrear" xml:space="preserve">
+    <value>إنشاء مستخدم</value>
+  </data>
+  <data name="usuarios.dni" xml:space="preserve">
+    <value>رقم الهوية (DNI) *</value>
+  </data>
+  <data name="usuarios.errDni" xml:space="preserve">
+    <value>أدخل رقم الهوية</value>
+  </data>
+  <data name="usuarios.errDniInvalido" xml:space="preserve">
+    <value>رقم الهوية غير صالح</value>
+  </data>
+  <data name="usuarios.nombre" xml:space="preserve">
+    <value>الاسم *</value>
+  </data>
+  <data name="usuarios.errNombre" xml:space="preserve">
+    <value>أدخل الاسم</value>
+  </data>
+  <data name="usuarios.apellido" xml:space="preserve">
+    <value>اسم العائلة *</value>
+  </data>
+  <data name="usuarios.errApellido" xml:space="preserve">
+    <value>أدخل اسم العائلة</value>
+  </data>
+  <data name="usuarios.email" xml:space="preserve">
+    <value>البريد الإلكتروني *</value>
+  </data>
+  <data name="usuarios.errEmail" xml:space="preserve">
+    <value>أدخل البريد الإلكتروني</value>
+  </data>
+  <data name="usuarios.rol" xml:space="preserve">
+    <value>الدور</value>
+  </data>
+  <data name="usuarios.contrasenia" xml:space="preserve">
+    <value>كلمة المرور *</value>
+  </data>
+  <data name="usuarios.errContrasenia" xml:space="preserve">
+    <value>أدخل كلمة المرور</value>
+  </data>
+  <data name="usuarios.activo" xml:space="preserve">
+    <value>مستخدم نشط</value>
+  </data>
+  <data name="usuarios.msgNoExiste" xml:space="preserve">
+    <value>لم يعد المستخدم موجودًا.</value>
+  </data>
+  <data name="usuarios.msgEstado" xml:space="preserve">
+    <value>تم تحديث حالة المستخدم.</value>
+  </data>
+  <data name="usuarios.msgNoBloqueado" xml:space="preserve">
+    <value>المستخدم غير محظور.</value>
+  </data>
+  <data name="usuarios.msgDesbloqueado" xml:space="preserve">
+    <value>تم إلغاء حظر المستخدم. أُرسل إليه بريد إلكتروني لتعيين كلمة مرور جديدة.</value>
+  </data>
+  <data name="usuarios.msgModificado" xml:space="preserve">
+    <value>تم تعديل المستخدم بنجاح.</value>
+  </data>
+  <data name="usuarios.msgCreado" xml:space="preserve">
+    <value>تم إنشاء المستخدم بنجاح.</value>
+  </data>
+  <data name="usuarios.msgDniExiste" xml:space="preserve">
+    <value>يوجد بالفعل مستخدم مسجل برقم الهوية هذا.</value>
+  </data>
+  <data name="usuarios.errSinEmpresa" xml:space="preserve">
+    <value>يجب أن ينتمي المستخدم إلى شركة.</value>
+  </data>
+  <data name="empresas.titulo" xml:space="preserve">
+    <value>إدارة الشركات - LO Technologies</value>
+  </data>
+  <data name="empresas.encabezado" xml:space="preserve">
+    <value>إدارة الشركات</value>
+  </data>
+  <data name="empresas.btnNueva" xml:space="preserve">
+    <value>شركة جديدة</value>
+  </data>
+  <data name="empresas.buscarPlaceholder" xml:space="preserve">
+    <value>البحث بالاسم أو CUIT...</value>
+  </data>
+  <data name="empresas.colCorreo" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="empresas.confirmarEstado" xml:space="preserve">
+    <value>هل تريد تغيير حالة هذه الشركة؟</value>
+  </data>
+  <data name="empresas.sinResultados" xml:space="preserve">
+    <value>لا توجد شركات تطابق البحث.</value>
+  </data>
+  <data name="empresas.modalEditar" xml:space="preserve">
+    <value>تعديل الشركة</value>
+  </data>
+  <data name="empresas.btnCrear" xml:space="preserve">
+    <value>إنشاء شركة</value>
+  </data>
+  <data name="empresas.razonSocial" xml:space="preserve">
+    <value>الاسم التجاري *</value>
+  </data>
+  <data name="empresas.errRazonSocial" xml:space="preserve">
+    <value>أدخل الاسم التجاري</value>
+  </data>
+  <data name="empresas.errCuit" xml:space="preserve">
+    <value>أدخل CUIT</value>
+  </data>
+  <data name="empresas.correo" xml:space="preserve">
+    <value>البريد الإلكتروني *</value>
+  </data>
+  <data name="empresas.errCorreo" xml:space="preserve">
+    <value>أدخل البريد الإلكتروني</value>
+  </data>
+  <data name="empresas.activa" xml:space="preserve">
+    <value>شركة نشطة</value>
+  </data>
+  <data name="empresas.msgNoExiste" xml:space="preserve">
+    <value>لم تعد الشركة موجودة.</value>
+  </data>
+  <data name="empresas.msgModificada" xml:space="preserve">
+    <value>تم تعديل الشركة بنجاح.</value>
+  </data>
+  <data name="empresas.msgRegistrada" xml:space="preserve">
+    <value>تم تسجيل الشركة بنجاح.</value>
+  </data>
+  <data name="empresas.msgCuitExiste" xml:space="preserve">
+    <value>الشركة مسجلة بالفعل.</value>
+  </data>
+  <data name="empresas.msgEstado" xml:space="preserve">
+    <value>تم تحديث حالة الشركة.</value>
+  </data>
+  <data name="permisos.titulo" xml:space="preserve">
+    <value>إدارة الصلاحيات - LO Technologies</value>
+  </data>
+  <data name="permisos.encabezado" xml:space="preserve">
+    <value>إدارة الصلاحيات</value>
+  </data>
+  <data name="permisos.perfiles" xml:space="preserve">
+    <value>ملفات التعريف</value>
+  </data>
+  <data name="permisos.nombrePerfilNuevo" xml:space="preserve">
+    <value>اسم ملف التعريف الجديد</value>
+  </data>
+  <data name="permisos.ejPerfil" xml:space="preserve">
+    <value>مثال: مدير المتجر</value>
+  </data>
+  <data name="permisos.permisosDisponibles" xml:space="preserve">
+    <value>الصلاحيات المتاحة</value>
+  </data>
+  <data name="permisos.familiasDisponibles" xml:space="preserve">
+    <value>المجموعات المتاحة</value>
+  </data>
+  <data name="permisos.perfilSeleccionado" xml:space="preserve">
+    <value>ملف التعريف المحدد</value>
+  </data>
+  <data name="permisos.contenidoAsignado" xml:space="preserve">
+    <value>المحتوى المعيّن</value>
+  </data>
+  <data name="permisos.ayudaQuitarPerfil" xml:space="preserve">
+    <value>حدّد ما تريد إزالته من ملف التعريف.</value>
+  </data>
+  <data name="permisos.btnCrearPerfil" xml:space="preserve">
+    <value>إنشاء ملف تعريف</value>
+  </data>
+  <data name="permisos.btnAgregarPermisos" xml:space="preserve">
+    <value>إضافة صلاحيات</value>
+  </data>
+  <data name="permisos.btnQuitarPermisos" xml:space="preserve">
+    <value>إزالة الصلاحيات</value>
+  </data>
+  <data name="permisos.btnBorrarPerfil" xml:space="preserve">
+    <value>حذف ملف التعريف</value>
+  </data>
+  <data name="permisos.familias" xml:space="preserve">
+    <value>المجموعات</value>
+  </data>
+  <data name="permisos.nombreFamiliaNueva" xml:space="preserve">
+    <value>اسم المجموعة الجديدة</value>
+  </data>
+  <data name="permisos.ejFamilia" xml:space="preserve">
+    <value>مثال: الإدارة العامة</value>
+  </data>
+  <data name="permisos.familiaSeleccionada" xml:space="preserve">
+    <value>المجموعة المحددة</value>
+  </data>
+  <data name="permisos.ayudaQuitarFamilia" xml:space="preserve">
+    <value>حدّد ما تريد إزالته من المجموعة.</value>
+  </data>
+  <data name="permisos.btnCrearFamilia" xml:space="preserve">
+    <value>إنشاء مجموعة</value>
+  </data>
+  <data name="permisos.btnBorrarFamilia" xml:space="preserve">
+    <value>حذف المجموعة</value>
+  </data>
+  <data name="permisos.itemPermiso" xml:space="preserve">
+    <value>الصلاحية: {0}</value>
+  </data>
+  <data name="permisos.itemFamilia" xml:space="preserve">
+    <value>المجموعة: {0} ({1} صلاحيات)</value>
+  </data>
+  <data name="permisos.msgPerfilCreado" xml:space="preserve">
+    <value>تم إنشاء ملف التعريف بنجاح.</value>
+  </data>
+  <data name="permisos.errElegirPerfilAgregar" xml:space="preserve">
+    <value>اختر ملف تعريف من قائمة "ملفات التعريف" لإضافة صلاحيات إليه.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosPerfil" xml:space="preserve">
+    <value>تمت إضافة الصلاحيات إلى ملف التعريف.</value>
+  </data>
+  <data name="permisos.errElegirPerfilQuitar" xml:space="preserve">
+    <value>اختر ملف تعريف من قائمة "ملفات التعريف" لإزالة صلاحيات منه.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosPerfil" xml:space="preserve">
+    <value>تمت إزالة الصلاحيات من ملف التعريف.</value>
+  </data>
+  <data name="permisos.errElegirPerfilBorrar" xml:space="preserve">
+    <value>اختر من قائمة "ملفات التعريف" ملف التعريف الذي تريد حذفه.</value>
+  </data>
+  <data name="permisos.msgPerfilBorrado" xml:space="preserve">
+    <value>تم حذف ملف التعريف بنجاح.</value>
+  </data>
+  <data name="permisos.msgFamiliaCreada" xml:space="preserve">
+    <value>تم إنشاء المجموعة بنجاح.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaAgregar" xml:space="preserve">
+    <value>اختر مجموعة من قائمة "المجموعات" لإضافة صلاحيات إليها.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosFamilia" xml:space="preserve">
+    <value>تمت إضافة الصلاحيات إلى المجموعة.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaQuitar" xml:space="preserve">
+    <value>اختر مجموعة من قائمة "المجموعات" لإزالة صلاحيات منها.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosFamilia" xml:space="preserve">
+    <value>تمت إزالة الصلاحيات من المجموعة.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaBorrar" xml:space="preserve">
+    <value>اختر من قائمة "المجموعات" المجموعة التي تريد حذفها.</value>
+  </data>
+  <data name="permisos.msgFamiliaBorrada" xml:space="preserve">
+    <value>تم حذف المجموعة بنجاح.</value>
+  </data>
+  <data name="permisos.errSinSeleccionPerfil" xml:space="preserve">
+    <value>اختر صلاحية أو مجموعة واحدة على الأقل لملف التعريف.</value>
+  </data>
+  <data name="permisos.errSinSeleccionAgregar" xml:space="preserve">
+    <value>حدّد صلاحية أو مجموعة واحدة على الأقل لإضافتها.</value>
+  </data>
+  <data name="permisos.errSinSeleccionQuitar" xml:space="preserve">
+    <value>اختر من "المحتوى المعيّن" ما تريد إزالته.</value>
+  </data>
+  <data name="permisos.errSinSeleccionFamilia" xml:space="preserve">
+    <value>اختر صلاحية أو مجموعة واحدة على الأقل للمجموعة الجديدة.</value>
+  </data>
+  <data name="permisos.errFamiliaEnUso" xml:space="preserve">
+    <value>لا يمكن حذف "{0}" لأنها معيّنة إلى: {1}. أزلها من هناك أولًا.</value>
+  </data>
+  <data name="permisos.errYaIncluido" xml:space="preserve">
+    <value>"{0}" مضمَّن بالفعل في "{1}" (مباشرةً أو عبر مجموعة).</value>
+  </data>
+  <data name="permisos.errPermisoNoExiste" xml:space="preserve">
+    <value>إحدى الصلاحيات المحددة لم تعد موجودة. أعد تحميل الصفحة.</value>
+  </data>
+  <data name="permisos.errFamiliaSelNoExiste" xml:space="preserve">
+    <value>إحدى المجموعات المحددة لم تعد موجودة. أعد تحميل الصفحة.</value>
+  </data>
+  <data name="permisos.errPerfilNoExiste" xml:space="preserve">
+    <value>لم يعد ملف التعريف المحدد موجودًا.</value>
+  </data>
+  <data name="permisos.errFamiliaNoExiste" xml:space="preserve">
+    <value>لم تعد المجموعة المحددة موجودة.</value>
+  </data>
+  <data name="permisos.errNombreVacio" xml:space="preserve">
+    <value>أدخل اسمًا.</value>
+  </data>
+  <data name="permisos.errNombreLargo" xml:space="preserve">
+    <value>لا يمكن أن يتجاوز الاسم {0} حرفًا.</value>
+  </data>
+  <data name="permisos.errPerfilExiste" xml:space="preserve">
+    <value>يوجد بالفعل ملف تعريف بهذا الاسم.</value>
+  </data>
+  <data name="permisos.errFamiliaExiste" xml:space="preserve">
+    <value>توجد بالفعل مجموعة بهذا الاسم.</value>
+  </data>
+  <data name="permisos.errAutoBloqueo" xml:space="preserve">
+    <value>سيؤدي هذا التغيير إلى إزالة صلاحية "{0}" وستفقد الوصول إلى هذه الشاشة.</value>
+  </data>
 </root>

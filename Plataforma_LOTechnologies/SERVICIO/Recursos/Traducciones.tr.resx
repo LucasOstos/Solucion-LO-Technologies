@@ -203,4 +203,379 @@
   <data name="error.inesperado" xml:space="preserve">
     <value>Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.</value>
   </data>
+  <data name="comun.volverMenu" xml:space="preserve">
+    <value>Menüye dön</value>
+  </data>
+  <data name="comun.buscar" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="comun.activo" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="comun.inactivo" xml:space="preserve">
+    <value>Pasif</value>
+  </data>
+  <data name="comun.todosEstados" xml:space="preserve">
+    <value>Tüm durumlar</value>
+  </data>
+  <data name="comun.estado" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="comun.acciones" xml:space="preserve">
+    <value>İşlemler</value>
+  </data>
+  <data name="comun.editar" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="comun.activarDesactivar" xml:space="preserve">
+    <value>Etkinleştir/Devre dışı bırak</value>
+  </data>
+  <data name="comun.guardarCambios" xml:space="preserve">
+    <value>Değişiklikleri kaydet</value>
+  </data>
+  <data name="comun.empresa" xml:space="preserve">
+    <value>Şirket</value>
+  </data>
+  <data name="comun.todasEmpresas" xml:space="preserve">
+    <value>Tüm şirketler</value>
+  </data>
+  <data name="comun.seleccionar" xml:space="preserve">
+    <value>— Seçin —</value>
+  </data>
+  <data name="comun.datosInvalidos" xml:space="preserve">
+    <value>Geçersiz veri. Lütfen alanları kontrol edin.</value>
+  </data>
+  <data name="comun.telefono" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="comun.direccion" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="usuarios.titulo" xml:space="preserve">
+    <value>Kullanıcı yönetimi - LO Technologies</value>
+  </data>
+  <data name="usuarios.encabezado" xml:space="preserve">
+    <value>Kullanıcı yönetimi</value>
+  </data>
+  <data name="usuarios.btnAgregar" xml:space="preserve">
+    <value>Kullanıcı ekle</value>
+  </data>
+  <data name="usuarios.buscarPlaceholder" xml:space="preserve">
+    <value>Kullanıcı ara...</value>
+  </data>
+  <data name="usuarios.todosPerfiles" xml:space="preserve">
+    <value>Tüm profiller</value>
+  </data>
+  <data name="usuarios.colUsuario" xml:space="preserve">
+    <value>Kullanıcı</value>
+  </data>
+  <data name="usuarios.colPerfil" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="usuarios.colUltimoAcceso" xml:space="preserve">
+    <value>Son erişim</value>
+  </data>
+  <data name="usuarios.bloqueado" xml:space="preserve">
+    <value>Kilitli</value>
+  </data>
+  <data name="usuarios.desbloquear" xml:space="preserve">
+    <value>Kilidi aç</value>
+  </data>
+  <data name="usuarios.confirmarEstado" xml:space="preserve">
+    <value>Bu kullanıcının durumunu değiştirmek istiyor musunuz?</value>
+  </data>
+  <data name="usuarios.confirmarDesbloqueo" xml:space="preserve">
+    <value>Bu kullanıcının kilidini açmak istiyor musunuz? Yeni bir şifre belirlemesi için e-posta gönderilecek.</value>
+  </data>
+  <data name="usuarios.sinResultados" xml:space="preserve">
+    <value>Aramayla eşleşen kullanıcı yok.</value>
+  </data>
+  <data name="usuarios.modalNuevo" xml:space="preserve">
+    <value>Yeni kullanıcı</value>
+  </data>
+  <data name="usuarios.modalEditar" xml:space="preserve">
+    <value>Kullanıcıyı düzenle</value>
+  </data>
+  <data name="usuarios.btnCrear" xml:space="preserve">
+    <value>Kullanıcı oluştur</value>
+  </data>
+  <data name="usuarios.dni" xml:space="preserve">
+    <value>Kimlik no (DNI) *</value>
+  </data>
+  <data name="usuarios.errDni" xml:space="preserve">
+    <value>Kimlik numarasını girin</value>
+  </data>
+  <data name="usuarios.errDniInvalido" xml:space="preserve">
+    <value>Geçersiz kimlik numarası</value>
+  </data>
+  <data name="usuarios.nombre" xml:space="preserve">
+    <value>Ad *</value>
+  </data>
+  <data name="usuarios.errNombre" xml:space="preserve">
+    <value>Adı girin</value>
+  </data>
+  <data name="usuarios.apellido" xml:space="preserve">
+    <value>Soyad *</value>
+  </data>
+  <data name="usuarios.errApellido" xml:space="preserve">
+    <value>Soyadı girin</value>
+  </data>
+  <data name="usuarios.email" xml:space="preserve">
+    <value>E-posta *</value>
+  </data>
+  <data name="usuarios.errEmail" xml:space="preserve">
+    <value>E-posta adresini girin</value>
+  </data>
+  <data name="usuarios.rol" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="usuarios.contrasenia" xml:space="preserve">
+    <value>Şifre *</value>
+  </data>
+  <data name="usuarios.errContrasenia" xml:space="preserve">
+    <value>Şifreyi girin</value>
+  </data>
+  <data name="usuarios.activo" xml:space="preserve">
+    <value>Aktif kullanıcı</value>
+  </data>
+  <data name="usuarios.msgNoExiste" xml:space="preserve">
+    <value>Kullanıcı artık mevcut değil.</value>
+  </data>
+  <data name="usuarios.msgEstado" xml:space="preserve">
+    <value>Kullanıcı durumu güncellendi.</value>
+  </data>
+  <data name="usuarios.msgNoBloqueado" xml:space="preserve">
+    <value>Kullanıcı kilitli değil.</value>
+  </data>
+  <data name="usuarios.msgDesbloqueado" xml:space="preserve">
+    <value>Kullanıcının kilidi açıldı. Yeni şifresini belirlemesi için e-posta gönderildi.</value>
+  </data>
+  <data name="usuarios.msgModificado" xml:space="preserve">
+    <value>Kullanıcı başarıyla güncellendi.</value>
+  </data>
+  <data name="usuarios.msgCreado" xml:space="preserve">
+    <value>Kullanıcı başarıyla oluşturuldu.</value>
+  </data>
+  <data name="usuarios.msgDniExiste" xml:space="preserve">
+    <value>Bu kimlik numarasıyla kayıtlı bir kullanıcı zaten var.</value>
+  </data>
+  <data name="usuarios.errSinEmpresa" xml:space="preserve">
+    <value>Kullanıcı bir şirkete ait olmalıdır.</value>
+  </data>
+  <data name="empresas.titulo" xml:space="preserve">
+    <value>Şirket yönetimi - LO Technologies</value>
+  </data>
+  <data name="empresas.encabezado" xml:space="preserve">
+    <value>Şirket yönetimi</value>
+  </data>
+  <data name="empresas.btnNueva" xml:space="preserve">
+    <value>Yeni şirket</value>
+  </data>
+  <data name="empresas.buscarPlaceholder" xml:space="preserve">
+    <value>Ad veya CUIT ile ara...</value>
+  </data>
+  <data name="empresas.colCorreo" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="empresas.confirmarEstado" xml:space="preserve">
+    <value>Bu şirketin durumunu değiştirmek istiyor musunuz?</value>
+  </data>
+  <data name="empresas.sinResultados" xml:space="preserve">
+    <value>Aramayla eşleşen şirket yok.</value>
+  </data>
+  <data name="empresas.modalEditar" xml:space="preserve">
+    <value>Şirketi düzenle</value>
+  </data>
+  <data name="empresas.btnCrear" xml:space="preserve">
+    <value>Şirket oluştur</value>
+  </data>
+  <data name="empresas.razonSocial" xml:space="preserve">
+    <value>Ticari unvan *</value>
+  </data>
+  <data name="empresas.errRazonSocial" xml:space="preserve">
+    <value>Ticari unvanı girin</value>
+  </data>
+  <data name="empresas.errCuit" xml:space="preserve">
+    <value>CUIT'i girin</value>
+  </data>
+  <data name="empresas.correo" xml:space="preserve">
+    <value>E-posta *</value>
+  </data>
+  <data name="empresas.errCorreo" xml:space="preserve">
+    <value>E-postayı girin</value>
+  </data>
+  <data name="empresas.activa" xml:space="preserve">
+    <value>Aktif şirket</value>
+  </data>
+  <data name="empresas.msgNoExiste" xml:space="preserve">
+    <value>Şirket artık mevcut değil.</value>
+  </data>
+  <data name="empresas.msgModificada" xml:space="preserve">
+    <value>Şirket başarıyla güncellendi.</value>
+  </data>
+  <data name="empresas.msgRegistrada" xml:space="preserve">
+    <value>Şirket başarıyla kaydedildi.</value>
+  </data>
+  <data name="empresas.msgCuitExiste" xml:space="preserve">
+    <value>Şirket zaten kayıtlı.</value>
+  </data>
+  <data name="empresas.msgEstado" xml:space="preserve">
+    <value>Şirket durumu güncellendi.</value>
+  </data>
+  <data name="permisos.titulo" xml:space="preserve">
+    <value>Yetki yönetimi - LO Technologies</value>
+  </data>
+  <data name="permisos.encabezado" xml:space="preserve">
+    <value>Yetki yönetimi</value>
+  </data>
+  <data name="permisos.perfiles" xml:space="preserve">
+    <value>Profiller</value>
+  </data>
+  <data name="permisos.nombrePerfilNuevo" xml:space="preserve">
+    <value>Yeni profil adı</value>
+  </data>
+  <data name="permisos.ejPerfil" xml:space="preserve">
+    <value>Örn.: Mağaza müdürü</value>
+  </data>
+  <data name="permisos.permisosDisponibles" xml:space="preserve">
+    <value>Kullanılabilir yetkiler</value>
+  </data>
+  <data name="permisos.familiasDisponibles" xml:space="preserve">
+    <value>Kullanılabilir gruplar</value>
+  </data>
+  <data name="permisos.perfilSeleccionado" xml:space="preserve">
+    <value>Seçili profil</value>
+  </data>
+  <data name="permisos.contenidoAsignado" xml:space="preserve">
+    <value>Atanan içerik</value>
+  </data>
+  <data name="permisos.ayudaQuitarPerfil" xml:space="preserve">
+    <value>Profilden kaldırmak istediklerinizi işaretleyin.</value>
+  </data>
+  <data name="permisos.btnCrearPerfil" xml:space="preserve">
+    <value>Profil oluştur</value>
+  </data>
+  <data name="permisos.btnAgregarPermisos" xml:space="preserve">
+    <value>Yetki ekle</value>
+  </data>
+  <data name="permisos.btnQuitarPermisos" xml:space="preserve">
+    <value>Yetkileri kaldır</value>
+  </data>
+  <data name="permisos.btnBorrarPerfil" xml:space="preserve">
+    <value>Profili sil</value>
+  </data>
+  <data name="permisos.familias" xml:space="preserve">
+    <value>Gruplar</value>
+  </data>
+  <data name="permisos.nombreFamiliaNueva" xml:space="preserve">
+    <value>Yeni grup adı</value>
+  </data>
+  <data name="permisos.ejFamilia" xml:space="preserve">
+    <value>Örn.: Genel yönetim</value>
+  </data>
+  <data name="permisos.familiaSeleccionada" xml:space="preserve">
+    <value>Seçili grup</value>
+  </data>
+  <data name="permisos.ayudaQuitarFamilia" xml:space="preserve">
+    <value>Gruptan kaldırmak istediklerinizi işaretleyin.</value>
+  </data>
+  <data name="permisos.btnCrearFamilia" xml:space="preserve">
+    <value>Grup oluştur</value>
+  </data>
+  <data name="permisos.btnBorrarFamilia" xml:space="preserve">
+    <value>Grubu sil</value>
+  </data>
+  <data name="permisos.itemPermiso" xml:space="preserve">
+    <value>Yetki: {0}</value>
+  </data>
+  <data name="permisos.itemFamilia" xml:space="preserve">
+    <value>Grup: {0} ({1} yetki)</value>
+  </data>
+  <data name="permisos.msgPerfilCreado" xml:space="preserve">
+    <value>Profil başarıyla oluşturuldu.</value>
+  </data>
+  <data name="permisos.errElegirPerfilAgregar" xml:space="preserve">
+    <value>Yetki eklemek için 'Profiller' listesinden bir profil seçin.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosPerfil" xml:space="preserve">
+    <value>Yetkiler profile eklendi.</value>
+  </data>
+  <data name="permisos.errElegirPerfilQuitar" xml:space="preserve">
+    <value>Yetki kaldırmak için 'Profiller' listesinden bir profil seçin.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosPerfil" xml:space="preserve">
+    <value>Yetkiler profilden kaldırıldı.</value>
+  </data>
+  <data name="permisos.errElegirPerfilBorrar" xml:space="preserve">
+    <value>Silmek istediğiniz profili 'Profiller' listesinden seçin.</value>
+  </data>
+  <data name="permisos.msgPerfilBorrado" xml:space="preserve">
+    <value>Profil başarıyla silindi.</value>
+  </data>
+  <data name="permisos.msgFamiliaCreada" xml:space="preserve">
+    <value>Grup başarıyla oluşturuldu.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaAgregar" xml:space="preserve">
+    <value>Yetki eklemek için 'Gruplar' listesinden bir grup seçin.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosFamilia" xml:space="preserve">
+    <value>Yetkiler gruba eklendi.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaQuitar" xml:space="preserve">
+    <value>Yetki kaldırmak için 'Gruplar' listesinden bir grup seçin.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosFamilia" xml:space="preserve">
+    <value>Yetkiler gruptan kaldırıldı.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaBorrar" xml:space="preserve">
+    <value>Silmek istediğiniz grubu 'Gruplar' listesinden seçin.</value>
+  </data>
+  <data name="permisos.msgFamiliaBorrada" xml:space="preserve">
+    <value>Grup başarıyla silindi.</value>
+  </data>
+  <data name="permisos.errSinSeleccionPerfil" xml:space="preserve">
+    <value>Profil için en az bir yetki veya grup seçin.</value>
+  </data>
+  <data name="permisos.errSinSeleccionAgregar" xml:space="preserve">
+    <value>Eklemek için en az bir yetki veya grup işaretleyin.</value>
+  </data>
+  <data name="permisos.errSinSeleccionQuitar" xml:space="preserve">
+    <value>'Atanan içerik' bölümünden kaldırmak istediklerinizi seçin.</value>
+  </data>
+  <data name="permisos.errSinSeleccionFamilia" xml:space="preserve">
+    <value>Yeni grup için en az bir yetki veya grup seçin.</value>
+  </data>
+  <data name="permisos.errFamiliaEnUso" xml:space="preserve">
+    <value>'{0}' şunlara atandığı için silinemez: {1}. Önce oradan kaldırın.</value>
+  </data>
+  <data name="permisos.errYaIncluido" xml:space="preserve">
+    <value>'{0}' zaten '{1}' içinde (doğrudan veya bir grup aracılığıyla).</value>
+  </data>
+  <data name="permisos.errPermisoNoExiste" xml:space="preserve">
+    <value>Seçilen yetkilerden biri artık mevcut değil. Sayfayı yeniden yükleyin.</value>
+  </data>
+  <data name="permisos.errFamiliaSelNoExiste" xml:space="preserve">
+    <value>Seçilen gruplardan biri artık mevcut değil. Sayfayı yeniden yükleyin.</value>
+  </data>
+  <data name="permisos.errPerfilNoExiste" xml:space="preserve">
+    <value>Seçilen profil artık mevcut değil.</value>
+  </data>
+  <data name="permisos.errFamiliaNoExiste" xml:space="preserve">
+    <value>Seçilen grup artık mevcut değil.</value>
+  </data>
+  <data name="permisos.errNombreVacio" xml:space="preserve">
+    <value>Bir ad girin.</value>
+  </data>
+  <data name="permisos.errNombreLargo" xml:space="preserve">
+    <value>Ad {0} karakteri geçemez.</value>
+  </data>
+  <data name="permisos.errPerfilExiste" xml:space="preserve">
+    <value>Bu adla bir profil zaten var.</value>
+  </data>
+  <data name="permisos.errFamiliaExiste" xml:space="preserve">
+    <value>Bu adla bir grup zaten var.</value>
+  </data>
+  <data name="permisos.errAutoBloqueo" xml:space="preserve">
+    <value>Bu değişiklik '{0}' yetkinizi kaldırır ve bu ekrana erişiminizi kaybedersiniz.</value>
+  </data>
 </root>

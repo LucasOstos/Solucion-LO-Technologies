@@ -203,4 +203,379 @@
   <data name="error.inesperado" xml:space="preserve">
     <value>Si è verificato un errore imprevisto. Riprova.</value>
   </data>
+  <data name="comun.volverMenu" xml:space="preserve">
+    <value>Torna al menu</value>
+  </data>
+  <data name="comun.buscar" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
+  <data name="comun.activo" xml:space="preserve">
+    <value>Attivo</value>
+  </data>
+  <data name="comun.inactivo" xml:space="preserve">
+    <value>Inattivo</value>
+  </data>
+  <data name="comun.todosEstados" xml:space="preserve">
+    <value>Tutti gli stati</value>
+  </data>
+  <data name="comun.estado" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="comun.acciones" xml:space="preserve">
+    <value>Azioni</value>
+  </data>
+  <data name="comun.editar" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="comun.activarDesactivar" xml:space="preserve">
+    <value>Attiva/Disattiva</value>
+  </data>
+  <data name="comun.guardarCambios" xml:space="preserve">
+    <value>Salva modifiche</value>
+  </data>
+  <data name="comun.empresa" xml:space="preserve">
+    <value>Azienda</value>
+  </data>
+  <data name="comun.todasEmpresas" xml:space="preserve">
+    <value>Tutte le aziende</value>
+  </data>
+  <data name="comun.seleccionar" xml:space="preserve">
+    <value>— Seleziona —</value>
+  </data>
+  <data name="comun.datosInvalidos" xml:space="preserve">
+    <value>Dati non validi. Controlla i campi.</value>
+  </data>
+  <data name="comun.telefono" xml:space="preserve">
+    <value>Telefono</value>
+  </data>
+  <data name="comun.direccion" xml:space="preserve">
+    <value>Indirizzo</value>
+  </data>
+  <data name="usuarios.titulo" xml:space="preserve">
+    <value>Gestione utenti - LO Technologies</value>
+  </data>
+  <data name="usuarios.encabezado" xml:space="preserve">
+    <value>Gestione utenti</value>
+  </data>
+  <data name="usuarios.btnAgregar" xml:space="preserve">
+    <value>Aggiungi utente</value>
+  </data>
+  <data name="usuarios.buscarPlaceholder" xml:space="preserve">
+    <value>Cerca utente...</value>
+  </data>
+  <data name="usuarios.todosPerfiles" xml:space="preserve">
+    <value>Tutti i profili</value>
+  </data>
+  <data name="usuarios.colUsuario" xml:space="preserve">
+    <value>Utente</value>
+  </data>
+  <data name="usuarios.colPerfil" xml:space="preserve">
+    <value>Profilo</value>
+  </data>
+  <data name="usuarios.colUltimoAcceso" xml:space="preserve">
+    <value>Ultimo accesso</value>
+  </data>
+  <data name="usuarios.bloqueado" xml:space="preserve">
+    <value>Bloccato</value>
+  </data>
+  <data name="usuarios.desbloquear" xml:space="preserve">
+    <value>Sblocca</value>
+  </data>
+  <data name="usuarios.confirmarEstado" xml:space="preserve">
+    <value>Confermi di voler cambiare lo stato di questo utente?</value>
+  </data>
+  <data name="usuarios.confirmarDesbloqueo" xml:space="preserve">
+    <value>Confermi di voler sbloccare questo utente? Riceverà un'e-mail per impostare una nuova password.</value>
+  </data>
+  <data name="usuarios.sinResultados" xml:space="preserve">
+    <value>Nessun utente corrisponde alla ricerca.</value>
+  </data>
+  <data name="usuarios.modalNuevo" xml:space="preserve">
+    <value>Nuovo utente</value>
+  </data>
+  <data name="usuarios.modalEditar" xml:space="preserve">
+    <value>Modifica utente</value>
+  </data>
+  <data name="usuarios.btnCrear" xml:space="preserve">
+    <value>Crea utente</value>
+  </data>
+  <data name="usuarios.dni" xml:space="preserve">
+    <value>Documento (DNI) *</value>
+  </data>
+  <data name="usuarios.errDni" xml:space="preserve">
+    <value>Inserisci il documento</value>
+  </data>
+  <data name="usuarios.errDniInvalido" xml:space="preserve">
+    <value>Documento non valido</value>
+  </data>
+  <data name="usuarios.nombre" xml:space="preserve">
+    <value>Nome *</value>
+  </data>
+  <data name="usuarios.errNombre" xml:space="preserve">
+    <value>Inserisci il nome</value>
+  </data>
+  <data name="usuarios.apellido" xml:space="preserve">
+    <value>Cognome *</value>
+  </data>
+  <data name="usuarios.errApellido" xml:space="preserve">
+    <value>Inserisci il cognome</value>
+  </data>
+  <data name="usuarios.email" xml:space="preserve">
+    <value>E-mail *</value>
+  </data>
+  <data name="usuarios.errEmail" xml:space="preserve">
+    <value>Inserisci l'e-mail</value>
+  </data>
+  <data name="usuarios.rol" xml:space="preserve">
+    <value>Ruolo</value>
+  </data>
+  <data name="usuarios.contrasenia" xml:space="preserve">
+    <value>Password *</value>
+  </data>
+  <data name="usuarios.errContrasenia" xml:space="preserve">
+    <value>Inserisci la password</value>
+  </data>
+  <data name="usuarios.activo" xml:space="preserve">
+    <value>Utente attivo</value>
+  </data>
+  <data name="usuarios.msgNoExiste" xml:space="preserve">
+    <value>L'utente non esiste più.</value>
+  </data>
+  <data name="usuarios.msgEstado" xml:space="preserve">
+    <value>Stato dell'utente aggiornato.</value>
+  </data>
+  <data name="usuarios.msgNoBloqueado" xml:space="preserve">
+    <value>L'utente non è bloccato.</value>
+  </data>
+  <data name="usuarios.msgDesbloqueado" xml:space="preserve">
+    <value>Utente sbloccato. È stata inviata un'e-mail per impostare la nuova password.</value>
+  </data>
+  <data name="usuarios.msgModificado" xml:space="preserve">
+    <value>Utente modificato correttamente.</value>
+  </data>
+  <data name="usuarios.msgCreado" xml:space="preserve">
+    <value>Utente creato correttamente.</value>
+  </data>
+  <data name="usuarios.msgDniExiste" xml:space="preserve">
+    <value>Esiste già un utente registrato con questo documento.</value>
+  </data>
+  <data name="usuarios.errSinEmpresa" xml:space="preserve">
+    <value>L'utente deve appartenere a un'azienda.</value>
+  </data>
+  <data name="empresas.titulo" xml:space="preserve">
+    <value>Gestione aziende - LO Technologies</value>
+  </data>
+  <data name="empresas.encabezado" xml:space="preserve">
+    <value>Gestione aziende</value>
+  </data>
+  <data name="empresas.btnNueva" xml:space="preserve">
+    <value>Nuova azienda</value>
+  </data>
+  <data name="empresas.buscarPlaceholder" xml:space="preserve">
+    <value>Cerca per nome o CUIT...</value>
+  </data>
+  <data name="empresas.colCorreo" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="empresas.confirmarEstado" xml:space="preserve">
+    <value>Confermi di voler cambiare lo stato di questa azienda?</value>
+  </data>
+  <data name="empresas.sinResultados" xml:space="preserve">
+    <value>Nessuna azienda corrisponde alla ricerca.</value>
+  </data>
+  <data name="empresas.modalEditar" xml:space="preserve">
+    <value>Modifica azienda</value>
+  </data>
+  <data name="empresas.btnCrear" xml:space="preserve">
+    <value>Crea azienda</value>
+  </data>
+  <data name="empresas.razonSocial" xml:space="preserve">
+    <value>Ragione sociale *</value>
+  </data>
+  <data name="empresas.errRazonSocial" xml:space="preserve">
+    <value>Inserisci la ragione sociale</value>
+  </data>
+  <data name="empresas.errCuit" xml:space="preserve">
+    <value>Inserisci il CUIT</value>
+  </data>
+  <data name="empresas.correo" xml:space="preserve">
+    <value>E-mail *</value>
+  </data>
+  <data name="empresas.errCorreo" xml:space="preserve">
+    <value>Inserisci l'e-mail</value>
+  </data>
+  <data name="empresas.activa" xml:space="preserve">
+    <value>Azienda attiva</value>
+  </data>
+  <data name="empresas.msgNoExiste" xml:space="preserve">
+    <value>L'azienda non esiste più.</value>
+  </data>
+  <data name="empresas.msgModificada" xml:space="preserve">
+    <value>Azienda modificata correttamente.</value>
+  </data>
+  <data name="empresas.msgRegistrada" xml:space="preserve">
+    <value>Azienda registrata correttamente.</value>
+  </data>
+  <data name="empresas.msgCuitExiste" xml:space="preserve">
+    <value>L'azienda è già registrata.</value>
+  </data>
+  <data name="empresas.msgEstado" xml:space="preserve">
+    <value>Stato dell'azienda aggiornato.</value>
+  </data>
+  <data name="permisos.titulo" xml:space="preserve">
+    <value>Gestione permessi - LO Technologies</value>
+  </data>
+  <data name="permisos.encabezado" xml:space="preserve">
+    <value>Gestione permessi</value>
+  </data>
+  <data name="permisos.perfiles" xml:space="preserve">
+    <value>Profili</value>
+  </data>
+  <data name="permisos.nombrePerfilNuevo" xml:space="preserve">
+    <value>Nome del nuovo profilo</value>
+  </data>
+  <data name="permisos.ejPerfil" xml:space="preserve">
+    <value>Es.: Responsabile di negozio</value>
+  </data>
+  <data name="permisos.permisosDisponibles" xml:space="preserve">
+    <value>Permessi disponibili</value>
+  </data>
+  <data name="permisos.familiasDisponibles" xml:space="preserve">
+    <value>Famiglie disponibili</value>
+  </data>
+  <data name="permisos.perfilSeleccionado" xml:space="preserve">
+    <value>Profilo selezionato</value>
+  </data>
+  <data name="permisos.contenidoAsignado" xml:space="preserve">
+    <value>Contenuto assegnato</value>
+  </data>
+  <data name="permisos.ayudaQuitarPerfil" xml:space="preserve">
+    <value>Seleziona ciò che vuoi rimuovere dal profilo.</value>
+  </data>
+  <data name="permisos.btnCrearPerfil" xml:space="preserve">
+    <value>Crea profilo</value>
+  </data>
+  <data name="permisos.btnAgregarPermisos" xml:space="preserve">
+    <value>Aggiungi permessi</value>
+  </data>
+  <data name="permisos.btnQuitarPermisos" xml:space="preserve">
+    <value>Rimuovi permessi</value>
+  </data>
+  <data name="permisos.btnBorrarPerfil" xml:space="preserve">
+    <value>Elimina profilo</value>
+  </data>
+  <data name="permisos.familias" xml:space="preserve">
+    <value>Famiglie</value>
+  </data>
+  <data name="permisos.nombreFamiliaNueva" xml:space="preserve">
+    <value>Nome della nuova famiglia</value>
+  </data>
+  <data name="permisos.ejFamilia" xml:space="preserve">
+    <value>Es.: Amministrazione generale</value>
+  </data>
+  <data name="permisos.familiaSeleccionada" xml:space="preserve">
+    <value>Famiglia selezionata</value>
+  </data>
+  <data name="permisos.ayudaQuitarFamilia" xml:space="preserve">
+    <value>Seleziona ciò che vuoi rimuovere dalla famiglia.</value>
+  </data>
+  <data name="permisos.btnCrearFamilia" xml:space="preserve">
+    <value>Crea famiglia</value>
+  </data>
+  <data name="permisos.btnBorrarFamilia" xml:space="preserve">
+    <value>Elimina famiglia</value>
+  </data>
+  <data name="permisos.itemPermiso" xml:space="preserve">
+    <value>Permesso: {0}</value>
+  </data>
+  <data name="permisos.itemFamilia" xml:space="preserve">
+    <value>Famiglia: {0} ({1} permessi)</value>
+  </data>
+  <data name="permisos.msgPerfilCreado" xml:space="preserve">
+    <value>Profilo creato correttamente.</value>
+  </data>
+  <data name="permisos.errElegirPerfilAgregar" xml:space="preserve">
+    <value>Scegli un profilo nell'elenco 'Profili' per aggiungergli permessi.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosPerfil" xml:space="preserve">
+    <value>Permessi aggiunti al profilo.</value>
+  </data>
+  <data name="permisos.errElegirPerfilQuitar" xml:space="preserve">
+    <value>Scegli un profilo nell'elenco 'Profili' per rimuovergli permessi.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosPerfil" xml:space="preserve">
+    <value>Permessi rimossi dal profilo.</value>
+  </data>
+  <data name="permisos.errElegirPerfilBorrar" xml:space="preserve">
+    <value>Scegli nell'elenco 'Profili' il profilo da eliminare.</value>
+  </data>
+  <data name="permisos.msgPerfilBorrado" xml:space="preserve">
+    <value>Profilo eliminato correttamente.</value>
+  </data>
+  <data name="permisos.msgFamiliaCreada" xml:space="preserve">
+    <value>Famiglia creata correttamente.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaAgregar" xml:space="preserve">
+    <value>Scegli una famiglia nell'elenco 'Famiglie' per aggiungerle permessi.</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosFamilia" xml:space="preserve">
+    <value>Permessi aggiunti alla famiglia.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaQuitar" xml:space="preserve">
+    <value>Scegli una famiglia nell'elenco 'Famiglie' per rimuoverle permessi.</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosFamilia" xml:space="preserve">
+    <value>Permessi rimossi dalla famiglia.</value>
+  </data>
+  <data name="permisos.errElegirFamiliaBorrar" xml:space="preserve">
+    <value>Scegli nell'elenco 'Famiglie' la famiglia da eliminare.</value>
+  </data>
+  <data name="permisos.msgFamiliaBorrada" xml:space="preserve">
+    <value>Famiglia eliminata correttamente.</value>
+  </data>
+  <data name="permisos.errSinSeleccionPerfil" xml:space="preserve">
+    <value>Seleziona almeno un permesso o una famiglia per il profilo.</value>
+  </data>
+  <data name="permisos.errSinSeleccionAgregar" xml:space="preserve">
+    <value>Seleziona almeno un permesso o una famiglia da aggiungere.</value>
+  </data>
+  <data name="permisos.errSinSeleccionQuitar" xml:space="preserve">
+    <value>Seleziona in 'Contenuto assegnato' ciò che vuoi rimuovere.</value>
+  </data>
+  <data name="permisos.errSinSeleccionFamilia" xml:space="preserve">
+    <value>Seleziona almeno un permesso o una famiglia per la nuova famiglia.</value>
+  </data>
+  <data name="permisos.errFamiliaEnUso" xml:space="preserve">
+    <value>Impossibile eliminare '{0}' perché è assegnata a: {1}. Rimuovila prima da lì.</value>
+  </data>
+  <data name="permisos.errYaIncluido" xml:space="preserve">
+    <value>'{0}' è già incluso in '{1}' (direttamente o tramite una famiglia).</value>
+  </data>
+  <data name="permisos.errPermisoNoExiste" xml:space="preserve">
+    <value>Uno dei permessi selezionati non esiste più. Ricarica la pagina.</value>
+  </data>
+  <data name="permisos.errFamiliaSelNoExiste" xml:space="preserve">
+    <value>Una delle famiglie selezionate non esiste più. Ricarica la pagina.</value>
+  </data>
+  <data name="permisos.errPerfilNoExiste" xml:space="preserve">
+    <value>Il profilo selezionato non esiste più.</value>
+  </data>
+  <data name="permisos.errFamiliaNoExiste" xml:space="preserve">
+    <value>La famiglia selezionata non esiste più.</value>
+  </data>
+  <data name="permisos.errNombreVacio" xml:space="preserve">
+    <value>Inserisci un nome.</value>
+  </data>
+  <data name="permisos.errNombreLargo" xml:space="preserve">
+    <value>Il nome non può superare i {0} caratteri.</value>
+  </data>
+  <data name="permisos.errPerfilExiste" xml:space="preserve">
+    <value>Esiste già un profilo con questo nome.</value>
+  </data>
+  <data name="permisos.errFamiliaExiste" xml:space="preserve">
+    <value>Esiste già una famiglia con questo nome.</value>
+  </data>
+  <data name="permisos.errAutoBloqueo" xml:space="preserve">
+    <value>Questa modifica ti toglierebbe il permesso '{0}' e perderesti l'accesso a questa schermata.</value>
+  </data>
 </root>

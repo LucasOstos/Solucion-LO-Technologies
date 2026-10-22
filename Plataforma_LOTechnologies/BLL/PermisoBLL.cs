@@ -42,15 +42,11 @@ namespace BLL
         {
             ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
-            string nombre = ValidarNombre(pNombre, estructura.Perfiles.Select(p => p.Nombre), "un perfil");
+            string nombre = ValidarNombre(pNombre, estructura.Perfiles.Select(p => p.Nombre), "permisos.errPerfilExiste");
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
-            if (hijos.Count == 0) throw new InvalidOperationException("Seleccioná al menos un permiso o una familia para el perfil.");
-
-            // Se arma en memoria primero, así las validaciones del Composite
-            // corren antes de tocar la base.
+            if (hijos.Count == 0) throw new ExcepcionTraducible("permisos.errSinSeleccionPerfil");
             var nuevo = new Perfil(0, nombre);
             foreach (Permiso hijo in hijos) AgregarValidando(nuevo, hijo);
-
             int codigo = accesoDAL.CrearPerfil(nombre, hijos);
             RegistrarSuceso("Crear perfil");
             return codigo;
@@ -61,7 +57,7 @@ namespace BLL
             PermisosDatos estructura = ObtenerEstructura();
             Perfil perfil = BuscarPerfil(estructura, pCodPerfil);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
-            if (hijos.Count == 0) throw new InvalidOperationException("Marcá al menos un permiso o una familia para agregar.");
+            if (hijos.Count == 0) throw new ExcepcionTraducible("permisos.errSinSeleccionAgregar");
             foreach (Permiso hijo in hijos) AgregarValidando(perfil, hijo);
             accesoDAL.AgregarAPerfil(perfil.Codigo, hijos);
             ActualizarPerfilEnSesion(estructura);
@@ -73,7 +69,7 @@ namespace BLL
             PermisosDatos estructura = ObtenerEstructura();
             Perfil perfil = BuscarPerfil(estructura, pCodPerfil);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
-            if (hijos.Count == 0) throw new InvalidOperationException("Seleccioná en 'Contenido asignado' lo que querés quitar.");
+            if (hijos.Count == 0) throw new ExcepcionTraducible("permisos.errSinSeleccionQuitar");
             foreach (Permiso hijo in hijos) perfil.Quitar(hijo);
             ValidarNoAutoBloqueo(estructura);
             accesoDAL.QuitarDePerfil(perfil.Codigo, hijos);
@@ -93,9 +89,9 @@ namespace BLL
         {
             ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
-            string nombre = ValidarNombre(pNombre, estructura.Familias.Select(f => f.Nombre), "una familia");
+            string nombre = ValidarNombre(pNombre, estructura.Familias.Select(f => f.Nombre), "permisos.errFamiliaExiste");
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
-            if (hijos.Count == 0) throw new InvalidOperationException("Seleccioná al menos un permiso o una familia para la familia nueva.");
+            if (hijos.Count == 0) throw new ExcepcionTraducible("permisos.errSinSeleccionFamilia");
             var nueva = new Familia(0, nombre);
             foreach (Permiso hijo in hijos) AgregarValidando(nueva, hijo);
             int codigo = accesoDAL.CrearFamilia(nombre, hijos);
@@ -108,7 +104,7 @@ namespace BLL
             PermisosDatos estructura = ObtenerEstructura();
             Familia familia = BuscarFamilia(estructura, pCodFamilia);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
-            if (hijos.Count == 0) throw new InvalidOperationException("Marcá al menos un permiso o una familia para agregar.");
+            if (hijos.Count == 0) throw new ExcepcionTraducible("permisos.errSinSeleccionAgregar");
             foreach (Permiso hijo in hijos) AgregarValidando(familia, hijo);
             accesoDAL.AgregarAFamilia(familia.Codigo, hijos);
             ActualizarPerfilEnSesion(estructura);
@@ -120,7 +116,7 @@ namespace BLL
             PermisosDatos estructura = ObtenerEstructura();
             Familia familia = BuscarFamilia(estructura, pCodFamilia);
             List<Permiso> hijos = Resolver(estructura, pCodPermisos, pCodFamilias);
-            if (hijos.Count == 0) throw new InvalidOperationException("Seleccioná en 'Contenido asignado' lo que querés quitar.");
+            if (hijos.Count == 0) throw new ExcepcionTraducible("permisos.errSinSeleccionQuitar");
             foreach (Permiso hijo in hijos) familia.Quitar(hijo);
             ValidarNoAutoBloqueo(estructura);
             accesoDAL.QuitarDeFamilia(familia.Codigo, hijos);
@@ -132,33 +128,30 @@ namespace BLL
             ControlAcceso.ValidarSuperUsuario();
             PermisosDatos estructura = ObtenerEstructura();
             Familia familia = BuscarFamilia(estructura, pCodFamilia);
-            List<string> usadaPor = estructura.Perfiles.Where(p => p.ObtenerHijos().Any(h => h.EsMismo(familia))).Select(p => $"perfil '{p.Nombre}'")
-                                    .Concat(estructura.Familias.Where(f => f.ObtenerHijos().Any(h => h.EsMismo(familia))).Select(f => $"familia '{f.Nombre}'")).ToList();
-            if (usadaPor.Count > 0) throw new InvalidOperationException($"No se puede eliminar '{familia.Nombre}' porque está asignada a: {string.Join(", ", usadaPor)}. Eliminala de ahí primero.");
+            List<string> usadaPor = estructura.Perfiles.Where(p => p.ObtenerHijos().Any(h => h.EsMismo(familia))).Select(p => $"'{p.Nombre}'")
+                                    .Concat(estructura.Familias.Where(f => f.ObtenerHijos().Any(h => h.EsMismo(familia))).Select(f => $"'{f.Nombre}'")).ToList();
+            if (usadaPor.Count > 0) throw new ExcepcionTraducible("permisos.errFamiliaEnUso", familia.Nombre, string.Join(", ", usadaPor));
             accesoDAL.EliminarFamilia(familia.Codigo);
             RegistrarSuceso("Eliminar familia");
         }
-
         private void AgregarValidando(PermisoCompuesto pDestino, Permiso pHijo)
         {
-            if (!pHijo.EsMismo(pDestino) && pDestino.Contiene(pHijo)) throw new InvalidOperationException($"'{pHijo.Nombre}' ya está incluido en '{pDestino.Nombre}' (directamente o a través de una familia).");
+            if (!pHijo.EsMismo(pDestino) && pDestino.Contiene(pHijo)) throw new ExcepcionTraducible("permisos.errYaIncluido", pHijo.Nombre, pDestino.Nombre);
             pDestino.Agregar(pHijo);
         }
         private List<Permiso> Resolver(PermisosDatos pEstructura, List<int> pCodPermisos, List<int> pCodFamilias)
         {
             var resultado = new List<Permiso>();
-
             foreach (int codigo in pCodPermisos ?? new List<int>())
             {
                 PermisoSimple permiso = pEstructura.Permisos.FirstOrDefault(p => p.Codigo == codigo);
-                if (permiso == null) throw new InvalidOperationException("Uno de los permisos seleccionados ya no existe. Recargá la página.");
+                if (permiso == null) throw new ExcepcionTraducible("permisos.errPermisoNoExiste");
                 resultado.Add(permiso);
             }
-
             foreach (int codigo in pCodFamilias ?? new List<int>())
             {
                 Familia familia = pEstructura.Familias.FirstOrDefault(f => f.Codigo == codigo);
-                if (familia == null) throw new InvalidOperationException("Una de las familias seleccionadas ya no existe. Recargá la página.");
+                if (familia == null) throw new ExcepcionTraducible("permisos.errFamiliaSelNoExiste");
                 resultado.Add(familia);
             }
             return resultado;
@@ -166,21 +159,21 @@ namespace BLL
         private Perfil BuscarPerfil(PermisosDatos pEstructura, int pCodigo)
         {
             Perfil perfil = pEstructura.Perfiles.FirstOrDefault(p => p.Codigo == pCodigo);
-            if (perfil == null) throw new InvalidOperationException("El perfil seleccionado ya no existe.");
+            if (perfil == null) throw new ExcepcionTraducible("permisos.errPerfilNoExiste");
             return perfil;
         }
         private Familia BuscarFamilia(PermisosDatos pEstructura, int pCodigo)
         {
             Familia familia = pEstructura.Familias.FirstOrDefault(f => f.Codigo == pCodigo);
-            if (familia == null) throw new InvalidOperationException("La familia seleccionada ya no existe.");
+            if (familia == null) throw new ExcepcionTraducible("permisos.errFamiliaNoExiste");
             return familia;
         }
-        private string ValidarNombre(string pNombre, IEnumerable<string> pExistentes, string pEtiqueta)
+        private string ValidarNombre(string pNombre, IEnumerable<string> pExistentes, string pClaveYaExiste)
         {
             string nombre = (pNombre ?? "").Trim();
-            if (nombre.Length == 0) throw new InvalidOperationException("Ingresá un nombre.");
-            if (nombre.Length > 50) throw new InvalidOperationException($"El nombre no puede superar los 50 caracteres.");
-            if (pExistentes.Any(n => string.Equals(n, nombre, StringComparison.OrdinalIgnoreCase))) throw new InvalidOperationException($"Ya existe {pEtiqueta} con ese nombre.");
+            if (nombre.Length == 0) throw new ExcepcionTraducible("permisos.errNombreVacio");
+            if (nombre.Length > 50) throw new ExcepcionTraducible("permisos.errNombreLargo", 50);
+            if (pExistentes.Any(n => string.Equals(n, nombre, StringComparison.OrdinalIgnoreCase))) throw new ExcepcionTraducible(pClaveYaExiste);
             return nombre;
         }
         private void ValidarNoAutoBloqueo(PermisosDatos pEstructura)
@@ -188,7 +181,7 @@ namespace BLL
             Usuario usuario = Sesion.Instancia.Usuario;
             if (usuario == null || usuario.Perfil == null) return;
             Perfil perfilPropio = pEstructura.Perfiles.FirstOrDefault(p => p.Codigo == usuario.Perfil.Codigo);
-            if (perfilPropio != null && !perfilPropio.TienePermiso(PermisoNombres.GestionarPermisos)) throw new InvalidOperationException($"Este cambio te quitaría el permiso '{PermisoNombres.GestionarPermisos}' y perderías el acceso a esta pantalla.");
+            if (perfilPropio != null && !perfilPropio.TienePermiso(PermisoNombres.GestionarPermisos)) throw new ExcepcionTraducible("permisos.errAutoBloqueo", PermisoNombres.GestionarPermisos);
         }
         private void ActualizarPerfilEnSesion(PermisosDatos pEstructura)
         {

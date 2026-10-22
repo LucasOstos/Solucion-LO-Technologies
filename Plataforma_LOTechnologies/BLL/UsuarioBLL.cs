@@ -170,13 +170,13 @@ namespace BLL
         }
         private void AplicarAlcance(Usuario pUsuario)
         {
-            if (ControlAcceso.EmpresaAlcance != null)
+            if(ControlAcceso.EmpresaAlcance != null)
             {
                 pUsuario.CodigoEmpresa = ControlAcceso.EmpresaAlcance.Value;
             }
             if (pUsuario.CodigoEmpresa <= 0)
             {
-                throw new InvalidOperationException("El usuario tiene que pertenecer a una empresa.");
+                throw new ExcepcionTraducible("usuarios.errSinEmpresa");
             }
             PermisoBLL permisoBLL = new PermisoBLL();
             Perfil perfil = permisoBLL.ObtenerPerfil(pUsuario.Perfil.Codigo);

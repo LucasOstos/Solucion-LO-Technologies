@@ -13,6 +13,10 @@ public partial class PaginaPermisos : PaginaSegura
     {
         get { return PermisoNombres.GestionarPermisos; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "permisos.titulo"; }
+    }
     private PermisoBLL permisoBLL = new PermisoBLL();
     private const string PREFIJO_PERMISO = "P:";
     private const string PREFIJO_FAMILIA = "F:";
@@ -41,7 +45,7 @@ public partial class PaginaPermisos : PaginaSegura
     private void CargarDesplegable(DropDownList pDesplegable, IEnumerable<Permiso> pItems, string pValorASeleccionar)
     {
         pDesplegable.Items.Clear();
-        pDesplegable.Items.Add(new ListItem("— Seleccionar —", ""));
+        pDesplegable.Items.Add(new ListItem(Traducir("comun.seleccionar"), ""));
         foreach (Permiso item in pItems)
         {
             pDesplegable.Items.Add(new ListItem(item.Nombre, item.Codigo.ToString()));
@@ -67,12 +71,12 @@ public partial class PaginaPermisos : PaginaSegura
         {
             if (hijo is PermisoSimple)
             {
-                pLista.Items.Add(new ListItem("Permiso: " + hijo.Nombre, PREFIJO_PERMISO + hijo.Codigo));
+                pLista.Items.Add(new ListItem(Traducir("permisos.itemPermiso", hijo.Nombre), PREFIJO_PERMISO + hijo.Codigo));
             }
             else if (hijo is Familia familia)
             {
                 int cantidad = familia.ObtenerPermisosSimples().Count;
-                pLista.Items.Add(new ListItem($"Familia: {familia.Nombre} ({cantidad} permisos)", PREFIJO_FAMILIA + familia.Codigo));
+                pLista.Items.Add(new ListItem(Traducir("permisos.itemFamilia", familia.Nombre, cantidad), PREFIJO_FAMILIA + familia.Codigo));
             }
         }
     }
@@ -102,17 +106,17 @@ public partial class PaginaPermisos : PaginaSegura
             }                
         }
     }
-    private bool Intentar(Action pOperacion, string pMensajeExito)
+    private bool Intentar(Action pOperacion, string pClaveExito)
     {
         try
         {
             pOperacion();
-            MostrarMensaje(pMensajeExito, esExito: true);
+            MostrarMensaje(Traducir(pClaveExito), esExito: true);
             return true;
         }
         catch (InvalidOperationException ex)
         {
-            MostrarMensaje(ex.Message, esExito: false);
+            MostrarMensaje(TraducirError(ex), esExito: false);
             return false;
         }
     }
@@ -130,7 +134,7 @@ public partial class PaginaPermisos : PaginaSegura
     protected void btnCrearPerfil_Click(object sender, EventArgs e)
     {
         int codigoNuevo = 0;
-        bool exito = Intentar(() => codigoNuevo = permisoBLL.CrearPerfil(tbNombrePerfil.Text, CodigosMarcados(cblPermisosDisponibles), CodigosMarcados(cblFamiliasDisponiblesEnPerfil)), "Perfil creado correctamente.");
+        bool exito = Intentar(() => codigoNuevo = permisoBLL.CrearPerfil(tbNombrePerfil.Text, CodigosMarcados(cblPermisosDisponibles), CodigosMarcados(cblFamiliasDisponiblesEnPerfil)), "permisos.msgPerfilCreado");
         if (exito)
         {
             tbNombrePerfil.Text = "";
@@ -142,10 +146,10 @@ public partial class PaginaPermisos : PaginaSegura
         int? codPerfil = CodigoSeleccionado(ddlPerfiles);
         if (codPerfil == null)
         {
-            MostrarMensaje("Elegí un perfil en la lista 'Perfiles' para agregarle permisos.", esExito: false);
+            MostrarMensaje(Traducir("permisos.errElegirPerfilAgregar"), esExito: false);
             return;
         }
-        if (Intentar(() => permisoBLL.AgregarAPerfil(codPerfil.Value, CodigosMarcados(cblPermisosDisponibles), CodigosMarcados(cblFamiliasDisponiblesEnPerfil)), "Permisos agregados al perfil."))
+        if (Intentar(() => permisoBLL.AgregarAPerfil(codPerfil.Value, CodigosMarcados(cblPermisosDisponibles), CodigosMarcados(cblFamiliasDisponiblesEnPerfil)), "permisos.msgPermisosAgregadosPerfil"))
         {
             CargarPantalla();
         }
@@ -155,12 +159,12 @@ public partial class PaginaPermisos : PaginaSegura
         int? codPerfil = CodigoSeleccionado(ddlPerfiles);
         if (codPerfil == null)
         {
-            MostrarMensaje("Elegí un perfil en la lista 'Perfiles' para quitarle permisos.", esExito: false);
+            MostrarMensaje(Traducir("permisos.errElegirPerfilQuitar"), esExito: false);
             return;
         }
         List<int> permisos, familias;
         LeerSeleccionContenido(cblContenidoPerfil, out permisos, out familias);
-        if (Intentar(() => permisoBLL.QuitarDePerfil(codPerfil.Value, permisos, familias), "Permisos quitados del perfil."))
+        if (Intentar(() => permisoBLL.QuitarDePerfil(codPerfil.Value, permisos, familias), "permisos.msgPermisosQuitadosPerfil"))
         {
             CargarPantalla();
         }
@@ -170,10 +174,10 @@ public partial class PaginaPermisos : PaginaSegura
         int? codPerfil = CodigoSeleccionado(ddlPerfiles);
         if (codPerfil == null)
         {
-            MostrarMensaje("Elegí el perfil que querés borrar en la lista 'Perfiles'.", esExito: false);
+            MostrarMensaje(Traducir("permisos.errElegirPerfilBorrar"), esExito: false);
             return;
         }
-        if (Intentar(() => permisoBLL.EliminarPerfil(codPerfil.Value), "Perfil borrado correctamente."))
+        if (Intentar(() => permisoBLL.EliminarPerfil(codPerfil.Value), "permisos.msgPerfilBorrado"))
         {
             CargarPantalla(pPerfilASeleccionar: "");
         }
@@ -186,7 +190,7 @@ public partial class PaginaPermisos : PaginaSegura
     protected void btnCrearFamilia_Click(object sender, EventArgs e)
     {
         int codigoNuevo = 0;
-        bool exito = Intentar(() => codigoNuevo = permisoBLL.CrearFamilia(tbNombreFamilia.Text, CodigosMarcados(cblPermisosDisponiblesEnFamilia), CodigosMarcados(cblFamiliasDisponibles)), "Familia creada correctamente.");
+        bool exito = Intentar(() => codigoNuevo = permisoBLL.CrearFamilia(tbNombreFamilia.Text, CodigosMarcados(cblPermisosDisponiblesEnFamilia), CodigosMarcados(cblFamiliasDisponibles)), "permisos.msgFamiliaCreada");
         if (exito)
         {
             tbNombreFamilia.Text = "";
@@ -198,10 +202,10 @@ public partial class PaginaPermisos : PaginaSegura
         int? codFamilia = CodigoSeleccionado(ddlFamilias);
         if (codFamilia == null)
         {
-            MostrarMensaje("Elegí una familia en la lista 'Familias' para agregarle permisos.", esExito: false);
+            MostrarMensaje(Traducir("permisos.errElegirFamiliaAgregar"), esExito: false);
             return;
         }
-        if (Intentar(() => permisoBLL.AgregarAFamilia(codFamilia.Value, CodigosMarcados(cblPermisosDisponiblesEnFamilia), CodigosMarcados(cblFamiliasDisponibles)), "Permisos agregados a la familia."))
+        if (Intentar(() => permisoBLL.AgregarAFamilia(codFamilia.Value, CodigosMarcados(cblPermisosDisponiblesEnFamilia), CodigosMarcados(cblFamiliasDisponibles)), "permisos.msgPermisosAgregadosFamilia"))
         {
             CargarPantalla();
         }
@@ -211,12 +215,12 @@ public partial class PaginaPermisos : PaginaSegura
         int? codFamilia = CodigoSeleccionado(ddlFamilias);
         if (codFamilia == null)
         {
-            MostrarMensaje("Elegí una familia en la lista 'Familias' para quitarle permisos.", esExito: false);
+            MostrarMensaje(Traducir("permisos.errElegirFamiliaQuitar"), esExito: false);
             return;
         }
         List<int> permisos, familias;
         LeerSeleccionContenido(cblContenidoFamilia, out permisos, out familias);
-        if (Intentar(() => permisoBLL.QuitarDeFamilia(codFamilia.Value, permisos, familias), "Permisos quitados de la familia."))
+        if (Intentar(() => permisoBLL.QuitarDeFamilia(codFamilia.Value, permisos, familias), "permisos.msgPermisosQuitadosFamilia"))
         {
             CargarPantalla();
         }
@@ -226,10 +230,10 @@ public partial class PaginaPermisos : PaginaSegura
         int? codFamilia = CodigoSeleccionado(ddlFamilias);
         if (codFamilia == null)
         {
-            MostrarMensaje("Elegí la familia que querés borrar en la lista 'Familias'.", esExito: false);
+            MostrarMensaje(Traducir("permisos.errElegirFamiliaBorrar"), esExito: false);
             return;
         }
-        if (Intentar(() => permisoBLL.EliminarFamilia(codFamilia.Value), "Familia borrada correctamente."))
+        if (Intentar(() => permisoBLL.EliminarFamilia(codFamilia.Value), "permisos.msgFamiliaBorrada"))
         {
             CargarPantalla(pFamiliaASeleccionar: "");
         }

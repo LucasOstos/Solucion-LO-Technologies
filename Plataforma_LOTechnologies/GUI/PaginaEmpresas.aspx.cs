@@ -14,6 +14,10 @@ public partial class PaginaEmpresas : PaginaSegura
     {
         get { return PermisoNombres.GestionarEmpresas; }
     }
+    protected override string ClaveTitulo
+    {
+        get { return "empresas.titulo"; }
+    }
     private EmpresaBLL empresaBLL = new EmpresaBLL();
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -60,14 +64,14 @@ public partial class PaginaEmpresas : PaginaSegura
         EmpresaBE empresa = empresaBLL.ObtenerEmpresaPorCodigo(codigoEmpresa);
         if (empresa == null)
         {
-            MostrarMensaje("La empresa ya no existe.", esExito: false);
+            MostrarMensaje(Traducir("empresas.msgNoExiste"), esExito: false);
             CargarEmpresas();
             return;
         }
         hfEsEdicion.Value = "true";
         hfCodigoEmpresa.Value = empresa.CodigoEmpresa.ToString();
-        litTituloModal.Text = "Editar Empresa";
-        btnGuardarEmpresa.Text = "Guardar Cambios";
+        litTituloModal.Text = Traducir("empresas.modalEditar");
+        btnGuardarEmpresa.Text = Traducir("comun.guardarCambios");
         tbRazonSocial.Text = empresa.RazonSocial;
         tbCUIT.Text = empresa.CUIT;
         tbCorreo.Text = empresa.Correo;
@@ -87,8 +91,8 @@ public partial class PaginaEmpresas : PaginaSegura
     {
         LimpiarModal();
         hfEsEdicion.Value = "false";
-        litTituloModal.Text = "Nueva Empresa";
-        btnGuardarEmpresa.Text = "Crear Empresa";
+        litTituloModal.Text = Traducir("empresas.btnNueva");
+        btnGuardarEmpresa.Text = Traducir("empresas.btnCrear");
         AbrirModal();
     }
 
@@ -104,7 +108,8 @@ public partial class PaginaEmpresas : PaginaSegura
             AbrirModal();
             return;
         }
-        int telefono = int.Parse(tbTelefono.Text.Trim());
+        int telefono;
+        int.TryParse(tbTelefono.Text.Trim(), out telefono);
         bool esEdicion = hfEsEdicion.Value == "true";
         int codigoEmpresa = esEdicion ? int.Parse(hfCodigoEmpresa.Value) : 0;
         EmpresaBE empresa = new EmpresaBE(codigoEmpresa, tbRazonSocial.Text.Trim(), tbCUIT.Text.Trim(), tbCorreo.Text.Trim(), telefono, tbDireccion.Text.Trim(), chkActiva.Checked);
@@ -113,15 +118,15 @@ public partial class PaginaEmpresas : PaginaSegura
         {
             case ResultadoGuardarEmpresa.Exitoso:
                 pnlModalEmpresa.Style["display"] = "none";
-                MostrarMensaje(esEdicion ? "Empresa modificada correctamente." : "Empresa registrada correctamente.", esExito: true);
+                MostrarMensaje(Traducir(esEdicion ? "empresas.msgModificada" : "empresas.msgRegistrada"), esExito: true);
                 CargarEmpresas();
                 break;
             case ResultadoGuardarEmpresa.CuitYaRegistrado:
-                MostrarMensaje("La empresa ya se encuentra registrada.", esExito: false);
+                MostrarMensaje(Traducir("empresas.msgCuitExiste"), esExito: false);
                 AbrirModal();
                 break;
             case ResultadoGuardarEmpresa.DatosInvalidos:
-                MostrarMensaje("Datos inválidos.", esExito: false);
+                MostrarMensaje(Traducir("comun.datosInvalidos"), esExito: false);
                 AbrirModal();
                 break;
         }
@@ -145,7 +150,7 @@ public partial class PaginaEmpresas : PaginaSegura
             case "CambiarEstado":
                 EmpresaBE empresa = empresaBLL.ObtenerEmpresaPorCodigo(codigoEmpresa);
                 empresaBLL.CambiarEstado(codigoEmpresa, !empresa.Estado);
-                MostrarMensaje("Estado de la empresa actualizado.", esExito: true);
+                MostrarMensaje(Traducir("empresas.msgEstado"), esExito: true);
                 CargarEmpresas();
                 break;
         }

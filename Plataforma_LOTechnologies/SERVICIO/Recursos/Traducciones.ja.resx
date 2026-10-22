@@ -203,4 +203,379 @@
   <data name="error.inesperado" xml:space="preserve">
     <value>予期しないエラーが発生しました。もう一度お試しください。</value>
   </data>
+  <data name="comun.volverMenu" xml:space="preserve">
+    <value>メニューに戻る</value>
+  </data>
+  <data name="comun.buscar" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="comun.activo" xml:space="preserve">
+    <value>有効</value>
+  </data>
+  <data name="comun.inactivo" xml:space="preserve">
+    <value>無効</value>
+  </data>
+  <data name="comun.todosEstados" xml:space="preserve">
+    <value>すべての状態</value>
+  </data>
+  <data name="comun.estado" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="comun.acciones" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="comun.editar" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="comun.activarDesactivar" xml:space="preserve">
+    <value>有効化/無効化</value>
+  </data>
+  <data name="comun.guardarCambios" xml:space="preserve">
+    <value>変更を保存</value>
+  </data>
+  <data name="comun.empresa" xml:space="preserve">
+    <value>企業</value>
+  </data>
+  <data name="comun.todasEmpresas" xml:space="preserve">
+    <value>すべての企業</value>
+  </data>
+  <data name="comun.seleccionar" xml:space="preserve">
+    <value>— 選択 —</value>
+  </data>
+  <data name="comun.datosInvalidos" xml:space="preserve">
+    <value>データが無効です。入力内容を確認してください。</value>
+  </data>
+  <data name="comun.telefono" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="comun.direccion" xml:space="preserve">
+    <value>住所</value>
+  </data>
+  <data name="usuarios.titulo" xml:space="preserve">
+    <value>ユーザー管理 - LO Technologies</value>
+  </data>
+  <data name="usuarios.encabezado" xml:space="preserve">
+    <value>ユーザー管理</value>
+  </data>
+  <data name="usuarios.btnAgregar" xml:space="preserve">
+    <value>ユーザーを追加</value>
+  </data>
+  <data name="usuarios.buscarPlaceholder" xml:space="preserve">
+    <value>ユーザーを検索...</value>
+  </data>
+  <data name="usuarios.todosPerfiles" xml:space="preserve">
+    <value>すべてのプロファイル</value>
+  </data>
+  <data name="usuarios.colUsuario" xml:space="preserve">
+    <value>ユーザー</value>
+  </data>
+  <data name="usuarios.colPerfil" xml:space="preserve">
+    <value>プロファイル</value>
+  </data>
+  <data name="usuarios.colUltimoAcceso" xml:space="preserve">
+    <value>最終アクセス</value>
+  </data>
+  <data name="usuarios.bloqueado" xml:space="preserve">
+    <value>ロック中</value>
+  </data>
+  <data name="usuarios.desbloquear" xml:space="preserve">
+    <value>ロック解除</value>
+  </data>
+  <data name="usuarios.confirmarEstado" xml:space="preserve">
+    <value>このユーザーの状態を変更しますか？</value>
+  </data>
+  <data name="usuarios.confirmarDesbloqueo" xml:space="preserve">
+    <value>このユーザーのロックを解除しますか？新しいパスワードを設定するためのメールが送信されます。</value>
+  </data>
+  <data name="usuarios.sinResultados" xml:space="preserve">
+    <value>検索条件に一致するユーザーはいません。</value>
+  </data>
+  <data name="usuarios.modalNuevo" xml:space="preserve">
+    <value>新規ユーザー</value>
+  </data>
+  <data name="usuarios.modalEditar" xml:space="preserve">
+    <value>ユーザーを編集</value>
+  </data>
+  <data name="usuarios.btnCrear" xml:space="preserve">
+    <value>ユーザーを作成</value>
+  </data>
+  <data name="usuarios.dni" xml:space="preserve">
+    <value>身分証番号（DNI） *</value>
+  </data>
+  <data name="usuarios.errDni" xml:space="preserve">
+    <value>身分証番号を入力してください</value>
+  </data>
+  <data name="usuarios.errDniInvalido" xml:space="preserve">
+    <value>身分証番号が無効です</value>
+  </data>
+  <data name="usuarios.nombre" xml:space="preserve">
+    <value>名 *</value>
+  </data>
+  <data name="usuarios.errNombre" xml:space="preserve">
+    <value>名を入力してください</value>
+  </data>
+  <data name="usuarios.apellido" xml:space="preserve">
+    <value>姓 *</value>
+  </data>
+  <data name="usuarios.errApellido" xml:space="preserve">
+    <value>姓を入力してください</value>
+  </data>
+  <data name="usuarios.email" xml:space="preserve">
+    <value>メールアドレス *</value>
+  </data>
+  <data name="usuarios.errEmail" xml:space="preserve">
+    <value>メールアドレスを入力してください</value>
+  </data>
+  <data name="usuarios.rol" xml:space="preserve">
+    <value>ロール</value>
+  </data>
+  <data name="usuarios.contrasenia" xml:space="preserve">
+    <value>パスワード *</value>
+  </data>
+  <data name="usuarios.errContrasenia" xml:space="preserve">
+    <value>パスワードを入力してください</value>
+  </data>
+  <data name="usuarios.activo" xml:space="preserve">
+    <value>有効なユーザー</value>
+  </data>
+  <data name="usuarios.msgNoExiste" xml:space="preserve">
+    <value>このユーザーはもう存在しません。</value>
+  </data>
+  <data name="usuarios.msgEstado" xml:space="preserve">
+    <value>ユーザーの状態を更新しました。</value>
+  </data>
+  <data name="usuarios.msgNoBloqueado" xml:space="preserve">
+    <value>このユーザーはロックされていません。</value>
+  </data>
+  <data name="usuarios.msgDesbloqueado" xml:space="preserve">
+    <value>ユーザーのロックを解除しました。新しいパスワードを設定するためのメールを送信しました。</value>
+  </data>
+  <data name="usuarios.msgModificado" xml:space="preserve">
+    <value>ユーザーを更新しました。</value>
+  </data>
+  <data name="usuarios.msgCreado" xml:space="preserve">
+    <value>ユーザーを作成しました。</value>
+  </data>
+  <data name="usuarios.msgDniExiste" xml:space="preserve">
+    <value>その身分証番号のユーザーは既に登録されています。</value>
+  </data>
+  <data name="usuarios.errSinEmpresa" xml:space="preserve">
+    <value>ユーザーはいずれかの企業に所属している必要があります。</value>
+  </data>
+  <data name="empresas.titulo" xml:space="preserve">
+    <value>企業管理 - LO Technologies</value>
+  </data>
+  <data name="empresas.encabezado" xml:space="preserve">
+    <value>企業管理</value>
+  </data>
+  <data name="empresas.btnNueva" xml:space="preserve">
+    <value>新規企業</value>
+  </data>
+  <data name="empresas.buscarPlaceholder" xml:space="preserve">
+    <value>名称またはCUITで検索...</value>
+  </data>
+  <data name="empresas.colCorreo" xml:space="preserve">
+    <value>メール</value>
+  </data>
+  <data name="empresas.confirmarEstado" xml:space="preserve">
+    <value>この企業の状態を変更しますか？</value>
+  </data>
+  <data name="empresas.sinResultados" xml:space="preserve">
+    <value>検索条件に一致する企業はありません。</value>
+  </data>
+  <data name="empresas.modalEditar" xml:space="preserve">
+    <value>企業を編集</value>
+  </data>
+  <data name="empresas.btnCrear" xml:space="preserve">
+    <value>企業を作成</value>
+  </data>
+  <data name="empresas.razonSocial" xml:space="preserve">
+    <value>会社名 *</value>
+  </data>
+  <data name="empresas.errRazonSocial" xml:space="preserve">
+    <value>会社名を入力してください</value>
+  </data>
+  <data name="empresas.errCuit" xml:space="preserve">
+    <value>CUITを入力してください</value>
+  </data>
+  <data name="empresas.correo" xml:space="preserve">
+    <value>メール *</value>
+  </data>
+  <data name="empresas.errCorreo" xml:space="preserve">
+    <value>メールを入力してください</value>
+  </data>
+  <data name="empresas.activa" xml:space="preserve">
+    <value>有効な企業</value>
+  </data>
+  <data name="empresas.msgNoExiste" xml:space="preserve">
+    <value>この企業はもう存在しません。</value>
+  </data>
+  <data name="empresas.msgModificada" xml:space="preserve">
+    <value>企業を更新しました。</value>
+  </data>
+  <data name="empresas.msgRegistrada" xml:space="preserve">
+    <value>企業を登録しました。</value>
+  </data>
+  <data name="empresas.msgCuitExiste" xml:space="preserve">
+    <value>この企業は既に登録されています。</value>
+  </data>
+  <data name="empresas.msgEstado" xml:space="preserve">
+    <value>企業の状態を更新しました。</value>
+  </data>
+  <data name="permisos.titulo" xml:space="preserve">
+    <value>権限管理 - LO Technologies</value>
+  </data>
+  <data name="permisos.encabezado" xml:space="preserve">
+    <value>権限管理</value>
+  </data>
+  <data name="permisos.perfiles" xml:space="preserve">
+    <value>プロファイル</value>
+  </data>
+  <data name="permisos.nombrePerfilNuevo" xml:space="preserve">
+    <value>新しいプロファイル名</value>
+  </data>
+  <data name="permisos.ejPerfil" xml:space="preserve">
+    <value>例：店長</value>
+  </data>
+  <data name="permisos.permisosDisponibles" xml:space="preserve">
+    <value>利用可能な権限</value>
+  </data>
+  <data name="permisos.familiasDisponibles" xml:space="preserve">
+    <value>利用可能なグループ</value>
+  </data>
+  <data name="permisos.perfilSeleccionado" xml:space="preserve">
+    <value>選択したプロファイル</value>
+  </data>
+  <data name="permisos.contenidoAsignado" xml:space="preserve">
+    <value>割り当て済みの内容</value>
+  </data>
+  <data name="permisos.ayudaQuitarPerfil" xml:space="preserve">
+    <value>プロファイルから削除する項目にチェックを入れてください。</value>
+  </data>
+  <data name="permisos.btnCrearPerfil" xml:space="preserve">
+    <value>プロファイルを作成</value>
+  </data>
+  <data name="permisos.btnAgregarPermisos" xml:space="preserve">
+    <value>権限を追加</value>
+  </data>
+  <data name="permisos.btnQuitarPermisos" xml:space="preserve">
+    <value>権限を削除</value>
+  </data>
+  <data name="permisos.btnBorrarPerfil" xml:space="preserve">
+    <value>プロファイルを削除</value>
+  </data>
+  <data name="permisos.familias" xml:space="preserve">
+    <value>グループ</value>
+  </data>
+  <data name="permisos.nombreFamiliaNueva" xml:space="preserve">
+    <value>新しいグループ名</value>
+  </data>
+  <data name="permisos.ejFamilia" xml:space="preserve">
+    <value>例：一般管理</value>
+  </data>
+  <data name="permisos.familiaSeleccionada" xml:space="preserve">
+    <value>選択したグループ</value>
+  </data>
+  <data name="permisos.ayudaQuitarFamilia" xml:space="preserve">
+    <value>グループから削除する項目にチェックを入れてください。</value>
+  </data>
+  <data name="permisos.btnCrearFamilia" xml:space="preserve">
+    <value>グループを作成</value>
+  </data>
+  <data name="permisos.btnBorrarFamilia" xml:space="preserve">
+    <value>グループを削除</value>
+  </data>
+  <data name="permisos.itemPermiso" xml:space="preserve">
+    <value>権限：{0}</value>
+  </data>
+  <data name="permisos.itemFamilia" xml:space="preserve">
+    <value>グループ：{0}（権限 {1} 件）</value>
+  </data>
+  <data name="permisos.msgPerfilCreado" xml:space="preserve">
+    <value>プロファイルを作成しました。</value>
+  </data>
+  <data name="permisos.errElegirPerfilAgregar" xml:space="preserve">
+    <value>権限を追加するには「プロファイル」の一覧からプロファイルを選択してください。</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosPerfil" xml:space="preserve">
+    <value>プロファイルに権限を追加しました。</value>
+  </data>
+  <data name="permisos.errElegirPerfilQuitar" xml:space="preserve">
+    <value>権限を削除するには「プロファイル」の一覧からプロファイルを選択してください。</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosPerfil" xml:space="preserve">
+    <value>プロファイルから権限を削除しました。</value>
+  </data>
+  <data name="permisos.errElegirPerfilBorrar" xml:space="preserve">
+    <value>削除するプロファイルを「プロファイル」の一覧から選択してください。</value>
+  </data>
+  <data name="permisos.msgPerfilBorrado" xml:space="preserve">
+    <value>プロファイルを削除しました。</value>
+  </data>
+  <data name="permisos.msgFamiliaCreada" xml:space="preserve">
+    <value>グループを作成しました。</value>
+  </data>
+  <data name="permisos.errElegirFamiliaAgregar" xml:space="preserve">
+    <value>権限を追加するには「グループ」の一覧からグループを選択してください。</value>
+  </data>
+  <data name="permisos.msgPermisosAgregadosFamilia" xml:space="preserve">
+    <value>グループに権限を追加しました。</value>
+  </data>
+  <data name="permisos.errElegirFamiliaQuitar" xml:space="preserve">
+    <value>権限を削除するには「グループ」の一覧からグループを選択してください。</value>
+  </data>
+  <data name="permisos.msgPermisosQuitadosFamilia" xml:space="preserve">
+    <value>グループから権限を削除しました。</value>
+  </data>
+  <data name="permisos.errElegirFamiliaBorrar" xml:space="preserve">
+    <value>削除するグループを「グループ」の一覧から選択してください。</value>
+  </data>
+  <data name="permisos.msgFamiliaBorrada" xml:space="preserve">
+    <value>グループを削除しました。</value>
+  </data>
+  <data name="permisos.errSinSeleccionPerfil" xml:space="preserve">
+    <value>プロファイルに権限またはグループを1つ以上選択してください。</value>
+  </data>
+  <data name="permisos.errSinSeleccionAgregar" xml:space="preserve">
+    <value>追加する権限またはグループを1つ以上選択してください。</value>
+  </data>
+  <data name="permisos.errSinSeleccionQuitar" xml:space="preserve">
+    <value>「割り当て済みの内容」で削除する項目を選択してください。</value>
+  </data>
+  <data name="permisos.errSinSeleccionFamilia" xml:space="preserve">
+    <value>新しいグループに権限またはグループを1つ以上選択してください。</value>
+  </data>
+  <data name="permisos.errFamiliaEnUso" xml:space="preserve">
+    <value>「{0}」は次に割り当てられているため削除できません：{1}。先にそこから外してください。</value>
+  </data>
+  <data name="permisos.errYaIncluido" xml:space="preserve">
+    <value>「{0}」は既に「{1}」に含まれています（直接またはグループ経由）。</value>
+  </data>
+  <data name="permisos.errPermisoNoExiste" xml:space="preserve">
+    <value>選択した権限の一部は既に存在しません。ページを再読み込みしてください。</value>
+  </data>
+  <data name="permisos.errFamiliaSelNoExiste" xml:space="preserve">
+    <value>選択したグループの一部は既に存在しません。ページを再読み込みしてください。</value>
+  </data>
+  <data name="permisos.errPerfilNoExiste" xml:space="preserve">
+    <value>選択したプロファイルは既に存在しません。</value>
+  </data>
+  <data name="permisos.errFamiliaNoExiste" xml:space="preserve">
+    <value>選択したグループは既に存在しません。</value>
+  </data>
+  <data name="permisos.errNombreVacio" xml:space="preserve">
+    <value>名前を入力してください。</value>
+  </data>
+  <data name="permisos.errNombreLargo" xml:space="preserve">
+    <value>名前は{0}文字以内で入力してください。</value>
+  </data>
+  <data name="permisos.errPerfilExiste" xml:space="preserve">
+    <value>その名前のプロファイルは既に存在します。</value>
+  </data>
+  <data name="permisos.errFamiliaExiste" xml:space="preserve">
+    <value>その名前のグループは既に存在します。</value>
+  </data>
+  <data name="permisos.errAutoBloqueo" xml:space="preserve">
+    <value>この変更により「{0}」の権限が失われ、この画面にアクセスできなくなります。</value>
+  </data>
 </root>
