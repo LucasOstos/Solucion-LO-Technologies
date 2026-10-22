@@ -47,6 +47,7 @@
     <Compile Include="ControlAcceso.cs" />
     <Compile Include="EmpresaBLL.cs" />
     <Compile Include="EscenarioBLL.cs" />
+    <Compile Include="IdiomaBLL.cs" />
     <Compile Include="IndicadorBLL.cs" />
     <Compile Include="LayoutBLL.cs" />
     <Compile Include="LocalBLL.cs" />

@@ -203,4 +203,7 @@
   <data name="error.inesperado" xml:space="preserve">
     <value>Ocurrió un error inesperado. Intente nuevamente.</value>
   </data>
+  <data name="comun.volverMenu" xml:space="preserve">
+    <value>Volver al menú.</value>
+  </data>
 </root>

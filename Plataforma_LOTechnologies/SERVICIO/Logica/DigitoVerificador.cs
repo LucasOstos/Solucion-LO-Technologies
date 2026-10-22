@@ -72,6 +72,32 @@ namespace SERVICIO.Logica
             string dvv = CalcularDVV(dvhs);
             accesoDAL.GuardarDVV(pNombreTabla, dvv, DT.Rows.Count);
         }
+        public void ActualizarDigitoFilas(string pNombreTabla, IEnumerable<object> pValoresPK)
+        {
+            if (!TablasConDVH.TryGetValue(pNombreTabla, out string pColumnaPK))
+            {
+                throw new ArgumentException($"La tabla '{pNombreTabla}' no cuenta con la columna DVH");
+            }
+            HashSet<string> pks = new HashSet<string>(pValoresPK.Select(v => v.ToString()));
+            if (pks.Count == 0) return;
+            DataTable DT = accesoDAL.ObtenerTabla(pNombreTabla, pColumnaPK);
+            var dvhs = new List<string>();
+            foreach (DataRow DR in DT.Rows)
+            {
+                string dvh;
+                if (pks.Contains(DR[pColumnaPK].ToString()))
+                {
+                    dvh = CalcularDVH(DR, DT);
+                    accesoDAL.ActualizarDVH(pNombreTabla, pColumnaPK, DR[pColumnaPK], dvh);
+                }
+                else
+                {
+                    dvh = DR["DVH"] == DBNull.Value ? null : DR["DVH"].ToString();
+                }
+                dvhs.Add(dvh);
+            }
+            accesoDAL.GuardarDVV(pNombreTabla, CalcularDVV(dvhs), DT.Rows.Count);
+        }
         public bool CalcularTablas()
         {
             try
