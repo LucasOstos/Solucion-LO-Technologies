@@ -24,6 +24,7 @@ public partial class PaginaBackupRestore : PaginaSegura
     private BackupRestore gestorBackup = new BackupRestore();
     protected void Page_Load(object sender, EventArgs e)
     {
+        pnlModalRestaurar.Style["display"] = "none";
         if (!IsPostBack)
         {
             CargarBackups();
@@ -34,7 +35,6 @@ public partial class PaginaBackupRestore : PaginaSegura
     private void CargarBackups()
     {
         List<Backup> backups = gestorBackup.ObtenerBackups();
-
         if (backups.Count == 0)
         {
             rptBackups.Visible = false;
@@ -60,6 +60,11 @@ public partial class PaginaBackupRestore : PaginaSegura
         lblConfirmarRestauracion.Text = Traducir("backup.escribiConfirmar", PalabraConfirmar);
         tbConfirmarRestauracion.Attributes["placeholder"] = PalabraConfirmar;
         pnlModalRestaurar.Style["display"] = "flex";
+    }
+    private void MostrarMensajeModal(string texto)
+    {
+        lblMensajeModal.Text = texto;
+        lblMensajeModal.Visible = true;
     }
     private void MostrarMensaje(string texto, bool esExito)
     {
@@ -100,15 +105,13 @@ public partial class PaginaBackupRestore : PaginaSegura
                 break;
         }
     }
-
-    protected void btnCancelarRestaurar_Click(object sender, EventArgs e) { pnlModalRestaurar.Style["display"] = "none"; }
-
     protected void btnConfirmarRestaurar_Click(object sender, EventArgs e)
     {
         if (!string.Equals(tbConfirmarRestauracion.Text.Trim(), PalabraConfirmar, StringComparison.CurrentCultureIgnoreCase))
         {
-            MostrarMensaje(Traducir("backup.errEscribirConfirmar", PalabraConfirmar), esExito: false);
+            MostrarMensajeModal(Traducir("backup.errEscribirConfirmar", PalabraConfirmar));
             pnlModalRestaurar.Style["display"] = "flex";
+            tbConfirmarRestauracion.Focus();
             return;
         }
         try

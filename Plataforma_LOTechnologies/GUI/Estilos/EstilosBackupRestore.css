@@ -14,3 +14,17 @@
     font-size: 13px;
     margin-bottom: 16px;
 }
+
+.br-boton-restaurar {
+    background-color: #d93025;
+    color: #ffffff;
+}
+
+    .br-boton-restaurar:hover {
+        background-color: #b3261e;
+    }
+
+    .br-boton-restaurar:focus-visible {
+        outline: 2px solid #b3261e;
+        outline-offset: 2px;
+    }

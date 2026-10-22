@@ -78,9 +78,9 @@
                                         </td>
                                         <td>
                                             <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Descargar" ClaveTitle="backup.descargar"
-                                                CommandName="Descargar" CommandArgument='<%# Eval("NombreArchivo") %>'>&#8595; <span runat="server" Clave="backup.descargar">Descargar</span></asp:LinkButton>
+                                                CommandName="Descargar" CommandArgument='<%# Eval("NombreArchivo") %>' Text='<%# "\u2193 " + Traducir("backup.descargar") %>' />
                                             <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Restaurar" ClaveTitle="backup.restaurar" Visible='<%# (bool)Eval("Exitoso") %>'
-                                                CommandName="Restaurar" CommandArgument='<%# Eval("NombreArchivo") %>'>&#8593; <span runat="server" Clave="backup.restaurar">Restaurar</span></asp:LinkButton>
+                                                CommandName="Restaurar" CommandArgument='<%# Eval("NombreArchivo") %>' Text='<%# "\u2191 " + Traducir("backup.restaurar") %>' />
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -121,10 +121,12 @@
                     <asp:TextBox ID="tbConfirmarRestauracion" runat="server" CssClass="modal-campo" placeholder="CONFIRMAR" />
                 </div>
 
+                <asp:Label ID="lblMensajeModal" runat="server" CssClass="mensaje mensaje-error" Visible="false" EnableViewState="false" />
+
                 <div class="modal-botones">
                     <asp:Button ID="btnCancelarRestaurar" runat="server" CssClass="modal-boton-cancelar"
-                        Text="Cancelar" Clave="comun.cancelar" OnClick="btnCancelarRestaurar_Click" CausesValidation="false" />
-                    <asp:Button ID="btnConfirmarRestaurar" runat="server" CssClass="boton-peligro"
+                        Text="Cancelar" Clave="comun.cancelar" OnClientClick="cerrarModal('pnlModalRestaurar'); return false;" CausesValidation="false" />
+                    <asp:Button ID="btnConfirmarRestaurar" runat="server" CssClass="modal-boton-guardar br-boton-restaurar"
                         Text="Restaurar Backup" Clave="backup.btnRestaurar" OnClick="btnConfirmarRestaurar_Click" CausesValidation="false" />
                 </div>
             </div>
