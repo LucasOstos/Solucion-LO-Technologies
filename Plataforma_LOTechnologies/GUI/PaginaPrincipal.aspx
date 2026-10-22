@@ -21,9 +21,10 @@
                             <asp:Literal ID="litInicialesUsuario" runat="server" />
                         </span>
                         <div>
-                            <div class="principal-hero-saludo" runat="server" Clave="principal.saludo">Hola,</div>
+                            <div class="principal-hero-saludo" runat="server" clave="principal.saludo">Hola,</div>
                             <div class="principal-hero-nombre">
-                                <asp:Literal ID="litNombreUsuario" runat="server" /></div>
+                                <asp:Literal ID="litNombreUsuario" runat="server" />
+                            </div>
                             <span class="principal-hero-rol">
                                 <asp:Literal ID="litRolUsuario" runat="server" /></span>
                         </div>
@@ -31,13 +32,17 @@
 
                     <div class="principal-hero-acciones">
                         <div id="pnlIdioma" runat="server" class="principal-idioma">
+                            <svg class="principal-idioma-icono" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+                                <path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" />
+                            </svg>
                             <asp:Label runat="server" Text="Idioma" AssociatedControlID="ddlIdioma" CssClass="principal-idioma-etiqueta" Clave="principal.idioma" />
                             <asp:DropDownList ID="ddlIdioma" runat="server" CssClass="principal-idioma-lista"
                                 AutoPostBack="true" OnSelectedIndexChanged="ddlIdioma_SelectedIndexChanged" CausesValidation="false" />
                         </div>
                         <button type="button" id="btnAbrirCambiarContrasenia" runat="server" class="principal-accion" onclick="abrirModal('pnlCambiarContrasenia')">
                             <span aria-hidden="true">&#128273;</span>
-                            <span runat="server" Clave="principal.btnCambiarContrasenia">Cambiar contraseña</span>
+                            <span runat="server" clave="principal.btnCambiarContrasenia">Cambiar contraseña</span>
                         </button>
                         <asp:Button ID="btnLogout" runat="server" CssClass="principal-accion principal-accion-salir"
                             Text="Cerrar sesión" Clave="principal.btnCerrarSesion" OnClick="btnLogout_Click" CausesValidation="false" />
@@ -47,7 +52,7 @@
                 <asp:Label ID="lblMensajePrincipal" runat="server" CssClass="mensaje" Visible="false" />
 
                 <div class="principal-seccion">
-                    <h2 class="principal-seccion-titulo" runat="server" Clave="principal.seccionLocales">Locales y empresa</h2>
+                    <h2 class="principal-seccion-titulo" runat="server" clave="principal.seccionLocales">Locales y empresa</h2>
                     <div class="principal-modulos">
                         <asp:HyperLink ID="lnkEmpresas" runat="server" NavigateUrl="~/PaginaEmpresas.aspx" CssClass="principal-modulo" Permiso="Gestionar empresas">
                             <span class="principal-modulo-titulo" runat="server" Clave="principal.empresas.titulo">Empresas</span>
@@ -73,7 +78,7 @@
                 </div>
 
                 <div class="principal-seccion">
-                    <h2 class="principal-seccion-titulo" runat="server" Clave="principal.seccionSimulacion">Simulación y análisis</h2>
+                    <h2 class="principal-seccion-titulo" runat="server" clave="principal.seccionSimulacion">Simulación y análisis</h2>
                     <div class="principal-modulos">
                         <asp:HyperLink ID="lnkEscenarios" runat="server" NavigateUrl="~/PaginaEscenarios.aspx" CssClass="principal-modulo" Permiso="Gestionar escenarios">
                             <span class="principal-modulo-titulo" runat="server" Clave="principal.escenarios.titulo">Escenarios de simulación</span>
@@ -99,7 +104,7 @@
                 </div>
 
                 <div class="principal-seccion">
-                    <h2 class="principal-seccion-titulo" runat="server" Clave="principal.seccionAdministracion">Administración y seguridad</h2>
+                    <h2 class="principal-seccion-titulo" runat="server" clave="principal.seccionAdministracion">Administración y seguridad</h2>
                     <div class="principal-modulos">
                         <asp:HyperLink ID="lnkUsuarios" runat="server" NavigateUrl="~/PaginaUsuarios.aspx" CssClass="principal-modulo" Permiso="Gestionar usuarios">
                             <span class="principal-modulo-titulo" runat="server" Clave="principal.usuarios.titulo">Usuarios</span>
@@ -127,14 +132,15 @@
                         </asp:HyperLink>
                     </div>
                 </div>
+
             </div>
         </div>
 
         <asp:Panel ID="pnlCambiarContrasenia" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="tituloCambiarContrasenia">
                 <div class="modal-encabezado">
-                    <h3 id="tituloCambiarContrasenia" runat="server" ClientIDMode="Static" Clave="principal.btnCambiarContrasenia">Cambiar contraseña</h3>
-                    <button type="button" runat="server" class="modal-cerrar principal-modal-cerrar" aria-label="Cerrar" ClaveAria="comun.cerrar"
+                    <h3 id="tituloCambiarContrasenia" runat="server" clientidmode="Static" clave="principal.btnCambiarContrasenia">Cambiar contraseña</h3>
+                    <button type="button" runat="server" class="modal-cerrar principal-modal-cerrar" aria-label="Cerrar" clavearia="comun.cerrar"
                         onclick="cerrarModal('pnlCambiarContrasenia')">
                         &times;</button>
                 </div>
