@@ -1730,24 +1730,6 @@
   <data name="indicadores.sinIndicadores" xml:space="preserve">
     <value>لا توجد بيانات كافية لإنشاء مؤشرات كاملة.</value>
   </data>
-  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
-    <value>انخفاض الحركة في قسم {0}</value>
-  </data>
-  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
-    <value>يسجّل قسم {0} حركة مقدّرة بنسبة {1}%، وهي أقل من باقي الأقسام. فكّر في إعادة توزيع المنتجات سريعة الدوران.</value>
-  </data>
-  <data name="recomendacion.superaMeta" xml:space="preserve">
-    <value>{0} يتجاوز هدف المبيعات</value>
-  </data>
-  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
-    <value>تجاوز قسم {0} حدّ المبيعات للفترة. يُنصح بزيادة مساحة عرضه.</value>
-  </data>
-  <data name="recomendacion.stockCritico" xml:space="preserve">
-    <value>مخزون حرج في {0}</value>
-  </data>
-  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
-    <value>لا يتوفر من "{0}" سوى {1} وحدات. يُنصح بإعادة التخزين بشكل عاجل.</value>
-  </data>
   <data name="analisis.titulo" xml:space="preserve">
     <value>تحليل المنتجات - LO Technologies</value>
   </data>
@@ -2230,5 +2212,146 @@
   </data>
   <data name="stock.errMinimoMaximo" xml:space="preserve">
     <value>لا يمكن أن يكون الحد الأدنى للمخزون أكبر من الحد الأقصى.</value>
+  </data>
+  <data name="indicadores.crearEscenario" xml:space="preserve">
+    <value>إنشاء سيناريو</value>
+  </data>
+  <data name="indicadores.crearEscenarioAyuda" xml:space="preserve">
+    <value>يفتح السيناريوهات مع تحميل هذا التغيير لمحاكاته</value>
+  </data>
+  <data name="indicadores.colVariacion" xml:space="preserve">
+    <value>مقابل الفترة السابقة</value>
+  </data>
+  <data name="indicadores.colRotacionMes" xml:space="preserve">
+    <value>معدل الدوران الشهري</value>
+  </data>
+  <data name="indicadores.colCobertura" xml:space="preserve">
+    <value>التغطية</value>
+  </data>
+  <data name="indicadores.comoSeCalcula" xml:space="preserve">
+    <value>كيف يُحسب كل مؤشر؟</value>
+  </data>
+  <data name="indicadores.ayudaVariacion" xml:space="preserve">
+    <value>مبيعات الفترة مقارنةً بالجزء نفسه من الفترة السابقة (مثلاً من 1 إلى 4 نوفمبر مقابل من 1 إلى 4 أكتوبر).</value>
+  </data>
+  <data name="indicadores.ayudaMargen" xml:space="preserve">
+    <value>(المبيعات − الوحدات × التكلفة) ÷ المبيعات، فقط للمنتجات التي لها تكلفة مسجلة.</value>
+  </data>
+  <data name="indicadores.ayudaVentasM2" xml:space="preserve">
+    <value>مبيعات القسم ÷ مساحة القسم. يقيس عائد كل متر مربع.</value>
+  </data>
+  <data name="indicadores.ayudaCirculacion" xml:space="preserve">
+    <value>النسبة المقدرة للعملاء الذين يمرون بالقسم. تُدخل في المخطط والأقسام (ملاحظة أو عدّ في المتجر).</value>
+  </data>
+  <data name="indicadores.ayudaRotacion" xml:space="preserve">
+    <value>الوحدات المباعة شهرياً ÷ المخزون الحالي × 100. تعني 200% أنه يُباع شهرياً ضعف المخزون المتاح.</value>
+  </data>
+  <data name="indicadores.ayudaCobertura" xml:space="preserve">
+    <value>المخزون الحالي ÷ الوحدات المباعة يومياً: عدد الأيام التي يكفيها المخزون بوتيرة بيع الفترة.</value>
+  </data>
+  <data name="indicadores.ayudaIndice" xml:space="preserve">
+    <value>من 0 إلى 100: 40% الحركة + 30% الدوران + 30% المبيعات/م². يُقارن الدوران والمبيعات/م² بأفضل قسم في المتجر (الذي يحصل على 100). بدون مساحة مسجلة تُستخدم الحركة والدوران فقط. أخضر من 70، أصفر من 50.</value>
+  </data>
+  <data name="indicadores.evolucion" xml:space="preserve">
+    <value>تطور مبيعات المتجر</value>
+  </data>
+  <data name="indicadores.ayudaEvolucion" xml:space="preserve">
+    <value>آخر 6 أشهر. الشهر الحالي لم ينته بعد.</value>
+  </data>
+  <data name="indicadores.enCurso" xml:space="preserve">
+    <value>جارٍ</value>
+  </data>
+  <data name="indicadores.vsAnterior" xml:space="preserve">
+    <value>مقابل الفترة السابقة نفسها</value>
+  </data>
+  <data name="indicadores.nuevo" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="indicadores.dias" xml:space="preserve">
+    <value>{0} يوم</value>
+  </data>
+  <data name="indicadores.sinVentasCobertura" xml:space="preserve">
+    <value>لا مبيعات</value>
+  </data>
+  <data name="escenarios.desdeRecomendacion" xml:space="preserve">
+    <value>تم إنشاؤه من توصية في المؤشرات.</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficie" xml:space="preserve">
+    <value>توسيع مساحة {0}</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficieMotivo" xml:space="preserve">
+    <value>يبيع {0} {1:$#,##0} لكل م²، أي {2:0.#} ضعف متوسط المتجر ({3:$#,##0}/م²). بمساحة أكبر يمكنه أن يبيع أكثر.</value>
+  </data>
+  <data name="recomendacion.reducirSuperficie" xml:space="preserve">
+    <value>تقليص مساحة {0}</value>
+  </data>
+  <data name="recomendacion.reducirSuperficieMotivo" xml:space="preserve">
+    <value>يبيع {0} {1:$#,##0} لكل م²، أي أقل من نصف متوسط المتجر ({2:$#,##0}/م²). يمكن أن تحقق هذه المساحة عائداً أكبر في قسم آخر.</value>
+  </data>
+  <data name="recomendacion.moverFrente" xml:space="preserve">
+    <value>تقريب {0} من واجهة المتجر</value>
+  </data>
+  <data name="recomendacion.moverFrenteMotivo" xml:space="preserve">
+    <value>يدور {0} بشكل جيد ({1:0.#}% شهرياً، والمتوسط {2:0.#}%) لكن حركته قليلة ({3:0.#}% مقابل {4:0.#}% للمتجر). في منطقة أكثر ازدحاماً يمكنه أن يبيع أكثر.</value>
+  </data>
+  <data name="recomendacion.aprovecharTransito" xml:space="preserve">
+    <value>الاستفادة من حركة {0}</value>
+  </data>
+  <data name="recomendacion.aprovecharTransitoMotivo" xml:space="preserve">
+    <value>{0} من أكثر المناطق حركة ({1:0.#}% حركة) لكن دورانه منخفض ({2:0.#}% شهرياً، والمتوسط {3:0.#}%). يُستحسن عرض المنتجات الأكثر مبيعاً هناك.</value>
+  </data>
+  <data name="recomendacion.margenBajo" xml:space="preserve">
+    <value>مراجعة أسعار وتكاليف {0}</value>
+  </data>
+  <data name="recomendacion.margenBajoMotivo" xml:space="preserve">
+    <value>هامش {0} هو {1:0.#}%، أقل من متوسط المتجر ({2:0.#}%).</value>
+  </data>
+  <data name="recomendacion.sinVentas" xml:space="preserve">
+    <value>لا توجد مبيعات في {0}</value>
+  </data>
+  <data name="recomendacion.sinVentasMotivo" xml:space="preserve">
+    <value>لدى {0} {1} وحدة في المخزون ولا توجد مبيعات في الفترة. راجع طريقة العرض أو موقع القسم.</value>
+  </data>
+  <data name="recomendacion.sinStock" xml:space="preserve">
+    <value>نفاد مخزون {0}</value>
+  </data>
+  <data name="recomendacion.sinStockMotivo" xml:space="preserve">
+    <value>لا توجد وحدات متاحة من {0}. أعد التزويد في أقرب وقت.</value>
+  </data>
+  <data name="recomendacion.stockBajo" xml:space="preserve">
+    <value>مخزون منخفض من {0}</value>
+  </data>
+  <data name="recomendacion.stockBajoMotivo" xml:space="preserve">
+    <value>لدى {0} {1} وحدة والحد الأدنى {2}. أعد التزويد.</value>
+  </data>
+  <data name="recomendacion.sobrestock" xml:space="preserve">
+    <value>فائض مخزون {0}</value>
+  </data>
+  <data name="recomendacion.sobrestockMotivo" xml:space="preserve">
+    <value>لدى {0} {1} وحدة والحد الأقصى {3}. بضاعة راكدة: أوقف المشتريات أو قم بالترويج.</value>
+  </data>
+  <data name="recomendacion.masSinStock" xml:space="preserve">
+    <value>يوجد {0} منتجات أخرى نفد مخزونها</value>
+  </data>
+  <data name="recomendacion.masStockBajo" xml:space="preserve">
+    <value>يوجد {0} منتجات أخرى بمخزون أقل من الحد الأدنى</value>
+  </data>
+  <data name="recomendacion.masSobrestock" xml:space="preserve">
+    <value>يوجد {0} منتجات أخرى بفائض مخزون</value>
+  </data>
+  <data name="recomendacion.verStock" xml:space="preserve">
+    <value>التفاصيل في المخزون والمبيعات &gt; بيانات المخزون.</value>
+  </data>
+  <data name="recomendacion.faltaSuperficie" xml:space="preserve">
+    <value>إدخال مساحة {0} أقسام</value>
+  </data>
+  <data name="recomendacion.faltaSuperficieMotivo" xml:space="preserve">
+    <value>بدون المساحة (م²) لا تُحسب المبيعات لكل م² ولا توصيات المساحة لهذه الأقسام. تُدخل في المخطط والأقسام.</value>
+  </data>
+  <data name="recomendacion.faltaCosto" xml:space="preserve">
+    <value>إدخال تكلفة المنتجات</value>
+  </data>
+  <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
+    <value>بدون تكلفة الوحدة لا يُحسب الهامش. تُدخل في المنتجات والفئات.</value>
   </data>
 </root>

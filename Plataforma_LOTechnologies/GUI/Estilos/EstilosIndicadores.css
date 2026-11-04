@@ -64,3 +64,166 @@
     font-size: 12px;
     margin-top: 4px;
 }
+
+
+.ind-rango {
+    align-self: center;
+    font-size: 13px;
+}
+
+/* Recomendaciones: prioridad baja (datos que faltan) y botón "Crear escenario" */
+.ind-prioridad-bajo {
+    background-color: #f4f6fa;
+    border-left-color: #7c8697;
+}
+
+.ind-etiqueta-bajo {
+    background-color: #7c8697;
+    color: #ffffff;
+}
+
+.ind-recomendacion-acciones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.ind-crear-escenario {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2f6bff;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1px solid #2f6bff;
+    border-radius: 6px;
+    padding: 4px 10px;
+    background-color: #ffffff;
+}
+
+    .ind-crear-escenario:hover,
+    .ind-crear-escenario:focus {
+        background-color: #2f6bff;
+        color: #ffffff;
+    }
+
+/* Variación contra el período anterior */
+.ind-variacion {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.ind-variacion-sube {
+    color: #1e7a37;
+}
+
+.ind-variacion-baja {
+    color: #b3261e;
+}
+
+.ind-variacion-nuevo {
+    color: #2f6bff;
+}
+
+/* ¿Cómo se calcula? */
+.ind-como-se-calcula {
+    margin-top: 14px;
+    font-size: 13px;
+}
+
+    .ind-como-se-calcula summary {
+        cursor: pointer;
+        color: #2f6bff;
+        font-weight: 600;
+    }
+
+    .ind-como-se-calcula dl {
+        display: grid;
+        grid-template-columns: minmax(130px, 180px) 1fr;
+        gap: 6px 16px;
+        margin: 12px 0 0 0;
+    }
+
+    .ind-como-se-calcula dt {
+        font-weight: 600;
+        color: #17223a;
+    }
+
+    .ind-como-se-calcula dd {
+        margin: 0;
+        color: #4a5468;
+    }
+
+/* Evolución de ventas: barras verticales */
+.ind-evolucion {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    align-items: end;
+    margin-top: 8px;
+}
+
+.ind-evolucion-mes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.ind-evolucion-valor {
+    color: #17223a;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.ind-evolucion-pista {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 56px;
+    height: 160px;
+    background-color: #eef1f6;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.ind-evolucion-barra {
+    display: block;
+    width: 100%;
+    min-height: 2px;
+    background-color: #2f6bff;
+    border-radius: 6px 6px 0 0;
+}
+
+.ind-evolucion-en-curso {
+    background-color: #9db8ff;
+    background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0.35) 4px, transparent 4px, transparent 8px);
+}
+
+.ind-evolucion-etiqueta {
+    min-height: 32px;
+    text-align: center;
+    color: #4a5468;
+}
+
+@media (max-width: 600px) {
+    .ind-evolucion {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ind-como-se-calcula dl {
+        grid-template-columns: 1fr;
+    }
+
+    .ind-recomendacion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ind-recomendacion-acciones {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+}

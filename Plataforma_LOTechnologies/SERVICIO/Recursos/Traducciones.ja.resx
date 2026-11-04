@@ -1730,24 +1730,6 @@
   <data name="indicadores.sinIndicadores" xml:space="preserve">
     <value>完全な指標を作成するためのデータが不足しています。</value>
   </data>
-  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
-    <value>売り場「{0}」の回遊率が低い</value>
-  </data>
-  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
-    <value>売り場「{0}」の推定回遊率は {1}% で、他より低くなっています。回転率の高い商品の再配置を検討してください。</value>
-  </data>
-  <data name="recomendacion.superaMeta" xml:space="preserve">
-    <value>{0} が売上目標を上回っています</value>
-  </data>
-  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
-    <value>売り場「{0}」は期間の売上基準を上回りました。露出の拡大をおすすめします。</value>
-  </data>
-  <data name="recomendacion.stockCritico" xml:space="preserve">
-    <value>{0} の在庫が危険水準です</value>
-  </data>
-  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
-    <value>「{0}」は残り {1} 個です。至急補充してください。</value>
-  </data>
   <data name="analisis.titulo" xml:space="preserve">
     <value>商品分析 - LO Technologies</value>
   </data>
@@ -2230,5 +2212,146 @@
   </data>
   <data name="stock.errMinimoMaximo" xml:space="preserve">
     <value>最小在庫は最大在庫より大きくできません。</value>
+  </data>
+  <data name="indicadores.crearEscenario" xml:space="preserve">
+    <value>シナリオを作成</value>
+  </data>
+  <data name="indicadores.crearEscenarioAyuda" xml:space="preserve">
+    <value>この変更を読み込んだ状態でシナリオを開き、シミュレーションします</value>
+  </data>
+  <data name="indicadores.colVariacion" xml:space="preserve">
+    <value>前期間比</value>
+  </data>
+  <data name="indicadores.colRotacionMes" xml:space="preserve">
+    <value>月間回転率</value>
+  </data>
+  <data name="indicadores.colCobertura" xml:space="preserve">
+    <value>在庫日数</value>
+  </data>
+  <data name="indicadores.comoSeCalcula" xml:space="preserve">
+    <value>各指標の計算方法</value>
+  </data>
+  <data name="indicadores.ayudaVariacion" xml:space="preserve">
+    <value>期間の売上を前期間の同じ区間と比較します（例：11月1〜4日と10月1〜4日）。</value>
+  </data>
+  <data name="indicadores.ayudaMargen" xml:space="preserve">
+    <value>（売上 − 数量 × 原価）÷ 売上。原価が登録された商品のみ。</value>
+  </data>
+  <data name="indicadores.ayudaVentasM2" xml:space="preserve">
+    <value>売場の売上 ÷ 売場の面積。1平方メートルあたりの効率を示します。</value>
+  </data>
+  <data name="indicadores.ayudaCirculacion" xml:space="preserve">
+    <value>売場を通過する顧客の推定割合。レイアウトと売場で入力します（店内での観察や計測）。</value>
+  </data>
+  <data name="indicadores.ayudaRotacion" xml:space="preserve">
+    <value>月間販売数 ÷ 現在庫 × 100。200% は毎月在庫の2倍が売れていることを意味します。</value>
+  </data>
+  <data name="indicadores.ayudaCobertura" xml:space="preserve">
+    <value>現在庫 ÷ 1日あたり販売数：期間の販売ペースで在庫が何日もつか。</value>
+  </data>
+  <data name="indicadores.ayudaIndice" xml:space="preserve">
+    <value>0〜100：動線 40% + 回転率 30% + 面積あたり売上 30%。回転率と面積あたり売上は店舗内で最も良い売場（100点）と比較します。面積未登録の場合は動線と回転率のみ使用。70以上は緑、50以上は黄。</value>
+  </data>
+  <data name="indicadores.evolucion" xml:space="preserve">
+    <value>店舗売上の推移</value>
+  </data>
+  <data name="indicadores.ayudaEvolucion" xml:space="preserve">
+    <value>直近6か月。今月はまだ途中です。</value>
+  </data>
+  <data name="indicadores.enCurso" xml:space="preserve">
+    <value>途中</value>
+  </data>
+  <data name="indicadores.vsAnterior" xml:space="preserve">
+    <value>前期間の同区間比</value>
+  </data>
+  <data name="indicadores.nuevo" xml:space="preserve">
+    <value>新規</value>
+  </data>
+  <data name="indicadores.dias" xml:space="preserve">
+    <value>{0} 日</value>
+  </data>
+  <data name="indicadores.sinVentasCobertura" xml:space="preserve">
+    <value>販売なし</value>
+  </data>
+  <data name="escenarios.desdeRecomendacion" xml:space="preserve">
+    <value>指標の推奨事項から作成されました。</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficie" xml:space="preserve">
+    <value>{0} の面積を拡大</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficieMotivo" xml:space="preserve">
+    <value>{0} は1m²あたり {1:$#,##0} を販売し、店舗平均（{3:$#,##0}/m²）の {2:0.#} 倍です。スペースを広げればさらに売れる可能性があります。</value>
+  </data>
+  <data name="recomendacion.reducirSuperficie" xml:space="preserve">
+    <value>{0} の面積を縮小</value>
+  </data>
+  <data name="recomendacion.reducirSuperficieMotivo" xml:space="preserve">
+    <value>{0} は1m²あたり {1:$#,##0} で、店舗平均（{2:$#,##0}/m²）の半分未満です。そのスペースは他の売場でより効果を出せる可能性があります。</value>
+  </data>
+  <data name="recomendacion.moverFrente" xml:space="preserve">
+    <value>{0} を店舗の入口側へ移動</value>
+  </data>
+  <data name="recomendacion.moverFrenteMotivo" xml:space="preserve">
+    <value>{0} は回転率が良い（月 {1:0.#}%、平均は {2:0.#}%）のに動線が少ない（店舗の {4:0.#}% に対して {3:0.#}%）。人通りの多い場所ならさらに売れる可能性があります。</value>
+  </data>
+  <data name="recomendacion.aprovecharTransito" xml:space="preserve">
+    <value>{0} の人通りを活用</value>
+  </data>
+  <data name="recomendacion.aprovecharTransitoMotivo" xml:space="preserve">
+    <value>{0} は最も人通りの多いエリアの一つ（動線 {1:0.#}%）ですが、回転率が低い（月 {2:0.#}%、平均は {3:0.#}%）。売れ筋商品をここに陳列するとよいでしょう。</value>
+  </data>
+  <data name="recomendacion.margenBajo" xml:space="preserve">
+    <value>{0} の価格と原価を見直す</value>
+  </data>
+  <data name="recomendacion.margenBajoMotivo" xml:space="preserve">
+    <value>{0} の利益率は {1:0.#}% で、店舗平均（{2:0.#}%）を下回っています。</value>
+  </data>
+  <data name="recomendacion.sinVentas" xml:space="preserve">
+    <value>{0} に売上がありません</value>
+  </data>
+  <data name="recomendacion.sinVentasMotivo" xml:space="preserve">
+    <value>{0} には在庫が {1} 個ありますが、期間中の売上はありません。売場の陳列や配置を見直してください。</value>
+  </data>
+  <data name="recomendacion.sinStock" xml:space="preserve">
+    <value>{0} の在庫切れ</value>
+  </data>
+  <data name="recomendacion.sinStockMotivo" xml:space="preserve">
+    <value>{0} の在庫がありません。早急に補充してください。</value>
+  </data>
+  <data name="recomendacion.stockBajo" xml:space="preserve">
+    <value>{0} の在庫が少ない</value>
+  </data>
+  <data name="recomendacion.stockBajoMotivo" xml:space="preserve">
+    <value>{0} は {1} 個で、最小在庫は {2} 個です。補充してください。</value>
+  </data>
+  <data name="recomendacion.sobrestock" xml:space="preserve">
+    <value>{0} の過剰在庫</value>
+  </data>
+  <data name="recomendacion.sobrestockMotivo" xml:space="preserve">
+    <value>{0} は {1} 個で、最大在庫は {3} 個です。在庫が滞留しています。仕入れを抑えるか販促を行ってください。</value>
+  </data>
+  <data name="recomendacion.masSinStock" xml:space="preserve">
+    <value>他に {0} 件の商品が在庫切れです</value>
+  </data>
+  <data name="recomendacion.masStockBajo" xml:space="preserve">
+    <value>他に {0} 件の商品が最小在庫を下回っています</value>
+  </data>
+  <data name="recomendacion.masSobrestock" xml:space="preserve">
+    <value>他に {0} 件の商品が過剰在庫です</value>
+  </data>
+  <data name="recomendacion.verStock" xml:space="preserve">
+    <value>詳細は「在庫と売上 &gt; 在庫データ」で確認できます。</value>
+  </data>
+  <data name="recomendacion.faltaSuperficie" xml:space="preserve">
+    <value>{0} 売場の面積を登録</value>
+  </data>
+  <data name="recomendacion.faltaSuperficieMotivo" xml:space="preserve">
+    <value>面積（m²）がないと、その売場の面積あたり売上やスペースの推奨は計算されません。レイアウトと売場で登録します。</value>
+  </data>
+  <data name="recomendacion.faltaCosto" xml:space="preserve">
+    <value>商品の原価を登録</value>
+  </data>
+  <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
+    <value>単価原価がないと利益率は計算されません。商品とカテゴリで登録します。</value>
   </data>
 </root>

@@ -42,8 +42,6 @@ namespace DAL
                         int unidadesVendidas = int.Parse(DR["UnidadesVendidas"].ToString());
                         int stockDisponible = int.Parse(DR["StockDisponible"].ToString());
                         decimal circulacion = DR["Circulacion"] == DBNull.Value ? 0 : decimal.Parse(DR["Circulacion"].ToString());
-                        decimal rotacion = stockDisponible > 0 ? Math.Min(Math.Round((unidadesVendidas / (decimal)stockDisponible) * 100, 1), 100) : 0;
-                        int indiceGlobal = (int)Math.Round((circulacion + rotacion) / 2, 0);
                         decimal? superficie = DR["Superficie"] == DBNull.Value ? (decimal?)null : decimal.Parse(DR["Superficie"].ToString());
                         decimal ventasConCosto = decimal.Parse(DR["VentasConCosto"].ToString());
                         decimal costoVendido = decimal.Parse(DR["CostoVendido"].ToString());
@@ -56,9 +54,8 @@ namespace DAL
                             Superficie = superficie,
                             VentasPorM2 = CalcularVentasPorM2(ventas, superficie),
                             Circulacion = circulacion,
-                            Rotacion = rotacion,
-                            IndiceGlobal = indiceGlobal,
-                            ClaseIndiceGlobal = ClasificarIndice(indiceGlobal)
+                            UnidadesVendidas = unidadesVendidas,
+                            StockDisponible = stockDisponible
                         });
                     }
                 }
@@ -75,11 +72,72 @@ namespace DAL
             if (pSuperficie == null || pSuperficie <= 0) return null;
             return Math.Round(pVentas / pSuperficie.Value, 0);
         }
-        private string ClasificarIndice(int indice)
+        // Ventas por sector entre dos fechas (para comparar con el mismo período anterior)
+        public Dictionary<int, decimal> ObtenerVentasPorSectorEntreFechas(int pCodigoLocal, DateTime pDesde, DateTime pHasta)
         {
-            if (indice >= 80) return "etiqueta-activo";
-            if (indice >= 60) return "etiqueta-bloqueado";
-            return "etiqueta-inactivo";
+            var ventas = new Dictionary<int, decimal>();
+            string query = @"SELECT pu.CodigoSector, SUM(v.ImporteTotal) AS Ventas FROM Venta v
+                             INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
+                             WHERE v.CodigoLocal = @CodigoLocal AND v.Fecha >= @Desde AND v.Fecha < @HastaExclusivo
+                             GROUP BY pu.CodigoSector";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
+                CM.Parameters.AddWithValue("@Desde", pDesde.Date);
+                CM.Parameters.AddWithValue("@HastaExclusivo", pHasta.Date.AddDays(1));
+                CO.Open();
+                using (SqlDataReader DR = CM.ExecuteReader())
+                {
+                    while (DR.Read()) ventas[int.Parse(DR["CodigoSector"].ToString())] = decimal.Parse(DR["Ventas"].ToString());
+                }
+            }
+            return ventas;
+        }
+        public List<IndicadorBE> ObtenerIndicadoresDelPeriodo(int pCodigoLocal, string pPeriodo)
+        {
+            var indicadores = new List<IndicadorBE>();
+            string query = @"SELECT CodigoIndicador, CodigoLocal, CodigoSector, TipoIndicador, Nombre, Fecha, Periodo, Valor, UnidadMedida FROM Indicador
+                             WHERE CodigoLocal = @CodigoLocal AND Periodo = @Periodo AND CodigoEscenario IS NULL AND CodigoProducto IS NULL";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
+                CM.Parameters.AddWithValue("@Periodo", pPeriodo);
+                CO.Open();
+                using (SqlDataReader DR = CM.ExecuteReader())
+                {
+                    while (DR.Read())
+                    {
+                        indicadores.Add(new IndicadorBE
+                        {
+                            CodigoIndicador = int.Parse(DR["CodigoIndicador"].ToString()),
+                            CodigoLocal = int.Parse(DR["CodigoLocal"].ToString()),
+                            CodigoSector = DR["CodigoSector"] == DBNull.Value ? (int?)null : int.Parse(DR["CodigoSector"].ToString()),
+                            TipoIndicador = DR["TipoIndicador"].ToString(),
+                            Nombre = DR["Nombre"].ToString(),
+                            Fecha = Convert.ToDateTime(DR["Fecha"]),
+                            Periodo = DR["Periodo"].ToString(),
+                            Valor = decimal.Parse(DR["Valor"].ToString()),
+                            UnidadMedida = DR["UnidadMedida"] == DBNull.Value ? null : DR["UnidadMedida"].ToString()
+                        });
+                    }
+                }
+            }
+            return indicadores;
+        }
+        public void ActualizarIndicador(int pCodigoIndicador, decimal pValor, DateTime pFecha)
+        {
+            string query = "UPDATE Indicador SET Valor = @Valor, Fecha = @Fecha WHERE CodigoIndicador = @CodigoIndicador";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoIndicador", pCodigoIndicador);
+                CM.Parameters.AddWithValue("@Valor", pValor);
+                CM.Parameters.AddWithValue("@Fecha", pFecha);
+                CO.Open();
+                CM.ExecuteNonQuery();
+            }
         }
         public int AgregarIndicador(IndicadorBE pIndicador)
         {

@@ -1730,24 +1730,6 @@
   <data name="indicadores.sinIndicadores" xml:space="preserve">
     <value>Eksiksiz gösterge oluşturmak için yeterli veri yok.</value>
   </data>
-  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
-    <value>{0} reyonunda düşük ziyaretçi trafiği</value>
-  </data>
-  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
-    <value>{0} reyonunun tahmini ziyaretçi trafiği %{1} ile diğerlerinden düşük. Devir hızı yüksek ürünleri yeniden dağıtmayı düşünün.</value>
-  </data>
-  <data name="recomendacion.superaMeta" xml:space="preserve">
-    <value>{0} satış hedefini aşıyor</value>
-  </data>
-  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
-    <value>{0} reyonu dönemin satış eşiğini aştı. Teşhirinin genişletilmesi önerilir.</value>
-  </data>
-  <data name="recomendacion.stockCritico" xml:space="preserve">
-    <value>{0} için kritik stok</value>
-  </data>
-  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
-    <value>'{0}' için yalnızca {1} adet kaldı. Acil stok yenileme önerilir.</value>
-  </data>
   <data name="analisis.titulo" xml:space="preserve">
     <value>Ürün analizi - LO Technologies</value>
   </data>
@@ -2230,5 +2212,146 @@
   </data>
   <data name="stock.errMinimoMaximo" xml:space="preserve">
     <value>Minimum stok maksimumdan büyük olamaz.</value>
+  </data>
+  <data name="indicadores.crearEscenario" xml:space="preserve">
+    <value>Senaryo oluştur</value>
+  </data>
+  <data name="indicadores.crearEscenarioAyuda" xml:space="preserve">
+    <value>Bu değişikliği simüle etmek için Senaryolar'ı yüklenmiş olarak açar</value>
+  </data>
+  <data name="indicadores.colVariacion" xml:space="preserve">
+    <value>önceki döneme göre</value>
+  </data>
+  <data name="indicadores.colRotacionMes" xml:space="preserve">
+    <value>Aylık devir hızı</value>
+  </data>
+  <data name="indicadores.colCobertura" xml:space="preserve">
+    <value>Stok süresi</value>
+  </data>
+  <data name="indicadores.comoSeCalcula" xml:space="preserve">
+    <value>Her gösterge nasıl hesaplanır?</value>
+  </data>
+  <data name="indicadores.ayudaVariacion" xml:space="preserve">
+    <value>Dönem satışları, önceki dönemin aynı aralığıyla karşılaştırılır (örneğin 1–4 Kasım ile 1–4 Ekim).</value>
+  </data>
+  <data name="indicadores.ayudaMargen" xml:space="preserve">
+    <value>(Satışlar − birim × maliyet) ÷ satışlar; yalnızca maliyeti girilmiş ürünler.</value>
+  </data>
+  <data name="indicadores.ayudaVentasM2" xml:space="preserve">
+    <value>Bölüm satışları ÷ bölüm alanı. Her metrekarenin ne kadar getirdiğini ölçer.</value>
+  </data>
+  <data name="indicadores.ayudaCirculacion" xml:space="preserve">
+    <value>Bölümden geçen müşterilerin tahmini yüzdesi. Yerleşim ve bölümler ekranında girilir (mağazada gözlem veya sayım).</value>
+  </data>
+  <data name="indicadores.ayudaRotacion" xml:space="preserve">
+    <value>Aylık satılan birim ÷ mevcut stok × 100. %200, her ay mevcut stoğun iki katının satıldığı anlamına gelir.</value>
+  </data>
+  <data name="indicadores.ayudaCobertura" xml:space="preserve">
+    <value>Mevcut stok ÷ günlük satılan birim: stok, dönemin satış hızında kaç gün yeter.</value>
+  </data>
+  <data name="indicadores.ayudaIndice" xml:space="preserve">
+    <value>0–100 arası: %40 trafik + %30 devir hızı + %30 satış/m². Devir hızı ve satış/m², mağazanın en iyi bölümüyle (100 puan alır) karşılaştırılır. Alan girilmemişse yalnızca trafik ve devir hızı kullanılır. 70'ten itibaren yeşil, 50'den itibaren sarı.</value>
+  </data>
+  <data name="indicadores.evolucion" xml:space="preserve">
+    <value>Mağaza satışlarının seyri</value>
+  </data>
+  <data name="indicadores.ayudaEvolucion" xml:space="preserve">
+    <value>Son 6 ay. İçinde bulunulan ay henüz bitmedi.</value>
+  </data>
+  <data name="indicadores.enCurso" xml:space="preserve">
+    <value>devam ediyor</value>
+  </data>
+  <data name="indicadores.vsAnterior" xml:space="preserve">
+    <value>önceki aynı döneme göre</value>
+  </data>
+  <data name="indicadores.nuevo" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
+  <data name="indicadores.dias" xml:space="preserve">
+    <value>{0} gün</value>
+  </data>
+  <data name="indicadores.sinVentasCobertura" xml:space="preserve">
+    <value>Satış yok</value>
+  </data>
+  <data name="escenarios.desdeRecomendacion" xml:space="preserve">
+    <value>Göstergeler önerisinden oluşturuldu.</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficie" xml:space="preserve">
+    <value>{0} alanını genişlet</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficieMotivo" xml:space="preserve">
+    <value>{0} metrekare başına {1:$#,##0} satıyor; mağaza ortalamasının ({3:$#,##0}/m²) {2:0.#} katı. Daha fazla alanla daha çok satabilir.</value>
+  </data>
+  <data name="recomendacion.reducirSuperficie" xml:space="preserve">
+    <value>{0} alanını küçült</value>
+  </data>
+  <data name="recomendacion.reducirSuperficieMotivo" xml:space="preserve">
+    <value>{0} metrekare başına {1:$#,##0} satıyor; mağaza ortalamasının ({2:$#,##0}/m²) yarısından az. Bu alan başka bir bölümde daha fazla getirebilir.</value>
+  </data>
+  <data name="recomendacion.moverFrente" xml:space="preserve">
+    <value>{0} bölümünü mağaza girişine yaklaştır</value>
+  </data>
+  <data name="recomendacion.moverFrenteMotivo" xml:space="preserve">
+    <value>{0} iyi dönüyor (ayda %{1:0.#}, ortalama %{2:0.#}) ama trafiği az (mağazanın %{4:0.#} değerine karşı %{3:0.#}). Daha yoğun bir alanda daha çok satabilir.</value>
+  </data>
+  <data name="recomendacion.aprovecharTransito" xml:space="preserve">
+    <value>{0} bölümünün trafiğinden yararlan</value>
+  </data>
+  <data name="recomendacion.aprovecharTransitoMotivo" xml:space="preserve">
+    <value>{0} en yoğun alanlardan biri (%{1:0.#} trafik) ama az dönüyor (ayda %{2:0.#}, ortalama %{3:0.#}). En çok satan ürünleri orada sergilemek iyi olur.</value>
+  </data>
+  <data name="recomendacion.margenBajo" xml:space="preserve">
+    <value>{0} fiyat ve maliyetlerini gözden geçir</value>
+  </data>
+  <data name="recomendacion.margenBajoMotivo" xml:space="preserve">
+    <value>{0} bölümünün marjı %{1:0.#}; mağaza ortalamasının (%{2:0.#}) altında.</value>
+  </data>
+  <data name="recomendacion.sinVentas" xml:space="preserve">
+    <value>{0} bölümünde satış yok</value>
+  </data>
+  <data name="recomendacion.sinVentasMotivo" xml:space="preserve">
+    <value>{0} bölümünde stokta {1} birim var ve dönemde hiç satış yok. Bölümün sergilenişini veya konumunu gözden geçirin.</value>
+  </data>
+  <data name="recomendacion.sinStock" xml:space="preserve">
+    <value>{0} stokta yok</value>
+  </data>
+  <data name="recomendacion.sinStockMotivo" xml:space="preserve">
+    <value>{0} için mevcut birim yok. En kısa sürede yenileyin.</value>
+  </data>
+  <data name="recomendacion.stockBajo" xml:space="preserve">
+    <value>{0} stoğu düşük</value>
+  </data>
+  <data name="recomendacion.stockBajoMotivo" xml:space="preserve">
+    <value>{0} ürününde {1} birim var, minimumu {2}. Yenileyin.</value>
+  </data>
+  <data name="recomendacion.sobrestock" xml:space="preserve">
+    <value>{0} fazla stok</value>
+  </data>
+  <data name="recomendacion.sobrestockMotivo" xml:space="preserve">
+    <value>{0} ürününde {1} birim var, maksimumu {3}. Atıl stok: alımları durdurun veya kampanya yapın.</value>
+  </data>
+  <data name="recomendacion.masSinStock" xml:space="preserve">
+    <value>{0} ürün daha stokta yok</value>
+  </data>
+  <data name="recomendacion.masStockBajo" xml:space="preserve">
+    <value>{0} ürün daha minimum stoğun altında</value>
+  </data>
+  <data name="recomendacion.masSobrestock" xml:space="preserve">
+    <value>{0} ürün daha fazla stokta</value>
+  </data>
+  <data name="recomendacion.verStock" xml:space="preserve">
+    <value>Ayrıntılar: Stok ve satışlar &gt; Stok verileri.</value>
+  </data>
+  <data name="recomendacion.faltaSuperficie" xml:space="preserve">
+    <value>{0} bölümün alanını girin</value>
+  </data>
+  <data name="recomendacion.faltaSuperficieMotivo" xml:space="preserve">
+    <value>Alan (m²) olmadan bu bölümlerin m² başına satışları ve alan önerileri hesaplanmaz. Yerleşim ve bölümler ekranında girilir.</value>
+  </data>
+  <data name="recomendacion.faltaCosto" xml:space="preserve">
+    <value>Ürün maliyetlerini girin</value>
+  </data>
+  <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
+    <value>Birim maliyet olmadan marj hesaplanmaz. Ürünler ve kategoriler ekranında girilir.</value>
   </data>
 </root>

@@ -33,14 +33,17 @@
                     <asp:DropDownList ID="ddlPeriodo" runat="server" CssClass="selector">
                         <asp:ListItem Text="Último mes" Value="ultimo_mes" Clave="stock.ultimoMes" />
                         <asp:ListItem Text="Últimos 3 meses" Value="3_meses" Clave="stock.ultimos3" />
+                        <asp:ListItem Text="Últimos 5 meses" Value="5_meses" Clave="stock.ultimos5" />
                     </asp:DropDownList>
                     <asp:Button ID="btnAplicar" runat="server" CssClass="boton-buscar" Text="Aplicar" Clave="comun.aplicar" OnClick="btnAplicar_Click" CausesValidation="false" />
+                    <span class="texto-secundario ind-rango"><asp:Literal ID="litRangoPeriodo" runat="server" /></span>
                 </div>
 
                 <asp:Panel ID="pnlResumenLocal" runat="server" CssClass="ind-stats" Visible="false">
                     <div class="ind-stat-card">
                         <div class="texto-secundario" runat="server" Clave="indicadores.ventasPeriodo">Ventas del período</div>
                         <div class="ind-stat-valor"><asp:Literal ID="litVentasPeriodo" runat="server" /></div>
+                        <span class="texto-secundario ind-stat-ayuda"><asp:Literal ID="litVariacionLocal" runat="server" /></span>
                     </div>
                     <div class="ind-stat-card">
                         <div class="texto-secundario" runat="server" Clave="indicadores.margenPeriodo">Margen del período</div>
@@ -65,7 +68,12 @@
                                     <div class="texto-principal"><%# TextoRecomendacion(Container.DataItem, false) %></div>
                                     <div class="texto-secundario"><%# TextoRecomendacion(Container.DataItem, true) %></div>
                                 </div>
-                                <span class='<%# "etiqueta ind-etiqueta-" + Eval("Prioridad").ToString().ToLower() %>'><%# TraducirValor(Eval("Prioridad")) %></span>
+                                <div class="ind-recomendacion-acciones">
+                                    <span class='<%# "etiqueta ind-etiqueta-" + Eval("Prioridad").ToString().ToLower() %>'><%# TraducirValor(Eval("Prioridad")) %></span>
+                                    <asp:HyperLink runat="server" CssClass="ind-crear-escenario" NavigateUrl='<%# UrlCrearEscenario(Container.DataItem) %>'
+                                        Visible='<%# UrlCrearEscenario(Container.DataItem) != null %>' Text="Crear escenario" Clave="indicadores.crearEscenario"
+                                        ClaveTitle="indicadores.crearEscenarioAyuda" />
+                                </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -79,10 +87,12 @@
                             <tr>
                                 <th runat="server" Clave="layout.colSector">Sector</th>
                                 <th runat="server" Clave="indicadores.colVentas">Ventas</th>
+                                <th runat="server" Clave="indicadores.colVariacion">vs. período anterior</th>
                                 <th runat="server" Clave="stock.colMargen">Margen</th>
                                 <th runat="server" Clave="indicadores.colVentasM2">Ventas/m²</th>
                                 <th runat="server" Clave="layout.colCirculacion">Circulación</th>
-                                <th runat="server" Clave="indicadores.colRotacion">Rotación</th>
+                                <th runat="server" Clave="indicadores.colRotacionMes">Rotación mensual</th>
+                                <th runat="server" Clave="indicadores.colCobertura">Cobertura</th>
                                 <th runat="server" Clave="indicadores.colIndice">Índice Global</th>
                             </tr>
                         </thead>
@@ -92,10 +102,12 @@
                                     <tr>
                                         <td class="texto-principal"><%# Eval("Sector") %></td>
                                         <td><%# Eval("Ventas", "{0:$#,##0}") %></td>
+                                        <td><%# MostrarVariacion(Eval("VariacionVentas"), Eval("Ventas"), Eval("VentasAnterior")) %></td>
                                         <td><%# Eval("Margen") == null ? "-" : Eval("Margen") + "%" %></td>
                                         <td><%# Eval("VentasPorM2") == null ? "-" : Eval("VentasPorM2", "{0:$#,##0}") %></td>
                                         <td><%# Eval("Circulacion") %>%</td>
                                         <td><%# Eval("Rotacion") %>%</td>
+                                        <td><%# MostrarCobertura(Eval("CoberturaDias"), Eval("StockDisponible")) %></td>
                                         <td><span class='<%# "etiqueta " + Eval("ClaseIndiceGlobal") %>'><%# Eval("IndiceGlobal") %></span></td>
                                     </tr>
                                 </ItemTemplate>
@@ -103,7 +115,33 @@
                         </tbody>
                     </table>
                     <asp:Label ID="lblSinIndicadores" runat="server" Text="No existen datos suficientes para generar indicadores completos." Clave="indicadores.sinIndicadores" Visible="false" CssClass="sin-resultados" />
+
+                    <details class="ind-como-se-calcula">
+                        <summary runat="server" Clave="indicadores.comoSeCalcula">¿Cómo se calcula cada indicador?</summary>
+                        <dl>
+                            <dt runat="server" Clave="indicadores.colVariacion">vs. período anterior</dt>
+                            <dd runat="server" Clave="indicadores.ayudaVariacion">Ventas del período contra el mismo tramo del período anterior (por ejemplo, del 1 al 4 de noviembre contra del 1 al 4 de octubre).</dd>
+                            <dt runat="server" Clave="stock.colMargen">Margen</dt>
+                            <dd runat="server" Clave="indicadores.ayudaMargen">(Ventas − unidades × costo) ÷ ventas, solo con los productos que tienen costo cargado.</dd>
+                            <dt runat="server" Clave="indicadores.colVentasM2">Ventas/m²</dt>
+                            <dd runat="server" Clave="indicadores.ayudaVentasM2">Ventas del sector ÷ superficie del sector. Mide cuánto rinde cada metro cuadrado.</dd>
+                            <dt runat="server" Clave="layout.colCirculacion">Circulación</dt>
+                            <dd runat="server" Clave="indicadores.ayudaCirculacion">% estimado de clientes que pasan por el sector. Se carga en Layout y sectores (observación o conteo en el local).</dd>
+                            <dt runat="server" Clave="indicadores.colRotacionMes">Rotación mensual</dt>
+                            <dd runat="server" Clave="indicadores.ayudaRotacion">Unidades vendidas por mes ÷ stock actual × 100. 200% significa que por mes se vende el doble del stock disponible.</dd>
+                            <dt runat="server" Clave="indicadores.colCobertura">Cobertura</dt>
+                            <dd runat="server" Clave="indicadores.ayudaCobertura">Stock actual ÷ unidades vendidas por día: cuántos días alcanza el stock al ritmo de venta del período.</dd>
+                            <dt runat="server" Clave="indicadores.colIndice">Índice global</dt>
+                            <dd runat="server" Clave="indicadores.ayudaIndice">De 0 a 100: 40% circulación + 30% rotación + 30% ventas/m². Rotación y ventas/m² se comparan con el mejor sector del local (que saca 100). Sin superficie cargada se usan solo circulación y rotación. Verde desde 70, amarillo desde 50.</dd>
+                        </dl>
+                    </details>
                 </div>
+
+                <asp:Panel ID="pnlEvolucion" runat="server" CssClass="tarjeta" Visible="false">
+                    <h2 runat="server" Clave="indicadores.evolucion">Evolución de las ventas del local</h2>
+                    <p class="texto-secundario" runat="server" Clave="indicadores.ayudaEvolucion">Últimos 6 meses. El mes actual todavía está en curso.</p>
+                    <asp:Literal ID="litEvolucion" runat="server" />
+                </asp:Panel>
 
                 <asp:Panel ID="pnlMapa" runat="server" CssClass="tarjeta" Visible="false">
                     <div class="mapa-encabezado">

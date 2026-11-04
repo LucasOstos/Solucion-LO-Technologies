@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -48,17 +49,19 @@ public partial class PaginaIndicadores : PaginaSegura
             ddlLocal.Items.Add(new ListItem(local.Nombre, local.CodigoLocal.ToString()));
         }
     }
-    private string ObtenerPeriodoDesde()
-    {
-        return PeriodoDesde(MesesDelFiltro(ddlPeriodo.SelectedValue));
-    }
+    private const int MESES_EVOLUCION = 6;
     private void AplicarFiltros()
     {
         if (CodigoLocalActual == 0) return;
-        string periodoDesde = ObtenerPeriodoDesde();
-        string periodoActual = DateTime.Now.ToString("yyyy-MM");
+        int meses = MesesDelFiltro(ddlPeriodo.SelectedValue);
+        string periodoDesde = PeriodoDesde(meses);
+        litRangoPeriodo.Text = HttpUtility.HtmlEncode(Traducir("stock.rangoPeriodo", DescribirPeriodo(meses)));
         List<IndicadorSectorListado> indicadores = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesde);
-        MostrarResumenLocal(periodoDesde);
+        decimal ventasLocal = MostrarResumenLocal(periodoDesde);
+        decimal ventasAnteriorLocal = indicadorBLL.CompletarVariacion(CodigoLocalActual, meses, indicadores);
+        litVariacionLocal.Text = MostrarVariacion(IndicadorBLL.Variacion(ventasLocal, ventasAnteriorLocal), ventasLocal, ventasAnteriorLocal)
+            + " " + HttpUtility.HtmlEncode(Traducir("indicadores.vsAnterior"));
+        MostrarEvolucion();
         if (indicadores.Count == 0)
         {
             rptIndicadoresSector.Visible = false;
@@ -73,7 +76,7 @@ public partial class PaginaIndicadores : PaginaSegura
         rptIndicadoresSector.DataSource = indicadores;
         rptIndicadoresSector.DataBind();
         MostrarMapa(indicadores);
-        indicadorBLL.GuardarIndicadores(CodigoLocalActual, periodoActual, indicadores);
+        if (meses == 1) indicadorBLL.GuardarIndicadores(CodigoLocalActual, DateTime.Now.ToString("yyyy-MM"), indicadores);
         List<StockListado> stock = stockBLL.ObtenerStockPorLocal(CodigoLocalActual);
         List<RecomendacionBE> recomendaciones = recomendacionBLL.GenerarRecomendaciones(CodigoLocalActual, indicadores, stock);
         if (recomendaciones.Count == 0)
@@ -87,8 +90,63 @@ public partial class PaginaIndicadores : PaginaSegura
             lblSinRecomendaciones.Visible = false;
             rptRecomendaciones.DataSource = recomendaciones;
             rptRecomendaciones.DataBind();
-            recomendacionBLL.GuardarRecomendaciones(recomendaciones);
         }
+        if (meses == 1) recomendacionBLL.GuardarRecomendaciones(CodigoLocalActual, recomendaciones);
+    }
+    protected string UrlCrearEscenario(object pDato)
+    {
+        RecomendacionBE recomendacion = pDato as RecomendacionBE;
+        if (recomendacion == null || recomendacion.CodigoSector == null || string.IsNullOrEmpty(recomendacion.AccionEscenario)) return null;
+        if (!Sesion.Instancia.TienePermiso(PermisoNombres.GestionarEscenarios)) return null;
+        return ResolveUrl($"~/PaginaEscenarios.aspx?local={CodigoLocalActual}&sector={recomendacion.CodigoSector}&accion={HttpUtility.UrlEncode(recomendacion.AccionEscenario)}");
+    }    
+    protected string MostrarVariacion(object pVariacion, object pActual, object pAnterior)
+    {
+        decimal actual = pActual == null ? 0 : Convert.ToDecimal(pActual);
+        decimal anterior = pAnterior == null ? 0 : Convert.ToDecimal(pAnterior);
+        if (pVariacion == null)
+        {
+            if (anterior <= 0 && actual > 0) return "<span class='ind-variacion ind-variacion-nuevo'>" + HttpUtility.HtmlEncode(Traducir("indicadores.nuevo")) + "</span>";
+            return "-";
+        }
+        decimal variacion = Convert.ToDecimal(pVariacion);
+        if (variacion == 0) return "<span class='ind-variacion'>= 0%</span>";
+        bool sube = variacion > 0;
+        string texto = (sube ? "&#9650; +" : "&#9660; ") + variacion.ToString("0.#") + "%";
+        return "<span class='ind-variacion " + (sube ? "ind-variacion-sube" : "ind-variacion-baja") + "'>" + texto + "</span>";
+    }
+    protected string MostrarCobertura(object pCobertura, object pStock)
+    {
+        if (pCobertura != null) return HttpUtility.HtmlEncode(Traducir("indicadores.dias", Convert.ToDecimal(pCobertura).ToString("#,##0")));
+        int stock = pStock == null ? 0 : Convert.ToInt32(pStock);
+        return stock > 0 ? HttpUtility.HtmlEncode(Traducir("indicadores.sinVentasCobertura")) : "-";
+    }    
+    private void MostrarEvolucion()
+    {
+        List<VentaMensual> meses = indicadorBLL.ObtenerEvolucionVentas(CodigoLocalActual, MESES_EVOLUCION);
+        decimal maximo = meses.Max(m => m.Monto);
+        if (maximo <= 0)
+        {
+            pnlEvolucion.Visible = false;
+            return;
+        }
+        var sb = new StringBuilder("<div class='ind-evolucion' role='list'>");
+        foreach (VentaMensual mes in meses)
+        {
+            decimal alto = Math.Round(mes.Monto / maximo * 100, 1);
+            string etiqueta = DateTime.ParseExact(mes.Periodo + "-01", "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).ToString("MM/yyyy");
+            string titulo = etiqueta + ": " + mes.Monto.ToString("$#,##0") + (mes.EnCurso ? " (" + Traducir("indicadores.enCurso") + ")" : "");
+            sb.Append("<div class='ind-evolucion-mes' role='listitem' title='").Append(HttpUtility.HtmlAttributeEncode(titulo)).Append("'>")
+              .Append("<span class='ind-evolucion-valor'>").Append(mes.Monto.ToString("$#,##0")).Append("</span>")
+              .Append("<span class='ind-evolucion-pista'><span class='ind-evolucion-barra").Append(mes.EnCurso ? " ind-evolucion-en-curso" : "")
+              .Append("' style='height:").Append(alto.ToString(System.Globalization.CultureInfo.InvariantCulture)).Append("%'></span></span>")
+              .Append("<span class='ind-evolucion-etiqueta'>").Append(etiqueta);
+            if (mes.EnCurso) sb.Append("<br /><span class='texto-secundario'>").Append(HttpUtility.HtmlEncode(Traducir("indicadores.enCurso"))).Append("</span>");
+            sb.Append("</span></div>");
+        }
+        sb.Append("</div>");
+        litEvolucion.Text = sb.ToString();
+        pnlEvolucion.Visible = true;
     }
     protected string TextoRecomendacion(object pDato, bool pEsMotivo)
     {
@@ -133,7 +191,7 @@ public partial class PaginaIndicadores : PaginaSegura
             default: return pInd.Ventas;
         }
     }
-    private void MostrarResumenLocal(string pPeriodoDesde)
+    private decimal MostrarResumenLocal(string pPeriodoDesde)
     {
         decimal ventas = ventaBLL.ObtenerTotalVentas(CodigoLocalActual, pPeriodoDesde);
         decimal? margen = ventaBLL.ObtenerMargenTotal(CodigoLocalActual, pPeriodoDesde);
@@ -145,6 +203,7 @@ public partial class PaginaIndicadores : PaginaSegura
         litVentasM2Local.Text = superficie == null || superficie <= 0 ? "-" : (ventas / superficie.Value).ToString("$#,##0");
         lblSinSuperficie.Visible = superficie == null || superficie <= 0;
         pnlResumenLocal.Visible = true;
+        return ventas;
     }
     #endregion
 

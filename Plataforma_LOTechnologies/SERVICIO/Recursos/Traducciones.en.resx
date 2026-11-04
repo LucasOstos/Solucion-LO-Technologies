@@ -1730,24 +1730,6 @@
   <data name="indicadores.sinIndicadores" xml:space="preserve">
     <value>There is not enough data to generate complete indicators.</value>
   </data>
-  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
-    <value>Low foot traffic in section {0}</value>
-  </data>
-  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
-    <value>Section {0} has {1}% estimated foot traffic, lower than the rest. Consider redistributing high-turnover products.</value>
-  </data>
-  <data name="recomendacion.superaMeta" xml:space="preserve">
-    <value>{0} exceeds the sales target</value>
-  </data>
-  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
-    <value>Section {0} exceeded the sales threshold for the period. Expanding its exposure is recommended.</value>
-  </data>
-  <data name="recomendacion.stockCritico" xml:space="preserve">
-    <value>Critical stock for {0}</value>
-  </data>
-  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
-    <value>'{0}' has only {1} units. Urgent restocking is recommended.</value>
-  </data>
   <data name="analisis.titulo" xml:space="preserve">
     <value>Product analysis - LO Technologies</value>
   </data>
@@ -2230,5 +2212,146 @@
   </data>
   <data name="stock.errMinimoMaximo" xml:space="preserve">
     <value>The minimum stock cannot be greater than the maximum.</value>
+  </data>
+  <data name="indicadores.crearEscenario" xml:space="preserve">
+    <value>Create scenario</value>
+  </data>
+  <data name="indicadores.crearEscenarioAyuda" xml:space="preserve">
+    <value>Opens Scenarios with this change already loaded to simulate it</value>
+  </data>
+  <data name="indicadores.colVariacion" xml:space="preserve">
+    <value>vs. previous period</value>
+  </data>
+  <data name="indicadores.colRotacionMes" xml:space="preserve">
+    <value>Monthly turnover</value>
+  </data>
+  <data name="indicadores.colCobertura" xml:space="preserve">
+    <value>Coverage</value>
+  </data>
+  <data name="indicadores.comoSeCalcula" xml:space="preserve">
+    <value>How is each indicator calculated?</value>
+  </data>
+  <data name="indicadores.ayudaVariacion" xml:space="preserve">
+    <value>Sales for the period against the same stretch of the previous period (for example, November 1–4 against October 1–4).</value>
+  </data>
+  <data name="indicadores.ayudaMargen" xml:space="preserve">
+    <value>(Sales − units × cost) ÷ sales, only for products with a cost set.</value>
+  </data>
+  <data name="indicadores.ayudaVentasM2" xml:space="preserve">
+    <value>Section sales ÷ section area. Measures how much each square metre yields.</value>
+  </data>
+  <data name="indicadores.ayudaCirculacion" xml:space="preserve">
+    <value>Estimated % of customers who pass through the section. Entered in Layout and sections (observation or counting in the store).</value>
+  </data>
+  <data name="indicadores.ayudaRotacion" xml:space="preserve">
+    <value>Units sold per month ÷ current stock × 100. 200% means twice the available stock is sold each month.</value>
+  </data>
+  <data name="indicadores.ayudaCobertura" xml:space="preserve">
+    <value>Current stock ÷ units sold per day: how many days the stock lasts at the period's sales pace.</value>
+  </data>
+  <data name="indicadores.ayudaIndice" xml:space="preserve">
+    <value>From 0 to 100: 40% traffic + 30% turnover + 30% sales/m². Turnover and sales/m² are compared with the store's best section (which scores 100). Without an area set, only traffic and turnover are used. Green from 70, yellow from 50.</value>
+  </data>
+  <data name="indicadores.evolucion" xml:space="preserve">
+    <value>Store sales trend</value>
+  </data>
+  <data name="indicadores.ayudaEvolucion" xml:space="preserve">
+    <value>Last 6 months. The current month is still in progress.</value>
+  </data>
+  <data name="indicadores.enCurso" xml:space="preserve">
+    <value>in progress</value>
+  </data>
+  <data name="indicadores.vsAnterior" xml:space="preserve">
+    <value>vs. same previous period</value>
+  </data>
+  <data name="indicadores.nuevo" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="indicadores.dias" xml:space="preserve">
+    <value>{0} days</value>
+  </data>
+  <data name="indicadores.sinVentasCobertura" xml:space="preserve">
+    <value>No sales</value>
+  </data>
+  <data name="escenarios.desdeRecomendacion" xml:space="preserve">
+    <value>Created from an Indicators recommendation.</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficie" xml:space="preserve">
+    <value>Expand the area of {0}</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficieMotivo" xml:space="preserve">
+    <value>{0} sells {1:$#,##0} per m², {2:0.#} times the store average ({3:$#,##0}/m²). With more space it could sell more.</value>
+  </data>
+  <data name="recomendacion.reducirSuperficie" xml:space="preserve">
+    <value>Reduce the area of {0}</value>
+  </data>
+  <data name="recomendacion.reducirSuperficieMotivo" xml:space="preserve">
+    <value>{0} sells {1:$#,##0} per m², less than half the store average ({2:$#,##0}/m²). That space could yield more in another section.</value>
+  </data>
+  <data name="recomendacion.moverFrente" xml:space="preserve">
+    <value>Move {0} closer to the store front</value>
+  </data>
+  <data name="recomendacion.moverFrenteMotivo" xml:space="preserve">
+    <value>{0} turns over well ({1:0.#}% per month, the average is {2:0.#}%) but has little traffic ({3:0.#}% against {4:0.#}% for the store). In a busier area it could sell more.</value>
+  </data>
+  <data name="recomendacion.aprovecharTransito" xml:space="preserve">
+    <value>Make the most of the traffic in {0}</value>
+  </data>
+  <data name="recomendacion.aprovecharTransitoMotivo" xml:space="preserve">
+    <value>{0} is one of the busiest areas ({1:0.#}% traffic) but turns over little ({2:0.#}% per month, the average is {3:0.#}%). It is worth displaying the best-selling products there.</value>
+  </data>
+  <data name="recomendacion.margenBajo" xml:space="preserve">
+    <value>Review prices and costs of {0}</value>
+  </data>
+  <data name="recomendacion.margenBajoMotivo" xml:space="preserve">
+    <value>{0} has a margin of {1:0.#}%, below the store average ({2:0.#}%).</value>
+  </data>
+  <data name="recomendacion.sinVentas" xml:space="preserve">
+    <value>{0} has no sales</value>
+  </data>
+  <data name="recomendacion.sinVentasMotivo" xml:space="preserve">
+    <value>{0} has {1} units in stock and no sales in the period. Review the section's display or location.</value>
+  </data>
+  <data name="recomendacion.sinStock" xml:space="preserve">
+    <value>{0} out of stock</value>
+  </data>
+  <data name="recomendacion.sinStockMotivo" xml:space="preserve">
+    <value>{0} has no units available. Restock as soon as possible.</value>
+  </data>
+  <data name="recomendacion.stockBajo" xml:space="preserve">
+    <value>Low stock of {0}</value>
+  </data>
+  <data name="recomendacion.stockBajoMotivo" xml:space="preserve">
+    <value>{0} has {1} units and its minimum is {2}. Restock.</value>
+  </data>
+  <data name="recomendacion.sobrestock" xml:space="preserve">
+    <value>Overstock of {0}</value>
+  </data>
+  <data name="recomendacion.sobrestockMotivo" xml:space="preserve">
+    <value>{0} has {1} units and its maximum is {3}. Tied-up stock: hold purchases or run a promotion.</value>
+  </data>
+  <data name="recomendacion.masSinStock" xml:space="preserve">
+    <value>{0} more products are out of stock</value>
+  </data>
+  <data name="recomendacion.masStockBajo" xml:space="preserve">
+    <value>{0} more products are below minimum stock</value>
+  </data>
+  <data name="recomendacion.masSobrestock" xml:space="preserve">
+    <value>{0} more products are overstocked</value>
+  </data>
+  <data name="recomendacion.verStock" xml:space="preserve">
+    <value>See Stock and sales &gt; Stock data.</value>
+  </data>
+  <data name="recomendacion.faltaSuperficie" xml:space="preserve">
+    <value>Enter the area of {0} sections</value>
+  </data>
+  <data name="recomendacion.faltaSuperficieMotivo" xml:space="preserve">
+    <value>Without the area (m²), sales per m² and space recommendations for those sections are not calculated. It is entered in Layout and sections.</value>
+  </data>
+  <data name="recomendacion.faltaCosto" xml:space="preserve">
+    <value>Enter product costs</value>
+  </data>
+  <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
+    <value>Without the unit cost, the margin is not calculated. It is entered in Products and categories.</value>
   </data>
 </root>

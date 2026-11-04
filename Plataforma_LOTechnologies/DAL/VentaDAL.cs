@@ -14,9 +14,7 @@ namespace DAL
         public const string AGRUPAR_SECTOR = "sector";
         public const string AGRUPAR_CATEGORIA = "categoria";
         public const string AGRUPAR_PRODUCTO = "producto";
-
         // Ventas del período agrupadas por mes y por sector, categoría o producto.
-        // Las columnas del GROUP BY salen de una lista fija (nunca del texto que manda la pantalla).
         public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde, string pAgrupacion)
         {
             List<VentaListado> ventas = new List<VentaListado>();
@@ -62,7 +60,7 @@ namespace DAL
             }
             return ventas;
         }
-        // Margen del local en el período, sobre las ventas de productos con costo cargado (null = ninguno tiene costo)
+        //Margen del local en el período, sobre las ventas de productos con costo cargado (null = ninguno tiene costo)
         public decimal? ObtenerMargenTotal(int pCodigoLocal, string pPeriodoDesde)
         {
             string query = @"SELECT ISNULL(SUM(v.ImporteTotal), 0) AS VentasConCosto, ISNULL(SUM(v.Cantidad * p.Costo), 0) AS CostoVendido FROM Venta v
@@ -79,6 +77,39 @@ namespace DAL
                     if (!DR.Read()) return null;
                     return IndicadorDAL.CalcularMargen(decimal.Parse(DR["VentasConCosto"].ToString()), decimal.Parse(DR["CostoVendido"].ToString()));
                 }
+            }
+        }
+        //Ventas del local mes por mes desde un período
+        public Dictionary<string, decimal> ObtenerVentasPorMes(int pCodigoLocal, string pPeriodoDesde)
+        {
+            var meses = new Dictionary<string, decimal>();
+            string query = @"SELECT Periodo, SUM(ImporteTotal) AS Monto FROM Venta
+                             WHERE CodigoLocal = @CodigoLocal AND Periodo >= @PeriodoDesde GROUP BY Periodo";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
+                CM.Parameters.AddWithValue("@PeriodoDesde", pPeriodoDesde);
+                CO.Open();
+                using (SqlDataReader DR = CM.ExecuteReader())
+                {
+                    while (DR.Read()) meses[DR["Periodo"].ToString()] = decimal.Parse(DR["Monto"].ToString());
+                }
+            }
+            return meses;
+        }
+        public decimal ObtenerTotalVentasEntreFechas(int pCodigoLocal, DateTime pDesde, DateTime pHasta)
+        {
+            string query = @"SELECT ISNULL(SUM(ImporteTotal), 0) FROM Venta
+                             WHERE CodigoLocal = @CodigoLocal AND Fecha >= @Desde AND Fecha < @HastaExclusivo";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
+                CM.Parameters.AddWithValue("@Desde", pDesde.Date);
+                CM.Parameters.AddWithValue("@HastaExclusivo", pHasta.Date.AddDays(1));
+                CO.Open();
+                return Convert.ToDecimal(CM.ExecuteScalar());
             }
         }
         public decimal ObtenerTotalVentas(int pCodigoLocal, string pPeriodoDesde)

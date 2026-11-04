@@ -1730,24 +1730,6 @@
   <data name="indicadores.sinIndicadores" xml:space="preserve">
     <value>Não há dados suficientes para gerar indicadores completos.</value>
   </data>
-  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
-    <value>Baixa circulação no setor {0}</value>
-  </data>
-  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
-    <value>O setor {0} registra {1}% de circulação estimada, abaixo dos demais. Considere redistribuir produtos de alto giro.</value>
-  </data>
-  <data name="recomendacion.superaMeta" xml:space="preserve">
-    <value>{0} supera a meta de vendas</value>
-  </data>
-  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
-    <value>O setor {0} superou o limite de vendas do período. Recomenda-se ampliar sua exposição.</value>
-  </data>
-  <data name="recomendacion.stockCritico" xml:space="preserve">
-    <value>Estoque crítico em {0}</value>
-  </data>
-  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
-    <value>'{0}' tem apenas {1} unidades. Recomenda-se reposição urgente.</value>
-  </data>
   <data name="analisis.titulo" xml:space="preserve">
     <value>Análise de produtos - LO Technologies</value>
   </data>
@@ -2230,5 +2212,146 @@
   </data>
   <data name="stock.errMinimoMaximo" xml:space="preserve">
     <value>O estoque mínimo não pode ser maior que o máximo.</value>
+  </data>
+  <data name="indicadores.crearEscenario" xml:space="preserve">
+    <value>Criar cenário</value>
+  </data>
+  <data name="indicadores.crearEscenarioAyuda" xml:space="preserve">
+    <value>Abre Cenários com esta alteração já carregada para simulá-la</value>
+  </data>
+  <data name="indicadores.colVariacion" xml:space="preserve">
+    <value>vs. período anterior</value>
+  </data>
+  <data name="indicadores.colRotacionMes" xml:space="preserve">
+    <value>Giro mensal</value>
+  </data>
+  <data name="indicadores.colCobertura" xml:space="preserve">
+    <value>Cobertura</value>
+  </data>
+  <data name="indicadores.comoSeCalcula" xml:space="preserve">
+    <value>Como cada indicador é calculado?</value>
+  </data>
+  <data name="indicadores.ayudaVariacion" xml:space="preserve">
+    <value>Vendas do período contra o mesmo trecho do período anterior (por exemplo, de 1 a 4 de novembro contra de 1 a 4 de outubro).</value>
+  </data>
+  <data name="indicadores.ayudaMargen" xml:space="preserve">
+    <value>(Vendas − unidades × custo) ÷ vendas, apenas com os produtos que têm custo cadastrado.</value>
+  </data>
+  <data name="indicadores.ayudaVentasM2" xml:space="preserve">
+    <value>Vendas do setor ÷ área do setor. Mede quanto rende cada metro quadrado.</value>
+  </data>
+  <data name="indicadores.ayudaCirculacion" xml:space="preserve">
+    <value>% estimado de clientes que passam pelo setor. É cadastrado em Layout e setores (observação ou contagem na loja).</value>
+  </data>
+  <data name="indicadores.ayudaRotacion" xml:space="preserve">
+    <value>Unidades vendidas por mês ÷ estoque atual × 100. 200% significa que por mês se vende o dobro do estoque disponível.</value>
+  </data>
+  <data name="indicadores.ayudaCobertura" xml:space="preserve">
+    <value>Estoque atual ÷ unidades vendidas por dia: quantos dias o estoque dura no ritmo de venda do período.</value>
+  </data>
+  <data name="indicadores.ayudaIndice" xml:space="preserve">
+    <value>De 0 a 100: 40% circulação + 30% giro + 30% vendas/m². Giro e vendas/m² são comparados com o melhor setor da loja (que tira 100). Sem área cadastrada, usam-se apenas circulação e giro. Verde a partir de 70, amarelo a partir de 50.</value>
+  </data>
+  <data name="indicadores.evolucion" xml:space="preserve">
+    <value>Evolução das vendas da loja</value>
+  </data>
+  <data name="indicadores.ayudaEvolucion" xml:space="preserve">
+    <value>Últimos 6 meses. O mês atual ainda está em andamento.</value>
+  </data>
+  <data name="indicadores.enCurso" xml:space="preserve">
+    <value>em andamento</value>
+  </data>
+  <data name="indicadores.vsAnterior" xml:space="preserve">
+    <value>vs. mesmo período anterior</value>
+  </data>
+  <data name="indicadores.nuevo" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="indicadores.dias" xml:space="preserve">
+    <value>{0} dias</value>
+  </data>
+  <data name="indicadores.sinVentasCobertura" xml:space="preserve">
+    <value>Sem vendas</value>
+  </data>
+  <data name="escenarios.desdeRecomendacion" xml:space="preserve">
+    <value>Criado a partir de uma recomendação de Indicadores.</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficie" xml:space="preserve">
+    <value>Ampliar a área de {0}</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficieMotivo" xml:space="preserve">
+    <value>{0} vende {1:$#,##0} por m², {2:0.#} vezes a média da loja ({3:$#,##0}/m²). Com mais espaço poderia vender mais.</value>
+  </data>
+  <data name="recomendacion.reducirSuperficie" xml:space="preserve">
+    <value>Reduzir a área de {0}</value>
+  </data>
+  <data name="recomendacion.reducirSuperficieMotivo" xml:space="preserve">
+    <value>{0} vende {1:$#,##0} por m², menos da metade da média da loja ({2:$#,##0}/m²). Esse espaço poderia render mais em outro setor.</value>
+  </data>
+  <data name="recomendacion.moverFrente" xml:space="preserve">
+    <value>Aproximar {0} da frente da loja</value>
+  </data>
+  <data name="recomendacion.moverFrenteMotivo" xml:space="preserve">
+    <value>{0} gira bem ({1:0.#}% por mês, a média é {2:0.#}%) mas tem pouca circulação ({3:0.#}% contra {4:0.#}% da loja). Numa área de mais movimento poderia vender mais.</value>
+  </data>
+  <data name="recomendacion.aprovecharTransito" xml:space="preserve">
+    <value>Aproveitar o movimento de {0}</value>
+  </data>
+  <data name="recomendacion.aprovecharTransitoMotivo" xml:space="preserve">
+    <value>{0} é uma das áreas de maior movimento ({1:0.#}% de circulação) mas gira pouco ({2:0.#}% por mês, a média é {3:0.#}%). Convém expor ali os produtos mais vendidos.</value>
+  </data>
+  <data name="recomendacion.margenBajo" xml:space="preserve">
+    <value>Revisar preços e custos de {0}</value>
+  </data>
+  <data name="recomendacion.margenBajoMotivo" xml:space="preserve">
+    <value>{0} tem uma margem de {1:0.#}%, abaixo da média da loja ({2:0.#}%).</value>
+  </data>
+  <data name="recomendacion.sinVentas" xml:space="preserve">
+    <value>{0} não registra vendas</value>
+  </data>
+  <data name="recomendacion.sinVentasMotivo" xml:space="preserve">
+    <value>{0} tem {1} unidades em estoque e nenhuma venda no período. Revise a exposição ou a localização do setor.</value>
+  </data>
+  <data name="recomendacion.sinStock" xml:space="preserve">
+    <value>Sem estoque de {0}</value>
+  </data>
+  <data name="recomendacion.sinStockMotivo" xml:space="preserve">
+    <value>{0} não tem unidades disponíveis. Repor o quanto antes.</value>
+  </data>
+  <data name="recomendacion.stockBajo" xml:space="preserve">
+    <value>Estoque baixo de {0}</value>
+  </data>
+  <data name="recomendacion.stockBajoMotivo" xml:space="preserve">
+    <value>{0} tem {1} unidades e seu mínimo é {2}. Repor.</value>
+  </data>
+  <data name="recomendacion.sobrestock" xml:space="preserve">
+    <value>Excesso de estoque de {0}</value>
+  </data>
+  <data name="recomendacion.sobrestockMotivo" xml:space="preserve">
+    <value>{0} tem {1} unidades e seu máximo é {3}. Mercadoria parada: frear compras ou promover.</value>
+  </data>
+  <data name="recomendacion.masSinStock" xml:space="preserve">
+    <value>Há mais {0} produtos sem estoque</value>
+  </data>
+  <data name="recomendacion.masStockBajo" xml:space="preserve">
+    <value>Há mais {0} produtos com estoque abaixo do mínimo</value>
+  </data>
+  <data name="recomendacion.masSobrestock" xml:space="preserve">
+    <value>Há mais {0} produtos com excesso de estoque</value>
+  </data>
+  <data name="recomendacion.verStock" xml:space="preserve">
+    <value>Detalhe em Estoque e vendas &gt; Dados de estoque.</value>
+  </data>
+  <data name="recomendacion.faltaSuperficie" xml:space="preserve">
+    <value>Cadastrar a área de {0} setores</value>
+  </data>
+  <data name="recomendacion.faltaSuperficieMotivo" xml:space="preserve">
+    <value>Sem a área (m²) não se calculam as vendas por m² nem as recomendações de espaço desses setores. É cadastrada em Layout e setores.</value>
+  </data>
+  <data name="recomendacion.faltaCosto" xml:space="preserve">
+    <value>Cadastrar o custo dos produtos</value>
+  </data>
+  <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
+    <value>Sem o custo unitário a margem não é calculada. É cadastrado em Produtos e categorias.</value>
   </data>
 </root>

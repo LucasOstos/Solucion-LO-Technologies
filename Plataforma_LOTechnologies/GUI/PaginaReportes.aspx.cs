@@ -242,7 +242,7 @@ public partial class PaginaReportes : PaginaSegura
                 documento.Add(new Paragraph(T("indicadores.porSector"), fuenteSeccion));
                 var tabla = new PdfPTable(7) { WidthPercentage = 100 };
                 AgregarFila(tabla, fuenteEncabezado, T("layout.colSector"), T("indicadores.colVentas"), T("stock.colMargen"), T("indicadores.colVentasM2"),
-                            T("layout.colCirculacion"), T("indicadores.colRotacion"), T("indicadores.colIndice"));
+                            T("layout.colCirculacion"), T("indicadores.colRotacionMes"), T("indicadores.colIndice"));
                 foreach (var ind in indicadores)
                 {
                     AgregarFila(tabla, fuenteNormal, ind.Sector, ind.Ventas.ToString("$#,##0"), ind.Margen == null ? "-" : $"{ind.Margen:0.0}%",

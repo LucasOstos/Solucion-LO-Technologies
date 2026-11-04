@@ -1730,24 +1730,6 @@
   <data name="indicadores.sinIndicadores" xml:space="preserve">
     <value>Недостаточно данных для полных показателей.</value>
   </data>
-  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
-    <value>Низкая проходимость в секции {0}</value>
-  </data>
-  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
-    <value>Секция {0} имеет расчётную проходимость {1}% — ниже остальных. Рассмотрите перераспределение товаров с высокой оборачиваемостью.</value>
-  </data>
-  <data name="recomendacion.superaMeta" xml:space="preserve">
-    <value>{0} превышает план продаж</value>
-  </data>
-  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
-    <value>Секция {0} превысила порог продаж за период. Рекомендуется расширить её выкладку.</value>
-  </data>
-  <data name="recomendacion.stockCritico" xml:space="preserve">
-    <value>Критический запас: {0}</value>
-  </data>
-  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
-    <value>У «{0}» осталось всего {1} ед. Рекомендуется срочное пополнение.</value>
-  </data>
   <data name="analisis.titulo" xml:space="preserve">
     <value>Анализ товаров - LO Technologies</value>
   </data>
@@ -2230,5 +2212,146 @@
   </data>
   <data name="stock.errMinimoMaximo" xml:space="preserve">
     <value>Минимальный остаток не может быть больше максимального.</value>
+  </data>
+  <data name="indicadores.crearEscenario" xml:space="preserve">
+    <value>Создать сценарий</value>
+  </data>
+  <data name="indicadores.crearEscenarioAyuda" xml:space="preserve">
+    <value>Открывает «Сценарии» с уже загруженным изменением для моделирования</value>
+  </data>
+  <data name="indicadores.colVariacion" xml:space="preserve">
+    <value>к пред. периоду</value>
+  </data>
+  <data name="indicadores.colRotacionMes" xml:space="preserve">
+    <value>Оборачиваемость в месяц</value>
+  </data>
+  <data name="indicadores.colCobertura" xml:space="preserve">
+    <value>Запас в днях</value>
+  </data>
+  <data name="indicadores.comoSeCalcula" xml:space="preserve">
+    <value>Как рассчитывается каждый показатель?</value>
+  </data>
+  <data name="indicadores.ayudaVariacion" xml:space="preserve">
+    <value>Продажи за период в сравнении с тем же отрезком предыдущего периода (например, 1–4 ноября против 1–4 октября).</value>
+  </data>
+  <data name="indicadores.ayudaMargen" xml:space="preserve">
+    <value>(Продажи − единицы × себестоимость) ÷ продажи, только по товарам с указанной себестоимостью.</value>
+  </data>
+  <data name="indicadores.ayudaVentasM2" xml:space="preserve">
+    <value>Продажи сектора ÷ площадь сектора. Показывает отдачу каждого квадратного метра.</value>
+  </data>
+  <data name="indicadores.ayudaCirculacion" xml:space="preserve">
+    <value>Оценочный % покупателей, проходящих через сектор. Вносится в разделе «Планировка и секторы» (наблюдение или подсчёт в магазине).</value>
+  </data>
+  <data name="indicadores.ayudaRotacion" xml:space="preserve">
+    <value>Продано единиц в месяц ÷ текущий остаток × 100. 200% означает, что за месяц продаётся вдвое больше имеющегося остатка.</value>
+  </data>
+  <data name="indicadores.ayudaCobertura" xml:space="preserve">
+    <value>Текущий остаток ÷ продажи в день: на сколько дней хватит остатка при темпе продаж за период.</value>
+  </data>
+  <data name="indicadores.ayudaIndice" xml:space="preserve">
+    <value>От 0 до 100: 40% проходимость + 30% оборачиваемость + 30% продажи/м². Оборачиваемость и продажи/м² сравниваются с лучшим сектором магазина (он получает 100). Без площади учитываются только проходимость и оборачиваемость. Зелёный от 70, жёлтый от 50.</value>
+  </data>
+  <data name="indicadores.evolucion" xml:space="preserve">
+    <value>Динамика продаж магазина</value>
+  </data>
+  <data name="indicadores.ayudaEvolucion" xml:space="preserve">
+    <value>Последние 6 месяцев. Текущий месяц ещё не завершён.</value>
+  </data>
+  <data name="indicadores.enCurso" xml:space="preserve">
+    <value>в процессе</value>
+  </data>
+  <data name="indicadores.vsAnterior" xml:space="preserve">
+    <value>к тому же предыдущему периоду</value>
+  </data>
+  <data name="indicadores.nuevo" xml:space="preserve">
+    <value>Новый</value>
+  </data>
+  <data name="indicadores.dias" xml:space="preserve">
+    <value>{0} дн.</value>
+  </data>
+  <data name="indicadores.sinVentasCobertura" xml:space="preserve">
+    <value>Нет продаж</value>
+  </data>
+  <data name="escenarios.desdeRecomendacion" xml:space="preserve">
+    <value>Создано по рекомендации из «Показателей».</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficie" xml:space="preserve">
+    <value>Увеличить площадь «{0}»</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficieMotivo" xml:space="preserve">
+    <value>«{0}» продаёт {1:$#,##0} на м², в {2:0.#} раза больше среднего по магазину ({3:$#,##0}/м²). С большей площадью мог бы продавать больше.</value>
+  </data>
+  <data name="recomendacion.reducirSuperficie" xml:space="preserve">
+    <value>Уменьшить площадь «{0}»</value>
+  </data>
+  <data name="recomendacion.reducirSuperficieMotivo" xml:space="preserve">
+    <value>«{0}» продаёт {1:$#,##0} на м², менее половины среднего по магазину ({2:$#,##0}/м²). Эта площадь может приносить больше в другом секторе.</value>
+  </data>
+  <data name="recomendacion.moverFrente" xml:space="preserve">
+    <value>Переместить «{0}» ближе к входу</value>
+  </data>
+  <data name="recomendacion.moverFrenteMotivo" xml:space="preserve">
+    <value>«{0}» хорошо оборачивается ({1:0.#}% в месяц, в среднем {2:0.#}%), но проходимость низкая ({3:0.#}% против {4:0.#}% по магазину). В более оживлённой зоне мог бы продавать больше.</value>
+  </data>
+  <data name="recomendacion.aprovecharTransito" xml:space="preserve">
+    <value>Использовать проходимость «{0}»</value>
+  </data>
+  <data name="recomendacion.aprovecharTransitoMotivo" xml:space="preserve">
+    <value>«{0}» — одна из самых проходимых зон ({1:0.#}%), но оборачиваемость низкая ({2:0.#}% в месяц, в среднем {3:0.#}%). Стоит выставить там самые продаваемые товары.</value>
+  </data>
+  <data name="recomendacion.margenBajo" xml:space="preserve">
+    <value>Пересмотреть цены и себестоимость «{0}»</value>
+  </data>
+  <data name="recomendacion.margenBajoMotivo" xml:space="preserve">
+    <value>Маржа «{0}» — {1:0.#}%, ниже среднего по магазину ({2:0.#}%).</value>
+  </data>
+  <data name="recomendacion.sinVentas" xml:space="preserve">
+    <value>В «{0}» нет продаж</value>
+  </data>
+  <data name="recomendacion.sinVentasMotivo" xml:space="preserve">
+    <value>В «{0}» {1} единиц на складе и ни одной продажи за период. Проверьте выкладку или расположение сектора.</value>
+  </data>
+  <data name="recomendacion.sinStock" xml:space="preserve">
+    <value>Нет в наличии: {0}</value>
+  </data>
+  <data name="recomendacion.sinStockMotivo" xml:space="preserve">
+    <value>У «{0}» нет доступных единиц. Пополнить как можно скорее.</value>
+  </data>
+  <data name="recomendacion.stockBajo" xml:space="preserve">
+    <value>Низкий остаток: {0}</value>
+  </data>
+  <data name="recomendacion.stockBajoMotivo" xml:space="preserve">
+    <value>У «{0}» {1} ед., минимум — {2}. Пополнить.</value>
+  </data>
+  <data name="recomendacion.sobrestock" xml:space="preserve">
+    <value>Избыток остатка: {0}</value>
+  </data>
+  <data name="recomendacion.sobrestockMotivo" xml:space="preserve">
+    <value>У «{0}» {1} ед., максимум — {3}. Замороженный товар: сократить закупки или провести акцию.</value>
+  </data>
+  <data name="recomendacion.masSinStock" xml:space="preserve">
+    <value>Ещё {0} товаров нет в наличии</value>
+  </data>
+  <data name="recomendacion.masStockBajo" xml:space="preserve">
+    <value>Ещё у {0} товаров остаток ниже минимума</value>
+  </data>
+  <data name="recomendacion.masSobrestock" xml:space="preserve">
+    <value>Ещё у {0} товаров избыток остатка</value>
+  </data>
+  <data name="recomendacion.verStock" xml:space="preserve">
+    <value>Подробнее: «Остатки и продажи» &gt; «Данные об остатках».</value>
+  </data>
+  <data name="recomendacion.faltaSuperficie" xml:space="preserve">
+    <value>Указать площадь {0} секторов</value>
+  </data>
+  <data name="recomendacion.faltaSuperficieMotivo" xml:space="preserve">
+    <value>Без площади (м²) не рассчитываются продажи на м² и рекомендации по площади этих секторов. Указывается в разделе «Планировка и секторы».</value>
+  </data>
+  <data name="recomendacion.faltaCosto" xml:space="preserve">
+    <value>Указать себестоимость товаров</value>
+  </data>
+  <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
+    <value>Без себестоимости единицы маржа не рассчитывается. Указывается в разделе «Товары и категории».</value>
   </data>
 </root>

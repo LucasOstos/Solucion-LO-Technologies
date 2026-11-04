@@ -28,14 +28,43 @@ public partial class PaginaEscenarios : PaginaSegura
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {        
+    {
         if (!IsPostBack)
         {
             CargarDropdownLocales();
+            int codigoLocalQuery;
+            if (int.TryParse(Request.QueryString["local"], out codigoLocalQuery) && ddlLocal.Items.FindByValue(codigoLocalQuery.ToString()) != null)
+            {
+                ddlLocal.SelectedValue = codigoLocalQuery.ToString();
+            }
             CargarEscenarios();
+            AbrirDesdeRecomendacion();
         }
     }
 
+    private void AbrirDesdeRecomendacion()
+    {
+        int codigoSector;
+        string accion = Request.QueryString["accion"];
+        if (CodigoLocalActual == 0 || !int.TryParse(Request.QueryString["sector"], out codigoSector) || string.IsNullOrEmpty(accion)) return;
+        SectorListado sector = sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual).FirstOrDefault(s => s.CodigoSector == codigoSector);
+        if (sector == null) return;
+        AbrirNuevoEscenario();
+        bool aplicado = false;
+        foreach (RepeaterItem item in rptCambiosPorSector.Items)
+        {
+            var hfSector = (HiddenField)item.FindControl("hfCodigoSectorCambio");
+            var ddlCambio = (DropDownList)item.FindControl("ddlCambioSector");
+            if (hfSector != null && ddlCambio != null && hfSector.Value == codigoSector.ToString() && ddlCambio.Items.FindByValue(accion) != null)
+            {
+                ddlCambio.SelectedValue = accion;
+                aplicado = true;
+            }
+        }
+        if (!aplicado) return;
+        tbNombreEscenario.Text = $"{TraducirValor(accion)} - {sector.Nombre}";
+        tbDescripcionEscenario.Text = Traducir("escenarios.desdeRecomendacion");
+    }
     #region Funciones
     private void CargarDropdownLocales()
     {
@@ -141,6 +170,10 @@ public partial class PaginaEscenarios : PaginaSegura
             MostrarMensaje(Traducir("stock.errSeleccionarLocal"), esExito: false);
             return;
         }
+        AbrirNuevoEscenario();
+    }
+    private void AbrirNuevoEscenario()
+    {
         tbNombreEscenario.Text = "";
         tbDescripcionEscenario.Text = "";
         tbObjetivoEscenario.Text = "";

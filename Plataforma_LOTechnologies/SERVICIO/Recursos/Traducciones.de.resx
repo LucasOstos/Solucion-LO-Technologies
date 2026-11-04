@@ -1730,24 +1730,6 @@
   <data name="indicadores.sinIndicadores" xml:space="preserve">
     <value>Es gibt nicht genügend Daten für vollständige Kennzahlen.</value>
   </data>
-  <data name="recomendacion.bajaCirculacion" xml:space="preserve">
-    <value>Geringe Kundenfrequenz im Bereich {0}</value>
-  </data>
-  <data name="recomendacion.bajaCirculacionMotivo" xml:space="preserve">
-    <value>Der Bereich {0} hat eine geschätzte Kundenfrequenz von {1} %, weniger als die übrigen. Erwägen Sie, Produkte mit hohem Umschlag umzuverteilen.</value>
-  </data>
-  <data name="recomendacion.superaMeta" xml:space="preserve">
-    <value>{0} übertrifft das Umsatzziel</value>
-  </data>
-  <data name="recomendacion.superaMetaMotivo" xml:space="preserve">
-    <value>Der Bereich {0} hat die Umsatzschwelle des Zeitraums überschritten. Es wird empfohlen, seine Präsentationsfläche zu erweitern.</value>
-  </data>
-  <data name="recomendacion.stockCritico" xml:space="preserve">
-    <value>Kritischer Bestand bei {0}</value>
-  </data>
-  <data name="recomendacion.stockCriticoMotivo" xml:space="preserve">
-    <value>„{0}“ hat nur {1} Einheiten. Dringende Nachbestellung empfohlen.</value>
-  </data>
   <data name="analisis.titulo" xml:space="preserve">
     <value>Produktanalyse - LO Technologies</value>
   </data>
@@ -2230,5 +2212,146 @@
   </data>
   <data name="stock.errMinimoMaximo" xml:space="preserve">
     <value>Der Mindestbestand darf nicht größer als der Höchstbestand sein.</value>
+  </data>
+  <data name="indicadores.crearEscenario" xml:space="preserve">
+    <value>Szenario erstellen</value>
+  </data>
+  <data name="indicadores.crearEscenarioAyuda" xml:space="preserve">
+    <value>Öffnet Szenarien mit dieser Änderung, um sie zu simulieren</value>
+  </data>
+  <data name="indicadores.colVariacion" xml:space="preserve">
+    <value>vs. Vorperiode</value>
+  </data>
+  <data name="indicadores.colRotacionMes" xml:space="preserve">
+    <value>Monatlicher Umschlag</value>
+  </data>
+  <data name="indicadores.colCobertura" xml:space="preserve">
+    <value>Reichweite</value>
+  </data>
+  <data name="indicadores.comoSeCalcula" xml:space="preserve">
+    <value>Wie wird jede Kennzahl berechnet?</value>
+  </data>
+  <data name="indicadores.ayudaVariacion" xml:space="preserve">
+    <value>Umsatz des Zeitraums im Vergleich zum gleichen Abschnitt des Vorzeitraums (z. B. 1.–4. November gegenüber 1.–4. Oktober).</value>
+  </data>
+  <data name="indicadores.ayudaMargen" xml:space="preserve">
+    <value>(Umsatz − Einheiten × Kosten) ÷ Umsatz, nur für Produkte mit hinterlegten Kosten.</value>
+  </data>
+  <data name="indicadores.ayudaVentasM2" xml:space="preserve">
+    <value>Bereichsumsatz ÷ Bereichsfläche. Misst, was jeder Quadratmeter einbringt.</value>
+  </data>
+  <data name="indicadores.ayudaCirculacion" xml:space="preserve">
+    <value>Geschätzter Anteil der Kunden, die den Bereich passieren. Wird unter Layout und Bereiche erfasst (Beobachtung oder Zählung in der Filiale).</value>
+  </data>
+  <data name="indicadores.ayudaRotacion" xml:space="preserve">
+    <value>Verkaufte Einheiten pro Monat ÷ aktueller Bestand × 100. 200 % bedeutet, dass pro Monat das Doppelte des Bestands verkauft wird.</value>
+  </data>
+  <data name="indicadores.ayudaCobertura" xml:space="preserve">
+    <value>Aktueller Bestand ÷ verkaufte Einheiten pro Tag: wie viele Tage der Bestand beim Verkaufstempo des Zeitraums reicht.</value>
+  </data>
+  <data name="indicadores.ayudaIndice" xml:space="preserve">
+    <value>Von 0 bis 100: 40 % Frequenz + 30 % Umschlag + 30 % Umsatz/m². Umschlag und Umsatz/m² werden mit dem besten Bereich der Filiale verglichen (der 100 erhält). Ohne Fläche werden nur Frequenz und Umschlag verwendet. Grün ab 70, gelb ab 50.</value>
+  </data>
+  <data name="indicadores.evolucion" xml:space="preserve">
+    <value>Umsatzentwicklung der Filiale</value>
+  </data>
+  <data name="indicadores.ayudaEvolucion" xml:space="preserve">
+    <value>Letzte 6 Monate. Der aktuelle Monat läuft noch.</value>
+  </data>
+  <data name="indicadores.enCurso" xml:space="preserve">
+    <value>laufend</value>
+  </data>
+  <data name="indicadores.vsAnterior" xml:space="preserve">
+    <value>vs. gleicher Vorzeitraum</value>
+  </data>
+  <data name="indicadores.nuevo" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="indicadores.dias" xml:space="preserve">
+    <value>{0} Tage</value>
+  </data>
+  <data name="indicadores.sinVentasCobertura" xml:space="preserve">
+    <value>Keine Verkäufe</value>
+  </data>
+  <data name="escenarios.desdeRecomendacion" xml:space="preserve">
+    <value>Aus einer Empfehlung der Kennzahlen erstellt.</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficie" xml:space="preserve">
+    <value>Fläche von {0} vergrößern</value>
+  </data>
+  <data name="recomendacion.ampliarSuperficieMotivo" xml:space="preserve">
+    <value>{0} verkauft {1:$#,##0} pro m², das {2:0.#}-Fache des Filialdurchschnitts ({3:$#,##0}/m²). Mit mehr Fläche könnte mehr verkauft werden.</value>
+  </data>
+  <data name="recomendacion.reducirSuperficie" xml:space="preserve">
+    <value>Fläche von {0} verkleinern</value>
+  </data>
+  <data name="recomendacion.reducirSuperficieMotivo" xml:space="preserve">
+    <value>{0} verkauft {1:$#,##0} pro m², weniger als die Hälfte des Filialdurchschnitts ({2:$#,##0}/m²). Diese Fläche könnte in einem anderen Bereich mehr einbringen.</value>
+  </data>
+  <data name="recomendacion.moverFrente" xml:space="preserve">
+    <value>{0} näher an den Eingang verlegen</value>
+  </data>
+  <data name="recomendacion.moverFrenteMotivo" xml:space="preserve">
+    <value>{0} hat einen guten Umschlag ({1:0.#} % pro Monat, Durchschnitt {2:0.#} %), aber wenig Frequenz ({3:0.#} % gegenüber {4:0.#} % der Filiale). In einem belebteren Bereich könnte mehr verkauft werden.</value>
+  </data>
+  <data name="recomendacion.aprovecharTransito" xml:space="preserve">
+    <value>Die Frequenz von {0} nutzen</value>
+  </data>
+  <data name="recomendacion.aprovecharTransitoMotivo" xml:space="preserve">
+    <value>{0} ist einer der belebtesten Bereiche ({1:0.#} % Frequenz), hat aber wenig Umschlag ({2:0.#} % pro Monat, Durchschnitt {3:0.#} %). Dort sollten die meistverkauften Produkte ausgestellt werden.</value>
+  </data>
+  <data name="recomendacion.margenBajo" xml:space="preserve">
+    <value>Preise und Kosten von {0} prüfen</value>
+  </data>
+  <data name="recomendacion.margenBajoMotivo" xml:space="preserve">
+    <value>{0} hat eine Marge von {1:0.#} %, unter dem Filialdurchschnitt ({2:0.#} %).</value>
+  </data>
+  <data name="recomendacion.sinVentas" xml:space="preserve">
+    <value>{0} verzeichnet keine Verkäufe</value>
+  </data>
+  <data name="recomendacion.sinVentasMotivo" xml:space="preserve">
+    <value>{0} hat {1} Einheiten im Bestand und keine Verkäufe im Zeitraum. Prüfen Sie Präsentation oder Lage des Bereichs.</value>
+  </data>
+  <data name="recomendacion.sinStock" xml:space="preserve">
+    <value>{0} nicht vorrätig</value>
+  </data>
+  <data name="recomendacion.sinStockMotivo" xml:space="preserve">
+    <value>{0} hat keine verfügbaren Einheiten. So schnell wie möglich nachfüllen.</value>
+  </data>
+  <data name="recomendacion.stockBajo" xml:space="preserve">
+    <value>Niedriger Bestand: {0}</value>
+  </data>
+  <data name="recomendacion.stockBajoMotivo" xml:space="preserve">
+    <value>{0} hat {1} Einheiten, das Minimum ist {2}. Nachfüllen.</value>
+  </data>
+  <data name="recomendacion.sobrestock" xml:space="preserve">
+    <value>Überbestand: {0}</value>
+  </data>
+  <data name="recomendacion.sobrestockMotivo" xml:space="preserve">
+    <value>{0} hat {1} Einheiten, das Maximum ist {3}. Gebundene Ware: Einkäufe stoppen oder bewerben.</value>
+  </data>
+  <data name="recomendacion.masSinStock" xml:space="preserve">
+    <value>{0} weitere Produkte sind nicht vorrätig</value>
+  </data>
+  <data name="recomendacion.masStockBajo" xml:space="preserve">
+    <value>{0} weitere Produkte liegen unter dem Mindestbestand</value>
+  </data>
+  <data name="recomendacion.masSobrestock" xml:space="preserve">
+    <value>{0} weitere Produkte haben Überbestand</value>
+  </data>
+  <data name="recomendacion.verStock" xml:space="preserve">
+    <value>Details unter Bestand und Verkäufe &gt; Bestandsdaten.</value>
+  </data>
+  <data name="recomendacion.faltaSuperficie" xml:space="preserve">
+    <value>Fläche von {0} Bereichen erfassen</value>
+  </data>
+  <data name="recomendacion.faltaSuperficieMotivo" xml:space="preserve">
+    <value>Ohne Fläche (m²) werden Umsatz pro m² und Flächenempfehlungen für diese Bereiche nicht berechnet. Sie wird unter Layout und Bereiche erfasst.</value>
+  </data>
+  <data name="recomendacion.faltaCosto" xml:space="preserve">
+    <value>Produktkosten erfassen</value>
+  </data>
+  <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
+    <value>Ohne Stückkosten wird die Marge nicht berechnet. Sie werden unter Produkte und Kategorien erfasst.</value>
   </data>
 </root>

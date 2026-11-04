@@ -50,7 +50,7 @@ namespace DAL
         // Crítico: sin stock. Bajo: en el mínimo o debajo. Sobrestock: por encima del máximo.
         private string CalcularEstadoStock(int cantidad, int? minimo, int? maximo)
         {
-            if (cantidad <= 0 && minimo != null) return "Crítico";
+            if (cantidad <= 0) return "Crítico";
             if (minimo != null && cantidad <= minimo) return "Bajo";
             if (maximo != null && maximo > 0 && cantidad > maximo) return "Sobrestock";
             return "Normal";
