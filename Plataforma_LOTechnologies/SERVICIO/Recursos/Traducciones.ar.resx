@@ -1937,4 +1937,55 @@
   <data name="pdf.graficoComparacion" xml:space="preserve">
     <value>المبيعات المقدّرة: الأساس مقابل المقترح</value>
   </data>
+  <data name="productos.categoriaInactiva" xml:space="preserve">
+    <value>{0} (غير نشطة)</value>
+  </data>
+  <data name="productos.colSectorLocal" xml:space="preserve">
+    <value>القسم في هذا المتجر</value>
+  </data>
+  <data name="productos.sectorEnLocal" xml:space="preserve">
+    <value>القسم في {0}</value>
+  </data>
+  <data name="productos.sinUbicar" xml:space="preserve">
+    <value>غير موزّع</value>
+  </data>
+  <data name="stock.sinProductosCarga" xml:space="preserve">
+    <value>لا توجد منتجات في هذا المتجر. أضفها من المنتجات والفئات.</value>
+  </data>
+  <data name="stock.productoSinUbicar" xml:space="preserve">
+    <value>{0} (غير موزّع في هذا المتجر)</value>
+  </data>
+  <data name="layout.superficie" xml:space="preserve">
+    <value>المساحة (م²)</value>
+  </data>
+  <data name="layout.colSuperficie" xml:space="preserve">
+    <value>المساحة</value>
+  </data>
+  <data name="productos.costo" xml:space="preserve">
+    <value>تكلفة الوحدة</value>
+  </data>
+  <data name="indicadores.colVentasM2" xml:space="preserve">
+    <value>المبيعات/م²</value>
+  </data>
+  <data name="indicadores.ventasPeriodo" xml:space="preserve">
+    <value>مبيعات الفترة</value>
+  </data>
+  <data name="indicadores.margenPeriodo" xml:space="preserve">
+    <value>هامش الفترة</value>
+  </data>
+  <data name="indicadores.ventasM2Local" xml:space="preserve">
+    <value>مبيعات المتجر لكل م²</value>
+  </data>
+  <data name="indicadores.sinCostos" xml:space="preserve">
+    <value>أدخل تكلفة وحدة المنتجات لحسابه.</value>
+  </data>
+  <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
+    <value>أدخل مساحة المتجر لحسابه.</value>
+  </data>
+  <data name="pdf.margen" xml:space="preserve">
+    <value>هامش الفترة: {0}%</value>
+  </data>
+  <data name="pdf.ventasM2Local" xml:space="preserve">
+    <value>مبيعات المتجر لكل م²: {0}</value>
+  </data>
 </root>

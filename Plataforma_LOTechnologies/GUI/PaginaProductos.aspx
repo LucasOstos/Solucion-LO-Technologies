@@ -32,6 +32,7 @@
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
 
+                <asp:HiddenField ID="hfPestania" runat="server" ClientIDMode="Static" />
                 <div class="pestanias">
                     <span id="tabCategorias" runat="server" clientidmode="Static" class="pestania" onclick="mostrarPestania('categorias')" clave="productos.tabCategorias">Categorías</span>
                     <span id="tabProductos" runat="server" clientidmode="Static" class="pestania pestania-activa" onclick="mostrarPestania('productos')" clave="productos.tabProductos">Productos</span>
@@ -50,10 +51,10 @@
                         <table class="tabla">
                             <thead>
                                 <tr>
-                                    <th runat="server" clave="productos.colCodigo">C&oacute;digo</th>
+                                    <th runat="server" clave="productos.colCodigo">Código</th>
                                     <th runat="server" clave="productos.colProducto">Producto</th>
-                                    <th runat="server" clave="productos.colCategoria">Categor&iacute;a</th>
-                                    <th runat="server" clave="layout.colSector">Sector</th>
+                                    <th runat="server" clave="productos.colCategoria">Categoría</th>
+                                    <th runat="server" clave="productos.colSectorLocal">Sector en este local</th>
                                     <th runat="server" clave="productos.colPrecio">Precio</th>
                                     <th runat="server" clave="productos.colStock">Stock</th>
                                     <th runat="server" clave="comun.acciones">Acciones</th>
@@ -66,7 +67,7 @@
                                             <td><%# Eval("CodigoInterno") %></td>
                                             <td class="texto-principal">&#128230; <%# Eval("Nombre") %></td>
                                             <td><%# Eval("NombreCategoria") %></td>
-                                            <td><%# Eval("NombreSector") %></td>
+                                            <td class='<%# Eval("NombreSector") == null ? "texto-secundario" : "" %>'><%# Eval("NombreSector") ?? Traducir("productos.sinUbicar") %></td>
                                             <td><%# Eval("Precio", "{0:$#,##0.00}") %></td>
                                             <td><%# Eval("Stock") %> <%# Traducir("comun.unidadesAbrev") %></td>
                                             <td>
@@ -142,7 +143,11 @@
                     </div>
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Precio" AssociatedControlID="tbPrecio" Clave="productos.colPrecio" />
-                        <asp:TextBox ID="tbPrecio" runat="server" CssClass="modal-campo" TextMode="Number" />
+                        <asp:TextBox ID="tbPrecio" runat="server" CssClass="modal-campo" TextMode="Number" step="any" min="0" />
+                    </div>
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Costo unitario" AssociatedControlID="tbCosto" Clave="productos.costo" />
+                        <asp:TextBox ID="tbCosto" runat="server" CssClass="modal-campo" TextMode="Number" step="any" min="0" />
                     </div>
                 </div>
 
@@ -164,7 +169,7 @@
                         <asp:DropDownList ID="ddlCategoriaProducto" runat="server" CssClass="modal-campo" />
                     </div>
                     <div class="grupo-campo">
-                        <asp:Label runat="server" Text="Sector" AssociatedControlID="ddlSectorProducto" Clave="layout.colSector" />
+                        <asp:Label ID="lblSectorProducto" runat="server" Text="Sector" AssociatedControlID="ddlSectorProducto" />
                         <asp:DropDownList ID="ddlSectorProducto" runat="server" CssClass="modal-campo">
                             <asp:ListItem Text="— Sin sector asignado —" Value="" />
                         </asp:DropDownList>

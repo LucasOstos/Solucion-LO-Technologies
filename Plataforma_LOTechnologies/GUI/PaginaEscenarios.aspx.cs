@@ -140,15 +140,16 @@ public partial class PaginaEscenarios : PaginaSegura
             return;
         }
         EscenarioBE escenario = new EscenarioBE(CodigoLocalActual, tbNombreEscenario.Text.Trim(), tbDescripcionEscenario.Text.Trim(), tbObjetivoEscenario.Text.Trim(), DateTime.Now, "Borrador");
-        // Recorre cada fila del Repeater y arma un escenario por cada sector donde se haya elegido algo distinto de "Sin cambios".
+        Dictionary<string, string> nombresSector = sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual).ToDictionary(s => s.CodigoSector.ToString(), s => s.Nombre);
         var cambios = new List<EscenarioCambio>();
         foreach (RepeaterItem item in rptCambiosPorSector.Items)
         {
             var ddlCambio = (DropDownList)item.FindControl("ddlCambioSector");
-            if (ddlCambio != null && !string.IsNullOrEmpty(ddlCambio.SelectedValue))
+            var hfSector = (HiddenField)item.FindControl("hfCodigoSectorCambio");
+            string nombreSector;
+            if (ddlCambio != null && !string.IsNullOrEmpty(ddlCambio.SelectedValue)
+                && hfSector != null && nombresSector.TryGetValue(hfSector.Value, out nombreSector))
             {
-                var sector = item.DataItem as SectorListado;
-                string nombreSector = sector?.Nombre ?? "";
                 cambios.Add(new EscenarioCambio
                 {
                     TipoCambio = "Modificación de sector",

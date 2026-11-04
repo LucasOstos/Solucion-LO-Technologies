@@ -11,12 +11,11 @@ namespace DAL
     public class SectorDAL
     {
         private AccesoDatos acceso = new AccesoDatos();
-
         public List<SectorListado> ObtenerSectoresPorLocal(int pCodigoLocal)
         {
             List<SectorListado> sectores = new List<SectorListado>();
-            string query = @"SELECT s.CodigoSector, s.CodigoLocal, s.Nombre, s.Tipo, s.Ubicacion, s.Circulacion, s.Descripcion, s.Estado,
-                            (SELECT COUNT(*) FROM Producto p WHERE p.CodigoSector = s.CodigoSector) AS CantidadProductos FROM Sector s WHERE s.CodigoLocal = @CodigoLocal ORDER BY s.Nombre";
+            string query = @"SELECT s.CodigoSector, s.CodigoLocal, s.Nombre, s.Tipo, s.Ubicacion, s.Circulacion, s.Descripcion, s.Estado, s.Superficie,
+                            (SELECT COUNT(*) FROM ProductoUbicacion pu WHERE pu.CodigoSector = s.CodigoSector) AS CantidadProductos FROM Sector s WHERE s.CodigoLocal = @CodigoLocal ORDER BY s.Nombre";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -36,7 +35,8 @@ namespace DAL
                             Circulacion = DR["Circulacion"] == DBNull.Value ? (decimal?)null : decimal.Parse(DR["Circulacion"].ToString()),
                             Descripcion = DR["Descripcion"] == DBNull.Value ? "" : DR["Descripcion"].ToString(),
                             Estado = bool.Parse(DR["Estado"].ToString()),
-                            CantidadProductos = int.Parse(DR["CantidadProductos"].ToString())
+                            CantidadProductos = int.Parse(DR["CantidadProductos"].ToString()),
+                            Superficie = DR["Superficie"] == DBNull.Value ? (decimal?)null : decimal.Parse(DR["Superficie"].ToString())
                         });
                     }
                 }
@@ -46,7 +46,7 @@ namespace DAL
         public SectorBE ObtenerSectorPorCodigo(int pCodigoSector)
         {
             SectorBE sector = null;
-            string query = @"SELECT CodigoSector, CodigoLocal, Nombre, Tipo, Ubicacion, Circulacion, Descripcion, Estado FROM Sector WHERE CodigoSector = @CodigoSector";
+            string query = @"SELECT CodigoSector, CodigoLocal, Nombre, Tipo, Ubicacion, Circulacion, Descripcion, Estado, Superficie FROM Sector WHERE CodigoSector = @CodigoSector";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -59,7 +59,8 @@ namespace DAL
                         sector = new SectorBE(int.Parse(DR["CodigoSector"].ToString()), int.Parse(DR["CodigoLocal"].ToString()), DR["Nombre"].ToString(),
                                           DR["Tipo"] == DBNull.Value ? "" : DR["Tipo"].ToString(), DR["Ubicacion"] == DBNull.Value ? "" : DR["Ubicacion"].ToString(),
                                           DR["Circulacion"] == DBNull.Value ? (decimal?)null : decimal.Parse(DR["Circulacion"].ToString()),
-                                          DR["Descripcion"] == DBNull.Value ? "" : DR["Descripcion"].ToString(), bool.Parse(DR["Estado"].ToString()));                        
+                                          DR["Descripcion"] == DBNull.Value ? "" : DR["Descripcion"].ToString(), bool.Parse(DR["Estado"].ToString()),
+                                          DR["Superficie"] == DBNull.Value ? (decimal?)null : decimal.Parse(DR["Superficie"].ToString()));
                     }
                 }
             }
@@ -67,8 +68,8 @@ namespace DAL
         }
         public int AgregarSector(SectorBE pSector)
         {
-            string query = @"INSERT INTO Sector (CodigoLocal, Nombre, Tipo, Ubicacion, Circulacion, Descripcion, Estado)
-                             VALUES (@CodigoLocal, @Nombre, @Tipo, @Ubicacion, @Circulacion, @Descripcion, @Estado);
+            string query = @"INSERT INTO Sector (CodigoLocal, Nombre, Tipo, Ubicacion, Circulacion, Descripcion, Estado, Superficie)
+                             VALUES (@CodigoLocal, @Nombre, @Tipo, @Ubicacion, @Circulacion, @Descripcion, @Estado, @Superficie);
                              SELECT CAST(SCOPE_IDENTITY() AS INT);";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -79,6 +80,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Ubicacion", (object)pSector.Ubicacion ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Circulacion", (object)pSector.Circulacion ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Descripcion", (object)pSector.Descripcion ?? DBNull.Value);
+                CM.Parameters.AddWithValue("@Superficie", (object)pSector.Superficie ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Estado", pSector.Estado);
                 CO.Open();
                 return (int)CM.ExecuteScalar();
@@ -86,7 +88,7 @@ namespace DAL
         }
         public void ModificarSector(SectorBE pSector)
         {
-            string query = @"UPDATE Sector SET Nombre = @Nombre, Tipo = @Tipo, Ubicacion = @Ubicacion, Circulacion = @Circulacion, Descripcion = @Descripcion WHERE CodigoSector = @CodigoSector";
+            string query = @"UPDATE Sector SET Nombre = @Nombre, Tipo = @Tipo, Ubicacion = @Ubicacion, Circulacion = @Circulacion, Descripcion = @Descripcion, Superficie = @Superficie WHERE CodigoSector = @CodigoSector";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -96,6 +98,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Ubicacion", (object)pSector.Ubicacion ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Circulacion", (object)pSector.Circulacion ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Descripcion", (object)pSector.Descripcion ?? DBNull.Value);
+                CM.Parameters.AddWithValue("@Superficie", (object)pSector.Superficie ?? DBNull.Value);
                 CO.Open();
                 CM.ExecuteNonQuery();
             }

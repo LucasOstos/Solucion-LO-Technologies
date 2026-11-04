@@ -23,6 +23,11 @@ namespace BLL
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             return ventaDAL.ObtenerTotalVentas(pCodigoLocal, pPeriodoDesde);
         }
+        public decimal? ObtenerMargenTotal(int pCodigoLocal, string pPeriodoDesde)
+        {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
+            return ventaDAL.ObtenerMargenTotal(pCodigoLocal, pPeriodoDesde);
+        }
         public decimal ObtenerTicketPromedio(int pCodigoLocal, string pPeriodoDesde)
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);

@@ -1937,4 +1937,55 @@
   <data name="pdf.graficoComparacion" xml:space="preserve">
     <value>Ventas estimadas: base vs. propuesto</value>
   </data>
+  <data name="productos.categoriaInactiva" xml:space="preserve">
+    <value>{0} (inactiva)</value>
+  </data>
+  <data name="productos.colSectorLocal" xml:space="preserve">
+    <value>Sector en este local</value>
+  </data>
+  <data name="productos.sectorEnLocal" xml:space="preserve">
+    <value>Sector en {0}</value>
+  </data>
+  <data name="productos.sinUbicar" xml:space="preserve">
+    <value>Sin ubicar</value>
+  </data>
+  <data name="stock.sinProductosCarga" xml:space="preserve">
+    <value>Este local no tiene productos cargados. Cargalos desde Productos y categorías.</value>
+  </data>
+  <data name="stock.productoSinUbicar" xml:space="preserve">
+    <value>{0} (sin ubicar en este local)</value>
+  </data>
+  <data name="layout.superficie" xml:space="preserve">
+    <value>Superficie (m²)</value>
+  </data>
+  <data name="layout.colSuperficie" xml:space="preserve">
+    <value>Superficie</value>
+  </data>
+  <data name="productos.costo" xml:space="preserve">
+    <value>Costo unitario</value>
+  </data>
+  <data name="indicadores.colVentasM2" xml:space="preserve">
+    <value>Ventas/m²</value>
+  </data>
+  <data name="indicadores.ventasPeriodo" xml:space="preserve">
+    <value>Ventas del período</value>
+  </data>
+  <data name="indicadores.margenPeriodo" xml:space="preserve">
+    <value>Margen del período</value>
+  </data>
+  <data name="indicadores.ventasM2Local" xml:space="preserve">
+    <value>Ventas por m² del local</value>
+  </data>
+  <data name="indicadores.sinCostos" xml:space="preserve">
+    <value>Cargá el costo unitario de los productos para calcularlo.</value>
+  </data>
+  <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
+    <value>Cargá la superficie del local para calcularlo.</value>
+  </data>
+  <data name="pdf.margen" xml:space="preserve">
+    <value>Margen del período: {0}%</value>
+  </data>
+  <data name="pdf.ventasM2Local" xml:space="preserve">
+    <value>Ventas por m² del local: {0}</value>
+  </data>
 </root>

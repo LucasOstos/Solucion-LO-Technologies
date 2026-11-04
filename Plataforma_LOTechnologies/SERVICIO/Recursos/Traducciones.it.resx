@@ -1937,4 +1937,55 @@
   <data name="pdf.graficoComparacion" xml:space="preserve">
     <value>Vendite stimate: base vs proposto</value>
   </data>
+  <data name="productos.categoriaInactiva" xml:space="preserve">
+    <value>{0} (inattiva)</value>
+  </data>
+  <data name="productos.colSectorLocal" xml:space="preserve">
+    <value>Reparto in questo punto vendita</value>
+  </data>
+  <data name="productos.sectorEnLocal" xml:space="preserve">
+    <value>Reparto in {0}</value>
+  </data>
+  <data name="productos.sinUbicar" xml:space="preserve">
+    <value>Non collocato</value>
+  </data>
+  <data name="stock.sinProductosCarga" xml:space="preserve">
+    <value>Questo punto vendita non ha prodotti. Aggiungili da Prodotti e categorie.</value>
+  </data>
+  <data name="stock.productoSinUbicar" xml:space="preserve">
+    <value>{0} (non collocato in questo punto vendita)</value>
+  </data>
+  <data name="layout.superficie" xml:space="preserve">
+    <value>Superficie (m²)</value>
+  </data>
+  <data name="layout.colSuperficie" xml:space="preserve">
+    <value>Superficie</value>
+  </data>
+  <data name="productos.costo" xml:space="preserve">
+    <value>Costo unitario</value>
+  </data>
+  <data name="indicadores.colVentasM2" xml:space="preserve">
+    <value>Vendite/m²</value>
+  </data>
+  <data name="indicadores.ventasPeriodo" xml:space="preserve">
+    <value>Vendite del periodo</value>
+  </data>
+  <data name="indicadores.margenPeriodo" xml:space="preserve">
+    <value>Margine del periodo</value>
+  </data>
+  <data name="indicadores.ventasM2Local" xml:space="preserve">
+    <value>Vendite per m² del punto vendita</value>
+  </data>
+  <data name="indicadores.sinCostos" xml:space="preserve">
+    <value>Inserisci il costo unitario dei prodotti per calcolarlo.</value>
+  </data>
+  <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
+    <value>Inserisci la superficie del punto vendita per calcolarlo.</value>
+  </data>
+  <data name="pdf.margen" xml:space="preserve">
+    <value>Margine del periodo: {0}%</value>
+  </data>
+  <data name="pdf.ventasM2Local" xml:space="preserve">
+    <value>Vendite per m² del punto vendita: {0}</value>
+  </data>
 </root>

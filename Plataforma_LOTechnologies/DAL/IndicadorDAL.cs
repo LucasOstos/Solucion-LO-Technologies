@@ -14,13 +14,19 @@ namespace DAL
         public List<IndicadorSectorListado> CalcularIndicadoresPorSector(int pCodigoLocal, string pPeriodoDesde)
         {
             var indicadores = new List<IndicadorSectorListado>();
-            string query = @"SELECT s.CodigoSector, s.Nombre AS Sector, s.Circulacion, ISNULL((SELECT SUM(v.ImporteTotal) FROM Venta v
-                            INNER JOIN Producto p ON v.CodigoProducto = p.CodigoProducto WHERE p.CodigoSector = s.CodigoSector
+            string query = @"SELECT s.CodigoSector, s.Nombre AS Sector, s.Circulacion, s.Superficie, ISNULL((SELECT SUM(v.ImporteTotal) FROM Venta v
+                            INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal WHERE pu.CodigoSector = s.CodigoSector
                             AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS Ventas, ISNULL((SELECT SUM(v.Cantidad) FROM Venta v
-                            INNER JOIN Producto p ON v.CodigoProducto = p.CodigoProducto WHERE p.CodigoSector = s.CodigoSector
+                            INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal WHERE pu.CodigoSector = s.CodigoSector
                             AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS UnidadesVendidas, ISNULL((SELECT SUM(st.CantidadDisponible) FROM Stock st
-                            INNER JOIN Producto p ON st.CodigoProducto = p.CodigoProducto
-                            WHERE p.CodigoSector = s.CodigoSector AND st.CodigoLocal = @CodigoLocal), 0) AS StockDisponible FROM Sector s
+                            INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = st.CodigoProducto AND pu.CodigoLocal = st.CodigoLocal
+                            WHERE pu.CodigoSector = s.CodigoSector AND st.CodigoLocal = @CodigoLocal), 0) AS StockDisponible,
+                            ISNULL((SELECT SUM(v.ImporteTotal) FROM Venta v INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
+                            INNER JOIN Producto p ON p.CodigoProducto = v.CodigoProducto WHERE pu.CodigoSector = s.CodigoSector AND p.Costo IS NOT NULL
+                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS VentasConCosto,
+                            ISNULL((SELECT SUM(v.Cantidad * p.Costo) FROM Venta v INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
+                            INNER JOIN Producto p ON p.CodigoProducto = v.CodigoProducto WHERE pu.CodigoSector = s.CodigoSector AND p.Costo IS NOT NULL
+                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS CostoVendido FROM Sector s
                             WHERE s.CodigoLocal = @CodigoLocal";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -38,12 +44,17 @@ namespace DAL
                         decimal circulacion = DR["Circulacion"] == DBNull.Value ? 0 : decimal.Parse(DR["Circulacion"].ToString());
                         decimal rotacion = stockDisponible > 0 ? Math.Min(Math.Round((unidadesVendidas / (decimal)stockDisponible) * 100, 1), 100) : 0;
                         int indiceGlobal = (int)Math.Round((circulacion + rotacion) / 2, 0);
+                        decimal? superficie = DR["Superficie"] == DBNull.Value ? (decimal?)null : decimal.Parse(DR["Superficie"].ToString());
+                        decimal ventasConCosto = decimal.Parse(DR["VentasConCosto"].ToString());
+                        decimal costoVendido = decimal.Parse(DR["CostoVendido"].ToString());
                         indicadores.Add(new IndicadorSectorListado
                         {
                             CodigoSector = int.Parse(DR["CodigoSector"].ToString()),
                             Sector = DR["Sector"].ToString(),
                             Ventas = ventas,
-                            Margen = 0,
+                            Margen = CalcularMargen(ventasConCosto, costoVendido),
+                            Superficie = superficie,
+                            VentasPorM2 = CalcularVentasPorM2(ventas, superficie),
                             Circulacion = circulacion,
                             Rotacion = rotacion,
                             IndiceGlobal = indiceGlobal,
@@ -53,6 +64,16 @@ namespace DAL
                 }
             }
             return indicadores;
+        }
+        public static decimal? CalcularMargen(decimal pVentasConCosto, decimal pCostoVendido)
+        {
+            if (pVentasConCosto <= 0) return null;
+            return Math.Round((pVentasConCosto - pCostoVendido) / pVentasConCosto * 100, 1);
+        }
+        public static decimal? CalcularVentasPorM2(decimal pVentas, decimal? pSuperficie)
+        {
+            if (pSuperficie == null || pSuperficie <= 0) return null;
+            return Math.Round(pVentas / pSuperficie.Value, 0);
         }
         private string ClasificarIndice(int indice)
         {

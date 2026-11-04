@@ -1937,4 +1937,55 @@
   <data name="pdf.graficoComparacion" xml:space="preserve">
     <value>推定売上：ベース対提案</value>
   </data>
+  <data name="productos.categoriaInactiva" xml:space="preserve">
+    <value>{0}（無効）</value>
+  </data>
+  <data name="productos.colSectorLocal" xml:space="preserve">
+    <value>この店舗の売り場</value>
+  </data>
+  <data name="productos.sectorEnLocal" xml:space="preserve">
+    <value>{0} の売り場</value>
+  </data>
+  <data name="productos.sinUbicar" xml:space="preserve">
+    <value>未配置</value>
+  </data>
+  <data name="stock.sinProductosCarga" xml:space="preserve">
+    <value>この店舗には商品がありません。「商品とカテゴリ」から登録してください。</value>
+  </data>
+  <data name="stock.productoSinUbicar" xml:space="preserve">
+    <value>{0}（この店舗では未配置）</value>
+  </data>
+  <data name="layout.superficie" xml:space="preserve">
+    <value>面積（m²）</value>
+  </data>
+  <data name="layout.colSuperficie" xml:space="preserve">
+    <value>面積</value>
+  </data>
+  <data name="productos.costo" xml:space="preserve">
+    <value>単価原価</value>
+  </data>
+  <data name="indicadores.colVentasM2" xml:space="preserve">
+    <value>売上/m²</value>
+  </data>
+  <data name="indicadores.ventasPeriodo" xml:space="preserve">
+    <value>期間の売上</value>
+  </data>
+  <data name="indicadores.margenPeriodo" xml:space="preserve">
+    <value>期間の利益率</value>
+  </data>
+  <data name="indicadores.ventasM2Local" xml:space="preserve">
+    <value>店舗の m² あたり売上</value>
+  </data>
+  <data name="indicadores.sinCostos" xml:space="preserve">
+    <value>計算するには商品の単価原価を登録してください。</value>
+  </data>
+  <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
+    <value>計算するには店舗の面積を登録してください。</value>
+  </data>
+  <data name="pdf.margen" xml:space="preserve">
+    <value>期間の利益率：{0}%</value>
+  </data>
+  <data name="pdf.ventasM2Local" xml:space="preserve">
+    <value>店舗の m² あたり売上：{0}</value>
+  </data>
 </root>

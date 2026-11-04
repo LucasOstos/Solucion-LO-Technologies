@@ -27,7 +27,7 @@ public partial class PaginaStockVentas : PaginaSegura
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {        
+    {
         if (!IsPostBack)
         {
             CargarDropdownLocales();
@@ -35,7 +35,6 @@ public partial class PaginaStockVentas : PaginaSegura
             ActualizarVistas();
         }
     }
-
     #region Funciones    
     private void CargarDropdownLocales()
     {
@@ -48,12 +47,17 @@ public partial class PaginaStockVentas : PaginaSegura
     }
     private void CargarDropdownProductos()
     {
-        List<ProductoListado> productos = productoBLL.ObtenerProductosListado(CodigoLocalActual, "", null);
+        List<ProductoListado> productos = CodigoLocalActual > 0 ? productoBLL.ObtenerProductosListado(CodigoLocalActual, "", null) : new List<ProductoListado>();
         ddlProductoCarga.Items.Clear();
-        foreach (ProductoListado producto in productos)
+        foreach (ProductoListado producto in productos.Where(p => p.Estado == 1))
         {
-            ddlProductoCarga.Items.Add(new ListItem($"{producto.CodigoInterno} - {producto.Nombre}", producto.CodigoProducto.ToString()));
+            string texto = $"{producto.CodigoInterno} - {producto.Nombre}";
+            if (producto.NombreSector == null) texto = Traducir("stock.productoSinUbicar", texto);
+            ddlProductoCarga.Items.Add(new ListItem(texto, producto.CodigoProducto.ToString()));
         }
+        bool hayProductos = ddlProductoCarga.Items.Count > 0;
+        lblSinProductosCarga.Visible = !hayProductos;
+        btnGuardarCarga.Enabled = hayProductos;
     }
     private string ObtenerPeriodoDesde()
     {
@@ -83,7 +87,8 @@ public partial class PaginaStockVentas : PaginaSegura
         litTotalVentas.Text = totalVentas.ToString("$#,##0");
         litTicketPromedio.Text = ticketPromedio.ToString("$#,##0");
         litUnidadesVendidas.Text = unidadesVendidas.ToString();
-        litMargenTotal.Text = "-";
+        decimal? margen = ventaBLL.ObtenerMargenTotal(CodigoLocalActual, periodoDesde);
+        litMargenTotal.Text = margen == null ? "-" : margen.Value.ToString("0.#") + "%";
     }
     private void CargarDetalleVentas()
     {
@@ -134,13 +139,22 @@ public partial class PaginaStockVentas : PaginaSegura
     {
         hfCodigoStockEdicion.Value = "";
         ddlTipoCarga.SelectedIndex = 0;
+        ddlTipoCarga.Enabled = true;
+        ddlProductoCarga.Enabled = true;
         if (ddlProductoCarga.Items.Count > 0) ddlProductoCarga.SelectedIndex = 0;
         tbCantidadCarga.Text = "";
         tbImporteCarga.Text = "";
+        tbMinimoCarga.Text = "";
+        tbMaximoCarga.Text = "";
         tbFechaCarga.Text = "";
         pnlModalCarga.Style["display"] = "flex";
     }
     protected void btnAplicar_Click(object sender, EventArgs e) { ActualizarVistas(); }
+    protected void ddlLocal_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        CargarDropdownProductos();
+        ActualizarVistas();
+    }
     protected void btnCancelarCarga_Click(object sender, EventArgs e) { pnlModalCarga.Style["display"] = "none"; }
     protected void btnGuardarCarga_Click(object sender, EventArgs e)
     {
@@ -173,8 +187,7 @@ public partial class PaginaStockVentas : PaginaSegura
         string periodo = fecha.ToString("yyyy-MM");
         if (ddlTipoCarga.SelectedValue == "Venta")
         {
-            decimal importe;
-            decimal.TryParse(tbImporteCarga.Text.Trim(), out importe);
+            decimal importe = LeerDecimal(tbImporteCarga.Text) ?? 0;
             decimal precioUnitario = cantidad > 0 ? importe / cantidad : 0;
             VentaBE venta = new VentaBE(CodigoLocalActual, codigoProducto, fecha, cantidad, precioUnitario, importe, periodo);
             ventaBLL.CrearVenta(venta);
@@ -203,9 +216,21 @@ public partial class PaginaStockVentas : PaginaSegura
             StockBE stock = stockBLL.ObtenerStockPorCodigo(codigoStock);
             hfCodigoStockEdicion.Value = stock.CodigoStock.ToString();
             ddlTipoCarga.SelectedValue = "Stock";
+            // "Actualizar" corrige el stock de ESE producto, el producto y el tipo no se pueden cambiar
+            ddlTipoCarga.Enabled = false;
+            ddlProductoCarga.Enabled = false;
+            // Si el producto se desactivó no está en la lista: se agrega para poder actualizar su stock
+            if (ddlProductoCarga.Items.FindByValue(stock.CodigoProducto.ToString()) == null)
+            {
+                ProductoBE producto = productoBLL.ObtenerProductoPorCodigo(stock.CodigoProducto);
+                ddlProductoCarga.Items.Add(new ListItem(producto == null ? stock.CodigoProducto.ToString() : $"PROD-{producto.NumeroSerie:D3} - {producto.Nombre}", stock.CodigoProducto.ToString()));
+                btnGuardarCarga.Enabled = true;
+            }
             ddlProductoCarga.SelectedValue = stock.CodigoProducto.ToString();
             tbCantidadCarga.Text = stock.CantidadDisponible.ToString();
             tbImporteCarga.Text = "";
+            tbMinimoCarga.Text = stock.Minimo?.ToString() ?? "";
+            tbMaximoCarga.Text = stock.Maximo?.ToString() ?? "";
             tbFechaCarga.Text = DateTime.Now.ToString("yyyy-MM-dd");
             pnlModalCarga.Style["display"] = "flex";
         }

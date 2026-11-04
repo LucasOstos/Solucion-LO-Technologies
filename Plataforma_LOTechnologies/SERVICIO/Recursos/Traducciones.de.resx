@@ -1937,4 +1937,55 @@
   <data name="pdf.graficoComparacion" xml:space="preserve">
     <value>Geschätzter Umsatz: Basis vs. Vorschlag</value>
   </data>
+  <data name="productos.categoriaInactiva" xml:space="preserve">
+    <value>{0} (inaktiv)</value>
+  </data>
+  <data name="productos.colSectorLocal" xml:space="preserve">
+    <value>Bereich in dieser Filiale</value>
+  </data>
+  <data name="productos.sectorEnLocal" xml:space="preserve">
+    <value>Bereich in {0}</value>
+  </data>
+  <data name="productos.sinUbicar" xml:space="preserve">
+    <value>Nicht platziert</value>
+  </data>
+  <data name="stock.sinProductosCarga" xml:space="preserve">
+    <value>Diese Filiale hat noch keine Produkte. Legen Sie sie unter Produkte und Kategorien an.</value>
+  </data>
+  <data name="stock.productoSinUbicar" xml:space="preserve">
+    <value>{0} (in dieser Filiale nicht platziert)</value>
+  </data>
+  <data name="layout.superficie" xml:space="preserve">
+    <value>Fläche (m²)</value>
+  </data>
+  <data name="layout.colSuperficie" xml:space="preserve">
+    <value>Fläche</value>
+  </data>
+  <data name="productos.costo" xml:space="preserve">
+    <value>Stückkosten</value>
+  </data>
+  <data name="indicadores.colVentasM2" xml:space="preserve">
+    <value>Umsatz/m²</value>
+  </data>
+  <data name="indicadores.ventasPeriodo" xml:space="preserve">
+    <value>Umsatz im Zeitraum</value>
+  </data>
+  <data name="indicadores.margenPeriodo" xml:space="preserve">
+    <value>Marge im Zeitraum</value>
+  </data>
+  <data name="indicadores.ventasM2Local" xml:space="preserve">
+    <value>Filialumsatz pro m²</value>
+  </data>
+  <data name="indicadores.sinCostos" xml:space="preserve">
+    <value>Erfassen Sie die Stückkosten der Produkte, um sie zu berechnen.</value>
+  </data>
+  <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
+    <value>Erfassen Sie die Fläche der Filiale, um ihn zu berechnen.</value>
+  </data>
+  <data name="pdf.margen" xml:space="preserve">
+    <value>Marge im Zeitraum: {0} %</value>
+  </data>
+  <data name="pdf.ventasM2Local" xml:space="preserve">
+    <value>Filialumsatz pro m²: {0}</value>
+  </data>
 </root>

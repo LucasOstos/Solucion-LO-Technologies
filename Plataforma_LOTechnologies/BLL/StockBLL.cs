@@ -39,8 +39,19 @@ namespace BLL
             }
             else
             {
-                int codigoNuevo = stockDAL.AgregarStock(pStock);
-                digitos.ActualizarDigitoFila("Stock", codigoNuevo);
+                // Un producto tiene un solo registro de stock por local: si ya existe se actualiza en vez de duplicarlo
+                StockBE existente = stockDAL.ObtenerStockPorProducto(pStock.CodigoLocal, pStock.CodigoProducto);
+                if (existente != null)
+                {
+                    pStock.CodigoStock = existente.CodigoStock;
+                    stockDAL.ActualizarStock(pStock);
+                    digitos.ActualizarDigitoFila("Stock", pStock.CodigoStock);
+                }
+                else
+                {
+                    int codigoNuevo = stockDAL.AgregarStock(pStock);
+                    digitos.ActualizarDigitoFila("Stock", codigoNuevo);
+                }
             }
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Cargar datos de stock y ventas", "Gestión operaciones", 2);
         }

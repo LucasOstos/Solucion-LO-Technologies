@@ -18,7 +18,9 @@ namespace DAL
                              s.CodigoSector AS CodigoSectorActual, s.Nombre AS NombreSectorActual, s.Circulacion, ISNULL((SELECT SUM(v.Cantidad) FROM Venta v
                              WHERE v.CodigoProducto = p.CodigoProducto AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS Ventas,
                              ISNULL((SELECT st.CantidadDisponible FROM Stock st WHERE st.CodigoProducto = p.CodigoProducto AND st.CodigoLocal = @CodigoLocal), 0) AS Stock
-                             FROM Producto p INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria INNER JOIN Sector s ON p.CodigoSector = s.CodigoSector WHERE s.CodigoLocal = @CodigoLocal";
+                             FROM Producto p INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria
+                             INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = p.CodigoProducto AND pu.CodigoLocal = @CodigoLocal
+                             INNER JOIN Sector s ON pu.CodigoSector = s.CodigoSector WHERE s.CodigoLocal = @CodigoLocal";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {

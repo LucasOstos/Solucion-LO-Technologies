@@ -34,7 +34,7 @@
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
 
                 <div class="filtros">
-                    <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" ClaveAria="comun.local" />
+                    <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" ClaveAria="comun.local" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
                     <asp:DropDownList ID="ddlPeriodo" runat="server" CssClass="selector">
                         <asp:ListItem Text="Último mes" Value="ultimo_mes" Clave="stock.ultimoMes" />
                         <asp:ListItem Text="Últimos 3 meses" Value="3_meses" Clave="stock.ultimos3" />
@@ -48,6 +48,7 @@
                     <asp:Button ID="btnAplicar" runat="server" CssClass="boton-buscar" Text="Aplicar" Clave="comun.aplicar" OnClick="btnAplicar_Click" CausesValidation="false" />
                 </div>
 
+                <asp:HiddenField ID="hfPestania" runat="server" ClientIDMode="Static" />
                 <div class="pestanias">
                     <span id="tabVentas" runat="server" clientidmode="Static" class="pestania pestania-activa" onclick="mostrarPestania('ventas')" clave="stock.tabVentas">Datos de Ventas</span>
                     <span id="tabStock" runat="server" clientidmode="Static" class="pestania" onclick="mostrarPestania('stock')" clave="stock.tabStock">Datos de Stock</span>
@@ -113,7 +114,7 @@
                                             <td><%# Eval("Categoria") %></td>
                                             <td><%# Eval("Unidades") %></td>
                                             <td><%# Eval("Monto", "{0:$#,##0.00}") %></td>
-                                            <td><%# Eval("Margen") %>%</td>
+                                            <td><%# Eval("Margen") == null ? "-" : Eval("Margen") + "%" %></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -178,7 +179,7 @@
                 <asp:HiddenField ID="hfCodigoStockEdicion" runat="server" />
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Tipo de dato *" AssociatedControlID="ddlTipoCarga" Clave="stock.tipoDato" />
-                    <asp:DropDownList ID="ddlTipoCarga" runat="server" CssClass="modal-campo">
+                    <asp:DropDownList ID="ddlTipoCarga" runat="server" CssClass="modal-campo" ClientIDMode="Static" onchange="actualizarCamposCarga()">
                         <asp:ListItem Text="Venta" Value="Venta" Clave="valor.venta" />
                         <asp:ListItem Text="Stock" Value="Stock" Clave="valor.stock" />
                     </asp:DropDownList>
@@ -187,6 +188,8 @@
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Producto / Categoría *" AssociatedControlID="ddlProductoCarga" Clave="stock.productoCategoria" />
                     <asp:DropDownList ID="ddlProductoCarga" runat="server" CssClass="modal-campo" />
+                    <asp:Label ID="lblSinProductosCarga" runat="server" CssClass="texto-secundario" Visible="false"
+                        Text="Este local no tiene productos cargados. Cargalos desde Productos y categorías." Clave="stock.sinProductosCarga" />
                 </div>
 
                 <div class="fila-formulario">
@@ -196,19 +199,19 @@
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="tbCantidadCarga" CssClass="campo-error"
                             ErrorMessage="Ingrese la cantidad" Clave="stock.errCantidad" Display="Dynamic" ValidationGroup="vgCarga" />
                     </div>
-                    <div class="grupo-campo">
+                    <div class="grupo-campo" id="grpImporteCarga">
                         <asp:Label runat="server" Text="Importe total (si es venta)" AssociatedControlID="tbImporteCarga" Clave="stock.importe" />
-                        <asp:TextBox ID="tbImporteCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
+                        <asp:TextBox ID="tbImporteCarga" runat="server" CssClass="modal-campo" TextMode="Number" step="any" min="0" />
                     </div>
-                    <div class="fila-formulario">
-                        <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Stock mínimo (si es stock)" AssociatedControlID="tbMinimoCarga" Clave="stock.minimo" />
-                            <asp:TextBox ID="tbMinimoCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
-                        </div>
-                        <div class="grupo-campo">
-                            <asp:Label runat="server" Text="Stock máximo (si es stock)" AssociatedControlID="tbMaximoCarga" Clave="stock.maximo" />
-                            <asp:TextBox ID="tbMaximoCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
-                        </div>
+                </div>
+                <div class="fila-formulario" id="filaMinMaxCarga">
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Stock mínimo (si es stock)" AssociatedControlID="tbMinimoCarga" Clave="stock.minimo" />
+                        <asp:TextBox ID="tbMinimoCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
+                    </div>
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Stock máximo (si es stock)" AssociatedControlID="tbMaximoCarga" Clave="stock.maximo" />
+                        <asp:TextBox ID="tbMaximoCarga" runat="server" CssClass="modal-campo" TextMode="Number" />
                     </div>
                 </div>
 

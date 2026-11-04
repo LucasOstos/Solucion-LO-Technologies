@@ -11,13 +11,15 @@ namespace DAL
     public class VentaDAL
     {
         private AccesoDatos acceso = new AccesoDatos();
-
         public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde)
         {
             List<VentaListado> ventas = new List<VentaListado>();
-            string query = @"SELECT v.Periodo, s.Nombre AS Sector, c.Nombre AS Categoria, SUM(v.Cantidad) AS Unidades, SUM(v.ImporteTotal) AS Monto FROM Venta v
+            string query = @"SELECT v.Periodo, s.Nombre AS Sector, c.Nombre AS Categoria, SUM(v.Cantidad) AS Unidades, SUM(v.ImporteTotal) AS Monto,
+                             SUM(CASE WHEN p.Costo IS NULL THEN 0 ELSE v.ImporteTotal END) AS VentasConCosto,
+                             SUM(CASE WHEN p.Costo IS NULL THEN 0 ELSE v.Cantidad * p.Costo END) AS CostoVendido FROM Venta v
                              INNER JOIN Producto p ON v.CodigoProducto = p.CodigoProducto INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria
-                             LEFT JOIN Sector s ON p.CodigoSector = s.CodigoSector WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde
+                             LEFT JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
+                             LEFT JOIN Sector s ON pu.CodigoSector = s.CodigoSector WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde
                              GROUP BY v.Periodo, s.Nombre, c.Nombre ORDER BY v.Periodo DESC";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
@@ -36,12 +38,31 @@ namespace DAL
                             Categoria = DR["Categoria"].ToString(),
                             Unidades = int.Parse(DR["Unidades"].ToString()),
                             Monto = decimal.Parse(DR["Monto"].ToString()),
-                            Margen = 0
+                            Margen = IndicadorDAL.CalcularMargen(decimal.Parse(DR["VentasConCosto"].ToString()), decimal.Parse(DR["CostoVendido"].ToString()))
                         });
                     }
                 }
             }
             return ventas;
+        }
+        // Margen del local en el período, sobre las ventas de productos con costo cargado (null = ninguno tiene costo)
+        public decimal? ObtenerMargenTotal(int pCodigoLocal, string pPeriodoDesde)
+        {
+            string query = @"SELECT ISNULL(SUM(v.ImporteTotal), 0) AS VentasConCosto, ISNULL(SUM(v.Cantidad * p.Costo), 0) AS CostoVendido FROM Venta v
+                             INNER JOIN Producto p ON p.CodigoProducto = v.CodigoProducto
+                             WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND p.Costo IS NOT NULL";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
+                CM.Parameters.AddWithValue("@PeriodoDesde", pPeriodoDesde);
+                CO.Open();
+                using (SqlDataReader DR = CM.ExecuteReader())
+                {
+                    if (!DR.Read()) return null;
+                    return IndicadorDAL.CalcularMargen(decimal.Parse(DR["VentasConCosto"].ToString()), decimal.Parse(DR["CostoVendido"].ToString()));
+                }
+            }
         }
         public decimal ObtenerTotalVentas(int pCodigoLocal, string pPeriodoDesde)
         {

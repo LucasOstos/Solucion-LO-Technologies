@@ -29,7 +29,7 @@ public partial class PaginaLayoutSectores : PaginaSegura
     }
     private static readonly string[] extensionesValidas = { ".png", ".jpg", ".jpeg", ".pdf" };
     protected void Page_Load(object sender, EventArgs e)
-    {        
+    {
         if (!IsPostBack)
         {
             CargarDropdownLocales();
@@ -158,7 +158,6 @@ public partial class PaginaLayoutSectores : PaginaSegura
         return sb.ToString();
     }
     #endregion
-
     protected void ddlLocal_SelectedIndexChanged(object sender, EventArgs e)
     {
         CodigoLocalActual = int.Parse(ddlLocal.SelectedValue);
@@ -241,6 +240,8 @@ public partial class PaginaLayoutSectores : PaginaSegura
         btnGuardarSector.Text = Traducir("layout.btnCrearSector");
         tbNombreSector.Text = "";
         tbCirculacionSector.Text = "";
+        tbSuperficieSector.Text = "";
+        ddlTipoSector.SelectedIndex = 0;
         ddlUbicacionSector.SelectedIndex = 0;
         tbDescripcionSector.Text = "";
         pnlModalSector.Style["display"] = "flex";
@@ -256,14 +257,10 @@ public partial class PaginaLayoutSectores : PaginaSegura
             pnlModalSector.Style["display"] = "flex";
             return;
         }
-        decimal? circulacion = null;
-        decimal circulacionParsed;
-        if (decimal.TryParse(tbCirculacionSector.Text.Trim(), out circulacionParsed))
-        {
-            circulacion = circulacionParsed;
-        }
+        decimal? circulacion = LeerDecimal(tbCirculacionSector.Text);
+        decimal? superficie = LeerDecimal(tbSuperficieSector.Text);
         bool esEdicion = hfEsEdicionSector.Value == "true";
-        SectorBE sector = new SectorBE(esEdicion ? int.Parse(hfCodigoSector.Value) : 0, CodigoLocalActual, tbNombreSector.Text.Trim(), ddlTipoSector.SelectedValue, ddlUbicacionSector.SelectedValue, circulacion, tbDescripcionSector.Text.Trim(), true);       
+        SectorBE sector = new SectorBE(esEdicion ? int.Parse(hfCodigoSector.Value) : 0, CodigoLocalActual, tbNombreSector.Text.Trim(), ddlTipoSector.SelectedValue, ddlUbicacionSector.SelectedValue, circulacion, tbDescripcionSector.Text.Trim(), true, superficie);       
         if (esEdicion) { sectorBLL.ModificarSector(sector); }
         else { sectorBLL.CrearSector(sector); }
         pnlModalSector.Style["display"] = "none";
@@ -296,8 +293,10 @@ public partial class PaginaLayoutSectores : PaginaSegura
             litTituloModalSector.Text = Traducir("layout.modalSectorEditar");
             btnGuardarSector.Text = Traducir("comun.guardarCambios");
             tbNombreSector.Text = sector.Nombre;
-            ddlUbicacionSector.SelectedValue = sector.Ubicacion;
-            tbCirculacionSector.Text = sector.Circulacion?.ToString() ?? "";
+            if (ddlTipoSector.Items.FindByValue(sector.Tipo ?? "") != null) ddlTipoSector.SelectedValue = sector.Tipo;
+            if (ddlUbicacionSector.Items.FindByValue(sector.Ubicacion ?? "") != null) ddlUbicacionSector.SelectedValue = sector.Ubicacion;
+            tbCirculacionSector.Text = MostrarDecimal(sector.Circulacion);
+            tbSuperficieSector.Text = MostrarDecimal(sector.Superficie);
             tbDescripcionSector.Text = sector.Descripcion;
             pnlModalSector.Style["display"] = "flex";
         }

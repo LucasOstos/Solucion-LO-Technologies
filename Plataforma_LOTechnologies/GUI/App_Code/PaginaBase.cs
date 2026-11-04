@@ -33,6 +33,24 @@ public class PaginaBase : Page, IObservadorIdioma
         GestorIdioma.Instancia.Suscribir(this);
         base.OnInit(e);
     }
+    protected override void OnLoad(EventArgs e)
+    {
+        if (IsPostBack) OcultarModales(this);
+        base.OnLoad(e);
+    }
+    private const string CLASE_MODAL = "modal-fondo";
+    private static void OcultarModales(Control pRaiz)
+    {
+        foreach (Control control in pRaiz.Controls)
+        {
+            Panel panel = control as Panel;
+            if (panel != null && (" " + panel.CssClass + " ").Contains(" " + CLASE_MODAL + " "))
+            {
+                panel.Style["display"] = "none";
+            }
+            if (control.HasControls()) OcultarModales(control);
+        }
+    }
     protected override void OnUnload(EventArgs e)
     {
         GestorIdioma.Instancia.Desuscribir(this);
@@ -67,6 +85,19 @@ public class PaginaBase : Page, IObservadorIdioma
         string valor = pValor == null ? "" : pValor.ToString();
         string clave = ValoresTraducibles.ObtenerClave(valor);
         return clave == null ? valor : Traducir(clave);
+    }
+    protected static decimal? LeerDecimal(string pTexto)
+    {
+        string texto = (pTexto ?? "").Trim();
+        if (texto == "") return null;
+        decimal valor;
+        if (decimal.TryParse(texto, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out valor)) return valor;
+        if (decimal.TryParse(texto, out valor)) return valor;
+        return null;
+    }
+    protected static string MostrarDecimal(decimal? pValor)
+    {
+        return pValor == null ? "" : pValor.Value.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture);
     }
     protected string NombreIdioma(Idioma pIdioma)
     {

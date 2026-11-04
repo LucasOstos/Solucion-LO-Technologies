@@ -35,7 +35,7 @@
                         <div class="fila-formulario">
                             <div class="grupo-campo">
                                 <asp:Label runat="server" Text="Local *" AssociatedControlID="ddlLocal" Clave="comun.localObligatorio" />
-                                <asp:DropDownList ID="ddlLocal" runat="server" CssClass="modal-campo" />
+                                <asp:DropDownList ID="ddlLocal" runat="server" CssClass="modal-campo" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
                             </div>
                             <div class="grupo-campo">
                                 <asp:Label runat="server" Text="Tipo de Reporte *" AssociatedControlID="ddlTipoReporte" Clave="reportes.tipo" />
@@ -86,14 +86,14 @@
                         <div class="grupo-campo">
                             <label runat="server" clave="reportes.secciones">Secciones a incluir</label>
                             <div class="rep-checks">
-                                <asp:CheckBox ID="chkResumenEjecutivo" runat="server" Text="Resumen Ejecutivo" Clave="reportes.resumen" Checked="true" />
-                                <asp:CheckBox ID="chkComparacionEscenarios" runat="server" Text="Comparación de Escenarios" Clave="principal.comparacion.titulo" Checked="true" />
-                                <asp:CheckBox ID="chkDetallePorSector" runat="server" Text="Detalle por Sector" Clave="reportes.detalleSector" Checked="true" />
-                                <asp:CheckBox ID="chkEstadoStock" runat="server" Text="Estado de Stock" Clave="reportes.estadoStock" Checked="true" />
-                                <asp:CheckBox ID="chkIndicadoresPrincipales" runat="server" Text="Indicadores Principales" Clave="reportes.indicadoresPrincipales" Checked="true" />
-                                <asp:CheckBox ID="chkRecomendaciones" runat="server" Text="Recomendaciones" Clave="reportes.recomendaciones" Checked="true" />
-                                <asp:CheckBox ID="chkDetalleProductos" runat="server" Text="Detalle de Productos" Clave="reportes.detalleProductos" Checked="true" />
-                                <asp:CheckBox ID="chkHistorialVentas" runat="server" Text="Historial de Ventas" Clave="reportes.historialVentas" Checked="true" />
+                                <asp:CheckBox ID="chkResumenEjecutivo" runat="server" CssClass="rep-check" Text="Resumen Ejecutivo" Clave="reportes.resumen" Checked="true" />
+                                <asp:CheckBox ID="chkComparacionEscenarios" runat="server" CssClass="rep-check" Text="Comparación de Escenarios" Clave="principal.comparacion.titulo" Checked="true" />
+                                <asp:CheckBox ID="chkDetallePorSector" runat="server" CssClass="rep-check" Text="Detalle por Sector" Clave="reportes.detalleSector" Checked="true" />
+                                <asp:CheckBox ID="chkEstadoStock" runat="server" CssClass="rep-check" Text="Estado de Stock" Clave="reportes.estadoStock" Checked="true" />
+                                <asp:CheckBox ID="chkIndicadoresPrincipales" runat="server" CssClass="rep-check" Text="Indicadores Principales" Clave="reportes.indicadoresPrincipales" Checked="true" />
+                                <asp:CheckBox ID="chkRecomendaciones" runat="server" CssClass="rep-check" Text="Recomendaciones" Clave="reportes.recomendaciones" Checked="true" />
+                                <asp:CheckBox ID="chkDetalleProductos" runat="server" CssClass="rep-check" Text="Detalle de Productos" Clave="reportes.detalleProductos" Checked="true" />
+                                <asp:CheckBox ID="chkHistorialVentas" runat="server" CssClass="rep-check" Text="Historial de Ventas" Clave="reportes.historialVentas" Checked="true" />
                             </div>
                         </div>
 

@@ -1937,4 +1937,55 @@
   <data name="pdf.graficoComparacion" xml:space="preserve">
     <value>Tahmini satışlar: temel ve önerilen</value>
   </data>
+  <data name="productos.categoriaInactiva" xml:space="preserve">
+    <value>{0} (pasif)</value>
+  </data>
+  <data name="productos.colSectorLocal" xml:space="preserve">
+    <value>Bu mağazadaki reyon</value>
+  </data>
+  <data name="productos.sectorEnLocal" xml:space="preserve">
+    <value>{0} içindeki reyon</value>
+  </data>
+  <data name="productos.sinUbicar" xml:space="preserve">
+    <value>Yerleştirilmedi</value>
+  </data>
+  <data name="stock.sinProductosCarga" xml:space="preserve">
+    <value>Bu mağazada ürün yok. Ürünler ve kategoriler bölümünden ekleyin.</value>
+  </data>
+  <data name="stock.productoSinUbicar" xml:space="preserve">
+    <value>{0} (bu mağazada yerleştirilmedi)</value>
+  </data>
+  <data name="layout.superficie" xml:space="preserve">
+    <value>Alan (m²)</value>
+  </data>
+  <data name="layout.colSuperficie" xml:space="preserve">
+    <value>Alan</value>
+  </data>
+  <data name="productos.costo" xml:space="preserve">
+    <value>Birim maliyet</value>
+  </data>
+  <data name="indicadores.colVentasM2" xml:space="preserve">
+    <value>Satış/m²</value>
+  </data>
+  <data name="indicadores.ventasPeriodo" xml:space="preserve">
+    <value>Dönem satışları</value>
+  </data>
+  <data name="indicadores.margenPeriodo" xml:space="preserve">
+    <value>Dönem marjı</value>
+  </data>
+  <data name="indicadores.ventasM2Local" xml:space="preserve">
+    <value>Mağazanın m² başına satışı</value>
+  </data>
+  <data name="indicadores.sinCostos" xml:space="preserve">
+    <value>Hesaplamak için ürünlerin birim maliyetini girin.</value>
+  </data>
+  <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
+    <value>Hesaplamak için mağaza alanını girin.</value>
+  </data>
+  <data name="pdf.margen" xml:space="preserve">
+    <value>Dönem marjı: %{0}</value>
+  </data>
+  <data name="pdf.ventasM2Local" xml:space="preserve">
+    <value>Mağazanın m² başına satışı: {0}</value>
+  </data>
 </root>

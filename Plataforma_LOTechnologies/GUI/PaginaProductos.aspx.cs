@@ -27,7 +27,7 @@ public partial class PaginaProductos : PaginaSegura
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
     }
     protected void Page_Load(object sender, EventArgs e)
-    {        
+    {
         if (!IsPostBack)
         {
             CargarDropdownLocales();
@@ -53,11 +53,18 @@ public partial class PaginaProductos : PaginaSegura
         List<SectorListado> sectores = CodigoLocalActual > 0 ? sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual) : new List<SectorListado>();
         ddlFiltroSector.Items.Clear();
         ddlFiltroSector.Items.Add(new ListItem(Traducir("productos.todosSectores"), ""));
-        ddlSectorProducto.Items.Clear();
-        ddlSectorProducto.Items.Add(new ListItem(Traducir("productos.sinSector"), ""));
         foreach (SectorListado sector in sectores)
         {
             ddlFiltroSector.Items.Add(new ListItem(sector.Nombre, sector.CodigoSector.ToString()));
+        }
+        CargarSectoresProducto(sectores);
+    }
+    private void CargarSectoresProducto(List<SectorListado> pSectores)
+    {
+        ddlSectorProducto.Items.Clear();
+        ddlSectorProducto.Items.Add(new ListItem(Traducir("productos.sinSector"), ""));
+        foreach (SectorListado sector in pSectores)
+        {
             ddlSectorProducto.Items.Add(new ListItem(sector.Nombre, sector.CodigoSector.ToString()));
         }
     }
@@ -97,6 +104,9 @@ public partial class PaginaProductos : PaginaSegura
             CargarProductos();
             return;
         }
+        // Se recargan los desplegables del modal para descartar opciones agregadas en una edición anterior
+        CargarSectoresProducto(CodigoLocalActual > 0 ? sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual) : new List<SectorListado>());
+        CargarDropdownCategorias();
         hfCodigoProducto.Value = producto.CodigoProducto.ToString();
         hfNumeroSerie.Value = producto.NumeroSerie.ToString();
         litTituloModalProducto.Text = Traducir("productos.modalEditar");
@@ -104,11 +114,32 @@ public partial class PaginaProductos : PaginaSegura
         tbCodigoInterno.Text = $"PROD-{producto.NumeroSerie:D3}";
         tbNombreProducto.Text = producto.Nombre;
         tbDescripcionProducto.Text = producto.Descripcion;
-        tbPrecio.Text = producto.Precio?.ToString() ?? "";
-        ddlCategoriaProducto.SelectedValue = producto.CodigoCategoria.ToString();
-        ddlSectorProducto.SelectedValue = producto.CodigoSector?.ToString() ?? "";
+        tbPrecio.Text = MostrarDecimal(producto.Precio);
+        tbCosto.Text = MostrarDecimal(producto.Costo);
+        SeleccionarCategoria(producto.CodigoCategoria);
+        // El sector depende del local: es la ubicación del producto en el local elegido
+        int? sectorEnLocal = productoBLL.ObtenerSectorEnLocal(producto.CodigoProducto, CodigoLocalActual);
+        ddlSectorProducto.SelectedValue = sectorEnLocal?.ToString() ?? "";
+        MostrarEtiquetaSector();
         chkActivoProducto.Checked = producto.Estado;
         pnlModalProducto.Style["display"] = "flex";
+    }
+    private void MostrarEtiquetaSector()
+    {
+        string local = ddlLocal.SelectedItem == null ? "" : ddlLocal.SelectedItem.Text;
+        lblSectorProducto.Text = Traducir("productos.sectorEnLocal", local);
+    }
+    // Una categoría inactiva no está en el desplegable: se agrega como opción para que no se pierda al guardar
+    private void SeleccionarCategoria(int pCodigoCategoria)
+    {
+        string valor = pCodigoCategoria.ToString();
+        if (ddlCategoriaProducto.Items.FindByValue(valor) == null)
+        {
+            CategoriaBE categoria = categoriaBLL.ObtenerCategoriaPorCodigo(pCodigoCategoria);
+            string nombre = categoria == null ? valor : categoria.Nombre;
+            ddlCategoriaProducto.Items.Add(new ListItem(Traducir("productos.categoriaInactiva", nombre), valor));
+        }
+        ddlCategoriaProducto.SelectedValue = valor;
     }
     private void CargarCategorias()
     {
@@ -136,7 +167,7 @@ public partial class PaginaProductos : PaginaSegura
 
     protected void btnNuevo_Click(object sender, EventArgs e)
     {
-        if (CodigoLocalActual == 0)
+        if(CodigoLocalActual == 0)
         {
             MostrarMensaje(Traducir("productos.errSinLocalProductos"), esExito: false);
             return;
@@ -150,8 +181,12 @@ public partial class PaginaProductos : PaginaSegura
         tbNombreProducto.Text = "";
         tbDescripcionProducto.Text = "";
         tbPrecio.Text = "";
+        tbCosto.Text = "";
+        CargarSectoresProducto(CodigoLocalActual > 0 ? sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual) : new List<SectorListado>());
+        CargarDropdownCategorias();
         if (ddlCategoriaProducto.Items.Count > 0) ddlCategoriaProducto.SelectedIndex = 0;
         ddlSectorProducto.SelectedIndex = 0;
+        MostrarEtiquetaSector();
         chkActivoProducto.Checked = true;
         pnlModalProducto.Style["display"] = "flex";
     }
@@ -165,23 +200,19 @@ public partial class PaginaProductos : PaginaSegura
             pnlModalProducto.Style["display"] = "flex";
             return;
         }
-        decimal? precio = null;
-        decimal precioParsed;
-        if (decimal.TryParse(tbPrecio.Text.Trim(), out precioParsed))
-        {
-            precio = precioParsed;
-        }
+        decimal? precio = LeerDecimal(tbPrecio.Text);
+        decimal? costo = LeerDecimal(tbCosto.Text);
         int? codigoSector = string.IsNullOrEmpty(ddlSectorProducto.SelectedValue) ? (int?)null : int.Parse(ddlSectorProducto.SelectedValue);
         bool esEdicion = !string.IsNullOrEmpty(hfCodigoProducto.Value);
-        ProductoBE producto = new ProductoBE(esEdicion ? int.Parse(hfCodigoProducto.Value) : 0, int.Parse(ddlCategoriaProducto.SelectedValue), codigoSector, int.Parse(hfNumeroSerie.Value),
-                                             tbNombreProducto.Text.Trim(), tbDescripcionProducto.Text.Trim(), precio, chkActivoProducto.Checked);        
+        ProductoBE producto = new ProductoBE(esEdicion ? int.Parse(hfCodigoProducto.Value) : 0, int.Parse(ddlCategoriaProducto.SelectedValue), int.Parse(hfNumeroSerie.Value),
+                                             tbNombreProducto.Text.Trim(), tbDescripcionProducto.Text.Trim(), precio, chkActivoProducto.Checked, costo);
         if (esEdicion)
         {
-            productoBLL.ModificarProducto(producto);
+            productoBLL.ModificarProducto(producto, CodigoLocalActual, codigoSector);
         }
         else
         {
-            productoBLL.CrearProducto(producto, CodigoLocalActual);
+            productoBLL.CrearProducto(producto, CodigoLocalActual, codigoSector);
         }
         pnlModalProducto.Style["display"] = "none";
         MostrarMensaje(Traducir(esEdicion ? "productos.msgModificado" : "productos.msgCreado"), esExito: true);

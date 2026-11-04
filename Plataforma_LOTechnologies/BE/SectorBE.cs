@@ -17,6 +17,7 @@ namespace BE
         public string Descripcion { get; set; }
         public bool Estado { get; set; }
         public int CantidadProductos { get; set; }
+        public decimal? Superficie { get; set; }
     }
     public class SectorBE
     {
@@ -28,8 +29,10 @@ namespace BE
         public string Ubicacion { get; set; }
         public decimal? Circulacion { get; set; }
         public string Descripcion { get; set; }
-        public SectorBE(int pCodigoSector, int pCodigoLocal, string pNombre, string pTipo, string pUbicacion, decimal? pCirculacion, string pDescripcion, bool pEstado)
+        public decimal? Superficie { get; set; }
+        public SectorBE(int pCodigoSector, int pCodigoLocal, string pNombre, string pTipo, string pUbicacion, decimal? pCirculacion, string pDescripcion, bool pEstado, decimal? pSuperficie = null)
         {
+            Superficie = pSuperficie;
             CodigoSector = pCodigoSector;
             CodigoLocal = pCodigoLocal;
             Nombre = pNombre;

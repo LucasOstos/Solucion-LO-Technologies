@@ -8,9 +8,20 @@
 .rep-checks {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 8px 16px;
     font-size: 13px;
 }
+
+/* Cada CheckBox se dibuja como <span class="rep-check"><input><label></span>: casilla y texto juntos */
+.rep-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .rep-check input {
+        margin: 0;
+    }
 
 .rep-item {
     display: flex;

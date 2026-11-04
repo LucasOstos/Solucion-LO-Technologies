@@ -109,7 +109,7 @@
                         <ItemTemplate>
                             <div class="esc-fila-sector">
                                 <span class="texto-secundario"><%# Eval("Nombre") %></span>
-                                <asp:HiddenField runat="server" Value='<%# Eval("CodigoSector") %>' />
+                                <asp:HiddenField ID="hfCodigoSectorCambio" runat="server" Value='<%# Eval("CodigoSector") %>' />
                                 <asp:DropDownList ID="ddlCambioSector" runat="server" CssClass="modal-campo esc-select-cambio">
                                     <asp:ListItem Text="Sin cambios" Value="" Clave="escenarios.sinCambios" />
                                     <asp:ListItem Text="Mover al frente" Value="Mover al frente" Clave="valor.moverFrente" />

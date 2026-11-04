@@ -22,6 +22,7 @@ public partial class PaginaIndicadores : PaginaSegura
     private StockBLL stockBLL = new StockBLL();
     private IndicadorBLL indicadorBLL = new IndicadorBLL();
     private RecomendacionBLL recomendacionBLL = new RecomendacionBLL();
+    private VentaBLL ventaBLL = new VentaBLL();
     private int CodigoLocalActual
     {
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
@@ -56,6 +57,7 @@ public partial class PaginaIndicadores : PaginaSegura
         string periodoDesde = ObtenerPeriodoDesde();
         string periodoActual = DateTime.Now.ToString("yyyy-MM");
         List<IndicadorSectorListado> indicadores = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesde);
+        MostrarResumenLocal(periodoDesde);
         if (indicadores.Count == 0)
         {
             rptIndicadoresSector.Visible = false;
@@ -92,6 +94,19 @@ public partial class PaginaIndicadores : PaginaSegura
         string clave = pEsMotivo ? recomendacion.ClaveMotivo : recomendacion.ClaveDescripcion;
         string texto = pEsMotivo ? recomendacion.Motivo : recomendacion.Descripcion;
         return string.IsNullOrEmpty(clave) ? texto : Traducir(clave, recomendacion.Parametros ?? new object[0]);
+    }
+    private void MostrarResumenLocal(string pPeriodoDesde)
+    {
+        decimal ventas = ventaBLL.ObtenerTotalVentas(CodigoLocalActual, pPeriodoDesde);
+        decimal? margen = ventaBLL.ObtenerMargenTotal(CodigoLocalActual, pPeriodoDesde);
+        LocalBE local = localBLL.ObtenerLocalPorCodigo(CodigoLocalActual);
+        decimal? superficie = local == null ? null : local.SuperficieAprox;
+        litVentasPeriodo.Text = ventas.ToString("$#,##0");
+        litMargenPeriodo.Text = margen == null ? "-" : margen.Value.ToString("0.#") + "%";
+        lblSinCostos.Visible = margen == null;
+        litVentasM2Local.Text = superficie == null || superficie <= 0 ? "-" : (ventas / superficie.Value).ToString("$#,##0");
+        lblSinSuperficie.Visible = superficie == null || superficie <= 0;
+        pnlResumenLocal.Visible = true;
     }
     #endregion
 

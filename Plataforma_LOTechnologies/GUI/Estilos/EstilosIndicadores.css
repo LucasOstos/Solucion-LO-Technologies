@@ -38,3 +38,29 @@
     background-color: #1e7a37;
     color: #ffffff;
 }
+
+.ind-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ind-stat-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ind-stat-valor {
+    font-size: 24px;
+    font-weight: 700;
+    color: #17223a;
+}
+
+.ind-stat-ayuda {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+}

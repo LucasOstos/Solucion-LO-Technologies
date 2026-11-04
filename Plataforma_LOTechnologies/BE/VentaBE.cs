@@ -13,14 +13,14 @@ namespace BE
         public string Categoria { get; set; }
         public int Unidades { get; set; }
         public decimal Monto { get; set; }
-        public decimal Margen { get; set; }
+        public decimal? Margen { get; set; }
     }
     public class VentaBE
     {
         public int CodigoVenta { get; set; }
         public int CodigoLocal { get; set; }
         public int CodigoProducto { get; set; }
-        public DateTime Fecha {  get; set; }
+        public DateTime Fecha { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioUnitario { get; set; }
         public decimal ImporteTotal { get; set; }

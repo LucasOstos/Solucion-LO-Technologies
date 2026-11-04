@@ -25,6 +25,7 @@
                     <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" ClaveAria="comun.local" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
                 </div>
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
+                <asp:HiddenField ID="hfPestania" runat="server" ClientIDMode="Static" />
                 <div class="pestanias">
                     <span id="tabLayout" runat="server" ClientIDMode="Static" class="pestania pestania-activa" onclick="mostrarPestania('layout')" Clave="layout.tabLayout">Layout del Local</span>
                     <span id="tabSectores" runat="server" ClientIDMode="Static" class="pestania" onclick="mostrarPestania('sectores')" Clave="layout.tabSectores">Gestión de Sectores</span>
@@ -70,6 +71,7 @@
                                     <th runat="server" Clave="layout.colSector">Sector</th>
                                     <th runat="server" Clave="layout.colUbicacion">Ubicación</th>
                                     <th runat="server" Clave="layout.colCirculacion">Circulación</th>
+                                    <th runat="server" Clave="layout.colSuperficie">Superficie</th>
                                     <th runat="server" Clave="layout.colProductos">N° Productos</th>
                                     <th runat="server" Clave="comun.acciones">Acciones</th>
                                 </tr>
@@ -81,6 +83,7 @@
                                             <td class="texto-principal"><%# Eval("Nombre") %></td>
                                             <td><%# TraducirValor(Eval("Ubicacion")) %></td>
                                             <td><%# Eval("Circulacion") %>%</td>
+                                            <td><%# Eval("Superficie") == null ? "-" : Eval("Superficie", "{0:0.##} m²") %></td>
                                             <td><%# Eval("CantidadProductos") %></td>
                                             <td>
                                                 <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Editar" ClaveTitle="comun.editar"
@@ -187,8 +190,14 @@
                 <div class="fila-formulario">
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Circulación estimada (%)" AssociatedControlID="tbCirculacionSector" Clave="layout.circulacion" />
-                        <asp:TextBox ID="tbCirculacionSector" runat="server" CssClass="modal-campo" TextMode="Number" />
+                        <asp:TextBox ID="tbCirculacionSector" runat="server" CssClass="modal-campo" TextMode="Number" step="any" min="0" max="100" />
                     </div>
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Superficie (m²)" AssociatedControlID="tbSuperficieSector" Clave="layout.superficie" />
+                        <asp:TextBox ID="tbSuperficieSector" runat="server" CssClass="modal-campo" TextMode="Number" step="any" min="0" />
+                    </div>
+                </div>
+                <div class="fila-formulario">
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Ubicación" AssociatedControlID="ddlUbicacionSector" Clave="layout.colUbicacion" />
                         <asp:DropDownList ID="ddlUbicacionSector" runat="server" CssClass="modal-campo">

@@ -226,16 +226,25 @@ public partial class PaginaReportes : PaginaSegura
                 documento.Add(new Paragraph(T("pdf.ventasTotales", ventasTotales.ToString("$#,##0")), fuenteNormal));
                 documento.Add(new Paragraph(T("pdf.circulacionPromedio", circulacionPromedio.ToString("0.0")), fuenteNormal));
                 documento.Add(new Paragraph(T("pdf.sectoresAnalizados", indicadores.Count), fuenteNormal));
+                decimal? margenTotal = ventaBLL.ObtenerMargenTotal(CodigoLocalActual, periodoDesde.ToString("yyyy-MM"));
+                if (margenTotal != null) documento.Add(new Paragraph(T("pdf.margen", margenTotal.Value.ToString("0.#")), fuenteNormal));
+                LocalBE localReporte = localBLL.ObtenerLocalPorCodigo(CodigoLocalActual);
+                if (localReporte != null && localReporte.SuperficieAprox > 0)
+                {
+                    documento.Add(new Paragraph(T("pdf.ventasM2Local", (ventasTotales / localReporte.SuperficieAprox.Value).ToString("$#,##0")), fuenteNormal));
+                }
                 documento.Add(new Paragraph(" "));
             }
             if (chkIndicadoresPrincipales.Checked || chkDetallePorSector.Checked)
             {
                 documento.Add(new Paragraph(T("indicadores.porSector"), fuenteSeccion));
-                var tabla = new PdfPTable(5) { WidthPercentage = 100 };
-                AgregarFila(tabla, fuenteEncabezado, T("layout.colSector"), T("indicadores.colVentas"), T("layout.colCirculacion"), T("indicadores.colRotacion"), T("indicadores.colIndice"));
+                var tabla = new PdfPTable(7) { WidthPercentage = 100 };
+                AgregarFila(tabla, fuenteEncabezado, T("layout.colSector"), T("indicadores.colVentas"), T("stock.colMargen"), T("indicadores.colVentasM2"),
+                            T("layout.colCirculacion"), T("indicadores.colRotacion"), T("indicadores.colIndice"));
                 foreach (var ind in indicadores)
                 {
-                    AgregarFila(tabla, fuenteNormal, ind.Sector, ind.Ventas.ToString("$#,##0"), $"{ind.Circulacion:0.0}%", $"{ind.Rotacion:0.0}%", ind.IndiceGlobal.ToString());
+                    AgregarFila(tabla, fuenteNormal, ind.Sector, ind.Ventas.ToString("$#,##0"), ind.Margen == null ? "-" : $"{ind.Margen:0.0}%",
+                                ind.VentasPorM2 == null ? "-" : ind.VentasPorM2.Value.ToString("$#,##0"), $"{ind.Circulacion:0.0}%", $"{ind.Rotacion:0.0}%", ind.IndiceGlobal.ToString());
                 }
                 documento.Add(tabla);
                 documento.Add(new Paragraph(" "));
@@ -430,7 +439,11 @@ public partial class PaginaReportes : PaginaSegura
         lblMensaje.Visible = true;
     }
     #endregion
-
+    protected void ddlLocal_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        CargarDropdownEscenarios();
+        CargarReportesRecientes();
+    }
     protected void btnGenerarReporte_Click(object sender, EventArgs e)
     {
         if (CodigoLocalActual == 0)
@@ -465,7 +478,6 @@ public partial class PaginaReportes : PaginaSegura
         MostrarMensaje(Traducir("reportes.msgGenerado"), esExito: true);
         CargarReportesRecientes();
     }
-
     protected void rptReportesRecientes_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         int codigoReporte = int.Parse(e.CommandArgument.ToString());

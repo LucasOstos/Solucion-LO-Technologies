@@ -43,22 +43,37 @@ namespace BE
         public int Stock { get; set; }
     }
     #endregion
+    public class ProductoUbicacionBE
+    {
+        public int CodigoUbicacion { get; set; }
+        public int CodigoProducto { get; set; }
+        public int CodigoLocal { get; set; }
+        public int CodigoSector { get; set; }
+        public ProductoUbicacionBE() { }
+        public ProductoUbicacionBE(int pCodigoUbicacion, int pCodigoProducto, int pCodigoLocal, int pCodigoSector)
+        {
+            CodigoUbicacion = pCodigoUbicacion;
+            CodigoProducto = pCodigoProducto;
+            CodigoLocal = pCodigoLocal;
+            CodigoSector = pCodigoSector;
+        }
+    }
     public class ProductoBE
     {
         public int CodigoProducto { get; set; }
         public int CodigoCategoria { get; set; }
-        public int? CodigoSector { get; set; }
         public int NumeroSerie { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public decimal? Precio { get; set; }
-        public bool Estado {  get; set; }
+        public decimal? Costo { get; set; }
+        public bool Estado { get; set; }
         public int CodigoEmpresa { get; set; }
-        public ProductoBE(int codigoProducto, int codigoCategoria, int? codigoSector, int numeroSerie, string nombre, string descripcion, decimal? precio, bool estado)
+        public ProductoBE(int codigoProducto, int codigoCategoria, int numeroSerie, string nombre, string descripcion, decimal? precio, bool estado, decimal? costo = null)
         {
+            Costo = costo;
             CodigoProducto = codigoProducto;
             CodigoCategoria = codigoCategoria;
-            CodigoSector = codigoSector;
             NumeroSerie = numeroSerie;
             Nombre = nombre;
             Descripcion = descripcion;

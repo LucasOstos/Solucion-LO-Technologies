@@ -123,9 +123,14 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         decimal circulacionPromedio = proyectados.Count > 0 ? proyectados.Average(p => p.Circulacion) : 0;
         decimal rotacionPromedio = proyectados.Count > 0 ? proyectados.Average(p => p.Rotacion) : 0;
         decimal indiceGlobalPromedio = proyectados.Count > 0 ? (decimal)proyectados.Average(p => p.IndiceGlobal) : 0;
+        // Ventas por m2: solo sobre los sectores con superficie cargada (en "Ampliar/Reducir superficie" cambian los m2)
+        var conSuperficie = proyectados.Where(p => p.Superficie != null && p.Superficie > 0).ToList();
+        decimal m2 = conSuperficie.Sum(p => p.Superficie.Value);
+        string ventasPorM2 = m2 > 0 ? (conSuperficie.Sum(p => p.Ventas) / m2).ToString("$#,##0") : "-";
         return new List<IndicadorComparado>
         {
             new IndicadorComparado { Nombre = Traducir("comparacion.ventasEstimadas"), Valor = ventasTotales.ToString("$#,##0") },
+            new IndicadorComparado { Nombre = Traducir("indicadores.colVentasM2"), Valor = ventasPorM2 },
             new IndicadorComparado { Nombre = Traducir("comparacion.circulacionPromedio"), Valor = $"{circulacionPromedio:0.0}%" },
             new IndicadorComparado { Nombre = Traducir("comparacion.rotacionPromedio"), Valor = $"{rotacionPromedio:0.0}%" },
             new IndicadorComparado { Nombre = Traducir("comparacion.indicePromedio"), Valor = indiceGlobalPromedio.ToString("0") }

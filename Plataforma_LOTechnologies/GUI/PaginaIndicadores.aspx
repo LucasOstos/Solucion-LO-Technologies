@@ -36,6 +36,25 @@
                     <asp:Button ID="btnAplicar" runat="server" CssClass="boton-buscar" Text="Aplicar" Clave="comun.aplicar" OnClick="btnAplicar_Click" CausesValidation="false" />
                 </div>
 
+                <asp:Panel ID="pnlResumenLocal" runat="server" CssClass="ind-stats" Visible="false">
+                    <div class="ind-stat-card">
+                        <div class="texto-secundario" runat="server" Clave="indicadores.ventasPeriodo">Ventas del período</div>
+                        <div class="ind-stat-valor"><asp:Literal ID="litVentasPeriodo" runat="server" /></div>
+                    </div>
+                    <div class="ind-stat-card">
+                        <div class="texto-secundario" runat="server" Clave="indicadores.margenPeriodo">Margen del período</div>
+                        <div class="ind-stat-valor"><asp:Literal ID="litMargenPeriodo" runat="server" /></div>
+                        <asp:Label ID="lblSinCostos" runat="server" CssClass="texto-secundario ind-stat-ayuda" Visible="false"
+                            Text="Cargá el costo unitario de los productos para calcularlo." Clave="indicadores.sinCostos" />
+                    </div>
+                    <div class="ind-stat-card">
+                        <div class="texto-secundario" runat="server" Clave="indicadores.ventasM2Local">Ventas por m² del local</div>
+                        <div class="ind-stat-valor"><asp:Literal ID="litVentasM2Local" runat="server" /></div>
+                        <asp:Label ID="lblSinSuperficie" runat="server" CssClass="texto-secundario ind-stat-ayuda" Visible="false"
+                            Text="Cargá la superficie del local para calcularlo." Clave="indicadores.sinSuperficieLocal" />
+                    </div>
+                </asp:Panel>
+
                 <div class="tarjeta">
                     <h2>&#128200; <span runat="server" Clave="indicadores.recomendaciones">Recomendaciones Automáticas</span></h2>
                     <asp:Repeater ID="rptRecomendaciones" runat="server">
@@ -60,6 +79,7 @@
                                 <th runat="server" Clave="layout.colSector">Sector</th>
                                 <th runat="server" Clave="indicadores.colVentas">Ventas</th>
                                 <th runat="server" Clave="stock.colMargen">Margen</th>
+                                <th runat="server" Clave="indicadores.colVentasM2">Ventas/m²</th>
                                 <th runat="server" Clave="layout.colCirculacion">Circulación</th>
                                 <th runat="server" Clave="indicadores.colRotacion">Rotación</th>
                                 <th runat="server" Clave="indicadores.colIndice">Índice Global</th>
@@ -71,7 +91,8 @@
                                     <tr>
                                         <td class="texto-principal"><%# Eval("Sector") %></td>
                                         <td><%# Eval("Ventas", "{0:$#,##0}") %></td>
-                                        <td><%# Eval("Margen") %>%</td>
+                                        <td><%# Eval("Margen") == null ? "-" : Eval("Margen") + "%" %></td>
+                                        <td><%# Eval("VentasPorM2") == null ? "-" : Eval("VentasPorM2", "{0:$#,##0}") %></td>
                                         <td><%# Eval("Circulacion") %>%</td>
                                         <td><%# Eval("Rotacion") %>%</td>
                                         <td><span class='<%# "etiqueta " + Eval("ClaseIndiceGlobal") %>'><%# Eval("IndiceGlobal") %></span></td>

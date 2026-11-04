@@ -32,6 +32,7 @@ namespace SERVICIO.Logica
             { "Layout", "CodigoLayout"},
             { "Categoria", "CodigoCategoria" },
             { "Producto", "CodigoProducto" },
+            { "ProductoUbicacion", "CodigoUbicacion" },
             { "Venta", "CodigoVenta" },
             { "Stock", "CodigoStock" },
             { "Escenario", "CodigoEscenario" },

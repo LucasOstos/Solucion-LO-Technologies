@@ -27,6 +27,8 @@ namespace BLL
                 GuardarUnIndicador(pCodigoLocal, ind.CodigoSector, pPeriodo, "Circulación", ind.Circulacion, "%");
                 GuardarUnIndicador(pCodigoLocal, ind.CodigoSector, pPeriodo, "Rotación", ind.Rotacion, "%");
                 GuardarUnIndicador(pCodigoLocal, ind.CodigoSector, pPeriodo, "Índice Global", ind.IndiceGlobal, "pts");
+                if (ind.Margen != null) GuardarUnIndicador(pCodigoLocal, ind.CodigoSector, pPeriodo, "Margen", ind.Margen.Value, "%");
+                if (ind.VentasPorM2 != null) GuardarUnIndicador(pCodigoLocal, ind.CodigoSector, pPeriodo, "Ventas por m²", ind.VentasPorM2.Value, "$/m²");
             }
         }
         private void GuardarUnIndicador(int codigoLocal, int codigoSector, string periodo, string nombre, decimal valor, string unidad)
@@ -49,13 +51,14 @@ namespace BLL
         {
             public decimal DeltaCirculacion { get; set; }
             public decimal DeltaVentas { get; set; }
+            public decimal DeltaSuperficie { get; set; } // % de cambio de los m2 del sector
         }
         private static readonly Dictionary<string, CoeficienteCambio> COEFICIENTES = new Dictionary<string, CoeficienteCambio>
         {
             { "Mover al frente", new CoeficienteCambio { DeltaCirculacion = 15m, DeltaVentas = 10m } },
             { "Mover al fondo", new CoeficienteCambio { DeltaCirculacion = -15m, DeltaVentas = -10m } },
-            { "Ampliar superficie", new CoeficienteCambio { DeltaCirculacion = 5m, DeltaVentas = 12m } },
-            { "Reducir superficie", new CoeficienteCambio { DeltaCirculacion = -5m, DeltaVentas = -8m } },
+            { "Ampliar superficie", new CoeficienteCambio { DeltaCirculacion = 5m, DeltaVentas = 12m, DeltaSuperficie = 20m } },
+            { "Reducir superficie", new CoeficienteCambio { DeltaCirculacion = -5m, DeltaVentas = -8m, DeltaSuperficie = -20m } },
             { "Reubicar productos destacados", new CoeficienteCambio { DeltaCirculacion = 8m, DeltaVentas = 6m } }
         };
         public List<IndicadorSectorListado> ProyectarIndicadores(List<IndicadorSectorListado> pIndicadoresReales, List<EscenarioCambio> pCambios)
@@ -76,12 +79,14 @@ namespace BLL
             {
                 decimal ventasProyectadas = real.Ventas;
                 decimal circulacionProyectada = real.Circulacion;
+                decimal? superficieProyectada = real.Superficie;
                 string accion;
                 CoeficienteCambio coef;
                 if (accionesPorSector.TryGetValue(real.Sector, out accion) && COEFICIENTES.TryGetValue(accion, out coef))
                 {
                     ventasProyectadas = real.Ventas * (1 + coef.DeltaVentas / 100);
                     circulacionProyectada = Math.Max(0, Math.Min(100, real.Circulacion * (1 + coef.DeltaCirculacion / 100)));
+                    if (real.Superficie != null) superficieProyectada = Math.Round(real.Superficie.Value * (1 + coef.DeltaSuperficie / 100), 2);
                 }
                 int indiceGlobalProyectado = (int)Math.Round((circulacionProyectada + real.Rotacion) / 2, 0);
                 proyectados.Add(new IndicadorSectorListado
@@ -89,7 +94,9 @@ namespace BLL
                     CodigoSector = real.CodigoSector,
                     Sector = real.Sector,
                     Ventas = Math.Round(ventasProyectadas, 2),
-                    Margen = 0,
+                    Margen = real.Margen, // el escenario cambia ubicación y superficie, no precios ni costos
+                    Superficie = superficieProyectada,
+                    VentasPorM2 = DAL.IndicadorDAL.CalcularVentasPorM2(ventasProyectadas, superficieProyectada),
                     Circulacion = Math.Round(circulacionProyectada, 1),
                     Rotacion = real.Rotacion,
                     IndiceGlobal = indiceGlobalProyectado,
