@@ -130,7 +130,7 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         List<EscenarioCambio> cambiosB = escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenarioB);
         litNombreEscenarioA.Text = escenarioA.Nombre;
         litNombreEscenarioB.Text = escenarioB.Nombre;
-        string periodoDesde = ddlPeriodo.SelectedValue == "3_meses" ? DateTime.Now.AddMonths(-3).ToString("yyyy-MM") : DateTime.Now.AddMonths(-1).ToString("yyyy-MM");
+        string periodoDesde = PeriodoDesde(MesesDelFiltro(ddlPeriodo.SelectedValue));
         List<IndicadorSectorListado> indicadoresReales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesde);
         if (indicadoresReales.Count == 0)
         {

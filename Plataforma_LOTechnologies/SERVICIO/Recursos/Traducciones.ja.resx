@@ -1415,9 +1415,6 @@
   <data name="stock.subtitulo" xml:space="preserve">
     <value>CUN 006 — 売上・在庫データの登録と管理</value>
   </data>
-  <data name="stock.btnImportar" xml:space="preserve">
-    <value>CSV をインポート</value>
-  </data>
   <data name="stock.btnCargaManual" xml:space="preserve">
     <value>手動登録</value>
   </data>
@@ -1445,12 +1442,6 @@
   <data name="stock.tabStock" xml:space="preserve">
     <value>在庫データ</value>
   </data>
-  <data name="stock.totalVentas" xml:space="preserve">
-    <value>売上合計（月）</value>
-  </data>
-  <data name="stock.ticketPromedio" xml:space="preserve">
-    <value>平均客単価</value>
-  </data>
   <data name="stock.unidadesVendidas" xml:space="preserve">
     <value>販売数量</value>
   </data>
@@ -1459,9 +1450,6 @@
   </data>
   <data name="stock.ventasPorSector" xml:space="preserve">
     <value>売り場別の売上</value>
-  </data>
-  <data name="stock.graficoPendiente" xml:space="preserve">
-    <value>売り場別売上グラフ（準備中）</value>
   </data>
   <data name="stock.detalleVentas" xml:space="preserve">
     <value>売上明細</value>
@@ -1514,9 +1502,6 @@
   <data name="stock.errCantidad" xml:space="preserve">
     <value>数量を入力してください</value>
   </data>
-  <data name="stock.importe" xml:space="preserve">
-    <value>合計金額（売上の場合）</value>
-  </data>
   <data name="stock.minimo" xml:space="preserve">
     <value>最小在庫（在庫の場合）</value>
   </data>
@@ -1525,9 +1510,6 @@
   </data>
   <data name="stock.fecha" xml:space="preserve">
     <value>期間 / 日付 *</value>
-  </data>
-  <data name="stock.errImportarCsv" xml:space="preserve">
-    <value>CSV のインポートはまだ利用できません。</value>
   </data>
   <data name="stock.errSeleccionarLocal" xml:space="preserve">
     <value>店舗を選択してください。</value>
@@ -2056,5 +2038,197 @@
   </data>
   <data name="pdf.planoVigente" xml:space="preserve">
     <value>現行の平面図：{0}</value>
+  </data>
+  <data name="stock.btnImportarArchivo" xml:space="preserve">
+    <value>ファイルをインポート</value>
+  </data>
+  <data name="stock.agrupacion" xml:space="preserve">
+    <value>グループ化</value>
+  </data>
+  <data name="stock.rangoPeriodo" xml:space="preserve">
+    <value>対象月: {0}</value>
+  </data>
+  <data name="importar.tabImportaciones" xml:space="preserve">
+    <value>インポート</value>
+  </data>
+  <data name="stock.totalVentasPeriodo" xml:space="preserve">
+    <value>期間の売上合計</value>
+  </data>
+  <data name="stock.precioPromedioUnidad" xml:space="preserve">
+    <value>1単位あたりの平均価格</value>
+  </data>
+  <data name="stock.ultimasVentas" xml:space="preserve">
+    <value>最近登録された売上</value>
+  </data>
+  <data name="stock.ayudaUltimasVentas" xml:space="preserve">
+    <value>誤って登録した売上はここで削除できます。ファイル全体を削除するには「インポート」タブを使用してください。</value>
+  </data>
+  <data name="stock.colFecha" xml:space="preserve">
+    <value>日付</value>
+  </data>
+  <data name="stock.colOrigen" xml:space="preserve">
+    <value>入力元</value>
+  </data>
+  <data name="stock.confirmarEliminarVenta" xml:space="preserve">
+    <value>この売上を削除しますか？指標はこの売上を除いて計算されます。</value>
+  </data>
+  <data name="stock.sinUltimasVentas" xml:space="preserve">
+    <value>この店舗にはまだ売上が登録されていません。</value>
+  </data>
+  <data name="stock.ayudaEstados" xml:space="preserve">
+    <value>危険：在庫切れ。少ない：最小値以下。過剰在庫：最大値超過。</value>
+  </data>
+  <data name="valor.sobrestock" xml:space="preserve">
+    <value>過剰在庫</value>
+  </data>
+  <data name="valor.aplicada" xml:space="preserve">
+    <value>適用済み</value>
+  </data>
+  <data name="valor.deshecha" xml:space="preserve">
+    <value>取り消し済み</value>
+  </data>
+  <data name="importar.historial" xml:space="preserve">
+    <value>インポート履歴</value>
+  </data>
+  <data name="importar.ayudaHistorial" xml:space="preserve">
+    <value>「取り消し」はそのファイルで取り込んだ売上をすべて削除します（2回インポートした場合など）。在庫のインポートは取り消せません。以前の在庫を置き換えます。</value>
+  </data>
+  <data name="importar.colArchivo" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="importar.colFilas" xml:space="preserve">
+    <value>行数</value>
+  </data>
+  <data name="importar.deshacer" xml:space="preserve">
+    <value>取り消し</value>
+  </data>
+  <data name="importar.confirmarDeshacer" xml:space="preserve">
+    <value>このインポートを取り消しますか？このファイルで取り込んだ売上がすべて削除されます。</value>
+  </data>
+  <data name="importar.sinImportaciones" xml:space="preserve">
+    <value>この店舗ではまだファイルがインポートされていません。</value>
+  </data>
+  <data name="stock.importeOpcional" xml:space="preserve">
+    <value>合計金額（空欄 = 価格 × 数量）</value>
+  </data>
+  <data name="importar.titulo" xml:space="preserve">
+    <value>ファイルをインポート</value>
+  </data>
+  <data name="importar.descripcion" xml:space="preserve">
+    <value>店舗のPOSシステムから書き出した売上または在庫を、CSVまたはExcel（.xlsx）ファイルでインポートします。</value>
+  </data>
+  <data name="importar.archivo" xml:space="preserve">
+    <value>ファイル（.csv または .xlsx、2 MB まで）*</value>
+  </data>
+  <data name="importar.formato" xml:space="preserve">
+    <value>形式</value>
+  </data>
+  <data name="importar.ayudaVentas" xml:space="preserve">
+    <value>codigo: PROD-001 · fecha: 2026-10-15 または 15/10/2026 · cantidad: 0より大きい整数 · importe: 任意（空欄 = 価格 × 数量）、桁区切りなし。</value>
+  </data>
+  <data name="importar.ayudaStock" xml:space="preserve">
+    <value>codigo: PROD-001 · cantidad: 0以上の整数 · minimo と maximo: 任意。その店舗に在庫がすでにある場合は置き換えられます。</value>
+  </data>
+  <data name="importar.plantillaExcel" xml:space="preserve">
+    <value>Excelテンプレートをダウンロード</value>
+  </data>
+  <data name="importar.plantillaCsv" xml:space="preserve">
+    <value>CSVテンプレートをダウンロード</value>
+  </data>
+  <data name="importar.todoONada" xml:space="preserve">
+    <value>ファイル全体を検証します。1行でもエラーがあれば何もインポートされず、行と理由が表示されます。</value>
+  </data>
+  <data name="importar.btnImportar" xml:space="preserve">
+    <value>インポート</value>
+  </data>
+  <data name="stock.origenManual" xml:space="preserve">
+    <value>手動入力</value>
+  </data>
+  <data name="stock.origenImportacion" xml:space="preserve">
+    <value>インポート #{0}</value>
+  </data>
+  <data name="importar.tituloErrores" xml:space="preserve">
+    <value>1行もインポートされませんでした。ファイルを修正して再度インポートしてください：</value>
+  </data>
+  <data name="importar.fila" xml:space="preserve">
+    <value>{0}行目</value>
+  </data>
+  <data name="importar.masErrores" xml:space="preserve">
+    <value>... ほか {0} 件のエラー。</value>
+  </data>
+  <data name="importar.msgVentas" xml:space="preserve">
+    <value>{0} 件の売上をインポートしました（インポート #{1}）。</value>
+  </data>
+  <data name="importar.msgStock" xml:space="preserve">
+    <value>{0} 件の商品の在庫を更新しました（インポート #{1}）。</value>
+  </data>
+  <data name="importar.msgSinUbicar" xml:space="preserve">
+    <value>{0} 件はこの店舗で未配置の商品です。配置されるまでどの売場にも集計されません。</value>
+  </data>
+  <data name="importar.msgDeshecha" xml:space="preserve">
+    <value>インポートを取り消しました：{0} 件の売上を削除しました。</value>
+  </data>
+  <data name="stock.msgVentaEliminada" xml:space="preserve">
+    <value>売上を削除しました。</value>
+  </data>
+  <data name="importar.errArchivoIlegible" xml:space="preserve">
+    <value>ファイルを読み込めませんでした。有効なCSVまたはExcel（.xlsx）か確認してください。</value>
+  </data>
+  <data name="importar.errFaltaColumna" xml:space="preserve">
+    <value>見出し行に「{0}」列がありません。</value>
+  </data>
+  <data name="importar.errSinArchivo" xml:space="preserve">
+    <value>インポートするファイルを選択してください。</value>
+  </data>
+  <data name="importar.errFormato" xml:space="preserve">
+    <value>サポートされていない形式です。.csv または .xlsx ファイルを使用してください（Excel 97-2003 の .xls は使用できません）。</value>
+  </data>
+  <data name="importar.errTamanio" xml:space="preserve">
+    <value>ファイルが上限の {0} MB を超えています。</value>
+  </data>
+  <data name="importar.errVacio" xml:space="preserve">
+    <value>ファイルにデータ行がありません（見出し行のみ、または空です）。</value>
+  </data>
+  <data name="importar.errMaximoFilas" xml:space="preserve">
+    <value>ファイルが上限の {0} 行を超えています。複数のファイルに分けてください。</value>
+  </data>
+  <data name="importar.errProductoRepetido" xml:space="preserve">
+    <value>商品 {0} はすでに {1} 行目にあります。</value>
+  </data>
+  <data name="importar.errNoDeshacer" xml:space="preserve">
+    <value>このインポートは取り消せません。</value>
+  </data>
+  <data name="importar.errCodigo" xml:space="preserve">
+    <value>コード「{0}」は無効です（例：PROD-001）。</value>
+  </data>
+  <data name="importar.errProductoNoExiste" xml:space="preserve">
+    <value>商品 {0} はこの会社に存在しません。</value>
+  </data>
+  <data name="importar.errProductoInactivo" xml:space="preserve">
+    <value>商品 {0} は無効です。</value>
+  </data>
+  <data name="importar.errFecha" xml:space="preserve">
+    <value>日付「{0}」は無効です（例：2026-10-15 または 15/10/2026）。</value>
+  </data>
+  <data name="importar.errNumero" xml:space="preserve">
+    <value>列「{0}」の値が無効です：「{1}」。</value>
+  </data>
+  <data name="stock.errCantidadPositiva" xml:space="preserve">
+    <value>数量は0より大きくしてください。</value>
+  </data>
+  <data name="stock.errFechaFutura" xml:space="preserve">
+    <value>日付に今日より後の日は指定できません。</value>
+  </data>
+  <data name="stock.errImporteNegativo" xml:space="preserve">
+    <value>金額にマイナスは指定できません。</value>
+  </data>
+  <data name="stock.errSinImporte" xml:space="preserve">
+    <value>金額を入力してください。この商品には価格が設定されていません。</value>
+  </data>
+  <data name="stock.errStockNegativo" xml:space="preserve">
+    <value>在庫・最小値・最大値にマイナスは指定できません。</value>
+  </data>
+  <data name="stock.errMinimoMaximo" xml:space="preserve">
+    <value>最小在庫は最大在庫より大きくできません。</value>
   </data>
 </root>

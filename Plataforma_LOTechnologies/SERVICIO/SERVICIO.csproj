@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +52,7 @@
     <Compile Include="Logica\GmailServicio.cs" />
     <Compile Include="Logica\IObservadorIdioma.cs" />
     <Compile Include="Logica\ISujetoIdioma.cs" />
+    <Compile Include="Logica\LectorArchivoTabular.cs" />
     <Compile Include="Logica\SucesoServicio.cs" />
     <Compile Include="Logica\Encriptado.cs" />
     <Compile Include="Logica\ResultadoLogin.cs" />

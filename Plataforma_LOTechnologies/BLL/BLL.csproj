@@ -48,6 +48,7 @@
     <Compile Include="EmpresaBLL.cs" />
     <Compile Include="EscenarioBLL.cs" />
     <Compile Include="IdiomaBLL.cs" />
+    <Compile Include="ImportacionBLL.cs" />
     <Compile Include="IndicadorBLL.cs" />
     <Compile Include="LayoutBLL.cs" />
     <Compile Include="LocalBLL.cs" />

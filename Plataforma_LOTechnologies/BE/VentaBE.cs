@@ -9,11 +9,21 @@ namespace BE
     public class VentaListado
     {
         public string Periodo { get; set; }
+        public string Grupo { get; set; }
         public string Sector { get; set; }
         public string Categoria { get; set; }
         public int Unidades { get; set; }
         public decimal Monto { get; set; }
         public decimal? Margen { get; set; }
+    }
+    public class VentaDetalle
+    {
+        public int CodigoVenta { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Producto { get; set; }
+        public int Cantidad { get; set; }
+        public decimal ImporteTotal { get; set; }
+        public int? CodigoImportacion { get; set; }  // null = carga manual
     }
     public class VentaBE
     {
@@ -25,6 +35,7 @@ namespace BE
         public decimal PrecioUnitario { get; set; }
         public decimal ImporteTotal { get; set; }
         public string Periodo { get; set; }
+        public int? CodigoImportacion { get; set; }  // null = carga manual
         public VentaBE(int codigoLocal, int codigoProducto, DateTime fecha, int cantidad, decimal precioUnitario, decimal importeTotal, string periodo)
         {
             CodigoLocal = codigoLocal;

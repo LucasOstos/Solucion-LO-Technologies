@@ -1415,9 +1415,6 @@
   <data name="stock.subtitulo" xml:space="preserve">
     <value>CUN 006 — Erfassung und Verwaltung von Verkaufs- und Bestandsdaten</value>
   </data>
-  <data name="stock.btnImportar" xml:space="preserve">
-    <value>CSV importieren</value>
-  </data>
   <data name="stock.btnCargaManual" xml:space="preserve">
     <value>Manuelle Erfassung</value>
   </data>
@@ -1445,12 +1442,6 @@
   <data name="stock.tabStock" xml:space="preserve">
     <value>Bestandsdaten</value>
   </data>
-  <data name="stock.totalVentas" xml:space="preserve">
-    <value>Gesamtumsatz (Monat)</value>
-  </data>
-  <data name="stock.ticketPromedio" xml:space="preserve">
-    <value>Durchschnittsbon</value>
-  </data>
   <data name="stock.unidadesVendidas" xml:space="preserve">
     <value>Verkaufte Einheiten</value>
   </data>
@@ -1459,9 +1450,6 @@
   </data>
   <data name="stock.ventasPorSector" xml:space="preserve">
     <value>Umsatz nach Bereich</value>
-  </data>
-  <data name="stock.graficoPendiente" xml:space="preserve">
-    <value>Diagramm Umsatz nach Bereich (in Arbeit)</value>
   </data>
   <data name="stock.detalleVentas" xml:space="preserve">
     <value>Verkaufsdetails</value>
@@ -1514,9 +1502,6 @@
   <data name="stock.errCantidad" xml:space="preserve">
     <value>Geben Sie die Menge ein</value>
   </data>
-  <data name="stock.importe" xml:space="preserve">
-    <value>Gesamtbetrag (bei Verkauf)</value>
-  </data>
   <data name="stock.minimo" xml:space="preserve">
     <value>Mindestbestand (bei Bestand)</value>
   </data>
@@ -1525,9 +1510,6 @@
   </data>
   <data name="stock.fecha" xml:space="preserve">
     <value>Zeitraum / Datum *</value>
-  </data>
-  <data name="stock.errImportarCsv" xml:space="preserve">
-    <value>Der CSV-Import ist noch nicht verfügbar.</value>
   </data>
   <data name="stock.errSeleccionarLocal" xml:space="preserve">
     <value>Wählen Sie eine Filiale.</value>
@@ -2056,5 +2038,197 @@
   </data>
   <data name="pdf.planoVigente" xml:space="preserve">
     <value>Aktueller Grundriss: {0}</value>
+  </data>
+  <data name="stock.btnImportarArchivo" xml:space="preserve">
+    <value>Datei importieren</value>
+  </data>
+  <data name="stock.agrupacion" xml:space="preserve">
+    <value>Gruppierung</value>
+  </data>
+  <data name="stock.rangoPeriodo" xml:space="preserve">
+    <value>Enthaltene Monate: {0}</value>
+  </data>
+  <data name="importar.tabImportaciones" xml:space="preserve">
+    <value>Importe</value>
+  </data>
+  <data name="stock.totalVentasPeriodo" xml:space="preserve">
+    <value>Gesamtumsatz im Zeitraum</value>
+  </data>
+  <data name="stock.precioPromedioUnidad" xml:space="preserve">
+    <value>Durchschnittspreis pro Einheit</value>
+  </data>
+  <data name="stock.ultimasVentas" xml:space="preserve">
+    <value>Zuletzt erfasste Verkäufe</value>
+  </data>
+  <data name="stock.ayudaUltimasVentas" xml:space="preserve">
+    <value>Wenn Sie einen Verkauf versehentlich erfasst haben, löschen Sie ihn hier. Um eine ganze Datei zu entfernen, verwenden Sie die Registerkarte Importe.</value>
+  </data>
+  <data name="stock.colFecha" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="stock.colOrigen" xml:space="preserve">
+    <value>Herkunft</value>
+  </data>
+  <data name="stock.confirmarEliminarVenta" xml:space="preserve">
+    <value>Diesen Verkauf löschen? Die Kennzahlen werden ohne ihn berechnet.</value>
+  </data>
+  <data name="stock.sinUltimasVentas" xml:space="preserve">
+    <value>Für diese Filiale wurden noch keine Verkäufe erfasst.</value>
+  </data>
+  <data name="stock.ayudaEstados" xml:space="preserve">
+    <value>Kritisch: kein Bestand. Niedrig: am oder unter dem Minimum. Überbestand: über dem Maximum.</value>
+  </data>
+  <data name="valor.sobrestock" xml:space="preserve">
+    <value>Überbestand</value>
+  </data>
+  <data name="valor.aplicada" xml:space="preserve">
+    <value>Angewendet</value>
+  </data>
+  <data name="valor.deshecha" xml:space="preserve">
+    <value>Rückgängig gemacht</value>
+  </data>
+  <data name="importar.historial" xml:space="preserve">
+    <value>Importverlauf</value>
+  </data>
+  <data name="importar.ayudaHistorial" xml:space="preserve">
+    <value>„Rückgängig“ löscht alle Verkäufe, die mit dieser Datei importiert wurden (z. B. bei doppeltem Import). Bestandsimporte können nicht rückgängig gemacht werden: Sie ersetzen den vorherigen Bestand.</value>
+  </data>
+  <data name="importar.colArchivo" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="importar.colFilas" xml:space="preserve">
+    <value>Zeilen</value>
+  </data>
+  <data name="importar.deshacer" xml:space="preserve">
+    <value>Rückgängig</value>
+  </data>
+  <data name="importar.confirmarDeshacer" xml:space="preserve">
+    <value>Diesen Import rückgängig machen? Alle mit dieser Datei importierten Verkäufe werden gelöscht.</value>
+  </data>
+  <data name="importar.sinImportaciones" xml:space="preserve">
+    <value>Für diese Filiale wurden noch keine Dateien importiert.</value>
+  </data>
+  <data name="stock.importeOpcional" xml:space="preserve">
+    <value>Gesamtbetrag (leer = Preis × Menge)</value>
+  </data>
+  <data name="importar.titulo" xml:space="preserve">
+    <value>Datei importieren</value>
+  </data>
+  <data name="importar.descripcion" xml:space="preserve">
+    <value>Importieren Sie die aus dem Kassensystem der Filiale exportierten Verkäufe oder Bestände als CSV- oder Excel-Datei (.xlsx).</value>
+  </data>
+  <data name="importar.archivo" xml:space="preserve">
+    <value>Datei (.csv oder .xlsx, bis 2 MB) *</value>
+  </data>
+  <data name="importar.formato" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="importar.ayudaVentas" xml:space="preserve">
+    <value>codigo: PROD-001 · fecha: 2026-10-15 oder 15/10/2026 · cantidad: ganze Zahl größer als 0 · importe: optional (leer = Preis × Menge), ohne Tausendertrennzeichen.</value>
+  </data>
+  <data name="importar.ayudaStock" xml:space="preserve">
+    <value>codigo: PROD-001 · cantidad: ganze Zahl ab 0 · minimo und maximo: optional. Hat das Produkt bereits Bestand in der Filiale, wird er ersetzt.</value>
+  </data>
+  <data name="importar.plantillaExcel" xml:space="preserve">
+    <value>Excel-Vorlage herunterladen</value>
+  </data>
+  <data name="importar.plantillaCsv" xml:space="preserve">
+    <value>CSV-Vorlage herunterladen</value>
+  </data>
+  <data name="importar.todoONada" xml:space="preserve">
+    <value>Die gesamte Datei wird geprüft: Hat eine Zeile einen Fehler, wird keine importiert und Zeile und Grund werden angezeigt.</value>
+  </data>
+  <data name="importar.btnImportar" xml:space="preserve">
+    <value>Importieren</value>
+  </data>
+  <data name="stock.origenManual" xml:space="preserve">
+    <value>Manuelle Erfassung</value>
+  </data>
+  <data name="stock.origenImportacion" xml:space="preserve">
+    <value>Import Nr. {0}</value>
+  </data>
+  <data name="importar.tituloErrores" xml:space="preserve">
+    <value>Es wurde keine Zeile importiert. Korrigieren Sie die Datei und importieren Sie sie erneut:</value>
+  </data>
+  <data name="importar.fila" xml:space="preserve">
+    <value>Zeile {0}</value>
+  </data>
+  <data name="importar.masErrores" xml:space="preserve">
+    <value>... und {0} weitere Fehler.</value>
+  </data>
+  <data name="importar.msgVentas" xml:space="preserve">
+    <value>{0} Verkäufe wurden importiert (Import Nr. {1}).</value>
+  </data>
+  <data name="importar.msgStock" xml:space="preserve">
+    <value>Der Bestand von {0} Produkten wurde aktualisiert (Import Nr. {1}).</value>
+  </data>
+  <data name="importar.msgSinUbicar" xml:space="preserve">
+    <value>{0} betreffen Produkte ohne Platzierung in dieser Filiale: Sie zählen zu keinem Bereich, bis sie platziert werden.</value>
+  </data>
+  <data name="importar.msgDeshecha" xml:space="preserve">
+    <value>Import rückgängig gemacht: {0} Verkäufe wurden gelöscht.</value>
+  </data>
+  <data name="stock.msgVentaEliminada" xml:space="preserve">
+    <value>Verkauf gelöscht.</value>
+  </data>
+  <data name="importar.errArchivoIlegible" xml:space="preserve">
+    <value>Die Datei konnte nicht gelesen werden. Prüfen Sie, ob es eine gültige CSV- oder Excel-Datei (.xlsx) ist.</value>
+  </data>
+  <data name="importar.errFaltaColumna" xml:space="preserve">
+    <value>In der Kopfzeile fehlt die Spalte „{0}“.</value>
+  </data>
+  <data name="importar.errSinArchivo" xml:space="preserve">
+    <value>Wählen Sie eine Datei zum Importieren.</value>
+  </data>
+  <data name="importar.errFormato" xml:space="preserve">
+    <value>Nicht unterstütztes Format. Verwenden Sie eine .csv- oder .xlsx-Datei (.xls aus Excel 97-2003 wird nicht unterstützt).</value>
+  </data>
+  <data name="importar.errTamanio" xml:space="preserve">
+    <value>Die Datei überschreitet das Maximum von {0} MB.</value>
+  </data>
+  <data name="importar.errVacio" xml:space="preserve">
+    <value>Die Datei enthält keine Datenzeilen (nur die Kopfzeile oder sie ist leer).</value>
+  </data>
+  <data name="importar.errMaximoFilas" xml:space="preserve">
+    <value>Die Datei überschreitet das Maximum von {0} Zeilen. Teilen Sie sie in mehrere Dateien auf.</value>
+  </data>
+  <data name="importar.errProductoRepetido" xml:space="preserve">
+    <value>Das Produkt {0} steht bereits in Zeile {1}.</value>
+  </data>
+  <data name="importar.errNoDeshacer" xml:space="preserve">
+    <value>Dieser Import kann nicht rückgängig gemacht werden.</value>
+  </data>
+  <data name="importar.errCodigo" xml:space="preserve">
+    <value>Der Code „{0}“ ist ungültig (Beispiel: PROD-001).</value>
+  </data>
+  <data name="importar.errProductoNoExiste" xml:space="preserve">
+    <value>Das Produkt {0} existiert im Unternehmen nicht.</value>
+  </data>
+  <data name="importar.errProductoInactivo" xml:space="preserve">
+    <value>Das Produkt {0} ist inaktiv.</value>
+  </data>
+  <data name="importar.errFecha" xml:space="preserve">
+    <value>Das Datum „{0}“ ist ungültig (Beispiel: 2026-10-15 oder 15/10/2026).</value>
+  </data>
+  <data name="importar.errNumero" xml:space="preserve">
+    <value>Die Spalte „{0}“ hat einen ungültigen Wert: „{1}“.</value>
+  </data>
+  <data name="stock.errCantidadPositiva" xml:space="preserve">
+    <value>Die Menge muss größer als 0 sein.</value>
+  </data>
+  <data name="stock.errFechaFutura" xml:space="preserve">
+    <value>Das Datum darf nicht nach heute liegen.</value>
+  </data>
+  <data name="stock.errImporteNegativo" xml:space="preserve">
+    <value>Der Betrag darf nicht negativ sein.</value>
+  </data>
+  <data name="stock.errSinImporte" xml:space="preserve">
+    <value>Geben Sie den Betrag ein: Für das Produkt ist kein Preis hinterlegt.</value>
+  </data>
+  <data name="stock.errStockNegativo" xml:space="preserve">
+    <value>Bestand, Minimum und Maximum dürfen nicht negativ sein.</value>
+  </data>
+  <data name="stock.errMinimoMaximo" xml:space="preserve">
+    <value>Der Mindestbestand darf nicht größer als der Höchstbestand sein.</value>
   </data>
 </root>

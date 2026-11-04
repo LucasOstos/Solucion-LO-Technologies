@@ -31,6 +31,8 @@ namespace BLL
         public void GuardarStock(StockBE pStock)
         {
             ValidarLocalYProducto(pStock.CodigoLocal, pStock.CodigoProducto);
+            string error = ValidarStock(pStock.CantidadDisponible, pStock.Minimo, pStock.Maximo);
+            if (error != null) throw new ExcepcionTraducible(error);
             if (pStock.CodigoStock > 0) ControlAcceso.Validar(EntidadEmpresa.Stock, pStock.CodigoStock);
             if (pStock.CodigoStock > 0)
             {
@@ -54,6 +56,13 @@ namespace BLL
                 }
             }
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Cargar datos de stock y ventas", "Gestión operaciones", 2);
+        }
+        // Reglas del stock (carga manual e importación). Devuelve la clave del error o null si es válido.
+        internal static string ValidarStock(int pCantidad, int? pMinimo, int? pMaximo)
+        {
+            if (pCantidad < 0 || (pMinimo != null && pMinimo < 0) || (pMaximo != null && pMaximo < 0)) return "stock.errStockNegativo";
+            if (pMinimo != null && pMaximo != null && pMinimo > pMaximo) return "stock.errMinimoMaximo";
+            return null;
         }
         internal static void ValidarLocalYProducto(int pCodigoLocal, int pCodigoProducto)
         {

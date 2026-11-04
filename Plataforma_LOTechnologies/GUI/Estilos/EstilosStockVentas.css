@@ -19,17 +19,6 @@
     margin-top: 4px;
 }
 
-.sv-grafico-placeholder {
-    height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f4f6fa;
-    border-radius: 8px;
-    color: #9aa4b5;
-    font-size: 13px;
-}
-
 .sv-barra-stock {
     display: inline-block;
     width: 80px;
@@ -44,4 +33,110 @@
 .sv-barra-relleno {
     height: 100%;
     background-color: #2f6bff;
+}
+
+/* Rango de meses que suma el filtro de período */
+.sv-rango {
+    align-self: center;
+    font-size: 13px;
+}
+
+/* Gráfico de ventas por sector: barras horizontales */
+.sv-barras {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sv-barra-fila {
+    display: grid;
+    grid-template-columns: minmax(110px, 180px) 1fr minmax(120px, auto);
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.sv-barra-nombre {
+    color: #17223a;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sv-barra-pista {
+    display: block;
+    height: 14px;
+    background-color: #eef1f6;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.sv-barra {
+    display: block;
+    height: 100%;
+    min-width: 2px;
+    background-color: #2f6bff;
+    border-radius: 7px;
+}
+
+.sv-barra-valor {
+    text-align: right;
+    color: #17223a;
+    white-space: nowrap;
+}
+
+/* Modal de importación */
+.sv-formato {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: #f4f6fa;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+    .sv-formato code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #17223a;
+        background-color: #ffffff;
+        border: 1px solid #dde2ea;
+        border-radius: 6px;
+        padding: 4px 8px;
+        align-self: flex-start;
+    }
+
+.sv-plantillas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+    .sv-plantillas a {
+        color: #2f6bff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .sv-plantillas a:hover,
+        .sv-plantillas a:focus {
+            text-decoration: underline;
+        }
+
+.sv-errores {
+    margin: 6px 0 4px 18px;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .sv-barra-fila {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .sv-barra-valor {
+        text-align: left;
+    }
 }

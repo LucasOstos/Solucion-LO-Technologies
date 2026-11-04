@@ -1415,9 +1415,6 @@
   <data name="stock.subtitulo" xml:space="preserve">
     <value>CUN 006 — Загрузка и управление данными о продажах и запасах</value>
   </data>
-  <data name="stock.btnImportar" xml:space="preserve">
-    <value>Импорт CSV</value>
-  </data>
   <data name="stock.btnCargaManual" xml:space="preserve">
     <value>Ручной ввод</value>
   </data>
@@ -1445,12 +1442,6 @@
   <data name="stock.tabStock" xml:space="preserve">
     <value>Данные о запасах</value>
   </data>
-  <data name="stock.totalVentas" xml:space="preserve">
-    <value>Сумма продаж (месяц)</value>
-  </data>
-  <data name="stock.ticketPromedio" xml:space="preserve">
-    <value>Средний чек</value>
-  </data>
   <data name="stock.unidadesVendidas" xml:space="preserve">
     <value>Продано единиц</value>
   </data>
@@ -1459,9 +1450,6 @@
   </data>
   <data name="stock.ventasPorSector" xml:space="preserve">
     <value>Продажи по секциям</value>
-  </data>
-  <data name="stock.graficoPendiente" xml:space="preserve">
-    <value>График продаж по секциям (в разработке)</value>
   </data>
   <data name="stock.detalleVentas" xml:space="preserve">
     <value>Детализация продаж</value>
@@ -1514,9 +1502,6 @@
   <data name="stock.errCantidad" xml:space="preserve">
     <value>Введите количество</value>
   </data>
-  <data name="stock.importe" xml:space="preserve">
-    <value>Общая сумма (для продажи)</value>
-  </data>
   <data name="stock.minimo" xml:space="preserve">
     <value>Минимальный запас (для запаса)</value>
   </data>
@@ -1525,9 +1510,6 @@
   </data>
   <data name="stock.fecha" xml:space="preserve">
     <value>Период / дата *</value>
-  </data>
-  <data name="stock.errImportarCsv" xml:space="preserve">
-    <value>Импорт CSV пока недоступен.</value>
   </data>
   <data name="stock.errSeleccionarLocal" xml:space="preserve">
     <value>Выберите магазин.</value>
@@ -2056,5 +2038,197 @@
   </data>
   <data name="pdf.planoVigente" xml:space="preserve">
     <value>Действующий план: {0}</value>
+  </data>
+  <data name="stock.btnImportarArchivo" xml:space="preserve">
+    <value>Импорт файла</value>
+  </data>
+  <data name="stock.agrupacion" xml:space="preserve">
+    <value>Группировка</value>
+  </data>
+  <data name="stock.rangoPeriodo" xml:space="preserve">
+    <value>Включённые месяцы: {0}</value>
+  </data>
+  <data name="importar.tabImportaciones" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="stock.totalVentasPeriodo" xml:space="preserve">
+    <value>Итого продаж за период</value>
+  </data>
+  <data name="stock.precioPromedioUnidad" xml:space="preserve">
+    <value>Средняя цена за единицу</value>
+  </data>
+  <data name="stock.ultimasVentas" xml:space="preserve">
+    <value>Последние внесённые продажи</value>
+  </data>
+  <data name="stock.ayudaUltimasVentas" xml:space="preserve">
+    <value>Если вы внесли продажу по ошибке, удалите её здесь. Чтобы удалить весь файл, используйте вкладку «Импорт».</value>
+  </data>
+  <data name="stock.colFecha" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="stock.colOrigen" xml:space="preserve">
+    <value>Источник</value>
+  </data>
+  <data name="stock.confirmarEliminarVenta" xml:space="preserve">
+    <value>Удалить эту продажу? Показатели будут рассчитаны без неё.</value>
+  </data>
+  <data name="stock.sinUltimasVentas" xml:space="preserve">
+    <value>Для этого магазина ещё не внесено продаж.</value>
+  </data>
+  <data name="stock.ayudaEstados" xml:space="preserve">
+    <value>Критический: нет в наличии. Низкий: на минимуме или ниже. Избыток: выше максимума.</value>
+  </data>
+  <data name="valor.sobrestock" xml:space="preserve">
+    <value>Избыток</value>
+  </data>
+  <data name="valor.aplicada" xml:space="preserve">
+    <value>Применён</value>
+  </data>
+  <data name="valor.deshecha" xml:space="preserve">
+    <value>Отменён</value>
+  </data>
+  <data name="importar.historial" xml:space="preserve">
+    <value>История импорта</value>
+  </data>
+  <data name="importar.ayudaHistorial" xml:space="preserve">
+    <value>«Отменить» удаляет все продажи, загруженные этим файлом (например, если он был импортирован дважды). Импорт остатков отменить нельзя: он заменяет прежние остатки.</value>
+  </data>
+  <data name="importar.colArchivo" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="importar.colFilas" xml:space="preserve">
+    <value>Строки</value>
+  </data>
+  <data name="importar.deshacer" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="importar.confirmarDeshacer" xml:space="preserve">
+    <value>Отменить этот импорт? Все продажи, загруженные этим файлом, будут удалены.</value>
+  </data>
+  <data name="importar.sinImportaciones" xml:space="preserve">
+    <value>Для этого магазина ещё не импортировано файлов.</value>
+  </data>
+  <data name="stock.importeOpcional" xml:space="preserve">
+    <value>Общая сумма (пусто = цена × количество)</value>
+  </data>
+  <data name="importar.titulo" xml:space="preserve">
+    <value>Импорт файла</value>
+  </data>
+  <data name="importar.descripcion" xml:space="preserve">
+    <value>Импортируйте продажи или остатки, выгруженные из кассовой системы магазина, в файле CSV или Excel (.xlsx).</value>
+  </data>
+  <data name="importar.archivo" xml:space="preserve">
+    <value>Файл (.csv или .xlsx, до 2 МБ) *</value>
+  </data>
+  <data name="importar.formato" xml:space="preserve">
+    <value>Формат</value>
+  </data>
+  <data name="importar.ayudaVentas" xml:space="preserve">
+    <value>codigo: PROD-001 · fecha: 2026-10-15 или 15/10/2026 · cantidad: целое число больше 0 · importe: необязательно (пусто = цена × количество), без разделителя тысяч.</value>
+  </data>
+  <data name="importar.ayudaStock" xml:space="preserve">
+    <value>codigo: PROD-001 · cantidad: целое число от 0 · minimo и maximo: необязательно. Если у товара уже есть остаток в магазине, он заменяется.</value>
+  </data>
+  <data name="importar.plantillaExcel" xml:space="preserve">
+    <value>Скачать шаблон Excel</value>
+  </data>
+  <data name="importar.plantillaCsv" xml:space="preserve">
+    <value>Скачать шаблон CSV</value>
+  </data>
+  <data name="importar.todoONada" xml:space="preserve">
+    <value>Файл проверяется целиком: если в какой-либо строке есть ошибка, ничего не импортируется, а указываются строка и причина.</value>
+  </data>
+  <data name="importar.btnImportar" xml:space="preserve">
+    <value>Импортировать</value>
+  </data>
+  <data name="stock.origenManual" xml:space="preserve">
+    <value>Ручной ввод</value>
+  </data>
+  <data name="stock.origenImportacion" xml:space="preserve">
+    <value>Импорт №{0}</value>
+  </data>
+  <data name="importar.tituloErrores" xml:space="preserve">
+    <value>Ни одна строка не импортирована. Исправьте файл и импортируйте его снова:</value>
+  </data>
+  <data name="importar.fila" xml:space="preserve">
+    <value>Строка {0}</value>
+  </data>
+  <data name="importar.masErrores" xml:space="preserve">
+    <value>... и ещё {0} ошибок.</value>
+  </data>
+  <data name="importar.msgVentas" xml:space="preserve">
+    <value>Импортировано продаж: {0} (импорт №{1}).</value>
+  </data>
+  <data name="importar.msgStock" xml:space="preserve">
+    <value>Обновлены остатки {0} товаров (импорт №{1}).</value>
+  </data>
+  <data name="importar.msgSinUbicar" xml:space="preserve">
+    <value>{0} относятся к товарам без размещения в этом магазине: они не учитываются ни в одном секторе, пока их не разместят.</value>
+  </data>
+  <data name="importar.msgDeshecha" xml:space="preserve">
+    <value>Импорт отменён: удалено продаж: {0}.</value>
+  </data>
+  <data name="stock.msgVentaEliminada" xml:space="preserve">
+    <value>Продажа удалена.</value>
+  </data>
+  <data name="importar.errArchivoIlegible" xml:space="preserve">
+    <value>Не удалось прочитать файл. Убедитесь, что это корректный файл CSV или Excel (.xlsx).</value>
+  </data>
+  <data name="importar.errFaltaColumna" xml:space="preserve">
+    <value>В заголовке нет столбца «{0}».</value>
+  </data>
+  <data name="importar.errSinArchivo" xml:space="preserve">
+    <value>Выберите файл для импорта.</value>
+  </data>
+  <data name="importar.errFormato" xml:space="preserve">
+    <value>Неподдерживаемый формат. Используйте файл .csv или .xlsx (.xls из Excel 97-2003 не поддерживается).</value>
+  </data>
+  <data name="importar.errTamanio" xml:space="preserve">
+    <value>Файл превышает максимальный размер {0} МБ.</value>
+  </data>
+  <data name="importar.errVacio" xml:space="preserve">
+    <value>В файле нет строк с данными (только заголовок или он пуст).</value>
+  </data>
+  <data name="importar.errMaximoFilas" xml:space="preserve">
+    <value>Файл превышает максимум в {0} строк. Разделите его на несколько файлов.</value>
+  </data>
+  <data name="importar.errProductoRepetido" xml:space="preserve">
+    <value>Товар {0} уже есть в строке {1}.</value>
+  </data>
+  <data name="importar.errNoDeshacer" xml:space="preserve">
+    <value>Этот импорт нельзя отменить.</value>
+  </data>
+  <data name="importar.errCodigo" xml:space="preserve">
+    <value>Код «{0}» недействителен (пример: PROD-001).</value>
+  </data>
+  <data name="importar.errProductoNoExiste" xml:space="preserve">
+    <value>Товар {0} не существует в компании.</value>
+  </data>
+  <data name="importar.errProductoInactivo" xml:space="preserve">
+    <value>Товар {0} неактивен.</value>
+  </data>
+  <data name="importar.errFecha" xml:space="preserve">
+    <value>Дата «{0}» недействительна (пример: 2026-10-15 или 15/10/2026).</value>
+  </data>
+  <data name="importar.errNumero" xml:space="preserve">
+    <value>В столбце «{0}» недопустимое значение: «{1}».</value>
+  </data>
+  <data name="stock.errCantidadPositiva" xml:space="preserve">
+    <value>Количество должно быть больше 0.</value>
+  </data>
+  <data name="stock.errFechaFutura" xml:space="preserve">
+    <value>Дата не может быть позже сегодняшней.</value>
+  </data>
+  <data name="stock.errImporteNegativo" xml:space="preserve">
+    <value>Сумма не может быть отрицательной.</value>
+  </data>
+  <data name="stock.errSinImporte" xml:space="preserve">
+    <value>Введите сумму: у товара не указана цена.</value>
+  </data>
+  <data name="stock.errStockNegativo" xml:space="preserve">
+    <value>Остаток, минимум и максимум не могут быть отрицательными.</value>
+  </data>
+  <data name="stock.errMinimoMaximo" xml:space="preserve">
+    <value>Минимальный остаток не может быть больше максимального.</value>
   </data>
 </root>

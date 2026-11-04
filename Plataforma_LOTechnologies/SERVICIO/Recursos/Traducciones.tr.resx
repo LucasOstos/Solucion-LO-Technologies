@@ -1415,9 +1415,6 @@
   <data name="stock.subtitulo" xml:space="preserve">
     <value>CUN 006 — Satış ve stok verilerinin girişi ve yönetimi</value>
   </data>
-  <data name="stock.btnImportar" xml:space="preserve">
-    <value>CSV içe aktar</value>
-  </data>
   <data name="stock.btnCargaManual" xml:space="preserve">
     <value>Manuel giriş</value>
   </data>
@@ -1445,12 +1442,6 @@
   <data name="stock.tabStock" xml:space="preserve">
     <value>Stok verileri</value>
   </data>
-  <data name="stock.totalVentas" xml:space="preserve">
-    <value>Toplam satış (ay)</value>
-  </data>
-  <data name="stock.ticketPromedio" xml:space="preserve">
-    <value>Ortalama fiş</value>
-  </data>
   <data name="stock.unidadesVendidas" xml:space="preserve">
     <value>Satılan adet</value>
   </data>
@@ -1459,9 +1450,6 @@
   </data>
   <data name="stock.ventasPorSector" xml:space="preserve">
     <value>Reyona göre satışlar</value>
-  </data>
-  <data name="stock.graficoPendiente" xml:space="preserve">
-    <value>Reyona göre satış grafiği (yakında)</value>
   </data>
   <data name="stock.detalleVentas" xml:space="preserve">
     <value>Satış ayrıntıları</value>
@@ -1514,9 +1502,6 @@
   <data name="stock.errCantidad" xml:space="preserve">
     <value>Miktarı girin</value>
   </data>
-  <data name="stock.importe" xml:space="preserve">
-    <value>Toplam tutar (satışsa)</value>
-  </data>
   <data name="stock.minimo" xml:space="preserve">
     <value>Minimum stok (stoksa)</value>
   </data>
@@ -1525,9 +1510,6 @@
   </data>
   <data name="stock.fecha" xml:space="preserve">
     <value>Dönem / Tarih *</value>
-  </data>
-  <data name="stock.errImportarCsv" xml:space="preserve">
-    <value>CSV içe aktarma henüz kullanılamıyor.</value>
   </data>
   <data name="stock.errSeleccionarLocal" xml:space="preserve">
     <value>Bir mağaza seçin.</value>
@@ -2056,5 +2038,197 @@
   </data>
   <data name="pdf.planoVigente" xml:space="preserve">
     <value>Geçerli plan: {0}</value>
+  </data>
+  <data name="stock.btnImportarArchivo" xml:space="preserve">
+    <value>Dosya içe aktar</value>
+  </data>
+  <data name="stock.agrupacion" xml:space="preserve">
+    <value>Gruplama</value>
+  </data>
+  <data name="stock.rangoPeriodo" xml:space="preserve">
+    <value>Dahil edilen aylar: {0}</value>
+  </data>
+  <data name="importar.tabImportaciones" xml:space="preserve">
+    <value>İçe aktarmalar</value>
+  </data>
+  <data name="stock.totalVentasPeriodo" xml:space="preserve">
+    <value>Dönem toplam satışları</value>
+  </data>
+  <data name="stock.precioPromedioUnidad" xml:space="preserve">
+    <value>Birim başına ortalama fiyat</value>
+  </data>
+  <data name="stock.ultimasVentas" xml:space="preserve">
+    <value>Son girilen satışlar</value>
+  </data>
+  <data name="stock.ayudaUltimasVentas" xml:space="preserve">
+    <value>Bir satışı yanlışlıkla girdiyseniz buradan silin. Tüm bir dosyayı kaldırmak için İçe aktarmalar sekmesini kullanın.</value>
+  </data>
+  <data name="stock.colFecha" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="stock.colOrigen" xml:space="preserve">
+    <value>Kaynak</value>
+  </data>
+  <data name="stock.confirmarEliminarVenta" xml:space="preserve">
+    <value>Bu satış silinsin mi? Göstergeler bu satış olmadan hesaplanacak.</value>
+  </data>
+  <data name="stock.sinUltimasVentas" xml:space="preserve">
+    <value>Bu mağaza için henüz satış girilmedi.</value>
+  </data>
+  <data name="stock.ayudaEstados" xml:space="preserve">
+    <value>Kritik: stok yok. Düşük: minimumda veya altında. Fazla stok: maksimumun üzerinde.</value>
+  </data>
+  <data name="valor.sobrestock" xml:space="preserve">
+    <value>Fazla stok</value>
+  </data>
+  <data name="valor.aplicada" xml:space="preserve">
+    <value>Uygulandı</value>
+  </data>
+  <data name="valor.deshecha" xml:space="preserve">
+    <value>Geri alındı</value>
+  </data>
+  <data name="importar.historial" xml:space="preserve">
+    <value>İçe aktarma geçmişi</value>
+  </data>
+  <data name="importar.ayudaHistorial" xml:space="preserve">
+    <value>"Geri al", o dosyayla gelen tüm satışları siler (örneğin iki kez içe aktarıldıysa). Stok içe aktarmaları geri alınamaz: önceki stoğun yerine geçer.</value>
+  </data>
+  <data name="importar.colArchivo" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="importar.colFilas" xml:space="preserve">
+    <value>Satırlar</value>
+  </data>
+  <data name="importar.deshacer" xml:space="preserve">
+    <value>Geri al</value>
+  </data>
+  <data name="importar.confirmarDeshacer" xml:space="preserve">
+    <value>Bu içe aktarma geri alınsın mı? Bu dosyayla gelen tüm satışlar silinecek.</value>
+  </data>
+  <data name="importar.sinImportaciones" xml:space="preserve">
+    <value>Bu mağaza için henüz dosya içe aktarılmadı.</value>
+  </data>
+  <data name="stock.importeOpcional" xml:space="preserve">
+    <value>Toplam tutar (boş = fiyat × miktar)</value>
+  </data>
+  <data name="importar.titulo" xml:space="preserve">
+    <value>Dosya içe aktar</value>
+  </data>
+  <data name="importar.descripcion" xml:space="preserve">
+    <value>Mağazanın satış noktası sisteminden dışa aktarılan satışları veya stoğu CSV ya da Excel (.xlsx) dosyası olarak içe aktarın.</value>
+  </data>
+  <data name="importar.archivo" xml:space="preserve">
+    <value>Dosya (.csv veya .xlsx, en fazla 2 MB) *</value>
+  </data>
+  <data name="importar.formato" xml:space="preserve">
+    <value>Biçim</value>
+  </data>
+  <data name="importar.ayudaVentas" xml:space="preserve">
+    <value>codigo: PROD-001 · fecha: 2026-10-15 veya 15/10/2026 · cantidad: 0'dan büyük tam sayı · importe: isteğe bağlı (boş = fiyat × miktar), binlik ayırıcı olmadan.</value>
+  </data>
+  <data name="importar.ayudaStock" xml:space="preserve">
+    <value>codigo: PROD-001 · cantidad: 0 veya daha büyük tam sayı · minimo ve maximo: isteğe bağlı. Ürünün mağazada zaten stoğu varsa değiştirilir.</value>
+  </data>
+  <data name="importar.plantillaExcel" xml:space="preserve">
+    <value>Excel şablonunu indir</value>
+  </data>
+  <data name="importar.plantillaCsv" xml:space="preserve">
+    <value>CSV şablonunu indir</value>
+  </data>
+  <data name="importar.todoONada" xml:space="preserve">
+    <value>Dosyanın tamamı doğrulanır: herhangi bir satırda hata varsa hiçbiri içe aktarılmaz ve satır ile neden gösterilir.</value>
+  </data>
+  <data name="importar.btnImportar" xml:space="preserve">
+    <value>İçe aktar</value>
+  </data>
+  <data name="stock.origenManual" xml:space="preserve">
+    <value>Manuel giriş</value>
+  </data>
+  <data name="stock.origenImportacion" xml:space="preserve">
+    <value>İçe aktarma #{0}</value>
+  </data>
+  <data name="importar.tituloErrores" xml:space="preserve">
+    <value>Hiçbir satır içe aktarılmadı. Dosyayı düzeltip yeniden içe aktarın:</value>
+  </data>
+  <data name="importar.fila" xml:space="preserve">
+    <value>Satır {0}</value>
+  </data>
+  <data name="importar.masErrores" xml:space="preserve">
+    <value>... ve {0} hata daha.</value>
+  </data>
+  <data name="importar.msgVentas" xml:space="preserve">
+    <value>{0} satış içe aktarıldı (içe aktarma #{1}).</value>
+  </data>
+  <data name="importar.msgStock" xml:space="preserve">
+    <value>{0} ürünün stoğu güncellendi (içe aktarma #{1}).</value>
+  </data>
+  <data name="importar.msgSinUbicar" xml:space="preserve">
+    <value>{0} tanesi bu mağazada yerleştirilmemiş ürünlere ait: yerleştirilene kadar hiçbir bölüme dahil edilmez.</value>
+  </data>
+  <data name="importar.msgDeshecha" xml:space="preserve">
+    <value>İçe aktarma geri alındı: {0} satış silindi.</value>
+  </data>
+  <data name="stock.msgVentaEliminada" xml:space="preserve">
+    <value>Satış silindi.</value>
+  </data>
+  <data name="importar.errArchivoIlegible" xml:space="preserve">
+    <value>Dosya okunamadı. Geçerli bir CSV veya Excel (.xlsx) dosyası olduğundan emin olun.</value>
+  </data>
+  <data name="importar.errFaltaColumna" xml:space="preserve">
+    <value>Başlıkta "{0}" sütunu eksik.</value>
+  </data>
+  <data name="importar.errSinArchivo" xml:space="preserve">
+    <value>İçe aktarılacak bir dosya seçin.</value>
+  </data>
+  <data name="importar.errFormato" xml:space="preserve">
+    <value>Desteklenmeyen biçim. .csv veya .xlsx dosyası kullanın (Excel 97-2003 .xls desteklenmez).</value>
+  </data>
+  <data name="importar.errTamanio" xml:space="preserve">
+    <value>Dosya {0} MB sınırını aşıyor.</value>
+  </data>
+  <data name="importar.errVacio" xml:space="preserve">
+    <value>Dosyada veri satırı yok (yalnızca başlık var veya boş).</value>
+  </data>
+  <data name="importar.errMaximoFilas" xml:space="preserve">
+    <value>Dosya {0} satır sınırını aşıyor. Birkaç dosyaya bölün.</value>
+  </data>
+  <data name="importar.errProductoRepetido" xml:space="preserve">
+    <value>{0} ürünü zaten {1}. satırda var.</value>
+  </data>
+  <data name="importar.errNoDeshacer" xml:space="preserve">
+    <value>Bu içe aktarma geri alınamaz.</value>
+  </data>
+  <data name="importar.errCodigo" xml:space="preserve">
+    <value>"{0}" kodu geçersiz (örnek: PROD-001).</value>
+  </data>
+  <data name="importar.errProductoNoExiste" xml:space="preserve">
+    <value>{0} ürünü şirkette yok.</value>
+  </data>
+  <data name="importar.errProductoInactivo" xml:space="preserve">
+    <value>{0} ürünü pasif.</value>
+  </data>
+  <data name="importar.errFecha" xml:space="preserve">
+    <value>"{0}" tarihi geçersiz (örnek: 2026-10-15 veya 15/10/2026).</value>
+  </data>
+  <data name="importar.errNumero" xml:space="preserve">
+    <value>"{0}" sütununda geçersiz değer var: "{1}".</value>
+  </data>
+  <data name="stock.errCantidadPositiva" xml:space="preserve">
+    <value>Miktar 0'dan büyük olmalıdır.</value>
+  </data>
+  <data name="stock.errFechaFutura" xml:space="preserve">
+    <value>Tarih bugünden sonra olamaz.</value>
+  </data>
+  <data name="stock.errImporteNegativo" xml:space="preserve">
+    <value>Tutar negatif olamaz.</value>
+  </data>
+  <data name="stock.errSinImporte" xml:space="preserve">
+    <value>Tutarı girin: ürünün fiyatı tanımlı değil.</value>
+  </data>
+  <data name="stock.errStockNegativo" xml:space="preserve">
+    <value>Stok, minimum ve maksimum negatif olamaz.</value>
+  </data>
+  <data name="stock.errMinimoMaximo" xml:space="preserve">
+    <value>Minimum stok maksimumdan büyük olamaz.</value>
   </data>
 </root>

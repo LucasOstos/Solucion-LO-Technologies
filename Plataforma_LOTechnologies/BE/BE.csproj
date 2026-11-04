@@ -46,6 +46,7 @@
     <Compile Include="EmpresaBE.cs" />
     <Compile Include="EscenarioBE.cs" />
     <Compile Include="Idioma.cs" />
+    <Compile Include="ImportacionBE.cs" />
     <Compile Include="IndicadorBE.cs" />
     <Compile Include="LayoutBE.cs" />
     <Compile Include="LocalBE.cs" />

@@ -334,7 +334,7 @@ public partial class PaginaReportes : PaginaSegura
         }
         List<EscenarioCambio> cambiosBase = escenarioBLL.ObtenerCambiosPorEscenario(codigoBase);
         List<EscenarioCambio> cambiosPropuesto = escenarioBLL.ObtenerCambiosPorEscenario(codigoPropuesto);
-        string periodoDesdeStr = DateTime.Now.AddMonths(-1).ToString("yyyy-MM");
+        string periodoDesdeStr = PeriodoDesde(1);
         List<IndicadorSectorListado> indicadoresReales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesdeStr);
         List<IndicadorSectorListado> proyectadosBase = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosBase);
         List<IndicadorSectorListado> proyectadosPropuesto = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosPropuesto);

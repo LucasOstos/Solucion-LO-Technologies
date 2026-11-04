@@ -99,6 +99,24 @@ public class PaginaBase : Page, IObservadorIdioma
     {
         return pValor == null ? "" : pValor.Value.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture);
     }
+    protected static int MesesDelFiltro(string pValor)
+    {
+        switch (pValor)
+        {
+            case "3_meses": return 3;
+            case "5_meses": return 5;
+            default: return 1;
+        }
+    }
+    protected static string PeriodoDesde(int pMeses)
+    {
+        return DateTime.Now.AddMonths(-(Math.Max(pMeses, 1) - 1)).ToString("yyyy-MM");
+    }
+    protected static string DescribirPeriodo(int pMeses)
+    {
+        DateTime desde = DateTime.Now.AddMonths(-(Math.Max(pMeses, 1) - 1));
+        return pMeses <= 1 ? desde.ToString("MM/yyyy") : desde.ToString("MM/yyyy") + " - " + DateTime.Now.ToString("MM/yyyy");
+    }
     protected string NombreIdioma(Idioma pIdioma)
     {
         if (pIdioma == null) return "";

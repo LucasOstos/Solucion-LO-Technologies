@@ -15,9 +15,8 @@ namespace DAL
         {
             List<StockListado> stocks = new List<StockListado>();
             string query = @"SELECT st.CodigoStock, st.CodigoProducto, p.Nombre AS Producto, c.Nombre AS Categoria, st.CantidadDisponible, st.Minimo, st.Maximo FROM Stock st
-                              INNER JOIN Producto p ON st.CodigoProducto = p.CodigoProducto
-                              INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria
-                              WHERE st.CodigoLocal = @CodigoLocal ORDER BY p.Nombre";
+                             INNER JOIN Producto p ON st.CodigoProducto = p.CodigoProducto INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria
+                             WHERE st.CodigoLocal = @CodigoLocal ORDER BY p.Nombre";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -39,8 +38,8 @@ namespace DAL
                             CantidadDisponible = cantidad,
                             Minimo = minimo,
                             Maximo = maximo,
-                            EstadoStock = CalcularEstadoStock(cantidad, minimo),
-                            ClaseEstadoStock = CalcularClaseEstadoStock(cantidad, minimo),
+                            EstadoStock = CalcularEstadoStock(cantidad, minimo, maximo),
+                            ClaseEstadoStock = CalcularClaseEstadoStock(cantidad, minimo, maximo),
                             PorcentajeStock = CalcularPorcentaje(cantidad, maximo)
                         });
                     }
@@ -48,20 +47,22 @@ namespace DAL
             }
             return stocks;
         }
-        private string CalcularEstadoStock(int cantidad, int? minimo)
+        // Crítico: sin stock. Bajo: en el mínimo o debajo. Sobrestock: por encima del máximo.
+        private string CalcularEstadoStock(int cantidad, int? minimo, int? maximo)
         {
-            if (minimo == null) return "Normal";
-            if (cantidad <= 0) return "Crítico";
-            if (cantidad <= minimo) return "Bajo";
+            if (cantidad <= 0 && minimo != null) return "Crítico";
+            if (minimo != null && cantidad <= minimo) return "Bajo";
+            if (maximo != null && maximo > 0 && cantidad > maximo) return "Sobrestock";
             return "Normal";
         }
-        private string CalcularClaseEstadoStock(int cantidad, int? minimo)
+        private string CalcularClaseEstadoStock(int cantidad, int? minimo, int? maximo)
         {
-            string estado = CalcularEstadoStock(cantidad, minimo);
+            string estado = CalcularEstadoStock(cantidad, minimo, maximo);
             switch (estado)
             {
                 case "Crítico": return "etiqueta-inactivo";
                 case "Bajo": return "etiqueta-bloqueado";
+                case "Sobrestock": return "etiqueta-info";
                 default: return "etiqueta-activo";
             }
         }
@@ -75,7 +76,6 @@ namespace DAL
         {
             StockBE stock = null;
             string query = @"SELECT CodigoStock, CodigoLocal, CodigoProducto, CantidadDisponible, Minimo, Maximo, Periodo, FechaActualizacion FROM Stock WHERE CodigoStock = @CodigoStock";
-
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -87,7 +87,7 @@ namespace DAL
                     {
                         stock = new StockBE(int.Parse(DR["CodigoStock"].ToString()), int.Parse(DR["CodigoLocal"].ToString()), int.Parse(DR["CodigoProducto"].ToString()),
                                             int.Parse(DR["CantidadDisponible"].ToString()), DR["Minimo"] == DBNull.Value ? (int?)null : int.Parse(DR["Minimo"].ToString()),
-                                            DR["Maximo"] == DBNull.Value ? (int?)null : int.Parse(DR["Maximo"].ToString()), DR["Periodo"].ToString(), Convert.ToDateTime(DR["FechaActualizacion"]));                        
+                                            DR["Maximo"] == DBNull.Value ? (int?)null : int.Parse(DR["Maximo"].ToString()), DR["Periodo"].ToString(), Convert.ToDateTime(DR["FechaActualizacion"]));
                     }
                 }
             }

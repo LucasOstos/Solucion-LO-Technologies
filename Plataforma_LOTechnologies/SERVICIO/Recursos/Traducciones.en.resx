@@ -1415,9 +1415,6 @@
   <data name="stock.subtitulo" xml:space="preserve">
     <value>CUN 006 — Sales and stock data entry and management</value>
   </data>
-  <data name="stock.btnImportar" xml:space="preserve">
-    <value>Import CSV</value>
-  </data>
   <data name="stock.btnCargaManual" xml:space="preserve">
     <value>Manual entry</value>
   </data>
@@ -1445,12 +1442,6 @@
   <data name="stock.tabStock" xml:space="preserve">
     <value>Stock data</value>
   </data>
-  <data name="stock.totalVentas" xml:space="preserve">
-    <value>Total sales (month)</value>
-  </data>
-  <data name="stock.ticketPromedio" xml:space="preserve">
-    <value>Average ticket</value>
-  </data>
   <data name="stock.unidadesVendidas" xml:space="preserve">
     <value>Units sold</value>
   </data>
@@ -1459,9 +1450,6 @@
   </data>
   <data name="stock.ventasPorSector" xml:space="preserve">
     <value>Sales by section</value>
-  </data>
-  <data name="stock.graficoPendiente" xml:space="preserve">
-    <value>Sales by section chart (coming soon)</value>
   </data>
   <data name="stock.detalleVentas" xml:space="preserve">
     <value>Sales details</value>
@@ -1514,9 +1502,6 @@
   <data name="stock.errCantidad" xml:space="preserve">
     <value>Enter the quantity</value>
   </data>
-  <data name="stock.importe" xml:space="preserve">
-    <value>Total amount (for sales)</value>
-  </data>
   <data name="stock.minimo" xml:space="preserve">
     <value>Minimum stock (for stock)</value>
   </data>
@@ -1525,9 +1510,6 @@
   </data>
   <data name="stock.fecha" xml:space="preserve">
     <value>Period / Date *</value>
-  </data>
-  <data name="stock.errImportarCsv" xml:space="preserve">
-    <value>CSV import is not available yet.</value>
   </data>
   <data name="stock.errSeleccionarLocal" xml:space="preserve">
     <value>Select a store.</value>
@@ -2056,5 +2038,197 @@
   </data>
   <data name="pdf.planoVigente" xml:space="preserve">
     <value>Current floor plan: {0}</value>
+  </data>
+  <data name="stock.btnImportarArchivo" xml:space="preserve">
+    <value>Import file</value>
+  </data>
+  <data name="stock.agrupacion" xml:space="preserve">
+    <value>Grouping</value>
+  </data>
+  <data name="stock.rangoPeriodo" xml:space="preserve">
+    <value>Months included: {0}</value>
+  </data>
+  <data name="importar.tabImportaciones" xml:space="preserve">
+    <value>Imports</value>
+  </data>
+  <data name="stock.totalVentasPeriodo" xml:space="preserve">
+    <value>Total sales for the period</value>
+  </data>
+  <data name="stock.precioPromedioUnidad" xml:space="preserve">
+    <value>Average price per unit</value>
+  </data>
+  <data name="stock.ultimasVentas" xml:space="preserve">
+    <value>Latest sales entered</value>
+  </data>
+  <data name="stock.ayudaUltimasVentas" xml:space="preserve">
+    <value>If you entered a sale by mistake, delete it here. To remove a whole file, use the Imports tab.</value>
+  </data>
+  <data name="stock.colFecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="stock.colOrigen" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="stock.confirmarEliminarVenta" xml:space="preserve">
+    <value>Delete this sale? Indicators will be calculated without it.</value>
+  </data>
+  <data name="stock.sinUltimasVentas" xml:space="preserve">
+    <value>No sales have been entered for this store yet.</value>
+  </data>
+  <data name="stock.ayudaEstados" xml:space="preserve">
+    <value>Critical: out of stock. Low: at or below the minimum. Overstock: above the maximum.</value>
+  </data>
+  <data name="valor.sobrestock" xml:space="preserve">
+    <value>Overstock</value>
+  </data>
+  <data name="valor.aplicada" xml:space="preserve">
+    <value>Applied</value>
+  </data>
+  <data name="valor.deshecha" xml:space="preserve">
+    <value>Undone</value>
+  </data>
+  <data name="importar.historial" xml:space="preserve">
+    <value>Import history</value>
+  </data>
+  <data name="importar.ayudaHistorial" xml:space="preserve">
+    <value>"Undo" deletes all sales that came in with that file (for example, if it was imported twice). Stock imports cannot be undone: they replace the previous stock.</value>
+  </data>
+  <data name="importar.colArchivo" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="importar.colFilas" xml:space="preserve">
+    <value>Rows</value>
+  </data>
+  <data name="importar.deshacer" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="importar.confirmarDeshacer" xml:space="preserve">
+    <value>Undo this import? All sales that came in with this file will be deleted.</value>
+  </data>
+  <data name="importar.sinImportaciones" xml:space="preserve">
+    <value>No files have been imported for this store yet.</value>
+  </data>
+  <data name="stock.importeOpcional" xml:space="preserve">
+    <value>Total amount (empty = price × quantity)</value>
+  </data>
+  <data name="importar.titulo" xml:space="preserve">
+    <value>Import file</value>
+  </data>
+  <data name="importar.descripcion" xml:space="preserve">
+    <value>Import the sales or stock exported from the store's point-of-sale system, as a CSV or Excel (.xlsx) file.</value>
+  </data>
+  <data name="importar.archivo" xml:space="preserve">
+    <value>File (.csv or .xlsx, up to 2 MB) *</value>
+  </data>
+  <data name="importar.formato" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="importar.ayudaVentas" xml:space="preserve">
+    <value>codigo: PROD-001 · fecha: 2026-10-15 or 15/10/2026 · cantidad: whole number greater than 0 · importe: optional (empty = price × quantity), no thousands separator.</value>
+  </data>
+  <data name="importar.ayudaStock" xml:space="preserve">
+    <value>codigo: PROD-001 · cantidad: whole number 0 or greater · minimo and maximo: optional. If the product already has stock in the store, it is replaced.</value>
+  </data>
+  <data name="importar.plantillaExcel" xml:space="preserve">
+    <value>Download Excel template</value>
+  </data>
+  <data name="importar.plantillaCsv" xml:space="preserve">
+    <value>Download CSV template</value>
+  </data>
+  <data name="importar.todoONada" xml:space="preserve">
+    <value>The whole file is validated: if any row has an error, none are imported and the row and reason are shown.</value>
+  </data>
+  <data name="importar.btnImportar" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="stock.origenManual" xml:space="preserve">
+    <value>Manual entry</value>
+  </data>
+  <data name="stock.origenImportacion" xml:space="preserve">
+    <value>Import #{0}</value>
+  </data>
+  <data name="importar.tituloErrores" xml:space="preserve">
+    <value>No rows were imported. Fix the file and import it again:</value>
+  </data>
+  <data name="importar.fila" xml:space="preserve">
+    <value>Row {0}</value>
+  </data>
+  <data name="importar.masErrores" xml:space="preserve">
+    <value>... and {0} more errors.</value>
+  </data>
+  <data name="importar.msgVentas" xml:space="preserve">
+    <value>{0} sales were imported (import #{1}).</value>
+  </data>
+  <data name="importar.msgStock" xml:space="preserve">
+    <value>Stock was updated for {0} products (import #{1}).</value>
+  </data>
+  <data name="importar.msgSinUbicar" xml:space="preserve">
+    <value>{0} belong to products not placed in this store: they do not count toward any section until they are placed.</value>
+  </data>
+  <data name="importar.msgDeshecha" xml:space="preserve">
+    <value>Import undone: {0} sales were deleted.</value>
+  </data>
+  <data name="stock.msgVentaEliminada" xml:space="preserve">
+    <value>Sale deleted.</value>
+  </data>
+  <data name="importar.errArchivoIlegible" xml:space="preserve">
+    <value>The file could not be read. Make sure it is a valid CSV or Excel (.xlsx) file.</value>
+  </data>
+  <data name="importar.errFaltaColumna" xml:space="preserve">
+    <value>The header is missing the "{0}" column.</value>
+  </data>
+  <data name="importar.errSinArchivo" xml:space="preserve">
+    <value>Choose a file to import.</value>
+  </data>
+  <data name="importar.errFormato" xml:space="preserve">
+    <value>Unsupported format. Use a .csv or .xlsx file (Excel 97-2003 .xls is not supported).</value>
+  </data>
+  <data name="importar.errTamanio" xml:space="preserve">
+    <value>The file exceeds the {0} MB limit.</value>
+  </data>
+  <data name="importar.errVacio" xml:space="preserve">
+    <value>The file has no data rows (only the header, or it is empty).</value>
+  </data>
+  <data name="importar.errMaximoFilas" xml:space="preserve">
+    <value>The file exceeds the {0}-row limit. Split it into several files.</value>
+  </data>
+  <data name="importar.errProductoRepetido" xml:space="preserve">
+    <value>Product {0} already appears in row {1}.</value>
+  </data>
+  <data name="importar.errNoDeshacer" xml:space="preserve">
+    <value>This import cannot be undone.</value>
+  </data>
+  <data name="importar.errCodigo" xml:space="preserve">
+    <value>The code "{0}" is not valid (example: PROD-001).</value>
+  </data>
+  <data name="importar.errProductoNoExiste" xml:space="preserve">
+    <value>Product {0} does not exist in the company.</value>
+  </data>
+  <data name="importar.errProductoInactivo" xml:space="preserve">
+    <value>Product {0} is inactive.</value>
+  </data>
+  <data name="importar.errFecha" xml:space="preserve">
+    <value>The date "{0}" is not valid (example: 2026-10-15 or 15/10/2026).</value>
+  </data>
+  <data name="importar.errNumero" xml:space="preserve">
+    <value>Column "{0}" has an invalid value: "{1}".</value>
+  </data>
+  <data name="stock.errCantidadPositiva" xml:space="preserve">
+    <value>The quantity must be greater than 0.</value>
+  </data>
+  <data name="stock.errFechaFutura" xml:space="preserve">
+    <value>The date cannot be later than today.</value>
+  </data>
+  <data name="stock.errImporteNegativo" xml:space="preserve">
+    <value>The amount cannot be negative.</value>
+  </data>
+  <data name="stock.errSinImporte" xml:space="preserve">
+    <value>Enter the amount: the product has no price set.</value>
+  </data>
+  <data name="stock.errStockNegativo" xml:space="preserve">
+    <value>Stock, minimum and maximum cannot be negative.</value>
+  </data>
+  <data name="stock.errMinimoMaximo" xml:space="preserve">
+    <value>The minimum stock cannot be greater than the maximum.</value>
   </data>
 </root>

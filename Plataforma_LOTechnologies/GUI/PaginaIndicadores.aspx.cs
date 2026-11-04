@@ -50,8 +50,7 @@ public partial class PaginaIndicadores : PaginaSegura
     }
     private string ObtenerPeriodoDesde()
     {
-        int mesesAtras = ddlPeriodo.SelectedValue == "3_meses" ? 3 : 1;
-        return DateTime.Now.AddMonths(-mesesAtras).ToString("yyyy-MM");
+        return PeriodoDesde(MesesDelFiltro(ddlPeriodo.SelectedValue));
     }
     private void AplicarFiltros()
     {

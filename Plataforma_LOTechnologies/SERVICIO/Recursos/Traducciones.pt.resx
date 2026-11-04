@@ -1415,9 +1415,6 @@
   <data name="stock.subtitulo" xml:space="preserve">
     <value>CUN 006 — Carga e gestão de dados de vendas e estoque</value>
   </data>
-  <data name="stock.btnImportar" xml:space="preserve">
-    <value>Importar CSV</value>
-  </data>
   <data name="stock.btnCargaManual" xml:space="preserve">
     <value>Carga manual</value>
   </data>
@@ -1445,12 +1442,6 @@
   <data name="stock.tabStock" xml:space="preserve">
     <value>Dados de estoque</value>
   </data>
-  <data name="stock.totalVentas" xml:space="preserve">
-    <value>Total de vendas (mês)</value>
-  </data>
-  <data name="stock.ticketPromedio" xml:space="preserve">
-    <value>Tíquete médio</value>
-  </data>
   <data name="stock.unidadesVendidas" xml:space="preserve">
     <value>Unidades vendidas</value>
   </data>
@@ -1459,9 +1450,6 @@
   </data>
   <data name="stock.ventasPorSector" xml:space="preserve">
     <value>Vendas por setor</value>
-  </data>
-  <data name="stock.graficoPendiente" xml:space="preserve">
-    <value>Gráfico de vendas por setor (pendente)</value>
   </data>
   <data name="stock.detalleVentas" xml:space="preserve">
     <value>Detalhe de vendas</value>
@@ -1514,9 +1502,6 @@
   <data name="stock.errCantidad" xml:space="preserve">
     <value>Digite a quantidade</value>
   </data>
-  <data name="stock.importe" xml:space="preserve">
-    <value>Valor total (se for venda)</value>
-  </data>
   <data name="stock.minimo" xml:space="preserve">
     <value>Estoque mínimo (se for estoque)</value>
   </data>
@@ -1525,9 +1510,6 @@
   </data>
   <data name="stock.fecha" xml:space="preserve">
     <value>Período / Data *</value>
-  </data>
-  <data name="stock.errImportarCsv" xml:space="preserve">
-    <value>A importação por CSV ainda não está disponível.</value>
   </data>
   <data name="stock.errSeleccionarLocal" xml:space="preserve">
     <value>Selecione uma loja.</value>
@@ -2056,5 +2038,197 @@
   </data>
   <data name="pdf.planoVigente" xml:space="preserve">
     <value>Planta vigente: {0}</value>
+  </data>
+  <data name="stock.btnImportarArchivo" xml:space="preserve">
+    <value>Importar arquivo</value>
+  </data>
+  <data name="stock.agrupacion" xml:space="preserve">
+    <value>Agrupamento</value>
+  </data>
+  <data name="stock.rangoPeriodo" xml:space="preserve">
+    <value>Meses incluídos: {0}</value>
+  </data>
+  <data name="importar.tabImportaciones" xml:space="preserve">
+    <value>Importações</value>
+  </data>
+  <data name="stock.totalVentasPeriodo" xml:space="preserve">
+    <value>Total de vendas do período</value>
+  </data>
+  <data name="stock.precioPromedioUnidad" xml:space="preserve">
+    <value>Preço médio por unidade</value>
+  </data>
+  <data name="stock.ultimasVentas" xml:space="preserve">
+    <value>Últimas vendas registradas</value>
+  </data>
+  <data name="stock.ayudaUltimasVentas" xml:space="preserve">
+    <value>Se você registrou uma venda por engano, exclua-a aqui. Para remover um arquivo inteiro, use a aba Importações.</value>
+  </data>
+  <data name="stock.colFecha" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="stock.colOrigen" xml:space="preserve">
+    <value>Origem</value>
+  </data>
+  <data name="stock.confirmarEliminarVenta" xml:space="preserve">
+    <value>Excluir esta venda? Os indicadores serão calculados sem ela.</value>
+  </data>
+  <data name="stock.sinUltimasVentas" xml:space="preserve">
+    <value>Ainda não há vendas registradas nesta loja.</value>
+  </data>
+  <data name="stock.ayudaEstados" xml:space="preserve">
+    <value>Crítico: sem estoque. Baixo: no mínimo ou abaixo. Excesso: acima do máximo.</value>
+  </data>
+  <data name="valor.sobrestock" xml:space="preserve">
+    <value>Excesso de estoque</value>
+  </data>
+  <data name="valor.aplicada" xml:space="preserve">
+    <value>Aplicada</value>
+  </data>
+  <data name="valor.deshecha" xml:space="preserve">
+    <value>Desfeita</value>
+  </data>
+  <data name="importar.historial" xml:space="preserve">
+    <value>Histórico de importações</value>
+  </data>
+  <data name="importar.ayudaHistorial" xml:space="preserve">
+    <value>"Desfazer" exclui todas as vendas que entraram com esse arquivo (por exemplo, se foi importado duas vezes). As importações de estoque não podem ser desfeitas: substituem o estoque anterior.</value>
+  </data>
+  <data name="importar.colArchivo" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="importar.colFilas" xml:space="preserve">
+    <value>Linhas</value>
+  </data>
+  <data name="importar.deshacer" xml:space="preserve">
+    <value>Desfazer</value>
+  </data>
+  <data name="importar.confirmarDeshacer" xml:space="preserve">
+    <value>Desfazer esta importação? Todas as vendas que entraram com este arquivo serão excluídas.</value>
+  </data>
+  <data name="importar.sinImportaciones" xml:space="preserve">
+    <value>Ainda não foram importados arquivos nesta loja.</value>
+  </data>
+  <data name="stock.importeOpcional" xml:space="preserve">
+    <value>Valor total (vazio = preço × quantidade)</value>
+  </data>
+  <data name="importar.titulo" xml:space="preserve">
+    <value>Importar arquivo</value>
+  </data>
+  <data name="importar.descripcion" xml:space="preserve">
+    <value>Importe as vendas ou o estoque exportados do sistema de ponto de venda da loja, em um arquivo CSV ou Excel (.xlsx).</value>
+  </data>
+  <data name="importar.archivo" xml:space="preserve">
+    <value>Arquivo (.csv ou .xlsx, até 2 MB) *</value>
+  </data>
+  <data name="importar.formato" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="importar.ayudaVentas" xml:space="preserve">
+    <value>codigo: PROD-001 · fecha: 2026-10-15 ou 15/10/2026 · cantidad: inteiro maior que 0 · importe: opcional (vazio = preço × quantidade), sem separador de milhar.</value>
+  </data>
+  <data name="importar.ayudaStock" xml:space="preserve">
+    <value>codigo: PROD-001 · cantidad: inteiro maior ou igual a 0 · minimo e maximo: opcionais. Se o produto já tiver estoque na loja, ele é substituído.</value>
+  </data>
+  <data name="importar.plantillaExcel" xml:space="preserve">
+    <value>Baixar modelo Excel</value>
+  </data>
+  <data name="importar.plantillaCsv" xml:space="preserve">
+    <value>Baixar modelo CSV</value>
+  </data>
+  <data name="importar.todoONada" xml:space="preserve">
+    <value>O arquivo é validado por completo: se alguma linha tiver erro, nenhuma é importada e são indicados a linha e o motivo.</value>
+  </data>
+  <data name="importar.btnImportar" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="stock.origenManual" xml:space="preserve">
+    <value>Registro manual</value>
+  </data>
+  <data name="stock.origenImportacion" xml:space="preserve">
+    <value>Importação #{0}</value>
+  </data>
+  <data name="importar.tituloErrores" xml:space="preserve">
+    <value>Nenhuma linha foi importada. Corrija o arquivo e importe-o novamente:</value>
+  </data>
+  <data name="importar.fila" xml:space="preserve">
+    <value>Linha {0}</value>
+  </data>
+  <data name="importar.masErrores" xml:space="preserve">
+    <value>... e mais {0} erros.</value>
+  </data>
+  <data name="importar.msgVentas" xml:space="preserve">
+    <value>{0} vendas foram importadas (importação #{1}).</value>
+  </data>
+  <data name="importar.msgStock" xml:space="preserve">
+    <value>O estoque de {0} produtos foi atualizado (importação #{1}).</value>
+  </data>
+  <data name="importar.msgSinUbicar" xml:space="preserve">
+    <value>{0} correspondem a produtos sem localização nesta loja: não somam a nenhum setor até serem localizados.</value>
+  </data>
+  <data name="importar.msgDeshecha" xml:space="preserve">
+    <value>Importação desfeita: {0} vendas foram excluídas.</value>
+  </data>
+  <data name="stock.msgVentaEliminada" xml:space="preserve">
+    <value>Venda excluída.</value>
+  </data>
+  <data name="importar.errArchivoIlegible" xml:space="preserve">
+    <value>Não foi possível ler o arquivo. Verifique se é um CSV ou Excel (.xlsx) válido.</value>
+  </data>
+  <data name="importar.errFaltaColumna" xml:space="preserve">
+    <value>Falta a coluna "{0}" no cabeçalho.</value>
+  </data>
+  <data name="importar.errSinArchivo" xml:space="preserve">
+    <value>Escolha um arquivo para importar.</value>
+  </data>
+  <data name="importar.errFormato" xml:space="preserve">
+    <value>Formato não suportado. Use um arquivo .csv ou .xlsx (o .xls do Excel 97-2003 não é aceito).</value>
+  </data>
+  <data name="importar.errTamanio" xml:space="preserve">
+    <value>O arquivo excede o máximo de {0} MB.</value>
+  </data>
+  <data name="importar.errVacio" xml:space="preserve">
+    <value>O arquivo não tem linhas de dados (só o cabeçalho ou está vazio).</value>
+  </data>
+  <data name="importar.errMaximoFilas" xml:space="preserve">
+    <value>O arquivo excede o máximo de {0} linhas. Divida-o em vários arquivos.</value>
+  </data>
+  <data name="importar.errProductoRepetido" xml:space="preserve">
+    <value>O produto {0} já aparece na linha {1}.</value>
+  </data>
+  <data name="importar.errNoDeshacer" xml:space="preserve">
+    <value>Esta importação não pode ser desfeita.</value>
+  </data>
+  <data name="importar.errCodigo" xml:space="preserve">
+    <value>O código "{0}" não é válido (exemplo: PROD-001).</value>
+  </data>
+  <data name="importar.errProductoNoExiste" xml:space="preserve">
+    <value>O produto {0} não existe na empresa.</value>
+  </data>
+  <data name="importar.errProductoInactivo" xml:space="preserve">
+    <value>O produto {0} está inativo.</value>
+  </data>
+  <data name="importar.errFecha" xml:space="preserve">
+    <value>A data "{0}" não é válida (exemplo: 2026-10-15 ou 15/10/2026).</value>
+  </data>
+  <data name="importar.errNumero" xml:space="preserve">
+    <value>A coluna "{0}" tem um valor inválido: "{1}".</value>
+  </data>
+  <data name="stock.errCantidadPositiva" xml:space="preserve">
+    <value>A quantidade deve ser maior que 0.</value>
+  </data>
+  <data name="stock.errFechaFutura" xml:space="preserve">
+    <value>A data não pode ser posterior a hoje.</value>
+  </data>
+  <data name="stock.errImporteNegativo" xml:space="preserve">
+    <value>O valor não pode ser negativo.</value>
+  </data>
+  <data name="stock.errSinImporte" xml:space="preserve">
+    <value>Informe o valor: o produto não tem preço cadastrado.</value>
+  </data>
+  <data name="stock.errStockNegativo" xml:space="preserve">
+    <value>O estoque, o mínimo e o máximo não podem ser negativos.</value>
+  </data>
+  <data name="stock.errMinimoMaximo" xml:space="preserve">
+    <value>O estoque mínimo não pode ser maior que o máximo.</value>
   </data>
 </root>

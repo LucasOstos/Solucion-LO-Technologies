@@ -1415,9 +1415,6 @@
   <data name="stock.subtitulo" xml:space="preserve">
     <value>CUN 006 — إدخال وإدارة بيانات المبيعات والمخزون</value>
   </data>
-  <data name="stock.btnImportar" xml:space="preserve">
-    <value>استيراد CSV</value>
-  </data>
   <data name="stock.btnCargaManual" xml:space="preserve">
     <value>إدخال يدوي</value>
   </data>
@@ -1445,12 +1442,6 @@
   <data name="stock.tabStock" xml:space="preserve">
     <value>بيانات المخزون</value>
   </data>
-  <data name="stock.totalVentas" xml:space="preserve">
-    <value>إجمالي المبيعات (الشهر)</value>
-  </data>
-  <data name="stock.ticketPromedio" xml:space="preserve">
-    <value>متوسط الفاتورة</value>
-  </data>
   <data name="stock.unidadesVendidas" xml:space="preserve">
     <value>الوحدات المباعة</value>
   </data>
@@ -1459,9 +1450,6 @@
   </data>
   <data name="stock.ventasPorSector" xml:space="preserve">
     <value>المبيعات حسب القسم</value>
-  </data>
-  <data name="stock.graficoPendiente" xml:space="preserve">
-    <value>مخطط المبيعات حسب القسم (قريبًا)</value>
   </data>
   <data name="stock.detalleVentas" xml:space="preserve">
     <value>تفاصيل المبيعات</value>
@@ -1514,9 +1502,6 @@
   <data name="stock.errCantidad" xml:space="preserve">
     <value>أدخل الكمية</value>
   </data>
-  <data name="stock.importe" xml:space="preserve">
-    <value>المبلغ الإجمالي (للبيع)</value>
-  </data>
   <data name="stock.minimo" xml:space="preserve">
     <value>الحد الأدنى للمخزون (للمخزون)</value>
   </data>
@@ -1525,9 +1510,6 @@
   </data>
   <data name="stock.fecha" xml:space="preserve">
     <value>الفترة / التاريخ *</value>
-  </data>
-  <data name="stock.errImportarCsv" xml:space="preserve">
-    <value>استيراد CSV غير متاح بعد.</value>
   </data>
   <data name="stock.errSeleccionarLocal" xml:space="preserve">
     <value>اختر متجرًا.</value>
@@ -2056,5 +2038,197 @@
   </data>
   <data name="pdf.planoVigente" xml:space="preserve">
     <value>المخطط الحالي: {0}</value>
+  </data>
+  <data name="stock.btnImportarArchivo" xml:space="preserve">
+    <value>استيراد ملف</value>
+  </data>
+  <data name="stock.agrupacion" xml:space="preserve">
+    <value>التجميع</value>
+  </data>
+  <data name="stock.rangoPeriodo" xml:space="preserve">
+    <value>الأشهر المشمولة: {0}</value>
+  </data>
+  <data name="importar.tabImportaciones" xml:space="preserve">
+    <value>عمليات الاستيراد</value>
+  </data>
+  <data name="stock.totalVentasPeriodo" xml:space="preserve">
+    <value>إجمالي مبيعات الفترة</value>
+  </data>
+  <data name="stock.precioPromedioUnidad" xml:space="preserve">
+    <value>متوسط السعر للوحدة</value>
+  </data>
+  <data name="stock.ultimasVentas" xml:space="preserve">
+    <value>آخر المبيعات المسجلة</value>
+  </data>
+  <data name="stock.ayudaUltimasVentas" xml:space="preserve">
+    <value>إذا سجلت عملية بيع عن طريق الخطأ، احذفها من هنا. لحذف ملف كامل استخدم تبويب عمليات الاستيراد.</value>
+  </data>
+  <data name="stock.colFecha" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="stock.colOrigen" xml:space="preserve">
+    <value>المصدر</value>
+  </data>
+  <data name="stock.confirmarEliminarVenta" xml:space="preserve">
+    <value>هل تريد حذف عملية البيع هذه؟ سيتم حساب المؤشرات بدونها.</value>
+  </data>
+  <data name="stock.sinUltimasVentas" xml:space="preserve">
+    <value>لم يتم تسجيل أي مبيعات في هذا المتجر بعد.</value>
+  </data>
+  <data name="stock.ayudaEstados" xml:space="preserve">
+    <value>حرج: نفاد المخزون. منخفض: عند الحد الأدنى أو أقل. فائض: أعلى من الحد الأقصى.</value>
+  </data>
+  <data name="valor.sobrestock" xml:space="preserve">
+    <value>فائض مخزون</value>
+  </data>
+  <data name="valor.aplicada" xml:space="preserve">
+    <value>مطبّق</value>
+  </data>
+  <data name="valor.deshecha" xml:space="preserve">
+    <value>تم التراجع</value>
+  </data>
+  <data name="importar.historial" xml:space="preserve">
+    <value>سجل عمليات الاستيراد</value>
+  </data>
+  <data name="importar.ayudaHistorial" xml:space="preserve">
+    <value>"تراجع" يحذف جميع المبيعات التي دخلت مع هذا الملف (مثلاً إذا تم استيراده مرتين). لا يمكن التراجع عن استيراد المخزون: فهو يستبدل المخزون السابق.</value>
+  </data>
+  <data name="importar.colArchivo" xml:space="preserve">
+    <value>الملف</value>
+  </data>
+  <data name="importar.colFilas" xml:space="preserve">
+    <value>الصفوف</value>
+  </data>
+  <data name="importar.deshacer" xml:space="preserve">
+    <value>تراجع</value>
+  </data>
+  <data name="importar.confirmarDeshacer" xml:space="preserve">
+    <value>هل تريد التراجع عن هذا الاستيراد؟ سيتم حذف جميع المبيعات التي دخلت مع هذا الملف.</value>
+  </data>
+  <data name="importar.sinImportaciones" xml:space="preserve">
+    <value>لم يتم استيراد أي ملفات في هذا المتجر بعد.</value>
+  </data>
+  <data name="stock.importeOpcional" xml:space="preserve">
+    <value>المبلغ الإجمالي (فارغ = السعر × الكمية)</value>
+  </data>
+  <data name="importar.titulo" xml:space="preserve">
+    <value>استيراد ملف</value>
+  </data>
+  <data name="importar.descripcion" xml:space="preserve">
+    <value>استورد المبيعات أو المخزون المُصدَّرة من نظام نقاط البيع في المتجر، في ملف CSV أو Excel (.xlsx).</value>
+  </data>
+  <data name="importar.archivo" xml:space="preserve">
+    <value>الملف (.csv أو .xlsx، حتى 2 ميغابايت) *</value>
+  </data>
+  <data name="importar.formato" xml:space="preserve">
+    <value>التنسيق</value>
+  </data>
+  <data name="importar.ayudaVentas" xml:space="preserve">
+    <value>codigo: PROD-001 · fecha: 2026-10-15 أو 15/10/2026 · cantidad: عدد صحيح أكبر من 0 · importe: اختياري (فارغ = السعر × الكمية)، بدون فاصل الآلاف.</value>
+  </data>
+  <data name="importar.ayudaStock" xml:space="preserve">
+    <value>codigo: PROD-001 · cantidad: عدد صحيح أكبر من أو يساوي 0 · minimo و maximo: اختياريان. إذا كان للمنتج مخزون في المتجر يتم استبداله.</value>
+  </data>
+  <data name="importar.plantillaExcel" xml:space="preserve">
+    <value>تنزيل قالب Excel</value>
+  </data>
+  <data name="importar.plantillaCsv" xml:space="preserve">
+    <value>تنزيل قالب CSV</value>
+  </data>
+  <data name="importar.todoONada" xml:space="preserve">
+    <value>يتم التحقق من الملف بالكامل: إذا كان في أي صف خطأ فلن يتم استيراد أي صف وسيتم عرض الصف والسبب.</value>
+  </data>
+  <data name="importar.btnImportar" xml:space="preserve">
+    <value>استيراد</value>
+  </data>
+  <data name="stock.origenManual" xml:space="preserve">
+    <value>إدخال يدوي</value>
+  </data>
+  <data name="stock.origenImportacion" xml:space="preserve">
+    <value>استيراد رقم {0}</value>
+  </data>
+  <data name="importar.tituloErrores" xml:space="preserve">
+    <value>لم يتم استيراد أي صف. صحّح الملف ثم استورده مرة أخرى:</value>
+  </data>
+  <data name="importar.fila" xml:space="preserve">
+    <value>الصف {0}</value>
+  </data>
+  <data name="importar.masErrores" xml:space="preserve">
+    <value>... و{0} أخطاء أخرى.</value>
+  </data>
+  <data name="importar.msgVentas" xml:space="preserve">
+    <value>تم استيراد {0} عملية بيع (استيراد رقم {1}).</value>
+  </data>
+  <data name="importar.msgStock" xml:space="preserve">
+    <value>تم تحديث مخزون {0} منتجات (استيراد رقم {1}).</value>
+  </data>
+  <data name="importar.msgSinUbicar" xml:space="preserve">
+    <value>{0} تخص منتجات غير موضوعة في هذا المتجر: لا تُحتسب في أي قسم حتى يتم وضعها.</value>
+  </data>
+  <data name="importar.msgDeshecha" xml:space="preserve">
+    <value>تم التراجع عن الاستيراد: تم حذف {0} عملية بيع.</value>
+  </data>
+  <data name="stock.msgVentaEliminada" xml:space="preserve">
+    <value>تم حذف عملية البيع.</value>
+  </data>
+  <data name="importar.errArchivoIlegible" xml:space="preserve">
+    <value>تعذرت قراءة الملف. تأكد من أنه ملف CSV أو Excel (.xlsx) صالح.</value>
+  </data>
+  <data name="importar.errFaltaColumna" xml:space="preserve">
+    <value>العمود "{0}" غير موجود في الترويسة.</value>
+  </data>
+  <data name="importar.errSinArchivo" xml:space="preserve">
+    <value>اختر ملفاً لاستيراده.</value>
+  </data>
+  <data name="importar.errFormato" xml:space="preserve">
+    <value>تنسيق غير مدعوم. استخدم ملف .csv أو .xlsx (ملف .xls من Excel 97-2003 غير مدعوم).</value>
+  </data>
+  <data name="importar.errTamanio" xml:space="preserve">
+    <value>يتجاوز الملف الحد الأقصى البالغ {0} ميغابايت.</value>
+  </data>
+  <data name="importar.errVacio" xml:space="preserve">
+    <value>لا يحتوي الملف على صفوف بيانات (الترويسة فقط أو أنه فارغ).</value>
+  </data>
+  <data name="importar.errMaximoFilas" xml:space="preserve">
+    <value>يتجاوز الملف الحد الأقصى البالغ {0} صف. قسّمه إلى عدة ملفات.</value>
+  </data>
+  <data name="importar.errProductoRepetido" xml:space="preserve">
+    <value>المنتج {0} موجود بالفعل في الصف {1}.</value>
+  </data>
+  <data name="importar.errNoDeshacer" xml:space="preserve">
+    <value>لا يمكن التراجع عن هذا الاستيراد.</value>
+  </data>
+  <data name="importar.errCodigo" xml:space="preserve">
+    <value>الرمز "{0}" غير صالح (مثال: PROD-001).</value>
+  </data>
+  <data name="importar.errProductoNoExiste" xml:space="preserve">
+    <value>المنتج {0} غير موجود في الشركة.</value>
+  </data>
+  <data name="importar.errProductoInactivo" xml:space="preserve">
+    <value>المنتج {0} غير نشط.</value>
+  </data>
+  <data name="importar.errFecha" xml:space="preserve">
+    <value>التاريخ "{0}" غير صالح (مثال: 2026-10-15 أو 15/10/2026).</value>
+  </data>
+  <data name="importar.errNumero" xml:space="preserve">
+    <value>العمود "{0}" يحتوي على قيمة غير صالحة: "{1}".</value>
+  </data>
+  <data name="stock.errCantidadPositiva" xml:space="preserve">
+    <value>يجب أن تكون الكمية أكبر من 0.</value>
+  </data>
+  <data name="stock.errFechaFutura" xml:space="preserve">
+    <value>لا يمكن أن يكون التاريخ بعد اليوم.</value>
+  </data>
+  <data name="stock.errImporteNegativo" xml:space="preserve">
+    <value>لا يمكن أن يكون المبلغ سالباً.</value>
+  </data>
+  <data name="stock.errSinImporte" xml:space="preserve">
+    <value>أدخل المبلغ: لا يوجد سعر مسجل للمنتج.</value>
+  </data>
+  <data name="stock.errStockNegativo" xml:space="preserve">
+    <value>لا يمكن أن يكون المخزون أو الحد الأدنى أو الحد الأقصى سالباً.</value>
+  </data>
+  <data name="stock.errMinimoMaximo" xml:space="preserve">
+    <value>لا يمكن أن يكون الحد الأدنى للمخزون أكبر من الحد الأقصى.</value>
   </data>
 </root>

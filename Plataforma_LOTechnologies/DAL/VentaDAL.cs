@@ -11,16 +11,29 @@ namespace DAL
     public class VentaDAL
     {
         private AccesoDatos acceso = new AccesoDatos();
-        public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde)
+        public const string AGRUPAR_SECTOR = "sector";
+        public const string AGRUPAR_CATEGORIA = "categoria";
+        public const string AGRUPAR_PRODUCTO = "producto";
+
+        // Ventas del período agrupadas por mes y por sector, categoría o producto.
+        // Las columnas del GROUP BY salen de una lista fija (nunca del texto que manda la pantalla).
+        public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde, string pAgrupacion)
         {
             List<VentaListado> ventas = new List<VentaListado>();
-            string query = @"SELECT v.Periodo, s.Nombre AS Sector, c.Nombre AS Categoria, SUM(v.Cantidad) AS Unidades, SUM(v.ImporteTotal) AS Monto,
+            string columnasGrupo;
+            switch (pAgrupacion)
+            {
+                case AGRUPAR_CATEGORIA: columnasGrupo = "c.Nombre"; break;
+                case AGRUPAR_PRODUCTO: columnasGrupo = "p.NumeroSerie, p.Nombre"; break;
+                default: columnasGrupo = "s.Nombre"; pAgrupacion = AGRUPAR_SECTOR; break;
+            }
+            string query = $@"SELECT v.Periodo, {columnasGrupo}, SUM(v.Cantidad) AS Unidades, SUM(v.ImporteTotal) AS Monto,
                              SUM(CASE WHEN p.Costo IS NULL THEN 0 ELSE v.ImporteTotal END) AS VentasConCosto,
                              SUM(CASE WHEN p.Costo IS NULL THEN 0 ELSE v.Cantidad * p.Costo END) AS CostoVendido FROM Venta v
                              INNER JOIN Producto p ON v.CodigoProducto = p.CodigoProducto INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria
                              LEFT JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
                              LEFT JOIN Sector s ON pu.CodigoSector = s.CodigoSector WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde
-                             GROUP BY v.Periodo, s.Nombre, c.Nombre ORDER BY v.Periodo DESC";
+                             GROUP BY v.Periodo, {columnasGrupo} ORDER BY v.Periodo DESC, Monto DESC";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -31,11 +44,15 @@ namespace DAL
                 {
                     while (DR.Read())
                     {
+                        string grupo;
+                        if (pAgrupacion == AGRUPAR_PRODUCTO) grupo = $"PROD-{int.Parse(DR["NumeroSerie"].ToString()):D3} - {DR["Nombre"]}";
+                        else grupo = DR["Nombre"] == DBNull.Value ? null : DR["Nombre"].ToString(); // sector null = producto sin ubicar
                         ventas.Add(new VentaListado
                         {
                             Periodo = DR["Periodo"].ToString(),
-                            Sector = DR["Sector"] == DBNull.Value ? "-" : DR["Sector"].ToString(),
-                            Categoria = DR["Categoria"].ToString(),
+                            Grupo = grupo,
+                            Sector = pAgrupacion == AGRUPAR_SECTOR ? (grupo ?? "-") : null,
+                            Categoria = pAgrupacion == AGRUPAR_CATEGORIA ? grupo : null,
                             Unidades = int.Parse(DR["Unidades"].ToString()),
                             Monto = decimal.Parse(DR["Monto"].ToString()),
                             Margen = IndicadorDAL.CalcularMargen(decimal.Parse(DR["VentasConCosto"].ToString()), decimal.Parse(DR["CostoVendido"].ToString()))
@@ -68,11 +85,6 @@ namespace DAL
         {
             return ObtenerEscalarDecimal(pCodigoLocal, pPeriodoDesde, "SUM(ImporteTotal)");
         }
-        public decimal ObtenerTicketPromedio(int pCodigoLocal, string pPeriodoDesde)
-        {
-            string query = @"SELECT AVG(ImporteTotal) FROM Venta WHERE CodigoLocal = @CodigoLocal AND Periodo >= @PeriodoDesde";
-            return EjecutarEscalarDecimal(query, pCodigoLocal, pPeriodoDesde);
-        }
         public int ObtenerUnidadesVendidas(int pCodigoLocal, string pPeriodoDesde)
         {
             string query = @"SELECT ISNULL(SUM(Cantidad), 0) FROM Venta WHERE CodigoLocal = @CodigoLocal AND Periodo >= @PeriodoDesde";
@@ -103,12 +115,51 @@ namespace DAL
                 return resultado == DBNull.Value ? 0 : Convert.ToDecimal(resultado);
             }
         }
+        // Últimas ventas cargadas en el local (manuales o importadas), para poder corregir una carga equivocada
+        public List<VentaDetalle> ObtenerUltimasVentas(int pCodigoLocal, int pCantidad)
+        {
+            var ventas = new List<VentaDetalle>();
+            string query = @"SELECT TOP (@Cantidad) v.CodigoVenta, v.Fecha, p.NumeroSerie, p.Nombre, v.Cantidad, v.ImporteTotal, v.CodigoImportacion
+                             FROM Venta v INNER JOIN Producto p ON p.CodigoProducto = v.CodigoProducto WHERE v.CodigoLocal = @CodigoLocal ORDER BY v.CodigoVenta DESC";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
+                CM.Parameters.AddWithValue("@Cantidad", pCantidad);
+                CO.Open();
+                using (SqlDataReader DR = CM.ExecuteReader())
+                {
+                    while (DR.Read())
+                    {
+                        ventas.Add(new VentaDetalle
+                        {
+                            CodigoVenta = int.Parse(DR["CodigoVenta"].ToString()),
+                            Fecha = Convert.ToDateTime(DR["Fecha"]),
+                            Producto = $"PROD-{int.Parse(DR["NumeroSerie"].ToString()):D3} - {DR["Nombre"]}",
+                            Cantidad = int.Parse(DR["Cantidad"].ToString()),
+                            ImporteTotal = decimal.Parse(DR["ImporteTotal"].ToString()),
+                            CodigoImportacion = DR["CodigoImportacion"] == DBNull.Value ? (int?)null : int.Parse(DR["CodigoImportacion"].ToString())
+                        });
+                    }
+                }
+            }
+            return ventas;
+        }
+        public void EliminarVenta(int pCodigoVenta)
+        {
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand("DELETE FROM Venta WHERE CodigoVenta = @CodigoVenta", CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoVenta", pCodigoVenta);
+                CO.Open();
+                CM.ExecuteNonQuery();
+            }
+        }
         public int AgregarVenta(VentaBE pVenta)
         {
             string query = @"INSERT INTO Venta (CodigoLocal, CodigoProducto, Fecha, Cantidad, PrecioUnitario, ImporteTotal, Periodo)
                              VALUES (@CodigoLocal, @CodigoProducto, @Fecha, @Cantidad, @PrecioUnitario, @ImporteTotal, @Periodo);
                              SELECT CAST(SCOPE_IDENTITY() AS INT);";
-
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {

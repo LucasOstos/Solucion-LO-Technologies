@@ -17,7 +17,9 @@ namespace DAL
         Reporte,
         Producto,
         Categoria,
-        Usuario
+        Usuario,
+        Venta,
+        Importacion
     }
     public class AlcanceDAL
     {
@@ -32,7 +34,9 @@ namespace DAL
             { EntidadEmpresa.Reporte,   "SELECT l.CodigoEmpresa FROM Reporte r INNER JOIN Local l ON r.CodigoLocal = l.CodigoLocal WHERE r.CodigoReporte = @Codigo" },
             { EntidadEmpresa.Producto,  "SELECT CodigoEmpresa FROM Producto WHERE CodigoProducto = @Codigo" },
             { EntidadEmpresa.Categoria, "SELECT CodigoEmpresa FROM Categoria WHERE CodigoCategoria = @Codigo" },
-            { EntidadEmpresa.Usuario,   "SELECT UsuarioCodigoEmpresa FROM Usuario WHERE UsuarioDNI = @Codigo" }
+            { EntidadEmpresa.Usuario,   "SELECT UsuarioCodigoEmpresa FROM Usuario WHERE UsuarioDNI = @Codigo" },
+            { EntidadEmpresa.Venta,     "SELECT l.CodigoEmpresa FROM Venta v INNER JOIN Local l ON v.CodigoLocal = l.CodigoLocal WHERE v.CodigoVenta = @Codigo" },
+            { EntidadEmpresa.Importacion, "SELECT l.CodigoEmpresa FROM Importacion i INNER JOIN Local l ON i.CodigoLocal = l.CodigoLocal WHERE i.CodigoImportacion = @Codigo" }
         };
         public int? ObtenerEmpresa(EntidadEmpresa pEntidad, int pCodigo)
         {

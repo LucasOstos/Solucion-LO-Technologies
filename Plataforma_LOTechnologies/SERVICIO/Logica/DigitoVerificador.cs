@@ -34,6 +34,7 @@ namespace SERVICIO.Logica
             { "Producto", "CodigoProducto" },
             { "ProductoUbicacion", "CodigoUbicacion" },
             { "Venta", "CodigoVenta" },
+            { "Importacion", "CodigoImportacion" },
             { "Stock", "CodigoStock" },
             { "Escenario", "CodigoEscenario" },
             { "Comparacion", "CodigoComparacion" },
@@ -99,6 +100,20 @@ namespace SERVICIO.Logica
                     dvh = DR["DVH"] == DBNull.Value ? null : DR["DVH"].ToString();
                 }
                 dvhs.Add(dvh);
+            }
+            accesoDAL.GuardarDVV(pNombreTabla, CalcularDVV(dvhs), DT.Rows.Count);
+        }
+        public void ActualizarDigitoVertical(string pNombreTabla)
+        {
+            if (!TablasConDVH.TryGetValue(pNombreTabla, out string pColumnaPK))
+            {
+                throw new ArgumentException($"La tabla '{pNombreTabla}' no cuenta con la columna DVH");
+            }
+            DataTable DT = accesoDAL.ObtenerTabla(pNombreTabla, pColumnaPK);
+            var dvhs = new List<string>();
+            foreach (DataRow DR in DT.Rows)
+            {
+                dvhs.Add(DR["DVH"] == DBNull.Value ? null : DR["DVH"].ToString());
             }
             accesoDAL.GuardarDVV(pNombreTabla, CalcularDVV(dvhs), DT.Rows.Count);
         }

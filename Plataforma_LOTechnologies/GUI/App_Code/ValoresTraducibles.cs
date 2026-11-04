@@ -46,6 +46,10 @@ public static class ValoresTraducibles
         { "Crítico", "valor.critico" },
         { "Bajo", "valor.bajo" },
         { "Normal", "valor.normal" },
+        { "Sobrestock", "valor.sobrestock" },
+        // Estado de una importación de archivo
+        { "Aplicada", "valor.aplicada" },
+        { "Deshecha", "valor.deshecha" },
         // Estados de escenario
         { "Base", "valor.base" },
         { "En revisión", "valor.enRevision" },

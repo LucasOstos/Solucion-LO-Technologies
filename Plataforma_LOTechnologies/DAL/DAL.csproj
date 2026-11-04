@@ -51,6 +51,7 @@
     <Compile Include="EmpresaDAL.cs" />
     <Compile Include="EscenarioDAL.cs" />
     <Compile Include="IdiomaDAL.cs" />
+    <Compile Include="ImportacionDAL.cs" />
     <Compile Include="IndicadorDAL.cs" />
     <Compile Include="LayoutDAL.cs" />
     <Compile Include="LocalDAL.cs" />

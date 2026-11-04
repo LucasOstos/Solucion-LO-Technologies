@@ -72,7 +72,7 @@ public partial class PaginaEscenarios : PaginaSegura
     // Ventas, circulación e índice global que tendría el local con los cambios de cada escenario
     private void CalcularEstimaciones(List<EscenarioListado> pEscenarios)
     {
-        List<IndicadorSectorListado> reales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, DateTime.Now.AddMonths(-1).ToString("yyyy-MM"));
+        List<IndicadorSectorListado> reales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, PeriodoDesde(1));
         if (reales.Count == 0) return;
         foreach (EscenarioListado escenario in pEscenarios)
         {
