@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/Estilos/BotonVolverMenu.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/Comun.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/EstilosIndicadores.css" />
+    <link rel="stylesheet" type="text/css" href="/Estilos/MapaLocal.css" />
 </head>
 <body>
     <form id="formIndicadores" runat="server">
@@ -103,6 +104,25 @@
                     </table>
                     <asp:Label ID="lblSinIndicadores" runat="server" Text="No existen datos suficientes para generar indicadores completos." Clave="indicadores.sinIndicadores" Visible="false" CssClass="sin-resultados" />
                 </div>
+
+                <asp:Panel ID="pnlMapa" runat="server" CssClass="tarjeta" Visible="false">
+                    <div class="mapa-encabezado">
+                        <h2 runat="server" Clave="mapa.titulo">Mapa del local</h2>
+                        <div>
+                            <asp:Label runat="server" Text="Indicador" AssociatedControlID="ddlIndicadorMapa" Clave="mapa.indicador" />
+                            <asp:DropDownList ID="ddlIndicadorMapa" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed">
+                                <asp:ListItem Text="Ventas" Value="ventas" Clave="indicadores.colVentas" />
+                                <asp:ListItem Text="Ventas/m²" Value="ventasM2" Clave="indicadores.colVentasM2" />
+                                <asp:ListItem Text="Margen" Value="margen" Clave="stock.colMargen" />
+                                <asp:ListItem Text="Circulación" Value="circulacion" Clave="layout.colCirculacion" />
+                                <asp:ListItem Text="Rotación" Value="rotacion" Clave="indicadores.colRotacion" />
+                                <asp:ListItem Text="Índice global" Value="indice" Clave="indicadores.colIndice" />
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <p class="texto-secundario" runat="server" Clave="mapa.ayuda">Cada sector se ubica en una de las 9 zonas del plano según su ubicación. El frente (entrada) es la parte inferior de la imagen.</p>
+                    <asp:Literal ID="litMapa" runat="server" />
+                </asp:Panel>
 
             </div>
         </div>

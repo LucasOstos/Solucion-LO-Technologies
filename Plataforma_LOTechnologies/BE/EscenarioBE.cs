@@ -18,6 +18,9 @@ namespace BE
         public decimal VentasEstimadas { get; set; }
         public decimal CirculacionEstimada { get; set; }
         public decimal SatisfaccionEstimada { get; set; }
+        public int IndiceGlobalEstimado { get; set; }
+        public int? CodigoLayout { get; set; }
+        public string NombreLayout { get; set; }
     }
     public class EscenarioCambio
     {
@@ -25,6 +28,8 @@ namespace BE
         public int CodigoEscenario { get; set; }
         public string TipoCambio { get; set; }
         public string Descripcion { get; set; }
+        public int? CodigoSector { get; set; }
+        public string Accion { get; set; }
     }
     #endregion
     public class EscenarioBE
@@ -36,6 +41,7 @@ namespace BE
         public string Objetivo { get; set; }
         public DateTime FechaCreacion { get; set; }
         public string Estado { get; set; }
+        public int? CodigoLayout { get; set; }
         public EscenarioBE(int codigoLocal, string nombre, string descripcion, string objetivo, DateTime fechaCreacion, string estado)
         {
             CodigoLocal = codigoLocal;

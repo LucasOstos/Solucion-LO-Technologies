@@ -39,6 +39,7 @@ public partial class PaginaReportes : PaginaSegura
     private ProductoBLL productoBLL = new ProductoBLL();
     private SectorBLL sectorBLL = new SectorBLL();
     private ReporteBLL reporteBLL = new ReporteBLL();
+    private LayoutBLL layoutBLL = new LayoutBLL();
     private int CodigoLocalActual
     {
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
@@ -233,6 +234,7 @@ public partial class PaginaReportes : PaginaSegura
                 {
                     documento.Add(new Paragraph(T("pdf.ventasM2Local", (ventasTotales / localReporte.SuperficieAprox.Value).ToString("$#,##0")), fuenteNormal));
                 }
+                AgregarPlanoVigente(documento, fuenteSubtitulo);
                 documento.Add(new Paragraph(" "));
             }
             if (chkIndicadoresPrincipales.Checked || chkDetallePorSector.Checked)
@@ -337,6 +339,7 @@ public partial class PaginaReportes : PaginaSegura
         List<IndicadorSectorListado> proyectadosBase = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosBase);
         List<IndicadorSectorListado> proyectadosPropuesto = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosPropuesto);
         documento.Add(new Paragraph(T("pdf.baseVsPropuesto", escenarioBase.Nombre, escenarioPropuesto.Nombre), fuenteNormal));
+        documento.Add(new Paragraph(T("pdf.layoutBase", NombreLayout(escenarioBase.CodigoLayout), NombreLayout(escenarioPropuesto.CodigoLayout)), fuenteSubtitulo));
         var tabla = new PdfPTable(4) { WidthPercentage = 100 };
         AgregarFila(tabla, fuenteEncabezado, T("layout.colSector"), T("pdf.ventasBase"), T("pdf.ventasPropuesto"), T("comparacion.colDiferencia"));
         foreach (var indPropuesto in proyectadosPropuesto)
@@ -355,6 +358,23 @@ public partial class PaginaReportes : PaginaSegura
         imgComparacion.ScaleToFit(480, 260);
         documento.Add(imgComparacion);
         documento.Add(new Paragraph(" "));
+    }
+    private string NombreLayout(int? pCodigoLayout)
+    {
+        LayoutBE layout = pCodigoLayout == null ? null : layoutBLL.ObtenerLayoutPorCodigo(pCodigoLayout.Value);
+        return layout?.Nombre ?? T("escenarios.sinLayout");
+    }
+    private void AgregarPlanoVigente(Document documento, Font fuenteSubtitulo)
+    {
+        LayoutBE vigente = layoutBLL.ObtenerLayoutVigente(CodigoLocalActual);
+        if (vigente == null) return;
+        documento.Add(new Paragraph(T("pdf.planoVigente", vigente.Nombre), fuenteSubtitulo));
+        if (MapaLocal.ObtenerUrlImagen(vigente, ResolveUrl) == null) return;
+        string ruta = Server.MapPath("~/Subidas/Layouts/" + vigente.NombreArchivo);
+        if (!File.Exists(ruta)) return;
+        PdfImage plano = PdfImage.GetInstance(ruta);
+        plano.ScaleToFit(480, 300);
+        documento.Add(plano);
     }
     private void AgregarSeccionProductos(Document documento, Font fuenteSeccion, Font fuenteNormal, Font fuenteEncabezado)
     {

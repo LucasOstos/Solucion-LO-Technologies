@@ -1988,4 +1988,73 @@
   <data name="pdf.ventasM2Local" xml:space="preserve">
     <value>Ventas por m² del local: {0}</value>
   </data>
+  <data name="layout.vigente" xml:space="preserve">
+    <value>Plano vigente</value>
+  </data>
+  <data name="layout.marcarVigente" xml:space="preserve">
+    <value>Marcar como vigente</value>
+  </data>
+  <data name="layout.ayudaVigente" xml:space="preserve">
+    <value>Activo = plano vigente del local: reemplaza al anterior y es el que usan los escenarios y el mapa.</value>
+  </data>
+  <data name="layout.msgVigente" xml:space="preserve">
+    <value>Layout marcado como plano vigente del local.</value>
+  </data>
+  <data name="mapa.titulo" xml:space="preserve">
+    <value>Mapa del local</value>
+  </data>
+  <data name="mapa.tituloCirculacion" xml:space="preserve">
+    <value>Mapa del local: circulación estimada</value>
+  </data>
+  <data name="mapa.tituloComparacion" xml:space="preserve">
+    <value>Mapa del local: ventas estimadas</value>
+  </data>
+  <data name="mapa.ayuda" xml:space="preserve">
+    <value>Cada sector se ubica en una de las 9 zonas del plano según su ubicación. El frente (entrada) es la parte inferior de la imagen.</value>
+  </data>
+  <data name="mapa.ayudaComparacion" xml:space="preserve">
+    <value>Los dos mapas usan la misma escala de colores, así se puede ver en qué zonas mejora o empeora el escenario propuesto.</value>
+  </data>
+  <data name="mapa.indicador" xml:space="preserve">
+    <value>Indicador</value>
+  </data>
+  <data name="mapa.fondo" xml:space="preserve">
+    <value>Fondo</value>
+  </data>
+  <data name="mapa.frente" xml:space="preserve">
+    <value>Frente (entrada)</value>
+  </data>
+  <data name="mapa.menor" xml:space="preserve">
+    <value>Menor</value>
+  </data>
+  <data name="mapa.mayor" xml:space="preserve">
+    <value>Mayor</value>
+  </data>
+  <data name="mapa.sinDato" xml:space="preserve">
+    <value>Sin datos</value>
+  </data>
+  <data name="mapa.sinUbicacion" xml:space="preserve">
+    <value>Sin ubicación en el plano: {0}</value>
+  </data>
+  <data name="mapa.sinPlano" xml:space="preserve">
+    <value>No hay un layout vigente con imagen (PNG o JPG): se muestra solo la grilla de zonas.</value>
+  </data>
+  <data name="escenarios.layoutBase" xml:space="preserve">
+    <value>Layout base:</value>
+  </data>
+  <data name="escenarios.sinLayout" xml:space="preserve">
+    <value>Sin layout</value>
+  </data>
+  <data name="escenarios.sinLayoutVigente" xml:space="preserve">
+    <value>El local no tiene un layout vigente: el escenario se crea sin layout base.</value>
+  </data>
+  <data name="escenarios.layoutBaseNuevo" xml:space="preserve">
+    <value>Layout base: {0} (plano vigente del local)</value>
+  </data>
+  <data name="pdf.layoutBase" xml:space="preserve">
+    <value>Layout base: {0} / {1}</value>
+  </data>
+  <data name="pdf.planoVigente" xml:space="preserve">
+    <value>Plano vigente: {0}</value>
+  </data>
 </root>

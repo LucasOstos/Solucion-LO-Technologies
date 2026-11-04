@@ -14,9 +14,9 @@ namespace DAL
         public List<EscenarioListado> ObtenerEscenariosPorLocal(int pCodigoLocal)
         {
             List<EscenarioListado> escenarios = new List<EscenarioListado>();
-            string query = @"SELECT e.CodigoEscenario, e.CodigoLocal, e.Nombre, e.Descripcion, e.Estado,
+            string query = @"SELECT e.CodigoEscenario, e.CodigoLocal, e.Nombre, e.Descripcion, e.Estado, e.CodigoLayout, l.Nombre AS NombreLayout,
                              (SELECT COUNT(*) FROM EscenarioCambio ec WHERE ec.CodigoEscenario = e.CodigoEscenario) AS CantidadCambios FROM Escenario e
-                             WHERE e.CodigoLocal = @CodigoLocal ORDER BY e.FechaCreacion DESC";
+                             LEFT JOIN Layout l ON l.CodigoLayout = e.CodigoLayout WHERE e.CodigoLocal = @CodigoLocal ORDER BY e.FechaCreacion DESC";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -34,10 +34,12 @@ namespace DAL
                             Descripcion = DR["Descripcion"] == DBNull.Value ? "" : DR["Descripcion"].ToString(),
                             Estado = DR["Estado"].ToString(),
                             CantidadCambios = int.Parse(DR["CantidadCambios"].ToString()),
-                            // Valores en 0 hasta que exista ndicador del CUN 009
+                            // Las estimaciones las calcula la GUI con IndicadorBLL.ProyectarIndicadores
                             VentasEstimadas = 0,
                             CirculacionEstimada = 0,
-                            SatisfaccionEstimada = 0
+                            SatisfaccionEstimada = 0,
+                            CodigoLayout = DR["CodigoLayout"] == DBNull.Value ? (int?)null : int.Parse(DR["CodigoLayout"].ToString()),
+                            NombreLayout = DR["NombreLayout"] == DBNull.Value ? null : DR["NombreLayout"].ToString()
                         });
                     }
                 }
@@ -47,8 +49,7 @@ namespace DAL
         public EscenarioBE ObtenerEscenarioPorCodigo(int pCodigoEscenario)
         {
             EscenarioBE escenario = null;
-            string query = @"SELECT CodigoEscenario, CodigoLocal, Nombre, Descripcion, Objetivo, FechaCreacion, Estado
-                             FROM Escenario WHERE CodigoEscenario = @CodigoEscenario";
+            string query = @"SELECT CodigoEscenario, CodigoLocal, Nombre, Descripcion, Objetivo, FechaCreacion, Estado, CodigoLayout FROM Escenario WHERE CodigoEscenario = @CodigoEscenario";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -60,7 +61,8 @@ namespace DAL
                     {
                         escenario = new EscenarioBE(int.Parse(DR["CodigoEscenario"].ToString()), int.Parse(DR["CodigoLocal"].ToString()), DR["Nombre"].ToString(),
                                                     DR["Descripcion"] == DBNull.Value ? "" : DR["Descripcion"].ToString(), DR["Objetivo"] == DBNull.Value ? "" : DR["Objetivo"].ToString(),
-                                                    Convert.ToDateTime(DR["FechaCreacion"]), DR["Estado"].ToString());                        
+                                                    Convert.ToDateTime(DR["FechaCreacion"]), DR["Estado"].ToString());
+                        escenario.CodigoLayout = DR["CodigoLayout"] == DBNull.Value ? (int?)null : int.Parse(DR["CodigoLayout"].ToString());
                     }
                 }
             }
@@ -69,7 +71,7 @@ namespace DAL
         public List<EscenarioCambio> ObtenerCambiosPorEscenario(int pCodigoEscenario)
         {
             List<EscenarioCambio> cambios = new List<EscenarioCambio>();
-            string query = "SELECT CodigoCambio, CodigoEscenario, TipoCambio, Descripcion FROM EscenarioCambio WHERE CodigoEscenario = @CodigoEscenario";
+            string query = "SELECT CodigoCambio, CodigoEscenario, TipoCambio, Descripcion, CodigoSector, Accion FROM EscenarioCambio WHERE CodigoEscenario = @CodigoEscenario";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -84,7 +86,9 @@ namespace DAL
                             CodigoCambio = int.Parse(DR["CodigoCambio"].ToString()),
                             CodigoEscenario = int.Parse(DR["CodigoEscenario"].ToString()),
                             TipoCambio = DR["TipoCambio"].ToString(),
-                            Descripcion = DR["Descripcion"].ToString()
+                            Descripcion = DR["Descripcion"].ToString(),
+                            CodigoSector = DR["CodigoSector"] == DBNull.Value ? (int?)null : int.Parse(DR["CodigoSector"].ToString()),
+                            Accion = DR["Accion"] == DBNull.Value ? null : DR["Accion"].ToString()
                         });
                     }
                 }
@@ -93,8 +97,8 @@ namespace DAL
         }
         public int AgregarEscenario(EscenarioBE pEscenario)
         {
-            string query = @"INSERT INTO Escenario (CodigoLocal, Nombre, Descripcion, Objetivo, FechaCreacion, Estado)
-                             VALUES (@CodigoLocal, @Nombre, @Descripcion, @Objetivo, @FechaCreacion, @Estado); SELECT CAST(SCOPE_IDENTITY() AS INT);";
+            string query = @"INSERT INTO Escenario (CodigoLocal, Nombre, Descripcion, Objetivo, FechaCreacion, Estado, CodigoLayout)
+                             VALUES (@CodigoLocal, @Nombre, @Descripcion, @Objetivo, @FechaCreacion, @Estado, @CodigoLayout); SELECT CAST(SCOPE_IDENTITY() AS INT);";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -104,23 +108,41 @@ namespace DAL
                 CM.Parameters.AddWithValue("@Objetivo", (object)pEscenario.Objetivo ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@FechaCreacion", pEscenario.FechaCreacion);
                 CM.Parameters.AddWithValue("@Estado", pEscenario.Estado);
+                CM.Parameters.AddWithValue("@CodigoLayout", (object)pEscenario.CodigoLayout ?? DBNull.Value);
                 CO.Open();
                 return (int)CM.ExecuteScalar();
             }
         }
         public void AgregarCambio(EscenarioCambio pCambio)
         {
-            string query = @"INSERT INTO EscenarioCambio (CodigoEscenario, TipoCambio, Descripcion) VALUES (@CodigoEscenario, @TipoCambio, @Descripcion)";
-
+            string query = @"INSERT INTO EscenarioCambio (CodigoEscenario, TipoCambio, Descripcion, CodigoSector, Accion) VALUES (@CodigoEscenario, @TipoCambio, @Descripcion, @CodigoSector, @Accion)";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
                 CM.Parameters.AddWithValue("@CodigoEscenario", pCambio.CodigoEscenario);
                 CM.Parameters.AddWithValue("@TipoCambio", pCambio.TipoCambio);
                 CM.Parameters.AddWithValue("@Descripcion", pCambio.Descripcion);
+                CM.Parameters.AddWithValue("@CodigoSector", (object)pCambio.CodigoSector ?? DBNull.Value);
+                CM.Parameters.AddWithValue("@Accion", (object)pCambio.Accion ?? DBNull.Value);
                 CO.Open();
                 CM.ExecuteNonQuery();
             }
+        }
+        public List<int> QuitarLayoutBase(int pCodigoLayout)
+        {
+            var codigos = new List<int>();
+            string query = @"UPDATE Escenario SET CodigoLayout = NULL OUTPUT INSERTED.CodigoEscenario WHERE CodigoLayout = @CodigoLayout";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLayout", pCodigoLayout);
+                CO.Open();
+                using (SqlDataReader DR = CM.ExecuteReader())
+                {
+                    while (DR.Read()) codigos.Add(DR.GetInt32(0));
+                }
+            }
+            return codigos;
         }
         public void EliminarEscenario(int pCodigoEscenario)
         {

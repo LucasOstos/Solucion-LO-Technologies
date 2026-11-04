@@ -21,6 +21,8 @@ public partial class PaginaEscenarios : PaginaSegura
     private LocalBLL localBLL = new LocalBLL();
     private SectorBLL sectorBLL = new SectorBLL();
     private EscenarioBLL escenarioBLL = new EscenarioBLL();
+    private IndicadorBLL indicadorBLL = new IndicadorBLL();
+    private LayoutBLL layoutBLL = new LayoutBLL();
     private int CodigoLocalActual
     {
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
@@ -62,8 +64,22 @@ public partial class PaginaEscenarios : PaginaSegura
         {
             rptEscenarios.Visible = true;
             lblSinEscenarios.Visible = false;
+            CalcularEstimaciones(escenarios);
             rptEscenarios.DataSource = escenarios;
             rptEscenarios.DataBind();
+        }
+    }
+    // Ventas, circulación e índice global que tendría el local con los cambios de cada escenario
+    private void CalcularEstimaciones(List<EscenarioListado> pEscenarios)
+    {
+        List<IndicadorSectorListado> reales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, DateTime.Now.AddMonths(-1).ToString("yyyy-MM"));
+        if (reales.Count == 0) return;
+        foreach (EscenarioListado escenario in pEscenarios)
+        {
+            List<IndicadorSectorListado> proyectados = indicadorBLL.ProyectarIndicadores(reales, escenarioBLL.ObtenerCambiosPorEscenario(escenario.CodigoEscenario));
+            escenario.VentasEstimadas = proyectados.Sum(p => p.Ventas);
+            escenario.CirculacionEstimada = Math.Round(proyectados.Average(p => p.Circulacion), 1);
+            escenario.IndiceGlobalEstimado = (int)Math.Round(proyectados.Average(p => p.IndiceGlobal), 0);
         }
     }
     private void MostrarDetalleEscenario(int codigoEscenario)
@@ -74,6 +90,8 @@ public partial class PaginaEscenarios : PaginaSegura
         litEstadoDetalleEscenario.Text = TraducirValor(escenario.Estado);
         litDescripcionDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Descripcion) ? "-" : escenario.Descripcion;
         litObjetivoDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Objetivo) ? "-" : escenario.Objetivo;
+        LayoutBE layoutBase = escenario.CodigoLayout == null ? null : layoutBLL.ObtenerLayoutPorCodigo(escenario.CodigoLayout.Value);
+        litLayoutDetalleEscenario.Text = HttpUtility.HtmlEncode(layoutBase?.Nombre ?? Traducir("escenarios.sinLayout"));
         if (cambios.Count == 0)
         {
             rptDetalleCambios.Visible = false;
@@ -129,6 +147,8 @@ public partial class PaginaEscenarios : PaginaSegura
         List<SectorListado> sectores = sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual);
         rptCambiosPorSector.DataSource = sectores;
         rptCambiosPorSector.DataBind();
+        LayoutBE vigente = layoutBLL.ObtenerLayoutVigente(CodigoLocalActual);
+        litLayoutBaseNuevo.Text = HttpUtility.HtmlEncode(vigente == null ? Traducir("escenarios.sinLayoutVigente") : Traducir("escenarios.layoutBaseNuevo", vigente.Nombre));
         pnlModalEscenario.Style["display"] = "flex";
     }
     protected void btnCancelarEscenario_Click(object sender, EventArgs e) { pnlModalEscenario.Style["display"] = "none"; }
@@ -153,7 +173,9 @@ public partial class PaginaEscenarios : PaginaSegura
                 cambios.Add(new EscenarioCambio
                 {
                     TipoCambio = "Modificación de sector",
-                    Descripcion = $"{nombreSector}: {ddlCambio.SelectedValue}"
+                    Descripcion = $"{nombreSector}: {ddlCambio.SelectedValue}",
+                    CodigoSector = int.Parse(hfSector.Value),
+                    Accion = ddlCambio.SelectedValue
                 });
             }
         }

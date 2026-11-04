@@ -1988,4 +1988,73 @@
   <data name="pdf.ventasM2Local" xml:space="preserve">
     <value>Filialumsatz pro m²: {0}</value>
   </data>
+  <data name="layout.vigente" xml:space="preserve">
+    <value>Aktueller Grundriss</value>
+  </data>
+  <data name="layout.marcarVigente" xml:space="preserve">
+    <value>Als aktuell festlegen</value>
+  </data>
+  <data name="layout.ayudaVigente" xml:space="preserve">
+    <value>Aktiv = aktueller Grundriss der Filiale: ersetzt den bisherigen und wird von Szenarien und der Karte verwendet.</value>
+  </data>
+  <data name="layout.msgVigente" xml:space="preserve">
+    <value>Layout als aktueller Grundriss der Filiale festgelegt.</value>
+  </data>
+  <data name="mapa.titulo" xml:space="preserve">
+    <value>Filialkarte</value>
+  </data>
+  <data name="mapa.tituloCirculacion" xml:space="preserve">
+    <value>Filialkarte: geschätzte Kundenfrequenz</value>
+  </data>
+  <data name="mapa.tituloComparacion" xml:space="preserve">
+    <value>Filialkarte: geschätzter Umsatz</value>
+  </data>
+  <data name="mapa.ayuda" xml:space="preserve">
+    <value>Jeder Bereich liegt je nach Lage in einer der 9 Zonen des Grundrisses. Vorne (Eingang) ist der untere Bildrand.</value>
+  </data>
+  <data name="mapa.ayudaComparacion" xml:space="preserve">
+    <value>Beide Karten nutzen dieselbe Farbskala, so sieht man, in welchen Zonen sich das vorgeschlagene Szenario verbessert oder verschlechtert.</value>
+  </data>
+  <data name="mapa.indicador" xml:space="preserve">
+    <value>Kennzahl</value>
+  </data>
+  <data name="mapa.fondo" xml:space="preserve">
+    <value>Hinten</value>
+  </data>
+  <data name="mapa.frente" xml:space="preserve">
+    <value>Vorne (Eingang)</value>
+  </data>
+  <data name="mapa.menor" xml:space="preserve">
+    <value>Niedriger</value>
+  </data>
+  <data name="mapa.mayor" xml:space="preserve">
+    <value>Höher</value>
+  </data>
+  <data name="mapa.sinDato" xml:space="preserve">
+    <value>Keine Daten</value>
+  </data>
+  <data name="mapa.sinUbicacion" xml:space="preserve">
+    <value>Ohne Position im Grundriss: {0}</value>
+  </data>
+  <data name="mapa.sinPlano" xml:space="preserve">
+    <value>Kein aktuelles Layout mit Bild (PNG oder JPG): Es wird nur das Zonenraster angezeigt.</value>
+  </data>
+  <data name="escenarios.layoutBase" xml:space="preserve">
+    <value>Basislayout:</value>
+  </data>
+  <data name="escenarios.sinLayout" xml:space="preserve">
+    <value>Kein Layout</value>
+  </data>
+  <data name="escenarios.sinLayoutVigente" xml:space="preserve">
+    <value>Die Filiale hat kein aktuelles Layout: Das Szenario wird ohne Basislayout angelegt.</value>
+  </data>
+  <data name="escenarios.layoutBaseNuevo" xml:space="preserve">
+    <value>Basislayout: {0} (aktueller Grundriss der Filiale)</value>
+  </data>
+  <data name="pdf.layoutBase" xml:space="preserve">
+    <value>Basislayout: {0} / {1}</value>
+  </data>
+  <data name="pdf.planoVigente" xml:space="preserve">
+    <value>Aktueller Grundriss: {0}</value>
+  </data>
 </root>

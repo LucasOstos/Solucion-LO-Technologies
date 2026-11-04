@@ -50,15 +50,15 @@
                             <div class="esc-stats">
                                 <div>
                                     <div class="texto-secundario"><%# Traducir("escenarios.ventasEst") %></div>
-                                    <div class="texto-principal"><%# Eval("VentasEstimadas") %></div>
+                                    <div class="texto-principal"><%# Eval("VentasEstimadas", "{0:$#,##0}") %></div>
                                 </div>
                                 <div>
                                     <div class="texto-secundario"><%# Traducir("layout.colCirculacion") %></div>
-                                    <div class="texto-principal"><%# Eval("CirculacionEstimada") %>%</div>
+                                    <div class="texto-principal"><%# Eval("CirculacionEstimada", "{0:0.#}") %>%</div>
                                 </div>
                                 <div>
-                                    <div class="texto-secundario"><%# Traducir("escenarios.satisfaccion") %></div>
-                                    <div class="texto-principal"><%# Eval("SatisfaccionEstimada") %>/100</div>
+                                    <div class="texto-secundario"><%# Traducir("indicadores.colIndice") %></div>
+                                    <div class="texto-principal"><%# Eval("IndiceGlobalEstimado") %>/100</div>
                                 </div>
                             </div>
 
@@ -102,6 +102,7 @@
                         placeholder="Ej: Aumentar la circulación en el sector Electrónica" ClavePlaceholder="escenarios.ejObjetivo" />
                 </div>
                 <div class="grupo-campo">
+                    <p class="texto-secundario"><asp:Literal ID="litLayoutBaseNuevo" runat="server" /></p>
                     <label runat="server" Clave="escenarios.cambiosPropuestosSectores">Cambios propuestos de sectores</label>
                     <%-- Se puebla dinámicamente desde los Sectores reales del
                          local seleccionado (tabla Sector), no hardcodeado. --%>
@@ -145,6 +146,8 @@
                     <asp:Literal ID="litDescripcionDetalleEscenario" runat="server" /></p>
                 <p><strong runat="server" Clave="escenarios.objetivoDetalle">Objetivo:</strong>
                     <asp:Literal ID="litObjetivoDetalleEscenario" runat="server" /></p>
+                <p><strong runat="server" Clave="escenarios.layoutBase">Layout base:</strong>
+                    <asp:Literal ID="litLayoutDetalleEscenario" runat="server" /></p>
 
                 <div class="grupo-campo">
                     <label runat="server" Clave="escenarios.cambiosPropuestos">Cambios propuestos</label>
@@ -159,8 +162,7 @@
                     <asp:Label ID="lblSinCambiosDetalle" runat="server" Text="Este escenario no tiene cambios propuestos cargados." Clave="escenarios.sinCambiosDetalle" Visible="false" CssClass="sin-resultados" />
                 </div>
                 <div class="modal-botones">
-                    <asp:Button runat="server" CssClass="modal-boton-cancelar" Text="Cerrar" Clave="comun.cerrar"
-                        OnClientClick="cerrarModal('pnlDetalleEscenario'); return false;" />
+                    <asp:Button runat="server" CssClass="modal-boton-cancelar" Text="Cerrar" Clave="comun.cerrar" OnClientClick="cerrarModal('pnlDetalleEscenario'); return false;" />
                 </div>
             </div>
         </asp:Panel>

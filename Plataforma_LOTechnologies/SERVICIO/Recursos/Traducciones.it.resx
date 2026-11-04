@@ -1988,4 +1988,73 @@
   <data name="pdf.ventasM2Local" xml:space="preserve">
     <value>Vendite per m² del punto vendita: {0}</value>
   </data>
+  <data name="layout.vigente" xml:space="preserve">
+    <value>Planimetria in uso</value>
+  </data>
+  <data name="layout.marcarVigente" xml:space="preserve">
+    <value>Imposta come attuale</value>
+  </data>
+  <data name="layout.ayudaVigente" xml:space="preserve">
+    <value>Attivo = planimetria in uso del punto vendita: sostituisce la precedente ed è usata da scenari e mappa.</value>
+  </data>
+  <data name="layout.msgVigente" xml:space="preserve">
+    <value>Layout impostato come planimetria in uso del punto vendita.</value>
+  </data>
+  <data name="mapa.titulo" xml:space="preserve">
+    <value>Mappa del punto vendita</value>
+  </data>
+  <data name="mapa.tituloCirculacion" xml:space="preserve">
+    <value>Mappa del punto vendita: affluenza stimata</value>
+  </data>
+  <data name="mapa.tituloComparacion" xml:space="preserve">
+    <value>Mappa del punto vendita: vendite stimate</value>
+  </data>
+  <data name="mapa.ayuda" xml:space="preserve">
+    <value>Ogni reparto si trova in una delle 9 zone della planimetria secondo la sua posizione. Il fronte (ingresso) è la parte inferiore dell'immagine.</value>
+  </data>
+  <data name="mapa.ayudaComparacion" xml:space="preserve">
+    <value>Le due mappe usano la stessa scala di colori, così si vede in quali zone lo scenario proposto migliora o peggiora.</value>
+  </data>
+  <data name="mapa.indicador" xml:space="preserve">
+    <value>Indicatore</value>
+  </data>
+  <data name="mapa.fondo" xml:space="preserve">
+    <value>Fondo</value>
+  </data>
+  <data name="mapa.frente" xml:space="preserve">
+    <value>Fronte (ingresso)</value>
+  </data>
+  <data name="mapa.menor" xml:space="preserve">
+    <value>Minore</value>
+  </data>
+  <data name="mapa.mayor" xml:space="preserve">
+    <value>Maggiore</value>
+  </data>
+  <data name="mapa.sinDato" xml:space="preserve">
+    <value>Nessun dato</value>
+  </data>
+  <data name="mapa.sinUbicacion" xml:space="preserve">
+    <value>Senza posizione nella planimetria: {0}</value>
+  </data>
+  <data name="mapa.sinPlano" xml:space="preserve">
+    <value>Nessun layout in uso con immagine (PNG o JPG): si mostra solo la griglia delle zone.</value>
+  </data>
+  <data name="escenarios.layoutBase" xml:space="preserve">
+    <value>Layout di base:</value>
+  </data>
+  <data name="escenarios.sinLayout" xml:space="preserve">
+    <value>Nessun layout</value>
+  </data>
+  <data name="escenarios.sinLayoutVigente" xml:space="preserve">
+    <value>Il punto vendita non ha un layout in uso: lo scenario verrà creato senza layout di base.</value>
+  </data>
+  <data name="escenarios.layoutBaseNuevo" xml:space="preserve">
+    <value>Layout di base: {0} (planimetria in uso del punto vendita)</value>
+  </data>
+  <data name="pdf.layoutBase" xml:space="preserve">
+    <value>Layout di base: {0} / {1}</value>
+  </data>
+  <data name="pdf.planoVigente" xml:space="preserve">
+    <value>Planimetria in uso: {0}</value>
+  </data>
 </root>

@@ -51,7 +51,7 @@ namespace BLL
         {
             public decimal DeltaCirculacion { get; set; }
             public decimal DeltaVentas { get; set; }
-            public decimal DeltaSuperficie { get; set; } // % de cambio de los m2 del sector
+            public decimal DeltaSuperficie { get; set; }
         }
         private static readonly Dictionary<string, CoeficienteCambio> COEFICIENTES = new Dictionary<string, CoeficienteCambio>
         {
@@ -63,15 +63,20 @@ namespace BLL
         };
         public List<IndicadorSectorListado> ProyectarIndicadores(List<IndicadorSectorListado> pIndicadoresReales, List<EscenarioCambio> pCambios)
         {
-            var accionesPorSector = new Dictionary<string, string>();
+            // Acción por código de sector. Los cambios viejos sin CodigoSector se resuelven por el nombre en la descripción.
+            var accionesPorCodigo = new Dictionary<int, string>();
+            var accionesPorNombre = new Dictionary<string, string>();
             foreach (var cambio in pCambios)
             {
-                int pos = cambio.Descripcion.IndexOf(": ");
+                if (cambio.CodigoSector != null && !string.IsNullOrEmpty(cambio.Accion))
+                {
+                    accionesPorCodigo[cambio.CodigoSector.Value] = cambio.Accion;
+                    continue;
+                }
+                int pos = cambio.Descripcion == null ? -1 : cambio.Descripcion.IndexOf(": ");
                 if (pos > 0)
                 {
-                    string sector = cambio.Descripcion.Substring(0, pos);
-                    string accion = cambio.Descripcion.Substring(pos + 2);
-                    accionesPorSector[sector] = accion;
+                    accionesPorNombre[cambio.Descripcion.Substring(0, pos)] = cambio.Descripcion.Substring(pos + 2);
                 }
             }
             var proyectados = new List<IndicadorSectorListado>();
@@ -82,7 +87,8 @@ namespace BLL
                 decimal? superficieProyectada = real.Superficie;
                 string accion;
                 CoeficienteCambio coef;
-                if (accionesPorSector.TryGetValue(real.Sector, out accion) && COEFICIENTES.TryGetValue(accion, out coef))
+                bool tieneAccion = accionesPorCodigo.TryGetValue(real.CodigoSector, out accion) || accionesPorNombre.TryGetValue(real.Sector, out accion);
+                if (tieneAccion && COEFICIENTES.TryGetValue(accion, out coef))
                 {
                     ventasProyectadas = real.Ventas * (1 + coef.DeltaVentas / 100);
                     circulacionProyectada = Math.Max(0, Math.Min(100, real.Circulacion * (1 + coef.DeltaCirculacion / 100)));

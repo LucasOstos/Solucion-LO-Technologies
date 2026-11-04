@@ -1988,4 +1988,73 @@
   <data name="pdf.ventasM2Local" xml:space="preserve">
     <value>店舗の m² あたり売上：{0}</value>
   </data>
+  <data name="layout.vigente" xml:space="preserve">
+    <value>現行の平面図</value>
+  </data>
+  <data name="layout.marcarVigente" xml:space="preserve">
+    <value>現行に設定</value>
+  </data>
+  <data name="layout.ayudaVigente" xml:space="preserve">
+    <value>有効 = 店舗の現行平面図：以前のものと置き換わり、シナリオとマップで使用されます。</value>
+  </data>
+  <data name="layout.msgVigente" xml:space="preserve">
+    <value>レイアウトを店舗の現行平面図に設定しました。</value>
+  </data>
+  <data name="mapa.titulo" xml:space="preserve">
+    <value>店舗マップ</value>
+  </data>
+  <data name="mapa.tituloCirculacion" xml:space="preserve">
+    <value>店舗マップ：推定回遊率</value>
+  </data>
+  <data name="mapa.tituloComparacion" xml:space="preserve">
+    <value>店舗マップ：推定売上</value>
+  </data>
+  <data name="mapa.ayuda" xml:space="preserve">
+    <value>各売り場は位置に応じて平面図の9つのゾーンのいずれかに配置されます。手前（入口）は画像の下側です。</value>
+  </data>
+  <data name="mapa.ayudaComparacion" xml:space="preserve">
+    <value>2つのマップは同じ色の尺度を使うため、提案シナリオがどのゾーンで改善・悪化するかがわかります。</value>
+  </data>
+  <data name="mapa.indicador" xml:space="preserve">
+    <value>指標</value>
+  </data>
+  <data name="mapa.fondo" xml:space="preserve">
+    <value>奥</value>
+  </data>
+  <data name="mapa.frente" xml:space="preserve">
+    <value>手前（入口）</value>
+  </data>
+  <data name="mapa.menor" xml:space="preserve">
+    <value>低い</value>
+  </data>
+  <data name="mapa.mayor" xml:space="preserve">
+    <value>高い</value>
+  </data>
+  <data name="mapa.sinDato" xml:space="preserve">
+    <value>データなし</value>
+  </data>
+  <data name="mapa.sinUbicacion" xml:space="preserve">
+    <value>平面図上の位置なし：{0}</value>
+  </data>
+  <data name="mapa.sinPlano" xml:space="preserve">
+    <value>画像（PNG/JPG）付きの現行レイアウトがないため、ゾーンのグリッドのみ表示します。</value>
+  </data>
+  <data name="escenarios.layoutBase" xml:space="preserve">
+    <value>ベースレイアウト：</value>
+  </data>
+  <data name="escenarios.sinLayout" xml:space="preserve">
+    <value>レイアウトなし</value>
+  </data>
+  <data name="escenarios.sinLayoutVigente" xml:space="preserve">
+    <value>店舗に現行レイアウトがないため、ベースレイアウトなしでシナリオを作成します。</value>
+  </data>
+  <data name="escenarios.layoutBaseNuevo" xml:space="preserve">
+    <value>ベースレイアウト：{0}（店舗の現行平面図）</value>
+  </data>
+  <data name="pdf.layoutBase" xml:space="preserve">
+    <value>ベースレイアウト：{0} / {1}</value>
+  </data>
+  <data name="pdf.planoVigente" xml:space="preserve">
+    <value>現行の平面図：{0}</value>
+  </data>
 </root>

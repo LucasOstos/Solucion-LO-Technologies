@@ -79,6 +79,7 @@ public partial class PaginaLayoutSectores : PaginaSegura
     private void CargarSectores()
     {
         List<SectorListado> sectores = sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual);
+        MostrarMapaSectores(sectores);
         if (sectores.Count == 0)
         {
             rptSectores.Visible = false;
@@ -133,29 +134,20 @@ public partial class PaginaLayoutSectores : PaginaSegura
         }
         pnlDetalleLayout.Style["display"] = "flex";
     }
-    private string GenerarHtmlTreemap(List<SectorListado> sectores)
+    // Mapa del local con la circulación estimada de cada sector sobre el plano vigente
+    private void MostrarMapaSectores(List<SectorListado> sectores)
     {
-        decimal total = sectores.Sum(s => s.Circulacion ?? 5m);
-        if (total <= 0) total = 1;
-        var sb = new System.Text.StringBuilder();
-        sb.Append("<div class='sec-treemap'>");
-        string[] paleta = { "#2f6bff", "#1e7a37", "#b3691e", "#b3261e", "#6a4bd6", "#0d9488", "#c2185b", "#5d4037" };
-        int i = 0;
-        foreach (SectorListado sector in sectores)
+        pnlMapaSectores.Visible = sectores.Count > 0;
+        if (sectores.Count == 0) return;
+        LayoutBE vigente = layoutBLL.ObtenerLayoutVigente(CodigoLocalActual);
+        List<SectorMapa> datos = sectores.Select(s => new SectorMapa
         {
-            decimal peso = sector.Circulacion ?? 5m;
-            decimal porcentaje = Math.Round((peso / total) * 100, 1);
-            string color = paleta[i % paleta.Length];
-            sb.Append("<div class='sec-treemap-bloque' style='flex-basis:")
-              .Append(porcentaje.ToString(System.Globalization.CultureInfo.InvariantCulture))
-              .Append("%; background-color:").Append(color).Append(";'>")
-              .Append("<span class='sec-treemap-nombre'>").Append(HttpUtility.HtmlEncode(sector.Nombre)).Append("</span>")
-              .Append("<span class='sec-treemap-valor'>").Append(porcentaje.ToString(System.Globalization.CultureInfo.InvariantCulture)).Append("%</span>")
-              .Append("</div>");
-            i++;
-        }
-        sb.Append("</div>");
-        return sb.ToString();
+            Nombre = s.Nombre,
+            Ubicacion = s.Ubicacion,
+            Valor = s.Circulacion,
+            ValorTexto = MapaLocal.FormatearPorcentaje(s.Circulacion)
+        }).ToList();
+        litMapaSectores.Text = MapaLocal.Generar(MapaLocal.ObtenerUrlImagen(vigente, ResolveUrl), vigente?.Nombre, datos, Traducir);
     }
     #endregion
     protected void ddlLocal_SelectedIndexChanged(object sender, EventArgs e)
@@ -231,6 +223,7 @@ public partial class PaginaLayoutSectores : PaginaSegura
         pnlModalLayout.Style["display"] = "none";
         MostrarMensaje(Traducir("layout.msgRegistrado"), esExito: true);
         CargarLayouts();
+        CargarSectores();
     }
     protected void btnNuevoSector_Click(object sender, EventArgs e)
     {
@@ -260,7 +253,7 @@ public partial class PaginaLayoutSectores : PaginaSegura
         decimal? circulacion = LeerDecimal(tbCirculacionSector.Text);
         decimal? superficie = LeerDecimal(tbSuperficieSector.Text);
         bool esEdicion = hfEsEdicionSector.Value == "true";
-        SectorBE sector = new SectorBE(esEdicion ? int.Parse(hfCodigoSector.Value) : 0, CodigoLocalActual, tbNombreSector.Text.Trim(), ddlTipoSector.SelectedValue, ddlUbicacionSector.SelectedValue, circulacion, tbDescripcionSector.Text.Trim(), true, superficie);       
+        SectorBE sector = new SectorBE(esEdicion ? int.Parse(hfCodigoSector.Value) : 0, CodigoLocalActual, tbNombreSector.Text.Trim(), ddlTipoSector.SelectedValue, ddlUbicacionSector.SelectedValue, circulacion, tbDescripcionSector.Text.Trim(), true, superficie);
         if (esEdicion) { sectorBLL.ModificarSector(sector); }
         else { sectorBLL.CrearSector(sector); }
         pnlModalSector.Style["display"] = "none";
@@ -275,10 +268,17 @@ public partial class PaginaLayoutSectores : PaginaSegura
             case "VerDetalle":
                 MostrarDetalleLayout(codigoLayout);
                 break;
+            case "MarcarVigente":
+                layoutBLL.MarcarVigente(codigoLayout);
+                MostrarMensaje(Traducir("layout.msgVigente"), esExito: true);
+                CargarLayouts();
+                CargarSectores();
+                break;
             case "EliminarLayout":
                 layoutBLL.EliminarLayout(codigoLayout);
                 MostrarMensaje(Traducir("layout.msgEliminado"), esExito: true);
                 CargarLayouts();
+                CargarSectores();
                 break;
         }
     }

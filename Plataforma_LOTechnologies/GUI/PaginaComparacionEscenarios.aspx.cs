@@ -14,6 +14,8 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
     private EscenarioBLL escenarioBLL = new EscenarioBLL();
     private ComparacionBLL comparacionBLL = new ComparacionBLL();
     private IndicadorBLL indicadorBLL = new IndicadorBLL();
+    private LayoutBLL layoutBLL = new LayoutBLL();
+    private SectorBLL sectorBLL = new SectorBLL();
     private int CodigoLocalActual
     {
         get { return string.IsNullOrEmpty(ddlLocal.SelectedValue) ? 0 : int.Parse(ddlLocal.SelectedValue); }
@@ -47,6 +49,36 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
             ddlEscenarioA.Items.Add(new ListItem(esc.Nombre, esc.CodigoEscenario.ToString()));
             ddlEscenarioB.Items.Add(new ListItem(esc.Nombre, esc.CodigoEscenario.ToString()));
         }
+    }
+    private void MostrarMapas(EscenarioBE pEscenarioA, EscenarioBE pEscenarioB, List<IndicadorSectorListado> pProyectadosA, List<IndicadorSectorListado> pProyectadosB)
+    {
+        List<SectorListado> sectores = sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual);
+        List<decimal> todas = pProyectadosA.Concat(pProyectadosB).Select(p => p.Ventas).ToList();
+        decimal minimo = todas.Count > 0 ? todas.Min() : 0;
+        decimal maximo = todas.Count > 0 ? todas.Max() : 0;
+        LayoutBE vigente = layoutBLL.ObtenerLayoutVigente(CodigoLocalActual);
+        LayoutBE layoutA = ObtenerLayoutBase(pEscenarioA) ?? vigente;
+        LayoutBE layoutB = ObtenerLayoutBase(pEscenarioB) ?? vigente;
+        litLayoutA.Text = HttpUtility.HtmlEncode(ObtenerLayoutBase(pEscenarioA)?.Nombre ?? Traducir("escenarios.sinLayout"));
+        litLayoutB.Text = HttpUtility.HtmlEncode(ObtenerLayoutBase(pEscenarioB)?.Nombre ?? Traducir("escenarios.sinLayout"));
+        litTituloMapaA.Text = HttpUtility.HtmlEncode(pEscenarioA.Nombre);
+        litTituloMapaB.Text = HttpUtility.HtmlEncode(pEscenarioB.Nombre);
+        litMapaA.Text = MapaLocal.Generar(MapaLocal.ObtenerUrlImagen(layoutA, ResolveUrl), layoutA?.Nombre, ArmarDatosMapa(sectores, pProyectadosA), Traducir, minimo, maximo);
+        litMapaB.Text = MapaLocal.Generar(MapaLocal.ObtenerUrlImagen(layoutB, ResolveUrl), layoutB?.Nombre, ArmarDatosMapa(sectores, pProyectadosB), Traducir, minimo, maximo);
+    }
+    private LayoutBE ObtenerLayoutBase(EscenarioBE pEscenario)
+    {
+        return pEscenario.CodigoLayout == null ? null : layoutBLL.ObtenerLayoutPorCodigo(pEscenario.CodigoLayout.Value);
+    }
+    private static List<SectorMapa> ArmarDatosMapa(List<SectorListado> pSectores, List<IndicadorSectorListado> pProyectados)
+    {
+        Dictionary<int, IndicadorSectorListado> porSector = pProyectados.ToDictionary(p => p.CodigoSector);
+        return pSectores.Select(s =>
+        {
+            IndicadorSectorListado ind;
+            decimal? ventas = porSector.TryGetValue(s.CodigoSector, out ind) ? ind.Ventas : (decimal?)null;
+            return new SectorMapa { Nombre = s.Nombre, Ubicacion = s.Ubicacion, Valor = ventas, ValorTexto = MapaLocal.FormatearMoneda(ventas) };
+        }).ToList();
     }
     #endregion
 
@@ -113,6 +145,7 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         rptIndicadoresB.DataBind();
         rptDiferencias.DataSource = ArmarDiferenciasPorSector(proyectadosA, proyectadosB);
         rptDiferencias.DataBind();
+        MostrarMapas(escenarioA, escenarioB, proyectadosA, proyectadosB);
         ViewState["CodigoEscenarioA"] = codigoEscenarioA;
         ViewState["CodigoEscenarioB"] = codigoEscenarioB;
         pnlResultados.Visible = true;
@@ -123,7 +156,6 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         decimal circulacionPromedio = proyectados.Count > 0 ? proyectados.Average(p => p.Circulacion) : 0;
         decimal rotacionPromedio = proyectados.Count > 0 ? proyectados.Average(p => p.Rotacion) : 0;
         decimal indiceGlobalPromedio = proyectados.Count > 0 ? (decimal)proyectados.Average(p => p.IndiceGlobal) : 0;
-        // Ventas por m2: solo sobre los sectores con superficie cargada (en "Ampliar/Reducir superficie" cambian los m2)
         var conSuperficie = proyectados.Where(p => p.Superficie != null && p.Superficie > 0).ToList();
         decimal m2 = conSuperficie.Sum(p => p.Superficie.Value);
         string ventasPorM2 = m2 > 0 ? (conSuperficie.Sum(p => p.Ventas) / m2).ToString("$#,##0") : "-";

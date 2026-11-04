@@ -1988,4 +1988,73 @@
   <data name="pdf.ventasM2Local" xml:space="preserve">
     <value>Ventes par m² du magasin : {0}</value>
   </data>
+  <data name="layout.vigente" xml:space="preserve">
+    <value>Plan en vigueur</value>
+  </data>
+  <data name="layout.marcarVigente" xml:space="preserve">
+    <value>Définir comme actuel</value>
+  </data>
+  <data name="layout.ayudaVigente" xml:space="preserve">
+    <value>Actif = plan en vigueur du magasin : il remplace le précédent et sert aux scénarios et à la carte.</value>
+  </data>
+  <data name="layout.msgVigente" xml:space="preserve">
+    <value>Layout défini comme plan en vigueur du magasin.</value>
+  </data>
+  <data name="mapa.titulo" xml:space="preserve">
+    <value>Carte du magasin</value>
+  </data>
+  <data name="mapa.tituloCirculacion" xml:space="preserve">
+    <value>Carte du magasin : fréquentation estimée</value>
+  </data>
+  <data name="mapa.tituloComparacion" xml:space="preserve">
+    <value>Carte du magasin : ventes estimées</value>
+  </data>
+  <data name="mapa.ayuda" xml:space="preserve">
+    <value>Chaque rayon est placé dans l'une des 9 zones du plan selon son emplacement. L'avant (entrée) est le bas de l'image.</value>
+  </data>
+  <data name="mapa.ayudaComparacion" xml:space="preserve">
+    <value>Les deux cartes utilisent la même échelle de couleurs pour voir dans quelles zones le scénario proposé s'améliore ou se dégrade.</value>
+  </data>
+  <data name="mapa.indicador" xml:space="preserve">
+    <value>Indicateur</value>
+  </data>
+  <data name="mapa.fondo" xml:space="preserve">
+    <value>Fond</value>
+  </data>
+  <data name="mapa.frente" xml:space="preserve">
+    <value>Avant (entrée)</value>
+  </data>
+  <data name="mapa.menor" xml:space="preserve">
+    <value>Plus bas</value>
+  </data>
+  <data name="mapa.mayor" xml:space="preserve">
+    <value>Plus haut</value>
+  </data>
+  <data name="mapa.sinDato" xml:space="preserve">
+    <value>Aucune donnée</value>
+  </data>
+  <data name="mapa.sinUbicacion" xml:space="preserve">
+    <value>Sans emplacement sur le plan : {0}</value>
+  </data>
+  <data name="mapa.sinPlano" xml:space="preserve">
+    <value>Aucun layout en vigueur avec image (PNG ou JPG) : seule la grille des zones est affichée.</value>
+  </data>
+  <data name="escenarios.layoutBase" xml:space="preserve">
+    <value>Layout de base :</value>
+  </data>
+  <data name="escenarios.sinLayout" xml:space="preserve">
+    <value>Aucun layout</value>
+  </data>
+  <data name="escenarios.sinLayoutVigente" xml:space="preserve">
+    <value>Le magasin n'a pas de layout en vigueur : le scénario sera créé sans layout de base.</value>
+  </data>
+  <data name="escenarios.layoutBaseNuevo" xml:space="preserve">
+    <value>Layout de base : {0} (plan en vigueur du magasin)</value>
+  </data>
+  <data name="pdf.layoutBase" xml:space="preserve">
+    <value>Layout de base : {0} / {1}</value>
+  </data>
+  <data name="pdf.planoVigente" xml:space="preserve">
+    <value>Plan en vigueur : {0}</value>
+  </data>
 </root>

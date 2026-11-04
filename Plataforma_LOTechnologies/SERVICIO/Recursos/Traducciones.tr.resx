@@ -1988,4 +1988,73 @@
   <data name="pdf.ventasM2Local" xml:space="preserve">
     <value>Mağazanın m² başına satışı: {0}</value>
   </data>
+  <data name="layout.vigente" xml:space="preserve">
+    <value>Geçerli plan</value>
+  </data>
+  <data name="layout.marcarVigente" xml:space="preserve">
+    <value>Geçerli yap</value>
+  </data>
+  <data name="layout.ayudaVigente" xml:space="preserve">
+    <value>Aktif = mağazanın geçerli planı: öncekinin yerini alır, senaryolar ve harita bunu kullanır.</value>
+  </data>
+  <data name="layout.msgVigente" xml:space="preserve">
+    <value>Yerleşim mağazanın geçerli planı olarak ayarlandı.</value>
+  </data>
+  <data name="mapa.titulo" xml:space="preserve">
+    <value>Mağaza haritası</value>
+  </data>
+  <data name="mapa.tituloCirculacion" xml:space="preserve">
+    <value>Mağaza haritası: tahmini ziyaretçi trafiği</value>
+  </data>
+  <data name="mapa.tituloComparacion" xml:space="preserve">
+    <value>Mağaza haritası: tahmini satışlar</value>
+  </data>
+  <data name="mapa.ayuda" xml:space="preserve">
+    <value>Her reyon konumuna göre planın 9 bölgesinden birine yerleşir. Ön taraf (giriş) görüntünün alt kısmıdır.</value>
+  </data>
+  <data name="mapa.ayudaComparacion" xml:space="preserve">
+    <value>İki harita aynı renk ölçeğini kullanır; önerilen senaryonun hangi bölgelerde iyileştiği veya kötüleştiği görülür.</value>
+  </data>
+  <data name="mapa.indicador" xml:space="preserve">
+    <value>Gösterge</value>
+  </data>
+  <data name="mapa.fondo" xml:space="preserve">
+    <value>Arka</value>
+  </data>
+  <data name="mapa.frente" xml:space="preserve">
+    <value>Ön (giriş)</value>
+  </data>
+  <data name="mapa.menor" xml:space="preserve">
+    <value>Düşük</value>
+  </data>
+  <data name="mapa.mayor" xml:space="preserve">
+    <value>Yüksek</value>
+  </data>
+  <data name="mapa.sinDato" xml:space="preserve">
+    <value>Veri yok</value>
+  </data>
+  <data name="mapa.sinUbicacion" xml:space="preserve">
+    <value>Planda konumu olmayan: {0}</value>
+  </data>
+  <data name="mapa.sinPlano" xml:space="preserve">
+    <value>Görselli (PNG veya JPG) geçerli yerleşim yok: yalnızca bölge ızgarası gösteriliyor.</value>
+  </data>
+  <data name="escenarios.layoutBase" xml:space="preserve">
+    <value>Temel yerleşim:</value>
+  </data>
+  <data name="escenarios.sinLayout" xml:space="preserve">
+    <value>Yerleşim yok</value>
+  </data>
+  <data name="escenarios.sinLayoutVigente" xml:space="preserve">
+    <value>Mağazanın geçerli yerleşimi yok: senaryo temel yerleşim olmadan oluşturulacak.</value>
+  </data>
+  <data name="escenarios.layoutBaseNuevo" xml:space="preserve">
+    <value>Temel yerleşim: {0} (mağazanın geçerli planı)</value>
+  </data>
+  <data name="pdf.layoutBase" xml:space="preserve">
+    <value>Temel yerleşim: {0} / {1}</value>
+  </data>
+  <data name="pdf.planoVigente" xml:space="preserve">
+    <value>Geçerli plan: {0}</value>
+  </data>
 </root>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/Estilos/BotonVolverMenu.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/Comun.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/EstilosLayoutSectores.css" />
+    <link rel="stylesheet" type="text/css" href="/Estilos/MapaLocal.css" />
     <script type="text/javascript" src="/JS/LayoutSectoresJS.js"></script>
 </head>
 <body>
@@ -43,6 +44,8 @@
                                     <div class="texto-principal">
                                         <%# Eval("Nombre") %>
                                         <span class='<%# "etiqueta " + ObtenerClaseEstadoLayout(Eval("Estado").ToString()) %>'><%# TraducirValor(Eval("Estado")) %></span>
+                                        <asp:Label runat="server" CssClass="etiqueta etiqueta-info" Visible='<%# Eval("Estado").ToString() == "Activo" %>'
+                                            Text="Plano vigente" Clave="layout.vigente" />
                                     </div>
                                     <div class="texto-secundario"><%# Eval("Descripcion") %></div>
                                     <div class="texto-secundario"><%# Eval("Fecha", "{0:yyyy-MM-dd}") %> &middot; <%# Eval("NombreArchivo") %> &middot; <%# Eval("TamanioArchivo") %></div>
@@ -50,6 +53,9 @@
                                 <div class="ls-item-acciones">
                                     <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Ver detalle" ClaveTitle="layout.verDetalle"
                                         CommandName="VerDetalle" CommandArgument='<%# Eval("CodigoLayout") %>' Text="Ver detalle" Clave="layout.verDetalle" />
+                                    <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Marcar como vigente" ClaveTitle="layout.marcarVigente"
+                                        Visible='<%# Eval("Estado").ToString() != "Activo" %>' CommandName="MarcarVigente" CommandArgument='<%# Eval("CodigoLayout") %>'
+                                        Text="Marcar como vigente" Clave="layout.marcarVigente" />
                                     <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Eliminar" ClaveTitle="comun.eliminar"
                                         CommandName="EliminarLayout" CommandArgument='<%# Eval("CodigoLayout") %>'
                                         ClaveConfirmar="layout.confirmarEliminar">&#128465;</asp:LinkButton>
@@ -64,6 +70,11 @@
                         <asp:Button ID="btnNuevoSector" runat="server" CssClass="boton-nuevo"
                             Text="Nuevo Sector" Clave="layout.btnNuevoSector" OnClick="btnNuevoSector_Click" CausesValidation="false" />
                     </div>
+                    <asp:Panel ID="pnlMapaSectores" runat="server" CssClass="tarjeta" Visible="false">
+                        <h2 runat="server" Clave="mapa.tituloCirculacion">Mapa del local: circulación estimada</h2>
+                        <p class="texto-secundario" runat="server" Clave="mapa.ayuda">Cada sector se ubica en una de las 9 zonas del plano según su ubicación. El frente (entrada) es la parte inferior de la imagen.</p>
+                        <asp:Literal ID="litMapaSectores" runat="server" />
+                    </asp:Panel>
                     <div class="tarjeta">
                         <table class="tabla">
                             <thead>
@@ -128,6 +139,7 @@
                             <asp:ListItem Text="Inactivo" Value="Inactivo" Clave="comun.inactivo" />
                             <asp:ListItem Text="Borrador" Value="Borrador" Clave="valor.borrador" />
                         </asp:DropDownList>
+                        <span class="texto-secundario" runat="server" Clave="layout.ayudaVigente">Activo = plano vigente del local: reemplaza al anterior y es el que usan los escenarios y el mapa.</span>
                     </div>
                 </div>
                 <div class="grupo-campo">

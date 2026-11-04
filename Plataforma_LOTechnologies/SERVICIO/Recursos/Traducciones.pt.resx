@@ -1988,4 +1988,73 @@
   <data name="pdf.ventasM2Local" xml:space="preserve">
     <value>Vendas por m² da loja: {0}</value>
   </data>
+  <data name="layout.vigente" xml:space="preserve">
+    <value>Planta vigente</value>
+  </data>
+  <data name="layout.marcarVigente" xml:space="preserve">
+    <value>Marcar como vigente</value>
+  </data>
+  <data name="layout.ayudaVigente" xml:space="preserve">
+    <value>Ativo = planta vigente da loja: substitui a anterior e é a usada pelos cenários e pelo mapa.</value>
+  </data>
+  <data name="layout.msgVigente" xml:space="preserve">
+    <value>Layout marcado como planta vigente da loja.</value>
+  </data>
+  <data name="mapa.titulo" xml:space="preserve">
+    <value>Mapa da loja</value>
+  </data>
+  <data name="mapa.tituloCirculacion" xml:space="preserve">
+    <value>Mapa da loja: circulação estimada</value>
+  </data>
+  <data name="mapa.tituloComparacion" xml:space="preserve">
+    <value>Mapa da loja: vendas estimadas</value>
+  </data>
+  <data name="mapa.ayuda" xml:space="preserve">
+    <value>Cada setor fica em uma das 9 zonas da planta conforme sua localização. A frente (entrada) é a parte inferior da imagem.</value>
+  </data>
+  <data name="mapa.ayudaComparacion" xml:space="preserve">
+    <value>Os dois mapas usam a mesma escala de cores, assim dá para ver em quais zonas o cenário proposto melhora ou piora.</value>
+  </data>
+  <data name="mapa.indicador" xml:space="preserve">
+    <value>Indicador</value>
+  </data>
+  <data name="mapa.fondo" xml:space="preserve">
+    <value>Fundo</value>
+  </data>
+  <data name="mapa.frente" xml:space="preserve">
+    <value>Frente (entrada)</value>
+  </data>
+  <data name="mapa.menor" xml:space="preserve">
+    <value>Menor</value>
+  </data>
+  <data name="mapa.mayor" xml:space="preserve">
+    <value>Maior</value>
+  </data>
+  <data name="mapa.sinDato" xml:space="preserve">
+    <value>Sem dados</value>
+  </data>
+  <data name="mapa.sinUbicacion" xml:space="preserve">
+    <value>Sem localização na planta: {0}</value>
+  </data>
+  <data name="mapa.sinPlano" xml:space="preserve">
+    <value>Não há layout vigente com imagem (PNG ou JPG): mostra-se apenas a grade de zonas.</value>
+  </data>
+  <data name="escenarios.layoutBase" xml:space="preserve">
+    <value>Layout base:</value>
+  </data>
+  <data name="escenarios.sinLayout" xml:space="preserve">
+    <value>Sem layout</value>
+  </data>
+  <data name="escenarios.sinLayoutVigente" xml:space="preserve">
+    <value>A loja não tem layout vigente: o cenário será criado sem layout base.</value>
+  </data>
+  <data name="escenarios.layoutBaseNuevo" xml:space="preserve">
+    <value>Layout base: {0} (planta vigente da loja)</value>
+  </data>
+  <data name="pdf.layoutBase" xml:space="preserve">
+    <value>Layout base: {0} / {1}</value>
+  </data>
+  <data name="pdf.planoVigente" xml:space="preserve">
+    <value>Planta vigente: {0}</value>
+  </data>
 </root>

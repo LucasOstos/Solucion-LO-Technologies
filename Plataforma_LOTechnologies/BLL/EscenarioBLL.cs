@@ -12,6 +12,7 @@ namespace BLL
     public class EscenarioBLL
     {
         private EscenarioDAL escenarioDAL = new EscenarioDAL();
+        private LayoutDAL layoutDAL = new LayoutDAL();
         private DigitoVerificador digitos = new DigitoVerificador();
         public List<EscenarioListado> ObtenerEscenariosPorLocal(int pCodigoLocal)
         {
@@ -31,6 +32,11 @@ namespace BLL
         public int CrearEscenario(EscenarioBE pEscenario, List<EscenarioCambio> pCambios)
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pEscenario.CodigoLocal);
+            if (pEscenario.CodigoLayout == null)
+            {
+                LayoutBE vigente = layoutDAL.ObtenerLayoutVigente(pEscenario.CodigoLocal);
+                pEscenario.CodigoLayout = vigente?.CodigoLayout;
+            }
             int codigoNuevo = escenarioDAL.AgregarEscenario(pEscenario);
             foreach (EscenarioCambio cambio in pCambios)
             {

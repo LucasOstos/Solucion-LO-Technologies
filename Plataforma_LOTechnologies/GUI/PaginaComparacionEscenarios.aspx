@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/Estilos/BotonVolverMenu.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/Comun.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/EstilosComparacion.css" />
+    <link rel="stylesheet" type="text/css" href="/Estilos/MapaLocal.css" />
 </head>
 <body>
     <form id="formComparacion" runat="server">
@@ -61,6 +62,10 @@
                             <h2>
                                 <asp:Literal ID="litNombreEscenarioA" runat="server" />
                                 <span runat="server" Clave="comparacion.actual">(actual)</span></h2>
+                            <p class="texto-secundario">
+                                <span runat="server" Clave="escenarios.layoutBase">Layout base:</span>
+                                <asp:Literal ID="litLayoutA" runat="server" />
+                            </p>
                             <asp:Repeater ID="rptIndicadoresA" runat="server">
                                 <ItemTemplate>
                                     <div class="ce-indicador">
@@ -74,6 +79,10 @@
                             <h2>
                                 <asp:Literal ID="litNombreEscenarioB" runat="server" />
                                 <span runat="server" Clave="comparacion.propuesto">(propuesto)</span></h2>
+                            <p class="texto-secundario">
+                                <span runat="server" Clave="escenarios.layoutBase">Layout base:</span>
+                                <asp:Literal ID="litLayoutB" runat="server" />
+                            </p>
                             <asp:Repeater ID="rptIndicadoresB" runat="server">
                                 <ItemTemplate>
                                     <div class="ce-indicador">
@@ -82,6 +91,15 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <h2 runat="server" Clave="mapa.tituloComparacion">Mapa del local: ventas estimadas</h2>
+                        <p class="texto-secundario" runat="server" Clave="mapa.ayudaComparacion">Los dos mapas usan la misma escala de colores, así se puede ver en qué zonas mejora o empeora el escenario propuesto.</p>
+                        <div class="mapa-comparacion">
+                            <div><strong><asp:Literal ID="litTituloMapaA" runat="server" /></strong><asp:Literal ID="litMapaA" runat="server" /></div>
+                            <div><strong><asp:Literal ID="litTituloMapaB" runat="server" /></strong><asp:Literal ID="litMapaB" runat="server" /></div>
                         </div>
                     </div>
 

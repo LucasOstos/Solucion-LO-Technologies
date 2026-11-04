@@ -1,0 +1,136 @@
+﻿/* Mapa de calor del local: imagen del layout vigente con una grilla de 3x3 encima */
+.mapa-local {
+    margin: 8px 0 4px;
+}
+
+.mapa-plano {
+    position: relative;
+    border: 1px solid #dfe3ea;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f4f6fa;
+}
+
+.mapa-imagen {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.55;
+}
+
+.mapa-grilla {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* Sin imagen (no hay layout vigente o es un PDF): la grilla ocupa su propio espacio */
+.mapa-sin-imagen .mapa-grilla {
+    position: static;
+    min-height: 360px;
+}
+
+.mapa-celda {
+    border: 1px dashed rgba(23, 34, 58, 0.25);
+    padding: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 90px;
+}
+
+.mapa-sector {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(23, 34, 58, 0.2);
+    min-width: 90px;
+    text-align: center;
+    line-height: 1.25;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.mapa-sector-nombre {
+    font-size: 13px;
+    font-weight: 600;
+    color: #17223a;
+}
+
+.mapa-sector-valor {
+    font-size: 12px;
+    color: #17223a;
+}
+
+/* Escala: 1 = más bajo (rojo) ... 5 = más alto (verde); 0 = sin dato (gris).
+   El valor siempre está escrito: el color refuerza, no reemplaza. */
+.mapa-nivel-0 {
+    background-color: #eef1f6;
+}
+
+.mapa-nivel-1 {
+    background-color: #f6b8b3;
+}
+
+.mapa-nivel-2 {
+    background-color: #f9d3b4;
+}
+
+.mapa-nivel-3 {
+    background-color: #fbe7a8;
+}
+
+.mapa-nivel-4 {
+    background-color: #cfe8b9;
+}
+
+.mapa-nivel-5 {
+    background-color: #9fd8a8;
+}
+
+.mapa-pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.mapa-leyenda {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mapa-leyenda-caja {
+    width: 18px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid rgba(23, 34, 58, 0.2);
+}
+
+.mapa-nota {
+    margin: 6px 0 0;
+    font-size: 12px;
+}
+
+.mapa-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mapa-comparacion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+}
