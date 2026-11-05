@@ -885,10 +885,7 @@
     <value>Dil *</value>
   </data>
   <data name="idiomas.ayudaAgregar" xml:space="preserve">
-    <value>Sistemin tüm anahtarları o dilin katalog metinleriyle yüklenir. Katalogda olmayanlar İspanyolca metinle kalır ve bekleyen olarak işaretlenir. Dil etkin değildir: çevirileri "Çevirileri düzenle" bölümünden gözden geçirip ardından etkinleştirin.</value>
-  </data>
-  <data name="idiomas.todosAgregados" xml:space="preserve">
-    <value>Katalogdaki tüm diller zaten eklendi.</value>
+    <value>Listedeki diller çevirileriyle gelir. "Başka bir dil..." ile herhangi bir dil ekleyebilirsiniz: "Çevirileri düzenle" bölümünden çevrilmek üzere tüm metinler İspanyolca ve bekleyen olarak yüklenir. Dil, siz etkinleştirene kadar pasif kalır.</value>
   </data>
   <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
     <value>{0} tüm çevirileriyle eklendi. Gözden geçirip dili etkinleştirin.</value>
@@ -900,7 +897,7 @@
     <value>{0} zaten eklenmişti.</value>
   </data>
   <data name="idiomas.errNoCatalogo" xml:space="preserve">
-    <value>Seçilen dil katalogda yok.</value>
+    <value>Seçilen dil geçerli değil.</value>
   </data>
   <data name="idiomas.msgDesactivado" xml:space="preserve">
     <value>Dil devre dışı bırakıldı: artık dil seçicide görünmüyor.</value>
@@ -2662,5 +2659,41 @@
   </data>
   <data name="reportes.msgEliminado" xml:space="preserve">
     <value>Rapor başarıyla silindi.</value>
+  </data>
+  <data name="idiomas.msgAgregadoSinTraduccion" xml:space="preserve">
+    <value>{0}, bekleyen olarak işaretlenmiş {1} İspanyolca metinle eklendi. Bunları "Çevirileri düzenle" bölümünden çevirin ve ardından dili etkinleştirin.</value>
+  </data>
+  <data name="idiomas.otro" xml:space="preserve">
+    <value>Başka bir dil...</value>
+  </data>
+  <data name="idiomas.codigoIso" xml:space="preserve">
+    <value>ISO kodu *</value>
+  </data>
+  <data name="idiomas.nombreEspanol" xml:space="preserve">
+    <value>İspanyolca adı *</value>
+  </data>
+  <data name="idiomas.nombreNativo" xml:space="preserve">
+    <value>Kendi dilindeki adı</value>
+  </data>
+  <data name="idiomas.ejemploNombre" xml:space="preserve">
+    <value>Korece</value>
+  </data>
+  <data name="idiomas.ayudaCodigo" xml:space="preserve">
+    <value>2 veya 3 harfli kod (ISO 639), örneğin: ko (Korece), nl (Felemenkçe), gn (Guarani). Bölgeyle: pt-BR.</value>
+  </data>
+  <data name="idiomas.ayudaNombreNativo" xml:space="preserve">
+    <value>Kullanıcıların dil seçicide gördüğü addır. Boş bırakırsanız otomatik doldurulur.</value>
+  </data>
+  <data name="idiomas.errCodigoInvalido" xml:space="preserve">
+    <value>ISO kodu geçerli bir biçimde değil (örneğin: ko, nl, pt-BR).</value>
+  </data>
+  <data name="idiomas.errCodigoDesconocido" xml:space="preserve">
+    <value>"{0}" ISO kodu bilinen bir dile karşılık gelmiyor.</value>
+  </data>
+  <data name="idiomas.errNombreObligatorio" xml:space="preserve">
+    <value>Dilin İspanyolca adını girin.</value>
+  </data>
+  <data name="idiomas.errNombreLargo" xml:space="preserve">
+    <value>Ad ve kendi dilindeki ad en fazla {0} karakter olabilir.</value>
   </data>
 </root>

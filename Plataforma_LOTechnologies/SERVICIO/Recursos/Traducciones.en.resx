@@ -885,10 +885,7 @@
     <value>Language *</value>
   </data>
   <data name="idiomas.ayudaAgregar" xml:space="preserve">
-    <value>All system keys are loaded with the texts from that language's catalog. Keys missing from the catalog keep the Spanish text and are marked as pending. The language stays inactive: review the translations in "Edit translations" and then activate it.</value>
-  </data>
-  <data name="idiomas.todosAgregados" xml:space="preserve">
-    <value>All catalog languages have already been added.</value>
+    <value>The languages in the list include their translation. With "Other language..." you can add any other one: it is loaded with all texts in Spanish, as pending, to be translated from "Edit translations". The language stays inactive until you activate it.</value>
   </data>
   <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
     <value>{0} was added with all its translations. Review them and activate the language.</value>
@@ -900,7 +897,7 @@
     <value>{0} had already been added.</value>
   </data>
   <data name="idiomas.errNoCatalogo" xml:space="preserve">
-    <value>The selected language is not in the catalog.</value>
+    <value>The selected language is not valid.</value>
   </data>
   <data name="idiomas.msgDesactivado" xml:space="preserve">
     <value>Language deactivated: it no longer appears in the language selector.</value>
@@ -2662,5 +2659,41 @@
   </data>
   <data name="reportes.msgEliminado" xml:space="preserve">
     <value>Report deleted successfully.</value>
+  </data>
+  <data name="idiomas.msgAgregadoSinTraduccion" xml:space="preserve">
+    <value>{0} was added with its {1} texts in Spanish, marked as pending. Translate them from "Edit translations" and then activate the language.</value>
+  </data>
+  <data name="idiomas.otro" xml:space="preserve">
+    <value>Other language...</value>
+  </data>
+  <data name="idiomas.codigoIso" xml:space="preserve">
+    <value>ISO code *</value>
+  </data>
+  <data name="idiomas.nombreEspanol" xml:space="preserve">
+    <value>Name in Spanish *</value>
+  </data>
+  <data name="idiomas.nombreNativo" xml:space="preserve">
+    <value>Name in its own language</value>
+  </data>
+  <data name="idiomas.ejemploNombre" xml:space="preserve">
+    <value>Korean</value>
+  </data>
+  <data name="idiomas.ayudaCodigo" xml:space="preserve">
+    <value>2- or 3-letter code (ISO 639), for example: ko (Korean), nl (Dutch), gn (Guarani). With region: pt-BR.</value>
+  </data>
+  <data name="idiomas.ayudaNombreNativo" xml:space="preserve">
+    <value>It is the name users see in the language selector. If you leave it empty it is filled in automatically.</value>
+  </data>
+  <data name="idiomas.errCodigoInvalido" xml:space="preserve">
+    <value>The ISO code does not have a valid format (for example: ko, nl, pt-BR).</value>
+  </data>
+  <data name="idiomas.errCodigoDesconocido" xml:space="preserve">
+    <value>The ISO code "{0}" does not match a known language.</value>
+  </data>
+  <data name="idiomas.errNombreObligatorio" xml:space="preserve">
+    <value>Enter the name of the language in Spanish.</value>
+  </data>
+  <data name="idiomas.errNombreLargo" xml:space="preserve">
+    <value>The name and the name in its own language can have up to {0} characters.</value>
   </data>
 </root>

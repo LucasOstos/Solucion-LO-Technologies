@@ -30,8 +30,6 @@ public partial class PaginaIdiomas : PaginaSegura
     {
         rptIdiomas.DataSource = idiomaBLL.ObtenerIdiomas();
         rptIdiomas.DataBind();
-        btnAgregarIdioma.Enabled = idiomaBLL.ObtenerIdiomasParaAgregar().Count > 0;
-        btnAgregarIdioma.ToolTip = btnAgregarIdioma.Enabled ? "" : Traducir("idiomas.todosAgregados");
     }
     private void MostrarMensaje(string pTexto, bool pEsExito)
     {
@@ -39,9 +37,18 @@ public partial class PaginaIdiomas : PaginaSegura
         lblMensaje.CssClass = pEsExito ? "mensaje" : "mensaje mensaje-error";
         lblMensaje.Visible = true;
     }
+    private const string VALOR_OTRO = "otro";
     private void MostrarModal(bool pMostrar)
     {
         pnlModalIdioma.Style["display"] = pMostrar ? "flex" : "none";
+        // Los campos de "Otro idioma" solo se ven si está elegido (ver IdiomasJS.js)
+        pnlOtroIdioma.Style["display"] = ddlNuevoIdioma.SelectedValue == VALOR_OTRO ? "block" : "none";
+    }
+    private void MostrarMensajeModal(string pTexto)
+    {
+        lblMensajeModal.Text = pTexto;
+        lblMensajeModal.Visible = true;
+        MostrarModal(true);
     }
     public string ObtenerClaseCompletitud(object completitud)
     {
@@ -59,11 +66,11 @@ public partial class PaginaIdiomas : PaginaSegura
         {
             ddlNuevoIdioma.Items.Add(new ListItem($"{NombreIdioma(idioma)} — {idioma.NombreNativo}", idioma.Codigo));
         }
-        if (ddlNuevoIdioma.Items.Count == 0)
-        {
-            MostrarMensaje(Traducir("idiomas.todosAgregados"), false);
-            return;
-        }
+        // Siempre está la opción de cargar un idioma que no está en la lista
+        ddlNuevoIdioma.Items.Add(new ListItem(Traducir("idiomas.otro"), VALOR_OTRO));
+        tbCodigoIso.Text = "";
+        tbNombreIdioma.Text = "";
+        tbNombreNativo.Text = "";
         MostrarModal(true);
     }
     protected void btnCancelarIdioma_Click(object sender, EventArgs e)
@@ -73,25 +80,45 @@ public partial class PaginaIdiomas : PaginaSegura
 
     protected void btnGuardarIdioma_Click(object sender, EventArgs e)
     {
-        string codigo = ddlNuevoIdioma.SelectedValue;
-        string nombre = NombreIdioma(new Idioma { Codigo = codigo, Nombre = codigo });
+        bool esOtro = ddlNuevoIdioma.SelectedValue == VALOR_OTRO;
+        string codigo = esOtro ? tbCodigoIso.Text.Trim() : ddlNuevoIdioma.SelectedValue;
+        string nombre = esOtro ? tbNombreIdioma.Text.Trim() : NombreIdioma(new Idioma { Codigo = codigo, Nombre = codigo });
         int pendientes;
-        ResultadoAgregarIdioma resultado = idiomaBLL.AgregarIdioma(codigo, out pendientes);
-        MostrarModal(false);
+        ResultadoAgregarIdioma resultado = esOtro
+            ? idiomaBLL.AgregarOtroIdioma(tbCodigoIso.Text, tbNombreIdioma.Text, tbNombreNativo.Text, out pendientes)
+            : idiomaBLL.AgregarIdioma(codigo, out pendientes);
         switch (resultado)
         {
             case ResultadoAgregarIdioma.Exitoso:
-                MostrarMensaje(pendientes == 0 ? Traducir("idiomas.msgAgregadoCompleto", nombre)
-                : Traducir("idiomas.msgAgregadoPendientes", nombre, pendientes), true);
+                MostrarModal(false);
+                if (esOtro && pendientes > 0) MostrarMensaje(Traducir("idiomas.msgAgregadoSinTraduccion", nombre, pendientes), true);
+                else if (pendientes == 0) MostrarMensaje(Traducir("idiomas.msgAgregadoCompleto", nombre), true);
+                else MostrarMensaje(Traducir("idiomas.msgAgregadoPendientes", nombre, pendientes), true);
+                CargarIdiomas();
+                break;
+            // Los errores de "Otro idioma" se muestran en el modal, sin perder lo escrito
+            case ResultadoAgregarIdioma.CodigoInvalido:
+                MostrarMensajeModal(Traducir("idiomas.errCodigoInvalido"));
+                break;
+            case ResultadoAgregarIdioma.CodigoDesconocido:
+                MostrarMensajeModal(Traducir("idiomas.errCodigoDesconocido", codigo));
+                break;
+            case ResultadoAgregarIdioma.NombreObligatorio:
+                MostrarMensajeModal(Traducir("idiomas.errNombreObligatorio"));
+                break;
+            case ResultadoAgregarIdioma.NombreMuyLargo:
+                MostrarMensajeModal(Traducir("idiomas.errNombreLargo", IdiomaBLL.LARGO_MAXIMO_NOMBRE));
                 break;
             case ResultadoAgregarIdioma.YaExiste:
-                MostrarMensaje(Traducir("idiomas.errYaExiste", nombre), false);
+                if (esOtro) MostrarMensajeModal(Traducir("idiomas.errYaExiste", codigo));
+                else { MostrarModal(false); MostrarMensaje(Traducir("idiomas.errYaExiste", nombre), false); CargarIdiomas(); }
                 break;
             default:
+                MostrarModal(false);
                 MostrarMensaje(Traducir("idiomas.errNoCatalogo"), false);
+                CargarIdiomas();
                 break;
         }
-        CargarIdiomas();
     }
 
     protected void rptIdiomas_ItemCommand(object source, RepeaterCommandEventArgs e)

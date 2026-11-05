@@ -885,10 +885,7 @@
     <value>اللغة *</value>
   </data>
   <data name="idiomas.ayudaAgregar" xml:space="preserve">
-    <value>تُحمَّل جميع مفاتيح النظام بنصوص كتالوج تلك اللغة. المفاتيح غير الموجودة في الكتالوج تبقى بالنص الإسباني وتُعلَّم كمعلّقة. تبقى اللغة غير مفعّلة: راجع الترجمات من "تعديل الترجمات" ثم فعّلها.</value>
-  </data>
-  <data name="idiomas.todosAgregados" xml:space="preserve">
-    <value>تمت إضافة جميع لغات الكتالوج بالفعل.</value>
+    <value>تتضمن لغات القائمة ترجمتها. باستخدام "لغة أخرى..." يمكنك إضافة أي لغة: تُحمَّل بكل النصوص بالإسبانية كمعلقة لترجمتها من "تعديل الترجمات". تبقى اللغة غير مفعلة حتى تفعّلها.</value>
   </data>
   <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
     <value>تمت إضافة {0} بجميع ترجماتها. راجعها ثم فعّل اللغة.</value>
@@ -900,7 +897,7 @@
     <value>{0} مضافة بالفعل.</value>
   </data>
   <data name="idiomas.errNoCatalogo" xml:space="preserve">
-    <value>اللغة المحددة غير موجودة في الكتالوج.</value>
+    <value>اللغة المحددة غير صالحة.</value>
   </data>
   <data name="idiomas.msgDesactivado" xml:space="preserve">
     <value>تم إلغاء تفعيل اللغة: لم تعد تظهر في محدد اللغة.</value>
@@ -2662,5 +2659,41 @@
   </data>
   <data name="reportes.msgEliminado" xml:space="preserve">
     <value>تم حذف التقرير بنجاح.</value>
+  </data>
+  <data name="idiomas.msgAgregadoSinTraduccion" xml:space="preserve">
+    <value>تمت إضافة {0} مع {1} نصًا بالإسبانية مميزة كمعلقة. ترجمها من "تعديل الترجمات" ثم فعّل اللغة.</value>
+  </data>
+  <data name="idiomas.otro" xml:space="preserve">
+    <value>لغة أخرى...</value>
+  </data>
+  <data name="idiomas.codigoIso" xml:space="preserve">
+    <value>رمز ISO *</value>
+  </data>
+  <data name="idiomas.nombreEspanol" xml:space="preserve">
+    <value>الاسم بالإسبانية *</value>
+  </data>
+  <data name="idiomas.nombreNativo" xml:space="preserve">
+    <value>الاسم بلغته</value>
+  </data>
+  <data name="idiomas.ejemploNombre" xml:space="preserve">
+    <value>الكورية</value>
+  </data>
+  <data name="idiomas.ayudaCodigo" xml:space="preserve">
+    <value>رمز من حرفين أو 3 أحرف (ISO 639)، مثل: ko (الكورية)، nl (الهولندية)، gn (الغوارانية). مع المنطقة: pt-BR.</value>
+  </data>
+  <data name="idiomas.ayudaNombreNativo" xml:space="preserve">
+    <value>هو الاسم الذي يراه المستخدمون في محدد اللغة. إذا تركته فارغًا يُكمَل تلقائيًا.</value>
+  </data>
+  <data name="idiomas.errCodigoInvalido" xml:space="preserve">
+    <value>رمز ISO ليس بتنسيق صالح (مثل: ko، nl، pt-BR).</value>
+  </data>
+  <data name="idiomas.errCodigoDesconocido" xml:space="preserve">
+    <value>رمز ISO "{0}" لا يطابق لغة معروفة.</value>
+  </data>
+  <data name="idiomas.errNombreObligatorio" xml:space="preserve">
+    <value>أدخل اسم اللغة بالإسبانية.</value>
+  </data>
+  <data name="idiomas.errNombreLargo" xml:space="preserve">
+    <value>يمكن أن يحتوي الاسم والاسم بلغته على {0} حرفًا كحد أقصى.</value>
   </data>
 </root>

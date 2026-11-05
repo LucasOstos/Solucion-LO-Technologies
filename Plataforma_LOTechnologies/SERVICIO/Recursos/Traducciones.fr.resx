@@ -885,10 +885,7 @@
     <value>Langue *</value>
   </data>
   <data name="idiomas.ayudaAgregar" xml:space="preserve">
-    <value>Toutes les clés du système sont chargées avec les textes du catalogue de cette langue. Celles absentes du catalogue gardent le texte espagnol et sont marquées comme en attente. La langue reste inactive : vérifiez les traductions dans « Modifier les traductions », puis activez-la.</value>
-  </data>
-  <data name="idiomas.todosAgregados" xml:space="preserve">
-    <value>Toutes les langues du catalogue ont déjà été ajoutées.</value>
+    <value>Les langues de la liste incluent leur traduction. Avec « Autre langue... » vous pouvez en ajouter n'importe quelle autre : elle est chargée avec tous les textes en espagnol, en attente, à traduire depuis « Modifier les traductions ». La langue reste inactive jusqu'à ce que vous l'activiez.</value>
   </data>
   <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
     <value>{0} a été ajoutée avec toutes ses traductions. Vérifiez-les et activez la langue.</value>
@@ -900,7 +897,7 @@
     <value>{0} avait déjà été ajoutée.</value>
   </data>
   <data name="idiomas.errNoCatalogo" xml:space="preserve">
-    <value>La langue sélectionnée n'est pas dans le catalogue.</value>
+    <value>La langue sélectionnée n'est pas valide.</value>
   </data>
   <data name="idiomas.msgDesactivado" xml:space="preserve">
     <value>Langue désactivée : elle n'apparaît plus dans le sélecteur de langue.</value>
@@ -2662,5 +2659,41 @@
   </data>
   <data name="reportes.msgEliminado" xml:space="preserve">
     <value>Rapport supprimé avec succès.</value>
+  </data>
+  <data name="idiomas.msgAgregadoSinTraduccion" xml:space="preserve">
+    <value>{0} a été ajouté avec ses {1} textes en espagnol, marqués comme en attente. Traduisez-les depuis « Modifier les traductions », puis activez la langue.</value>
+  </data>
+  <data name="idiomas.otro" xml:space="preserve">
+    <value>Autre langue...</value>
+  </data>
+  <data name="idiomas.codigoIso" xml:space="preserve">
+    <value>Code ISO *</value>
+  </data>
+  <data name="idiomas.nombreEspanol" xml:space="preserve">
+    <value>Nom en espagnol *</value>
+  </data>
+  <data name="idiomas.nombreNativo" xml:space="preserve">
+    <value>Nom dans sa langue</value>
+  </data>
+  <data name="idiomas.ejemploNombre" xml:space="preserve">
+    <value>Coréen</value>
+  </data>
+  <data name="idiomas.ayudaCodigo" xml:space="preserve">
+    <value>Code de 2 ou 3 lettres (ISO 639), par exemple : ko (coréen), nl (néerlandais), gn (guarani). Avec région : pt-BR.</value>
+  </data>
+  <data name="idiomas.ayudaNombreNativo" xml:space="preserve">
+    <value>C'est le nom que voient les utilisateurs dans le sélecteur de langue. S'il est vide, il est complété automatiquement.</value>
+  </data>
+  <data name="idiomas.errCodigoInvalido" xml:space="preserve">
+    <value>Le code ISO n'a pas un format valide (par exemple : ko, nl, pt-BR).</value>
+  </data>
+  <data name="idiomas.errCodigoDesconocido" xml:space="preserve">
+    <value>Le code ISO « {0} » ne correspond à aucune langue connue.</value>
+  </data>
+  <data name="idiomas.errNombreObligatorio" xml:space="preserve">
+    <value>Saisissez le nom de la langue en espagnol.</value>
+  </data>
+  <data name="idiomas.errNombreLargo" xml:space="preserve">
+    <value>Le nom et le nom dans sa langue peuvent contenir jusqu'à {0} caractères.</value>
   </data>
 </root>

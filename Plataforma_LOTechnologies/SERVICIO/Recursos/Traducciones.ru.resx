@@ -885,10 +885,7 @@
     <value>Язык *</value>
   </data>
   <data name="idiomas.ayudaAgregar" xml:space="preserve">
-    <value>Загружаются все ключи системы с текстами из каталога этого языка. Ключи, которых нет в каталоге, получают испанский текст и помечаются как ожидающие. Язык остаётся отключённым: проверьте переводы в разделе «Изменить переводы», затем включите его.</value>
-  </data>
-  <data name="idiomas.todosAgregados" xml:space="preserve">
-    <value>Все языки каталога уже добавлены.</value>
+    <value>Языки из списка включают свой перевод. С помощью «Другой язык...» можно добавить любой другой: он загружается со всеми текстами на испанском как ожидающими, чтобы перевести их в «Редактировать переводы». Язык остаётся неактивным, пока вы его не активируете.</value>
   </data>
   <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
     <value>Язык «{0}» добавлен со всеми переводами. Проверьте их и включите язык.</value>
@@ -900,7 +897,7 @@
     <value>Язык «{0}» уже был добавлен.</value>
   </data>
   <data name="idiomas.errNoCatalogo" xml:space="preserve">
-    <value>Выбранного языка нет в каталоге.</value>
+    <value>Выбранный язык недопустим.</value>
   </data>
   <data name="idiomas.msgDesactivado" xml:space="preserve">
     <value>Язык отключён: он больше не отображается в списке выбора языка.</value>
@@ -2662,5 +2659,41 @@
   </data>
   <data name="reportes.msgEliminado" xml:space="preserve">
     <value>Отчёт удалён.</value>
+  </data>
+  <data name="idiomas.msgAgregadoSinTraduccion" xml:space="preserve">
+    <value>{0} добавлен с {1} текстами на испанском, отмеченными как ожидающие. Переведите их в «Редактировать переводы», затем активируйте язык.</value>
+  </data>
+  <data name="idiomas.otro" xml:space="preserve">
+    <value>Другой язык...</value>
+  </data>
+  <data name="idiomas.codigoIso" xml:space="preserve">
+    <value>Код ISO *</value>
+  </data>
+  <data name="idiomas.nombreEspanol" xml:space="preserve">
+    <value>Название на испанском *</value>
+  </data>
+  <data name="idiomas.nombreNativo" xml:space="preserve">
+    <value>Название на этом языке</value>
+  </data>
+  <data name="idiomas.ejemploNombre" xml:space="preserve">
+    <value>Корейский</value>
+  </data>
+  <data name="idiomas.ayudaCodigo" xml:space="preserve">
+    <value>Код из 2 или 3 букв (ISO 639), например: ko (корейский), nl (нидерландский), gn (гуарани). С регионом: pt-BR.</value>
+  </data>
+  <data name="idiomas.ayudaNombreNativo" xml:space="preserve">
+    <value>Это название, которое пользователи видят при выборе языка. Если оставить пустым, оно заполнится автоматически.</value>
+  </data>
+  <data name="idiomas.errCodigoInvalido" xml:space="preserve">
+    <value>Код ISO имеет неверный формат (например: ko, nl, pt-BR).</value>
+  </data>
+  <data name="idiomas.errCodigoDesconocido" xml:space="preserve">
+    <value>Код ISO «{0}» не соответствует известному языку.</value>
+  </data>
+  <data name="idiomas.errNombreObligatorio" xml:space="preserve">
+    <value>Укажите название языка на испанском.</value>
+  </data>
+  <data name="idiomas.errNombreLargo" xml:space="preserve">
+    <value>Название и название на этом языке могут содержать до {0} символов.</value>
   </data>
 </root>

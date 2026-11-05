@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,7 +11,7 @@ using SERVICIO.Logica;
 
 namespace BLL
 {
-    public enum ResultadoAgregarIdioma { Exitoso, NoEstaEnCatalogo, YaExiste }
+    public enum ResultadoAgregarIdioma { Exitoso, NoEstaEnCatalogo, YaExiste, CodigoInvalido, CodigoDesconocido, NombreObligatorio, NombreMuyLargo }
     public enum ResultadoCambioEstadoIdioma { Exitoso, NoExiste, EsPredeterminado, EnUso }
 
     public class ResultadoSincronizacion
@@ -44,12 +45,37 @@ namespace BLL
             HashSet<string> cargados = new HashSet<string>(idiomaDAL.ListarIdiomas().Select(i => i.Codigo), StringComparer.OrdinalIgnoreCase);
             return catalogo.ObtenerIdiomas().Where(i => !cargados.Contains(i.Codigo)).ToList();
         }
+        // Idioma de la lista (tiene .resx)
         public ResultadoAgregarIdioma AgregarIdioma(string pCodigo, out int pPendientes)
         {
             ControlAcceso.ValidarSuperUsuario();
             pPendientes = 0;
             Idioma idioma = catalogo.ObtenerIdiomas().FirstOrDefault(i => string.Equals(i.Codigo, pCodigo, StringComparison.OrdinalIgnoreCase));
             if (idioma == null) return ResultadoAgregarIdioma.NoEstaEnCatalogo;
+            return Agregar(idioma, out pPendientes);
+        }
+        public const int LARGO_MAXIMO_NOMBRE = 50;
+        private static readonly Regex CODIGO_ISO = new Regex(@"^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})?$");
+        // "Otro idioma": lo carga el administrador. Si no tiene .resx, todas las claves quedan en español como pendientes.
+        public ResultadoAgregarIdioma AgregarOtroIdioma(string pCodigo, string pNombre, string pNombreNativo, out int pPendientes)
+        {
+            ControlAcceso.ValidarSuperUsuario();
+            pPendientes = 0;
+            string codigo = (pCodigo ?? "").Trim();
+            if (!CODIGO_ISO.IsMatch(codigo)) return ResultadoAgregarIdioma.CodigoInvalido;
+            CultureInfo cultura = CatalogoTraducciones.ObtenerCultura(codigo);
+            if (cultura == null) return ResultadoAgregarIdioma.CodigoDesconocido;
+            string nombre = (pNombre ?? "").Trim();
+            if (nombre.Length == 0) return ResultadoAgregarIdioma.NombreObligatorio;
+            string nombreNativo = (pNombreNativo ?? "").Trim();
+            if (nombreNativo.Length == 0) nombreNativo = CatalogoTraducciones.NombreNativo(cultura);
+            if (nombre.Length > LARGO_MAXIMO_NOMBRE || nombreNativo.Length > LARGO_MAXIMO_NOMBRE) return ResultadoAgregarIdioma.NombreMuyLargo;
+            // El código se guarda como lo escribe .NET ("pt-BR", "ko")
+            return Agregar(new Idioma { Codigo = cultura.Name, Nombre = nombre, NombreNativo = nombreNativo }, out pPendientes);
+        }
+        private ResultadoAgregarIdioma Agregar(Idioma idioma, out int pPendientes)
+        {
+            pPendientes = 0;
             List<Idioma> cargados = idiomaDAL.ListarIdiomas();
             if (cargados.Any(i => string.Equals(i.Codigo, idioma.Codigo, StringComparison.OrdinalIgnoreCase))) return ResultadoAgregarIdioma.YaExiste;
             Idioma predeterminado = cargados.First(i => i.Predeterminado);

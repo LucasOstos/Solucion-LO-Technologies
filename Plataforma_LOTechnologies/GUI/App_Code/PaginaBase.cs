@@ -19,7 +19,6 @@ public class PaginaBase : Page, IObservadorIdioma
     private const string ATR_ARIA = "ClaveAria";
     private const string ATR_CONFIRMAR = "ClaveConfirmar";
     private static readonly string[] ATRIBUTOS_CLAVE = { ATR_CLAVE, ATR_PLACEHOLDER, ATR_TITLE, ATR_ARIA, ATR_CONFIRMAR };
-    private static readonly string[] IDIOMAS_DERECHA_A_IZQUIERDA = { "ar", "he", "fa", "ur" };
     protected virtual string ClaveTitulo
     {
         get { return null; }
@@ -219,7 +218,7 @@ public class PaginaBase : Page, IObservadorIdioma
     private void AplicarIdiomaHtml(Idioma pIdioma)
     {
         string codigo = pIdioma.Codigo;
-        string direccion = IDIOMAS_DERECHA_A_IZQUIERDA.Contains(codigo) ? "rtl" : "ltr";
+        string direccion = CatalogoTraducciones.EsDerechaAIzquierda(codigo) ? "rtl" : "ltr";
 
         HtmlControl html = Controls.OfType<HtmlControl>().FirstOrDefault(c => string.Equals(c.TagName, "html", StringComparison.OrdinalIgnoreCase));
         if (html != null)

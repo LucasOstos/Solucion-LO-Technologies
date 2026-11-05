@@ -885,10 +885,7 @@
     <value>言語 *</value>
   </data>
   <data name="idiomas.ayudaAgregar" xml:space="preserve">
-    <value>システムのすべてのキーが、その言語のカタログの文言で読み込まれます。カタログにないキーはスペイン語のまま「未確認」になります。言語は無効のままです。「翻訳を編集」で翻訳を確認してから有効にしてください。</value>
-  </data>
-  <data name="idiomas.todosAgregados" xml:space="preserve">
-    <value>カタログのすべての言語が既に追加されています。</value>
+    <value>一覧の言語には翻訳が含まれています。「その他の言語...」では他の言語を追加できます。すべてのテキストがスペイン語の保留中として読み込まれ、「翻訳を編集」で翻訳できます。有効にするまで言語は無効のままです。</value>
   </data>
   <data name="idiomas.msgAgregadoCompleto" xml:space="preserve">
     <value>{0} をすべての翻訳とともに追加しました。確認してから言語を有効にしてください。</value>
@@ -900,7 +897,7 @@
     <value>{0} は既に追加されています。</value>
   </data>
   <data name="idiomas.errNoCatalogo" xml:space="preserve">
-    <value>選択した言語はカタログにありません。</value>
+    <value>選択した言語は無効です。</value>
   </data>
   <data name="idiomas.msgDesactivado" xml:space="preserve">
     <value>言語を無効にしました。言語の選択肢に表示されなくなります。</value>
@@ -2662,5 +2659,41 @@
   </data>
   <data name="reportes.msgEliminado" xml:space="preserve">
     <value>レポートを削除しました。</value>
+  </data>
+  <data name="idiomas.msgAgregadoSinTraduccion" xml:space="preserve">
+    <value>{0} を {1} 件のスペイン語テキスト（保留中）で追加しました。「翻訳を編集」で翻訳してから言語を有効にしてください。</value>
+  </data>
+  <data name="idiomas.otro" xml:space="preserve">
+    <value>その他の言語...</value>
+  </data>
+  <data name="idiomas.codigoIso" xml:space="preserve">
+    <value>ISO コード *</value>
+  </data>
+  <data name="idiomas.nombreEspanol" xml:space="preserve">
+    <value>スペイン語での名前 *</value>
+  </data>
+  <data name="idiomas.nombreNativo" xml:space="preserve">
+    <value>その言語での名前</value>
+  </data>
+  <data name="idiomas.ejemploNombre" xml:space="preserve">
+    <value>韓国語</value>
+  </data>
+  <data name="idiomas.ayudaCodigo" xml:space="preserve">
+    <value>2〜3 文字のコード（ISO 639）。例：ko（韓国語）、nl（オランダ語）、gn（グアラニー語）。地域付き：pt-BR。</value>
+  </data>
+  <data name="idiomas.ayudaNombreNativo" xml:space="preserve">
+    <value>言語の選択欄でユーザーに表示される名前です。空欄の場合は自動で入力されます。</value>
+  </data>
+  <data name="idiomas.errCodigoInvalido" xml:space="preserve">
+    <value>ISO コードの形式が正しくありません（例：ko、nl、pt-BR）。</value>
+  </data>
+  <data name="idiomas.errCodigoDesconocido" xml:space="preserve">
+    <value>ISO コード「{0}」は既知の言語に該当しません。</value>
+  </data>
+  <data name="idiomas.errNombreObligatorio" xml:space="preserve">
+    <value>言語名をスペイン語で入力してください。</value>
+  </data>
+  <data name="idiomas.errNombreLargo" xml:space="preserve">
+    <value>名前とその言語での名前は {0} 文字までです。</value>
   </data>
 </root>

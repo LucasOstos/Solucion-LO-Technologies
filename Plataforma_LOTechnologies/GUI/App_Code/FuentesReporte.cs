@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using iTextSharp.text.pdf;
+using SERVICIO.Logica;
 
 /// <summary>
 /// Descripción breve de FuentesReporte
@@ -34,6 +35,45 @@ public class FuentesReporte
         new Familia("Meiryo", "meiryo.ttc,0", "meiryob.ttc,0"),
         new Familia("Yu Gothic", "YuGothM.ttc,0", "YuGothB.ttc,0")
     };
+    private static readonly Familia[] FAMILIAS_CHINO =
+    {
+        new Familia("Microsoft YaHei", "msyh.ttc,0", "msyhbd.ttc,0"),
+        new Familia("SimSun", "simsun.ttc,0", "simsun.ttc,0")
+    };
+    private static readonly Familia[] FAMILIAS_COREANO =
+    {
+        new Familia("Malgun Gothic", "malgun.ttf", "malgunbd.ttf")
+    };
+    // Armenio y georgiano no están en Arial
+    private static readonly Familia[] FAMILIAS_CAUCASO =
+    {
+        new Familia("Segoe UI", "segoeui.ttf", "segoeuib.ttf"),
+        new Familia("Sylfaen", "sylfaen.ttf", "sylfaen.ttf")
+    };
+    private static readonly Familia[] FAMILIAS_AMARICO =
+    {
+        new Familia("Ebrima", "ebrima.ttf", "ebrimabd.ttf")
+    };
+    // Escrituras que iTextSharp no soporta para estos idiomas no se ofrece el PDF.
+    private static readonly string[] IDIOMAS_ESCRITURA_COMPLEJA = { "hi", "bn", "ta", "te", "mr", "gu", "pa", "ne", "th", "km", "si", "my", "lo", "kn", "ml", "or" };
+
+    // El PDF se puede generar en este idioma
+    public static bool IdiomaSoportado(string pCodigoIdioma)
+    {
+        return !CatalogoTraducciones.EsDerechaAIzquierda(pCodigoIdioma) && !IDIOMAS_ESCRITURA_COMPLEJA.Contains(pCodigoIdioma);
+    }
+    private static Familia[] FamiliasDelIdioma(string pCodigoIdioma)
+    {
+        switch (pCodigoIdioma)
+        {
+            case "ja": return FAMILIAS_JAPONES;
+            case "zh": return FAMILIAS_CHINO;
+            case "ko": return FAMILIAS_COREANO;
+            case "hy": case "ka": return FAMILIAS_CAUCASO;
+            case "am": return FAMILIAS_AMARICO;
+            default: return FAMILIAS_LATINAS;
+        }
+    }
 
     // pCarpetaAplicacion: carpeta física del sitio (se busca en su subcarpeta Fuentes)
     public static FuentesReporte Preparar(string pCodigoIdioma, string pCarpetaAplicacion)
@@ -45,7 +85,7 @@ public class FuentesReporte
         carpetas.Add(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Microsoft", "Windows", "Fonts"));
 
         var fuentes = new FuentesReporte { FamiliaGrafico = "Arial" };
-        foreach (Familia familia in pCodigoIdioma == "ja" ? FAMILIAS_JAPONES : FAMILIAS_LATINAS)
+        foreach (Familia familia in FamiliasDelIdioma(pCodigoIdioma))
         {
             BaseFont normal = CrearFuenteBase(carpetas, familia.ArchivoNormal);
             if (normal == null) continue;

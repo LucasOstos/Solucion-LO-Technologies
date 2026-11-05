@@ -67,6 +67,31 @@ namespace SERVICIO.Logica
             }
             return textos;
         }
+        // Cultura de .NET para un código ISO (ko, nl, pt-BR). Null si el código no corresponde a un idioma conocido.
+        public static CultureInfo ObtenerCultura(string pCodigo)
+        {
+            if (string.IsNullOrWhiteSpace(pCodigo)) return null;
+            try
+            {
+                CultureInfo cultura = CultureInfo.GetCultureInfo(pCodigo.Trim());
+                // Windows 10 crea una cultura "Unknown Language (xx)" para cualquier código bien formado
+                if (cultura.LCID == LCID_DESCONOCIDO && (cultura.EnglishName.StartsWith("Unknown", StringComparison.OrdinalIgnoreCase)
+                    || string.Equals(cultura.EnglishName, cultura.Name, StringComparison.OrdinalIgnoreCase))) return null;
+                return cultura;
+            }
+            catch (CultureNotFoundException) { return null; }
+        }
+        private const int LCID_DESCONOCIDO = 4096;
+        // Dirección de escritura según la cultura (árabe, hebreo, persa, urdu...), sin lista fija
+        public static bool EsDerechaAIzquierda(string pCodigo)
+        {
+            CultureInfo cultura = ObtenerCultura(pCodigo);
+            return cultura != null && cultura.TextInfo.IsRightToLeft;
+        }
+        public static string NombreNativo(CultureInfo pCultura)
+        {
+            return Capitalizar(pCultura.NativeName, pCultura);
+        }
         private ResourceSet ObtenerRecursos(CultureInfo pCultura)
         {
             try { return recursos.GetResourceSet(pCultura, true, false); }

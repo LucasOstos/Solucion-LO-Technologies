@@ -93,16 +93,33 @@
                     <button type="button" runat="server" class="modal-cerrar idi-modal-cerrar" aria-label="Cerrar" clavearia="comun.cerrar" onclick="cerrarModal('pnlModalIdioma')">&times;</button>
                 </div>
 
+                <asp:Label ID="lblMensajeModal" runat="server" CssClass="mensaje mensaje-error" Visible="false" EnableViewState="false" role="alert" />
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Idioma *" AssociatedControlID="ddlNuevoIdioma" Clave="idiomas.idioma" />
-                    <asp:DropDownList ID="ddlNuevoIdioma" runat="server" CssClass="modal-campo" />
+                    <asp:DropDownList ID="ddlNuevoIdioma" runat="server" CssClass="modal-campo" ClientIDMode="Static" onchange="mostrarOtroIdioma(this.value)" />
                 </div>
 
+                <asp:Panel ID="pnlOtroIdioma" runat="server" ClientIDMode="Static" Style="display: none;">
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Código ISO *" AssociatedControlID="tbCodigoIso" Clave="idiomas.codigoIso" />
+                        <asp:TextBox ID="tbCodigoIso" runat="server" ClientIDMode="Static" CssClass="modal-campo" MaxLength="10" placeholder="ko" aria-describedby="ayudaCodigoIso" />
+                        <span id="ayudaCodigoIso" class="campo-ayuda" runat="server" clientidmode="Static" clave="idiomas.ayudaCodigo">Código de 2 o 3 letras (ISO 639), por ejemplo: ko (coreano), nl (neerlandés), gn (guaraní). Con región: pt-BR.</span>
+                    </div>
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Nombre en español *" AssociatedControlID="tbNombreIdioma" Clave="idiomas.nombreEspanol" />
+                        <asp:TextBox ID="tbNombreIdioma" runat="server" CssClass="modal-campo" MaxLength="50" ClavePlaceholder="idiomas.ejemploNombre" />
+                    </div>
+                    <div class="grupo-campo">
+                        <asp:Label runat="server" Text="Nombre en su idioma" AssociatedControlID="tbNombreNativo" Clave="idiomas.nombreNativo" />
+                        <asp:TextBox ID="tbNombreNativo" runat="server" CssClass="modal-campo" MaxLength="50" placeholder="한국어" aria-describedby="ayudaNombreNativo" />
+                        <span id="ayudaNombreNativo" class="campo-ayuda" runat="server" clientidmode="Static" clave="idiomas.ayudaNombreNativo">Es el nombre que ven los usuarios en el selector de idioma. Si lo dejás vacío se completa solo.</span>
+                    </div>
+                </asp:Panel>
+
                 <p class="texto-secundario idi-modal-ayuda" runat="server" clave="idiomas.ayudaAgregar">
-                    Se cargan todas las claves del sistema con los textos del catálogo de ese idioma.
-                    Las que no estén en el catálogo quedan con el texto en español, marcadas como
-                    pendientes. El idioma queda inactivo: revisá las traducciones
-                    desde "Editar traducciones" y después activalo.
+                    Los idiomas de la lista traen su traducción. Con "Otro idioma..." podés agregar cualquier otro:
+                    se carga con todos los textos en español, como pendientes, para traducirlos desde
+                    "Editar traducciones". El idioma queda inactivo hasta que lo actives.
                 </p>
 
                 <div class="modal-botones">

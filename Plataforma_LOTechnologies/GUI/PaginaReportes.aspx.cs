@@ -27,7 +27,6 @@ public partial class PaginaReportes : PaginaSegura
     {
         get { return "reportes.titulo"; }
     }
-    private static readonly string[] IDIOMAS_SIN_PDF = { "ar", "he", "fa", "ur" };
     private const int MESES_MAXIMOS = 24;
     private const int MESES_PREDETERMINADOS = 3;
     private const string TIPO_COMPARACION = "Comparación";
@@ -90,7 +89,7 @@ public partial class PaginaReportes : PaginaSegura
         ddlIdiomaReporte.Items.Clear();
         foreach (Idioma idioma in GestorIdioma.Instancia.ObtenerIdiomasActivos())
         {
-            if (IDIOMAS_SIN_PDF.Contains(idioma.Codigo)) continue;
+            if (!FuentesReporte.IdiomaSoportado(idioma.Codigo)) continue;
             ddlIdiomaReporte.Items.Add(new WebListItem(idioma.NombreNativo, idioma.CodigoIdioma.ToString()));
         }
         Idioma actual = IdiomaActual;
@@ -160,9 +159,9 @@ public partial class PaginaReportes : PaginaSegura
         codigoIdiomaPredeterminado = predeterminado == null ? 0 : predeterminado.CodigoIdioma;
         int codigoElegido;
         int.TryParse(ddlIdiomaReporte.SelectedValue, out codigoElegido);
-        idiomaReporte = GestorIdioma.Instancia.ObtenerIdiomasActivos().FirstOrDefault(i => i.CodigoIdioma == codigoElegido && !IDIOMAS_SIN_PDF.Contains(i.Codigo));
+        idiomaReporte = GestorIdioma.Instancia.ObtenerIdiomasActivos().FirstOrDefault(i => i.CodigoIdioma == codigoElegido && FuentesReporte.IdiomaSoportado(i.Codigo));
         if (idiomaReporte == null) idiomaReporte = IdiomaActual;
-        if (idiomaReporte != null && IDIOMAS_SIN_PDF.Contains(idiomaReporte.Codigo)) idiomaReporte = predeterminado;
+        if (idiomaReporte != null && !FuentesReporte.IdiomaSoportado(idiomaReporte.Codigo)) idiomaReporte = predeterminado;
     }
     private CultureInfo CulturaReporte()
     {
