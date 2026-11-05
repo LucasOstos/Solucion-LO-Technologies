@@ -1799,14 +1799,8 @@
   <data name="reportes.resumen" xml:space="preserve">
     <value>エグゼクティブサマリー</value>
   </data>
-  <data name="reportes.detalleSector" xml:space="preserve">
-    <value>売り場別の詳細</value>
-  </data>
   <data name="reportes.estadoStock" xml:space="preserve">
     <value>在庫状況</value>
-  </data>
-  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
-    <value>主要指標</value>
   </data>
   <data name="reportes.recomendaciones" xml:space="preserve">
     <value>推奨事項</value>
@@ -1836,28 +1830,13 @@
     <value>— なし —</value>
   </data>
   <data name="reportes.errPeriodo" xml:space="preserve">
-    <value>期間の開始と終了を入力してください。</value>
+    <value>開始月と終了月を入力してください（形式 yyyy-mm）。</value>
   </data>
   <data name="reportes.errSinDatos" xml:space="preserve">
     <value>レポートを作成するためのデータが不足しています。</value>
   </data>
   <data name="reportes.msgGenerado" xml:space="preserve">
     <value>レポートを作成しました。</value>
-  </data>
-  <data name="pdf.periodo" xml:space="preserve">
-    <value>期間：{0} - {1}</value>
-  </data>
-  <data name="pdf.generado" xml:space="preserve">
-    <value>作成日時：{0}</value>
-  </data>
-  <data name="pdf.ventasTotales" xml:space="preserve">
-    <value>期間の売上合計：{0}</value>
-  </data>
-  <data name="pdf.circulacionPromedio" xml:space="preserve">
-    <value>平均回遊率：{0}%</value>
-  </data>
-  <data name="pdf.sectoresAnalizados" xml:space="preserve">
-    <value>分析した売り場：{0}</value>
   </data>
   <data name="pdf.colDisponible" xml:space="preserve">
     <value>在庫数</value>
@@ -1876,9 +1855,6 @@
   </data>
   <data name="pdf.ventasPropuesto" xml:space="preserve">
     <value>提案売上</value>
-  </data>
-  <data name="pdf.graficoComparacion" xml:space="preserve">
-    <value>推定売上：ベース対提案</value>
   </data>
   <data name="productos.categoriaInactiva" xml:space="preserve">
     <value>{0}（無効）</value>
@@ -1924,12 +1900,6 @@
   </data>
   <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
     <value>計算するには店舗の面積を登録してください。</value>
-  </data>
-  <data name="pdf.margen" xml:space="preserve">
-    <value>期間の利益率：{0}%</value>
-  </data>
-  <data name="pdf.ventasM2Local" xml:space="preserve">
-    <value>店舗の m² あたり売上：{0}</value>
   </data>
   <data name="layout.vigente" xml:space="preserve">
     <value>現行の平面図</value>
@@ -2533,5 +2503,164 @@
   </data>
   <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
     <value>在庫は {0} 個で、期間の販売ペースでは {1:#,##0} 日分あります（{2} 日超）。仕入れを抑えるか販促を行ってください。</value>
+  </data>
+  <data name="pdf.sinPeriodoAnterior" xml:space="preserve">
+    <value>前期間のデータなし</value>
+  </data>
+  <data name="pdf.vsPeriodoAnterior" xml:space="preserve">
+    <value>前期間比 {0}</value>
+  </data>
+  <data name="pdf.sinCostos" xml:space="preserve">
+    <value>原価未登録</value>
+  </data>
+  <data name="pdf.margenDetalle" xml:space="preserve">
+    <value>原価登録済み商品が対象</value>
+  </data>
+  <data name="pdf.sinSuperficie" xml:space="preserve">
+    <value>面積未登録</value>
+  </data>
+  <data name="pdf.superficieLocal" xml:space="preserve">
+    <value>店舗面積 {0} m²</value>
+  </data>
+  <data name="pdf.sinSectores" xml:space="preserve">
+    <value>店舗にセクターが登録されていません。</value>
+  </data>
+  <data name="pdf.mejorSector" xml:space="preserve">
+    <value>最良セクター：{0}（指数 {1}）</value>
+  </data>
+  <data name="pdf.sectorRevisar" xml:space="preserve">
+    <value>要見直しセクター：{0}（指数 {1}）</value>
+  </data>
+  <data name="pdf.alertasStock" xml:space="preserve">
+    <value>在庫が少ない・危機的な商品 {0} 件</value>
+  </data>
+  <data name="pdf.sinVentas" xml:space="preserve">
+    <value>期間内の売上はありません。</value>
+  </data>
+  <data name="pdf.notaEnCurso" xml:space="preserve">
+    <value>* 当月：本日までの売上。</value>
+  </data>
+  <data name="pdf.colIndice" xml:space="preserve">
+    <value>指数</value>
+  </data>
+  <data name="pdf.dias" xml:space="preserve">
+    <value>{0} 日</value>
+  </data>
+  <data name="pdf.sinBase" xml:space="preserve">
+    <value>基準に売上なし</value>
+  </data>
+  <data name="pdf.vsBase" xml:space="preserve">
+    <value>基準比 {0}</value>
+  </data>
+  <data name="pdf.puntosVsBase" xml:space="preserve">
+    <value>基準比 {0} ポイント</value>
+  </data>
+  <data name="pdf.sectoresMejoran" xml:space="preserve">
+    <value>改善するセクター</value>
+  </data>
+  <data name="pdf.xDeY" xml:space="preserve">
+    <value>{1} 中 {0}</value>
+  </data>
+  <data name="pdf.empeoran" xml:space="preserve">
+    <value>悪化 {0}</value>
+  </data>
+  <data name="pdf.indiceBaseAPropuesto" xml:space="preserve">
+    <value>指数（基準 → 提案）</value>
+  </data>
+  <data name="pdf.cambiosDe" xml:space="preserve">
+    <value>{0} の変更：</value>
+  </data>
+  <data name="pdf.notaSimulacion" xml:space="preserve">
+    <value>予測売上と指数は、期間の実データに基づくシミュレーションモデルの推定値です。</value>
+  </data>
+  <data name="pdf.oportunidades" xml:space="preserve">
+    <value>商品の改善機会</value>
+  </data>
+  <data name="pdf.sinOportunidades" xml:space="preserve">
+    <value>期間内に改善機会は検出されませんでした。</value>
+  </data>
+  <data name="pdf.colTipo" xml:space="preserve">
+    <value>種類</value>
+  </data>
+  <data name="pdf.colMotivo" xml:space="preserve">
+    <value>理由と提案</value>
+  </data>
+  <data name="pdf.sinStock" xml:space="preserve">
+    <value>店舗に在庫が登録されていません。</value>
+  </data>
+  <data name="pdf.sinUbicar" xml:space="preserve">
+    <value>未配置</value>
+  </data>
+  <data name="pdf.sinProductos" xml:space="preserve">
+    <value>商品が登録されていません。</value>
+  </data>
+  <data name="pdf.metaLocal" xml:space="preserve">
+    <value>店舗</value>
+  </data>
+  <data name="pdf.metaPeriodo" xml:space="preserve">
+    <value>期間</value>
+  </data>
+  <data name="pdf.metaGenerado" xml:space="preserve">
+    <value>作成日時</value>
+  </data>
+  <data name="pdf.pagina" xml:space="preserve">
+    <value>{0} / {1} ページ</value>
+  </data>
+  <data name="pdf.indiceBueno" xml:space="preserve">
+    <value>良好</value>
+  </data>
+  <data name="pdf.indiceRegular" xml:space="preserve">
+    <value>普通</value>
+  </data>
+  <data name="pdf.indiceBajo" xml:space="preserve">
+    <value>低い</value>
+  </data>
+  <data name="pdf.tituloCompleto" xml:space="preserve">
+    <value>総合レポート</value>
+  </data>
+  <data name="pdf.tituloComparacion" xml:space="preserve">
+    <value>シナリオ比較レポート</value>
+  </data>
+  <data name="pdf.tituloIndicadores" xml:space="preserve">
+    <value>指標レポート</value>
+  </data>
+  <data name="pdf.tituloStock" xml:space="preserve">
+    <value>在庫レポート</value>
+  </data>
+  <data name="reportes.mesDesde" xml:space="preserve">
+    <value>開始（月）*</value>
+  </data>
+  <data name="reportes.mesHasta" xml:space="preserve">
+    <value>終了（月）*</value>
+  </data>
+  <data name="reportes.formatoMes" xml:space="preserve">
+    <value>yyyy-mm</value>
+  </data>
+  <data name="reportes.ayudaPeriodo" xml:space="preserve">
+    <value>すべてのセクションで選択した月を使用します。期間が当月を含む場合、データは本日までです。</value>
+  </data>
+  <data name="reportes.errPeriodoOrden" xml:space="preserve">
+    <value>開始月は終了月より後にできません。</value>
+  </data>
+  <data name="reportes.errPeriodoFuturo" xml:space="preserve">
+    <value>期間に将来の月を含めることはできません。</value>
+  </data>
+  <data name="reportes.errPeriodoMaximo" xml:space="preserve">
+    <value>期間は最大 {0} か月です。</value>
+  </data>
+  <data name="reportes.errSinSecciones" xml:space="preserve">
+    <value>レポートに含めるセクションを1つ以上選択してください。</value>
+  </data>
+  <data name="reportes.evolucionVentas" xml:space="preserve">
+    <value>売上推移</value>
+  </data>
+  <data name="reportes.eliminar" xml:space="preserve">
+    <value>レポートを削除</value>
+  </data>
+  <data name="reportes.confirmarEliminar" xml:space="preserve">
+    <value>このレポートを削除しますか？PDFファイルも削除されます。</value>
+  </data>
+  <data name="reportes.msgEliminado" xml:space="preserve">
+    <value>レポートを削除しました。</value>
   </data>
 </root>

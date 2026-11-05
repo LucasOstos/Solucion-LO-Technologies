@@ -1799,14 +1799,8 @@
   <data name="reportes.resumen" xml:space="preserve">
     <value>Synthèse</value>
   </data>
-  <data name="reportes.detalleSector" xml:space="preserve">
-    <value>Détail par rayon</value>
-  </data>
   <data name="reportes.estadoStock" xml:space="preserve">
     <value>État du stock</value>
-  </data>
-  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
-    <value>Indicateurs principaux</value>
   </data>
   <data name="reportes.recomendaciones" xml:space="preserve">
     <value>Recommandations</value>
@@ -1836,28 +1830,13 @@
     <value>— Aucun —</value>
   </data>
   <data name="reportes.errPeriodo" xml:space="preserve">
-    <value>Indiquez le début et la fin de la période.</value>
+    <value>Saisissez le mois de début et le mois de fin (format aaaa-mm).</value>
   </data>
   <data name="reportes.errSinDatos" xml:space="preserve">
     <value>Données insuffisantes pour générer le rapport.</value>
   </data>
   <data name="reportes.msgGenerado" xml:space="preserve">
     <value>Rapport généré avec succès.</value>
-  </data>
-  <data name="pdf.periodo" xml:space="preserve">
-    <value>Période : {0} - {1}</value>
-  </data>
-  <data name="pdf.generado" xml:space="preserve">
-    <value>Généré le : {0}</value>
-  </data>
-  <data name="pdf.ventasTotales" xml:space="preserve">
-    <value>Ventes totales de la période : {0}</value>
-  </data>
-  <data name="pdf.circulacionPromedio" xml:space="preserve">
-    <value>Fréquentation moyenne : {0} %</value>
-  </data>
-  <data name="pdf.sectoresAnalizados" xml:space="preserve">
-    <value>Rayons analysés : {0}</value>
   </data>
   <data name="pdf.colDisponible" xml:space="preserve">
     <value>Disponible</value>
@@ -1876,9 +1855,6 @@
   </data>
   <data name="pdf.ventasPropuesto" xml:space="preserve">
     <value>Ventes proposé</value>
-  </data>
-  <data name="pdf.graficoComparacion" xml:space="preserve">
-    <value>Ventes estimées : base vs proposé</value>
   </data>
   <data name="productos.categoriaInactiva" xml:space="preserve">
     <value>{0} (inactive)</value>
@@ -1924,12 +1900,6 @@
   </data>
   <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
     <value>Saisissez la surface du magasin pour le calculer.</value>
-  </data>
-  <data name="pdf.margen" xml:space="preserve">
-    <value>Marge de la période : {0} %</value>
-  </data>
-  <data name="pdf.ventasM2Local" xml:space="preserve">
-    <value>Ventes par m² du magasin : {0}</value>
   </data>
   <data name="layout.vigente" xml:space="preserve">
     <value>Plan en vigueur</value>
@@ -2533,5 +2503,164 @@
   </data>
   <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
     <value>Il a {0} unités : au rythme de vente de la période, elles durent {1:#,##0} jours (plus de {2}). Freiner les achats ou faire une promotion.</value>
+  </data>
+  <data name="pdf.sinPeriodoAnterior" xml:space="preserve">
+    <value>Aucune donnée pour la période précédente</value>
+  </data>
+  <data name="pdf.vsPeriodoAnterior" xml:space="preserve">
+    <value>{0} vs. période précédente</value>
+  </data>
+  <data name="pdf.sinCostos" xml:space="preserve">
+    <value>Aucun coût saisi</value>
+  </data>
+  <data name="pdf.margenDetalle" xml:space="preserve">
+    <value>Sur les produits avec coût</value>
+  </data>
+  <data name="pdf.sinSuperficie" xml:space="preserve">
+    <value>Aucune surface saisie</value>
+  </data>
+  <data name="pdf.superficieLocal" xml:space="preserve">
+    <value>{0} m² de surface du magasin</value>
+  </data>
+  <data name="pdf.sinSectores" xml:space="preserve">
+    <value>Le magasin n'a aucun secteur.</value>
+  </data>
+  <data name="pdf.mejorSector" xml:space="preserve">
+    <value>Meilleur secteur : {0} (indice {1})</value>
+  </data>
+  <data name="pdf.sectorRevisar" xml:space="preserve">
+    <value>Secteur à revoir : {0} (indice {1})</value>
+  </data>
+  <data name="pdf.alertasStock" xml:space="preserve">
+    <value>{0} produits en stock faible ou critique</value>
+  </data>
+  <data name="pdf.sinVentas" xml:space="preserve">
+    <value>Aucune vente sur la période.</value>
+  </data>
+  <data name="pdf.notaEnCurso" xml:space="preserve">
+    <value>* Mois en cours : ventes jusqu'à aujourd'hui.</value>
+  </data>
+  <data name="pdf.colIndice" xml:space="preserve">
+    <value>Indice</value>
+  </data>
+  <data name="pdf.dias" xml:space="preserve">
+    <value>{0} jours</value>
+  </data>
+  <data name="pdf.sinBase" xml:space="preserve">
+    <value>Aucune vente dans la base</value>
+  </data>
+  <data name="pdf.vsBase" xml:space="preserve">
+    <value>{0} vs. base</value>
+  </data>
+  <data name="pdf.puntosVsBase" xml:space="preserve">
+    <value>{0} points vs. base</value>
+  </data>
+  <data name="pdf.sectoresMejoran" xml:space="preserve">
+    <value>Secteurs en amélioration</value>
+  </data>
+  <data name="pdf.xDeY" xml:space="preserve">
+    <value>{0} sur {1}</value>
+  </data>
+  <data name="pdf.empeoran" xml:space="preserve">
+    <value>{0} se dégradent</value>
+  </data>
+  <data name="pdf.indiceBaseAPropuesto" xml:space="preserve">
+    <value>Indice (base → proposé)</value>
+  </data>
+  <data name="pdf.cambiosDe" xml:space="preserve">
+    <value>Changements de {0} :</value>
+  </data>
+  <data name="pdf.notaSimulacion" xml:space="preserve">
+    <value>Les ventes et indices projetés sont des estimations du modèle de simulation à partir des données réelles de la période.</value>
+  </data>
+  <data name="pdf.oportunidades" xml:space="preserve">
+    <value>Opportunités produits</value>
+  </data>
+  <data name="pdf.sinOportunidades" xml:space="preserve">
+    <value>Aucune opportunité détectée sur la période.</value>
+  </data>
+  <data name="pdf.colTipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="pdf.colMotivo" xml:space="preserve">
+    <value>Motif et suggestion</value>
+  </data>
+  <data name="pdf.sinStock" xml:space="preserve">
+    <value>Le magasin n'a aucun stock saisi.</value>
+  </data>
+  <data name="pdf.sinUbicar" xml:space="preserve">
+    <value>Non placé</value>
+  </data>
+  <data name="pdf.sinProductos" xml:space="preserve">
+    <value>Aucun produit saisi.</value>
+  </data>
+  <data name="pdf.metaLocal" xml:space="preserve">
+    <value>Magasin</value>
+  </data>
+  <data name="pdf.metaPeriodo" xml:space="preserve">
+    <value>Période</value>
+  </data>
+  <data name="pdf.metaGenerado" xml:space="preserve">
+    <value>Généré</value>
+  </data>
+  <data name="pdf.pagina" xml:space="preserve">
+    <value>Page {0} sur {1}</value>
+  </data>
+  <data name="pdf.indiceBueno" xml:space="preserve">
+    <value>Bon</value>
+  </data>
+  <data name="pdf.indiceRegular" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
+  <data name="pdf.indiceBajo" xml:space="preserve">
+    <value>Faible</value>
+  </data>
+  <data name="pdf.tituloCompleto" xml:space="preserve">
+    <value>Rapport complet</value>
+  </data>
+  <data name="pdf.tituloComparacion" xml:space="preserve">
+    <value>Rapport de comparaison de scénarios</value>
+  </data>
+  <data name="pdf.tituloIndicadores" xml:space="preserve">
+    <value>Rapport d'indicateurs</value>
+  </data>
+  <data name="pdf.tituloStock" xml:space="preserve">
+    <value>Rapport de stock</value>
+  </data>
+  <data name="reportes.mesDesde" xml:space="preserve">
+    <value>Du (mois) *</value>
+  </data>
+  <data name="reportes.mesHasta" xml:space="preserve">
+    <value>Au (mois) *</value>
+  </data>
+  <data name="reportes.formatoMes" xml:space="preserve">
+    <value>aaaa-mm</value>
+  </data>
+  <data name="reportes.ayudaPeriodo" xml:space="preserve">
+    <value>Toutes les sections utilisent les mois choisis. Si la période atteint le mois en cours, les données vont jusqu'à aujourd'hui.</value>
+  </data>
+  <data name="reportes.errPeriodoOrden" xml:space="preserve">
+    <value>Le mois de début ne peut pas être postérieur au mois de fin.</value>
+  </data>
+  <data name="reportes.errPeriodoFuturo" xml:space="preserve">
+    <value>La période ne peut pas inclure de mois futurs.</value>
+  </data>
+  <data name="reportes.errPeriodoMaximo" xml:space="preserve">
+    <value>La période peut compter au maximum {0} mois.</value>
+  </data>
+  <data name="reportes.errSinSecciones" xml:space="preserve">
+    <value>Choisissez au moins une section à inclure dans le rapport.</value>
+  </data>
+  <data name="reportes.evolucionVentas" xml:space="preserve">
+    <value>Évolution des ventes</value>
+  </data>
+  <data name="reportes.eliminar" xml:space="preserve">
+    <value>Supprimer le rapport</value>
+  </data>
+  <data name="reportes.confirmarEliminar" xml:space="preserve">
+    <value>Supprimer ce rapport ? Le fichier PDF sera aussi supprimé.</value>
+  </data>
+  <data name="reportes.msgEliminado" xml:space="preserve">
+    <value>Rapport supprimé avec succès.</value>
   </data>
 </root>

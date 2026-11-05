@@ -1799,14 +1799,8 @@
   <data name="reportes.resumen" xml:space="preserve">
     <value>Yönetici özeti</value>
   </data>
-  <data name="reportes.detalleSector" xml:space="preserve">
-    <value>Reyona göre ayrıntı</value>
-  </data>
   <data name="reportes.estadoStock" xml:space="preserve">
     <value>Stok durumu</value>
-  </data>
-  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
-    <value>Temel göstergeler</value>
   </data>
   <data name="reportes.recomendaciones" xml:space="preserve">
     <value>Öneriler</value>
@@ -1836,28 +1830,13 @@
     <value>— Hiçbiri —</value>
   </data>
   <data name="reportes.errPeriodo" xml:space="preserve">
-    <value>Dönemin başlangıç ve bitişini girin.</value>
+    <value>Başlangıç ve bitiş ayını girin (biçim yyyy-aa).</value>
   </data>
   <data name="reportes.errSinDatos" xml:space="preserve">
     <value>Rapor oluşturmak için yeterli veri yok.</value>
   </data>
   <data name="reportes.msgGenerado" xml:space="preserve">
     <value>Rapor başarıyla oluşturuldu.</value>
-  </data>
-  <data name="pdf.periodo" xml:space="preserve">
-    <value>Dönem: {0} - {1}</value>
-  </data>
-  <data name="pdf.generado" xml:space="preserve">
-    <value>Oluşturulma: {0}</value>
-  </data>
-  <data name="pdf.ventasTotales" xml:space="preserve">
-    <value>Dönemin toplam satışları: {0}</value>
-  </data>
-  <data name="pdf.circulacionPromedio" xml:space="preserve">
-    <value>Ortalama ziyaretçi trafiği: %{0}</value>
-  </data>
-  <data name="pdf.sectoresAnalizados" xml:space="preserve">
-    <value>Analiz edilen reyonlar: {0}</value>
   </data>
   <data name="pdf.colDisponible" xml:space="preserve">
     <value>Mevcut</value>
@@ -1876,9 +1855,6 @@
   </data>
   <data name="pdf.ventasPropuesto" xml:space="preserve">
     <value>Önerilen satışlar</value>
-  </data>
-  <data name="pdf.graficoComparacion" xml:space="preserve">
-    <value>Tahmini satışlar: temel ve önerilen</value>
   </data>
   <data name="productos.categoriaInactiva" xml:space="preserve">
     <value>{0} (pasif)</value>
@@ -1924,12 +1900,6 @@
   </data>
   <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
     <value>Hesaplamak için mağaza alanını girin.</value>
-  </data>
-  <data name="pdf.margen" xml:space="preserve">
-    <value>Dönem marjı: %{0}</value>
-  </data>
-  <data name="pdf.ventasM2Local" xml:space="preserve">
-    <value>Mağazanın m² başına satışı: {0}</value>
   </data>
   <data name="layout.vigente" xml:space="preserve">
     <value>Geçerli plan</value>
@@ -2533,5 +2503,164 @@
   </data>
   <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
     <value>{0} birim var: dönemin satış hızında {1:#,##0} gün yetiyor ({2} günden fazla). Alımları durdurun veya kampanya yapın.</value>
+  </data>
+  <data name="pdf.sinPeriodoAnterior" xml:space="preserve">
+    <value>Önceki döneme ait veri yok</value>
+  </data>
+  <data name="pdf.vsPeriodoAnterior" xml:space="preserve">
+    <value>Önceki döneme göre {0}</value>
+  </data>
+  <data name="pdf.sinCostos" xml:space="preserve">
+    <value>Maliyet girilmemiş</value>
+  </data>
+  <data name="pdf.margenDetalle" xml:space="preserve">
+    <value>Maliyeti olan ürünler üzerinden</value>
+  </data>
+  <data name="pdf.sinSuperficie" xml:space="preserve">
+    <value>Alan girilmemiş</value>
+  </data>
+  <data name="pdf.superficieLocal" xml:space="preserve">
+    <value>Mağaza alanı {0} m²</value>
+  </data>
+  <data name="pdf.sinSectores" xml:space="preserve">
+    <value>Mağazada kayıtlı sektör yok.</value>
+  </data>
+  <data name="pdf.mejorSector" xml:space="preserve">
+    <value>En iyi sektör: {0} (endeks {1})</value>
+  </data>
+  <data name="pdf.sectorRevisar" xml:space="preserve">
+    <value>Gözden geçirilecek sektör: {0} (endeks {1})</value>
+  </data>
+  <data name="pdf.alertasStock" xml:space="preserve">
+    <value>Stoğu düşük veya kritik {0} ürün</value>
+  </data>
+  <data name="pdf.sinVentas" xml:space="preserve">
+    <value>Dönemde satış yok.</value>
+  </data>
+  <data name="pdf.notaEnCurso" xml:space="preserve">
+    <value>* İçinde bulunulan ay: bugüne kadarki satışlar.</value>
+  </data>
+  <data name="pdf.colIndice" xml:space="preserve">
+    <value>Endeks</value>
+  </data>
+  <data name="pdf.dias" xml:space="preserve">
+    <value>{0} gün</value>
+  </data>
+  <data name="pdf.sinBase" xml:space="preserve">
+    <value>Temel senaryoda satış yok</value>
+  </data>
+  <data name="pdf.vsBase" xml:space="preserve">
+    <value>Temele göre {0}</value>
+  </data>
+  <data name="pdf.puntosVsBase" xml:space="preserve">
+    <value>Temele göre {0} puan</value>
+  </data>
+  <data name="pdf.sectoresMejoran" xml:space="preserve">
+    <value>İyileşen sektörler</value>
+  </data>
+  <data name="pdf.xDeY" xml:space="preserve">
+    <value>{1} içinden {0}</value>
+  </data>
+  <data name="pdf.empeoran" xml:space="preserve">
+    <value>{0} kötüleşiyor</value>
+  </data>
+  <data name="pdf.indiceBaseAPropuesto" xml:space="preserve">
+    <value>Endeks (temel → önerilen)</value>
+  </data>
+  <data name="pdf.cambiosDe" xml:space="preserve">
+    <value>{0} değişiklikleri:</value>
+  </data>
+  <data name="pdf.notaSimulacion" xml:space="preserve">
+    <value>Öngörülen satışlar ve endeksler, dönemin gerçek verilerine dayanan simülasyon modelinin tahminleridir.</value>
+  </data>
+  <data name="pdf.oportunidades" xml:space="preserve">
+    <value>Ürün fırsatları</value>
+  </data>
+  <data name="pdf.sinOportunidades" xml:space="preserve">
+    <value>Dönemde fırsat tespit edilmedi.</value>
+  </data>
+  <data name="pdf.colTipo" xml:space="preserve">
+    <value>Tür</value>
+  </data>
+  <data name="pdf.colMotivo" xml:space="preserve">
+    <value>Neden ve öneri</value>
+  </data>
+  <data name="pdf.sinStock" xml:space="preserve">
+    <value>Mağazada kayıtlı stok yok.</value>
+  </data>
+  <data name="pdf.sinUbicar" xml:space="preserve">
+    <value>Yerleştirilmemiş</value>
+  </data>
+  <data name="pdf.sinProductos" xml:space="preserve">
+    <value>Kayıtlı ürün yok.</value>
+  </data>
+  <data name="pdf.metaLocal" xml:space="preserve">
+    <value>Mağaza</value>
+  </data>
+  <data name="pdf.metaPeriodo" xml:space="preserve">
+    <value>Dönem</value>
+  </data>
+  <data name="pdf.metaGenerado" xml:space="preserve">
+    <value>Oluşturulma</value>
+  </data>
+  <data name="pdf.pagina" xml:space="preserve">
+    <value>Sayfa {0} / {1}</value>
+  </data>
+  <data name="pdf.indiceBueno" xml:space="preserve">
+    <value>İyi</value>
+  </data>
+  <data name="pdf.indiceRegular" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="pdf.indiceBajo" xml:space="preserve">
+    <value>Düşük</value>
+  </data>
+  <data name="pdf.tituloCompleto" xml:space="preserve">
+    <value>Tam rapor</value>
+  </data>
+  <data name="pdf.tituloComparacion" xml:space="preserve">
+    <value>Senaryo karşılaştırma raporu</value>
+  </data>
+  <data name="pdf.tituloIndicadores" xml:space="preserve">
+    <value>Gösterge raporu</value>
+  </data>
+  <data name="pdf.tituloStock" xml:space="preserve">
+    <value>Stok raporu</value>
+  </data>
+  <data name="reportes.mesDesde" xml:space="preserve">
+    <value>Başlangıç (ay) *</value>
+  </data>
+  <data name="reportes.mesHasta" xml:space="preserve">
+    <value>Bitiş (ay) *</value>
+  </data>
+  <data name="reportes.formatoMes" xml:space="preserve">
+    <value>yyyy-aa</value>
+  </data>
+  <data name="reportes.ayudaPeriodo" xml:space="preserve">
+    <value>Tüm bölümler seçilen ayları kullanır. Dönem içinde bulunulan aya ulaşırsa veriler bugüne kadardır.</value>
+  </data>
+  <data name="reportes.errPeriodoOrden" xml:space="preserve">
+    <value>Başlangıç ayı bitiş ayından sonra olamaz.</value>
+  </data>
+  <data name="reportes.errPeriodoFuturo" xml:space="preserve">
+    <value>Dönem gelecek ayları içeremez.</value>
+  </data>
+  <data name="reportes.errPeriodoMaximo" xml:space="preserve">
+    <value>Dönem en fazla {0} ay olabilir.</value>
+  </data>
+  <data name="reportes.errSinSecciones" xml:space="preserve">
+    <value>Rapora eklemek için en az bir bölüm seçin.</value>
+  </data>
+  <data name="reportes.evolucionVentas" xml:space="preserve">
+    <value>Satış gelişimi</value>
+  </data>
+  <data name="reportes.eliminar" xml:space="preserve">
+    <value>Raporu sil</value>
+  </data>
+  <data name="reportes.confirmarEliminar" xml:space="preserve">
+    <value>Bu rapor silinsin mi? PDF dosyası da silinecek.</value>
+  </data>
+  <data name="reportes.msgEliminado" xml:space="preserve">
+    <value>Rapor başarıyla silindi.</value>
   </data>
 </root>

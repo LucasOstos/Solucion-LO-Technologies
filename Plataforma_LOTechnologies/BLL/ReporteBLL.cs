@@ -31,5 +31,15 @@ namespace BLL
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Generar reporte", "Reportes", 3);
             return codigoNuevo;
         }
+        public string EliminarReporte(int pCodigoReporte)
+        {
+            ControlAcceso.Validar(EntidadEmpresa.Reporte, pCodigoReporte);
+            ReporteBE reporte = reporteDAL.ObtenerReportePorCodigo(pCodigoReporte);
+            if (reporte == null) return null;
+            reporteDAL.EliminarReporte(pCodigoReporte);
+            digitos.ActualizarDigitoVertical("Reporte");
+            SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Eliminar reporte", "Reportes", 2);
+            return reporte.RutaArchivo;
+        }
     }
 }

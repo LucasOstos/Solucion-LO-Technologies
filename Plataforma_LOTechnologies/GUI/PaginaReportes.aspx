@@ -39,7 +39,7 @@
                             </div>
                             <div class="grupo-campo">
                                 <asp:Label runat="server" Text="Tipo de Reporte *" AssociatedControlID="ddlTipoReporte" Clave="reportes.tipo" />
-                                <asp:DropDownList ID="ddlTipoReporte" runat="server" CssClass="modal-campo">
+                                <asp:DropDownList ID="ddlTipoReporte" runat="server" CssClass="modal-campo" onchange="aplicarTipoReporte(this.value)">
                                     <asp:ListItem Text="Completo" Value="Completo" Clave="valor.completo" />
                                     <asp:ListItem Text="Comparación" Value="Comparación" Clave="valor.comparacion" />
                                     <asp:ListItem Text="Indicadores" Value="Indicadores" Clave="valor.indicadores" />
@@ -50,14 +50,15 @@
 
                         <div class="fila-formulario">
                             <div class="grupo-campo">
-                                <asp:Label runat="server" Text="Período Desde *" AssociatedControlID="tbPeriodoDesde" Clave="comun.periodoDesde" />
-                                <asp:TextBox ID="tbPeriodoDesde" runat="server" CssClass="modal-campo" TextMode="Date" />
+                                <asp:Label runat="server" Text="Desde (mes) *" AssociatedControlID="tbPeriodoDesde" Clave="reportes.mesDesde" />
+                                <asp:TextBox ID="tbPeriodoDesde" runat="server" CssClass="modal-campo" TextMode="Month" ClavePlaceholder="reportes.formatoMes" />
                             </div>
                             <div class="grupo-campo">
-                                <asp:Label runat="server" Text="Período Hasta *" AssociatedControlID="tbPeriodoHasta" Clave="comun.periodoHasta" />
-                                <asp:TextBox ID="tbPeriodoHasta" runat="server" CssClass="modal-campo" TextMode="Date" />
+                                <asp:Label runat="server" Text="Hasta (mes) *" AssociatedControlID="tbPeriodoHasta" Clave="reportes.mesHasta" />
+                                <asp:TextBox ID="tbPeriodoHasta" runat="server" CssClass="modal-campo" TextMode="Month" ClavePlaceholder="reportes.formatoMes" />
                             </div>
                         </div>
+                        <p class="campo-ayuda" runat="server" clave="reportes.ayudaPeriodo">Todas las secciones usan los meses elegidos. Si el período llega al mes en curso, los datos van hasta hoy.</p>
 
                         <div class="fila-formulario">
                             <div class="grupo-campo">
@@ -86,14 +87,15 @@
                         <div class="grupo-campo">
                             <label runat="server" clave="reportes.secciones">Secciones a incluir</label>
                             <div class="rep-checks">
-                                <asp:CheckBox ID="chkResumenEjecutivo" runat="server" CssClass="rep-check" Text="Resumen Ejecutivo" Clave="reportes.resumen" Checked="true" />
-                                <asp:CheckBox ID="chkComparacionEscenarios" runat="server" CssClass="rep-check" Text="Comparación de Escenarios" Clave="principal.comparacion.titulo" Checked="true" />
-                                <asp:CheckBox ID="chkDetallePorSector" runat="server" CssClass="rep-check" Text="Detalle por Sector" Clave="reportes.detalleSector" Checked="true" />
-                                <asp:CheckBox ID="chkEstadoStock" runat="server" CssClass="rep-check" Text="Estado de Stock" Clave="reportes.estadoStock" Checked="true" />
-                                <asp:CheckBox ID="chkIndicadoresPrincipales" runat="server" CssClass="rep-check" Text="Indicadores Principales" Clave="reportes.indicadoresPrincipales" Checked="true" />
+                                <asp:CheckBox ID="chkResumenEjecutivo" runat="server" CssClass="rep-check" Text="Resumen ejecutivo" Clave="reportes.resumen" Checked="true" />
+                                <asp:CheckBox ID="chkEvolucionVentas" runat="server" CssClass="rep-check" Text="Evolución de ventas" Clave="reportes.evolucionVentas" Checked="true" />
+                                <asp:CheckBox ID="chkIndicadoresPrincipales" runat="server" CssClass="rep-check" Text="Indicadores por sector" Clave="indicadores.porSector" Checked="true" />
                                 <asp:CheckBox ID="chkRecomendaciones" runat="server" CssClass="rep-check" Text="Recomendaciones" Clave="reportes.recomendaciones" Checked="true" />
-                                <asp:CheckBox ID="chkDetalleProductos" runat="server" CssClass="rep-check" Text="Detalle de Productos" Clave="reportes.detalleProductos" Checked="true" />
-                                <asp:CheckBox ID="chkHistorialVentas" runat="server" CssClass="rep-check" Text="Historial de Ventas" Clave="reportes.historialVentas" Checked="true" />
+                                <asp:CheckBox ID="chkComparacionEscenarios" runat="server" CssClass="rep-check" Text="Comparación de escenarios" Clave="principal.comparacion.titulo" Checked="true" />
+                                <asp:CheckBox ID="chkOportunidades" runat="server" CssClass="rep-check" Text="Oportunidades de productos" Clave="pdf.oportunidades" Checked="true" />
+                                <asp:CheckBox ID="chkEstadoStock" runat="server" CssClass="rep-check" Text="Estado de stock" Clave="reportes.estadoStock" Checked="true" />
+                                <asp:CheckBox ID="chkHistorialVentas" runat="server" CssClass="rep-check" Text="Historial de ventas" Clave="reportes.historialVentas" Checked="true" />
+                                <asp:CheckBox ID="chkDetalleProductos" runat="server" CssClass="rep-check" Text="Detalle de productos" Clave="reportes.detalleProductos" Checked="true" />
                             </div>
                         </div>
 
@@ -108,7 +110,7 @@
                                     <span class="avatar avatar-cuadrado">&#128196;</span>
                                     <div class="rep-item-info">
                                         <div class="texto-principal"><%# Eval("Titulo") %></div>
-                                        <div class="texto-secundario"><%# Eval("FechaGeneracion", "{0:dd/MM/yyyy HH:mm}") %></div>
+                                        <div class="texto-secundario"><%# Eval("FechaGeneracion", "{0:dd/MM/yyyy HH:mm}") %><%# string.IsNullOrEmpty(Eval("Descripcion") as string) ? "" : " · " + HttpUtility.HtmlEncode(Eval("Descripcion")) %></div>
                                         <span class="etiqueta etiqueta-info"><%# TraducirValor(Eval("TipoReporte")) %></span>
                                     </div>
                                     <div class="rep-item-acciones">
@@ -116,6 +118,8 @@
                                             CommandName="VerReporte" CommandArgument='<%# Eval("CodigoReporte") %>' Text="Ver" Clave="reportes.ver" />
                                         <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Bajar" ClaveTitle="reportes.bajar"
                                             CommandName="DescargarReporte" CommandArgument='<%# Eval("CodigoReporte") %>'>&#8595; <%# Traducir("reportes.bajar") %></asp:LinkButton>
+                                        <asp:LinkButton runat="server" CssClass="boton-icono rep-eliminar" ToolTip="Eliminar" ClaveTitle="reportes.eliminar" ClaveConfirmar="reportes.confirmarEliminar"
+                                            CommandName="EliminarReporte" CommandArgument='<%# Eval("CodigoReporte") %>' Text="Eliminar" Clave="comun.eliminar" />
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -126,5 +130,6 @@
             </div>
         </div>
     </form>
+    <script src="/JS/ReportesJS.js"></script>
 </body>
 </html>

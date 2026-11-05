@@ -47,3 +47,7 @@
         grid-template-columns: 1fr;
     }
 }
+
+.rep-eliminar {
+    color: #b91c1c;
+}

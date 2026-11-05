@@ -11,28 +11,31 @@ namespace DAL
     public class IndicadorDAL
     {
         private AccesoDatos acceso = new AccesoDatos();
-        public List<IndicadorSectorListado> CalcularIndicadoresPorSector(int pCodigoLocal, string pPeriodoDesde)
+        // Se usa cuando no se indica un periodo como "hasta"
+        public const string PERIODO_SIN_LIMITE = "9999-12";
+        public List<IndicadorSectorListado> CalcularIndicadoresPorSector(int pCodigoLocal, string pPeriodoDesde, string pPeriodoHasta = null)
         {
             var indicadores = new List<IndicadorSectorListado>();
             string query = @"SELECT s.CodigoSector, s.Nombre AS Sector, s.Circulacion, s.Superficie, ISNULL((SELECT SUM(v.ImporteTotal) FROM Venta v
                             INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal WHERE pu.CodigoSector = s.CodigoSector
-                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS Ventas, ISNULL((SELECT SUM(v.Cantidad) FROM Venta v
+                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND v.Periodo <= @PeriodoHasta), 0) AS Ventas, ISNULL((SELECT SUM(v.Cantidad) FROM Venta v
                             INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal WHERE pu.CodigoSector = s.CodigoSector
-                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS UnidadesVendidas, ISNULL((SELECT SUM(st.CantidadDisponible) FROM Stock st
+                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND v.Periodo <= @PeriodoHasta), 0) AS UnidadesVendidas, ISNULL((SELECT SUM(st.CantidadDisponible) FROM Stock st
                             INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = st.CodigoProducto AND pu.CodigoLocal = st.CodigoLocal
                             WHERE pu.CodigoSector = s.CodigoSector AND st.CodigoLocal = @CodigoLocal), 0) AS StockDisponible,
                             ISNULL((SELECT SUM(v.ImporteTotal) FROM Venta v INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
                             INNER JOIN Producto p ON p.CodigoProducto = v.CodigoProducto WHERE pu.CodigoSector = s.CodigoSector AND p.Costo IS NOT NULL
-                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS VentasConCosto,
+                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND v.Periodo <= @PeriodoHasta), 0) AS VentasConCosto,
                             ISNULL((SELECT SUM(v.Cantidad * p.Costo) FROM Venta v INNER JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
                             INNER JOIN Producto p ON p.CodigoProducto = v.CodigoProducto WHERE pu.CodigoSector = s.CodigoSector AND p.Costo IS NOT NULL
-                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde), 0) AS CostoVendido FROM Sector s
+                            AND v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND v.Periodo <= @PeriodoHasta), 0) AS CostoVendido FROM Sector s
                             WHERE s.CodigoLocal = @CodigoLocal";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
                 CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
                 CM.Parameters.AddWithValue("@PeriodoDesde", pPeriodoDesde);
+                CM.Parameters.AddWithValue("@PeriodoHasta", pPeriodoHasta ?? PERIODO_SIN_LIMITE);
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {

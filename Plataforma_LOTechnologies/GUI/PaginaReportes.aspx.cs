@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms.DataVisualization.Charting;
 using BE;
 using BLL;
+using DAL;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using SERVICIO.Logica;
@@ -26,18 +28,17 @@ public partial class PaginaReportes : PaginaSegura
         get { return "reportes.titulo"; }
     }
     private static readonly string[] IDIOMAS_SIN_PDF = { "ar", "he", "fa", "ur" };
+    private const int MESES_MAXIMOS = 24;
+    private const int MESES_PREDETERMINADOS = 3;
+    private const string TIPO_COMPARACION = "Comparación";
     private Idioma idiomaReporte;
     private int codigoIdiomaPredeterminado;
-    private BaseFont fuenteBase;
-    private BaseFont fuenteBaseNegrita;
-    private string familiaGrafico = "Arial";
     private LocalBLL localBLL = new LocalBLL();
     private EscenarioBLL escenarioBLL = new EscenarioBLL();
     private IndicadorBLL indicadorBLL = new IndicadorBLL();
     private StockBLL stockBLL = new StockBLL();
     private VentaBLL ventaBLL = new VentaBLL();
     private ProductoBLL productoBLL = new ProductoBLL();
-    private SectorBLL sectorBLL = new SectorBLL();
     private ReporteBLL reporteBLL = new ReporteBLL();
     private LayoutBLL layoutBLL = new LayoutBLL();
     private int CodigoLocalActual
@@ -60,7 +61,16 @@ public partial class PaginaReportes : PaginaSegura
             if (escenarioBaseQuery != null && ddlEscenarioBase.Items.FindByValue(escenarioBaseQuery) != null) ddlEscenarioBase.SelectedValue = escenarioBaseQuery;
             if (escenarioPropuestoQuery != null && ddlEscenarioPropuesto.Items.FindByValue(escenarioPropuestoQuery) != null) ddlEscenarioPropuesto.SelectedValue = escenarioPropuestoQuery;
             int codigoComparacionQuery;
-            if (int.TryParse(Request.QueryString["comparacion"], out codigoComparacionQuery)) ViewState["CodigoComparacion"] = codigoComparacionQuery;
+            if (int.TryParse(Request.QueryString["comparacion"], out codigoComparacionQuery))
+            {
+                ViewState["CodigoComparacion"] = codigoComparacionQuery;
+                // Viene de "Generar reporte de esta comparación": se preselecciona el tipo Comparación
+                ddlTipoReporte.SelectedValue = TIPO_COMPARACION;
+                AplicarSeccionesDelTipo(TIPO_COMPARACION);
+            }
+            DateTime mesActual = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            tbPeriodoDesde.Text = mesActual.AddMonths(-(MESES_PREDETERMINADOS - 1)).ToString("yyyy-MM");
+            tbPeriodoHasta.Text = mesActual.ToString("yyyy-MM");
             CargarReportesRecientes();
         }
     }
@@ -109,18 +119,40 @@ public partial class PaginaReportes : PaginaSegura
     {
         if (CodigoLocalActual == 0) return;
         List<ReporteBE> reportes = reporteBLL.ObtenerReportesPorLocal(CodigoLocalActual);
-        if (reportes.Count == 0)
+        rptReportesRecientes.Visible = reportes.Count > 0;
+        lblSinReportes.Visible = reportes.Count == 0;
+        rptReportesRecientes.DataSource = reportes;
+        rptReportesRecientes.DataBind();
+    }
+    // Mismas secciones que preselecciona ReportesJS.js al cambiar el tipo (acá se usa al entrar desde la comparación)
+    private void AplicarSeccionesDelTipo(string pTipo)
+    {
+        bool completo = pTipo == "Completo", comparacion = pTipo == TIPO_COMPARACION, indicadores = pTipo == "Indicadores", stock = pTipo == "Stock";
+        chkResumenEjecutivo.Checked = true;
+        chkEvolucionVentas.Checked = completo || indicadores;
+        chkIndicadoresPrincipales.Checked = completo || indicadores || comparacion;
+        chkRecomendaciones.Checked = completo || indicadores || stock;
+        chkComparacionEscenarios.Checked = completo || comparacion;
+        chkOportunidades.Checked = completo || stock;
+        chkEstadoStock.Checked = completo || stock;
+        chkHistorialVentas.Checked = completo || indicadores;
+        chkDetalleProductos.Checked = completo;
+    }
+    private bool AlgunaSeccionElegida()
+    {
+        return chkResumenEjecutivo.Checked || chkEvolucionVentas.Checked || chkIndicadoresPrincipales.Checked || chkRecomendaciones.Checked
+            || chkComparacionEscenarios.Checked || chkOportunidades.Checked || chkEstadoStock.Checked || chkHistorialVentas.Checked || chkDetalleProductos.Checked;
+    }
+    // Acepta "2026-09" (lo que envía el campo mes) o "09/2026" (navegadores que lo muestran como texto)
+    private static bool LeerMes(string pTexto, out DateTime pMes)
+    {
+        string[] formatos = { "yyyy-MM", "MM/yyyy", "M/yyyy", "yyyy-MM-dd" };
+        if (DateTime.TryParseExact((pTexto ?? "").Trim(), formatos, CultureInfo.InvariantCulture, DateTimeStyles.None, out pMes))
         {
-            rptReportesRecientes.Visible = false;
-            lblSinReportes.Visible = true;
+            pMes = new DateTime(pMes.Year, pMes.Month, 1);
+            return true;
         }
-        else
-        {
-            rptReportesRecientes.Visible = true;
-            lblSinReportes.Visible = false;
-            rptReportesRecientes.DataSource = reportes;
-            rptReportesRecientes.DataBind();
-        }
+        return false;
     }
     private void PrepararIdiomaReporte()
     {
@@ -131,7 +163,11 @@ public partial class PaginaReportes : PaginaSegura
         idiomaReporte = GestorIdioma.Instancia.ObtenerIdiomasActivos().FirstOrDefault(i => i.CodigoIdioma == codigoElegido && !IDIOMAS_SIN_PDF.Contains(i.Codigo));
         if (idiomaReporte == null) idiomaReporte = IdiomaActual;
         if (idiomaReporte != null && IDIOMAS_SIN_PDF.Contains(idiomaReporte.Codigo)) idiomaReporte = predeterminado;
-        PrepararFuentes(idiomaReporte == null ? "es" : idiomaReporte.Codigo);
+    }
+    private CultureInfo CulturaReporte()
+    {
+        try { return idiomaReporte == null ? CultureInfo.CurrentCulture : new CultureInfo(idiomaReporte.Codigo); }
+        catch (CultureNotFoundException) { return CultureInfo.CurrentCulture; }
     }
     private string T(string pClave)
     {
@@ -141,6 +177,7 @@ public partial class PaginaReportes : PaginaSegura
     private string T(string pClave, params object[] pValores)
     {
         string texto = T(pClave);
+        if (pValores == null || pValores.Length == 0) return texto;
         try { return string.Format(texto, pValores); }
         catch (FormatException) { return texto; }
     }
@@ -155,317 +192,173 @@ public partial class PaginaReportes : PaginaSegura
         string texto = pEsMotivo ? pRecomendacion.Motivo : pRecomendacion.Descripcion;
         return string.IsNullOrEmpty(clave) ? texto : T(clave, pRecomendacion.Parametros ?? new object[0]);
     }
-    private void PrepararFuentes(string pCodigoIdioma)
+    private string TituloDelTipo(string pTipo)
     {
-        string carpeta = Environment.GetFolderPath(Environment.SpecialFolder.Fonts);
-        string[] normales, negritas;
-        if (pCodigoIdioma == "ja")
+        switch (pTipo)
         {
-            normales = new[] { "msgothic.ttc,0", "meiryo.ttc,0", "YuGothM.ttc,0" };
-            negritas = new[] { "msgothic.ttc,0", "meiryob.ttc,0", "YuGothB.ttc,0" };
-            familiaGrafico = ObtenerFamiliaInstalada("MS Gothic", "Meiryo", "Yu Gothic") ?? "Arial";
-        }
-        else
-        {
-            normales = new[] { "arial.ttf", "segoeui.ttf", "tahoma.ttf" };
-            negritas = new[] { "arialbd.ttf", "segoeuib.ttf", "tahomabd.ttf" };
-            familiaGrafico = "Arial";
-        }
-        fuenteBase = CrearFuenteBase(carpeta, normales);
-        fuenteBaseNegrita = CrearFuenteBase(carpeta, negritas) ?? fuenteBase;
-    }
-    private static BaseFont CrearFuenteBase(string pCarpeta, string[] pArchivos)
-    {
-        foreach (string archivo in pArchivos)
-        {
-            string nombre = archivo.Split(',')[0];
-            if (!File.Exists(Path.Combine(pCarpeta, nombre))) continue;
-            try
-            {
-                return BaseFont.CreateFont(Path.Combine(pCarpeta, archivo), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            }
-            catch (Exception) { }
-        }
-        return null;
-    }
-    private static string ObtenerFamiliaInstalada(params string[] pFamilias)
-    {
-        using (var instaladas = new InstalledFontCollection())
-        {
-            foreach (string familia in pFamilias)
-            {
-                if (instaladas.Families.Any(f => string.Equals(f.Name, familia, StringComparison.OrdinalIgnoreCase))) return familia;
-            }
-        }
-        return null;
-    }
-    private Font CrearFuente(float pTamanio, bool pNegrita, BaseColor pColor = null)
-    {
-        BaseFont baseFuente = pNegrita ? fuenteBaseNegrita : fuenteBase;
-        if (baseFuente == null)
-        {
-            return FontFactory.GetFont(pNegrita ? FontFactory.HELVETICA_BOLD : FontFactory.HELVETICA, pTamanio, pColor ?? BaseColor.BLACK);
-        }
-        return new Font(baseFuente, pTamanio, Font.NORMAL, pColor ?? BaseColor.BLACK);
-    }
-    private static void AgregarFila(PdfPTable pTabla, Font pFuente, params string[] pTextos)
-    {
-        foreach (string texto in pTextos)
-        {
-            pTabla.AddCell(new PdfPCell(new Phrase(texto ?? "", pFuente)));
+            case TIPO_COMPARACION: return T("pdf.tituloComparacion");
+            case "Indicadores": return T("pdf.tituloIndicadores");
+            case "Stock": return T("pdf.tituloStock");
+            default: return T("pdf.tituloCompleto");
         }
     }
-    private void GenerarPdf(string rutaCompleta, string titulo, List<IndicadorSectorListado> indicadores, DateTime periodoDesde, DateTime periodoHasta)
+    private static string DescribirMeses(DateTime pDesde, DateTime pHasta)
     {
-        using (var stream = new FileStream(rutaCompleta, FileMode.Create))
-        {
-            var documento = new Document(PageSize.A4, 40, 40, 50, 50);
-            PdfWriter.GetInstance(documento, stream);
-            documento.Open();
-            var fuenteTitulo = CrearFuente(18, true);
-            var fuenteSubtitulo = CrearFuente(10, false, BaseColor.GRAY);
-            var fuenteSeccion = CrearFuente(13, true);
-            var fuenteNormal = CrearFuente(10, false);
-            var fuenteEncabezado = CrearFuente(10, true);
-            documento.Add(new Paragraph(titulo, fuenteTitulo));
-            documento.Add(new Paragraph(T("pdf.periodo", periodoDesde.ToString("dd/MM/yyyy"), periodoHasta.ToString("dd/MM/yyyy")), fuenteSubtitulo));
-            documento.Add(new Paragraph(T("pdf.generado", DateTime.Now.ToString("dd/MM/yyyy HH:mm")), fuenteSubtitulo));
-            documento.Add(new Paragraph(" "));
-            if (chkResumenEjecutivo.Checked)
-            {
-                documento.Add(new Paragraph(T("reportes.resumen"), fuenteSeccion));
-                decimal ventasTotales = indicadores.Sum(i => i.Ventas);
-                decimal circulacionPromedio = indicadores.Count > 0 ? indicadores.Average(i => i.Circulacion) : 0;
-                documento.Add(new Paragraph(T("pdf.ventasTotales", ventasTotales.ToString("$#,##0")), fuenteNormal));
-                documento.Add(new Paragraph(T("pdf.circulacionPromedio", circulacionPromedio.ToString("0.0")), fuenteNormal));
-                documento.Add(new Paragraph(T("pdf.sectoresAnalizados", indicadores.Count), fuenteNormal));
-                decimal? margenTotal = ventaBLL.ObtenerMargenTotal(CodigoLocalActual, periodoDesde.ToString("yyyy-MM"));
-                if (margenTotal != null) documento.Add(new Paragraph(T("pdf.margen", margenTotal.Value.ToString("0.#")), fuenteNormal));
-                LocalBE localReporte = localBLL.ObtenerLocalPorCodigo(CodigoLocalActual);
-                if (localReporte != null && localReporte.SuperficieAprox > 0)
-                {
-                    documento.Add(new Paragraph(T("pdf.ventasM2Local", (ventasTotales / localReporte.SuperficieAprox.Value).ToString("$#,##0")), fuenteNormal));
-                }
-                AgregarPlanoVigente(documento, fuenteSubtitulo);
-                documento.Add(new Paragraph(" "));
-            }
-            if (chkIndicadoresPrincipales.Checked || chkDetallePorSector.Checked)
-            {
-                documento.Add(new Paragraph(T("indicadores.porSector"), fuenteSeccion));
-                var tabla = new PdfPTable(7) { WidthPercentage = 100 };
-                AgregarFila(tabla, fuenteEncabezado, T("layout.colSector"), T("indicadores.colVentas"), T("stock.colMargen"), T("indicadores.colVentasM2"),
-                            T("layout.colCirculacion"), T("indicadores.colRotacionMes"), T("indicadores.colIndice"));
-                foreach (var ind in indicadores)
-                {
-                    AgregarFila(tabla, fuenteNormal, ind.Sector, ind.Ventas.ToString("$#,##0"), ind.Margen == null ? "-" : $"{ind.Margen:0.0}%",
-                                ind.VentasPorM2 == null ? "-" : ind.VentasPorM2.Value.ToString("$#,##0"), $"{ind.Circulacion:0.0}%", $"{ind.Rotacion:0.0}%", ind.IndiceGlobal.ToString());
-                }
-                documento.Add(tabla);
-                documento.Add(new Paragraph(" "));
-                byte[] graficoVentas = GenerarGraficoBarras(
-                    T("stock.ventasPorSector"),
-                    indicadores.Select(i => i.Sector).ToList(),
-                    indicadores.Select(i => (double)i.Ventas).ToList());
-                PdfImage imgVentas = PdfImage.GetInstance(graficoVentas);
-                imgVentas.ScaleToFit(480, 260);
-                documento.Add(imgVentas);
-                documento.Add(new Paragraph(" "));
-            }
-            if (chkEstadoStock.Checked)
-            {
-                documento.Add(new Paragraph(T("reportes.estadoStock"), fuenteSeccion));
-                List<StockListado> stock = stockBLL.ObtenerStockPorLocal(CodigoLocalActual);
-                var tabla = new PdfPTable(4) { WidthPercentage = 100 };
-                AgregarFila(tabla, fuenteEncabezado, T("productos.colProducto"), T("pdf.colDisponible"), T("stock.colMinimo"), T("comun.estado"));
-                foreach (var st in stock)
-                {
-                    AgregarFila(tabla, fuenteNormal, st.Producto, st.CantidadDisponible.ToString(), st.Minimo?.ToString() ?? "-", TValor(st.EstadoStock));
-                }
-                documento.Add(tabla);
-                documento.Add(new Paragraph(" "));
-            }
-            if (chkRecomendaciones.Checked)
-            {
-                documento.Add(new Paragraph(T("reportes.recomendaciones"), fuenteSeccion));
-                List<StockListado> stockParaRecomendaciones = stockBLL.ObtenerStockPorLocal(CodigoLocalActual);
-                var recomendacionBLL = new RecomendacionBLL();
-                List<RecomendacionBE> recomendaciones = recomendacionBLL.GenerarRecomendaciones(CodigoLocalActual, indicadores, stockParaRecomendaciones);
-                if (recomendaciones.Count == 0)
-                {
-                    documento.Add(new Paragraph(T("pdf.sinRecomendaciones"), fuenteNormal));
-                }
-                foreach (var rec in recomendaciones)
-                {
-                    documento.Add(new Paragraph($"[{TValor(rec.Prioridad)}] {TRecomendacion(rec, false)}", fuenteNormal));
-                    documento.Add(new Paragraph(TRecomendacion(rec, true), fuenteSubtitulo));
-                }
-                documento.Add(new Paragraph(" "));
-            }
-            if (chkHistorialVentas.Checked)
-            {
-                documento.Add(new Paragraph(T("reportes.historialVentas"), fuenteSeccion));
-                List<VentaListado> ventas = ventaBLL.ObtenerVentasAgrupadas(CodigoLocalActual, periodoDesde.ToString("yyyy-MM"));
-                var tabla = new PdfPTable(4) { WidthPercentage = 100 };
-                AgregarFila(tabla, fuenteEncabezado, T("stock.colPeriodo"), T("layout.colSector"), T("stock.colUnidades"), T("stock.colMonto"));
-                foreach (var v in ventas)
-                {
-                    AgregarFila(tabla, fuenteNormal, v.Periodo, v.Sector, v.Unidades.ToString(), v.Monto.ToString("$#,##0"));
-                }
-                documento.Add(tabla);
-            }
-            if (chkComparacionEscenarios.Checked)
-            {
-                AgregarSeccionComparacion(documento, fuenteSeccion, fuenteNormal, fuenteSubtitulo, fuenteEncabezado);
-            }
-
-            if (chkDetalleProductos.Checked)
-            {
-                AgregarSeccionProductos(documento, fuenteSeccion, fuenteNormal, fuenteEncabezado);
-            }
-            documento.Close();
-        }
+        return pDesde == pHasta ? pDesde.ToString("MM/yyyy") : pDesde.ToString("MM/yyyy") + " – " + pHasta.ToString("MM/yyyy");
     }
-    private void AgregarSeccionComparacion(Document documento, Font fuenteSeccion, Font fuenteNormal, Font fuenteSubtitulo, Font fuenteEncabezado)
+    // Junta todo lo que va en el PDF. pFin = último día con datos (hoy si el período llega al mes en curso).
+    private DatosReporte ArmarDatos(List<IndicadorSectorListado> pIndicadores, DateTime pDesde, DateTime pHasta, DateTime pFin, LocalBE pLocal)
     {
-        documento.Add(new Paragraph(T("principal.comparacion.titulo"), fuenteSeccion));
+        string periodoDesde = pDesde.ToString("yyyy-MM"), periodoHasta = pHasta.ToString("yyyy-MM");
+        List<StockListado> stock = stockBLL.ObtenerStockPorLocal(CodigoLocalActual);
+        var datos = new DatosReporte
+        {
+            TituloTipo = TituloDelTipo(ddlTipoReporte.SelectedValue),
+            NombreLocal = pLocal?.Nombre,
+            TextoPeriodo = DescribirMeses(pDesde, pHasta),
+            FechaGeneracion = DateTime.Now,
+            IncluirResumen = chkResumenEjecutivo.Checked,
+            IncluirEvolucion = chkEvolucionVentas.Checked,
+            IncluirIndicadores = chkIndicadoresPrincipales.Checked,
+            IncluirRecomendaciones = chkRecomendaciones.Checked,
+            IncluirComparacion = chkComparacionEscenarios.Checked,
+            IncluirOportunidades = chkOportunidades.Checked,
+            IncluirStock = chkEstadoStock.Checked,
+            IncluirHistorial = chkHistorialVentas.Checked,
+            IncluirProductos = chkDetalleProductos.Checked,
+            Indicadores = pIndicadores,
+            Stock = stock,
+            AlertasStock = stock.Count(s => s.EstadoStock == "Crítico" || s.EstadoStock == "Bajo")
+        };
+        if (datos.IncluirResumen)
+        {
+            datos.VentasPeriodo = ventaBLL.ObtenerTotalVentasEntreFechas(CodigoLocalActual, pDesde, pFin);
+            decimal ventasAnteriores = indicadorBLL.CompletarVariacion(CodigoLocalActual, pDesde, pFin, pIndicadores);
+            datos.VariacionVentas = IndicadorBLL.Variacion(datos.VentasPeriodo, ventasAnteriores);
+            datos.Margen = ventaBLL.ObtenerMargenTotal(CodigoLocalActual, periodoDesde, periodoHasta);
+            datos.SuperficieLocal = pLocal?.SuperficieAprox;
+            LayoutBE vigente = layoutBLL.ObtenerLayoutVigente(CodigoLocalActual);
+            if (vigente != null)
+            {
+                datos.NombrePlano = vigente.Nombre;
+                if (MapaLocal.ObtenerUrlImagen(vigente, ResolveUrl) != null) datos.RutaPlano = Server.MapPath("~/Subidas/Layouts/" + vigente.NombreArchivo);
+            }
+        }
+        if (datos.IncluirEvolucion) datos.Evolucion = indicadorBLL.ObtenerEvolucionVentas(CodigoLocalActual, pDesde, pHasta);
+        if (datos.IncluirRecomendaciones)
+        {
+            datos.Recomendaciones = new RecomendacionBLL().GenerarRecomendaciones(CodigoLocalActual, pIndicadores, stock)
+                .Select(r => new FilaRecomendacion { Prioridad = r.Prioridad, TextoPrioridad = TValor(r.Prioridad), Titulo = TRecomendacion(r, false), Detalle = TRecomendacion(r, true) })
+                .ToList();
+        }
+        if (datos.IncluirComparacion) datos.Comparacion = ArmarComparacion(pIndicadores);
+        if (datos.IncluirOportunidades) datos.Oportunidades = ArmarOportunidades(pDesde, pFin);
+        if (datos.IncluirHistorial) datos.Historial = ventaBLL.ObtenerVentasAgrupadas(CodigoLocalActual, periodoDesde, VentaDAL.AGRUPAR_SECTOR, periodoHasta);
+        if (datos.IncluirProductos) datos.Productos = productoBLL.ObtenerProductosListado(CodigoLocalActual, "", null);
+        return datos;
+    }
+    // La comparación usa los indicadores del mismo período del reporte
+    private DatosComparacionReporte ArmarComparacion(List<IndicadorSectorListado> pIndicadores)
+    {
         if (string.IsNullOrEmpty(ddlEscenarioBase.SelectedValue) || string.IsNullOrEmpty(ddlEscenarioPropuesto.SelectedValue))
         {
-            documento.Add(new Paragraph(T("pdf.errEscenarios"), fuenteSubtitulo));
-            documento.Add(new Paragraph(" "));
-            return;
+            return new DatosComparacionReporte { Error = T("pdf.errEscenarios") };
         }
         int codigoBase = int.Parse(ddlEscenarioBase.SelectedValue);
         int codigoPropuesto = int.Parse(ddlEscenarioPropuesto.SelectedValue);
         // Base 0 = situación actual (sin cambios)
         EscenarioBE escenarioBase = codigoBase == 0 ? null : escenarioBLL.ObtenerEscenarioPorCodigo(codigoBase);
         EscenarioBE escenarioPropuesto = escenarioBLL.ObtenerEscenarioPorCodigo(codigoPropuesto);
-        if (escenarioBase != null && escenarioBase.CodigoLocal != escenarioPropuesto.CodigoLocal)
+        if (escenarioPropuesto == null || escenarioPropuesto.CodigoLocal != CodigoLocalActual || (escenarioBase != null && escenarioBase.CodigoLocal != escenarioPropuesto.CodigoLocal))
         {
-            documento.Add(new Paragraph(T("comparacion.errMismoLocal"), fuenteSubtitulo));
-            documento.Add(new Paragraph(" "));
-            return;
+            return new DatosComparacionReporte { Error = T("comparacion.errMismoLocal") };
         }
         List<EscenarioCambio> cambiosBase = escenarioBase == null ? new List<EscenarioCambio>() : escenarioBLL.ObtenerCambiosPorEscenario(codigoBase);
         List<EscenarioCambio> cambiosPropuesto = escenarioBLL.ObtenerCambiosPorEscenario(codigoPropuesto);
-        string periodoDesdeStr = PeriodoDesde(1);
-        List<IndicadorSectorListado> indicadoresReales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesdeStr);
-        List<IndicadorSectorListado> proyectadosBase = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosBase);
-        List<IndicadorSectorListado> proyectadosPropuesto = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosPropuesto);
-        string nombreBase = escenarioBase == null ? T("escenarios.situacionActual") : escenarioBase.Nombre;
         int? layoutBase = escenarioBase == null ? layoutBLL.ObtenerLayoutVigente(CodigoLocalActual)?.CodigoLayout : escenarioBase.CodigoLayout;
-        documento.Add(new Paragraph(T("pdf.baseVsPropuesto", nombreBase, escenarioPropuesto.Nombre), fuenteNormal));
-        documento.Add(new Paragraph(T("pdf.layoutBase", NombreLayout(layoutBase), NombreLayout(escenarioPropuesto.CodigoLayout)), fuenteSubtitulo));
-        var tabla = new PdfPTable(4) { WidthPercentage = 100 };
-        AgregarFila(tabla, fuenteEncabezado, T("layout.colSector"), T("pdf.ventasBase"), T("pdf.ventasPropuesto"), T("comparacion.colDiferencia"));
-        foreach (var indPropuesto in proyectadosPropuesto)
+        var comparacion = new DatosComparacionReporte
         {
-            var indBase = proyectadosBase.FirstOrDefault(p => p.CodigoSector == indPropuesto.CodigoSector);
-            if (indBase == null) continue;
-
-            decimal diferenciaPorc = indBase.Ventas != 0 ? ((indPropuesto.Ventas - indBase.Ventas) / indBase.Ventas) * 100 : 0;
-
-            AgregarFila(tabla, fuenteNormal, indPropuesto.Sector, indBase.Ventas.ToString("$#,##0"), indPropuesto.Ventas.ToString("$#,##0"), (diferenciaPorc >= 0 ? "+" : "") + diferenciaPorc.ToString("0.0") + "%");
+            NombreBase = escenarioBase == null ? T("escenarios.situacionActual") : escenarioBase.Nombre,
+            NombrePropuesto = escenarioPropuesto.Nombre,
+            LayoutBase = NombreLayout(layoutBase),
+            LayoutPropuesto = NombreLayout(escenarioPropuesto.CodigoLayout),
+            Base = indicadorBLL.ProyectarIndicadores(pIndicadores, cambiosBase),
+            Propuesto = indicadorBLL.ProyectarIndicadores(pIndicadores, cambiosPropuesto),
+            CambiosPropuesto = cambiosPropuesto.Select(DescribirCambio).Where(c => c != "").ToList()
+        };
+        ArmarConclusion(comparacion);
+        return comparacion;
+    }
+    // "Hogar: Mover al frente" -> "Hogar: <acción traducida>"
+    private string DescribirCambio(EscenarioCambio pCambio)
+    {
+        string descripcion = pCambio.Descripcion ?? "";
+        int posicion = descripcion.IndexOf(": ");
+        return posicion > 0 ? descripcion.Substring(0, posicion) + ": " + TValor(descripcion.Substring(posicion + 2)) : TValor(descripcion);
+    }
+    // Mismo criterio que la pantalla de comparación
+    private void ArmarConclusion(DatosComparacionReporte pComparacion)
+    {
+        decimal ventasBase = pComparacion.Base.Sum(p => p.Ventas), ventasPropuesto = pComparacion.Propuesto.Sum(p => p.Ventas);
+        int indiceBase = pComparacion.Base.Count > 0 ? (int)Math.Round(pComparacion.Base.Average(p => p.IndiceGlobal), 0) : 0;
+        int indicePropuesto = pComparacion.Propuesto.Count > 0 ? (int)Math.Round(pComparacion.Propuesto.Average(p => p.IndiceGlobal), 0) : 0;
+        decimal variacionVentas = IndicadorBLL.Variacion(ventasPropuesto, ventasBase) ?? 0;
+        int diferenciaIndice = indicePropuesto - indiceBase;
+        if (variacionVentas == 0 && diferenciaIndice == 0)
+        {
+            pComparacion.ConclusionTitulo = T("comparacion.conclusionIgual", pComparacion.NombreBase, pComparacion.NombrePropuesto);
+            pComparacion.ConclusionDetalle = "";
+            return;
         }
-        documento.Add(tabla);
-        documento.Add(new Paragraph(" "));
-        byte[] graficoComparacion = GenerarGraficoComparacion(proyectadosBase, proyectadosPropuesto);
-        PdfImage imgComparacion = PdfImage.GetInstance(graficoComparacion);
-        imgComparacion.ScaleToFit(480, 260);
-        documento.Add(imgComparacion);
-        documento.Add(new Paragraph(" "));
+        bool convienePropuesto = variacionVentas > 0 || (variacionVentas == 0 && diferenciaIndice > 0);
+        pComparacion.ConclusionTitulo = T("comparacion.conclusionConviene", convienePropuesto ? pComparacion.NombrePropuesto : pComparacion.NombreBase);
+        pComparacion.ConclusionDetalle = T("comparacion.conclusionDetalle", pComparacion.NombrePropuesto, (variacionVentas > 0 ? "+" : "") + variacionVentas.ToString("0.#") + "%",
+                                           (diferenciaIndice > 0 ? "+" : "") + diferenciaIndice, pComparacion.NombreBase);
+    }
+    private List<FilaOportunidad> ArmarOportunidades(DateTime pDesde, DateTime pFin)
+    {
+        string[] orden = { "Alta", "Media", "Baja" };
+        return new AnalisisProductoBLL().DetectarOportunidades(CodigoLocalActual, pDesde, pFin)
+            .Where(o => o.Tipo != null)
+            .OrderBy(o => Array.IndexOf(orden, o.Prioridad) < 0 ? 9 : Array.IndexOf(orden, o.Prioridad)).ThenByDescending(o => o.Importe)
+            .Select(o => new FilaOportunidad
+            {
+                Producto = o.NombreProducto,
+                Sector = o.SectorActual,
+                Tipo = o.Tipo,
+                TextoTipo = TextoTipoOportunidad(o.Tipo),
+                Prioridad = o.Prioridad,
+                TextoPrioridad = TextoPrioridadOportunidad(o.Prioridad),
+                Motivo = string.IsNullOrEmpty(o.ClaveMotivo) ? "" : T(o.ClaveMotivo, o.Parametros ?? new object[0])
+            }).ToList();
+    }
+    private string TextoTipoOportunidad(string pTipo)
+    {
+        switch (pTipo)
+        {
+            case ProductoAnalisisListado.TIPO_ESTRELLA: return T("analisis.tipoEstrellaEscondida");
+            case ProductoAnalisisListado.TIPO_LUGAR_PRIVILEGIADO: return T("analisis.tipoLugarPrivilegiado");
+            case ProductoAnalisisListado.TIPO_SIN_MOVIMIENTO: return T("analisis.tipoSinMovimiento");
+            case ProductoAnalisisListado.TIPO_RIESGO_QUIEBRE: return T("analisis.tipoRiesgoQuiebre");
+            case ProductoAnalisisListado.TIPO_SIN_UBICAR: return T("analisis.tipoSinUbicar");
+            case ProductoAnalisisListado.TIPO_COBERTURA_EXCESIVA: return T("analisis.tipoCoberturaExcesiva");
+            default: return pTipo ?? "";
+        }
+    }
+    private string TextoPrioridadOportunidad(string pPrioridad)
+    {
+        switch (pPrioridad)
+        {
+            case "Alta": return T("analisis.prioridadAlta");
+            case "Media": return T("analisis.prioridadMedia");
+            case "Baja": return T("analisis.prioridadBaja");
+            default: return "";
+        }
     }
     private string NombreLayout(int? pCodigoLayout)
     {
         LayoutBE layout = pCodigoLayout == null ? null : layoutBLL.ObtenerLayoutPorCodigo(pCodigoLayout.Value);
         return layout?.Nombre ?? T("escenarios.sinLayout");
-    }
-    private void AgregarPlanoVigente(Document documento, Font fuenteSubtitulo)
-    {
-        LayoutBE vigente = layoutBLL.ObtenerLayoutVigente(CodigoLocalActual);
-        if (vigente == null) return;
-        documento.Add(new Paragraph(T("pdf.planoVigente", vigente.Nombre), fuenteSubtitulo));
-        if (MapaLocal.ObtenerUrlImagen(vigente, ResolveUrl) == null) return;
-        string ruta = Server.MapPath("~/Subidas/Layouts/" + vigente.NombreArchivo);
-        if (!File.Exists(ruta)) return;
-        PdfImage plano = PdfImage.GetInstance(ruta);
-        plano.ScaleToFit(480, 300);
-        documento.Add(plano);
-    }
-    private void AgregarSeccionProductos(Document documento, Font fuenteSeccion, Font fuenteNormal, Font fuenteEncabezado)
-    {
-        documento.Add(new Paragraph(T("reportes.detalleProductos"), fuenteSeccion));
-        List<SectorListado> sectores = sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual);
-        var tabla = new PdfPTable(5) { WidthPercentage = 100 };
-        AgregarFila(tabla, fuenteEncabezado, T("productos.colCodigo"), T("productos.colProducto"), T("productos.colCategoria"), T("layout.colSector"), T("productos.colPrecio"));
-        foreach (var sector in sectores)
-        {
-            List<ProductoListado> productos = productoBLL.ObtenerProductosListado(CodigoLocalActual, "", sector.CodigoSector);
-            foreach (var prod in productos)
-            {
-                AgregarFila(tabla, fuenteNormal, prod.CodigoInterno, prod.Nombre, prod.NombreCategoria, sector.Nombre, prod.Precio?.ToString("$#,##0.00") ?? "-");
-            }
-        }
-        documento.Add(tabla);
-        documento.Add(new Paragraph(" "));
-    }
-    private byte[] GenerarGraficoBarras(string titulo, List<string> etiquetas, List<double> valores)
-    {
-        using (var chart = new Chart())
-        {
-            chart.Width = 700;
-            chart.Height = 380;
-            var area = new ChartArea();
-            chart.ChartAreas.Add(area);
-            chart.Titles.Add(new Title(titulo) { Font = new System.Drawing.Font(familiaGrafico, 13, System.Drawing.FontStyle.Bold) });
-            area.AxisX.LabelStyle.Font = new System.Drawing.Font(familiaGrafico, 9);
-            area.AxisY.LabelStyle.Font = new System.Drawing.Font(familiaGrafico, 9);
-            var serie = new Series
-            {
-                ChartType = SeriesChartType.Column,
-                Color = System.Drawing.ColorTranslator.FromHtml("#2f6bff")
-            };
-            for (int i = 0; i < etiquetas.Count; i++)
-            {
-                serie.Points.AddXY(etiquetas[i], valores[i]);
-            }
-            chart.Series.Add(serie);
-            using (var ms = new MemoryStream())
-            {
-                chart.SaveImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-                return ms.ToArray();
-            }
-        }
-    }
-    private byte[] GenerarGraficoComparacion(List<IndicadorSectorListado> baseInd, List<IndicadorSectorListado> propuestoInd)
-    {
-        using (var chart = new Chart())
-        {
-            chart.Width = 700;
-            chart.Height = 380;
-            var area = new ChartArea();
-            chart.ChartAreas.Add(area);
-            chart.Titles.Add(new Title(T("pdf.graficoComparacion")) { Font = new System.Drawing.Font(familiaGrafico, 13, System.Drawing.FontStyle.Bold) });
-            area.AxisX.LabelStyle.Font = new System.Drawing.Font(familiaGrafico, 9);
-            area.AxisY.LabelStyle.Font = new System.Drawing.Font(familiaGrafico, 9);
-            var serieBase = new Series(T("valor.base")) { ChartType = SeriesChartType.Column, Color = System.Drawing.ColorTranslator.FromHtml("#9aa4b5") };
-            var seriePropuesto = new Series(T("comparacion.colPropuesto")) { ChartType = SeriesChartType.Column, Color = System.Drawing.ColorTranslator.FromHtml("#2f6bff") };
-            foreach (var ind in baseInd)
-            {
-                serieBase.Points.AddXY(ind.Sector, (double)ind.Ventas);
-            }
-            foreach (var ind in propuestoInd)
-            {
-                seriePropuesto.Points.AddXY(ind.Sector, (double)ind.Ventas);
-            }
-            chart.Series.Add(serieBase);
-            chart.Series.Add(seriePropuesto);
-            chart.Legends.Add(new Legend { Font = new System.Drawing.Font(familiaGrafico, 9) });
-            using (var ms = new MemoryStream())
-            {
-                chart.SaveImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-                return ms.ToArray();
-            }
-        }
     }
     private void MostrarMensaje(string texto, bool esExito)
     {
@@ -476,6 +369,7 @@ public partial class PaginaReportes : PaginaSegura
     #endregion
     protected void ddlLocal_SelectedIndexChanged(object sender, EventArgs e)
     {
+        ViewState["CodigoComparacion"] = null;
         CargarDropdownEscenarios();
         CargarReportesRecientes();
     }
@@ -486,43 +380,110 @@ public partial class PaginaReportes : PaginaSegura
             MostrarMensaje(Traducir("stock.errSeleccionarLocal"), esExito: false);
             return;
         }
-        DateTime periodoDesde, periodoHasta;
-        if (!DateTime.TryParse(tbPeriodoDesde.Text, out periodoDesde) || !DateTime.TryParse(tbPeriodoHasta.Text, out periodoHasta))
+        DateTime desde, hasta;
+        if (!LeerMes(tbPeriodoDesde.Text, out desde) || !LeerMes(tbPeriodoHasta.Text, out hasta))
         {
             MostrarMensaje(Traducir("reportes.errPeriodo"), esExito: false);
             return;
         }
-        string periodoDesdeStr = periodoDesde.ToString("yyyy-MM");
-        List<IndicadorSectorListado> indicadores = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesdeStr);
-        if (indicadores.Count == 0)
+        DateTime mesActual = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+        if (desde > hasta)
         {
-            MostrarMensaje(Traducir("reportes.errSinDatos"), esExito: false);
+            MostrarMensaje(Traducir("reportes.errPeriodoOrden"), esExito: false);
             return;
         }
-        LocalListado local = localBLL.ObtenerLocalesListado("", null, null).Find(l => l.CodigoLocal == CodigoLocalActual);
-        PrepararIdiomaReporte();
-        string titulo = $"{TValor(ddlTipoReporte.SelectedValue)} — {local?.Nombre}";
-        string nombreArchivo = $"reporte_{CodigoLocalActual}_{DateTime.Now:yyyyMMddHHmmss}.pdf";
-        string carpetaDestino = Server.MapPath("~/Subidas/Reportes/");
-        if (!Directory.Exists(carpetaDestino)) Directory.CreateDirectory(carpetaDestino);
-        string rutaCompleta = Path.Combine(carpetaDestino, nombreArchivo);
-        GenerarPdf(rutaCompleta, titulo, indicadores, periodoDesde, periodoHasta);
-        int codigoEscenarioElegido;
-        int? codigoEscenarioBase = int.TryParse(ddlEscenarioPropuesto.SelectedValue, out codigoEscenarioElegido) && codigoEscenarioElegido > 0 ? codigoEscenarioElegido
+        if (hasta > mesActual)
+        {
+            MostrarMensaje(Traducir("reportes.errPeriodoFuturo"), esExito: false);
+            return;
+        }
+        if ((hasta.Year - desde.Year) * 12 + hasta.Month - desde.Month + 1 > MESES_MAXIMOS)
+        {
+            MostrarMensaje(Traducir("reportes.errPeriodoMaximo", MESES_MAXIMOS), esExito: false);
+            return;
+        }
+        if (!AlgunaSeccionElegida())
+        {
+            MostrarMensaje(Traducir("reportes.errSinSecciones"), esExito: false);
+            return;
+        }
+        if (ddlTipoReporte.SelectedValue == TIPO_COMPARACION && (string.IsNullOrEmpty(ddlEscenarioBase.SelectedValue) || string.IsNullOrEmpty(ddlEscenarioPropuesto.SelectedValue)))
+        {
+            MostrarMensaje(Traducir("pdf.errEscenarios"), esExito: false);
+            return;
+        }
+        // Si el período llega al mes en curso, los datos van hasta hoy
+        DateTime fin = hasta == mesActual ? DateTime.Today : hasta.AddMonths(1).AddDays(-1);
+        try
+        {
+            List<IndicadorSectorListado> indicadores = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, desde.ToString("yyyy-MM"), hasta.ToString("yyyy-MM"));
+            if (indicadores.Count == 0)
+            {
+                MostrarMensaje(Traducir("reportes.errSinDatos"), esExito: false);
+                return;
+            }
+            LocalBE local = localBLL.ObtenerLocalPorCodigo(CodigoLocalActual);
+            PrepararIdiomaReporte();
+            DatosReporte datos = ArmarDatos(indicadores, desde, hasta, fin, local);
+            FuentesReporte fuentes = FuentesReporte.Preparar(idiomaReporte == null ? "es" : idiomaReporte.Codigo, Server.MapPath("~/"));
+            var constructor = new ConstructorReportePdf(T, new GraficosReporte(fuentes.FamiliaGrafico), fuentes, CulturaReporte());
+            byte[] pdf = constructor.Construir(datos);
+
+            string nombreArchivo = $"reporte_{CodigoLocalActual}_{DateTime.Now:yyyyMMddHHmmss}.pdf";
+            string carpetaDestino = Server.MapPath("~/Subidas/Reportes/");
+            if (!Directory.Exists(carpetaDestino)) Directory.CreateDirectory(carpetaDestino);
+            File.WriteAllBytes(Path.Combine(carpetaDestino, nombreArchivo), pdf);
+
+            int codigoEscenarioElegido;
+            int? codigoEscenario = int.TryParse(ddlEscenarioPropuesto.SelectedValue, out codigoEscenarioElegido) && codigoEscenarioElegido > 0 ? codigoEscenarioElegido
                                  : int.TryParse(ddlEscenarioBase.SelectedValue, out codigoEscenarioElegido) && codigoEscenarioElegido > 0 ? codigoEscenarioElegido : (int?)null;
-        int? codigoComparacion = ViewState["CodigoComparacion"] as int?;
-        var reporte = new ReporteBE(CodigoLocalActual, codigoEscenarioBase, codigoComparacion, titulo, ddlTipoReporte.SelectedValue, "", $"Subidas/Reportes/{nombreArchivo}", periodoDesde, periodoHasta, DateTime.Now);
-        reporteBLL.CrearReporte(reporte);
-        MostrarMensaje(Traducir("reportes.msgGenerado"), esExito: true);
+            int? codigoComparacion = chkComparacionEscenarios.Checked ? ViewState["CodigoComparacion"] as int? : null;
+            string titulo = $"{TraducirValor(ddlTipoReporte.SelectedValue)} — {local?.Nombre}";
+            var reporte = new ReporteBE(CodigoLocalActual, codigoEscenario, codigoComparacion, titulo, ddlTipoReporte.SelectedValue, DescribirMeses(desde, hasta),
+                                        $"Subidas/Reportes/{nombreArchivo}", desde, fin, DateTime.Now);
+            reporteBLL.CrearReporte(reporte);
+            MostrarMensaje(Traducir("reportes.msgGenerado"), esExito: true);
+        }
+        catch (ExcepcionTraducible ex)
+        {
+            MostrarMensaje(TraducirError(ex), esExito: false);
+        }
         CargarReportesRecientes();
     }
     protected void rptReportesRecientes_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
         int codigoReporte = int.Parse(e.CommandArgument.ToString());
+        if (e.CommandName == "EliminarReporte")
+        {
+            try
+            {
+                string ruta = reporteBLL.EliminarReporte(codigoReporte);
+                BorrarArchivo(ruta);
+                MostrarMensaje(Traducir("reportes.msgEliminado"), esExito: true);
+            }
+            catch (ExcepcionTraducible ex)
+            {
+                MostrarMensaje(TraducirError(ex), esExito: false);
+            }
+            CargarReportesRecientes();
+            return;
+        }
         ReporteBE reporte = reporteBLL.ObtenerReportePorCodigo(codigoReporte);
+        if (reporte == null) return;
         if (e.CommandName == "VerReporte" || e.CommandName == "DescargarReporte")
         {
             Response.Redirect("~/" + reporte.RutaArchivo);
         }
+    }
+    private void BorrarArchivo(string pRutaRelativa)
+    {
+        if (string.IsNullOrEmpty(pRutaRelativa)) return;
+        try
+        {
+            string carpeta = Path.GetFullPath(Server.MapPath("~/Subidas/Reportes/"));
+            string ruta = Path.GetFullPath(Server.MapPath("~/" + pRutaRelativa));
+            if (ruta.StartsWith(carpeta, StringComparison.OrdinalIgnoreCase) && File.Exists(ruta)) File.Delete(ruta);
+        }
+        catch (Exception) { } // si el archivo no se puede borrar, el registro ya no aparece igual
     }
 }

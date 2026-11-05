@@ -1799,14 +1799,8 @@
   <data name="reportes.resumen" xml:space="preserve">
     <value>Краткое резюме</value>
   </data>
-  <data name="reportes.detalleSector" xml:space="preserve">
-    <value>Детализация по секциям</value>
-  </data>
   <data name="reportes.estadoStock" xml:space="preserve">
     <value>Состояние запасов</value>
-  </data>
-  <data name="reportes.indicadoresPrincipales" xml:space="preserve">
-    <value>Основные показатели</value>
   </data>
   <data name="reportes.recomendaciones" xml:space="preserve">
     <value>Рекомендации</value>
@@ -1836,28 +1830,13 @@
     <value>— Нет —</value>
   </data>
   <data name="reportes.errPeriodo" xml:space="preserve">
-    <value>Укажите начало и конец периода.</value>
+    <value>Укажите начальный и конечный месяц (формат гггг-мм).</value>
   </data>
   <data name="reportes.errSinDatos" xml:space="preserve">
     <value>Недостаточно данных для формирования отчёта.</value>
   </data>
   <data name="reportes.msgGenerado" xml:space="preserve">
     <value>Отчёт успешно сформирован.</value>
-  </data>
-  <data name="pdf.periodo" xml:space="preserve">
-    <value>Период: {0} - {1}</value>
-  </data>
-  <data name="pdf.generado" xml:space="preserve">
-    <value>Сформирован: {0}</value>
-  </data>
-  <data name="pdf.ventasTotales" xml:space="preserve">
-    <value>Общие продажи за период: {0}</value>
-  </data>
-  <data name="pdf.circulacionPromedio" xml:space="preserve">
-    <value>Средняя проходимость: {0}%</value>
-  </data>
-  <data name="pdf.sectoresAnalizados" xml:space="preserve">
-    <value>Проанализировано секций: {0}</value>
   </data>
   <data name="pdf.colDisponible" xml:space="preserve">
     <value>Доступно</value>
@@ -1876,9 +1855,6 @@
   </data>
   <data name="pdf.ventasPropuesto" xml:space="preserve">
     <value>Продажи (предложение)</value>
-  </data>
-  <data name="pdf.graficoComparacion" xml:space="preserve">
-    <value>Прогноз продаж: база и предложение</value>
   </data>
   <data name="productos.categoriaInactiva" xml:space="preserve">
     <value>{0} (неактивна)</value>
@@ -1924,12 +1900,6 @@
   </data>
   <data name="indicadores.sinSuperficieLocal" xml:space="preserve">
     <value>Укажите площадь магазина, чтобы рассчитать.</value>
-  </data>
-  <data name="pdf.margen" xml:space="preserve">
-    <value>Маржа за период: {0}%</value>
-  </data>
-  <data name="pdf.ventasM2Local" xml:space="preserve">
-    <value>Продажи магазина на м²: {0}</value>
   </data>
   <data name="layout.vigente" xml:space="preserve">
     <value>Действующий план</value>
@@ -2533,5 +2503,164 @@
   </data>
   <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
     <value>На складе {0} ед.: при темпе продаж за период хватит на {1:#,##0} дн. (больше {2}). Сократить закупки или провести акцию.</value>
+  </data>
+  <data name="pdf.sinPeriodoAnterior" xml:space="preserve">
+    <value>Нет данных за предыдущий период</value>
+  </data>
+  <data name="pdf.vsPeriodoAnterior" xml:space="preserve">
+    <value>{0} к предыдущему периоду</value>
+  </data>
+  <data name="pdf.sinCostos" xml:space="preserve">
+    <value>Себестоимость не загружена</value>
+  </data>
+  <data name="pdf.margenDetalle" xml:space="preserve">
+    <value>По товарам с себестоимостью</value>
+  </data>
+  <data name="pdf.sinSuperficie" xml:space="preserve">
+    <value>Площадь не указана</value>
+  </data>
+  <data name="pdf.superficieLocal" xml:space="preserve">
+    <value>{0} м² магазина</value>
+  </data>
+  <data name="pdf.sinSectores" xml:space="preserve">
+    <value>У магазина нет секторов.</value>
+  </data>
+  <data name="pdf.mejorSector" xml:space="preserve">
+    <value>Лучший сектор: {0} (индекс {1})</value>
+  </data>
+  <data name="pdf.sectorRevisar" xml:space="preserve">
+    <value>Сектор для пересмотра: {0} (индекс {1})</value>
+  </data>
+  <data name="pdf.alertasStock" xml:space="preserve">
+    <value>{0} товаров с низким или критическим запасом</value>
+  </data>
+  <data name="pdf.sinVentas" xml:space="preserve">
+    <value>За период продаж нет.</value>
+  </data>
+  <data name="pdf.notaEnCurso" xml:space="preserve">
+    <value>* Текущий месяц: продажи по сегодняшний день.</value>
+  </data>
+  <data name="pdf.colIndice" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="pdf.dias" xml:space="preserve">
+    <value>{0} дн.</value>
+  </data>
+  <data name="pdf.sinBase" xml:space="preserve">
+    <value>Нет продаж в базовом сценарии</value>
+  </data>
+  <data name="pdf.vsBase" xml:space="preserve">
+    <value>{0} к базовому</value>
+  </data>
+  <data name="pdf.puntosVsBase" xml:space="preserve">
+    <value>{0} п. к базовому</value>
+  </data>
+  <data name="pdf.sectoresMejoran" xml:space="preserve">
+    <value>Секторы с улучшением</value>
+  </data>
+  <data name="pdf.xDeY" xml:space="preserve">
+    <value>{0} из {1}</value>
+  </data>
+  <data name="pdf.empeoran" xml:space="preserve">
+    <value>{0} ухудшаются</value>
+  </data>
+  <data name="pdf.indiceBaseAPropuesto" xml:space="preserve">
+    <value>Индекс (базовый → предлагаемый)</value>
+  </data>
+  <data name="pdf.cambiosDe" xml:space="preserve">
+    <value>Изменения в {0}:</value>
+  </data>
+  <data name="pdf.notaSimulacion" xml:space="preserve">
+    <value>Прогнозные продажи и индексы — оценки модели моделирования на основе фактических данных периода.</value>
+  </data>
+  <data name="pdf.oportunidades" xml:space="preserve">
+    <value>Возможности по товарам</value>
+  </data>
+  <data name="pdf.sinOportunidades" xml:space="preserve">
+    <value>За период возможностей не обнаружено.</value>
+  </data>
+  <data name="pdf.colTipo" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="pdf.colMotivo" xml:space="preserve">
+    <value>Причина и рекомендация</value>
+  </data>
+  <data name="pdf.sinStock" xml:space="preserve">
+    <value>У магазина нет данных о запасах.</value>
+  </data>
+  <data name="pdf.sinUbicar" xml:space="preserve">
+    <value>Не размещён</value>
+  </data>
+  <data name="pdf.sinProductos" xml:space="preserve">
+    <value>Товары не загружены.</value>
+  </data>
+  <data name="pdf.metaLocal" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="pdf.metaPeriodo" xml:space="preserve">
+    <value>Период</value>
+  </data>
+  <data name="pdf.metaGenerado" xml:space="preserve">
+    <value>Создан</value>
+  </data>
+  <data name="pdf.pagina" xml:space="preserve">
+    <value>Страница {0} из {1}</value>
+  </data>
+  <data name="pdf.indiceBueno" xml:space="preserve">
+    <value>Хороший</value>
+  </data>
+  <data name="pdf.indiceRegular" xml:space="preserve">
+    <value>Средний</value>
+  </data>
+  <data name="pdf.indiceBajo" xml:space="preserve">
+    <value>Низкий</value>
+  </data>
+  <data name="pdf.tituloCompleto" xml:space="preserve">
+    <value>Полный отчёт</value>
+  </data>
+  <data name="pdf.tituloComparacion" xml:space="preserve">
+    <value>Отчёт о сравнении сценариев</value>
+  </data>
+  <data name="pdf.tituloIndicadores" xml:space="preserve">
+    <value>Отчёт по показателям</value>
+  </data>
+  <data name="pdf.tituloStock" xml:space="preserve">
+    <value>Отчёт по запасам</value>
+  </data>
+  <data name="reportes.mesDesde" xml:space="preserve">
+    <value>С (месяц) *</value>
+  </data>
+  <data name="reportes.mesHasta" xml:space="preserve">
+    <value>По (месяц) *</value>
+  </data>
+  <data name="reportes.formatoMes" xml:space="preserve">
+    <value>гггг-мм</value>
+  </data>
+  <data name="reportes.ayudaPeriodo" xml:space="preserve">
+    <value>Все разделы используют выбранные месяцы. Если период доходит до текущего месяца, данные берутся по сегодняшний день.</value>
+  </data>
+  <data name="reportes.errPeriodoOrden" xml:space="preserve">
+    <value>Начальный месяц не может быть позже конечного.</value>
+  </data>
+  <data name="reportes.errPeriodoFuturo" xml:space="preserve">
+    <value>Период не может включать будущие месяцы.</value>
+  </data>
+  <data name="reportes.errPeriodoMaximo" xml:space="preserve">
+    <value>Период может составлять не более {0} мес.</value>
+  </data>
+  <data name="reportes.errSinSecciones" xml:space="preserve">
+    <value>Выберите хотя бы один раздел для отчёта.</value>
+  </data>
+  <data name="reportes.evolucionVentas" xml:space="preserve">
+    <value>Динамика продаж</value>
+  </data>
+  <data name="reportes.eliminar" xml:space="preserve">
+    <value>Удалить отчёт</value>
+  </data>
+  <data name="reportes.confirmarEliminar" xml:space="preserve">
+    <value>Удалить этот отчёт? PDF-файл тоже будет удалён.</value>
+  </data>
+  <data name="reportes.msgEliminado" xml:space="preserve">
+    <value>Отчёт удалён.</value>
   </data>
 </root>

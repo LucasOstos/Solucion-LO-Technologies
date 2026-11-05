@@ -48,6 +48,16 @@ namespace DAL
             }
             return reporte;
         }
+        public void EliminarReporte(int pCodigoReporte)
+        {
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand("DELETE FROM Reporte WHERE CodigoReporte = @CodigoReporte", CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoReporte", pCodigoReporte);
+                CO.Open();
+                CM.ExecuteNonQuery();
+            }
+        }
         public int AgregarReporte(ReporteBE pReporte)
         {
             string query = @"INSERT INTO Reporte (CodigoLocal, CodigoEscenario, CodigoComparacion, Titulo, TipoReporte, Descripcion, RutaArchivo, PeriodoDesde, PeriodoHasta, FechaGeneracion)
@@ -77,7 +87,7 @@ namespace DAL
                                  DR["CodigoComparacion"] == DBNull.Value ? (int?)null : int.Parse(DR["CodigoComparacion"].ToString()),
                                  DR["Titulo"].ToString(), DR["TipoReporte"].ToString(), DR["Descripcion"] == DBNull.Value ? "" : DR["Descripcion"].ToString(), DR["RutaArchivo"].ToString(),
                                  DR["PeriodoDesde"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(DR["PeriodoDesde"]),
-                                 DR["PeriodoHasta"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(DR["PeriodoHasta"]), Convert.ToDateTime(DR["FechaGeneracion"]));            
+                                 DR["PeriodoHasta"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(DR["PeriodoHasta"]), Convert.ToDateTime(DR["FechaGeneracion"]));
         }
     }
 }

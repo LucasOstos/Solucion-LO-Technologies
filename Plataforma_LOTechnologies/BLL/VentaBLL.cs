@@ -14,10 +14,10 @@ namespace BLL
         private VentaDAL ventaDAL = new VentaDAL();
         private DigitoVerificador digitos = new DigitoVerificador();
         //pAgrupacion: VentaDAL.AGRUPAR_SECTOR / AGRUPAR_CATEGORIA / AGRUPAR_PRODUCTO
-        public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde, string pAgrupacion = VentaDAL.AGRUPAR_SECTOR)
+        public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde, string pAgrupacion = VentaDAL.AGRUPAR_SECTOR, string pPeriodoHasta = null)
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
-            return ventaDAL.ObtenerVentasAgrupadas(pCodigoLocal, pPeriodoDesde, pAgrupacion);
+            return ventaDAL.ObtenerVentasAgrupadas(pCodigoLocal, pPeriodoDesde, pAgrupacion, pPeriodoHasta);
         }
         public List<VentaDetalle> ObtenerUltimasVentas(int pCodigoLocal, int pCantidad)
         {
@@ -29,10 +29,16 @@ namespace BLL
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             return ventaDAL.ObtenerTotalVentas(pCodigoLocal, pPeriodoDesde);
         }
-        public decimal? ObtenerMargenTotal(int pCodigoLocal, string pPeriodoDesde)
+        public decimal? ObtenerMargenTotal(int pCodigoLocal, string pPeriodoDesde, string pPeriodoHasta = null)
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
-            return ventaDAL.ObtenerMargenTotal(pCodigoLocal, pPeriodoDesde);
+            return ventaDAL.ObtenerMargenTotal(pCodigoLocal, pPeriodoDesde, pPeriodoHasta);
+        }
+        // Ventas del local entre dos fechas inclusive (incluye productos sin ubicar)
+        public decimal ObtenerTotalVentasEntreFechas(int pCodigoLocal, DateTime pDesde, DateTime pHasta)
+        {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
+            return ventaDAL.ObtenerTotalVentasEntreFechas(pCodigoLocal, pDesde, pHasta);
         }
         public int ObtenerUnidadesVendidas(int pCodigoLocal, string pPeriodoDesde)
         {
@@ -59,8 +65,6 @@ namespace BLL
             digitos.ActualizarDigitoVertical("Venta");
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Eliminar venta", "Gestión operaciones", 2);
         }
-        //Reglas de una venta (carga manual e importación). Devuelve la clave del error o null si es válida.
-        //Si no viene importe se usa precio x cantidad; sin importe ni precio no se puede registrar.
         internal static string ValidarVenta(DateTime pFecha, int pCantidad, decimal? pImporte, decimal? pPrecioProducto, out decimal pImporteFinal)
         {
             pImporteFinal = 0;

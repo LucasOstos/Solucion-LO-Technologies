@@ -20,16 +20,18 @@ namespace BLL
         public const int INDICE_BUENO = 70;    // verde desde 70
         public const int INDICE_REGULAR = 50;  // amarillo desde 50, menos de 50 rojo
 
-        public List<IndicadorSectorListado> CalcularIndicadoresPorSector(int pCodigoLocal, string pPeriodoDesde)
+        // pPeriodoHasta null = hasta hoy. Si el período hasta es el mes en curso, se cuenta hasta hoy
+        public List<IndicadorSectorListado> CalcularIndicadoresPorSector(int pCodigoLocal, string pPeriodoDesde, string pPeriodoHasta = null)
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
-            List<IndicadorSectorListado> indicadores = indicadorDAL.CalcularIndicadoresPorSector(pCodigoLocal, pPeriodoDesde);
+            List<IndicadorSectorListado> indicadores = indicadorDAL.CalcularIndicadoresPorSector(pCodigoLocal, pPeriodoDesde, pPeriodoHasta);
             DateTime inicio = InicioDelPeriodo(pPeriodoDesde);
-            int meses = Math.Max(1, (DateTime.Today.Year - inicio.Year) * 12 + DateTime.Today.Month - inicio.Month + 1);
-            int dias = Math.Max(1, (DateTime.Today - inicio).Days + 1);
+            DateTime fin = pPeriodoHasta == null ? DateTime.Today : FinDelMes(InicioDelPeriodo(pPeriodoHasta));
+            int meses = Math.Max(1, (fin.Year - inicio.Year) * 12 + fin.Month - inicio.Month + 1);
+            int dias = Math.Max(1, (fin - inicio).Days + 1);
             foreach (var ind in indicadores)
             {
-                // Rotación mensual: qué % del stock actual se vende por mes. Sin tope: 250% = se vende 2,5 veces el stock por mes.
+                // Rotación mensual: qué % del stock actual se vende por mes
                 ind.Rotacion = ind.StockDisponible > 0 ? Math.Round(ind.UnidadesVendidas / (decimal)meses / ind.StockDisponible * 100, 1) : 0;
                 // Cobertura: cuántos días alcanza el stock al ritmo de venta diario del período
                 ind.CoberturaDias = ind.StockDisponible > 0 && ind.UnidadesVendidas > 0
@@ -40,11 +42,17 @@ namespace BLL
         }
         public decimal CompletarVariacion(int pCodigoLocal, int pMeses, List<IndicadorSectorListado> pIndicadores)
         {
-            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             DateTime hoy = DateTime.Today;
             DateTime inicioActual = new DateTime(hoy.Year, hoy.Month, 1).AddMonths(-(Math.Max(pMeses, 1) - 1));
-            DateTime inicioAnterior = inicioActual.AddMonths(-Math.Max(pMeses, 1));
-            DateTime finAnterior = hoy.AddMonths(-Math.Max(pMeses, 1));
+            return CompletarVariacion(pCodigoLocal, inicioActual, hoy, pIndicadores);
+        }
+        public decimal CompletarVariacion(int pCodigoLocal, DateTime pDesde, DateTime pHasta, List<IndicadorSectorListado> pIndicadores)
+        {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
+            DateTime inicioActual = new DateTime(pDesde.Year, pDesde.Month, 1);
+            int meses = Math.Max(1, (pHasta.Year - inicioActual.Year) * 12 + pHasta.Month - inicioActual.Month + 1);
+            DateTime inicioAnterior = inicioActual.AddMonths(-meses);
+            DateTime finAnterior = pHasta.AddMonths(-meses);
             Dictionary<int, decimal> anteriores = indicadorDAL.ObtenerVentasPorSectorEntreFechas(pCodigoLocal, inicioAnterior, finAnterior);
             foreach (var ind in pIndicadores)
             {
@@ -63,15 +71,23 @@ namespace BLL
         // Ventas del local de los últimos meses (incluido el actual, marcado como "en curso")
         public List<VentaMensual> ObtenerEvolucionVentas(int pCodigoLocal, int pMeses)
         {
-            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
             DateTime primerMes = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1).AddMonths(-(pMeses - 1));
-            Dictionary<string, decimal> ventas = ventaDAL.ObtenerVentasPorMes(pCodigoLocal, primerMes.ToString("yyyy-MM"));
+            return ObtenerEvolucionVentas(pCodigoLocal, primerMes, DateTime.Today);
+        }
+        // Ventas del local mes por mes entre dos meses inclusive (los meses sin ventas van en 0)
+        public List<VentaMensual> ObtenerEvolucionVentas(int pCodigoLocal, DateTime pDesde, DateTime pHasta)
+        {
+            ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
+            DateTime primerMes = new DateTime(pDesde.Year, pDesde.Month, 1);
+            DateTime ultimoMes = new DateTime(pHasta.Year, pHasta.Month, 1);
+            string mesEnCurso = DateTime.Today.ToString("yyyy-MM");
+            Dictionary<string, decimal> ventas = ventaDAL.ObtenerVentasPorMes(pCodigoLocal, primerMes.ToString("yyyy-MM"), ultimoMes.ToString("yyyy-MM"));
             var evolucion = new List<VentaMensual>();
-            for (int i = 0; i < pMeses; i++)
+            for (DateTime mes = primerMes; mes <= ultimoMes; mes = mes.AddMonths(1))
             {
-                string periodo = primerMes.AddMonths(i).ToString("yyyy-MM");
+                string periodo = mes.ToString("yyyy-MM");
                 decimal monto;
-                evolucion.Add(new VentaMensual { Periodo = periodo, Monto = ventas.TryGetValue(periodo, out monto) ? monto : 0, EnCurso = i == pMeses - 1 });
+                evolucion.Add(new VentaMensual { Periodo = periodo, Monto = ventas.TryGetValue(periodo, out monto) ? monto : 0, EnCurso = periodo == mesEnCurso });
             }
             return evolucion;
         }
@@ -104,7 +120,7 @@ namespace BLL
             IndicadorBE existente;
             if (pExistentes.TryGetValue(codigoSector + "|" + nombre, out existente))
             {
-                if (existente.Valor == valor) return; // mismo valor: no se toca (ni el DVH)
+                if (existente.Valor == valor) return;
                 indicadorDAL.ActualizarIndicador(existente.CodigoIndicador, valor, DateTime.Now);
                 pModificados.Add(existente.CodigoIndicador);
                 return;
@@ -129,6 +145,12 @@ namespace BLL
             DateTime inicio;
             if (DateTime.TryParseExact(pPeriodoDesde + "-01", "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out inicio)) return inicio;
             return new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+        }
+        // Último día del mes, sin pasar de hoy
+        private static DateTime FinDelMes(DateTime pInicioMes)
+        {
+            DateTime fin = pInicioMes.AddMonths(1).AddDays(-1);
+            return fin > DateTime.Today ? DateTime.Today : fin;
         }
         private static decimal MaximaRotacion(List<IndicadorSectorListado> pIndicadores)
         {

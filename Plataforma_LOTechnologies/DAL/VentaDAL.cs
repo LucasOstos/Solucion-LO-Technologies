@@ -15,7 +15,7 @@ namespace DAL
         public const string AGRUPAR_CATEGORIA = "categoria";
         public const string AGRUPAR_PRODUCTO = "producto";
         // Ventas del período agrupadas por mes y por sector, categoría o producto.
-        public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde, string pAgrupacion)
+        public List<VentaListado> ObtenerVentasAgrupadas(int pCodigoLocal, string pPeriodoDesde, string pAgrupacion, string pPeriodoHasta = null)
         {
             List<VentaListado> ventas = new List<VentaListado>();
             string columnasGrupo;
@@ -30,13 +30,14 @@ namespace DAL
                              SUM(CASE WHEN p.Costo IS NULL THEN 0 ELSE v.Cantidad * p.Costo END) AS CostoVendido FROM Venta v
                              INNER JOIN Producto p ON v.CodigoProducto = p.CodigoProducto INNER JOIN Categoria c ON p.CodigoCategoria = c.CodigoCategoria
                              LEFT JOIN ProductoUbicacion pu ON pu.CodigoProducto = v.CodigoProducto AND pu.CodigoLocal = v.CodigoLocal
-                             LEFT JOIN Sector s ON pu.CodigoSector = s.CodigoSector WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde
+                             LEFT JOIN Sector s ON pu.CodigoSector = s.CodigoSector WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND v.Periodo <= @PeriodoHasta
                              GROUP BY v.Periodo, {columnasGrupo} ORDER BY v.Periodo DESC, Monto DESC";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
                 CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
                 CM.Parameters.AddWithValue("@PeriodoDesde", pPeriodoDesde);
+                CM.Parameters.AddWithValue("@PeriodoHasta", pPeriodoHasta ?? IndicadorDAL.PERIODO_SIN_LIMITE);
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {
@@ -61,16 +62,17 @@ namespace DAL
             return ventas;
         }
         //Margen del local en el período, sobre las ventas de productos con costo cargado (null = ninguno tiene costo)
-        public decimal? ObtenerMargenTotal(int pCodigoLocal, string pPeriodoDesde)
+        public decimal? ObtenerMargenTotal(int pCodigoLocal, string pPeriodoDesde, string pPeriodoHasta = null)
         {
             string query = @"SELECT ISNULL(SUM(v.ImporteTotal), 0) AS VentasConCosto, ISNULL(SUM(v.Cantidad * p.Costo), 0) AS CostoVendido FROM Venta v
                              INNER JOIN Producto p ON p.CodigoProducto = v.CodigoProducto
-                             WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND p.Costo IS NOT NULL";
+                             WHERE v.CodigoLocal = @CodigoLocal AND v.Periodo >= @PeriodoDesde AND v.Periodo <= @PeriodoHasta AND p.Costo IS NOT NULL";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
                 CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
                 CM.Parameters.AddWithValue("@PeriodoDesde", pPeriodoDesde);
+                CM.Parameters.AddWithValue("@PeriodoHasta", pPeriodoHasta ?? IndicadorDAL.PERIODO_SIN_LIMITE);
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {
@@ -80,16 +82,17 @@ namespace DAL
             }
         }
         //Ventas del local mes por mes desde un período
-        public Dictionary<string, decimal> ObtenerVentasPorMes(int pCodigoLocal, string pPeriodoDesde)
+        public Dictionary<string, decimal> ObtenerVentasPorMes(int pCodigoLocal, string pPeriodoDesde, string pPeriodoHasta = null)
         {
             var meses = new Dictionary<string, decimal>();
             string query = @"SELECT Periodo, SUM(ImporteTotal) AS Monto FROM Venta
-                             WHERE CodigoLocal = @CodigoLocal AND Periodo >= @PeriodoDesde GROUP BY Periodo";
+                             WHERE CodigoLocal = @CodigoLocal AND Periodo >= @PeriodoDesde AND Periodo <= @PeriodoHasta GROUP BY Periodo";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
                 CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
                 CM.Parameters.AddWithValue("@PeriodoDesde", pPeriodoDesde);
+                CM.Parameters.AddWithValue("@PeriodoHasta", pPeriodoHasta ?? IndicadorDAL.PERIODO_SIN_LIMITE);
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {
