@@ -1742,9 +1742,6 @@
   <data name="analisis.datosRequeridos" xml:space="preserve">
     <value>البيانات المطلوبة: المنتجات والأقسام والمبيعات والمخزون وحركة المرور في المتجر المحدد.</value>
   </data>
-  <data name="analisis.btnDetectar" xml:space="preserve">
-    <value>اكتشاف فرص إعادة التوزيع</value>
-  </data>
   <data name="analisis.analizados" xml:space="preserve">
     <value>المنتجات التي تم تحليلها</value>
   </data>
@@ -1763,23 +1760,11 @@
   <data name="analisis.todasPrioridades" xml:space="preserve">
     <value>جميع الأولويات</value>
   </data>
-  <data name="analisis.candidatos" xml:space="preserve">
-    <value>مرشحون لإعادة التوزيع</value>
-  </data>
-  <data name="analisis.sinCandidatos" xml:space="preserve">
-    <value>لم يُعثر على منتجات قابلة لإعادة التوزيع في الفترة المحددة.</value>
-  </data>
   <data name="analisis.sinRecomendacion" xml:space="preserve">
     <value>منتجات تم تحليلها دون توصية</value>
   </data>
-  <data name="analisis.bienPosicionados" xml:space="preserve">
-    <value>في موقع جيد</value>
-  </data>
   <data name="analisis.colSectorActual" xml:space="preserve">
     <value>القسم الحالي</value>
-  </data>
-  <data name="analisis.optimo" xml:space="preserve">
-    <value>مثالي</value>
   </data>
   <data name="analisis.errPeriodo" xml:space="preserve">
     <value>فترة غير صالحة.</value>
@@ -2353,5 +2338,71 @@
   </data>
   <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
     <value>بدون تكلفة الوحدة لا يُحسب الهامش. تُدخل في المنتجات والفئات.</value>
+  </data>
+  <data name="analisis.btnAnalizar" xml:space="preserve">
+    <value>تحليل المنتجات</value>
+  </data>
+  <data name="analisis.comoSeDetecta" xml:space="preserve">
+    <value>كيف يتم اكتشاف كل فرصة؟</value>
+  </data>
+  <data name="analisis.tipoEstrellaEscondida" xml:space="preserve">
+    <value>نجم مخفي</value>
+  </data>
+  <data name="analisis.tipoLugarPrivilegiado" xml:space="preserve">
+    <value>يشغل مكاناً مميزاً</value>
+  </data>
+  <data name="analisis.tipoSinMovimiento" xml:space="preserve">
+    <value>بدون حركة</value>
+  </data>
+  <data name="analisis.tipoRiesgoQuiebre" xml:space="preserve">
+    <value>خطر نفاد المخزون</value>
+  </data>
+  <data name="analisis.tipoSinUbicar" xml:space="preserve">
+    <value>يُباع دون موقع</value>
+  </data>
+  <data name="analisis.ayudaEstrella" xml:space="preserve">
+    <value>المنتج ضمن أعلى 25% من منتجات المتجر مبيعاً (بالمبلغ)، لكنه في قسم حركته أقل من المتوسط بـ 10 نقاط أو أكثر. يُقترح عرض إضافي في القسم الأكثر حركة. أولوية عالية إذا كان فرق الحركة 25 نقطة أو أكثر.</value>
+  </data>
+  <data name="analisis.ayudaLugar" xml:space="preserve">
+    <value>المنتج ضمن أقل 25% مبيعاً (أو لم يُبع) ويشغل قسماً حركته أعلى من المتوسط بـ 10 نقاط أو أكثر.</value>
+  </data>
+  <data name="analisis.ayudaSinMovimiento" xml:space="preserve">
+    <value>له مخزون في المتجر ولا توجد مبيعات في الفترة.</value>
+  </data>
+  <data name="analisis.ayudaQuiebre" xml:space="preserve">
+    <value>بوتيرة بيع الفترة، يكفي المخزون أقل من 7 أيام (أو نفد بالفعل).</value>
+  </data>
+  <data name="analisis.ayudaSinUbicar" xml:space="preserve">
+    <value>يُباع في المتجر لكنه غير موضوع في أي قسم: لا تُحتسب مبيعاته في مؤشرات الأقسام.</value>
+  </data>
+  <data name="analisis.todosTipos" xml:space="preserve">
+    <value>كل الأنواع</value>
+  </data>
+  <data name="analisis.oportunidades" xml:space="preserve">
+    <value>الفرص المكتشفة</value>
+  </data>
+  <data name="analisis.sinOportunidades" xml:space="preserve">
+    <value>لم يتم اكتشاف فرص للفترة والمرشحات المختارة.</value>
+  </data>
+  <data name="analisis.todosConObservacion" xml:space="preserve">
+    <value>جميع المنتجات التي تم تحليلها لها ملاحظة.</value>
+  </data>
+  <data name="analisis.motivoQuiebre" xml:space="preserve">
+    <value>تبقى {0} وحدة: تكفي {1:0} يوماً بوتيرة بيع الفترة (أقل من {2}). أعد التزويد.</value>
+  </data>
+  <data name="analisis.motivoSinUbicar" xml:space="preserve">
+    <value>باع {0} وحدة ({1:$#,##0}) لكنه غير موضوع في أي قسم من المتجر: لا تُضاف مبيعاته إلى مؤشرات الأقسام. ضعه من المنتجات والفئات.</value>
+  </data>
+  <data name="analisis.motivoEstrella" xml:space="preserve">
+    <value>من أكثر منتجات المتجر مبيعاً، لكنه في قسم قليل الحركة ({0:0.#}%). عرض إضافي في {1} (حركة {2:0.#}%) قد يزيد مبيعاته.</value>
+  </data>
+  <data name="analisis.motivoLugarSinVentas" xml:space="preserve">
+    <value>لم تكن له مبيعات في الفترة ويشغل قسماً كثير الحركة (حركة {0:0.#}%) بمخزون {1} وحدة. ستحقق هذه المساحة عائداً أكبر بمنتج أكثر مبيعاً.</value>
+  </data>
+  <data name="analisis.motivoSinMovimiento" xml:space="preserve">
+    <value>لديه {0} وحدة في المخزون ولا توجد مبيعات في آخر {1} يوماً. فكّر في عرض ترويجي أو إيقافه.</value>
+  </data>
+  <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
+    <value>من أقل المنتجات مبيعاً، لكنه في قسم كثير الحركة (حركة {0:0.#}%، والمتوسط {1:0.#}%). يُستحسن إفساح هذه المساحة لمنتجات أكثر مبيعاً.</value>
   </data>
 </root>

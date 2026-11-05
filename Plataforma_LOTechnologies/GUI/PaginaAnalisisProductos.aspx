@@ -45,7 +45,22 @@
                         </div>
                     </div>
                     <p class="texto-secundario" runat="server" Clave="analisis.datosRequeridos">Datos requeridos: productos, sectores, ventas, stock y circulación del local seleccionado.</p>
-                    <asp:Button ID="btnDetectar" runat="server" CssClass="boton-nuevo" Text="Detectar oportunidades de reubicación" Clave="analisis.btnDetectar" OnClick="btnDetectar_Click" CausesValidation="false" />
+                    <asp:Button ID="btnDetectar" runat="server" CssClass="boton-nuevo" Text="Analizar productos" Clave="analisis.btnAnalizar" OnClick="btnDetectar_Click" CausesValidation="false" />
+                    <details class="ap-como-se-detecta">
+                        <summary runat="server" Clave="analisis.comoSeDetecta">¿Cómo se detecta cada oportunidad?</summary>
+                        <dl>
+                            <dt runat="server" Clave="analisis.tipoEstrellaEscondida">Estrella escondida</dt>
+                            <dd runat="server" Clave="analisis.ayudaEstrella">Está en el 25% de productos que más venden del local (por importe), pero en un sector con circulación 10 puntos o más por debajo del promedio. Se sugiere una exhibición adicional en el sector de más tránsito. Prioridad alta si la diferencia de circulación es de 25 puntos o más.</dd>
+                            <dt runat="server" Clave="analisis.tipoLugarPrivilegiado">Ocupa lugar privilegiado</dt>
+                            <dd runat="server" Clave="analisis.ayudaLugar">Está en el 25% que menos vende (o no vendió nada) y ocupa un sector con circulación 10 puntos o más por encima del promedio.</dd>
+                            <dt runat="server" Clave="analisis.tipoSinMovimiento">Sin movimiento</dt>
+                            <dd runat="server" Clave="analisis.ayudaSinMovimiento">Tiene stock en el local y ninguna venta en el período.</dd>
+                            <dt runat="server" Clave="analisis.tipoRiesgoQuiebre">Riesgo de quiebre</dt>
+                            <dd runat="server" Clave="analisis.ayudaQuiebre">Al ritmo de venta del período, el stock alcanza para menos de 7 días (o ya no hay stock).</dd>
+                            <dt runat="server" Clave="analisis.tipoSinUbicar">Sin ubicar con ventas</dt>
+                            <dd runat="server" Clave="analisis.ayudaSinUbicar">Se vende en el local pero no está ubicado en ningún sector: sus ventas no cuentan en los indicadores por sector.</dd>
+                        </dl>
+                    </details>
                 </div>
 
                 <asp:Panel ID="pnlResultados" runat="server" Visible="false">
@@ -74,8 +89,17 @@
                     </div>
 
                     <div class="filtros">
-                        <asp:TextBox ID="tbBuscarProducto" runat="server" CssClass="campo-buscar" placeholder="Buscar producto o categoría..." ClavePlaceholder="analisis.buscarPlaceholder" />
-                        <asp:DropDownList ID="ddlFiltroPrioridad" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed">
+                        <asp:TextBox ID="tbBuscarProducto" runat="server" CssClass="campo-buscar" placeholder="Buscar producto o categoría..." ClavePlaceholder="analisis.buscarPlaceholder"
+                            ClaveAria="analisis.buscarPlaceholder" AutoPostBack="true" OnTextChanged="Filtro_Changed" />
+                        <asp:DropDownList ID="ddlFiltroTipo" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed" ClaveAria="analisis.todosTipos">
+                            <asp:ListItem Text="Todos los tipos" Value="" Clave="analisis.todosTipos" />
+                            <asp:ListItem Text="Estrella escondida" Value="EstrellaEscondida" Clave="analisis.tipoEstrellaEscondida" />
+                            <asp:ListItem Text="Ocupa lugar privilegiado" Value="LugarPrivilegiado" Clave="analisis.tipoLugarPrivilegiado" />
+                            <asp:ListItem Text="Sin movimiento" Value="SinMovimiento" Clave="analisis.tipoSinMovimiento" />
+                            <asp:ListItem Text="Riesgo de quiebre" Value="RiesgoQuiebre" Clave="analisis.tipoRiesgoQuiebre" />
+                            <asp:ListItem Text="Sin ubicar con ventas" Value="SinUbicar" Clave="analisis.tipoSinUbicar" />
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlFiltroPrioridad" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed" ClaveAria="analisis.todasPrioridades">
                             <asp:ListItem Text="Todas las prioridades" Value="" Clave="analisis.todasPrioridades" />
                             <asp:ListItem Text="Alta" Value="Alta" Clave="valor.alta" />
                             <asp:ListItem Text="Media" Value="Media" Clave="valor.media" />
@@ -84,66 +108,78 @@
                     </div>
 
                     <div class="tarjeta">
-                        <h2 runat="server" Clave="analisis.candidatos">Candidatos a reubicación</h2>
+                        <h2 runat="server" Clave="analisis.oportunidades">Oportunidades detectadas</h2>
                         <asp:Repeater ID="rptCandidatos" runat="server">
                             <ItemTemplate>
                                 <div class='<%# "ap-candidato ap-borde-" + Eval("Prioridad").ToString().ToLower() %>'>
                                     <div class="ap-candidato-info">
                                         <div class="texto-principal">
-                                            <%# Eval("NombreProducto") %>
+                                            <%# HttpUtility.HtmlEncode(Eval("CodigoInterno") + " - " + Eval("NombreProducto")) %>
                                             <span class='<%# "etiqueta ap-etiqueta-" + Eval("Prioridad").ToString().ToLower() %>'><%# TraducirValor(Eval("Prioridad")) %></span>
+                                            <span class="etiqueta ap-etiqueta-tipo"><%# HttpUtility.HtmlEncode(TraducirTipo(Eval("Tipo"))) %></span>
                                         </div>
-                                        <div class="texto-secundario"><%# Eval("NombreCategoria") %></div>
-                                    </div>
-                                    <div class="ap-candidato-movimiento">
-                                        <span class="etiqueta etiqueta-info"><%# Eval("SectorActual") %></span>
-                                        <span>&rarr;</span>
-                                        <span class="etiqueta etiqueta-activo"><%# Eval("SectorSugerido") %></span>
+                                        <div class="texto-secundario ap-candidato-ubicacion">
+                                            <%# HttpUtility.HtmlEncode(Eval("NombreCategoria")) %> &middot;
+                                            <span class="etiqueta etiqueta-info"><%# HttpUtility.HtmlEncode(MostrarSector(Eval("SectorActual"))) %></span>
+                                            <asp:PlaceHolder runat="server" Visible='<%# Eval("SectorSugerido") != null %>'>
+                                                <span aria-hidden="true">&rarr;</span>
+                                                <span class="etiqueta etiqueta-activo"><%# HttpUtility.HtmlEncode(Eval("SectorSugerido")) %></span>
+                                            </asp:PlaceHolder>
+                                        </div>
+                                        <div class="ap-motivo"><%# HttpUtility.HtmlEncode(MostrarMotivo(Container.DataItem)) %></div>
                                     </div>
                                     <div class="ap-candidato-metricas">
                                         <div><span class="texto-principal"><%# Eval("Ventas") %></span><br />
-                                            <span class="texto-secundario"><%# Traducir("indicadores.colVentas") %></span></div>
-                                        <div><span class="texto-principal"><%# Eval("Rotacion") %>%</span><br />
-                                            <span class="texto-secundario"><%# Traducir("indicadores.colRotacion") %></span></div>
-                                        <div><span class="texto-principal"><%# Eval("Circulacion") %>%</span><br />
+                                            <span class="texto-secundario"><%# Traducir("stock.colUnidades") %></span></div>
+                                        <div><span class="texto-principal"><%# Eval("Importe", "{0:$#,##0}") %></span><br />
+                                            <span class="texto-secundario"><%# Traducir("stock.colMonto") %></span></div>
+                                        <div><span class="texto-principal"><%# MostrarMargen(Eval("Margen")) %></span><br />
+                                            <span class="texto-secundario"><%# Traducir("stock.colMargen") %></span></div>
+                                        <div><span class="texto-principal"><%# HttpUtility.HtmlEncode(MostrarCobertura(Eval("CoberturaDias"))) %></span><br />
+                                            <span class="texto-secundario"><%# Traducir("indicadores.colCobertura") %></span></div>
+                                        <div><span class="texto-principal"><%# Eval("SectorActual") == null ? "-" : Eval("Circulacion") + "%" %></span><br />
                                             <span class="texto-secundario"><%# Traducir("layout.colCirculacion") %></span></div>
                                     </div>
+                                    <asp:HyperLink runat="server" CssClass="ap-crear-escenario" NavigateUrl='<%# UrlCrearEscenario(Container.DataItem) %>'
+                                        Visible='<%# UrlCrearEscenario(Container.DataItem) != null %>' Text="Crear escenario" Clave="indicadores.crearEscenario"
+                                        ClaveTitle="indicadores.crearEscenarioAyuda" />
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
-                        <asp:Label ID="lblSinCandidatos" runat="server" Text="No se detectaron productos con oportunidad de reubicación para el período seleccionado." Clave="analisis.sinCandidatos" Visible="false" CssClass="sin-resultados" />
+                        <asp:Label ID="lblSinCandidatos" runat="server" Text="No se detectaron oportunidades para el período y los filtros elegidos." Clave="analisis.sinOportunidades" Visible="false" CssClass="sin-resultados" />
                     </div>
 
                     <div class="tarjeta">
-                        <h2><span runat="server" Clave="analisis.sinRecomendacion">Productos analizados sin recomendación</span> <span class="etiqueta etiqueta-activo" runat="server" Clave="analisis.bienPosicionados">Bien posicionados</span></h2>
+                        <h2 runat="server" Clave="analisis.sinRecomendacion">Productos analizados sin recomendación</h2>
                         <table class="tabla">
                             <thead>
                                 <tr>
                                     <th runat="server" Clave="productos.colProducto">Producto</th>
                                     <th runat="server" Clave="productos.colCategoria">Categoría</th>
                                     <th runat="server" Clave="analisis.colSectorActual">Sector Actual</th>
-                                    <th runat="server" Clave="indicadores.colVentas">Ventas</th>
-                                    <th runat="server" Clave="indicadores.colRotacion">Rotación</th>
+                                    <th runat="server" Clave="stock.colUnidades">Unidades</th>
+                                    <th runat="server" Clave="stock.colMonto">Monto</th>
+                                    <th runat="server" Clave="indicadores.colCobertura">Cobertura</th>
                                     <th runat="server" Clave="layout.colCirculacion">Circulación</th>
-                                    <th runat="server" Clave="comun.estado">Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <asp:Repeater ID="rptSinRecomendacion" runat="server">
                                     <ItemTemplate>
                                         <tr>
-                                            <td class="texto-principal"><%# Eval("NombreProducto") %></td>
-                                            <td><%# Eval("NombreCategoria") %></td>
-                                            <td><%# Eval("SectorActual") %></td>
+                                            <td class="texto-principal"><%# HttpUtility.HtmlEncode(Eval("CodigoInterno") + " - " + Eval("NombreProducto")) %></td>
+                                            <td><%# HttpUtility.HtmlEncode(Eval("NombreCategoria")) %></td>
+                                            <td><%# HttpUtility.HtmlEncode(MostrarSector(Eval("SectorActual"))) %></td>
                                             <td><%# Eval("Ventas") %></td>
-                                            <td><%# Eval("Rotacion") %>%</td>
-                                            <td><%# Eval("Circulacion") %>%</td>
-                                            <td><span class="etiqueta etiqueta-activo">&#10003; <%# Traducir("analisis.optimo") %></span></td>
+                                            <td><%# Eval("Importe", "{0:$#,##0}") %></td>
+                                            <td><%# HttpUtility.HtmlEncode(MostrarCobertura(Eval("CoberturaDias"))) %></td>
+                                            <td><%# Eval("SectorActual") == null ? "-" : Eval("Circulacion") + "%" %></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </tbody>
                         </table>
+                        <asp:Label ID="lblSinAnalizados" runat="server" Text="Todos los productos analizados tienen alguna observación." Clave="analisis.todosConObservacion" Visible="false" CssClass="sin-resultados" />
                     </div>
                 </asp:Panel>
             </div>

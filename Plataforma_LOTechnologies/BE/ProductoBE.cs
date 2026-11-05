@@ -10,15 +10,30 @@ namespace BE
     [Serializable]
     public class ProductoAnalisisListado
     {
+        public const string TIPO_ESTRELLA = "EstrellaEscondida";
+        public const string TIPO_LUGAR_PRIVILEGIADO = "LugarPrivilegiado";
+        public const string TIPO_SIN_MOVIMIENTO = "SinMovimiento";
+        public const string TIPO_RIESGO_QUIEBRE = "RiesgoQuiebre";
+        public const string TIPO_SIN_UBICAR = "SinUbicar";
         public int CodigoProducto { get; set; }
+        public string CodigoInterno { get; set; } // PROD-001
         public string NombreProducto { get; set; }
         public string NombreCategoria { get; set; }
-        public string SectorActual { get; set; }
+        public int? CodigoSectorActual { get; set; }
+        public string SectorActual { get; set; } // null = sin ubicar en el local
+        public int? CodigoSectorSugerido { get; set; }
         public string SectorSugerido { get; set; }
-        public int Ventas { get; set; }
-        public decimal Rotacion { get; set; }
-        public decimal Circulacion { get; set; }
-        public string Prioridad { get; set; }
+        public int Ventas { get; set; } // unidades vendidas en el período
+        public decimal Importe { get; set; } // importe vendido en el período
+        public decimal? Margen { get; set; } // % (null = el producto no tiene costo)
+        public int Stock { get; set; }
+        public decimal? CoberturaDias { get; set; } // null = sin ventas en el período
+        public decimal Circulacion { get; set; } // circulación del sector actual
+        public string Tipo { get; set; }
+        public string Prioridad { get; set; } // Alta / Media / Baja ("" = sin observaciones)
+        public string ClaveMotivo { get; set; }
+        public object[] Parametros { get; set; }
+        public string AccionEscenario { get; set; } // cambio a simular en el sector sugerido (null = no aplica)
     }
     public class ProductoListado
     {
@@ -34,12 +49,15 @@ namespace BE
     public class ProductoMetrica
     {
         public int CodigoProducto { get; set; }
+        public int NumeroSerie { get; set; }
         public string NombreProducto { get; set; }
         public string NombreCategoria { get; set; }
-        public int? CodigoSectorActual { get; set; }
+        public decimal? Costo { get; set; }
+        public int? CodigoSectorActual { get; set; } // null = sin ubicar en el local
         public string NombreSectorActual { get; set; }
         public decimal CirculacionActual { get; set; }
-        public int Ventas { get; set; }
+        public int Ventas { get; set; } // unidades
+        public decimal Importe { get; set; }
         public int Stock { get; set; }
     }
     #endregion

@@ -1742,9 +1742,6 @@
   <data name="analisis.datosRequeridos" xml:space="preserve">
     <value>Required data: products, sections, sales, stock and foot traffic of the selected store.</value>
   </data>
-  <data name="analisis.btnDetectar" xml:space="preserve">
-    <value>Detect relocation opportunities</value>
-  </data>
   <data name="analisis.analizados" xml:space="preserve">
     <value>Products analyzed</value>
   </data>
@@ -1763,23 +1760,11 @@
   <data name="analisis.todasPrioridades" xml:space="preserve">
     <value>All priorities</value>
   </data>
-  <data name="analisis.candidatos" xml:space="preserve">
-    <value>Relocation candidates</value>
-  </data>
-  <data name="analisis.sinCandidatos" xml:space="preserve">
-    <value>No products with relocation opportunities were found for the selected period.</value>
-  </data>
   <data name="analisis.sinRecomendacion" xml:space="preserve">
     <value>Analyzed products without recommendation</value>
   </data>
-  <data name="analisis.bienPosicionados" xml:space="preserve">
-    <value>Well placed</value>
-  </data>
   <data name="analisis.colSectorActual" xml:space="preserve">
     <value>Current section</value>
-  </data>
-  <data name="analisis.optimo" xml:space="preserve">
-    <value>Optimal</value>
   </data>
   <data name="analisis.errPeriodo" xml:space="preserve">
     <value>Invalid period.</value>
@@ -2353,5 +2338,71 @@
   </data>
   <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
     <value>Without the unit cost, the margin is not calculated. It is entered in Products and categories.</value>
+  </data>
+  <data name="analisis.btnAnalizar" xml:space="preserve">
+    <value>Analyze products</value>
+  </data>
+  <data name="analisis.comoSeDetecta" xml:space="preserve">
+    <value>How is each opportunity detected?</value>
+  </data>
+  <data name="analisis.tipoEstrellaEscondida" xml:space="preserve">
+    <value>Hidden star</value>
+  </data>
+  <data name="analisis.tipoLugarPrivilegiado" xml:space="preserve">
+    <value>Takes a prime spot</value>
+  </data>
+  <data name="analisis.tipoSinMovimiento" xml:space="preserve">
+    <value>No movement</value>
+  </data>
+  <data name="analisis.tipoRiesgoQuiebre" xml:space="preserve">
+    <value>Stock-out risk</value>
+  </data>
+  <data name="analisis.tipoSinUbicar" xml:space="preserve">
+    <value>Selling but not placed</value>
+  </data>
+  <data name="analisis.ayudaEstrella" xml:space="preserve">
+    <value>It is in the top 25% of the store's products by sales amount, but in a section whose traffic is 10 points or more below average. An additional display in the busiest section is suggested. High priority if the traffic gap is 25 points or more.</value>
+  </data>
+  <data name="analisis.ayudaLugar" xml:space="preserve">
+    <value>It is in the bottom 25% by sales (or sold nothing) and occupies a section whose traffic is 10 points or more above average.</value>
+  </data>
+  <data name="analisis.ayudaSinMovimiento" xml:space="preserve">
+    <value>It has stock in the store and no sales in the period.</value>
+  </data>
+  <data name="analisis.ayudaQuiebre" xml:space="preserve">
+    <value>At the period's sales pace, the stock lasts less than 7 days (or there is no stock left).</value>
+  </data>
+  <data name="analisis.ayudaSinUbicar" xml:space="preserve">
+    <value>It sells in the store but is not placed in any section: its sales do not count in the section indicators.</value>
+  </data>
+  <data name="analisis.todosTipos" xml:space="preserve">
+    <value>All types</value>
+  </data>
+  <data name="analisis.oportunidades" xml:space="preserve">
+    <value>Opportunities found</value>
+  </data>
+  <data name="analisis.sinOportunidades" xml:space="preserve">
+    <value>No opportunities were found for the selected period and filters.</value>
+  </data>
+  <data name="analisis.todosConObservacion" xml:space="preserve">
+    <value>All analyzed products have at least one observation.</value>
+  </data>
+  <data name="analisis.motivoQuiebre" xml:space="preserve">
+    <value>{0} units left: enough for {1:0} days at the period's sales pace (less than {2}). Restock.</value>
+  </data>
+  <data name="analisis.motivoSinUbicar" xml:space="preserve">
+    <value>It sold {0} units ({1:$#,##0}) but is not placed in any section of the store: its sales do not add to the section indicators. Place it in Products and categories.</value>
+  </data>
+  <data name="analisis.motivoEstrella" xml:space="preserve">
+    <value>It is among the store's best sellers, but in a low-traffic section ({0:0.#}%). An additional display in {1} ({2:0.#}% traffic) could increase its sales.</value>
+  </data>
+  <data name="analisis.motivoLugarSinVentas" xml:space="preserve">
+    <value>It had no sales in the period and occupies a busy section ({0:0.#}% traffic) with {1} units in stock. That space would yield more with a better-selling product.</value>
+  </data>
+  <data name="analisis.motivoSinMovimiento" xml:space="preserve">
+    <value>It has {0} units in stock and no sales in the last {1} days. Consider a promotion or discontinuing it.</value>
+  </data>
+  <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
+    <value>It is among the lowest sellers, but in a busy section ({0:0.#}% traffic, the average is {1:0.#}%). It is worth freeing that space for better-selling products.</value>
   </data>
 </root>

@@ -1742,9 +1742,6 @@
   <data name="analisis.datosRequeridos" xml:space="preserve">
     <value>Erforderliche Daten: Produkte, Bereiche, Verkäufe, Bestand und Kundenfrequenz der gewählten Filiale.</value>
   </data>
-  <data name="analisis.btnDetectar" xml:space="preserve">
-    <value>Umplatzierungschancen erkennen</value>
-  </data>
   <data name="analisis.analizados" xml:space="preserve">
     <value>Analysierte Produkte</value>
   </data>
@@ -1763,23 +1760,11 @@
   <data name="analisis.todasPrioridades" xml:space="preserve">
     <value>Alle Prioritäten</value>
   </data>
-  <data name="analisis.candidatos" xml:space="preserve">
-    <value>Kandidaten für Umplatzierung</value>
-  </data>
-  <data name="analisis.sinCandidatos" xml:space="preserve">
-    <value>Für den gewählten Zeitraum wurden keine Produkte zur Umplatzierung gefunden.</value>
-  </data>
   <data name="analisis.sinRecomendacion" xml:space="preserve">
     <value>Analysierte Produkte ohne Empfehlung</value>
   </data>
-  <data name="analisis.bienPosicionados" xml:space="preserve">
-    <value>Gut platziert</value>
-  </data>
   <data name="analisis.colSectorActual" xml:space="preserve">
     <value>Aktueller Bereich</value>
-  </data>
-  <data name="analisis.optimo" xml:space="preserve">
-    <value>Optimal</value>
   </data>
   <data name="analisis.errPeriodo" xml:space="preserve">
     <value>Ungültiger Zeitraum.</value>
@@ -2353,5 +2338,71 @@
   </data>
   <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
     <value>Ohne Stückkosten wird die Marge nicht berechnet. Sie werden unter Produkte und Kategorien erfasst.</value>
+  </data>
+  <data name="analisis.btnAnalizar" xml:space="preserve">
+    <value>Produkte analysieren</value>
+  </data>
+  <data name="analisis.comoSeDetecta" xml:space="preserve">
+    <value>Wie wird jede Chance erkannt?</value>
+  </data>
+  <data name="analisis.tipoEstrellaEscondida" xml:space="preserve">
+    <value>Versteckter Star</value>
+  </data>
+  <data name="analisis.tipoLugarPrivilegiado" xml:space="preserve">
+    <value>Belegt einen Top-Platz</value>
+  </data>
+  <data name="analisis.tipoSinMovimiento" xml:space="preserve">
+    <value>Ohne Bewegung</value>
+  </data>
+  <data name="analisis.tipoRiesgoQuiebre" xml:space="preserve">
+    <value>Risiko eines Fehlbestands</value>
+  </data>
+  <data name="analisis.tipoSinUbicar" xml:space="preserve">
+    <value>Verkauft, aber nicht platziert</value>
+  </data>
+  <data name="analisis.ayudaEstrella" xml:space="preserve">
+    <value>Es gehört zu den 25 % der umsatzstärksten Produkte der Filiale, liegt aber in einem Bereich, dessen Frequenz mindestens 10 Punkte unter dem Durchschnitt liegt. Empfohlen wird eine zusätzliche Platzierung im meistbesuchten Bereich. Hohe Priorität ab 25 Punkten Frequenzunterschied.</value>
+  </data>
+  <data name="analisis.ayudaLugar" xml:space="preserve">
+    <value>Es gehört zu den 25 % mit dem geringsten Umsatz (oder wurde nicht verkauft) und belegt einen Bereich mit mindestens 10 Punkten über der durchschnittlichen Frequenz.</value>
+  </data>
+  <data name="analisis.ayudaSinMovimiento" xml:space="preserve">
+    <value>Es hat Bestand in der Filiale und keine Verkäufe im Zeitraum.</value>
+  </data>
+  <data name="analisis.ayudaQuiebre" xml:space="preserve">
+    <value>Beim Verkaufstempo des Zeitraums reicht der Bestand weniger als 7 Tage (oder er ist aufgebraucht).</value>
+  </data>
+  <data name="analisis.ayudaSinUbicar" xml:space="preserve">
+    <value>Es wird in der Filiale verkauft, ist aber keinem Bereich zugeordnet: Seine Verkäufe zählen nicht in den Bereichskennzahlen.</value>
+  </data>
+  <data name="analisis.todosTipos" xml:space="preserve">
+    <value>Alle Typen</value>
+  </data>
+  <data name="analisis.oportunidades" xml:space="preserve">
+    <value>Erkannte Chancen</value>
+  </data>
+  <data name="analisis.sinOportunidades" xml:space="preserve">
+    <value>Für den gewählten Zeitraum und die Filter wurden keine Chancen erkannt.</value>
+  </data>
+  <data name="analisis.todosConObservacion" xml:space="preserve">
+    <value>Alle analysierten Produkte haben mindestens einen Hinweis.</value>
+  </data>
+  <data name="analisis.motivoQuiebre" xml:space="preserve">
+    <value>Es bleiben {0} Einheiten: genug für {1:0} Tage beim Verkaufstempo des Zeitraums (weniger als {2}). Nachfüllen.</value>
+  </data>
+  <data name="analisis.motivoSinUbicar" xml:space="preserve">
+    <value>Es wurden {0} Einheiten verkauft ({1:$#,##0}), aber das Produkt ist keinem Bereich der Filiale zugeordnet: Die Verkäufe fließen nicht in die Bereichskennzahlen ein. Ordnen Sie es unter Produkte und Kategorien zu.</value>
+  </data>
+  <data name="analisis.motivoEstrella" xml:space="preserve">
+    <value>Es gehört zu den Bestsellern der Filiale, liegt aber in einem Bereich mit wenig Frequenz ({0:0.#} %). Eine zusätzliche Platzierung in {1} ({2:0.#} % Frequenz) könnte den Absatz steigern.</value>
+  </data>
+  <data name="analisis.motivoLugarSinVentas" xml:space="preserve">
+    <value>Keine Verkäufe im Zeitraum, obwohl es einen stark frequentierten Bereich ({0:0.#} % Frequenz) mit {1} Einheiten Bestand belegt. Mit einem umsatzstärkeren Produkt würde dieser Platz mehr bringen.</value>
+  </data>
+  <data name="analisis.motivoSinMovimiento" xml:space="preserve">
+    <value>Es hat {0} Einheiten Bestand und keine Verkäufe in den letzten {1} Tagen. Eine Aktion oder die Auslistung prüfen.</value>
+  </data>
+  <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
+    <value>Es gehört zu den umsatzschwächsten Produkten, liegt aber in einem stark frequentierten Bereich ({0:0.#} % Frequenz, Durchschnitt {1:0.#} %). Dieser Platz sollte für umsatzstärkere Produkte frei gemacht werden.</value>
   </data>
 </root>

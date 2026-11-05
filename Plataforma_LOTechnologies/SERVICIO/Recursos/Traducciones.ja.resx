@@ -1742,9 +1742,6 @@
   <data name="analisis.datosRequeridos" xml:space="preserve">
     <value>必要なデータ：選択した店舗の商品、売り場、売上、在庫、回遊率。</value>
   </data>
-  <data name="analisis.btnDetectar" xml:space="preserve">
-    <value>再配置の機会を検出</value>
-  </data>
   <data name="analisis.analizados" xml:space="preserve">
     <value>分析した商品</value>
   </data>
@@ -1763,23 +1760,11 @@
   <data name="analisis.todasPrioridades" xml:space="preserve">
     <value>すべての優先度</value>
   </data>
-  <data name="analisis.candidatos" xml:space="preserve">
-    <value>再配置の候補</value>
-  </data>
-  <data name="analisis.sinCandidatos" xml:space="preserve">
-    <value>選択した期間に再配置の機会がある商品は見つかりませんでした。</value>
-  </data>
   <data name="analisis.sinRecomendacion" xml:space="preserve">
     <value>推奨のない分析済み商品</value>
   </data>
-  <data name="analisis.bienPosicionados" xml:space="preserve">
-    <value>配置良好</value>
-  </data>
   <data name="analisis.colSectorActual" xml:space="preserve">
     <value>現在の売り場</value>
-  </data>
-  <data name="analisis.optimo" xml:space="preserve">
-    <value>最適</value>
   </data>
   <data name="analisis.errPeriodo" xml:space="preserve">
     <value>期間が無効です。</value>
@@ -2353,5 +2338,71 @@
   </data>
   <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
     <value>単価原価がないと利益率は計算されません。商品とカテゴリで登録します。</value>
+  </data>
+  <data name="analisis.btnAnalizar" xml:space="preserve">
+    <value>商品を分析</value>
+  </data>
+  <data name="analisis.comoSeDetecta" xml:space="preserve">
+    <value>各機会の検出方法</value>
+  </data>
+  <data name="analisis.tipoEstrellaEscondida" xml:space="preserve">
+    <value>隠れたスター商品</value>
+  </data>
+  <data name="analisis.tipoLugarPrivilegiado" xml:space="preserve">
+    <value>好立地を占有</value>
+  </data>
+  <data name="analisis.tipoSinMovimiento" xml:space="preserve">
+    <value>動きなし</value>
+  </data>
+  <data name="analisis.tipoRiesgoQuiebre" xml:space="preserve">
+    <value>欠品リスク</value>
+  </data>
+  <data name="analisis.tipoSinUbicar" xml:space="preserve">
+    <value>未配置だが販売あり</value>
+  </data>
+  <data name="analisis.ayudaEstrella" xml:space="preserve">
+    <value>店舗で売上金額上位25%の商品ですが、動線が平均より10ポイント以上低い売場にあります。最も人通りの多い売場での追加陳列を提案します。動線の差が25ポイント以上なら優先度は高です。</value>
+  </data>
+  <data name="analisis.ayudaLugar" xml:space="preserve">
+    <value>売上下位25%（または販売なし）で、動線が平均より10ポイント以上高い売場にあります。</value>
+  </data>
+  <data name="analisis.ayudaSinMovimiento" xml:space="preserve">
+    <value>店舗に在庫があり、期間中の売上がありません。</value>
+  </data>
+  <data name="analisis.ayudaQuiebre" xml:space="preserve">
+    <value>期間の販売ペースでは在庫が7日未満しかもちません（または在庫切れ）。</value>
+  </data>
+  <data name="analisis.ayudaSinUbicar" xml:space="preserve">
+    <value>店舗で販売されていますが、どの売場にも配置されていません。売上は売場別の指標に含まれません。</value>
+  </data>
+  <data name="analisis.todosTipos" xml:space="preserve">
+    <value>すべての種類</value>
+  </data>
+  <data name="analisis.oportunidades" xml:space="preserve">
+    <value>検出された機会</value>
+  </data>
+  <data name="analisis.sinOportunidades" xml:space="preserve">
+    <value>選択した期間とフィルターでは機会は検出されませんでした。</value>
+  </data>
+  <data name="analisis.todosConObservacion" xml:space="preserve">
+    <value>分析したすべての商品に指摘があります。</value>
+  </data>
+  <data name="analisis.motivoQuiebre" xml:space="preserve">
+    <value>残り {0} 個：期間の販売ペースで {1:0} 日分です（{2} 日未満）。補充してください。</value>
+  </data>
+  <data name="analisis.motivoSinUbicar" xml:space="preserve">
+    <value>{0} 個（{1:$#,##0}）売れましたが、店舗のどの売場にも配置されていません。売上は売場別の指標に加算されません。「商品とカテゴリ」で配置してください。</value>
+  </data>
+  <data name="analisis.motivoEstrella" xml:space="preserve">
+    <value>店舗の売れ筋商品ですが、動線の少ない売場（{0:0.#}%）にあります。{1}（動線 {2:0.#}%）で追加陳列すれば売上が伸びる可能性があります。</value>
+  </data>
+  <data name="analisis.motivoLugarSinVentas" xml:space="preserve">
+    <value>期間中の売上がなく、人通りの多い売場（動線 {0:0.#}%）を在庫 {1} 個で占めています。より売れる商品を置けばそのスペースはもっと生かせます。</value>
+  </data>
+  <data name="analisis.motivoSinMovimiento" xml:space="preserve">
+    <value>在庫が {0} 個あり、直近 {1} 日間の売上がありません。販促か取り扱い中止を検討してください。</value>
+  </data>
+  <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
+    <value>売上の少ない商品ですが、人通りの多い売場（動線 {0:0.#}%、平均は {1:0.#}%）にあります。そのスペースをより売れる商品に譲るとよいでしょう。</value>
   </data>
 </root>

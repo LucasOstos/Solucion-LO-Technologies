@@ -1742,9 +1742,6 @@
   <data name="analisis.datosRequeridos" xml:space="preserve">
     <value>Gerekli veriler: seçilen mağazanın ürünleri, reyonları, satışları, stoku ve ziyaretçi trafiği.</value>
   </data>
-  <data name="analisis.btnDetectar" xml:space="preserve">
-    <value>Yeniden yerleştirme fırsatlarını bul</value>
-  </data>
   <data name="analisis.analizados" xml:space="preserve">
     <value>Analiz edilen ürünler</value>
   </data>
@@ -1763,23 +1760,11 @@
   <data name="analisis.todasPrioridades" xml:space="preserve">
     <value>Tüm öncelikler</value>
   </data>
-  <data name="analisis.candidatos" xml:space="preserve">
-    <value>Yeniden yerleştirme adayları</value>
-  </data>
-  <data name="analisis.sinCandidatos" xml:space="preserve">
-    <value>Seçilen dönemde yeniden yerleştirme fırsatı olan ürün bulunamadı.</value>
-  </data>
   <data name="analisis.sinRecomendacion" xml:space="preserve">
     <value>Öneri olmayan analiz edilmiş ürünler</value>
   </data>
-  <data name="analisis.bienPosicionados" xml:space="preserve">
-    <value>İyi konumlanmış</value>
-  </data>
   <data name="analisis.colSectorActual" xml:space="preserve">
     <value>Mevcut reyon</value>
-  </data>
-  <data name="analisis.optimo" xml:space="preserve">
-    <value>Optimum</value>
   </data>
   <data name="analisis.errPeriodo" xml:space="preserve">
     <value>Geçersiz dönem.</value>
@@ -2353,5 +2338,71 @@
   </data>
   <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
     <value>Birim maliyet olmadan marj hesaplanmaz. Ürünler ve kategoriler ekranında girilir.</value>
+  </data>
+  <data name="analisis.btnAnalizar" xml:space="preserve">
+    <value>Ürünleri analiz et</value>
+  </data>
+  <data name="analisis.comoSeDetecta" xml:space="preserve">
+    <value>Her fırsat nasıl tespit edilir?</value>
+  </data>
+  <data name="analisis.tipoEstrellaEscondida" xml:space="preserve">
+    <value>Gizli yıldız</value>
+  </data>
+  <data name="analisis.tipoLugarPrivilegiado" xml:space="preserve">
+    <value>Ayrıcalıklı yeri işgal ediyor</value>
+  </data>
+  <data name="analisis.tipoSinMovimiento" xml:space="preserve">
+    <value>Hareketsiz</value>
+  </data>
+  <data name="analisis.tipoRiesgoQuiebre" xml:space="preserve">
+    <value>Stok tükenme riski</value>
+  </data>
+  <data name="analisis.tipoSinUbicar" xml:space="preserve">
+    <value>Satılıyor ama yerleştirilmemiş</value>
+  </data>
+  <data name="analisis.ayudaEstrella" xml:space="preserve">
+    <value>Mağazada tutara göre en çok satan %25'lik ürünler arasında, ancak trafiği ortalamanın 10 puan veya daha fazla altında olan bir bölümde. En yoğun bölümde ek teşhir önerilir. Trafik farkı 25 puan veya üzerindeyse öncelik yüksektir.</value>
+  </data>
+  <data name="analisis.ayudaLugar" xml:space="preserve">
+    <value>En az satan %25'lik dilimde (veya hiç satılmamış) ve trafiği ortalamanın 10 puan veya daha fazla üzerinde olan bir bölümde.</value>
+  </data>
+  <data name="analisis.ayudaSinMovimiento" xml:space="preserve">
+    <value>Mağazada stoğu var ve dönemde hiç satışı yok.</value>
+  </data>
+  <data name="analisis.ayudaQuiebre" xml:space="preserve">
+    <value>Dönemin satış hızında stok 7 günden az yeter (veya stok kalmadı).</value>
+  </data>
+  <data name="analisis.ayudaSinUbicar" xml:space="preserve">
+    <value>Mağazada satılıyor ama hiçbir bölüme yerleştirilmemiş: satışları bölüm göstergelerine dahil edilmiyor.</value>
+  </data>
+  <data name="analisis.todosTipos" xml:space="preserve">
+    <value>Tüm türler</value>
+  </data>
+  <data name="analisis.oportunidades" xml:space="preserve">
+    <value>Tespit edilen fırsatlar</value>
+  </data>
+  <data name="analisis.sinOportunidades" xml:space="preserve">
+    <value>Seçilen dönem ve filtreler için fırsat tespit edilmedi.</value>
+  </data>
+  <data name="analisis.todosConObservacion" xml:space="preserve">
+    <value>Analiz edilen tüm ürünlerin bir gözlemi var.</value>
+  </data>
+  <data name="analisis.motivoQuiebre" xml:space="preserve">
+    <value>{0} birim kaldı: dönemin satış hızında {1:0} gün yeter ({2} günden az). Yenileyin.</value>
+  </data>
+  <data name="analisis.motivoSinUbicar" xml:space="preserve">
+    <value>{0} birim sattı ({1:$#,##0}) ama mağazanın hiçbir bölümüne yerleştirilmemiş: satışları bölüm göstergelerine eklenmiyor. Ürünler ve kategoriler ekranından yerleştirin.</value>
+  </data>
+  <data name="analisis.motivoEstrella" xml:space="preserve">
+    <value>Mağazanın en çok satan ürünlerinden, ancak trafiği az bir bölümde (%{0:0.#}). {1} bölümünde (%{2:0.#} trafik) ek teşhir satışlarını artırabilir.</value>
+  </data>
+  <data name="analisis.motivoLugarSinVentas" xml:space="preserve">
+    <value>Dönemde hiç satılmadı ve stokta {1} birimle yoğun bir bölümü (%{0:0.#} trafik) işgal ediyor. O alan daha çok satan bir ürünle daha fazla getirir.</value>
+  </data>
+  <data name="analisis.motivoSinMovimiento" xml:space="preserve">
+    <value>Stokta {0} birim var ve son {1} günde hiç satış yok. Kampanya yapmayı veya ürünü bırakmayı değerlendirin.</value>
+  </data>
+  <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
+    <value>En az satan ürünlerden, ancak yoğun bir bölümde (%{0:0.#} trafik, ortalama %{1:0.#}). O alanı daha çok satan ürünlere açmak iyi olur.</value>
   </data>
 </root>

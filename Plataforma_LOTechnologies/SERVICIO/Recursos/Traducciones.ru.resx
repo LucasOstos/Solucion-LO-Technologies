@@ -1742,9 +1742,6 @@
   <data name="analisis.datosRequeridos" xml:space="preserve">
     <value>Необходимые данные: товары, секции, продажи, запасы и проходимость выбранного магазина.</value>
   </data>
-  <data name="analisis.btnDetectar" xml:space="preserve">
-    <value>Найти возможности перемещения</value>
-  </data>
   <data name="analisis.analizados" xml:space="preserve">
     <value>Проанализировано товаров</value>
   </data>
@@ -1763,23 +1760,11 @@
   <data name="analisis.todasPrioridades" xml:space="preserve">
     <value>Все приоритеты</value>
   </data>
-  <data name="analisis.candidatos" xml:space="preserve">
-    <value>Кандидаты на перемещение</value>
-  </data>
-  <data name="analisis.sinCandidatos" xml:space="preserve">
-    <value>За выбранный период не найдено товаров для перемещения.</value>
-  </data>
   <data name="analisis.sinRecomendacion" xml:space="preserve">
     <value>Проанализированные товары без рекомендаций</value>
   </data>
-  <data name="analisis.bienPosicionados" xml:space="preserve">
-    <value>Хорошо размещены</value>
-  </data>
   <data name="analisis.colSectorActual" xml:space="preserve">
     <value>Текущая секция</value>
-  </data>
-  <data name="analisis.optimo" xml:space="preserve">
-    <value>Оптимально</value>
   </data>
   <data name="analisis.errPeriodo" xml:space="preserve">
     <value>Неверный период.</value>
@@ -2353,5 +2338,71 @@
   </data>
   <data name="recomendacion.faltaCostoMotivo" xml:space="preserve">
     <value>Без себестоимости единицы маржа не рассчитывается. Указывается в разделе «Товары и категории».</value>
+  </data>
+  <data name="analisis.btnAnalizar" xml:space="preserve">
+    <value>Анализировать товары</value>
+  </data>
+  <data name="analisis.comoSeDetecta" xml:space="preserve">
+    <value>Как выявляется каждая возможность?</value>
+  </data>
+  <data name="analisis.tipoEstrellaEscondida" xml:space="preserve">
+    <value>Скрытая звезда</value>
+  </data>
+  <data name="analisis.tipoLugarPrivilegiado" xml:space="preserve">
+    <value>Занимает выгодное место</value>
+  </data>
+  <data name="analisis.tipoSinMovimiento" xml:space="preserve">
+    <value>Без движения</value>
+  </data>
+  <data name="analisis.tipoRiesgoQuiebre" xml:space="preserve">
+    <value>Риск дефицита</value>
+  </data>
+  <data name="analisis.tipoSinUbicar" xml:space="preserve">
+    <value>Продаётся без размещения</value>
+  </data>
+  <data name="analisis.ayudaEstrella" xml:space="preserve">
+    <value>Товар входит в 25% самых продаваемых в магазине (по сумме), но находится в секторе с проходимостью на 10 пунктов и более ниже среднего. Рекомендуется дополнительная выкладка в самом проходимом секторе. Высокий приоритет, если разница проходимости 25 пунктов и более.</value>
+  </data>
+  <data name="analisis.ayudaLugar" xml:space="preserve">
+    <value>Товар входит в 25% наименее продаваемых (или не продавался) и занимает сектор с проходимостью на 10 пунктов и более выше среднего.</value>
+  </data>
+  <data name="analisis.ayudaSinMovimiento" xml:space="preserve">
+    <value>Есть остаток в магазине и нет продаж за период.</value>
+  </data>
+  <data name="analisis.ayudaQuiebre" xml:space="preserve">
+    <value>При темпе продаж за период остатка хватит менее чем на 7 дней (или его уже нет).</value>
+  </data>
+  <data name="analisis.ayudaSinUbicar" xml:space="preserve">
+    <value>Продаётся в магазине, но не размещён ни в одном секторе: его продажи не учитываются в показателях по секторам.</value>
+  </data>
+  <data name="analisis.todosTipos" xml:space="preserve">
+    <value>Все типы</value>
+  </data>
+  <data name="analisis.oportunidades" xml:space="preserve">
+    <value>Выявленные возможности</value>
+  </data>
+  <data name="analisis.sinOportunidades" xml:space="preserve">
+    <value>Для выбранного периода и фильтров возможностей не выявлено.</value>
+  </data>
+  <data name="analisis.todosConObservacion" xml:space="preserve">
+    <value>У всех проанализированных товаров есть замечания.</value>
+  </data>
+  <data name="analisis.motivoQuiebre" xml:space="preserve">
+    <value>Осталось {0} ед.: хватит на {1:0} дн. при темпе продаж за период (меньше {2}). Пополнить.</value>
+  </data>
+  <data name="analisis.motivoSinUbicar" xml:space="preserve">
+    <value>Продано {0} ед. ({1:$#,##0}), но товар не размещён ни в одном секторе магазина: его продажи не входят в показатели по секторам. Разместите его в разделе «Товары и категории».</value>
+  </data>
+  <data name="analisis.motivoEstrella" xml:space="preserve">
+    <value>Один из самых продаваемых товаров магазина, но находится в малопроходимом секторе ({0:0.#}%). Дополнительная выкладка в «{1}» ({2:0.#}% проходимости) может увеличить продажи.</value>
+  </data>
+  <data name="analisis.motivoLugarSinVentas" xml:space="preserve">
+    <value>За период продаж не было, при этом товар занимает проходимый сектор ({0:0.#}%) с остатком {1} ед. Это место принесёт больше с более продаваемым товаром.</value>
+  </data>
+  <data name="analisis.motivoSinMovimiento" xml:space="preserve">
+    <value>На складе {0} ед., продаж за последние {1} дн. нет. Рассмотреть акцию или вывод из ассортимента.</value>
+  </data>
+  <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
+    <value>Один из наименее продаваемых товаров, но находится в проходимом секторе ({0:0.#}%, в среднем {1:0.#}%). Стоит освободить это место для более продаваемых товаров.</value>
   </data>
 </root>
