@@ -35,6 +35,11 @@ namespace BLL
                         string contraseniaEncriptada = Encriptado.Instancia.EncriptarContraseña(pContrasenia);
                         if (usuario.Contrasenia == contraseniaEncriptada)
                         {
+                            if (usuario.CodigoEmpresa > 0)
+                            {
+                                EmpresaBE empresa = new EmpresaDAL().ObtenerEmpresaPorCodigo(usuario.CodigoEmpresa);
+                                if (empresa != null && !empresa.Estado) return new LoginResultado { Resultado = ResultadoLogin.EmpresaInactiva };
+                            }
                             if (pEscribir)
                             {
                                 usuario.intentosAcceso = 0;

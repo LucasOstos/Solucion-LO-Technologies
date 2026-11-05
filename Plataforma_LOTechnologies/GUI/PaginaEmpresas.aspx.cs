@@ -53,8 +53,8 @@ public partial class PaginaEmpresas : PaginaSegura
         tbTelefono.Text = "";
         tbDireccion.Text = "";
         chkActiva.Checked = true;
+        grpActiva.Visible = true;
     }
-
     private void AbrirModal()
     {
         pnlModalEmpresa.Style["display"] = "flex";
@@ -75,12 +75,18 @@ public partial class PaginaEmpresas : PaginaSegura
         tbRazonSocial.Text = empresa.RazonSocial;
         tbCUIT.Text = empresa.CUIT;
         tbCorreo.Text = empresa.Correo;
-        tbTelefono.Text = empresa.Telefono.ToString();
+        tbTelefono.Text = empresa.Telefono;
         tbDireccion.Text = empresa.Direccion;
         chkActiva.Checked = empresa.Estado;
+        grpActiva.Visible = false;
         AbrirModal();
     }
-
+    private void MostrarErrorModal(string pTexto)
+    {
+        lblMensajeModal.Text = pTexto;
+        lblMensajeModal.Visible = true;
+        AbrirModal();
+    }
     private void MostrarMensaje(string texto, bool esExito)
     {
         lblMensaje.Text = texto;
@@ -108,11 +114,9 @@ public partial class PaginaEmpresas : PaginaSegura
             AbrirModal();
             return;
         }
-        int telefono;
-        int.TryParse(tbTelefono.Text.Trim(), out telefono);
         bool esEdicion = hfEsEdicion.Value == "true";
         int codigoEmpresa = esEdicion ? int.Parse(hfCodigoEmpresa.Value) : 0;
-        EmpresaBE empresa = new EmpresaBE(codigoEmpresa, tbRazonSocial.Text.Trim(), tbCUIT.Text.Trim(), tbCorreo.Text.Trim(), telefono, tbDireccion.Text.Trim(), chkActiva.Checked);
+        EmpresaBE empresa = new EmpresaBE(codigoEmpresa, tbRazonSocial.Text.Trim(), tbCUIT.Text.Trim(), tbCorreo.Text.Trim(), tbTelefono.Text.Trim(), tbDireccion.Text.Trim(), chkActiva.Checked);
         ResultadoGuardarEmpresa resultado = esEdicion ? empresaBLL.ModificarEmpresa(empresa) : empresaBLL.CrearEmpresa(empresa);
         switch (resultado)
         {
@@ -122,12 +126,19 @@ public partial class PaginaEmpresas : PaginaSegura
                 CargarEmpresas();
                 break;
             case ResultadoGuardarEmpresa.CuitYaRegistrado:
-                MostrarMensaje(Traducir("empresas.msgCuitExiste"), esExito: false);
-                AbrirModal();
+                MostrarErrorModal(Traducir("empresas.msgCuitExiste"));
+                break;
+            case ResultadoGuardarEmpresa.CuitInvalido:
+                MostrarErrorModal(Traducir("empresas.errCuitInvalido"));
+                break;
+            case ResultadoGuardarEmpresa.CorreoInvalido:
+                MostrarErrorModal(Traducir("empresas.errCorreoInvalido"));
+                break;
+            case ResultadoGuardarEmpresa.TelefonoInvalido:
+                MostrarErrorModal(Traducir("comun.errTelefonoInvalido"));
                 break;
             case ResultadoGuardarEmpresa.DatosInvalidos:
-                MostrarMensaje(Traducir("comun.datosInvalidos"), esExito: false);
-                AbrirModal();
+                MostrarErrorModal(Traducir("comun.datosInvalidos"));
                 break;
         }
     }
@@ -149,8 +160,8 @@ public partial class PaginaEmpresas : PaginaSegura
                 break;
             case "CambiarEstado":
                 EmpresaBE empresa = empresaBLL.ObtenerEmpresaPorCodigo(codigoEmpresa);
-                empresaBLL.CambiarEstado(codigoEmpresa, !empresa.Estado);
-                MostrarMensaje(Traducir("empresas.msgEstado"), esExito: true);
+                int usuariosActivos = empresaBLL.CambiarEstado(codigoEmpresa, !empresa.Estado);
+                MostrarMensaje(empresa.Estado && usuariosActivos > 0 ? Traducir("empresas.msgDesactivadaUsuarios", usuariosActivos) : Traducir("empresas.msgEstado"), esExito: true);
                 CargarEmpresas();
                 break;
         }

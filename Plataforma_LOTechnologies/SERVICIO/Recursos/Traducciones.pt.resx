@@ -2361,7 +2361,7 @@
     <value>Sem localização com vendas</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>Está entre os 25% de produtos que mais vendem na loja (por valor), mas num setor com circulação 10 pontos ou mais abaixo da média. Sugere-se uma exposição adicional no setor de maior movimento. Prioridade alta se a diferença de circulação for de 25 pontos ou mais.</value>
+    <value>Está entre os 25% de produtos que mais vendem na loja (por valor), gira bem (estoque para 60 dias ou menos) e está num setor com circulação 10 pontos ou mais abaixo da média. Sugere-se uma exposição adicional num setor compatível (do mesmo tipo ou onde já há produtos da sua categoria) com mais movimento; se não houver, aproximar seu setor da frente. Prioridade alta se a diferença de circulação for de 25 pontos ou mais.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>Está entre os 25% que menos vendem (ou não vendeu nada) e ocupa um setor com circulação 10 pontos ou mais acima da média.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>Está entre os produtos que menos vendem, mas num setor de muito movimento ({0:0.#}% de circulação, a média é {1:0.#}%). Convém liberar esse espaço para produtos de maior venda.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>Está entre os produtos que mais vendem e giram na loja, mas {1} tem pouca circulação ({0:0.#}%) e não há outro setor compatível com mais movimento. Aproximar {1} da frente da loja poderia aumentar suas vendas.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Lojas</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Usuários ativos</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Digite apenas os 11 números: os hífens são adicionados automaticamente.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Apenas números e um + no início, sem espaços nem hífens (ex. +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>O CUIT não é válido: deve ter 11 números e o dígito verificador correto.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>O e-mail não tem um formato válido.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>O telefone só pode ter números e um + no início (de 6 a 15 dígitos).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Empresa desativada. {0} usuários da empresa não podem mais entrar.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>Sem área</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Dados para a análise</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Planta vigente carregada</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>Sem planta vigente</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} de {1} setores com área e circulação</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} produtos localizados</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>{0} produtos com estoque</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>{0} vendas registradas neste mês</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>Os setores somam {0} m², mais que a loja ({1} m²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>A empresa está inativa: não é possível registrar nem modificar lojas.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>Já existe uma loja com esse nome na empresa.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>A área deve ser maior que 0.</value>
   </data>
 </root>

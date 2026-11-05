@@ -2361,7 +2361,7 @@
     <value>Vendu mais non placé</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>Il fait partie des 25 % de produits les plus vendus du magasin (en montant), mais dans un rayon dont la circulation est inférieure d'au moins 10 points à la moyenne. Une présentation supplémentaire dans le rayon le plus fréquenté est suggérée. Priorité haute si l'écart de circulation atteint 25 points ou plus.</value>
+    <value>Il fait partie des 25 % de produits les plus vendus du magasin (en montant), tourne bien (stock pour 60 jours ou moins) et se trouve dans un rayon dont la circulation est inférieure d'au moins 10 points à la moyenne. Une présentation supplémentaire dans un rayon compatible plus fréquenté (du même type ou contenant déjà des produits de sa catégorie) est suggérée ; à défaut, rapprocher son rayon de l'entrée. Priorité haute si l'écart de circulation atteint 25 points ou plus.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>Il fait partie des 25 % les moins vendus (ou ne s'est pas vendu) et occupe un rayon dont la circulation dépasse la moyenne d'au moins 10 points.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>Il fait partie des produits les moins vendus, mais dans un rayon très fréquenté ({0:0.#} % de circulation, la moyenne est de {1:0.#} %). Il vaut mieux libérer cet espace pour des produits plus vendus.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>Il fait partie des produits qui se vendent et tournent le plus, mais {1} a peu de circulation ({0:0.#} %) et aucun autre rayon compatible n'est plus fréquenté. Rapprocher {1} de l'entrée pourrait augmenter ses ventes.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Magasins</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Utilisateurs actifs</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Saisissez seulement les 11 chiffres : les tirets s'ajoutent automatiquement.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Chiffres uniquement, avec un + au début, sans espaces ni tirets (ex. +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>Le CUIT n'est pas valide : il doit comporter 11 chiffres et un chiffre de contrôle correct.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>L'adresse e-mail n'est pas valide.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>Le téléphone ne peut contenir que des chiffres et un + au début (de 6 à 15 chiffres).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Entreprise désactivée. {0} utilisateurs de l'entreprise ne peuvent plus se connecter.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>Sans surface</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Données pour l'analyse</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Plan en vigueur chargé</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>Aucun plan en vigueur</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} rayons sur {1} avec surface et circulation</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} produits placés</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>{0} produits avec stock</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>{0} ventes saisies ce mois-ci</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>Les rayons totalisent {0} m², plus que le magasin ({1} m²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>L'entreprise est inactive : impossible d'enregistrer ou de modifier ses magasins.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>Un magasin portant ce nom existe déjà dans l'entreprise.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>La surface doit être supérieure à 0.</value>
   </data>
 </root>

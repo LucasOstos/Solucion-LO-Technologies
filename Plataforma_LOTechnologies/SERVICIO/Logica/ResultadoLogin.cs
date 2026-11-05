@@ -12,6 +12,7 @@ namespace SERVICIO.Logica
         CredencialesIncorrectas,
         UsuarioBloqueado,
         UsuarioRecienBloqueado,
-        UsuarioDeshabilitado
+        UsuarioDeshabilitado,
+        EmpresaInactiva
     }
 }

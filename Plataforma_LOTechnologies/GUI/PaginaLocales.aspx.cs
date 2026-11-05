@@ -87,8 +87,8 @@ public partial class PaginaLocales : PaginaSegura
     {
         LimpiarModal();
         hfEsEdicion.Value = "false";
-        litTituloModal.Text = "Nuevo Local";
-        btnGuardarLocal.Text = "Crear Local";
+        litTituloModal.Text = Traducir("locales.btnNuevo");
+        btnGuardarLocal.Text = Traducir("locales.btnCrear");
         AbrirModal();
     }
     private void CargarLocalEnModal(int codigoLocal)
@@ -108,20 +108,55 @@ public partial class PaginaLocales : PaginaSegura
         ddlEmpresa.SelectedValue = local.CodigoEmpresa.ToString();
         tbDireccion.Text = local.Direccion;
         ddlTipoLocal.SelectedValue = string.IsNullOrEmpty(local.TipoLocal) ? "Local a la calle" : local.TipoLocal;
-        tbSuperficie.Text = local.SuperficieAprox?.ToString() ?? "";
+        tbSuperficie.Text = MostrarDecimal(local.SuperficieAprox);
         tbTelefono.Text = local.Telefono;
         tbObservaciones.Text = local.Observaciones;
         chkActivo.Checked = local.Estado == "Activo";
         AbrirModal();
+    }    
+    private void MostrarErrorModal(string pTexto)
+    {
+        lblMensajeModal.Text = pTexto;
+        lblMensajeModal.Visible = true;
+        AbrirModal();
     }
-    #endregion
-
+    protected string MostrarSuperficie(object pSuperficie)
+    {
+        return pSuperficie == null ? HttpUtility.HtmlEncode(Traducir("locales.sinSuperficie")) : Convert.ToDecimal(pSuperficie).ToString("#,##0.##") + " m²";
+    }
+    protected string ArmarDatosAnalisis(object pDato)
+    {
+        LocalListado local = pDato as LocalListado;
+        if (local == null) return "";
+        var sb = new System.Text.StringBuilder("<ul class='loc-datos' aria-label='");
+        sb.Append(HttpUtility.HtmlAttributeEncode(Traducir("locales.datosAnalisis"))).Append("'>");
+        sb.Append("<li class='loc-datos-titulo'>").Append(HttpUtility.HtmlEncode(Traducir("locales.datosAnalisis"))).Append("</li>");
+        AgregarDato(sb, local.TieneLayoutVigente, Traducir(local.TieneLayoutVigente ? "locales.datoLayoutSi" : "locales.datoLayoutNo"));
+        AgregarDato(sb, local.CantidadSectores > 0 && local.SectoresCompletos == local.CantidadSectores,
+            Traducir("locales.datoSectores", local.SectoresCompletos, local.CantidadSectores));
+        AgregarDato(sb, local.ProductosUbicados > 0, Traducir("locales.datoProductos", local.ProductosUbicados));
+        AgregarDato(sb, local.ProductosConStock > 0, Traducir("locales.datoStock", local.ProductosConStock));
+        AgregarDato(sb, local.VentasDelMes > 0, Traducir("locales.datoVentas", local.VentasDelMes));
+        if (local.SuperficieAprox != null && local.SuperficieSectores > local.SuperficieAprox)
+        {
+            AgregarDato(sb, false, Traducir("locales.datoSuperficieExcedida", local.SuperficieSectores.ToString("#,##0.##"), local.SuperficieAprox.Value.ToString("#,##0.##")));
+        }
+        sb.Append("</ul>");
+        return sb.ToString();
+    }
+    private static void AgregarDato(System.Text.StringBuilder pSb, bool pCompleto, string pTexto)
+    {
+        pSb.Append("<li class='").Append(pCompleto ? "loc-dato-ok" : "loc-dato-falta").Append("'>")
+           .Append("<span class='loc-dato-icono' aria-hidden='true'>").Append(pCompleto ? "&#10003;" : "!").Append("</span> ")
+           .Append(HttpUtility.HtmlEncode(pTexto)).Append("</li>");
+    }
     private void MostrarMensaje(string texto, bool esExito)
     {
         lblMensaje.Text = texto;
         lblMensaje.CssClass = esExito ? "mensaje" : "mensaje mensaje-error";
         lblMensaje.Visible = true;
     }
+    #endregion
     protected void btnCancelarModal_Click(object sender, EventArgs e)
     {
         pnlModalLocal.Style["display"] = "none";
@@ -133,9 +168,7 @@ public partial class PaginaLocales : PaginaSegura
             AbrirModal();
             return;
         }
-        decimal? superficie = null;
-        decimal superficieParsed;
-        if (decimal.TryParse(tbSuperficie.Text.Trim(), out superficieParsed)) { superficie = superficieParsed; }
+        decimal? superficie = LeerDecimal(tbSuperficie.Text);
         bool esEdicion = hfEsEdicion.Value == "true";
         LocalBE local = new LocalBE(esEdicion ? int.Parse(hfCodigoLocal.Value) : 0, int.Parse(ddlEmpresa.SelectedValue), tbNombre.Text.Trim(), tbDireccion.Text.Trim(), ddlTipoLocal.SelectedValue,
                                     superficie, tbTelefono.Text.Trim(), tbObservaciones.Text.Trim(), chkActivo.Checked ? "Activo" : "Inactivo");
@@ -149,8 +182,19 @@ public partial class PaginaLocales : PaginaSegura
                 CargarLocales();
                 break;
             case ResultadoGuardarLocal.DatosInvalidos:
-                MostrarMensaje(Traducir("comun.datosInvalidos"), esExito: false);
-                AbrirModal();
+                MostrarErrorModal(Traducir("comun.datosInvalidos"));
+                break;
+            case ResultadoGuardarLocal.EmpresaInactiva:
+                MostrarErrorModal(Traducir("locales.errEmpresaInactiva"));
+                break;
+            case ResultadoGuardarLocal.NombreRepetido:
+                MostrarErrorModal(Traducir("locales.errNombreRepetido"));
+                break;
+            case ResultadoGuardarLocal.SuperficieInvalida:
+                MostrarErrorModal(Traducir("locales.errSuperficie"));
+                break;
+            case ResultadoGuardarLocal.TelefonoInvalido:
+                MostrarErrorModal(Traducir("comun.errTelefonoInvalido"));
                 break;
         }
     }

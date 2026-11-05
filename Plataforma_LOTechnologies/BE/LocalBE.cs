@@ -16,6 +16,15 @@ namespace BE
         public string TipoLocal { get; set; }
         public decimal? SuperficieAprox { get; set; }
         public int Estado { get; set; }
+        
+        // Datos para el analisis
+        public bool TieneLayoutVigente { get; set; }
+        public int CantidadSectores { get; set; }
+        public int SectoresCompletos { get; set; }
+        public decimal SuperficieSectores { get; set; }
+        public int ProductosUbicados { get; set; }
+        public int ProductosConStock { get; set; }
+        public int VentasDelMes { get; set; }
     }
     public class LocalBE
     {

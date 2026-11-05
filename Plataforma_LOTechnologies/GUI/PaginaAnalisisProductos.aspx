@@ -50,7 +50,7 @@
                         <summary runat="server" Clave="analisis.comoSeDetecta">¿Cómo se detecta cada oportunidad?</summary>
                         <dl>
                             <dt runat="server" Clave="analisis.tipoEstrellaEscondida">Estrella escondida</dt>
-                            <dd runat="server" Clave="analisis.ayudaEstrella">Está en el 25% de productos que más venden del local (por importe), pero en un sector con circulación 10 puntos o más por debajo del promedio. Se sugiere una exhibición adicional en el sector de más tránsito. Prioridad alta si la diferencia de circulación es de 25 puntos o más.</dd>
+                            <dd runat="server" Clave="analisis.ayudaEstrella">Está en el 25% de productos que más venden del local (por importe), rota (stock para 60 días o menos) y está en un sector con circulación 10 puntos o más por debajo del promedio. Se sugiere una exhibición adicional en un sector compatible con más tránsito; si no hay ninguno, acercar su sector al frente.</dd>
                             <dt runat="server" Clave="analisis.tipoLugarPrivilegiado">Ocupa lugar privilegiado</dt>
                             <dd runat="server" Clave="analisis.ayudaLugar">Está en el 25% que menos vende (o no vendió nada) y ocupa un sector con circulación 10 puntos o más por encima del promedio.</dd>
                             <dt runat="server" Clave="analisis.tipoSinMovimiento">Sin movimiento</dt>
@@ -137,7 +137,7 @@
                                             <span class="texto-secundario"><%# Traducir("stock.colMargen") %></span></div>
                                         <div><span class="texto-principal"><%# HttpUtility.HtmlEncode(MostrarCobertura(Eval("CoberturaDias"))) %></span><br />
                                             <span class="texto-secundario"><%# Traducir("indicadores.colCobertura") %></span></div>
-                                        <div><span class="texto-principal"><%# Eval("SectorActual") == null ? "-" : Eval("Circulacion") + "%" %></span><br />
+                                        <div><span class="texto-principal"><%# Eval("SectorActual") == null ? "-" : Convert.ToDecimal(Eval("Circulacion")).ToString("0.#") + "%" %></span><br />
                                             <span class="texto-secundario"><%# Traducir("layout.colCirculacion") %></span></div>
                                     </div>
                                     <asp:HyperLink runat="server" CssClass="ap-crear-escenario" NavigateUrl='<%# UrlCrearEscenario(Container.DataItem) %>'
@@ -173,7 +173,7 @@
                                             <td><%# Eval("Ventas") %></td>
                                             <td><%# Eval("Importe", "{0:$#,##0}") %></td>
                                             <td><%# HttpUtility.HtmlEncode(MostrarCobertura(Eval("CoberturaDias"))) %></td>
-                                            <td><%# Eval("SectorActual") == null ? "-" : Eval("Circulacion") + "%" %></td>
+                                            <td><%# Eval("SectorActual") == null ? "-" : Convert.ToDecimal(Eval("Circulacion")).ToString("0.#") + "%" %></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>

@@ -14,6 +14,7 @@ namespace BLL
         public const decimal PUNTOS_CIRCULACION = 10m;
         public const decimal PUNTOS_PRIORIDAD_ALTA = 25m;  // estrella escondida: diferencia de circulación para prioridad alta
         public const int DIAS_QUIEBRE = 7;
+        public const int COBERTURA_MAXIMA_ESTRELLA = 60;   // una "estrella" tiene que rotar: stock para 60 días o menos
         private const int MINIMO_PRODUCTOS_RANKING = 4;    // con menos productos con ventas no tiene sentido hablar de "25%"
         private AnalisisProductoDAL analisisDAL = new AnalisisProductoDAL();
         private SectorBLL sectorBLL = new SectorBLL();
@@ -26,7 +27,6 @@ namespace BLL
             List<ProductoMetrica> metricas = analisisDAL.ObtenerMetricasPorLocal(pCodigoLocal, pDesde, pHasta);
             List<SectorListado> sectores = sectorBLL.ObtenerSectoresPorLocal(pCodigoLocal);
             decimal promedioCirculacion = sectores.Count > 0 ? sectores.Average(s => s.Circulacion ?? 0) : 0;
-            SectorListado sectorMasTransitado = sectores.OrderByDescending(s => s.Circulacion ?? 0).FirstOrDefault();
 
             // Umbrales del ranking por importe (entre los productos ubicados en el local)
             List<decimal> importesUbicados = metricas.Where(m => m.CodigoSectorActual != null).Select(m => m.Importe).OrderByDescending(i => i).ToList();
@@ -56,14 +56,24 @@ namespace BLL
                     resultado.Add(Nueva(m, cobertura, ProductoAnalisisListado.TIPO_SIN_UBICAR, "Media", null, null,
                         "analisis.motivoSinUbicar", m.Ventas, m.Importe));
                 }
-                // Estrella escondida: vende mucho en una zona de poco tránsito
-                if (hayRanking && circulacionBaja && m.Importe > 0 && m.Importe >= umbralSuperior
-                    && sectorMasTransitado != null && sectorMasTransitado.CodigoSector != m.CodigoSectorActual)
+                // Estrella escondida: vende mucho (y rota) en una zona de poco tránsito
+                if (hayRanking && circulacionBaja && m.Importe > 0 && m.Importe >= umbralSuperior && cobertura <= COBERTURA_MAXIMA_ESTRELLA)
                 {
-                    decimal diferencia = (sectorMasTransitado.Circulacion ?? 0) - m.CirculacionActual;
-                    resultado.Add(Nueva(m, cobertura, ProductoAnalisisListado.TIPO_ESTRELLA, diferencia >= PUNTOS_PRIORIDAD_ALTA ? "Alta" : "Media",
-                        sectorMasTransitado, "Reubicar productos destacados",
-                        "analisis.motivoEstrella", m.CirculacionActual, sectorMasTransitado.Nombre, sectorMasTransitado.Circulacion ?? 0));
+                    SectorListado destino = BuscarSectorCompatible(m, sectores, metricas);
+                    if (destino != null)
+                    {
+                        decimal diferencia = (destino.Circulacion ?? 0) - m.CirculacionActual;
+                        resultado.Add(Nueva(m, cobertura, ProductoAnalisisListado.TIPO_ESTRELLA, diferencia >= PUNTOS_PRIORIDAD_ALTA ? "Alta" : "Media",
+                            destino, "Reubicar productos destacados",
+                            "analisis.motivoEstrella", m.CirculacionActual, destino.Nombre, destino.Circulacion ?? 0));
+                    }
+                    else
+                    {
+                        // Ningún sector compatible tiene más tránsito: se sugiere acercar su propio sector al frente
+                        SectorListado propio = sectores.FirstOrDefault(s => s.CodigoSector == m.CodigoSectorActual);
+                        resultado.Add(Nueva(m, cobertura, ProductoAnalisisListado.TIPO_ESTRELLA, "Media", propio, "Mover al frente",
+                            "analisis.motivoEstrellaFrente", m.CirculacionActual, m.NombreSectorActual));
+                    }
                 }
                 // Sin ventas en el período y con stock
                 if (m.Ventas == 0 && m.Stock > 0)
@@ -93,7 +103,20 @@ namespace BLL
             string[] orden = { "Alta", "Media", "Baja", "" };
             return resultado.OrderBy(r => Array.IndexOf(orden, r.Prioridad)).ThenByDescending(r => r.Importe).ToList();
         }
-
+        private static SectorListado BuscarSectorCompatible(ProductoMetrica pProducto, List<SectorListado> pSectores, List<ProductoMetrica> pMetricas)
+        {
+            SectorListado actual = pSectores.FirstOrDefault(s => s.CodigoSector == pProducto.CodigoSectorActual);
+            HashSet<int> sectoresDeLaCategoria = new HashSet<int>(pMetricas
+                .Where(x => x.CodigoSectorActual != null && x.NombreCategoria == pProducto.NombreCategoria)
+                .Select(x => x.CodigoSectorActual.Value));
+            return pSectores
+                .Where(s => s.CodigoSector != pProducto.CodigoSectorActual)
+                .Where(s => (actual != null && !string.IsNullOrEmpty(s.Tipo) && s.Tipo != "Otro" && s.Tipo == actual.Tipo)
+                            || sectoresDeLaCategoria.Contains(s.CodigoSector))
+                .Where(s => (s.Circulacion ?? 0) >= pProducto.CirculacionActual + PUNTOS_CIRCULACION)
+                .OrderByDescending(s => s.Circulacion ?? 0)
+                .FirstOrDefault();
+        }
         private static ProductoAnalisisListado Nueva(ProductoMetrica pMetrica, decimal? pCobertura, string pTipo, string pPrioridad,
                                                      SectorListado pSectorSugerido, string pAccion, string pClaveMotivo, params object[] pParametros)
         {

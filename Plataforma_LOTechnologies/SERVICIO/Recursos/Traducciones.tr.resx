@@ -2361,7 +2361,7 @@
     <value>Satılıyor ama yerleştirilmemiş</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>Mağazada tutara göre en çok satan %25'lik ürünler arasında, ancak trafiği ortalamanın 10 puan veya daha fazla altında olan bir bölümde. En yoğun bölümde ek teşhir önerilir. Trafik farkı 25 puan veya üzerindeyse öncelik yüksektir.</value>
+    <value>Mağazada tutara göre en çok satan %25 arasında, iyi dönüyor (stok 60 gün veya daha az yetiyor) ve trafiği ortalamanın 10 puan veya daha fazla altında olan bir bölümde. Daha yoğun ve uyumlu bir bölümde (aynı türde veya kategorisinden ürünlerin bulunduğu) ek teşhir önerilir; yoksa kendi bölümünü girişe yaklaştırmak önerilir. Trafik farkı 25 puan veya üzerindeyse öncelik yüksektir.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>En az satan %25'lik dilimde (veya hiç satılmamış) ve trafiği ortalamanın 10 puan veya daha fazla üzerinde olan bir bölümde.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>En az satan ürünlerden, ancak yoğun bir bölümde (%{0:0.#} trafik, ortalama %{1:0.#}). O alanı daha çok satan ürünlere açmak iyi olur.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>Mağazada en çok satan ve en hızlı dönen ürünlerden, ancak {1} bölümünün trafiği az (%{0:0.#}) ve daha yoğun başka uyumlu bölüm yok. {1} bölümünü girişe yaklaştırmak satışlarını artırabilir.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Mağazalar</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Aktif kullanıcılar</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Yalnızca 11 rakamı yazın: tireler otomatik eklenir.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Yalnızca rakamlar ve başta +; boşluk veya tire olmadan (örn. +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>CUIT geçersiz: 11 haneli olmalı ve kontrol hanesi doğru olmalıdır.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>E-posta adresi geçerli değil.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>Telefon yalnızca rakam ve başta + içerebilir (6 ila 15 hane).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Şirket devre dışı bırakıldı. Şirketin {0} kullanıcısı artık oturum açamaz.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>Alan yok</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Analiz için veriler</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Güncel kat planı yüklü</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>Güncel kat planı yok</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{1} bölümden {0} tanesinde alan ve trafik var</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} ürün yerleştirildi</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>Stoğu olan {0} ürün</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>Bu ay girilen {0} satış</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>Bölümlerin toplamı {0} m²; mağazadan ({1} m²) fazla</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>Şirket pasif: mağazaları kaydedilemez veya değiştirilemez.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>Şirkette bu adla bir mağaza zaten var.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>Alan 0'dan büyük olmalıdır.</value>
   </data>
 </root>

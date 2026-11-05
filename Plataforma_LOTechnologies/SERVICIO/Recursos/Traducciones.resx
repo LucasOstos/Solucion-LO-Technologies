@@ -2361,7 +2361,7 @@
     <value>Sin ubicar con ventas</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>Está en el 25% de productos que más venden del local (por importe), pero en un sector con circulación 10 puntos o más por debajo del promedio. Se sugiere una exhibición adicional en el sector de más tránsito. Prioridad alta si la diferencia de circulación es de 25 puntos o más.</value>
+    <value>Está en el 25% de productos que más venden del local (por importe), rota (stock para 60 días o menos) y está en un sector con circulación 10 puntos o más por debajo del promedio. Se sugiere una exhibición adicional en un sector compatible (del mismo tipo o donde ya hay productos de su categoría) con más tránsito; si no hay ninguno, acercar su sector al frente. Prioridad alta si la diferencia de circulación es de 25 puntos o más.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>Está en el 25% que menos vende (o no vendió nada) y ocupa un sector con circulación 10 puntos o más por encima del promedio.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>Está entre los productos que menos venden, pero en un sector de mucho tránsito ({0:0.#}% de circulación, el promedio es {1:0.#}%). Conviene liberar ese espacio para productos de mayor venta.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>Está entre los productos que más venden y rotan del local, pero {1} tiene poca circulación ({0:0.#}%) y no hay otro sector compatible con más tránsito. Acercar {1} al frente del local podría aumentar sus ventas.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Locales</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Usuarios activos</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Escribí solo los 11 números: los guiones se agregan solos.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Solo números y un + al principio, sin espacios ni guiones (ej. +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>El CUIT no es válido: tiene que tener 11 números y el dígito verificador correcto.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>El correo no tiene un formato válido.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>El teléfono solo puede tener números y un + al principio (de 6 a 15 dígitos).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Empresa desactivada. {0} usuarios de la empresa ya no pueden iniciar sesión.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>Sin superficie</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Datos para el análisis</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Plano vigente cargado</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>Sin plano vigente</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} de {1} sectores con superficie y circulación</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} productos ubicados</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>{0} productos con stock</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>{0} ventas cargadas este mes</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>Los sectores suman {0} m², más que el local ({1} m²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>La empresa está inactiva: no se le pueden registrar ni modificar locales.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>Ya existe un local con ese nombre en la empresa.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>La superficie tiene que ser mayor que 0.</value>
   </data>
 </root>

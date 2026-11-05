@@ -2361,7 +2361,7 @@
     <value>يُباع دون موقع</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>المنتج ضمن أعلى 25% من منتجات المتجر مبيعاً (بالمبلغ)، لكنه في قسم حركته أقل من المتوسط بـ 10 نقاط أو أكثر. يُقترح عرض إضافي في القسم الأكثر حركة. أولوية عالية إذا كان فرق الحركة 25 نقطة أو أكثر.</value>
+    <value>المنتج ضمن أعلى 25% من منتجات المتجر مبيعاً (بالمبلغ)، ودورانه جيد (مخزون يكفي 60 يوماً أو أقل)، ويقع في قسم حركته أقل من المتوسط بـ 10 نقاط أو أكثر. يُقترح عرض إضافي في قسم متوافق أكثر حركة (من النوع نفسه أو يضم منتجات من فئته)؛ وإن لم يوجد، تقريب قسمه من الواجهة. أولوية عالية إذا كان فرق الحركة 25 نقطة أو أكثر.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>المنتج ضمن أقل 25% مبيعاً (أو لم يُبع) ويشغل قسماً حركته أعلى من المتوسط بـ 10 نقاط أو أكثر.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>من أقل المنتجات مبيعاً، لكنه في قسم كثير الحركة (حركة {0:0.#}%، والمتوسط {1:0.#}%). يُستحسن إفساح هذه المساحة لمنتجات أكثر مبيعاً.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>من أكثر المنتجات مبيعاً ودوراناً في المتجر، لكن حركة {1} قليلة ({0:0.#}%) ولا يوجد قسم متوافق آخر أكثر حركة. تقريب {1} من واجهة المتجر قد يزيد مبيعاته.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>المتاجر</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>المستخدمون النشطون</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>اكتب الأرقام الـ 11 فقط: تُضاف الشرطات تلقائياً.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>أرقام فقط مع + في البداية، بدون مسافات أو شرطات (مثال: +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>رقم CUIT غير صالح: يجب أن يتكون من 11 رقماً مع رقم تحقق صحيح.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>تنسيق البريد الإلكتروني غير صالح.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>يمكن أن يحتوي الهاتف على أرقام فقط و+ في البداية (من 6 إلى 15 رقماً).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>تم إلغاء تفعيل الشركة. لم يعد بإمكان {0} من مستخدمي الشركة تسجيل الدخول.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>بدون مساحة</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>بيانات التحليل</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>تم تحميل المخطط الحالي</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>لا يوجد مخطط حالي</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} من {1} أقسام بمساحة وحركة</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} منتجات موضوعة</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>{0} منتجات بمخزون</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>{0} عمليات بيع مسجلة هذا الشهر</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>مجموع مساحات الأقسام {0} م²، أكثر من مساحة المتجر ({1} م²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>الشركة غير نشطة: لا يمكن تسجيل متاجرها أو تعديلها.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>يوجد بالفعل متجر بهذا الاسم في الشركة.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>يجب أن تكون المساحة أكبر من 0.</value>
   </data>
 </root>

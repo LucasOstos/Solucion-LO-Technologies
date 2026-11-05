@@ -28,6 +28,7 @@
 .loc-activo {
     background-color: #1e7a37;
 }
+
 .loc-inactivo {
     background-color: #b3261e;
 }
@@ -61,11 +62,67 @@
     margin-bottom: 8px;
 }
 
-.loc-boton-layout:hover {
-    background-color: #eef4ff;
-}
+    .loc-boton-layout:hover {
+        background-color: #eef4ff;
+    }
 
 .loc-acciones {
     display: flex;
     justify-content: flex-end;
 }
+
+
+.loc-estado {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #4a5468;
+}
+
+/* Datos para el análisis */
+.loc-datos {
+    list-style: none;
+    margin: 0 0 12px 0;
+    padding: 10px 12px;
+    background-color: #f7f8fb;
+    border-radius: 8px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.loc-datos-titulo {
+    font-weight: 600;
+    color: #17223a;
+    margin-bottom: 2px;
+}
+
+.loc-dato-icono {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.loc-dato-ok {
+    color: #2a3448;
+}
+
+    .loc-dato-ok .loc-dato-icono {
+        background-color: #1e7a37;
+    }
+
+.loc-dato-falta {
+    color: #8a4b00;
+}
+
+    .loc-dato-falta .loc-dato-icono {
+        background-color: #b3691e;
+    }

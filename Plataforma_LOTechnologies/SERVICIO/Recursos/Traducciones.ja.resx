@@ -2361,7 +2361,7 @@
     <value>未配置だが販売あり</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>店舗で売上金額上位25%の商品ですが、動線が平均より10ポイント以上低い売場にあります。最も人通りの多い売場での追加陳列を提案します。動線の差が25ポイント以上なら優先度は高です。</value>
+    <value>店舗で売上金額上位25%に入り、回転が良く（在庫60日分以下）、動線が平均より10ポイント以上低い売場にある商品です。人通りの多い互換性のある売場（同じ種類、または同じカテゴリの商品がすでにある売場）での追加陳列を提案し、該当がなければ自分の売場を入口側へ移動することを提案します。動線の差が25ポイント以上なら優先度は高です。</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>売上下位25%（または販売なし）で、動線が平均より10ポイント以上高い売場にあります。</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>売上の少ない商品ですが、人通りの多い売場（動線 {0:0.#}%、平均は {1:0.#}%）にあります。そのスペースをより売れる商品に譲るとよいでしょう。</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>店舗で最も売れて回転の良い商品ですが、{1} は動線が少なく（{0:0.#}%）、人通りの多い互換性のある売場が他にありません。{1} を入口側へ移動すれば売上が伸びる可能性があります。</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>店舗数</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>有効なユーザー</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>11桁の数字だけを入力してください。ハイフンは自動で入ります。</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>数字と先頭の + のみ。スペースやハイフンは使えません（例：+541145678901）。</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>CUIT が無効です。11桁で、正しいチェックディジットが必要です。</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>メールアドレスの形式が正しくありません。</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>電話番号は数字と先頭の + のみ使用できます（6〜15桁）。</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>会社を無効にしました。この会社の {0} 人のユーザーはログインできなくなります。</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>面積なし</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>分析用データ</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>現行の平面図あり</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>現行の平面図なし</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{1} 売場中 {0} 売場で面積と動線を登録済み</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>配置済み商品 {0} 件</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>在庫登録済み商品 {0} 件</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>今月の売上登録 {0} 件</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>売場の合計は {0} m² で、店舗（{1} m²）より広くなっています</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>会社が無効のため、店舗の登録や変更はできません。</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>この会社には同じ名前の店舗がすでにあります。</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>面積は0より大きくしてください。</value>
   </data>
 </root>

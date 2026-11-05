@@ -15,10 +15,17 @@ namespace DAL
         public List<LocalListado> ObtenerLocalesListado(string pBusqueda, int? pCodigoEmpresa, string pEstado)
         {
             List<LocalListado> locales = new List<LocalListado>();
-            string query = @"SELECT l.CodigoLocal, l.CodigoEmpresa, e.RazonSocial AS NombreEmpresa, l.Nombre, l.Direccion, l.TipoLocal, l.SuperficieAprox, l.Estado FROM Local l
-                              INNER JOIN Empresa e ON l.CodigoEmpresa = e.CodigoEmpresa WHERE (@Busqueda = '' OR l.Nombre LIKE @BusquedaLike OR l.Direccion LIKE @BusquedaLike)
-                                AND (@CodigoEmpresa IS NULL OR l.CodigoEmpresa = @CodigoEmpresa) AND (@Estado = '' OR l.Estado = @Estado) ORDER BY l.Nombre";
-
+            string query = @"SELECT l.CodigoLocal, l.CodigoEmpresa, e.RazonSocial AS NombreEmpresa, l.Nombre, l.Direccion, l.TipoLocal, l.SuperficieAprox, l.Estado,
+                             CASE WHEN EXISTS (SELECT 1 FROM Layout la WHERE la.CodigoLocal = l.CodigoLocal AND la.Estado = 'Activo') THEN 1 ELSE 0 END AS TieneLayoutVigente,
+                             (SELECT COUNT(*) FROM Sector s WHERE s.CodigoLocal = l.CodigoLocal AND s.Estado = 1) AS CantidadSectores,
+                             (SELECT COUNT(*) FROM Sector s WHERE s.CodigoLocal = l.CodigoLocal AND s.Estado = 1 AND s.Superficie > 0 AND s.Circulacion IS NOT NULL) AS SectoresCompletos,
+                             (SELECT ISNULL(SUM(s.Superficie), 0) FROM Sector s WHERE s.CodigoLocal = l.CodigoLocal AND s.Estado = 1) AS SuperficieSectores,
+                             (SELECT COUNT(*) FROM ProductoUbicacion pu WHERE pu.CodigoLocal = l.CodigoLocal) AS ProductosUbicados,
+                             (SELECT COUNT(*) FROM Stock st WHERE st.CodigoLocal = l.CodigoLocal) AS ProductosConStock,
+                             (SELECT COUNT(*) FROM Venta v WHERE v.CodigoLocal = l.CodigoLocal AND v.Periodo = @PeriodoActual) AS VentasDelMes
+                             FROM Local l
+                             INNER JOIN Empresa e ON l.CodigoEmpresa = e.CodigoEmpresa WHERE (@Busqueda = '' OR l.Nombre LIKE @BusquedaLike OR l.Direccion LIKE @BusquedaLike)
+                             AND (@CodigoEmpresa IS NULL OR l.CodigoEmpresa = @CodigoEmpresa) AND (@Estado = '' OR l.Estado = @Estado) ORDER BY l.Nombre";
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -27,6 +34,7 @@ namespace DAL
                 CM.Parameters.AddWithValue("@BusquedaLike", "%" + busqueda + "%");
                 CM.Parameters.AddWithValue("@CodigoEmpresa", (object)pCodigoEmpresa ?? DBNull.Value);
                 CM.Parameters.AddWithValue("@Estado", pEstado ?? "");
+                CM.Parameters.AddWithValue("@PeriodoActual", DateTime.Now.ToString("yyyy-MM"));
                 CO.Open();
                 using (SqlDataReader DR = CM.ExecuteReader())
                 {
@@ -41,7 +49,14 @@ namespace DAL
                             Direccion = DR["Direccion"].ToString(),
                             TipoLocal = DR["TipoLocal"] == DBNull.Value ? "" : DR["TipoLocal"].ToString(),
                             SuperficieAprox = DR["SuperficieAprox"] == DBNull.Value ? (decimal?)null : decimal.Parse(DR["SuperficieAprox"].ToString()),
-                            Estado = DR["Estado"].ToString() == "Activo" ? 1 : 0
+                            Estado = DR["Estado"].ToString() == "Activo" ? 1 : 0,
+                            TieneLayoutVigente = int.Parse(DR["TieneLayoutVigente"].ToString()) == 1,
+                            CantidadSectores = int.Parse(DR["CantidadSectores"].ToString()),
+                            SectoresCompletos = int.Parse(DR["SectoresCompletos"].ToString()),
+                            SuperficieSectores = decimal.Parse(DR["SuperficieSectores"].ToString()),
+                            ProductosUbicados = int.Parse(DR["ProductosUbicados"].ToString()),
+                            ProductosConStock = int.Parse(DR["ProductosConStock"].ToString()),
+                            VentasDelMes = int.Parse(DR["VentasDelMes"].ToString())
                         });
                     }
                 }
@@ -52,7 +67,6 @@ namespace DAL
         {
             LocalBE local = null;
             string query = @"SELECT CodigoLocal, CodigoEmpresa, Nombre, Direccion, TipoLocal, SuperficieAprox, Telefono, Observaciones, Estado FROM Local WHERE CodigoLocal = @CodigoLocal";
-
             using (SqlConnection CO = acceso.NuevaConexion())
             using (SqlCommand CM = new SqlCommand(query, CO))
             {
@@ -69,6 +83,19 @@ namespace DAL
                 }
             }
             return local;
+        }
+        public bool ExisteNombre(int pCodigoEmpresa, string pNombre, int pExcluirCodigoLocal)
+        {
+            string query = "SELECT COUNT(1) FROM Local WHERE CodigoEmpresa = @CodigoEmpresa AND UPPER(LTRIM(RTRIM(Nombre))) = UPPER(@Nombre) AND CodigoLocal <> @Excluir";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoEmpresa", pCodigoEmpresa);
+                CM.Parameters.AddWithValue("@Nombre", (pNombre ?? "").Trim());
+                CM.Parameters.AddWithValue("@Excluir", pExcluirCodigoLocal);
+                CO.Open();
+                return (int)CM.ExecuteScalar() > 0;
+            }
         }
         public int AgregarLocal(LocalBE pLocal)
         {

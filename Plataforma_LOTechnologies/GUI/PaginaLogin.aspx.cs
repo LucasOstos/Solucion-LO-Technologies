@@ -92,6 +92,9 @@ public partial class PaginaLogin : System.Web.UI.Page
             case ResultadoLogin.UsuarioDeshabilitado:
                 MostrarError("Usuario deshabilitado");
                 break;
+            case ResultadoLogin.EmpresaInactiva:
+                MostrarError("Tu usuario está inactiva. Contactá al administrador.");
+                break;
         }
     }
     private void MostrarError(string pMensaje)

@@ -2361,7 +2361,7 @@
     <value>Selling but not placed</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>It is in the top 25% of the store's products by sales amount, but in a section whose traffic is 10 points or more below average. An additional display in the busiest section is suggested. High priority if the traffic gap is 25 points or more.</value>
+    <value>It is in the store's top 25% of products by sales amount, turns over well (stock for 60 days or less) and sits in a section whose traffic is 10 points or more below average. An additional display in a busier compatible section (same type, or one that already has products of its category) is suggested; if there is none, move its section closer to the front. High priority if the traffic gap is 25 points or more.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>It is in the bottom 25% by sales (or sold nothing) and occupies a section whose traffic is 10 points or more above average.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>It is among the lowest sellers, but in a busy section ({0:0.#}% traffic, the average is {1:0.#}%). It is worth freeing that space for better-selling products.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>It is among the store's best-selling, fast-moving products, but {1} has little traffic ({0:0.#}%) and there is no other compatible section with more traffic. Moving {1} closer to the store front could increase its sales.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Stores</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Active users</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Type only the 11 digits: the dashes are added automatically.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Numbers only, with an optional + at the start, no spaces or dashes (e.g. +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>The CUIT is not valid: it must have 11 digits and a correct check digit.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>The email address is not valid.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>The phone number may only contain digits and a + at the start (6 to 15 digits).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Company deactivated. {0} users of the company can no longer sign in.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>No area</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Data for the analysis</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Current floor plan uploaded</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>No current floor plan</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} of {1} sections with area and traffic</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} products placed</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>{0} products with stock</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>{0} sales entered this month</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>The sections add up to {0} m², more than the store ({1} m²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>The company is inactive: its stores cannot be registered or modified.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>A store with that name already exists in the company.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>The area must be greater than 0.</value>
   </data>
 </root>

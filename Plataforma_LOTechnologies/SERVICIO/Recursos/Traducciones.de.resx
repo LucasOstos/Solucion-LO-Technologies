@@ -2361,7 +2361,7 @@
     <value>Verkauft, aber nicht platziert</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>Es gehört zu den 25 % der umsatzstärksten Produkte der Filiale, liegt aber in einem Bereich, dessen Frequenz mindestens 10 Punkte unter dem Durchschnitt liegt. Empfohlen wird eine zusätzliche Platzierung im meistbesuchten Bereich. Hohe Priorität ab 25 Punkten Frequenzunterschied.</value>
+    <value>Es gehört zu den 25 % der umsatzstärksten Produkte der Filiale, hat einen guten Umschlag (Bestand für höchstens 60 Tage) und liegt in einem Bereich mit mindestens 10 Punkten unter der durchschnittlichen Frequenz. Empfohlen wird eine zusätzliche Platzierung in einem passenden, stärker frequentierten Bereich (gleicher Typ oder mit Produkten derselben Kategorie); gibt es keinen, den eigenen Bereich näher an den Eingang verlegen. Hohe Priorität ab 25 Punkten Frequenzunterschied.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>Es gehört zu den 25 % mit dem geringsten Umsatz (oder wurde nicht verkauft) und belegt einen Bereich mit mindestens 10 Punkten über der durchschnittlichen Frequenz.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>Es gehört zu den umsatzschwächsten Produkten, liegt aber in einem stark frequentierten Bereich ({0:0.#} % Frequenz, Durchschnitt {1:0.#} %). Dieser Platz sollte für umsatzstärkere Produkte frei gemacht werden.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>Es gehört zu den Produkten mit dem höchsten Umsatz und Umschlag, aber {1} hat wenig Frequenz ({0:0.#} %) und es gibt keinen anderen passenden Bereich mit mehr Frequenz. {1} näher an den Eingang zu verlegen könnte den Absatz steigern.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Filialen</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Aktive Benutzer</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Geben Sie nur die 11 Ziffern ein: Die Bindestriche werden automatisch ergänzt.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Nur Ziffern und ein + am Anfang, ohne Leerzeichen oder Bindestriche (z. B. +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>Die CUIT ist ungültig: Sie muss 11 Ziffern und eine korrekte Prüfziffer haben.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>Die E-Mail-Adresse ist ungültig.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>Die Telefonnummer darf nur Ziffern und ein + am Anfang enthalten (6 bis 15 Ziffern).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Unternehmen deaktiviert. {0} Benutzer des Unternehmens können sich nicht mehr anmelden.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>Keine Fläche</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Daten für die Analyse</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Aktueller Grundriss vorhanden</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>Kein aktueller Grundriss</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} von {1} Bereichen mit Fläche und Frequenz</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} Produkte platziert</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>{0} Produkte mit Bestand</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>{0} Verkäufe in diesem Monat erfasst</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>Die Bereiche ergeben {0} m², mehr als die Filiale ({1} m²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>Das Unternehmen ist inaktiv: Filialen können nicht erfasst oder geändert werden.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>Im Unternehmen gibt es bereits eine Filiale mit diesem Namen.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>Die Fläche muss größer als 0 sein.</value>
   </data>
 </root>

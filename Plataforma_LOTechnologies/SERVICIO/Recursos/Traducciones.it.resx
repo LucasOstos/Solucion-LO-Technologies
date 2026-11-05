@@ -2361,7 +2361,7 @@
     <value>Venduto ma non collocato</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>È nel 25% dei prodotti che vendono di più nel punto vendita (per importo), ma in un reparto con circolazione di 10 punti o più sotto la media. Si suggerisce un'esposizione aggiuntiva nel reparto più frequentato. Priorità alta se la differenza di circolazione è di 25 punti o più.</value>
+    <value>È nel 25% dei prodotti che vendono di più nel punto vendita (per importo), ruota bene (scorte per 60 giorni o meno) e si trova in un reparto con circolazione di 10 punti o più sotto la media. Si suggerisce un'esposizione aggiuntiva in un reparto compatibile più frequentato (dello stesso tipo o dove ci sono già prodotti della sua categoria); se non c'è, avvicinare il suo reparto all'ingresso. Priorità alta se la differenza di circolazione è di 25 punti o più.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>È nel 25% che vende meno (o non ha venduto nulla) e occupa un reparto con circolazione di 10 punti o più sopra la media.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>È tra i prodotti che vendono meno, ma in un reparto molto frequentato ({0:0.#}% di circolazione, la media è {1:0.#}%). Conviene liberare quello spazio per prodotti più venduti.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>È tra i prodotti che vendono e ruotano di più, ma {1} ha poca circolazione ({0:0.#}%) e non c'è un altro reparto compatibile più frequentato. Avvicinare {1} all'ingresso potrebbe aumentarne le vendite.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Punti vendita</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Utenti attivi</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Scrivi solo le 11 cifre: i trattini vengono aggiunti automaticamente.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Solo numeri e un + all'inizio, senza spazi né trattini (es. +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>Il CUIT non è valido: deve avere 11 cifre e la cifra di controllo corretta.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>L'indirizzo e-mail non è valido.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>Il telefono può contenere solo numeri e un + all'inizio (da 6 a 15 cifre).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Azienda disattivata. {0} utenti dell'azienda non possono più accedere.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>Senza superficie</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Dati per l'analisi</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Planimetria vigente caricata</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>Nessuna planimetria vigente</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} di {1} reparti con superficie e circolazione</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>{0} prodotti collocati</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>{0} prodotti con scorte</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>{0} vendite registrate questo mese</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>I reparti sommano {0} m², più del punto vendita ({1} m²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>L'azienda è inattiva: non si possono registrare né modificare punti vendita.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>Esiste già un punto vendita con quel nome nell'azienda.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>La superficie deve essere maggiore di 0.</value>
   </data>
 </root>

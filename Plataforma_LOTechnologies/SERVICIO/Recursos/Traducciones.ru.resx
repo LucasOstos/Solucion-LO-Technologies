@@ -2361,7 +2361,7 @@
     <value>Продаётся без размещения</value>
   </data>
   <data name="analisis.ayudaEstrella" xml:space="preserve">
-    <value>Товар входит в 25% самых продаваемых в магазине (по сумме), но находится в секторе с проходимостью на 10 пунктов и более ниже среднего. Рекомендуется дополнительная выкладка в самом проходимом секторе. Высокий приоритет, если разница проходимости 25 пунктов и более.</value>
+    <value>Товар входит в 25% самых продаваемых в магазине (по сумме), хорошо оборачивается (запас на 60 дней и меньше) и находится в секторе с проходимостью на 10 пунктов и более ниже среднего. Рекомендуется дополнительная выкладка в подходящем секторе с большей проходимостью (того же типа или где уже есть товары его категории); если такого нет — перенести его сектор ближе к входу. Высокий приоритет, если разница проходимости 25 пунктов и более.</value>
   </data>
   <data name="analisis.ayudaLugar" xml:space="preserve">
     <value>Товар входит в 25% наименее продаваемых (или не продавался) и занимает сектор с проходимостью на 10 пунктов и более выше среднего.</value>
@@ -2404,5 +2404,68 @@
   </data>
   <data name="analisis.motivoLugarPrivilegiado" xml:space="preserve">
     <value>Один из наименее продаваемых товаров, но находится в проходимом секторе ({0:0.#}%, в среднем {1:0.#}%). Стоит освободить это место для более продаваемых товаров.</value>
+  </data>
+  <data name="analisis.motivoEstrellaFrente" xml:space="preserve">
+    <value>Один из самых продаваемых и оборачиваемых товаров, но у «{1}» низкая проходимость ({0:0.#}%), а другого подходящего сектора с большей проходимостью нет. Перенос «{1}» ближе к входу может увеличить продажи.</value>
+  </data>
+  <data name="empresas.colLocales" xml:space="preserve">
+    <value>Магазины</value>
+  </data>
+  <data name="empresas.colUsuarios" xml:space="preserve">
+    <value>Активные пользователи</value>
+  </data>
+  <data name="empresas.ayudaCuit" xml:space="preserve">
+    <value>Введите только 11 цифр: дефисы добавятся автоматически.</value>
+  </data>
+  <data name="comun.ayudaTelefono" xml:space="preserve">
+    <value>Только цифры и + в начале, без пробелов и дефисов (например, +541145678901).</value>
+  </data>
+  <data name="empresas.errCuitInvalido" xml:space="preserve">
+    <value>CUIT недействителен: он должен содержать 11 цифр и правильную контрольную цифру.</value>
+  </data>
+  <data name="empresas.errCorreoInvalido" xml:space="preserve">
+    <value>Неверный формат адреса электронной почты.</value>
+  </data>
+  <data name="comun.errTelefonoInvalido" xml:space="preserve">
+    <value>Телефон может содержать только цифры и + в начале (от 6 до 15 цифр).</value>
+  </data>
+  <data name="empresas.msgDesactivadaUsuarios" xml:space="preserve">
+    <value>Компания отключена. {0} пользователей компании больше не могут войти.</value>
+  </data>
+  <data name="locales.sinSuperficie" xml:space="preserve">
+    <value>Без площади</value>
+  </data>
+  <data name="locales.datosAnalisis" xml:space="preserve">
+    <value>Данные для анализа</value>
+  </data>
+  <data name="locales.datoLayoutSi" xml:space="preserve">
+    <value>Действующий план загружен</value>
+  </data>
+  <data name="locales.datoLayoutNo" xml:space="preserve">
+    <value>Нет действующего плана</value>
+  </data>
+  <data name="locales.datoSectores" xml:space="preserve">
+    <value>{0} из {1} секторов с площадью и проходимостью</value>
+  </data>
+  <data name="locales.datoProductos" xml:space="preserve">
+    <value>Размещено товаров: {0}</value>
+  </data>
+  <data name="locales.datoStock" xml:space="preserve">
+    <value>Товаров с остатком: {0}</value>
+  </data>
+  <data name="locales.datoVentas" xml:space="preserve">
+    <value>Внесено продаж в этом месяце: {0}</value>
+  </data>
+  <data name="locales.datoSuperficieExcedida" xml:space="preserve">
+    <value>Сумма площадей секторов {0} м² больше площади магазина ({1} м²)</value>
+  </data>
+  <data name="locales.errEmpresaInactiva" xml:space="preserve">
+    <value>Компания неактивна: нельзя добавлять или изменять её магазины.</value>
+  </data>
+  <data name="locales.errNombreRepetido" xml:space="preserve">
+    <value>В компании уже есть магазин с таким названием.</value>
+  </data>
+  <data name="locales.errSuperficie" xml:space="preserve">
+    <value>Площадь должна быть больше 0.</value>
   </data>
 </root>

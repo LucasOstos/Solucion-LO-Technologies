@@ -50,16 +50,19 @@
                         <div class="loc-tarjeta">
                             <div class="loc-tarjeta-header">
                                 <span class="avatar avatar-cuadrado">&#127970;</span>
-                                <span class='<%# (int)Eval("Estado") == 1 ? "loc-estado-punto loc-activo" : "loc-estado-punto loc-inactivo" %>'
-                                    title='<%# Traducir((int)Eval("Estado") == 1 ? "comun.activo" : "comun.inactivo") %>'></span>
+                                <span class="loc-estado">
+                                    <span class='<%# (int)Eval("Estado") == 1 ? "loc-estado-punto loc-activo" : "loc-estado-punto loc-inactivo" %>' aria-hidden="true"></span>
+                                    <%# Traducir((int)Eval("Estado") == 1 ? "comun.activo" : "comun.inactivo") %>
+                                </span>
                             </div>
-                            <div class="texto-principal"><%# Eval("Nombre") %></div>
-                            <div class="texto-secundario"><%# Eval("NombreEmpresa") %></div>
-                            <div class="loc-direccion">&#128205; <%# Eval("Direccion") %></div>
+                            <div class="texto-principal"><%# HttpUtility.HtmlEncode(Eval("Nombre")) %></div>
+                            <div class="texto-secundario"><%# HttpUtility.HtmlEncode(Eval("NombreEmpresa")) %></div>
+                            <div class="loc-direccion"><span aria-hidden="true">&#128205;</span> <%# HttpUtility.HtmlEncode(Eval("Direccion")) %></div>
                             <div class="loc-stats">
-                                <span><%# Eval("SuperficieAprox") %> m&sup2;</span>
+                                <span><%# MostrarSuperficie(Eval("SuperficieAprox")) %></span>
                                 <span><%# TraducirValor(Eval("TipoLocal")) %></span>
                             </div>
+                            <%# ArmarDatosAnalisis(Container.DataItem) %>
 
                             <asp:LinkButton runat="server" CssClass="loc-boton-layout" ToolTip="Ver Layout" ClaveTitle="locales.verLayout"
                                 CommandName="VerLayout" CommandArgument='<%# Eval("CodigoLocal") %>' Text="Ver Layout" Clave="locales.verLayout" />
@@ -91,6 +94,7 @@
 
                 <asp:HiddenField ID="hfCodigoLocal" runat="server" />
                 <asp:HiddenField ID="hfEsEdicion" runat="server" Value="false" />
+                <asp:Label ID="lblMensajeModal" runat="server" CssClass="mensaje mensaje-error" Visible="false" EnableViewState="false" role="alert" />
 
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Nombre *" AssociatedControlID="tbNombre" Clave="comun.nombreObligatorio" />
@@ -125,13 +129,15 @@
                     </div>
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="Superficie aprox. (m&sup2;)" AssociatedControlID="tbSuperficie" Clave="locales.superficie" />
-                        <asp:TextBox ID="tbSuperficie" runat="server" CssClass="modal-campo" TextMode="Number" />
+                        <asp:TextBox ID="tbSuperficie" runat="server" CssClass="modal-campo" TextMode="Number" step="any" min="0" />
                     </div>
                 </div>
 
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Teléfono" AssociatedControlID="tbTelefono" Clave="comun.telefono" />
-                    <asp:TextBox ID="tbTelefono" runat="server" CssClass="modal-campo" placeholder="+54 11 0000-0000" />
+                    <asp:TextBox ID="tbTelefono" runat="server" CssClass="modal-campo" MaxLength="16" placeholder="+541145678901"
+                        inputmode="tel" autocomplete="off" oninput="filtrarTelefono(this)" aria-describedby="ayudaTelefonoLocal" />
+                    <span id="ayudaTelefonoLocal" clientidmode="Static" class="texto-secundario campo-ayuda" runat="server" clave="comun.ayudaTelefono">Solo números y un + al principio, sin espacios ni guiones (ej. +541145678901).</span>
                 </div>
 
                 <div class="grupo-campo">

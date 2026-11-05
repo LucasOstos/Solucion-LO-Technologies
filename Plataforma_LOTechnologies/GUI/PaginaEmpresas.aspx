@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/Estilos/Comun.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/EstilosEmpresas.css" />
     <link rel="stylesheet" type="text/css" href="/Estilos/BotonVolverMenu.css" />
-    <script type="text/javascript" src="/JS/Empresas.js"></script>
+    <script type="text/javascript" src="/JS/EmpresasJS.js"></script>
 </head>
 <body>
     <form id="formEmpresas" runat="server">
@@ -50,6 +50,8 @@
                                 <th runat="server" clave="empresas.colCorreo">Correo</th>
                                 <th runat="server" clave="comun.telefono">Teléfono</th>
                                 <th runat="server" clave="comun.direccion">Dirección</th>
+                                <th runat="server" clave="empresas.colLocales">Locales</th>
+                                <th runat="server" clave="empresas.colUsuarios">Usuarios activos</th>
                                 <th runat="server" clave="comun.estado">Estado</th>
                                 <th runat="server" clave="comun.acciones">Acciones</th>
                             </tr>
@@ -58,11 +60,13 @@
                             <asp:Repeater ID="rptEmpresas" runat="server" OnItemCommand="rptEmpresas_ItemCommand">
                                 <ItemTemplate>
                                     <tr>
-                                        <td class="texto-principal">&#127970; <%# Eval("RazonSocial") %></td>
-                                        <td><%# Eval("CUIT") %></td>
-                                        <td><%# Eval("Correo") %></td>
-                                        <td><%# Eval("Telefono") %></td>
-                                        <td><%# Eval("Direccion") %></td>
+                                        <td class="texto-principal"><span aria-hidden="true">&#127970;</span> <%# HttpUtility.HtmlEncode(Eval("RazonSocial")) %></td>
+                                        <td class="emp-cuit"><%# HttpUtility.HtmlEncode(Eval("CUIT")) %></td>
+                                        <td><%# HttpUtility.HtmlEncode(Eval("Correo")) %></td>
+                                        <td><%# string.IsNullOrEmpty((string)Eval("Telefono")) ? "-" : HttpUtility.HtmlEncode(Eval("Telefono")) %></td>
+                                        <td><%# HttpUtility.HtmlEncode(Eval("Direccion")) %></td>
+                                        <td><%# Eval("CantidadLocales") %></td>
+                                        <td><%# Eval("CantidadUsuarios") %></td>
                                         <td>
                                             <span class='<%# (bool)Eval("Estado") ? "etiqueta etiqueta-activo" : "etiqueta etiqueta-inactivo" %>'>
                                                 <%# Traducir((bool)Eval("Estado") ? "comun.activo" : "comun.inactivo") %>
@@ -95,6 +99,7 @@
 
                 <asp:HiddenField ID="hfCodigoEmpresa" runat="server" />
                 <asp:HiddenField ID="hfEsEdicion" runat="server" Value="false" />
+                <asp:Label ID="lblMensajeModal" runat="server" CssClass="mensaje mensaje-error" Visible="false" EnableViewState="false" role="alert" />
 
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Razón Social *" AssociatedControlID="tbRazonSocial" Clave="empresas.razonSocial" />
@@ -106,7 +111,9 @@
                 <div class="fila-formulario">
                     <div class="grupo-campo">
                         <asp:Label runat="server" Text="CUIT *" AssociatedControlID="tbCUIT" />
-                        <asp:TextBox ID="tbCUIT" runat="server" CssClass="modal-campo" placeholder="XX-XXXXXXXX-X" />
+                        <asp:TextBox ID="tbCUIT" runat="server" CssClass="modal-campo" placeholder="XX-XXXXXXXX-X" MaxLength="13"
+                            inputmode="numeric" autocomplete="off" oninput="formatearCuit(this)" aria-describedby="ayudaCuit" />
+                        <span id="ayudaCuit" clientidmode="Static" class="texto-secundario campo-ayuda" runat="server" clave="empresas.ayudaCuit">Escribí solo los 11 números: los guiones se agregan solos.</span>
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="tbCUIT" CssClass="campo-error"
                             ErrorMessage="Ingrese el CUIT" Clave="empresas.errCuit" Display="Dynamic" ValidationGroup="vgEmpresa" />
                     </div>
@@ -120,7 +127,9 @@
 
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Teléfono" AssociatedControlID="tbTelefono" Clave="comun.telefono" />
-                    <asp:TextBox ID="tbTelefono" runat="server" CssClass="modal-campo" TextMode="Number" />
+                    <asp:TextBox ID="tbTelefono" runat="server" CssClass="modal-campo" MaxLength="16" placeholder="+541145678901"
+                        inputmode="tel" autocomplete="off" oninput="filtrarTelefono(this)" aria-describedby="ayudaTelefono" />
+                    <span id="ayudaTelefono" clientidmode="Static" class="texto-secundario campo-ayuda" runat="server" clave="comun.ayudaTelefono">Solo números y un + al principio, sin espacios ni guiones (ej. +541145678901).</span>
                 </div>
 
                 <div class="grupo-campo">
@@ -128,7 +137,7 @@
                     <asp:TextBox ID="tbDireccion" runat="server" CssClass="modal-campo" />
                 </div>
 
-                <div class="grupo-campo grupo-casilla">
+                <div id="grpActiva" runat="server" class="grupo-campo grupo-casilla">
                     <asp:CheckBox ID="chkActiva" runat="server" Checked="true" />
                     <asp:Label runat="server" Text="Empresa activa" AssociatedControlID="chkActiva" Clave="empresas.activa" />
                 </div>

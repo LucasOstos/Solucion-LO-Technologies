@@ -25,11 +25,11 @@ body {
     margin-bottom: 18px;
 }
 
-.encabezado h1 {
-    margin: 0 0 4px 0;
-    font-size: 22px;
-    color: #17223a;
-}
+    .encabezado h1 {
+        margin: 0 0 4px 0;
+        font-size: 22px;
+        color: #17223a;
+    }
 
 .subtitulo {
     margin: 0;
@@ -185,7 +185,6 @@ body {
 }
 
 .panel-pestania {
-
 }
 
 .acciones-tab {
@@ -434,3 +433,10 @@ body {
     .modal-boton-guardar:hover {
         background-color: #2757d6;
     }
+
+/* Texto de ayuda debajo de un campo de formulario */
+.campo-ayuda {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+}

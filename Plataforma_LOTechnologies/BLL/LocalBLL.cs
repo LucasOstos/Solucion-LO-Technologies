@@ -12,7 +12,11 @@ namespace BLL
     public enum ResultadoGuardarLocal
     {
         Exitoso,
-        DatosInvalidos
+        DatosInvalidos,
+        EmpresaInactiva,
+        NombreRepetido,
+        SuperficieInvalida,
+        TelefonoInvalido
     }
     public class LocalBLL
     {
@@ -31,6 +35,8 @@ namespace BLL
         public ResultadoGuardarLocal CrearLocal(LocalBE pLocal)
         {
             pLocal.CodigoEmpresa = ControlAcceso.EmpresaAlcance ?? pLocal.CodigoEmpresa;
+            ResultadoGuardarLocal validacion = Validar(pLocal);
+            if (validacion != ResultadoGuardarLocal.Exitoso) return validacion;
             int codigoLocalNuevo = localDAL.AgregarLocal(pLocal);
             digitos.ActualizarDigitoFila("Local", codigoLocalNuevo);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Registrar local", "Gestión locales", 2);
@@ -40,9 +46,27 @@ namespace BLL
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pLocal.CodigoLocal);
             pLocal.CodigoEmpresa = ControlAcceso.EmpresaAlcance ?? pLocal.CodigoEmpresa;
+            ResultadoGuardarLocal validacion = Validar(pLocal);
+            if (validacion != ResultadoGuardarLocal.Exitoso) return validacion;
             localDAL.ModificarLocal(pLocal);
             digitos.ActualizarDigitoFila("Local", pLocal.CodigoLocal);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Modificar local", "Gestión locales", 2);
+            return ResultadoGuardarLocal.Exitoso;
+        }
+        private ResultadoGuardarLocal Validar(LocalBE pLocal)
+        {
+            pLocal.Nombre = (pLocal.Nombre ?? "").Trim();
+            pLocal.Direccion = (pLocal.Direccion ?? "").Trim();
+            pLocal.Observaciones = (pLocal.Observaciones ?? "").Trim();
+            if (pLocal.Nombre == "" || pLocal.Direccion == "" || pLocal.Nombre.Length > 100 || pLocal.Direccion.Length > 200 || pLocal.Observaciones.Length > 500)
+                return ResultadoGuardarLocal.DatosInvalidos;
+            EmpresaBE empresa = new EmpresaDAL().ObtenerEmpresaPorCodigo(pLocal.CodigoEmpresa);
+            if (empresa == null || !empresa.Estado) return ResultadoGuardarLocal.EmpresaInactiva;
+            if (pLocal.SuperficieAprox != null && (pLocal.SuperficieAprox <= 0 || pLocal.SuperficieAprox > 1000000)) return ResultadoGuardarLocal.SuperficieInvalida;
+            string telefono;
+            if (!EmpresaBLL.NormalizarTelefono(pLocal.Telefono, out telefono)) return ResultadoGuardarLocal.TelefonoInvalido;
+            pLocal.Telefono = telefono;
+            if (localDAL.ExisteNombre(pLocal.CodigoEmpresa, pLocal.Nombre, pLocal.CodigoLocal)) return ResultadoGuardarLocal.NombreRepetido;
             return ResultadoGuardarLocal.Exitoso;
         }
         public void CambiarEstado(int pCodigoLocal, string pNuevoEstado)
