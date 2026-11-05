@@ -44,41 +44,106 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         List<EscenarioListado> escenarios = escenarioBLL.ObtenerEscenariosPorLocal(CodigoLocalActual);
         ddlEscenarioA.Items.Clear();
         ddlEscenarioB.Items.Clear();
-        foreach (EscenarioListado esc in escenarios)
+        // CUN 008: "comparar un escenario actual con un escenario propuesto": la situación actual (sin cambios) es la opción por defecto
+        ddlEscenarioA.Items.Add(new ListItem(Traducir("escenarios.situacionActual"), SITUACION_ACTUAL.ToString()));
+        foreach (EscenarioListado esc in escenarios.Where(e => e.Estado != EscenarioBE.ESTADO_DESCARTADO))
         {
             ddlEscenarioA.Items.Add(new ListItem(esc.Nombre, esc.CodigoEscenario.ToString()));
             ddlEscenarioB.Items.Add(new ListItem(esc.Nombre, esc.CodigoEscenario.ToString()));
         }
     }
-    private void MostrarMapas(EscenarioBE pEscenarioA, EscenarioBE pEscenarioB, List<IndicadorSectorListado> pProyectadosA, List<IndicadorSectorListado> pProyectadosB)
+    private const int SITUACION_ACTUAL = 0;
+    // Escenario elegido en el combo; null = situación actual (sin cambios)
+    private EscenarioBE ObtenerEscenario(int pCodigo)
+    {
+        return pCodigo == SITUACION_ACTUAL ? null : escenarioBLL.ObtenerEscenarioPorCodigo(pCodigo);
+    }
+    private string NombreEscenario(EscenarioBE pEscenario)
+    {
+        return pEscenario == null ? Traducir("escenarios.situacionActual") : pEscenario.Nombre;
+    }
+    protected string MostrarDelta(object pDelta)
+    {
+        decimal delta = pDelta == null ? 0 : Convert.ToDecimal(pDelta);
+        return delta == 0 ? "-" : (delta > 0 ? "+" : "") + delta.ToString("0.#") + "%";
+    }
+    // Resumen en una oración: cuánto cambian ventas, índice global y ventas/m² del propuesto (B) frente al actual (A)
+    private void ArmarConclusion(string pNombreA, string pNombreB, List<IndicadorSectorListado> pA, List<IndicadorSectorListado> pB)
+    {
+        decimal ventasA = pA.Sum(p => p.Ventas), ventasB = pB.Sum(p => p.Ventas);
+        int indiceA = pA.Count > 0 ? (int)Math.Round(pA.Average(p => p.IndiceGlobal), 0) : 0;
+        int indiceB = pB.Count > 0 ? (int)Math.Round(pB.Average(p => p.IndiceGlobal), 0) : 0;
+        decimal? ventasM2A = VentasPorM2(pA), ventasM2B = VentasPorM2(pB);
+        decimal variacionVentas = IndicadorBLL.Variacion(ventasB, ventasA) ?? 0;
+        int diferenciaIndice = indiceB - indiceA;
+        if (variacionVentas == 0 && diferenciaIndice == 0)
+        {
+            litConclusion.Text = HttpUtility.HtmlEncode(Traducir("comparacion.conclusionIgual", pNombreA, pNombreB));
+        }
+        else
+        {
+            bool convieneB = variacionVentas > 0 || (variacionVentas == 0 && diferenciaIndice > 0);
+            litConclusion.Text = "<strong>" + HttpUtility.HtmlEncode(Traducir("comparacion.conclusionConviene", convieneB ? pNombreB : pNombreA)) + "</strong> "
+                + HttpUtility.HtmlEncode(Traducir("comparacion.conclusionDetalle", pNombreB, Signo(variacionVentas) + variacionVentas.ToString("0.#") + "%",
+                                                  Signo(diferenciaIndice) + diferenciaIndice, pNombreA));
+        }
+        decimal? variacionM2 = ventasM2A != null && ventasM2B != null ? IndicadorBLL.Variacion(ventasM2B.Value, ventasM2A.Value) : null;
+        litConclusionDetalle.Text = variacionM2 == null ? ""
+            : HttpUtility.HtmlEncode(Traducir("comparacion.conclusionM2", Signo(variacionM2.Value) + variacionM2.Value.ToString("0.#") + "%"));
+    }
+    private static string Signo(decimal pValor) { return pValor > 0 ? "+" : ""; }
+    private static decimal? VentasPorM2(List<IndicadorSectorListado> pIndicadores)
+    {
+        var conSuperficie = pIndicadores.Where(p => p.Superficie != null && p.Superficie > 0).ToList();
+        decimal m2 = conSuperficie.Sum(p => p.Superficie.Value);
+        return m2 > 0 ? conSuperficie.Sum(p => p.Ventas) / m2 : (decimal?)null;
+    }
+    private void MostrarMapas(EscenarioBE pEscenarioA, EscenarioBE pEscenarioB, List<IndicadorSectorListado> pProyectadosA, List<IndicadorSectorListado> pProyectadosB,
+                              List<EscenarioCambio> pCambiosA, List<EscenarioCambio> pCambiosB)
     {
         List<SectorListado> sectores = sectorBLL.ObtenerSectoresPorLocal(CodigoLocalActual);
         List<decimal> todas = pProyectadosA.Concat(pProyectadosB).Select(p => p.Ventas).ToList();
         decimal minimo = todas.Count > 0 ? todas.Min() : 0;
         decimal maximo = todas.Count > 0 ? todas.Max() : 0;
         LayoutBE vigente = layoutBLL.ObtenerLayoutVigente(CodigoLocalActual);
-        LayoutBE layoutA = ObtenerLayoutBase(pEscenarioA) ?? vigente;
+        // La situación actual usa el plano vigente
+        LayoutBE layoutA = pEscenarioA == null ? vigente : (ObtenerLayoutBase(pEscenarioA) ?? vigente);
         LayoutBE layoutB = ObtenerLayoutBase(pEscenarioB) ?? vigente;
-        litLayoutA.Text = HttpUtility.HtmlEncode(ObtenerLayoutBase(pEscenarioA)?.Nombre ?? Traducir("escenarios.sinLayout"));
+        litLayoutA.Text = HttpUtility.HtmlEncode(layoutA?.Nombre ?? Traducir("escenarios.sinLayout"));
         litLayoutB.Text = HttpUtility.HtmlEncode(ObtenerLayoutBase(pEscenarioB)?.Nombre ?? Traducir("escenarios.sinLayout"));
-        litTituloMapaA.Text = HttpUtility.HtmlEncode(pEscenarioA.Nombre);
-        litTituloMapaB.Text = HttpUtility.HtmlEncode(pEscenarioB.Nombre);
-        litMapaA.Text = MapaLocal.Generar(MapaLocal.ObtenerUrlImagen(layoutA, ResolveUrl), layoutA?.Nombre, ArmarDatosMapa(sectores, pProyectadosA), Traducir, minimo, maximo);
-        litMapaB.Text = MapaLocal.Generar(MapaLocal.ObtenerUrlImagen(layoutB, ResolveUrl), layoutB?.Nombre, ArmarDatosMapa(sectores, pProyectadosB), Traducir, minimo, maximo);
+        litTituloMapaA.Text = HttpUtility.HtmlEncode(NombreEscenario(pEscenarioA));
+        litTituloMapaB.Text = HttpUtility.HtmlEncode(NombreEscenario(pEscenarioB));
+        litMapaA.Text = MapaLocal.Generar(MapaLocal.ObtenerUrlImagen(layoutA, ResolveUrl), layoutA?.Nombre, ArmarDatosMapa(sectores, pProyectadosA, pCambiosA), Traducir, minimo, maximo);
+        litMapaB.Text = MapaLocal.Generar(MapaLocal.ObtenerUrlImagen(layoutB, ResolveUrl), layoutB?.Nombre, ArmarDatosMapa(sectores, pProyectadosB, pCambiosB), Traducir, minimo, maximo);
     }
     private LayoutBE ObtenerLayoutBase(EscenarioBE pEscenario)
     {
-        return pEscenario.CodigoLayout == null ? null : layoutBLL.ObtenerLayoutPorCodigo(pEscenario.CodigoLayout.Value);
+        return pEscenario?.CodigoLayout == null ? null : layoutBLL.ObtenerLayoutPorCodigo(pEscenario.CodigoLayout.Value);
     }
-    private static List<SectorMapa> ArmarDatosMapa(List<SectorListado> pSectores, List<IndicadorSectorListado> pProyectados)
+    // Los sectores con "Mover al frente" / "Mover al fondo" se dibujan en su NUEVA fila del mapa (misma columna)
+    private static List<SectorMapa> ArmarDatosMapa(List<SectorListado> pSectores, List<IndicadorSectorListado> pProyectados, List<EscenarioCambio> pCambios)
     {
         Dictionary<int, IndicadorSectorListado> porSector = pProyectados.ToDictionary(p => p.CodigoSector);
+        Dictionary<int, string> acciones = pCambios.Where(c => c.CodigoSector != null && !string.IsNullOrEmpty(c.Accion))
+                                                   .GroupBy(c => c.CodigoSector.Value).ToDictionary(g => g.Key, g => g.Last().Accion);
         return pSectores.Select(s =>
         {
             IndicadorSectorListado ind;
             decimal? ventas = porSector.TryGetValue(s.CodigoSector, out ind) ? ind.Ventas : (decimal?)null;
-            return new SectorMapa { Nombre = s.Nombre, Ubicacion = s.Ubicacion, Valor = ventas, ValorTexto = MapaLocal.FormatearMoneda(ventas) };
+            string accion;
+            string ubicacion = s.Ubicacion;
+            if (acciones.TryGetValue(s.CodigoSector, out accion)) ubicacion = MoverFila(s.Ubicacion, accion);
+            return new SectorMapa { Nombre = s.Nombre, Ubicacion = ubicacion, Valor = ventas, ValorTexto = MapaLocal.FormatearMoneda(ventas) };
         }).ToList();
+    }
+    // "Centro - Izquierda" + "Mover al frente" -> "Frente - Izquierda"
+    private static string MoverFila(string pUbicacion, string pAccion)
+    {
+        string fila = pAccion == "Mover al frente" ? "Frente" : pAccion == "Mover al fondo" ? "Fondo" : null;
+        if (fila == null || string.IsNullOrEmpty(pUbicacion)) return pUbicacion;
+        int separador = pUbicacion.IndexOf(" - ");
+        string columna = separador >= 0 ? pUbicacion.Substring(separador + 3) : "Centro";
+        return fila + " - " + columna;
     }
     #endregion
 
@@ -93,9 +158,10 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
                 ddlLocal.SelectedValue = codigoLocalQuery.ToString();
             }
             CargarDropdownEscenarios();
-            if (int.TryParse(Request.QueryString["escenarioA"], out codigoEscenarioAQuery) && ddlEscenarioA.Items.FindByValue(codigoEscenarioAQuery.ToString()) != null)
+            if (int.TryParse(Request.QueryString["escenarioA"], out codigoEscenarioAQuery) && ddlEscenarioB.Items.FindByValue(codigoEscenarioAQuery.ToString()) != null)
             {
-                ddlEscenarioA.SelectedValue = codigoEscenarioAQuery.ToString();
+                ddlEscenarioB.SelectedValue = codigoEscenarioAQuery.ToString();
+                ddlEscenarioA.SelectedValue = SITUACION_ACTUAL.ToString();
             }
         }
     }    
@@ -107,6 +173,8 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
 
     protected void btnComparar_Click(object sender, EventArgs e)
     {
+        rptSupuestos.DataSource = IndicadorBLL.ObtenerSupuestos();
+        rptSupuestos.DataBind();
         if (ddlEscenarioA.Items.Count == 0 || ddlEscenarioB.Items.Count == 0)
         {
             MostrarMensaje(Traducir("comun.completeDatos"), esExito: false);
@@ -119,17 +187,17 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
             MostrarMensaje(Traducir("comparacion.errDistintos"), esExito: false);
             return;
         }
-        EscenarioBE escenarioA = escenarioBLL.ObtenerEscenarioPorCodigo(codigoEscenarioA);
-        EscenarioBE escenarioB = escenarioBLL.ObtenerEscenarioPorCodigo(codigoEscenarioB);
-        if (escenarioA.CodigoLocal != escenarioB.CodigoLocal)
+        EscenarioBE escenarioA = ObtenerEscenario(codigoEscenarioA);
+        EscenarioBE escenarioB = ObtenerEscenario(codigoEscenarioB);
+        if ((escenarioA != null && escenarioA.CodigoLocal != CodigoLocalActual) || (escenarioB != null && escenarioB.CodigoLocal != CodigoLocalActual))
         {
             MostrarMensaje(Traducir("comparacion.errMismoLocal"), esExito: false);
             return;
         }
-        List<EscenarioCambio> cambiosA = escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenarioA);
-        List<EscenarioCambio> cambiosB = escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenarioB);
-        litNombreEscenarioA.Text = escenarioA.Nombre;
-        litNombreEscenarioB.Text = escenarioB.Nombre;
+        List<EscenarioCambio> cambiosA = escenarioA == null ? new List<EscenarioCambio>() : escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenarioA);
+        List<EscenarioCambio> cambiosB = escenarioB == null ? new List<EscenarioCambio>() : escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenarioB);
+        litNombreEscenarioA.Text = HttpUtility.HtmlEncode(NombreEscenario(escenarioA));
+        litNombreEscenarioB.Text = HttpUtility.HtmlEncode(NombreEscenario(escenarioB));
         string periodoDesde = PeriodoDesde(MesesDelFiltro(ddlPeriodo.SelectedValue));
         List<IndicadorSectorListado> indicadoresReales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesde);
         if (indicadoresReales.Count == 0)
@@ -145,7 +213,8 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
         rptIndicadoresB.DataBind();
         rptDiferencias.DataSource = ArmarDiferenciasPorSector(proyectadosA, proyectadosB);
         rptDiferencias.DataBind();
-        MostrarMapas(escenarioA, escenarioB, proyectadosA, proyectadosB);
+        MostrarMapas(escenarioA, escenarioB, proyectadosA, proyectadosB, cambiosA, cambiosB);
+        ArmarConclusion(NombreEscenario(escenarioA), NombreEscenario(escenarioB), proyectadosA, proyectadosB);
         ViewState["CodigoEscenarioA"] = codigoEscenarioA;
         ViewState["CodigoEscenarioB"] = codigoEscenarioB;
         pnlResultados.Visible = true;
@@ -195,11 +264,16 @@ public partial class PaginaComparacionEscenarios : PaginaSegura
             MostrarMensaje(Traducir("comparacion.errSinComparacion"), esExito: false);
             return;
         }
-        ComparacionBE comparacion = new ComparacionBE((int)ViewState["CodigoEscenarioA"], (int)ViewState["CodigoEscenarioB"], DateTime.Now, "Comparación basada en cambios propuestos por sector.", "");
-        comparacionBLL.GuardarComparacion(comparacion);
-        MostrarMensaje(Traducir("comparacion.msgGuardada"), esExito: true);
+        int codigoA = (int)ViewState["CodigoEscenarioA"];
+        int codigoB = (int)ViewState["CodigoEscenarioB"];
+        string url = $"PaginaReportes.aspx?local={CodigoLocalActual}&base={codigoA}&propuesto={codigoB}";
+        if (codigoA != SITUACION_ACTUAL && codigoB != SITUACION_ACTUAL)
+        {
+            ComparacionBE comparacion = new ComparacionBE(codigoA, codigoB, DateTime.Now, "Comparación basada en cambios propuestos por sector.", "");
+            url += "&comparacion=" + comparacionBLL.GuardarComparacion(comparacion);
+        }
+        Response.Redirect(url);
     }
-
     private void MostrarMensaje(string texto, bool esExito)
     {
         lblMensaje.Text = texto;

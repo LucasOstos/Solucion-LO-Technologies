@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>Difference</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>Save comparison</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>Estimated sales</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>Generate a comparison first.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>Scenario comparison saved successfully.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>Indicators and recommendations - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>The area must be greater than 0.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>Current situation (no changes)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>Simulation assumptions</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>Each action changes the actual values of the last month for the chosen section by these percentages. They are model estimates (not an exact prediction) and do not take into account the effect on other sections (for example, the section that leaves the front).</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>Change status</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>Delete this scenario? Its saved comparisons are deleted too; reports already generated are kept.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>Scenario deleted.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>Scenario deleted along with {0} saved comparisons.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>The scenario is now "{0}".</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>Choose at least one change in a section: a scenario without changes is the same as the current situation.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>A scenario with that name already exists in the store.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} pts</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>Against the current situation</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>Discarded</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>Conclusion</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} and {1} project the same results.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>{0} is the better option.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>Compared with {3}, {0} projects {1} in sales and {2} points of global index.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>Sales per m²: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>Generate a report of this comparison</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>Out of stock: {0} units were sold in the period. Restock as soon as possible.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>Excessive coverage</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>It sells, but at the period's pace the stock lasts more than 180 days: it is tied-up merchandise.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>It has {0} units: at the period's sales pace they last {1:#,##0} days (more than {2}). Hold purchases or run a promotion.</value>
   </data>
 </root>

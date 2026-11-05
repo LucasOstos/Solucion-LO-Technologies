@@ -95,6 +95,79 @@ namespace DAL
             }
             return cambios;
         }
+        // Escenario y cambios en una transacción, se guarda todo o nada
+        public int AgregarEscenarioConCambios(EscenarioBE pEscenario, List<EscenarioCambio> pCambios)
+        {
+            string queryEscenario = @"INSERT INTO Escenario (CodigoLocal, Nombre, Descripcion, Objetivo, FechaCreacion, Estado, CodigoLayout)
+                                      VALUES (@CodigoLocal, @Nombre, @Descripcion, @Objetivo, @FechaCreacion, @Estado, @CodigoLayout); SELECT CAST(SCOPE_IDENTITY() AS INT);";
+
+            string queryCambio = @"INSERT INTO EscenarioCambio (CodigoEscenario, TipoCambio, Descripcion, CodigoSector, Accion) VALUES (@CodigoEscenario, @TipoCambio, @Descripcion, @CodigoSector, @Accion)";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            {
+                CO.Open();
+                using (SqlTransaction TR = CO.BeginTransaction())
+                {
+                    try
+                    {
+                        int codigoNuevo;
+                        using (SqlCommand CM = new SqlCommand(queryEscenario, CO, TR))
+                        {
+                            CM.Parameters.AddWithValue("@CodigoLocal", pEscenario.CodigoLocal);
+                            CM.Parameters.AddWithValue("@Nombre", pEscenario.Nombre);
+                            CM.Parameters.AddWithValue("@Descripcion", (object)pEscenario.Descripcion ?? DBNull.Value);
+                            CM.Parameters.AddWithValue("@Objetivo", (object)pEscenario.Objetivo ?? DBNull.Value);
+                            CM.Parameters.AddWithValue("@FechaCreacion", pEscenario.FechaCreacion);
+                            CM.Parameters.AddWithValue("@Estado", pEscenario.Estado);
+                            CM.Parameters.AddWithValue("@CodigoLayout", (object)pEscenario.CodigoLayout ?? DBNull.Value);
+                            codigoNuevo = (int)CM.ExecuteScalar();
+                        }
+                        foreach (EscenarioCambio cambio in pCambios)
+                        {
+                            using (SqlCommand CM = new SqlCommand(queryCambio, CO, TR))
+                            {
+                                CM.Parameters.AddWithValue("@CodigoEscenario", codigoNuevo);
+                                CM.Parameters.AddWithValue("@TipoCambio", cambio.TipoCambio);
+                                CM.Parameters.AddWithValue("@Descripcion", cambio.Descripcion);
+                                CM.Parameters.AddWithValue("@CodigoSector", (object)cambio.CodigoSector ?? DBNull.Value);
+                                CM.Parameters.AddWithValue("@Accion", (object)cambio.Accion ?? DBNull.Value);
+                                CM.ExecuteNonQuery();
+                            }
+                            cambio.CodigoEscenario = codigoNuevo;
+                        }
+                        TR.Commit();
+                        return codigoNuevo;
+                    }
+                    catch
+                    {
+                        TR.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+        public bool ExisteNombre(int pCodigoLocal, string pNombre)
+        {
+            string query = "SELECT COUNT(1) FROM Escenario WHERE CodigoLocal = @CodigoLocal AND UPPER(LTRIM(RTRIM(Nombre))) = UPPER(@Nombre)";
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand(query, CO))
+            {
+                CM.Parameters.AddWithValue("@CodigoLocal", pCodigoLocal);
+                CM.Parameters.AddWithValue("@Nombre", (pNombre ?? "").Trim());
+                CO.Open();
+                return (int)CM.ExecuteScalar() > 0;
+            }
+        }
+        public void CambiarEstado(int pCodigoEscenario, string pEstado)
+        {
+            using (SqlConnection CO = acceso.NuevaConexion())
+            using (SqlCommand CM = new SqlCommand("UPDATE Escenario SET Estado = @Estado WHERE CodigoEscenario = @CodigoEscenario", CO))
+            {
+                CM.Parameters.AddWithValue("@Estado", pEstado);
+                CM.Parameters.AddWithValue("@CodigoEscenario", pCodigoEscenario);
+                CO.Open();
+                CM.ExecuteNonQuery();
+            }
+        }
         public int AgregarEscenario(EscenarioBE pEscenario)
         {
             string query = @"INSERT INTO Escenario (CodigoLocal, Nombre, Descripcion, Objetivo, FechaCreacion, Estado, CodigoLayout)
@@ -144,20 +217,60 @@ namespace DAL
             }
             return codigos;
         }
-        public void EliminarEscenario(int pCodigoEscenario)
+        // Borra el escenario y todo lo que depende de él en una transacción
+        public ResultadoEliminarEscenario EliminarEscenario(int pCodigoEscenario)
         {
+            var resultado = new ResultadoEliminarEscenario();
+            string[] borrados =
+            {
+                "DELETE FROM Comparacion WHERE CodigoEscenarioA = @Codigo OR CodigoEscenarioB = @Codigo",
+                "DELETE FROM Indicador WHERE CodigoEscenario = @Codigo",
+                "DELETE FROM Recomendacion WHERE CodigoEscenario = @Codigo",
+                "DELETE FROM EscenarioCambio WHERE CodigoEscenario = @Codigo",
+                "DELETE FROM Escenario WHERE CodigoEscenario = @Codigo"
+            };
             using (SqlConnection CO = acceso.NuevaConexion())
             {
                 CO.Open();
-                using (SqlCommand cmCambios = new SqlCommand("DELETE FROM EscenarioCambio WHERE CodigoEscenario = @CodigoEscenario", CO))
+                using (SqlTransaction TR = CO.BeginTransaction())
                 {
-                    cmCambios.Parameters.AddWithValue("@CodigoEscenario", pCodigoEscenario);
-                    cmCambios.ExecuteNonQuery();
-                }
-                using (SqlCommand cmEscenario = new SqlCommand("DELETE FROM Escenario WHERE CodigoEscenario = @CodigoEscenario", CO))
-                {
-                    cmEscenario.Parameters.AddWithValue("@CodigoEscenario", pCodigoEscenario);
-                    cmEscenario.ExecuteNonQuery();
+                    try
+                    {
+                        string queryReportes = @"UPDATE Reporte SET CodigoComparacion = NULL OUTPUT INSERTED.CodigoReporte
+                                                 WHERE CodigoComparacion IN (SELECT CodigoComparacion FROM Comparacion WHERE CodigoEscenarioA = @Codigo OR CodigoEscenarioB = @Codigo);
+                                                 UPDATE Reporte SET CodigoEscenario = NULL OUTPUT INSERTED.CodigoReporte WHERE CodigoEscenario = @Codigo;";
+                        using (SqlCommand CM = new SqlCommand(queryReportes, CO, TR))
+                        {
+                            CM.Parameters.AddWithValue("@Codigo", pCodigoEscenario);
+                            using (SqlDataReader DR = CM.ExecuteReader())
+                            {
+                                do
+                                {
+                                    while (DR.Read()) resultado.ReportesModificados.Add(DR.GetInt32(0));
+                                } while (DR.NextResult());
+                            }
+                        }
+                        int[] cantidades = new int[borrados.Length];
+                        for (int i = 0; i < borrados.Length; i++)
+                        {
+                            using (SqlCommand CM = new SqlCommand(borrados[i], CO, TR))
+                            {
+                                CM.Parameters.AddWithValue("@Codigo", pCodigoEscenario);
+                                cantidades[i] = CM.ExecuteNonQuery();
+                            }
+                        }
+                        TR.Commit();
+                        resultado.ComparacionesBorradas = cantidades[0];
+                        resultado.IndicadoresBorrados = cantidades[1];
+                        resultado.RecomendacionesBorradas = cantidades[2];
+                        resultado.ReportesModificados = resultado.ReportesModificados.Distinct().ToList();
+                        return resultado;
+                    }
+                    catch
+                    {
+                        TR.Rollback();
+                        throw;
+                    }
                 }
             }
         }

@@ -50,7 +50,17 @@ public partial class PaginaReportes : PaginaSegura
         {
             CargarDropdownLocales();
             CargarDropdownIdiomas();
+            int codigoLocalQuery;
+            if (int.TryParse(Request.QueryString["local"], out codigoLocalQuery) && ddlLocal.Items.FindByValue(codigoLocalQuery.ToString()) != null)
+            {
+                ddlLocal.SelectedValue = codigoLocalQuery.ToString();
+            }
             CargarDropdownEscenarios();
+            string escenarioBaseQuery = Request.QueryString["base"], escenarioPropuestoQuery = Request.QueryString["propuesto"];
+            if (escenarioBaseQuery != null && ddlEscenarioBase.Items.FindByValue(escenarioBaseQuery) != null) ddlEscenarioBase.SelectedValue = escenarioBaseQuery;
+            if (escenarioPropuestoQuery != null && ddlEscenarioPropuesto.Items.FindByValue(escenarioPropuestoQuery) != null) ddlEscenarioPropuesto.SelectedValue = escenarioPropuestoQuery;
+            int codigoComparacionQuery;
+            if (int.TryParse(Request.QueryString["comparacion"], out codigoComparacionQuery)) ViewState["CodigoComparacion"] = codigoComparacionQuery;
             CargarReportesRecientes();
         }
     }
@@ -86,6 +96,8 @@ public partial class PaginaReportes : PaginaSegura
         ddlEscenarioBase.Items.Clear();
         ddlEscenarioPropuesto.Items.Clear();
         ddlEscenarioBase.Items.Add(new WebListItem(Traducir("reportes.ninguno"), ""));
+        // La situación actual (sin cambios) también puede ser la base de la comparación
+        ddlEscenarioBase.Items.Add(new WebListItem(Traducir("escenarios.situacionActual"), "0"));
         ddlEscenarioPropuesto.Items.Add(new WebListItem(Traducir("reportes.ninguno"), ""));
         foreach (EscenarioListado esc in escenarios)
         {
@@ -324,22 +336,25 @@ public partial class PaginaReportes : PaginaSegura
         }
         int codigoBase = int.Parse(ddlEscenarioBase.SelectedValue);
         int codigoPropuesto = int.Parse(ddlEscenarioPropuesto.SelectedValue);
-        EscenarioBE escenarioBase = escenarioBLL.ObtenerEscenarioPorCodigo(codigoBase);
+        // Base 0 = situación actual (sin cambios)
+        EscenarioBE escenarioBase = codigoBase == 0 ? null : escenarioBLL.ObtenerEscenarioPorCodigo(codigoBase);
         EscenarioBE escenarioPropuesto = escenarioBLL.ObtenerEscenarioPorCodigo(codigoPropuesto);
-        if (escenarioBase.CodigoLocal != escenarioPropuesto.CodigoLocal)
+        if (escenarioBase != null && escenarioBase.CodigoLocal != escenarioPropuesto.CodigoLocal)
         {
             documento.Add(new Paragraph(T("comparacion.errMismoLocal"), fuenteSubtitulo));
             documento.Add(new Paragraph(" "));
             return;
         }
-        List<EscenarioCambio> cambiosBase = escenarioBLL.ObtenerCambiosPorEscenario(codigoBase);
+        List<EscenarioCambio> cambiosBase = escenarioBase == null ? new List<EscenarioCambio>() : escenarioBLL.ObtenerCambiosPorEscenario(codigoBase);
         List<EscenarioCambio> cambiosPropuesto = escenarioBLL.ObtenerCambiosPorEscenario(codigoPropuesto);
         string periodoDesdeStr = PeriodoDesde(1);
         List<IndicadorSectorListado> indicadoresReales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, periodoDesdeStr);
         List<IndicadorSectorListado> proyectadosBase = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosBase);
         List<IndicadorSectorListado> proyectadosPropuesto = indicadorBLL.ProyectarIndicadores(indicadoresReales, cambiosPropuesto);
-        documento.Add(new Paragraph(T("pdf.baseVsPropuesto", escenarioBase.Nombre, escenarioPropuesto.Nombre), fuenteNormal));
-        documento.Add(new Paragraph(T("pdf.layoutBase", NombreLayout(escenarioBase.CodigoLayout), NombreLayout(escenarioPropuesto.CodigoLayout)), fuenteSubtitulo));
+        string nombreBase = escenarioBase == null ? T("escenarios.situacionActual") : escenarioBase.Nombre;
+        int? layoutBase = escenarioBase == null ? layoutBLL.ObtenerLayoutVigente(CodigoLocalActual)?.CodigoLayout : escenarioBase.CodigoLayout;
+        documento.Add(new Paragraph(T("pdf.baseVsPropuesto", nombreBase, escenarioPropuesto.Nombre), fuenteNormal));
+        documento.Add(new Paragraph(T("pdf.layoutBase", NombreLayout(layoutBase), NombreLayout(escenarioPropuesto.CodigoLayout)), fuenteSubtitulo));
         var tabla = new PdfPTable(4) { WidthPercentage = 100 };
         AgregarFila(tabla, fuenteEncabezado, T("layout.colSector"), T("pdf.ventasBase"), T("pdf.ventasPropuesto"), T("comparacion.colDiferencia"));
         foreach (var indPropuesto in proyectadosPropuesto)
@@ -492,8 +507,11 @@ public partial class PaginaReportes : PaginaSegura
         if (!Directory.Exists(carpetaDestino)) Directory.CreateDirectory(carpetaDestino);
         string rutaCompleta = Path.Combine(carpetaDestino, nombreArchivo);
         GenerarPdf(rutaCompleta, titulo, indicadores, periodoDesde, periodoHasta);
-        int? codigoEscenarioBase = string.IsNullOrEmpty(ddlEscenarioBase.SelectedValue) ? (int?)null : int.Parse(ddlEscenarioBase.SelectedValue);
-        var reporte = new ReporteBE(CodigoLocalActual, codigoEscenarioBase, null, titulo, ddlTipoReporte.SelectedValue, "", $"Subidas/Reportes/{nombreArchivo}", periodoDesde, periodoHasta, DateTime.Now);
+        int codigoEscenarioElegido;
+        int? codigoEscenarioBase = int.TryParse(ddlEscenarioPropuesto.SelectedValue, out codigoEscenarioElegido) && codigoEscenarioElegido > 0 ? codigoEscenarioElegido
+                                 : int.TryParse(ddlEscenarioBase.SelectedValue, out codigoEscenarioElegido) && codigoEscenarioElegido > 0 ? codigoEscenarioElegido : (int?)null;
+        int? codigoComparacion = ViewState["CodigoComparacion"] as int?;
+        var reporte = new ReporteBE(CodigoLocalActual, codigoEscenarioBase, codigoComparacion, titulo, ddlTipoReporte.SelectedValue, "", $"Subidas/Reportes/{nombreArchivo}", periodoDesde, periodoHasta, DateTime.Now);
         reporteBLL.CrearReporte(reporte);
         MostrarMensaje(Traducir("reportes.msgGenerado"), esExito: true);
         CargarReportesRecientes();

@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>Fark</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>Karşılaştırmayı kaydet</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>Tahmini satışlar</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>Önce bir karşılaştırma oluşturun.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>Senaryo karşılaştırması başarıyla kaydedildi.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>Göstergeler ve öneriler - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>Alan 0'dan büyük olmalıdır.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>Mevcut durum (değişiklik yok)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>Simülasyon varsayımları</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>Her eylem, seçilen bölümün son ayın gerçek değerlerini bu yüzdelerle değiştirir. Bunlar modelin tahminleridir (kesin bir öngörü değildir) ve diğer bölümler üzerindeki etkiyi (örneğin girişten ayrılan bölüm) hesaba katmaz.</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>Eylem</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>Durumu değiştir</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>Bu senaryo silinsin mi? Kayıtlı karşılaştırmaları da silinir; oluşturulmuş raporlar korunur.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>Senaryo silindi.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>Senaryo, kayıtlı {0} karşılaştırmayla birlikte silindi.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>Senaryo artık "{0}".</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>En az bir bölümde bir değişiklik seçin: değişikliksiz bir senaryo mevcut durumla aynıdır.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>Mağazada bu adla bir senaryo zaten var.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} puan</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>Mevcut duruma göre</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>Elendi</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>Sonuç</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} ve {1} aynı sonuçları öngörüyor.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>{0} daha iyi seçenek.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>{3} ile karşılaştırıldığında {0}, satışlarda {1} ve genel endekste {2} puan öngörüyor.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>m² başına satış: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>Bu karşılaştırmanın raporunu oluştur</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>Stok yok: dönemde {0} birim satıldı. En kısa sürede yenileyin.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>Aşırı stok süresi</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>Satılıyor, ancak dönemin hızında stok 180 günden fazla yetiyor: atıl mal.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>{0} birim var: dönemin satış hızında {1:#,##0} gün yetiyor ({2} günden fazla). Alımları durdurun veya kampanya yapın.</value>
   </data>
 </root>

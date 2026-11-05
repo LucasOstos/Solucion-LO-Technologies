@@ -37,7 +37,6 @@ public partial class PaginaAnalisisProductos : PaginaSegura
         if (!IsPostBack)
         {
             CargarDropdownLocales();
-            // Por defecto: los últimos 3 meses (el actual y los 2 anteriores) hasta hoy
             tbPeriodoDesde.Text = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1).AddMonths(-2).ToString("yyyy-MM-dd");
             tbPeriodoHasta.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
@@ -105,6 +104,7 @@ public partial class PaginaAnalisisProductos : PaginaSegura
             case ProductoAnalisisListado.TIPO_SIN_MOVIMIENTO: return Traducir("analisis.tipoSinMovimiento");
             case ProductoAnalisisListado.TIPO_RIESGO_QUIEBRE: return Traducir("analisis.tipoRiesgoQuiebre");
             case ProductoAnalisisListado.TIPO_SIN_UBICAR: return Traducir("analisis.tipoSinUbicar");
+            case ProductoAnalisisListado.TIPO_COBERTURA_EXCESIVA: return Traducir("analisis.tipoCoberturaExcesiva");
             default: return "";
         }
     }

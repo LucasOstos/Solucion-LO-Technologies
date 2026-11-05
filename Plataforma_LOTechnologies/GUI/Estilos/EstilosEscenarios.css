@@ -72,9 +72,9 @@
     padding: 6px 0;
 }
 
-.esc-fila-sector .texto-secundario {
-    flex: 0 0 120px;
-}
+    .esc-fila-sector .texto-secundario {
+        flex: 0 0 120px;
+    }
 
 .esc-select-cambio {
     flex: 1;
@@ -90,3 +90,90 @@
     margin-bottom: 6px;
     font-size: 13px;
 }
+
+
+.esc-etiqueta-descartado {
+    background-color: #fdecea;
+    color: #b3261e;
+}
+
+/* Situación actual (referencia) */
+.esc-actual {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background-color: #eef4ff;
+    border: 1px solid #c9d9ff;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+
+    .esc-actual > div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .esc-actual .esc-stats {
+        flex: 1 1 320px;
+        max-width: 480px;
+        margin: 0;
+        background-color: #ffffff;
+    }
+
+/* Variación contra la situación actual */
+.esc-variacion {
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.esc-variacion-sube {
+    color: #1e7a37;
+}
+
+.esc-variacion-baja {
+    color: #b3261e;
+}
+
+.esc-variacion-igual {
+    color: #6b7385;
+}
+
+.esc-tarjeta-acciones {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+    .esc-tarjeta-acciones .boton-icono {
+        color: #b3261e;
+        font-size: 13px;
+    }
+
+.esc-estado-detalle {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* Supuestos de la simulación */
+.esc-supuestos {
+    margin-top: 20px;
+}
+
+    .esc-supuestos summary {
+        cursor: pointer;
+        color: #2f6bff;
+        font-weight: 600;
+    }
+
+    .esc-supuestos p {
+        margin: 10px 0;
+        font-size: 13px;
+    }

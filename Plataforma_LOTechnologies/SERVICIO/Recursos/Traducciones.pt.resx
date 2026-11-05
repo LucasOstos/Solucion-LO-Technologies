@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>Diferença</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>Salvar comparação</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>Vendas estimadas</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>Primeiro gere uma comparação.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>Comparação de cenários salva com sucesso.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>Indicadores e recomendações - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>A área deve ser maior que 0.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>Situação atual (sem alterações)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>Premissas da simulação</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>Cada ação altera os valores reais do último mês do setor escolhido nestas porcentagens. São estimativas do modelo (não uma previsão exata) e não consideram o efeito sobre os outros setores (por exemplo, o setor que sai da frente).</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>Ação</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>Alterar estado</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>Excluir este cenário? Suas comparações salvas também são excluídas; os relatórios já gerados são mantidos.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>Cenário excluído.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>Cenário excluído junto com {0} comparações salvas.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>O cenário passou para "{0}".</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>Escolha pelo menos uma alteração em algum setor: um cenário sem alterações é igual à situação atual.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>Já existe um cenário com esse nome na loja.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} pts</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>Em relação à situação atual</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>Descartado</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>Conclusão</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} e {1} projetam os mesmos resultados.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>{0} é a melhor opção.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>Em relação a {3}, {0} projeta {1} de vendas e {2} pontos de índice global.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>Vendas por m²: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>Gerar relatório desta comparação</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>Sem estoque: foram vendidas {0} unidades no período. Repor o quanto antes.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>Cobertura excessiva</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>É vendido, mas no ritmo do período o estoque dura mais de 180 dias: é mercadoria parada.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>Tem {0} unidades: no ritmo de venda do período dão para {1:#,##0} dias (mais de {2}). Frear compras ou fazer uma promoção.</value>
   </data>
 </root>

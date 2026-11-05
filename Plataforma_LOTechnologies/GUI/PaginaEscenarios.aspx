@@ -35,6 +35,28 @@
                     <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
                 </div>
 
+                <%-- Situación actual del local (sin cambios): la referencia contra la que se mide cada escenario --%>
+                <asp:Panel ID="pnlSituacionActual" runat="server" CssClass="esc-actual" Visible="false">
+                    <div>
+                        <span class="texto-principal" runat="server" Clave="escenarios.situacionActual">Situación actual (sin cambios)</span>
+                        <span class="texto-secundario"><asp:Literal ID="litPeriodoActual" runat="server" /></span>
+                    </div>
+                    <div class="esc-stats">
+                        <div>
+                            <div class="texto-secundario" runat="server" Clave="indicadores.colVentas">Ventas</div>
+                            <div class="texto-principal"><asp:Literal ID="litVentasActual" runat="server" /></div>
+                        </div>
+                        <div>
+                            <div class="texto-secundario" runat="server" Clave="layout.colCirculacion">Circulación</div>
+                            <div class="texto-principal"><asp:Literal ID="litCirculacionActual" runat="server" /></div>
+                        </div>
+                        <div>
+                            <div class="texto-secundario" runat="server" Clave="indicadores.colIndice">Índice global</div>
+                            <div class="texto-principal"><asp:Literal ID="litIndiceActual" runat="server" /></div>
+                        </div>
+                    </div>
+                </asp:Panel>
+
                 <asp:Repeater ID="rptEscenarios" runat="server" OnItemCommand="rptEscenarios_ItemCommand">
                     <HeaderTemplate>
                         <div class="esc-grilla">
@@ -42,15 +64,16 @@
                     <ItemTemplate>
                         <div class="esc-tarjeta">
                             <div class="esc-tarjeta-header">
-                                <span class="texto-principal">&#128100; <%# Eval("Nombre") %></span>
+                                <span class="texto-principal"><%# HttpUtility.HtmlEncode(Eval("Nombre")) %></span>
                                 <span class='<%# "etiqueta " + ObtenerClaseEstado(Eval("Estado").ToString()) %>'><%# TraducirValor(Eval("Estado")) %></span>
                             </div>
-                            <div class="texto-secundario"><%# Eval("Descripcion") %></div>
+                            <div class="texto-secundario"><%# HttpUtility.HtmlEncode(Eval("Descripcion")) %></div>
 
                             <div class="esc-stats">
                                 <div>
                                     <div class="texto-secundario"><%# Traducir("escenarios.ventasEst") %></div>
                                     <div class="texto-principal"><%# Eval("VentasEstimadas", "{0:$#,##0}") %></div>
+                                    <div><%# MostrarVariacionPorcentaje(Eval("VariacionVentas")) %></div>
                                 </div>
                                 <div>
                                     <div class="texto-secundario"><%# Traducir("layout.colCirculacion") %></div>
@@ -59,6 +82,7 @@
                                 <div>
                                     <div class="texto-secundario"><%# Traducir("indicadores.colIndice") %></div>
                                     <div class="texto-principal"><%# Eval("IndiceGlobalEstimado") %>/100</div>
+                                    <div><%# MostrarVariacionPuntos(Eval("VariacionIndice")) %></div>
                                 </div>
                             </div>
 
@@ -68,12 +92,44 @@
                                 <asp:LinkButton runat="server" CssClass="boton-nuevo esc-boton-full" Visible='<%# Eval("Estado").ToString() != "Base" %>'
                                     ToolTip="Comparar" ClaveTitle="escenarios.comparar" CommandName="Comparar" CommandArgument='<%# Eval("CodigoEscenario") %>' Text="Comparar" Clave="escenarios.comparar" />
                             </div>
+                            <div class="esc-tarjeta-acciones">
+                                <asp:LinkButton runat="server" CssClass="boton-icono" ToolTip="Eliminar" ClaveTitle="comun.eliminar" CommandName="Eliminar"
+                                    CommandArgument='<%# Eval("CodigoEscenario") %>' ClaveConfirmar="escenarios.confirmarEliminar" CausesValidation="false"
+                                    Text="Eliminar" Clave="comun.eliminar" />
+                            </div>
                         </div>
                     </ItemTemplate>
                     <FooterTemplate></div></FooterTemplate>
                 </asp:Repeater>
 
                 <asp:Label ID="lblSinEscenarios" runat="server" Text="Este local todavía no tiene escenarios creados." Clave="escenarios.sinEscenarios" Visible="false" CssClass="sin-resultados" />
+
+                <details class="tarjeta esc-supuestos">
+                    <summary runat="server" Clave="escenarios.supuestos">Supuestos de la simulación</summary>
+                    <p class="texto-secundario" runat="server" Clave="escenarios.ayudaSupuestos">Cada acción cambia los valores reales del último mes del sector elegido en estos porcentajes. Son estimaciones del modelo (no una predicción exacta) y no tienen en cuenta el efecto sobre los otros sectores (por ejemplo, el sector que deja el frente).</p>
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                                <th runat="server" Clave="escenarios.colAccion">Acción</th>
+                                <th runat="server" Clave="layout.colCirculacion">Circulación</th>
+                                <th runat="server" Clave="indicadores.colVentas">Ventas</th>
+                                <th runat="server" Clave="layout.colSuperficie">Superficie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <asp:Repeater ID="rptSupuestos" runat="server">
+                                <ItemTemplate>
+                                    <tr>
+                                        <td class="texto-principal"><%# TraducirValor(Eval("Accion")) %></td>
+                                        <td><%# MostrarDelta(Eval("DeltaCirculacion")) %></td>
+                                        <td><%# MostrarDelta(Eval("DeltaVentas")) %></td>
+                                        <td><%# MostrarDelta(Eval("DeltaSuperficie")) %></td>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </tbody>
+                    </table>
+                </details>
 
             </div>
         </div>
@@ -84,6 +140,7 @@
                     <h3 runat="server" Clave="escenarios.modalNuevo">Nuevo Escenario</h3>
                     <span class="modal-cerrar" onclick="cerrarModal('pnlModalEscenario')">&times;</span>
                 </div>
+                <asp:Label ID="lblMensajeModal" runat="server" CssClass="mensaje mensaje-error" Visible="false" EnableViewState="false" role="alert" />
 
                 <div class="grupo-campo">
                     <asp:Label runat="server" Text="Nombre del Escenario *" AssociatedControlID="tbNombreEscenario" Clave="escenarios.nombre" />
@@ -140,8 +197,19 @@
                     <span class="modal-cerrar" onclick="cerrarModal('pnlDetalleEscenario')">&times;</span>
                 </div>
 
-                <p><strong runat="server" Clave="layout.estado">Estado:</strong>
-                    <asp:Literal ID="litEstadoDetalleEscenario" runat="server" /></p>
+                <asp:HiddenField ID="hfCodigoEscenarioDetalle" runat="server" />
+                <div class="esc-estado-detalle">
+                    <asp:Label runat="server" Text="Estado:" AssociatedControlID="ddlEstadoDetalle" Clave="layout.estado" />
+                    <asp:DropDownList ID="ddlEstadoDetalle" runat="server" CssClass="selector">
+                        <asp:ListItem Text="Borrador" Value="Borrador" Clave="valor.borrador" />
+                        <asp:ListItem Text="En revisión" Value="En revisión" Clave="valor.enRevision" />
+                        <asp:ListItem Text="Aprobado" Value="Aprobado" Clave="valor.aprobado" />
+                        <asp:ListItem Text="Descartado" Value="Descartado" Clave="valor.descartado" />
+                    </asp:DropDownList>
+                    <asp:Button ID="btnCambiarEstado" runat="server" CssClass="boton-secundario" Text="Cambiar estado" Clave="escenarios.btnCambiarEstado"
+                        OnClick="btnCambiarEstado_Click" CausesValidation="false" />
+                    <asp:Literal ID="litEstadoDetalleEscenario" runat="server" Visible="false" />
+                </div>
                 <p><strong runat="server" Clave="layout.descripcion">Descripción:</strong>
                     <asp:Literal ID="litDescripcionDetalleEscenario" runat="server" /></p>
                 <p><strong runat="server" Clave="escenarios.objetivoDetalle">Objetivo:</strong>

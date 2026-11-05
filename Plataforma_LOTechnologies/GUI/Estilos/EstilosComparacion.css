@@ -10,3 +10,28 @@
     padding: 8px 0;
     border-bottom: 1px solid #eef1f6;
 }
+
+
+/* Conclusión automática */
+.ce-conclusion {
+    border-left: 4px solid #2f6bff;
+}
+
+    .ce-conclusion p {
+        margin: 6px 0;
+    }
+
+.ce-supuestos {
+    margin-top: 16px;
+}
+
+    .ce-supuestos summary {
+        cursor: pointer;
+        color: #2f6bff;
+        font-weight: 600;
+    }
+
+    .ce-supuestos p {
+        margin: 10px 0;
+        font-size: 13px;
+    }

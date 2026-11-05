@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>Разница</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>Сохранить сравнение</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>Прогноз продаж</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>Сначала выполните сравнение.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>Сравнение сценариев успешно сохранено.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>Показатели и рекомендации - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>Площадь должна быть больше 0.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>Текущая ситуация (без изменений)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>Допущения моделирования</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>Каждое действие изменяет фактические значения выбранного сектора за последний месяц на эти проценты. Это оценки модели (не точный прогноз), и они не учитывают влияние на другие секторы (например, сектор, который уходит от входа).</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>Действие</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>Изменить статус</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>Удалить этот сценарий? Его сохранённые сравнения тоже удалятся; уже созданные отчёты сохранятся.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>Сценарий удалён.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>Сценарий удалён вместе с {0} сохранёнными сравнениями.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>Сценарий переведён в статус «{0}».</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>Выберите хотя бы одно изменение в каком-либо секторе: сценарий без изменений равен текущей ситуации.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>В магазине уже есть сценарий с таким названием.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} п.</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>По сравнению с текущей ситуацией</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>Отклонён</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>Вывод</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} и {1} дают одинаковые результаты.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>Выгоднее {0}.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>По сравнению с {3}, {0} даёт {1} по продажам и {2} п. общего индекса.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>Продажи на м²: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>Создать отчёт по этому сравнению</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>Нет в наличии: за период продано {0} ед. Пополнить как можно скорее.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>Избыточный запас</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>Товар продаётся, но при темпе продаж за период запаса хватит более чем на 180 дней: это замороженный товар.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>На складе {0} ед.: при темпе продаж за период хватит на {1:#,##0} дн. (больше {2}). Сократить закупки или провести акцию.</value>
   </data>
 </root>

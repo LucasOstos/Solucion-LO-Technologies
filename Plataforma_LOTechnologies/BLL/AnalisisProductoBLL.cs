@@ -14,7 +14,8 @@ namespace BLL
         public const decimal PUNTOS_CIRCULACION = 10m;
         public const decimal PUNTOS_PRIORIDAD_ALTA = 25m;  // estrella escondida: diferencia de circulación para prioridad alta
         public const int DIAS_QUIEBRE = 7;
-        public const int COBERTURA_MAXIMA_ESTRELLA = 60;   // una "estrella" tiene que rotar: stock para 60 días o menos
+        public const int COBERTURA_MAXIMA_ESTRELLA = 60;
+        public const int COBERTURA_EXCESIVA = 180;          // stock para más de 180 días al ritmo de venta: mercadería inmovilizada   // una "estrella" tiene que rotar: stock para 60 días o menos
         private const int MINIMO_PRODUCTOS_RANKING = 4;    // con menos productos con ventas no tiene sentido hablar de "25%"
         private AnalisisProductoDAL analisisDAL = new AnalisisProductoDAL();
         private SectorBLL sectorBLL = new SectorBLL();
@@ -45,10 +46,21 @@ namespace BLL
                 decimal? cobertura = m.Ventas > 0 ? Math.Round(m.Stock / (m.Ventas / (decimal)dias), 0) : (decimal?)null;
 
                 // Riesgo de quiebre: se vende y el stock no llega a 7 días (o ya no hay)
-                if (m.Ventas > 0 && cobertura < DIAS_QUIEBRE)
+                if (m.Ventas > 0 && m.Stock <= 0)
+                {
+                    resultado.Add(Nueva(m, cobertura, ProductoAnalisisListado.TIPO_RIESGO_QUIEBRE, "Alta", null, null,
+                        "analisis.motivoSinStock", m.Ventas));
+                }
+                else if (m.Ventas > 0 && cobertura < DIAS_QUIEBRE)
                 {
                     resultado.Add(Nueva(m, cobertura, ProductoAnalisisListado.TIPO_RIESGO_QUIEBRE, "Alta", null, null,
                         "analisis.motivoQuiebre", m.Stock, cobertura.Value, DIAS_QUIEBRE));
+                }
+                // Cobertura excesiva: se vende, pero el stock alcanza para más de COBERTURA_EXCESIVA días
+                if (m.Ventas > 0 && cobertura > COBERTURA_EXCESIVA)
+                {
+                    resultado.Add(Nueva(m, cobertura, ProductoAnalisisListado.TIPO_COBERTURA_EXCESIVA, "Baja", null, null,
+                        "analisis.motivoCoberturaExcesiva", m.Stock, cobertura.Value, COBERTURA_EXCESIVA));
                 }
                 // Sin ubicar con ventas
                 if (!ubicado && m.Ventas > 0)
@@ -109,16 +121,11 @@ namespace BLL
             HashSet<int> sectoresDeLaCategoria = new HashSet<int>(pMetricas
                 .Where(x => x.CodigoSectorActual != null && x.NombreCategoria == pProducto.NombreCategoria)
                 .Select(x => x.CodigoSectorActual.Value));
-            return pSectores
-                .Where(s => s.CodigoSector != pProducto.CodigoSectorActual)
-                .Where(s => (actual != null && !string.IsNullOrEmpty(s.Tipo) && s.Tipo != "Otro" && s.Tipo == actual.Tipo)
-                            || sectoresDeLaCategoria.Contains(s.CodigoSector))
-                .Where(s => (s.Circulacion ?? 0) >= pProducto.CirculacionActual + PUNTOS_CIRCULACION)
-                .OrderByDescending(s => s.Circulacion ?? 0)
-                .FirstOrDefault();
+            return pSectores.Where(s => s.CodigoSector != pProducto.CodigoSectorActual)
+                .Where(s => (actual != null && !string.IsNullOrEmpty(s.Tipo) && s.Tipo != "Otro" && s.Tipo == actual.Tipo) || sectoresDeLaCategoria.Contains(s.CodigoSector))
+                .Where(s => (s.Circulacion ?? 0) >= pProducto.CirculacionActual + PUNTOS_CIRCULACION).OrderByDescending(s => s.Circulacion ?? 0).FirstOrDefault();
         }
-        private static ProductoAnalisisListado Nueva(ProductoMetrica pMetrica, decimal? pCobertura, string pTipo, string pPrioridad,
-                                                     SectorListado pSectorSugerido, string pAccion, string pClaveMotivo, params object[] pParametros)
+        private static ProductoAnalisisListado Nueva(ProductoMetrica pMetrica, decimal? pCobertura, string pTipo, string pPrioridad, SectorListado pSectorSugerido, string pAccion, string pClaveMotivo, params object[] pParametros)
         {
             return new ProductoAnalisisListado
             {
@@ -132,8 +139,7 @@ namespace BLL
                 SectorSugerido = pSectorSugerido?.Nombre,
                 Ventas = pMetrica.Ventas,
                 Importe = pMetrica.Importe,
-                Margen = pMetrica.Costo != null && pMetrica.Importe > 0
-                    ? Math.Round((pMetrica.Importe - pMetrica.Ventas * pMetrica.Costo.Value) / pMetrica.Importe * 100, 1) : (decimal?)null,
+                Margen = pMetrica.Costo != null && pMetrica.Importe > 0 ? Math.Round((pMetrica.Importe - pMetrica.Ventas * pMetrica.Costo.Value) / pMetrica.Importe * 100, 1) : (decimal?)null,
                 Stock = pMetrica.Stock,
                 CoberturaDias = pCobertura,
                 Circulacion = pMetrica.CirculacionActual,

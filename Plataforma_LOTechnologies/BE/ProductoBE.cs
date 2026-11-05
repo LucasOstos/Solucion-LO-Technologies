@@ -15,6 +15,7 @@ namespace BE
         public const string TIPO_SIN_MOVIMIENTO = "SinMovimiento";
         public const string TIPO_RIESGO_QUIEBRE = "RiesgoQuiebre";
         public const string TIPO_SIN_UBICAR = "SinUbicar";
+        public const string TIPO_COBERTURA_EXCESIVA = "CoberturaExcesiva";
         public int CodigoProducto { get; set; }
         public string CodigoInterno { get; set; } // PROD-001
         public string NombreProducto { get; set; }
@@ -33,7 +34,7 @@ namespace BE
         public string Prioridad { get; set; } // Alta / Media / Baja ("" = sin observaciones)
         public string ClaveMotivo { get; set; }
         public object[] Parametros { get; set; }
-        public string AccionEscenario { get; set; } // cambio a simular en el sector sugerido (null = no aplica)
+        public string AccionEscenario { get; set; }
     }
     public class ProductoListado
     {
@@ -59,8 +60,7 @@ namespace BE
         public int Ventas { get; set; } // unidades
         public decimal Importe { get; set; }
         public int Stock { get; set; }
-    }
-    #endregion
+    }    
     public class ProductoUbicacionBE
     {
         public int CodigoUbicacion { get; set; }
@@ -76,6 +76,7 @@ namespace BE
             CodigoSector = pCodigoSector;
         }
     }
+    #endregion
     public class ProductoBE
     {
         public int CodigoProducto { get; set; }

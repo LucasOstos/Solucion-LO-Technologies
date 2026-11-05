@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>الفرق</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>حفظ المقارنة</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>المبيعات المقدّرة</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>أنشئ مقارنة أولًا.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>تم حفظ مقارنة السيناريوهات بنجاح.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>المؤشرات والتوصيات - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>يجب أن تكون المساحة أكبر من 0.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>الوضع الحالي (بدون تغييرات)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>افتراضات المحاكاة</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>كل إجراء يغيّر القيم الفعلية للشهر الأخير للقسم المختار بهذه النسب. إنها تقديرات النموذج (وليست توقعاً دقيقاً) ولا تأخذ في الاعتبار التأثير على الأقسام الأخرى (مثل القسم الذي يترك الواجهة).</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>الإجراء</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>تغيير الحالة</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>هل تريد حذف هذا السيناريو؟ ستُحذف أيضاً مقارناته المحفوظة؛ وتبقى التقارير التي أُنشئت.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>تم حذف السيناريو.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>تم حذف السيناريو مع {0} مقارنات محفوظة.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>أصبحت حالة السيناريو "{0}".</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>اختر تغييراً واحداً على الأقل في أحد الأقسام: السيناريو بدون تغييرات مطابق للوضع الحالي.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>يوجد بالفعل سيناريو بهذا الاسم في المتجر.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} نقطة</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>مقارنةً بالوضع الحالي</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>مستبعد</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>الخلاصة</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>يتوقع {0} و{1} النتائج نفسها.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>{0} هو الخيار الأفضل.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>مقارنةً بـ {3}، يتوقع {0} {1} في المبيعات و{2} نقاط في المؤشر العام.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>المبيعات لكل م²: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>إنشاء تقرير لهذه المقارنة</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>نفد المخزون: بيعت {0} وحدة في الفترة. أعد التزويد في أقرب وقت.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>تغطية مفرطة</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>يُباع، لكن بوتيرة الفترة يكفي المخزون أكثر من 180 يوماً: إنها بضاعة راكدة.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>لديه {0} وحدة: بوتيرة بيع الفترة تكفي {1:#,##0} يوماً (أكثر من {2}). أوقف المشتريات أو قم بعرض ترويجي.</value>
   </data>
 </root>

@@ -54,6 +54,7 @@ public static class ValoresTraducibles
         { "Base", "valor.base" },
         { "En revisión", "valor.enRevision" },
         { "Aprobado", "valor.aprobado" },
+        { "Descartado", "valor.descartado" },
         // Cambios propuestos de un escenario (IndicadorBLL los interpreta en español)
         { "Modificación de sector", "valor.modificacionSector" },
         { "Mover al frente", "valor.moverFrente" },

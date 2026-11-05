@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>Differenz</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>Vergleich speichern</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>Geschätzter Umsatz</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>Erstellen Sie zuerst einen Vergleich.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>Szenariovergleich erfolgreich gespeichert.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>Kennzahlen und Empfehlungen - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>Die Fläche muss größer als 0 sein.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>Aktuelle Situation (ohne Änderungen)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>Annahmen der Simulation</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>Jede Aktion verändert die tatsächlichen Werte des letzten Monats des gewählten Bereichs um diese Prozentsätze. Es sind Schätzungen des Modells (keine exakte Vorhersage) und sie berücksichtigen nicht die Wirkung auf andere Bereiche (z. B. den Bereich, der den Eingang verlässt).</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>Aktion</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>Status ändern</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>Dieses Szenario löschen? Seine gespeicherten Vergleiche werden ebenfalls gelöscht; bereits erstellte Berichte bleiben erhalten.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>Szenario gelöscht.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>Szenario zusammen mit {0} gespeicherten Vergleichen gelöscht.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>Das Szenario ist jetzt „{0}“.</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>Wählen Sie mindestens eine Änderung in einem Bereich: Ein Szenario ohne Änderungen entspricht der aktuellen Situation.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>In der Filiale gibt es bereits ein Szenario mit diesem Namen.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} Pkt.</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>Im Vergleich zur aktuellen Situation</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>Verworfen</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>Fazit</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} und {1} ergeben dieselben Ergebnisse.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>{0} ist die bessere Option.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>Im Vergleich zu {3} ergibt {0} {1} beim Umsatz und {2} Punkte beim Gesamtindex.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>Umsatz pro m²: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>Bericht zu diesem Vergleich erstellen</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>Kein Bestand: Im Zeitraum wurden {0} Einheiten verkauft. So schnell wie möglich nachfüllen.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>Zu hohe Reichweite</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>Es wird verkauft, aber beim Tempo des Zeitraums reicht der Bestand mehr als 180 Tage: Das ist gebundene Ware.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>Es hat {0} Einheiten: Beim Verkaufstempo des Zeitraums reichen sie {1:#,##0} Tage (mehr als {2}). Einkäufe stoppen oder eine Aktion machen.</value>
   </data>
 </root>

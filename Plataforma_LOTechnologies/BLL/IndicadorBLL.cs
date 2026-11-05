@@ -14,12 +14,11 @@ namespace BLL
         private IndicadorDAL indicadorDAL = new IndicadorDAL();
         private VentaDAL ventaDAL = new VentaDAL();
         private DigitoVerificador digitos = new DigitoVerificador();
-
         public const decimal PESO_CIRCULACION = 0.4m;
         public const decimal PESO_ROTACION = 0.3m;
         public const decimal PESO_VENTAS_M2 = 0.3m;
         public const int INDICE_BUENO = 70;    // verde desde 70
-        public const int INDICE_REGULAR = 50;  // amarillo desde 50, - de 50 rojo
+        public const int INDICE_REGULAR = 50;  // amarillo desde 50, menos de 50 rojo
 
         public List<IndicadorSectorListado> CalcularIndicadoresPorSector(int pCodigoLocal, string pPeriodoDesde)
         {
@@ -61,7 +60,7 @@ namespace BLL
             return Math.Round((pActual - pAnterior) / pAnterior * 100, 1);
         }
 
-        // Ventas del local de los últimos meses (incluido el actual, marcado "en curso")
+        // Ventas del local de los últimos meses (incluido el actual, marcado como "en curso")
         public List<VentaMensual> ObtenerEvolucionVentas(int pCodigoLocal, int pMeses)
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
@@ -77,7 +76,7 @@ namespace BLL
             return evolucion;
         }
 
-        //Un registro por sector e indicador. Si ya existe se actualiza (solo si cambió el valor),
+        //Un registro por sector e indicador. Si ya existe se actualiza (solo si cambió el valor)
         public void GuardarIndicadores(int pCodigoLocal, string pPeriodo, List<IndicadorSectorListado> pIndicadores)
         {
             ControlAcceso.Validar(EntidadEmpresa.Local, pCodigoLocal);
@@ -184,6 +183,17 @@ namespace BLL
             { "Reducir superficie", new CoeficienteCambio { DeltaCirculacion = -5m, DeltaVentas = -8m, DeltaSuperficie = -20m } },
             { "Reubicar productos destacados", new CoeficienteCambio { DeltaCirculacion = 8m, DeltaVentas = 6m } }
         };
+        // Supuestos de la simulación, para mostrarlos en Escenarios y Comparación ("¿de dónde salen los números?")
+        public static List<SupuestoSimulacion> ObtenerSupuestos()
+        {
+            return COEFICIENTES.Select(c => new SupuestoSimulacion
+            {
+                Accion = c.Key,
+                DeltaCirculacion = c.Value.DeltaCirculacion,
+                DeltaVentas = c.Value.DeltaVentas,
+                DeltaSuperficie = c.Value.DeltaSuperficie
+            }).ToList();
+        }
         public List<IndicadorSectorListado> ProyectarIndicadores(List<IndicadorSectorListado> pIndicadoresReales, List<EscenarioCambio> pCambios)
         {
             var accionesPorCodigo = new Dictionary<int, string>();
@@ -201,7 +211,7 @@ namespace BLL
                     accionesPorNombre[cambio.Descripcion.Substring(0, pos)] = cambio.Descripcion.Substring(pos + 2);
                 }
             }
-            // El índice proyectado se mide contra los MEJORES valores reales: así dos escenarios comparten la misma escala
+            // El índice proyectado se mide contra los MEJORES valores reales, así dos escenarios comparten la misma escala
             decimal maximaRotacion = MaximaRotacion(pIndicadoresReales);
             decimal maximasVentasM2 = MaximasVentasPorM2(pIndicadoresReales);
             var proyectados = new List<IndicadorSectorListado>();

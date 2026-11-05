@@ -19,8 +19,24 @@ namespace BE
         public decimal CirculacionEstimada { get; set; }
         public decimal SatisfaccionEstimada { get; set; }
         public int IndiceGlobalEstimado { get; set; }
+        public decimal? VariacionVentas { get; set; }
+        public int VariacionIndice { get; set; }
         public int? CodigoLayout { get; set; }
         public string NombreLayout { get; set; }
+    }
+    public class ResultadoEliminarEscenario
+    {
+        public List<int> ReportesModificados { get; set; } = new List<int>();
+        public int ComparacionesBorradas { get; set; }
+        public int IndicadoresBorrados { get; set; }
+        public int RecomendacionesBorradas { get; set; }
+    }
+    public class SupuestoSimulacion
+    {
+        public string Accion { get; set; }
+        public decimal DeltaCirculacion { get; set; }
+        public decimal DeltaVentas { get; set; }
+        public decimal DeltaSuperficie { get; set; }
     }
     public class EscenarioCambio
     {
@@ -34,6 +50,11 @@ namespace BE
     #endregion
     public class EscenarioBE
     {
+        public const string ESTADO_BORRADOR = "Borrador";
+        public const string ESTADO_EN_REVISION = "En revisión";
+        public const string ESTADO_APROBADO = "Aprobado";
+        public const string ESTADO_DESCARTADO = "Descartado";
+        public static readonly string[] ESTADOS = { ESTADO_BORRADOR, ESTADO_EN_REVISION, ESTADO_APROBADO, ESTADO_DESCARTADO };
         public int CodigoEscenario { get; set; }
         public int CodigoLocal { get; set; }
         public string Nombre { get; set; }

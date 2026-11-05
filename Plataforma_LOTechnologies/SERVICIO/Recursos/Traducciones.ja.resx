@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>差</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>比較を保存</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>推定売上</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>先に比較を作成してください。</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>シナリオ比較を保存しました。</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>指標と推奨事項 - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>面積は0より大きくしてください。</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>現状（変更なし）</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>シミュレーションの前提条件</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>各アクションは、選択した売場の直近1か月の実績値をこの割合で変化させます。モデルによる推定（正確な予測ではありません）であり、他の売場への影響（たとえば入口側から外れる売場）は考慮していません。</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>アクション</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>ステータスを変更</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>このシナリオを削除しますか？保存済みの比較も削除されます。作成済みのレポートは残ります。</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>シナリオを削除しました。</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>シナリオと保存済みの比較 {0} 件を削除しました。</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>シナリオのステータスを「{0}」に変更しました。</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>少なくとも1つの売場で変更を選んでください。変更のないシナリオは現状と同じです。</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>この店舗には同じ名前のシナリオがすでにあります。</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} pt</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>現状との比較</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>不採用</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>結論</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} と {1} の予測結果は同じです。</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>{0} の方が有利です。</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>{3} と比べて、{0} は売上 {1}、総合指数 {2} ポイントと予測されます。</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>面積あたり売上：{0}。</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>この比較のレポートを作成</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>在庫切れ：期間中に {0} 個売れました。早急に補充してください。</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>在庫過多</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>販売はありますが、期間の販売ペースでは在庫が180日以上もちます。滞留在庫です。</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>在庫は {0} 個で、期間の販売ペースでは {1:#,##0} 日分あります（{2} 日超）。仕入れを抑えるか販促を行ってください。</value>
   </data>
 </root>

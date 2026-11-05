@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>Diferencia</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>Guardar comparación</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>Ventas estimadas</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>Primero generá una comparación.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>Comparación de escenarios guardada correctamente.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>Indicadores y recomendaciones - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>La superficie tiene que ser mayor que 0.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>Situación actual (sin cambios)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>Supuestos de la simulación</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>Cada acción cambia los valores reales del último mes del sector elegido en estos porcentajes. Son estimaciones del modelo (no una predicción exacta) y no tienen en cuenta el efecto sobre los otros sectores (por ejemplo, el sector que deja el frente).</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>Acción</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>Cambiar estado</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>¿Eliminar este escenario? También se borran sus comparaciones guardadas; los reportes ya generados se conservan.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>Escenario eliminado.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>Escenario eliminado junto con {0} comparaciones guardadas.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>El escenario pasó a "{0}".</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>Elegí al menos un cambio en algún sector: un escenario sin cambios es igual a la situación actual.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>Ya existe un escenario con ese nombre en el local.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} pts</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>Contra la situación actual</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>Descartado</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>Conclusión</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} y {1} proyectan los mismos resultados.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>Conviene {0}.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>Frente a {3}, {0} proyecta {1} de ventas y {2} puntos de índice global.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>Ventas por m²: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>Generar reporte de esta comparación</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>Sin stock: se vendieron {0} unidades en el período. Reponer cuanto antes.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>Cobertura excesiva</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>Se vende, pero al ritmo del período el stock alcanza para más de 180 días: es mercadería inmovilizada.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>Tiene {0} unidades: al ritmo de venta del período alcanzan para {1:#,##0} días (más de {2}). Frenar compras o hacer una promoción.</value>
   </data>
 </root>

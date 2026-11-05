@@ -59,6 +59,8 @@
                             <dd runat="server" Clave="analisis.ayudaQuiebre">Al ritmo de venta del período, el stock alcanza para menos de 7 días (o ya no hay stock).</dd>
                             <dt runat="server" Clave="analisis.tipoSinUbicar">Sin ubicar con ventas</dt>
                             <dd runat="server" Clave="analisis.ayudaSinUbicar">Se vende en el local pero no está ubicado en ningún sector: sus ventas no cuentan en los indicadores por sector.</dd>
+                            <dt runat="server" Clave="analisis.tipoCoberturaExcesiva">Cobertura excesiva</dt>
+                            <dd runat="server" Clave="analisis.ayudaCoberturaExcesiva">Se vende, pero al ritmo del período el stock alcanza para más de 180 días: es mercadería inmovilizada.</dd>
                         </dl>
                     </details>
                 </div>
@@ -98,6 +100,7 @@
                             <asp:ListItem Text="Sin movimiento" Value="SinMovimiento" Clave="analisis.tipoSinMovimiento" />
                             <asp:ListItem Text="Riesgo de quiebre" Value="RiesgoQuiebre" Clave="analisis.tipoRiesgoQuiebre" />
                             <asp:ListItem Text="Sin ubicar con ventas" Value="SinUbicar" Clave="analisis.tipoSinUbicar" />
+                            <asp:ListItem Text="Cobertura excesiva" Value="CoberturaExcesiva" Clave="analisis.tipoCoberturaExcesiva" />
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlFiltroPrioridad" runat="server" CssClass="selector" AutoPostBack="true" OnSelectedIndexChanged="Filtro_Changed" ClaveAria="analisis.todasPrioridades">
                             <asp:ListItem Text="Todas las prioridades" Value="" Clave="analisis.todasPrioridades" />

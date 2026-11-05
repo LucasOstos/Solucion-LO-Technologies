@@ -57,6 +57,12 @@
                 </div>
 
                 <asp:Panel ID="pnlResultados" runat="server" Visible="false">
+                    <%-- Conclusión automática: qué cambia del escenario propuesto frente al actual --%>
+                    <div class="tarjeta ce-conclusion" role="status">
+                        <h2 runat="server" Clave="comparacion.conclusion">Conclusión</h2>
+                        <p><asp:Literal ID="litConclusion" runat="server" /></p>
+                        <p class="texto-secundario"><asp:Literal ID="litConclusionDetalle" runat="server" /></p>
+                    </div>
                     <div class="ce-comparacion">
                         <div class="tarjeta">
                             <h2>
@@ -118,7 +124,7 @@
                                 <asp:Repeater ID="rptDiferencias" runat="server">
                                     <ItemTemplate>
                                         <tr>
-                                            <td class="texto-principal"><%# Eval("Indicador") %></td>
+                                            <td class="texto-principal"><%# HttpUtility.HtmlEncode(Eval("Indicador")) %></td>
                                             <td><%# Eval("ValorActual") %></td>
                                             <td><%# Eval("ValorPropuesto") %></td>
                                             <td><span class='<%# "etiqueta " + Eval("ClaseDiferencia") %>'><%# Eval("Diferencia") %></span></td>
@@ -129,7 +135,34 @@
                         </table>
                     </div>
 
-                    <asp:Button ID="btnGuardarComparacion" runat="server" CssClass="boton-nuevo" Text="Guardar Comparación" Clave="comparacion.btnGuardar" OnClick="btnGuardarComparacion_Click" CausesValidation="false" />
+                    <details class="tarjeta ce-supuestos">
+                        <summary runat="server" Clave="escenarios.supuestos">Supuestos de la simulación</summary>
+                        <p class="texto-secundario" runat="server" Clave="escenarios.ayudaSupuestos">Cada acción cambia los valores reales del último mes del sector elegido en estos porcentajes. Son estimaciones del modelo (no una predicción exacta) y no tienen en cuenta el efecto sobre los otros sectores (por ejemplo, el sector que deja el frente).</p>
+                        <table class="tabla">
+                            <thead>
+                                <tr>
+                                    <th runat="server" Clave="escenarios.colAccion">Acción</th>
+                                    <th runat="server" Clave="layout.colCirculacion">Circulación</th>
+                                    <th runat="server" Clave="indicadores.colVentas">Ventas</th>
+                                    <th runat="server" Clave="layout.colSuperficie">Superficie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <asp:Repeater ID="rptSupuestos" runat="server">
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td class="texto-principal"><%# TraducirValor(Eval("Accion")) %></td>
+                                            <td><%# MostrarDelta(Eval("DeltaCirculacion")) %></td>
+                                            <td><%# MostrarDelta(Eval("DeltaVentas")) %></td>
+                                            <td><%# MostrarDelta(Eval("DeltaSuperficie")) %></td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <asp:Button ID="btnGuardarComparacion" runat="server" CssClass="boton-nuevo" Text="Generar reporte de esta comparación" Clave="comparacion.btnGenerarReporte" OnClick="btnGuardarComparacion_Click" CausesValidation="false" />
                 </asp:Panel>
             </div>
         </div>

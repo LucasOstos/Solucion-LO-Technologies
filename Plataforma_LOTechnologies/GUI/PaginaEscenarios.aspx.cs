@@ -41,7 +41,7 @@ public partial class PaginaEscenarios : PaginaSegura
             AbrirDesdeRecomendacion();
         }
     }
-
+    #region Funciones
     private void AbrirDesdeRecomendacion()
     {
         int codigoSector;
@@ -65,7 +65,6 @@ public partial class PaginaEscenarios : PaginaSegura
         tbNombreEscenario.Text = $"{TraducirValor(accion)} - {sector.Nombre}";
         tbDescripcionEscenario.Text = Traducir("escenarios.desdeRecomendacion");
     }
-    #region Funciones
     private void CargarDropdownLocales()
     {
         List<LocalListado> locales = localBLL.ObtenerLocalesListado("", null, "Activo");
@@ -77,12 +76,16 @@ public partial class PaginaEscenarios : PaginaSegura
     }
     private void CargarEscenarios()
     {
+        rptSupuestos.DataSource = IndicadorBLL.ObtenerSupuestos();
+        rptSupuestos.DataBind();
+        pnlSituacionActual.Visible = false;
         if (CodigoLocalActual == 0)
         {
             rptEscenarios.Visible = false;
             lblSinEscenarios.Visible = true;
             return;
         }
+        MostrarSituacionActual();
         List<EscenarioListado> escenarios = escenarioBLL.ObtenerEscenariosPorLocal(CodigoLocalActual);
         if (escenarios.Count == 0)
         {
@@ -98,27 +101,78 @@ public partial class PaginaEscenarios : PaginaSegura
             rptEscenarios.DataBind();
         }
     }
-    // Ventas, circulación e índice global que tendría el local con los cambios de cada escenario
+    private List<IndicadorSectorListado> indicadoresReales;
+    private List<IndicadorSectorListado> IndicadoresReales
+    {
+        get
+        {
+            if (indicadoresReales == null) indicadoresReales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, PeriodoDesde(1));
+            return indicadoresReales;
+        }
+    }
+    // Tarjeta de referencia: los valores reales del local (último mes), sin ningún cambio
+    private void MostrarSituacionActual()
+    {
+        List<IndicadorSectorListado> reales = IndicadoresReales;
+        if (reales.Count == 0) return;
+        litPeriodoActual.Text = HttpUtility.HtmlEncode(Traducir("stock.rangoPeriodo", DescribirPeriodo(1)));
+        litVentasActual.Text = reales.Sum(r => r.Ventas).ToString("$#,##0");
+        litCirculacionActual.Text = reales.Average(r => r.Circulacion).ToString("0.#") + "%";
+        litIndiceActual.Text = ((int)Math.Round(reales.Average(r => r.IndiceGlobal), 0)) + "/100";
+        pnlSituacionActual.Visible = true;
+    }
+    // Ventas, circulación e índice global que tendría el local con los cambios de cada escenario, y cuánto cambian
+    // contra la situación actual (los dos se calculan sobre el mismo período: la diferencia es solo el efecto de los cambios)
     private void CalcularEstimaciones(List<EscenarioListado> pEscenarios)
     {
-        List<IndicadorSectorListado> reales = indicadorBLL.CalcularIndicadoresPorSector(CodigoLocalActual, PeriodoDesde(1));
+        List<IndicadorSectorListado> reales = IndicadoresReales;
         if (reales.Count == 0) return;
+        decimal ventasActuales = reales.Sum(r => r.Ventas);
+        int indiceActual = (int)Math.Round(reales.Average(r => r.IndiceGlobal), 0);
         foreach (EscenarioListado escenario in pEscenarios)
         {
             List<IndicadorSectorListado> proyectados = indicadorBLL.ProyectarIndicadores(reales, escenarioBLL.ObtenerCambiosPorEscenario(escenario.CodigoEscenario));
             escenario.VentasEstimadas = proyectados.Sum(p => p.Ventas);
             escenario.CirculacionEstimada = Math.Round(proyectados.Average(p => p.Circulacion), 1);
             escenario.IndiceGlobalEstimado = (int)Math.Round(proyectados.Average(p => p.IndiceGlobal), 0);
+            escenario.VariacionVentas = IndicadorBLL.Variacion(escenario.VentasEstimadas, ventasActuales);
+            escenario.VariacionIndice = escenario.IndiceGlobalEstimado - indiceActual;
         }
+    }
+    protected string MostrarVariacionPorcentaje(object pVariacion)
+    {
+        if (pVariacion == null) return "";
+        decimal variacion = Convert.ToDecimal(pVariacion);
+        return SpanVariacion(variacion, (variacion > 0 ? "+" : "") + variacion.ToString("0.#") + "%");
+    }
+    protected string MostrarVariacionPuntos(object pPuntos)
+    {
+        int puntos = pPuntos == null ? 0 : Convert.ToInt32(pPuntos);
+        return SpanVariacion(puntos, Traducir("escenarios.puntos", (puntos > 0 ? "+" : "") + puntos));
+    }
+    // Verde si sube, rojo si baja; la flecha y el signo hacen que no dependa solo del color
+    private string SpanVariacion(decimal pValor, string pTexto)
+    {
+        string clase = pValor > 0 ? "esc-variacion-sube" : pValor < 0 ? "esc-variacion-baja" : "esc-variacion-igual";
+        string flecha = pValor > 0 ? "&#9650; " : pValor < 0 ? "&#9660; " : "= ";
+        return "<span class='esc-variacion " + clase + "' title='" + HttpUtility.HtmlAttributeEncode(Traducir("escenarios.vsActual")) + "'>"
+            + flecha + HttpUtility.HtmlEncode(pTexto) + "</span>";
+    }
+    protected string MostrarDelta(object pDelta)
+    {
+        decimal delta = pDelta == null ? 0 : Convert.ToDecimal(pDelta);
+        return delta == 0 ? "-" : (delta > 0 ? "+" : "") + delta.ToString("0.#") + "%";
     }
     private void MostrarDetalleEscenario(int codigoEscenario)
     {
         EscenarioBE escenario = escenarioBLL.ObtenerEscenarioPorCodigo(codigoEscenario);
         List<EscenarioCambio> cambios = escenarioBLL.ObtenerCambiosPorEscenario(codigoEscenario);
-        litNombreDetalleEscenario.Text = escenario.Nombre;
+        hfCodigoEscenarioDetalle.Value = escenario.CodigoEscenario.ToString();
+        litNombreDetalleEscenario.Text = HttpUtility.HtmlEncode(escenario.Nombre);
         litEstadoDetalleEscenario.Text = TraducirValor(escenario.Estado);
-        litDescripcionDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Descripcion) ? "-" : escenario.Descripcion;
-        litObjetivoDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Objetivo) ? "-" : escenario.Objetivo;
+        if (ddlEstadoDetalle.Items.FindByValue(escenario.Estado) != null) ddlEstadoDetalle.SelectedValue = escenario.Estado;
+        litDescripcionDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Descripcion) ? "-" : HttpUtility.HtmlEncode(escenario.Descripcion);
+        litObjetivoDetalleEscenario.Text = string.IsNullOrEmpty(escenario.Objetivo) ? "-" : HttpUtility.HtmlEncode(escenario.Objetivo);
         LayoutBE layoutBase = escenario.CodigoLayout == null ? null : layoutBLL.ObtenerLayoutPorCodigo(escenario.CodigoLayout.Value);
         litLayoutDetalleEscenario.Text = HttpUtility.HtmlEncode(layoutBase?.Nombre ?? Traducir("escenarios.sinLayout"));
         if (cambios.Count == 0)
@@ -144,6 +198,7 @@ public partial class PaginaEscenarios : PaginaSegura
             case "En revisión": return "esc-etiqueta-en-revision";
             case "Aprobado": return "esc-etiqueta-aprobado";
             case "Borrador": return "esc-etiqueta-borrador";
+            case "Descartado": return "esc-etiqueta-descartado";
             default: return "";
         }
     }
@@ -212,9 +267,28 @@ public partial class PaginaEscenarios : PaginaSegura
                 });
             }
         }
-        escenarioBLL.CrearEscenario(escenario, cambios);
+        try
+        {
+            escenarioBLL.CrearEscenario(escenario, cambios);
+        }
+        catch (ExcepcionTraducible error)
+        {
+            // Sin cambios o nombre repetido: el error se ve dentro del modal, que queda abierto con lo cargado
+            lblMensajeModal.Text = TraducirError(error);
+            lblMensajeModal.Visible = true;
+            pnlModalEscenario.Style["display"] = "flex";
+            return;
+        }
         pnlModalEscenario.Style["display"] = "none";
         MostrarMensaje(Traducir("escenarios.msgCreado"), esExito: true);
+        CargarEscenarios();
+    }
+    protected void btnCambiarEstado_Click(object sender, EventArgs e)
+    {
+        int codigoEscenario;
+        if (!int.TryParse(hfCodigoEscenarioDetalle.Value, out codigoEscenario)) return;
+        escenarioBLL.CambiarEstado(codigoEscenario, ddlEstadoDetalle.SelectedValue);
+        MostrarMensaje(Traducir("escenarios.msgEstado", TraducirValor(ddlEstadoDetalle.SelectedValue)), esExito: true);
         CargarEscenarios();
     }
     protected void rptEscenarios_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -227,6 +301,11 @@ public partial class PaginaEscenarios : PaginaSegura
                 break;
             case "Comparar":
                 Response.Redirect($"PaginaComparacionEscenarios.aspx?local={CodigoLocalActual}&escenarioA={codigoEscenario}");
+                break;
+            case "Eliminar":
+                int comparaciones = escenarioBLL.EliminarEscenario(codigoEscenario);
+                MostrarMensaje(comparaciones > 0 ? Traducir("escenarios.msgEliminadoComparaciones", comparaciones) : Traducir("escenarios.msgEliminado"), esExito: true);
+                CargarEscenarios();
                 break;
         }
     }    

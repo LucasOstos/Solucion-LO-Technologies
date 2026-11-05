@@ -1673,9 +1673,6 @@
   <data name="comparacion.colDiferencia" xml:space="preserve">
     <value>Differenza</value>
   </data>
-  <data name="comparacion.btnGuardar" xml:space="preserve">
-    <value>Salva confronto</value>
-  </data>
   <data name="comparacion.ventasEstimadas" xml:space="preserve">
     <value>Vendite stimate</value>
   </data>
@@ -1699,9 +1696,6 @@
   </data>
   <data name="comparacion.errSinComparacion" xml:space="preserve">
     <value>Genera prima un confronto.</value>
-  </data>
-  <data name="comparacion.msgGuardada" xml:space="preserve">
-    <value>Confronto tra scenari salvato correttamente.</value>
   </data>
   <data name="indicadores.titulo" xml:space="preserve">
     <value>Indicatori e raccomandazioni - LO Technologies</value>
@@ -2467,5 +2461,77 @@
   </data>
   <data name="locales.errSuperficie" xml:space="preserve">
     <value>La superficie deve essere maggiore di 0.</value>
+  </data>
+  <data name="escenarios.situacionActual" xml:space="preserve">
+    <value>Situazione attuale (senza modifiche)</value>
+  </data>
+  <data name="escenarios.supuestos" xml:space="preserve">
+    <value>Ipotesi della simulazione</value>
+  </data>
+  <data name="escenarios.ayudaSupuestos" xml:space="preserve">
+    <value>Ogni azione modifica i valori reali dell'ultimo mese del reparto scelto di queste percentuali. Sono stime del modello (non una previsione esatta) e non considerano l'effetto sugli altri reparti (ad esempio, il reparto che lascia l'ingresso).</value>
+  </data>
+  <data name="escenarios.colAccion" xml:space="preserve">
+    <value>Azione</value>
+  </data>
+  <data name="escenarios.btnCambiarEstado" xml:space="preserve">
+    <value>Cambia stato</value>
+  </data>
+  <data name="escenarios.confirmarEliminar" xml:space="preserve">
+    <value>Eliminare questo scenario? Vengono eliminati anche i confronti salvati; i report già generati vengono conservati.</value>
+  </data>
+  <data name="escenarios.msgEliminado" xml:space="preserve">
+    <value>Scenario eliminato.</value>
+  </data>
+  <data name="escenarios.msgEliminadoComparaciones" xml:space="preserve">
+    <value>Scenario eliminato insieme a {0} confronti salvati.</value>
+  </data>
+  <data name="escenarios.msgEstado" xml:space="preserve">
+    <value>Lo scenario è ora "{0}".</value>
+  </data>
+  <data name="escenarios.errSinCambios" xml:space="preserve">
+    <value>Scegli almeno una modifica in un reparto: uno scenario senza modifiche equivale alla situazione attuale.</value>
+  </data>
+  <data name="escenarios.errNombreRepetido" xml:space="preserve">
+    <value>Esiste già uno scenario con quel nome nel punto vendita.</value>
+  </data>
+  <data name="escenarios.puntos" xml:space="preserve">
+    <value>{0} pt</value>
+  </data>
+  <data name="escenarios.vsActual" xml:space="preserve">
+    <value>Rispetto alla situazione attuale</value>
+  </data>
+  <data name="valor.descartado" xml:space="preserve">
+    <value>Scartato</value>
+  </data>
+  <data name="comparacion.conclusion" xml:space="preserve">
+    <value>Conclusione</value>
+  </data>
+  <data name="comparacion.conclusionIgual" xml:space="preserve">
+    <value>{0} e {1} proiettano gli stessi risultati.</value>
+  </data>
+  <data name="comparacion.conclusionConviene" xml:space="preserve">
+    <value>{0} è l'opzione migliore.</value>
+  </data>
+  <data name="comparacion.conclusionDetalle" xml:space="preserve">
+    <value>Rispetto a {3}, {0} proietta {1} di vendite e {2} punti di indice globale.</value>
+  </data>
+  <data name="comparacion.conclusionM2" xml:space="preserve">
+    <value>Vendite al m²: {0}.</value>
+  </data>
+  <data name="comparacion.btnGenerarReporte" xml:space="preserve">
+    <value>Genera un report di questo confronto</value>
+  </data>
+  <data name="analisis.motivoSinStock" xml:space="preserve">
+    <value>Esaurito: nel periodo sono state vendute {0} unità. Riassortire al più presto.</value>
+  </data>
+  <data name="analisis.tipoCoberturaExcesiva" xml:space="preserve">
+    <value>Copertura eccessiva</value>
+  </data>
+  <data name="analisis.ayudaCoberturaExcesiva" xml:space="preserve">
+    <value>Si vende, ma al ritmo del periodo le scorte durano più di 180 giorni: è merce immobilizzata.</value>
+  </data>
+  <data name="analisis.motivoCoberturaExcesiva" xml:space="preserve">
+    <value>Ha {0} unità: al ritmo di vendita del periodo bastano per {1:#,##0} giorni (più di {2}). Frenare gli acquisti o fare una promozione.</value>
   </data>
 </root>
