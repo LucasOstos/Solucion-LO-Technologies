@@ -3191,4 +3191,259 @@
   <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
     <value>**فترة غير صالحة**: لا يمكن أن يكون شهر البداية بعد شهر النهاية ولا أن يتضمن أشهرًا مستقبلية، وهناك حد أقصى لعدد الأشهر.|**لا أقسام**: حدّد قسمًا واحدًا على الأقل.|**مقارنة دون سيناريوهات**: اختر السيناريو الأساسي والمقترح.|**لا بيانات**: لا مبيعات أو مخزون للمتجر في هذه الفترة.</value>
   </data>
+  <data name="ayuda.usuarios.crear.titulo" xml:space="preserve">
+    <value>إضافة مستخدم</value>
+  </data>
+  <data name="ayuda.usuarios.crear.cuerpo" xml:space="preserve">
+    <value>لكل شخص يستخدم المنصة مستخدم خاص به. ويحدّد **الدور** (الملف) الشاشات التي يراها وما يمكنه فعله.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.pasos" xml:space="preserve">
+    <value>انقر على **إضافة مستخدم**.|املأ رقم الهوية والاسم واللقب والبريد الإلكتروني: البريد هو ما يُستخدم لتسجيل الدخول.|اختر **الدور**. إذا كنت المستخدم الأعلى، فاختر الشركة أيضًا.|اكتب كلمة مرور أولية: 8 أحرف على الأقل، بحرف كبير ورقم ورمز خاص.|انقر على **إنشاء مستخدم**.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.consejo" xml:space="preserve">
+    <value>عند تعديل مستخدم لا يمكن تغيير رقم الهوية ولا كلمة المرور. وإذا نسيها يمكنه استعادتها من صفحة تسجيل الدخول.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.titulo" xml:space="preserve">
+    <value>تعديل مستخدم أو إيقافه</value>
+  </data>
+  <data name="ayuda.usuarios.estado.cuerpo" xml:space="preserve">
+    <value>المستخدم الذي يغادر الشركة لا يُحذف بل يُوقف. لا يمكنه الدخول بعد ذلك، لكن تبقى إجراءاته في سجل التدقيق.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.pasos" xml:space="preserve">
+    <value>ابحث عن المستخدم بالاسم أو البريد؛ يمكنك التصفية حسب الملف والشركة.|بالقلم (**تعديل**) تغيّر بياناته أو ملفه.|بالأسهم (**تفعيل/إلغاء التفعيل**) تفعّله أو توقفه، ويطلب النظام التأكيد.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.titulo" xml:space="preserve">
+    <value>إلغاء حظر مستخدم</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.cuerpo" xml:space="preserve">
+    <value>لأسباب أمنية، يُحظر المستخدم بعد **3 محاولات فاشلة** لإدخال كلمة المرور. وتظهر في القائمة علامة **محظور**.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.pasos" xml:space="preserve">
+    <value>في صف المستخدم، انقر على **إلغاء الحظر** وأكّد.|يرسل النظام إليه بريدًا برابط لتعيين كلمة مرور جديدة.|تنتهي صلاحية الرابط بعد 5 دقائق: أبلغه ليستخدمه فورًا.</value>
+  </data>
+  <data name="ayuda.usuarios.errores.titulo" xml:space="preserve">
+    <value>لماذا لا يمكنني حفظ المستخدم؟</value>
+  </data>
+  <data name="ayuda.usuarios.errores.cuerpo" xml:space="preserve">
+    <value>تشير الرسالة الحمراء داخل النموذج إلى ما يجب تصحيحه. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.usuarios.errores.pasos" xml:space="preserve">
+    <value>**رقم الهوية مسجّل مسبقًا**: له مستخدم بالفعل؛ ابحث عنه في القائمة وعدّله.|**رقم هوية غير صالح**: أرقام فقط، دون نقاط.|**كلمة مرور ضعيفة**: 8 أحرف على الأقل، بحرف كبير ورقم ورمز خاص.|**بريد غير صالح أو فارغ**: إلزامي ويُستخدم لتسجيل الدخول.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.titulo" xml:space="preserve">
+    <value>الصلاحيات والمجموعات والملفات</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.cuerpo" xml:space="preserve">
+    <value>تُبنى الصلاحيات على ثلاثة مستويات. **الصلاحية** تسمح بإجراء محدد. و**المجموعة** تجمع صلاحيات (ومجموعات أخرى) تُستخدم عادةً معًا. و**الملف** هو ما يُسند إلى المستخدم، ويمكن أن يضم صلاحيات منفردة ومجموعات.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.pasos" xml:space="preserve">
+    <value>أنشئ مجموعات حسب الموضوع، مثل مجموعة لكل ما يخص المخزون والمبيعات.|أنشئ ملفًا لكل نوع مستخدم (مسؤول، مدير، محلل) بدمج المجموعات.|أسند الملف إلى كل مستخدم من **المستخدمون**.</value>
+  </data>
+  <data name="ayuda.permisos.crear.titulo" xml:space="preserve">
+    <value>إنشاء ملف أو مجموعة</value>
+  </data>
+  <data name="ayuda.permisos.crear.cuerpo" xml:space="preserve">
+    <value>تحتوي الشاشة على عمودين متماثلين: **ملفات التعريف** وقبالته **المجموعات**. ويُنشآن بالطريقة نفسها.</value>
+  </data>
+  <data name="ayuda.permisos.crear.pasos" xml:space="preserve">
+    <value>اكتب اسم الملف أو المجموعة الجديدة.|حدّد **الصلاحيات المتاحة** و**المجموعات المتاحة** التي يجب تضمينها.|انقر على **إنشاء ملف تعريف** أو **إنشاء مجموعة**.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.titulo" xml:space="preserve">
+    <value>تعديل ملف أو مجموعة أو حذفهما</value>
+  </data>
+  <data name="ayuda.permisos.modificar.cuerpo" xml:space="preserve">
+    <value>تؤثر تعديلات الملف أو المجموعة فورًا في جميع المستخدمين الذين يملكونه؛ ويراها كل مستخدم عند دخوله التالي.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.pasos" xml:space="preserve">
+    <value>اختر الملف في **ملف التعريف المحدد** (أو المجموعة في **المجموعة المحددة**).|للإضافة: حدّد صلاحيات أو مجموعات متاحة وانقر على **إضافة صلاحيات**.|للإزالة: حدّد عناصر من **المحتوى المعيّن** وانقر على **إزالة الصلاحيات**.|للحذف: **حذف ملف التعريف** أو **حذف المجموعة**.</value>
+  </data>
+  <data name="ayuda.permisos.errores.titulo" xml:space="preserve">
+    <value>لماذا لا يسمح لي بإجراء التغيير؟</value>
+  </data>
+  <data name="ayuda.permisos.errores.cuerpo" xml:space="preserve">
+    <value>يحمي النظام بنية الصلاحيات حتى لا يفقد أحد صلاحياته عن طريق الخطأ. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.permisos.errores.pasos" xml:space="preserve">
+    <value>**قيد الاستخدام**: لا يمكن حذف مجموعة مُسندة إلى ملف، أو ملف مُسند إلى مستخدمين؛ أزله من هناك أولًا.|**مُضمَّن مسبقًا**: الصلاحية جزء من الملف بالفعل، مباشرة أو ضمن مجموعة.|**ستفقد الوصول**: سيزيل التغيير صلاحيتك على هذه الشاشة.|**اسم مكرر أو فارغ**: يحتاج كل ملف وكل مجموعة إلى اسم فريد.</value>
+  </data>
+  <data name="ayuda.empresas.crear.titulo" xml:space="preserve">
+    <value>تسجيل شركة</value>
+  </data>
+  <data name="ayuda.empresas.crear.cuerpo" xml:space="preserve">
+    <value>لكل شركة عميلة متاجرها ومنتجاتها ومستخدموها، ولا ترى بيانات الشركات الأخرى. ولا يدير الشركات إلا المستخدم الأعلى.</value>
+  </data>
+  <data name="ayuda.empresas.crear.pasos" xml:space="preserve">
+    <value>انقر على **شركة جديدة**.|املأ الاسم التجاري ورقم CUIT (الرقم الضريبي) والبريد، وهي إلزامية.|في CUIT اكتب الأرقام الـ11 فقط: تُضاف الشرطات تلقائيًا.|احفظ. ثم أنشئ مستخدميها من **المستخدمون**.</value>
+  </data>
+  <data name="ayuda.empresas.estado.titulo" xml:space="preserve">
+    <value>تعديل شركة أو إيقافها</value>
+  </data>
+  <data name="ayuda.empresas.estado.cuerpo" xml:space="preserve">
+    <value>إيقاف شركة إجراء حاسم: **لا يستطيع أي من مستخدميها تسجيل الدخول** حتى يُعاد تفعيلها. وتبقى بياناتها محفوظة.</value>
+  </data>
+  <data name="ayuda.empresas.estado.pasos" xml:space="preserve">
+    <value>ابحث عن الشركة بالاسم أو CUIT.|بالقلم (**تعديل**) تصحّح بياناتها.|بالأسهم (**تفعيل/إلغاء التفعيل**) تغيّر حالتها، ويطلب النظام التأكيد ويبيّن عدد المستخدمين الذين سيفقدون الوصول.</value>
+  </data>
+  <data name="ayuda.empresas.errores.titulo" xml:space="preserve">
+    <value>لماذا لا يمكنني حفظ الشركة؟</value>
+  </data>
+  <data name="ayuda.empresas.errores.cuerpo" xml:space="preserve">
+    <value>تشير الرسالة الحمراء داخل النموذج إلى ما يجب تصحيحه. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.empresas.errores.pasos" xml:space="preserve">
+    <value>**CUIT غير صالح**: يجب أن يتكون من 11 رقمًا مع رقم تحقق صحيح. تأكد من عدم نقص رقم أو زيادته.|**الشركة مسجّلة مسبقًا**: رقم CUIT هذا موجود؛ ابحث عنها في القائمة.|**تنسيق بريد غير صالح**: مثلًا ينقصه @ أو النطاق.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.titulo" xml:space="preserve">
+    <value>إضافة لغة</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.cuerpo" xml:space="preserve">
+    <value>اللغات الموجودة في القائمة تأتي مترجمة بالكامل. ومن خلال **لغة أخرى...** يمكنك إضافة أي لغة: تُحمَّل بكل النصوص بالإسبانية مع وسمها بأنها معلّقة لترجمتها.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.pasos" xml:space="preserve">
+    <value>انقر على **إضافة لغة**.|اختر اللغة من القائمة، أو **لغة أخرى...**.|إذا كانت لغة أخرى، فاكتب رمز ISO الخاص بها (مثل ko أو nl أو pt-BR) واسمها بالإسبانية؛ ويُملأ اسمها بلغتها تلقائيًا.|أكّد. تبقى اللغة **غير نشطة** حتى تفعّلها.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.titulo" xml:space="preserve">
+    <value>تفعيل لغة أو إيقافها</value>
+  </data>
+  <data name="ayuda.idiomas.activar.cuerpo" xml:space="preserve">
+    <value>لا تظهر في محدد اللغة لدى المستخدمين إلا اللغات النشطة. ويبيّن الشريط في كل بطاقة نسبة الترجمات التي تمت مراجعتها.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.pasos" xml:space="preserve">
+    <value>قبل تفعيلها، راجع نصوصها عبر **تعديل الترجمات**.|استخدم زر البطاقة لتفعيلها أو إيقافها.|لا يمكن إيقاف اللغة الافتراضية (الإسبانية).|ولا يمكن إيقاف لغة اختارها أحد المستخدمين.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.titulo" xml:space="preserve">
+    <value>مزامنة المفاتيح</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.cuerpo" xml:space="preserve">
+    <value>عند إضافة وظائف جديدة إلى المنصة تظهر نصوص جديدة. تضيفها المزامنة إلى جميع اللغات **دون المساس بالترجمات الموجودة**.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.pasos" xml:space="preserve">
+    <value>انقر على **مزامنة المفاتيح**.|تبيّن الرسالة عدد النصوص المضافة وعدد المعلّقة.|تظهر النصوص المعلّقة بالإسبانية حتى تترجمها من **تعديل الترجمات**.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.titulo" xml:space="preserve">
+    <value>تعديل الترجمات</value>
+  </data>
+  <data name="ayuda.traducciones.editar.cuerpo" xml:space="preserve">
+    <value>هنا تُصحَّح أي نصوص في المنصة باللغة المختارة: الأزرار والرسائل وحتى نصوص هذه المساعدة. وتظهر التغييرات في النظام فورًا.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.pasos" xml:space="preserve">
+    <value>صفِّ حسب **الوحدة**، أو ابحث بالمفتاح أو النص، أو حدّد **المعلّقة فقط**، ثم انقر على **تصفية**.|صحّح النصوص: عند الكتابة يُوسَم الصف بأنه **تمت المراجعة**.|انقر على **حفظ التغييرات**: تُحفظ كل التغييرات معًا.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.consejo" xml:space="preserve">
+    <value>إذا عدّلت الإسبانية (اللغة الأساسية)، يظهر هذا النص أيضًا في اللغات التي ترجمتها معلّقة.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.titulo" xml:space="preserve">
+    <value>لماذا لا تُحفظ التغييرات؟</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.cuerpo" xml:space="preserve">
+    <value>قبل الحفظ يتحقق النظام من كل النصوص. إذا كان في أحدها خطأ فلن يُحفظ أي منها، وتبيّن الرسالة ما يجب تصحيحه.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.pasos" xml:space="preserve">
+    <value>**نص فارغ**: كل ترجمة تحتاج إلى نص.|**نص طويل جدًا**: هناك حد أقصى لعدد الأحرف في كل نص.|**علامات مختلفة**: ما بين الأقواس المعقوفة مثل {0} أو {1} يجب أن يبقى كما في الإسبانية؛ فالنظام يستبدله بقيمة.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.titulo" xml:space="preserve">
+    <value>البحث في السجل</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.cuerpo" xml:space="preserve">
+    <value>يسجّل السجل من فعل ماذا ومتى: عمليات الدخول وتعديلات البيانات والاستيراد والنسخ الاحتياطي والأخطاء. وعند فتحه يعرض آخر 3 أيام.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.pasos" xml:space="preserve">
+    <value>استخدم عامل تصفية واحدًا على الأقل: نص (مستخدم، إجراء، كيان)، أو **من تاريخ** و**إلى تاريخ**، أو نوع الحدث أو المستوى.|انقر على **تصفية**.|تنقّل بين النتائج بـ **السابق** و**التالي**.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.titulo" xml:space="preserve">
+    <value>مستويات الخطورة</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.cuerpo" xml:space="preserve">
+    <value>لكل حدث مستوى يبيّن مقدار الاهتمام الذي يحتاجه.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.pasos" xml:space="preserve">
+    <value>**معلومات (1)**: عمليات عادية، مثل تسجيل الدخول أو الإضافات.|**تحذير (2)**: حالات تستحق المراجعة، مثل محاولات دخول فاشلة أو حظر.|**خطأ (3)**: أعطال، مثل نسخة احتياطية تعذّر إنشاؤها أو عدم اتساق في البيانات.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.titulo" xml:space="preserve">
+    <value>تصدير السجل</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.cuerpo" xml:space="preserve">
+    <value>ينزّل الأحداث المعروضة، مع عوامل التصفية المطبقة، في ملف Excel (.xlsx). مفيد للتدقيق الخارجي أو للاحتفاظ بنسخة.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.pasos" xml:space="preserve">
+    <value>طبّق عوامل التصفية التي تحتاجها.|انقر على **تصدير السجل** في أعلى الشاشة.|افتح الملف المُنزَّل باستخدام Excel أو برنامج مشابه.</value>
+  </data>
+  <data name="ayuda.backup.crear.titulo" xml:space="preserve">
+    <value>إنشاء نسخة احتياطية وتنزيلها</value>
+  </data>
+  <data name="ayuda.backup.crear.cuerpo" xml:space="preserve">
+    <value>النسخة الاحتياطية نسخة كاملة من قاعدة البيانات في لحظة معينة. يُستحسن إنشاء واحدة قبل التغييرات الكبيرة، مثل الاستيراد الجماعي.</value>
+  </data>
+  <data name="ayuda.backup.crear.pasos" xml:space="preserve">
+    <value>انقر على **إنشاء نسخة احتياطية**.|عند الانتهاء تظهر أولًا في **سجل النسخ الاحتياطية**.|باستخدام **تنزيل** تحفظ نسخة خارج الخادم.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.titulo" xml:space="preserve">
+    <value>استعادة نسخة احتياطية</value>
+  </data>
+  <data name="ayuda.backup.restaurar.cuerpo" xml:space="preserve">
+    <value>تؤدي الاستعادة إلى **استبدال كل البيانات الحالية** ببيانات النسخة المختارة، لجميع الشركات. وكل ما أُدخل بعد ذلك التاريخ يُفقد ولا يمكن التراجع عنه.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.pasos" xml:space="preserve">
+    <value>أولًا، أنشئ نسخة احتياطية من الحالة الحالية تحسّبًا للعودة إليها.|في السجل، انقر على **استعادة** للنسخة المختارة.|راجع التاريخ والحجم، واكتب الكلمة **تأكيد**.|انقر على **استعادة النسخة الاحتياطية**.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.titulo" xml:space="preserve">
+    <value>ما عدم الاتساق؟</value>
+  </data>
+  <data name="ayuda.integridad.queEs.cuerpo" xml:space="preserve">
+    <value>يحتفظ كل سجل وكل جدول برقم تحقق محسوب من بياناته. إذا تغيّرت قيمة خارج النظام (مثلًا مباشرة في قاعدة البيانات)، لا يعود الرقم مطابقًا ويكتشف النظام ذلك عند تسجيل الدخول.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.pasos" xml:space="preserve">
+    <value>يعرض الجدول كل مشكلة: في أي جدول، وفي أي سجل، وما الذي لا يطابق.|ما دامت هناك حالات عدم اتساق، يرى المستخدمون الآخرون «النظام غير متاح» عند محاولة الدخول.|راجع **التدقيق / السجل** لفهم ما حدث قبل أن تقرر.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.titulo" xml:space="preserve">
+    <value>إعادة الحساب أو الاستعادة</value>
+  </data>
+  <data name="ayuda.integridad.opciones.cuerpo" xml:space="preserve">
+    <value>هناك طريقان حسب ما إذا كان التغيير المكتشف صحيحًا أم لا.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.pasos" xml:space="preserve">
+    <value>**إعادة حساب أرقام التحقق**: إذا كان التغيير مشروعًا (مثل تصحيح مُصرَّح به). تبقى البيانات كما هي وتُعاد حساب الأرقام.|**استعادة قاعدة البيانات**: إذا لم يكن التغيير مُصرَّحًا به. يعود إلى آخر نسخة احتياطية ويُفقد ما أُدخل بعدها.|**خروج**: يسجّل الخروج دون فعل شيء؛ ويبقى النظام غير متاح للآخرين.</value>
+  </data>
+  <data name="ayuda.login.pantalla" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="ayuda.login.ingresar.titulo" xml:space="preserve">
+    <value>الدخول إلى المنصة</value>
+  </data>
+  <data name="ayuda.login.ingresar.cuerpo" xml:space="preserve">
+    <value>تدخل بالبريد الإلكتروني وكلمة المرور اللذين أعطاك إياهما مسؤول شركتك. وبعد **3 محاولات فاشلة** يُحظر المستخدم لأسباب أمنية.</value>
+  </data>
+  <data name="ayuda.login.ingresar.pasos" xml:space="preserve">
+    <value>اكتب بريدك الإلكتروني.|اكتب كلمة المرور؛ يمكنك إظهارها بأيقونة العين للتحقق منها.|انقر على **Ingresar** (دخول).</value>
+  </data>
+  <data name="ayuda.login.olvide.titulo" xml:space="preserve">
+    <value>نسيت كلمة المرور</value>
+  </data>
+  <data name="ayuda.login.olvide.cuerpo" xml:space="preserve">
+    <value>يمكنك تعيين كلمة مرور جديدة بنفسك دون طلبها من المسؤول. يصلك بريد برابط **تنتهي صلاحيته بعد 5 دقائق**.</value>
+  </data>
+  <data name="ayuda.login.olvide.pasos" xml:space="preserve">
+    <value>انقر على **¿Olvidaste tu contraseña?** (هل نسيت كلمة المرور؟).|اكتب بريدك وأكّد.|افتح البريد وادخل إلى الرابط فورًا.|اكتب كلمة المرور الجديدة مرتين وأكّد. ثم ادخل بها.</value>
+  </data>
+  <data name="ayuda.login.errores.titulo" xml:space="preserve">
+    <value>لماذا لا أستطيع الدخول؟</value>
+  </data>
+  <data name="ayuda.login.errores.cuerpo" xml:space="preserve">
+    <value>تبيّن الرسالة الحمراء أعلى النموذج السبب:</value>
+  </data>
+  <data name="ayuda.login.errores.pasos" xml:space="preserve">
+    <value>**Credenciales incorrectas** (بيانات دخول خاطئة): تحقّق من البريد وكلمة المرور (بما في ذلك الأحرف الكبيرة).|**Usuario bloqueado** (مستخدم محظور): بعد 3 محاولات فاشلة. استخدم **¿Olvidaste tu contraseña?** أو اطلب من المسؤول إلغاء الحظر.|**Usuario deshabilitado** (مستخدم معطّل) أو **empresa inactiva** (شركة غير نشطة): تواصل مع المسؤول.|**El sistema no está disponible** (النظام غير متاح): اكتُشفت مشكلة في البيانات ويعمل مسؤول النظام على مراجعتها.</value>
+  </data>
+  <data name="ayuda.recuperar.pantalla" xml:space="preserve">
+    <value>استعادة كلمة المرور</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.titulo" xml:space="preserve">
+    <value>تعيين كلمة المرور الجديدة</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.cuerpo" xml:space="preserve">
+    <value>يجب أن تتكون كلمة المرور الجديدة من **8 أحرف على الأقل**، بحرف كبير ورقم ورمز خاص. يعمل الرابط مرة واحدة فقط وتنتهي صلاحيته بعد 5 دقائق.</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.pasos" xml:space="preserve">
+    <value>اكتب كلمة المرور الجديدة.|كرّرها للتأكيد.|أكّد وعُد إلى صفحة الدخول لاستخدامها.|إذا انتهت صلاحية الرابط أو استُخدم من قبل، فاطلب رابطًا جديدًا من **¿Olvidaste tu contraseña?**.</value>
+  </data>
 </root>

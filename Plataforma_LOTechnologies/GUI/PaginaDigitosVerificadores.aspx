@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaDigitosVerificadores.aspx.cs" Inherits="PaginaDigitosVerificadores" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,6 +14,9 @@
 </head>
 <body>
     <form id="formDigitosVerificadores" runat="server">
+        <div class="ayuda-esquina">
+            <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="integridad" />
+        </div>
         <div class="dv-pagina">
             <div class="dv-wrapper">
                 <uc:BotonVolverMenu ID="volverMenu" runat="server" />

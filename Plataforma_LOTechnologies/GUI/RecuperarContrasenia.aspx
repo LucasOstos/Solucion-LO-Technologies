@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RecuperarContrasenia.aspx.cs" Inherits="RecuperarContrasenia" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -10,6 +11,9 @@
 </head>
 <body>
     <form id="formRecuperarContrasenia" runat="server">
+        <div class="ayuda-esquina">
+            <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="recuperar" />
+        </div>
         <div class="rc-pagina">
             <div class="rc-wrapper">
                 <div class="rc-logo">LT</div>

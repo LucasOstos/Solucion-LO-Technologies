@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaLogin.aspx.cs" Inherits="PaginaLogin" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -11,6 +12,9 @@
 </head>
 <body>
     <form id="formLogin" runat="server">
+        <div class="ayuda-esquina">
+            <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="login" />
+        </div>
         <div class="login-pagina">
             <div class="login-wrapper">
 
@@ -52,7 +56,7 @@
                 <p class="login-piepagina">© 2026 LO Technologies — v2.0</p>
             </div>
         </div>
-        <div id="modal-recuperar" class="modal-overlay" style="display: none;">
+        <div id="modal-recuperar" class="modal-overlay" data-ayuda-tema="login.olvide" style="display: none;">
             <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="tituloRecuperar">
                 <div class="modal-box-encabezado">
                     <h3 id="tituloRecuperar">Recuperar contraseña</h3>

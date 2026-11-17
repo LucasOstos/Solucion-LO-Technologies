@@ -9,10 +9,27 @@
     display: none !important;
 }
 
-/* Con el panel abierto, la página y los modales se corren para no quedar debajo */
+/* Con el panel abierto, la página y los modales se corren para no quedar debajo.
+   .login-pagina, .rc-pagina y .dv-pagina son las pantallas que no usan .pagina (inicio de sesión, recuperar contraseña, integridad) */
 body.ayuda-abierta .pagina,
-body.ayuda-abierta .modal-fondo {
+body.ayuda-abierta .login-pagina,
+body.ayuda-abierta .rc-pagina,
+body.ayuda-abierta .dv-pagina,
+body.ayuda-abierta .modal-fondo,
+body.ayuda-abierta .modal-overlay {
     padding-inline-end: calc(var(--ayuda-ancho) + 24px);
+}
+
+/* Botón de ayuda en la esquina, para las pantallas sin encabezado (inicio de sesión, recuperar contraseña, integridad) */
+.ayuda-esquina {
+    position: fixed;
+    top: 16px;
+    inset-inline-end: 16px;
+    z-index: 900;
+}
+
+body.ayuda-abierta .ayuda-esquina {
+    inset-inline-end: calc(var(--ayuda-ancho) + 16px);
 }
 
 /* ---------- Botón ---------- */
@@ -421,8 +438,16 @@ body.ayuda-abierta .modal-fondo {
     }
 
     body.ayuda-abierta .pagina,
-    body.ayuda-abierta .modal-fondo {
+    body.ayuda-abierta .login-pagina,
+    body.ayuda-abierta .rc-pagina,
+    body.ayuda-abierta .dv-pagina,
+    body.ayuda-abierta .modal-fondo,
+    body.ayuda-abierta .modal-overlay {
         padding-inline-end: 0;
+    }
+
+    body.ayuda-abierta .ayuda-esquina {
+        inset-inline-end: 16px;
     }
 }
 

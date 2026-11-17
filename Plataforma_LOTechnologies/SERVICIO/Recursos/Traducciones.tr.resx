@@ -3191,4 +3191,259 @@
   <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
     <value>**Geçersiz dönem**: başlangıç ayı bitiş ayından sonra olamaz, gelecek ayları içeremez ve ay sayısının bir üst sınırı vardır.|**Bölüm yok**: en az birini işaretleyin.|**Senaryosuz karşılaştırma**: temel ve önerilen senaryoyu seçin.|**Veri yok**: mağazanın o dönemde satışı veya stoğu yok.</value>
   </data>
+  <data name="ayuda.usuarios.crear.titulo" xml:space="preserve">
+    <value>Kullanıcı ekleme</value>
+  </data>
+  <data name="ayuda.usuarios.crear.cuerpo" xml:space="preserve">
+    <value>Platformu kullanan her kişinin kendi kullanıcısı vardır. **Rol** (profil), hangi ekranları görebileceğini ve neler yapabileceğini belirler.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.pasos" xml:space="preserve">
+    <value>**Kullanıcı ekle** düğmesine tıklayın.|Kimlik numarası, ad, soyad ve e-postayı doldurun: giriş için e-posta kullanılır.|**Rol** seçin. Süper kullanıcıysanız şirketi de seçin.|Bir başlangıç şifresi girin: en az 8 karakter; büyük harf, rakam ve özel karakter içermeli.|**Kullanıcı oluştur** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.consejo" xml:space="preserve">
+    <value>Kullanıcı düzenlenirken kimlik numarası ve şifre değiştirilemez. Şifresini unuttuysa giriş sayfasından kurtarabilir.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.titulo" xml:space="preserve">
+    <value>Kullanıcıyı düzenleme veya devre dışı bırakma</value>
+  </data>
+  <data name="ayuda.usuarios.estado.cuerpo" xml:space="preserve">
+    <value>Şirketten ayrılan kullanıcı silinmez, devre dışı bırakılır. Artık giriş yapamaz ama işlemleri denetim kaydında kalır.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.pasos" xml:space="preserve">
+    <value>Kullanıcıyı ad veya e-postayla arayın; profile ve şirkete göre filtreleyebilirsiniz.|Kalem (**Düzenle**) verilerini veya profilini değiştirir.|Oklar (**Etkinleştir/Devre dışı bırak**) etkinleştirir veya devre dışı bırakır; sistem onay ister.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.titulo" xml:space="preserve">
+    <value>Kullanıcının kilidini açma</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.cuerpo" xml:space="preserve">
+    <value>Güvenlik için kullanıcı **3 hatalı** şifre denemesinden sonra kilitlenir. Listede **Kilitli** etiketi görünür.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.pasos" xml:space="preserve">
+    <value>Kullanıcının satırında **Kilidi aç** düğmesine tıklayıp onaylayın.|Sistem ona yeni şifre belirlemesi için bir bağlantı içeren e-posta gönderir.|Bağlantı 5 dakika sonra geçersiz olur: hemen kullanması için haber verin.</value>
+  </data>
+  <data name="ayuda.usuarios.errores.titulo" xml:space="preserve">
+    <value>Kullanıcıyı neden kaydedemiyorum?</value>
+  </data>
+  <data name="ayuda.usuarios.errores.cuerpo" xml:space="preserve">
+    <value>Formdaki kırmızı mesaj neyin düzeltilmesi gerektiğini gösterir. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.usuarios.errores.pasos" xml:space="preserve">
+    <value>**Kimlik numarası zaten kayıtlı**: bu numaranın zaten bir kullanıcısı var; listede bulup düzenleyin.|**Geçersiz kimlik numarası**: yalnızca rakam, nokta olmadan.|**Zayıf şifre**: en az 8 karakter; büyük harf, rakam ve özel karakter içermeli.|**Geçersiz veya boş e-posta**: zorunludur ve giriş için kullanılır.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.titulo" xml:space="preserve">
+    <value>Yetkiler, gruplar ve profiller</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.cuerpo" xml:space="preserve">
+    <value>Erişim üç düzeyde kurulur. **Yetki** belirli bir işlemi mümkün kılar. **Grup**, genellikle birlikte kullanılan yetkileri (ve başka grupları) gruplar. **Profil** kullanıcıya atanır; tek tek yetkiler ve gruplar içerebilir.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.pasos" xml:space="preserve">
+    <value>Konuya göre gruplar oluşturun; örneğin stok ve satışlarla ilgili her şey için bir grup.|Grupleri birleştirerek her kullanıcı türü (yönetici, müdür, analist) için bir profil oluşturun.|Profili her kullanıcıya **Kullanıcılar** bölümünden atayın.</value>
+  </data>
+  <data name="ayuda.permisos.crear.titulo" xml:space="preserve">
+    <value>Profil veya grup oluşturma</value>
+  </data>
+  <data name="ayuda.permisos.crear.cuerpo" xml:space="preserve">
+    <value>Ekranda iki aynı sütun vardır: solda **Profiller**, sağda **Gruplar**. Aynı şekilde oluşturulurlar.</value>
+  </data>
+  <data name="ayuda.permisos.crear.pasos" xml:space="preserve">
+    <value>Yeni profilin veya grubun adını yazın.|Dahil edilecek **Kullanılabilir yetkiler** ve **Kullanılabilir gruplar** öğelerini işaretleyin.|**Profil oluştur** veya **Grup oluştur** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.titulo" xml:space="preserve">
+    <value>Profil veya grubu değiştirme ya da silme</value>
+  </data>
+  <data name="ayuda.permisos.modificar.cuerpo" xml:space="preserve">
+    <value>Bir profil veya gruptaki değişiklikler, ona sahip tüm kullanıcıları hemen etkiler; her kullanıcı bir sonraki girişinde görür.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.pasos" xml:space="preserve">
+    <value>Profili **Seçili profil** alanında (veya grubu **Seçili grup** alanında) seçin.|Eklemek için: kullanılabilir yetkileri veya grupları işaretleyip **Yetki ekle** düğmesine tıklayın.|Çıkarmak için: **Atanan içerik** içindeki öğeleri işaretleyip **Yetkileri kaldır** düğmesine tıklayın.|Silmek için: **Profili sil** veya **Grubu sil**.</value>
+  </data>
+  <data name="ayuda.permisos.errores.titulo" xml:space="preserve">
+    <value>Değişikliği neden yapamıyorum?</value>
+  </data>
+  <data name="ayuda.permisos.errores.cuerpo" xml:space="preserve">
+    <value>Sistem, kimsenin yanlışlıkla erişimini kaybetmemesi için yetki yapısını korur. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.permisos.errores.pasos" xml:space="preserve">
+    <value>**Kullanımda**: bir profile atanmış grup veya kullanıcılara atanmış profil silinemez; önce oradan çıkarın.|**Zaten dahil**: yetki profilin zaten bir parçası; doğrudan ya da bir grup aracılığıyla.|**Erişiminizi kaybedersiniz**: değişiklik bu ekranın yetkisini sizden alır.|**Tekrarlanan veya boş ad**: her profilin ve grubun benzersiz bir adı olmalıdır.</value>
+  </data>
+  <data name="ayuda.empresas.crear.titulo" xml:space="preserve">
+    <value>Şirket kaydetme</value>
+  </data>
+  <data name="ayuda.empresas.crear.cuerpo" xml:space="preserve">
+    <value>Her müşteri şirketin kendi mağazaları, ürünleri ve kullanıcıları vardır; diğerlerinin verilerini göremez. Şirketleri yalnızca süper kullanıcı yönetir.</value>
+  </data>
+  <data name="ayuda.empresas.crear.pasos" xml:space="preserve">
+    <value>**Yeni şirket** düğmesine tıklayın.|Zorunlu olan ticari unvan, CUIT (vergi numarası) ve e-posta alanlarını doldurun.|CUIT için yalnızca 11 rakamı yazın: tireler kendiliğinden eklenir.|Kaydedin. Ardından kullanıcılarını **Kullanıcılar** bölümünde oluşturun.</value>
+  </data>
+  <data name="ayuda.empresas.estado.titulo" xml:space="preserve">
+    <value>Şirketi düzenleme veya devre dışı bırakma</value>
+  </data>
+  <data name="ayuda.empresas.estado.cuerpo" xml:space="preserve">
+    <value>Bir şirketi devre dışı bırakmak güçlü bir önlemdir: yeniden etkinleştirilene kadar **kullanıcılarının hiçbiri giriş yapamaz**. Verileri korunur.</value>
+  </data>
+  <data name="ayuda.empresas.estado.pasos" xml:space="preserve">
+    <value>Şirketi ada veya CUIT'e göre arayın.|Kalem (**Düzenle**) verilerini düzeltir.|Oklar (**Etkinleştir/Devre dışı bırak**) durumunu değiştirir; sistem onay ister ve kaç kullanıcının erişimini kaybedeceğini bildirir.</value>
+  </data>
+  <data name="ayuda.empresas.errores.titulo" xml:space="preserve">
+    <value>Şirketi neden kaydedemiyorum?</value>
+  </data>
+  <data name="ayuda.empresas.errores.cuerpo" xml:space="preserve">
+    <value>Formdaki kırmızı mesaj neyin düzeltilmesi gerektiğini gösterir. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.empresas.errores.pasos" xml:space="preserve">
+    <value>**Geçersiz CUIT**: 11 rakam ve doğru kontrol hanesi olmalıdır. Eksik veya fazla rakam olmadığını kontrol edin.|**Şirket zaten kayıtlı**: bu CUIT zaten var; listede arayın.|**Geçersiz e-posta biçimi**: örneğin @ veya alan adı eksik.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.titulo" xml:space="preserve">
+    <value>Dil ekleme</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.cuerpo" xml:space="preserve">
+    <value>Listedeki diller tam çevirileriyle gelir. **Başka bir dil...** ile herhangi bir dili ekleyebilirsiniz: tüm metinler İspanyolca olarak, bekleyen şeklinde işaretlenip yüklenir; siz çevirirsiniz.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.pasos" xml:space="preserve">
+    <value>**Dil ekle** düğmesine tıklayın.|Listeden dili veya **Başka bir dil...** seçeneğini seçin.|Başka bir dil ise ISO kodunu (örneğin ko, nl veya pt-BR) ve İspanyolca adını girin; kendi dilindeki adı kendiliğinden dolar.|Onaylayın. Dil, siz etkinleştirene kadar **pasif** kalır.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.titulo" xml:space="preserve">
+    <value>Dili etkinleştirme veya devre dışı bırakma</value>
+  </data>
+  <data name="ayuda.idiomas.activar.cuerpo" xml:space="preserve">
+    <value>Kullanıcıların dil seçicisinde yalnızca etkin diller görünür. Her karttaki çubuk, çevirilerin yüzde kaçının gözden geçirildiğini gösterir.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.pasos" xml:space="preserve">
+    <value>Etkinleştirmeden önce metinlerini **Çevirileri düzenle** ile gözden geçirin.|Kartın düğmesiyle etkinleştirin veya devre dışı bırakın.|Varsayılan dil (İspanyolca) devre dışı bırakılamaz.|Bir kullanıcının seçtiği dil de devre dışı bırakılamaz.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.titulo" xml:space="preserve">
+    <value>Anahtarları eşitleme</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.cuerpo" xml:space="preserve">
+    <value>Platforma yeni özellikler eklendiğinde yeni metinler ortaya çıkar. Eşitleme bunları **mevcut çevirilere dokunmadan** tüm dillere ekler.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.pasos" xml:space="preserve">
+    <value>**Anahtarları eşitle** düğmesine tıklayın.|Mesaj kaç metnin eklendiğini ve kaçının beklemede kaldığını gösterir.|Bekleyen metinler, **Çevirileri düzenle** ile çevirene kadar İspanyolca görünür.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.titulo" xml:space="preserve">
+    <value>Çevirileri düzenleme</value>
+  </data>
+  <data name="ayuda.traducciones.editar.cuerpo" xml:space="preserve">
+    <value>Burada platformdaki her metni seçilen dilde düzeltebilirsiniz: düğmeler, mesajlar ve bu yardımın metinleri de. Değişiklikler sistemde hemen görünür.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.pasos" xml:space="preserve">
+    <value>**Modül** ile filtreleyin, anahtar veya metinle arayın ya da **Yalnızca bekleyenler** seçeneğini işaretleyin ve **Filtrele** düğmesine tıklayın.|Metinleri düzeltin: yazdığınızda satır **Gözden geçirildi** olarak işaretlenir.|**Değişiklikleri kaydet** düğmesine tıklayın: tüm değişiklikler birlikte kaydedilir.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.consejo" xml:space="preserve">
+    <value>İspanyolcayı (temel dili) düzenlerseniz, bu metin çevirisi beklemede olan dillerde de gösterilir.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.titulo" xml:space="preserve">
+    <value>Değişiklikler neden kaydedilmiyor?</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.cuerpo" xml:space="preserve">
+    <value>Kaydetmeden önce sistem tüm metinleri kontrol eder. Birinde sorun varsa hiçbiri kaydedilmez ve mesaj hangisinin düzeltileceğini belirtir.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.pasos" xml:space="preserve">
+    <value>**Boş metin**: her çevirinin bir metni olmalıdır.|**Metin çok uzun**: metin başına bir karakter sınırı vardır.|**Farklı yer tutucular**: {0} veya {1} gibi süslü parantez içindekiler İspanyolcadakiyle aynı kalmalıdır; sistem onları bir değerle değiştirir.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.titulo" xml:space="preserve">
+    <value>Kayıtlarda arama</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.cuerpo" xml:space="preserve">
+    <value>Kayıt defteri kimin neyi ne zaman yaptığını tutar: girişler, veri değişiklikleri, içe aktarmalar, yedekler ve hatalar. Açıldığında son 3 günü gösterir.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.pasos" xml:space="preserve">
+    <value>En az bir filtre kullanın: metin (kullanıcı, işlem, varlık), **Başlangıç tarihi** ve **Bitiş tarihi**, olay türü veya düzey.|**Filtrele** düğmesine tıklayın.|Sonuçlar arasında **Önceki** ve **Sonraki** ile gezinin.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.titulo" xml:space="preserve">
+    <value>Önem düzeyleri</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.cuerpo" xml:space="preserve">
+    <value>Her olayın ne kadar dikkat gerektirdiğini gösteren bir düzeyi vardır.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.pasos" xml:space="preserve">
+    <value>**Bilgi (1)**: girişler veya yeni kayıtlar gibi olağan işlemler.|**Uyarı (2)**: başarısız giriş denemeleri veya kilitlenmeler gibi incelenmesi gereken durumlar.|**Hata (3)**: oluşturulamayan bir yedek veya veri tutarsızlığı gibi arızalar.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.titulo" xml:space="preserve">
+    <value>Kaydı dışa aktarma</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.cuerpo" xml:space="preserve">
+    <value>Görüntülenen olayları uygulanan filtrelerle birlikte Excel (.xlsx) olarak indirir. Dış denetim veya kayıt saklamak için kullanışlıdır.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.pasos" xml:space="preserve">
+    <value>İhtiyacınız olan filtreleri uygulayın.|Sağ üstteki **Günlüğü dışa aktar** düğmesine tıklayın.|İndirilen dosyayı Excel veya benzeri bir programla açın.</value>
+  </data>
+  <data name="ayuda.backup.crear.titulo" xml:space="preserve">
+    <value>Yedek oluşturma ve indirme</value>
+  </data>
+  <data name="ayuda.backup.crear.cuerpo" xml:space="preserve">
+    <value>Yedek, veritabanının belirli bir andaki tam kopyasıdır. Toplu içe aktarma gibi büyük değişikliklerden önce bir tane oluşturmak iyi olur.</value>
+  </data>
+  <data name="ayuda.backup.crear.pasos" xml:space="preserve">
+    <value>**Yedek oluştur** düğmesine tıklayın.|Bittiğinde **Yedek geçmişi** listesinin en üstünde görünür.|**İndir** ile sunucu dışında bir kopya saklarsınız.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.titulo" xml:space="preserve">
+    <value>Yedekten geri yükleme</value>
+  </data>
+  <data name="ayuda.backup.restaurar.cuerpo" xml:space="preserve">
+    <value>Geri yükleme, tüm şirketler için **mevcut tüm verileri** seçilen yedeğin verileriyle değiştirir. O tarihten sonra girilenler kaybolur ve geri alınamaz.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.pasos" xml:space="preserve">
+    <value>Önce, geri dönmeniz gerekirse diye mevcut durumun yedeğini alın.|Geçmişte, seçtiğiniz yedekte **Geri yükle** düğmesine tıklayın.|Tarihi ve boyutu kontrol edip **ONAYLA** kelimesini yazın.|**Yedeği geri yükle** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.titulo" xml:space="preserve">
+    <value>Tutarsızlık nedir?</value>
+  </data>
+  <data name="ayuda.integridad.queEs.cuerpo" xml:space="preserve">
+    <value>Her kayıt ve her tablo, verilerinden hesaplanan bir kontrol hanesi saklar. Bir veri sistem dışında (örneğin doğrudan veritabanında) değiştirilirse hane artık eşleşmez ve sistem bunu girişte tespit eder.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.pasos" xml:space="preserve">
+    <value>Tablo her sorunu gösterir: hangi tablo, hangi kayıt ve neyin eşleşmediği.|Tutarsızlık olduğu sürece diğer kullanıcılar giriş yapmaya çalıştığında "Sistem kullanılamıyor" mesajını görür.|Karar vermeden önce ne olduğunu anlamak için **Denetim / Günlük** bölümüne bakın.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.titulo" xml:space="preserve">
+    <value>Yeniden hesaplama veya geri yükleme</value>
+  </data>
+  <data name="ayuda.integridad.opciones.cuerpo" xml:space="preserve">
+    <value>Tespit edilen değişikliğin geçerli olup olmamasına göre iki yol vardır.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.pasos" xml:space="preserve">
+    <value>**Kontrol hanelerini yeniden hesapla**: değişiklik meşruysa (örneğin yetkili bir düzeltme). Veriler olduğu gibi kalır, haneler yeniden hesaplanır.|**Veritabanını geri yükle**: değişiklik yetkisizse. Son yedeğe dönülür; sonrasında girilenler kaybolur.|**Çık**: hiçbir şey yapmadan oturumu kapatır; sistem diğerleri için kullanılamaz kalır.</value>
+  </data>
+  <data name="ayuda.login.pantalla" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="ayuda.login.ingresar.titulo" xml:space="preserve">
+    <value>Platforma giriş yapma</value>
+  </data>
+  <data name="ayuda.login.ingresar.cuerpo" xml:space="preserve">
+    <value>Şirketinizin yöneticisinin verdiği e-posta ve şifreyle giriş yaparsınız. **3 hatalı denemeden** sonra kullanıcı güvenlik için kilitlenir.</value>
+  </data>
+  <data name="ayuda.login.ingresar.pasos" xml:space="preserve">
+    <value>E-postanızı yazın.|Şifrenizi yazın; göz simgesiyle kontrol etmek için görebilirsiniz.|**Ingresar** (Giriş) düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.login.olvide.titulo" xml:space="preserve">
+    <value>Şifremi unuttum</value>
+  </data>
+  <data name="ayuda.login.olvide.cuerpo" xml:space="preserve">
+    <value>Yöneticiye sormadan yeni bir şifreyi kendiniz belirleyebilirsiniz. **5 dakika içinde geçersiz olan** bir bağlantı içeren e-posta alırsınız.</value>
+  </data>
+  <data name="ayuda.login.olvide.pasos" xml:space="preserve">
+    <value>**¿Olvidaste tu contraseña?** (Şifrenizi mi unuttunuz?) bağlantısına tıklayın.|E-postanızı yazıp onaylayın.|E-postayı açın ve bağlantıya hemen girin.|Yeni şifreyi iki kez yazıp onaylayın. Ardından onunla giriş yapın.</value>
+  </data>
+  <data name="ayuda.login.errores.titulo" xml:space="preserve">
+    <value>Neden giriş yapamıyorum?</value>
+  </data>
+  <data name="ayuda.login.errores.cuerpo" xml:space="preserve">
+    <value>Formun üstündeki kırmızı mesaj nedeni gösterir:</value>
+  </data>
+  <data name="ayuda.login.errores.pasos" xml:space="preserve">
+    <value>**Credenciales incorrectas** (hatalı bilgiler): e-postayı ve şifreyi (büyük harfler dahil) kontrol edin.|**Usuario bloqueado** (kullanıcı kilitli): 3 hatalı denemeden sonra. **¿Olvidaste tu contraseña?** bağlantısını kullanın veya yöneticiden kilidi açmasını isteyin.|**Usuario deshabilitado** (kullanıcı devre dışı) veya **empresa inactiva** (şirket pasif): yöneticiyle görüşün.|**El sistema no está disponible** (sistem kullanılamıyor): verilerde bir sorun tespit edildi ve sistem yöneticisi inceliyor.</value>
+  </data>
+  <data name="ayuda.recuperar.pantalla" xml:space="preserve">
+    <value>Şifre kurtarma</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.titulo" xml:space="preserve">
+    <value>Yeni şifreyi belirleme</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.cuerpo" xml:space="preserve">
+    <value>Yeni şifre **en az 8 karakter** olmalı; bir büyük harf, bir rakam ve bir özel karakter içermelidir. Bağlantı yalnızca bir kez çalışır ve 5 dakika sonra geçersiz olur.</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.pasos" xml:space="preserve">
+    <value>Yeni şifreyi yazın.|Onaylamak için tekrar yazın.|Onaylayın ve onunla giriş yapmak için giriş sayfasına dönün.|Bağlantının süresi dolduysa veya kullanıldıysa **¿Olvidaste tu contraseña?** ile yenisini isteyin.</value>
+  </data>
 </root>

@@ -3191,4 +3191,259 @@
   <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
     <value>**Invalid period**: the from month cannot be after the to month or include future months, and there is a maximum number of months.|**No sections**: tick at least one.|**Comparison without scenarios**: choose the base and proposed scenarios.|**No data**: the store has no sales or stock in that period.</value>
   </data>
+  <data name="ayuda.usuarios.crear.titulo" xml:space="preserve">
+    <value>Adding a user</value>
+  </data>
+  <data name="ayuda.usuarios.crear.cuerpo" xml:space="preserve">
+    <value>Each person who uses the platform has their own user. The **Role** (profile) defines which screens they can see and what they can do.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.pasos" xml:space="preserve">
+    <value>Click **Add user**.|Fill in the ID number, first name, last name and email: the email is what they use to sign in.|Choose the **Role**. If you are the superuser, also choose the company.|Enter an initial password: at least 8 characters, with an uppercase letter, a number and a special character.|Click **Create user**.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.consejo" xml:space="preserve">
+    <value>When editing a user, the ID number and password cannot be changed. If they forgot the password, they can recover it from the sign-in page.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.titulo" xml:space="preserve">
+    <value>Editing or deactivating a user</value>
+  </data>
+  <data name="ayuda.usuarios.estado.cuerpo" xml:space="preserve">
+    <value>A user who leaves the company is not deleted: they are deactivated. They can no longer sign in, but their actions remain in the audit log.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.pasos" xml:space="preserve">
+    <value>Find the user by name or email; you can filter by profile and company.|The pencil (**Edit**) changes their data or profile.|The arrows (**Activate/Deactivate**) activate or deactivate them; the system asks for confirmation.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.titulo" xml:space="preserve">
+    <value>Unlocking a user</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.cuerpo" xml:space="preserve">
+    <value>For security, a user is locked after **3 failed** password attempts. The list shows the **Locked** label.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.pasos" xml:space="preserve">
+    <value>On the user's row, click **Unlock** and confirm.|The system emails them a link to set a new password.|The link expires after 5 minutes: let them know so they use it right away.</value>
+  </data>
+  <data name="ayuda.usuarios.errores.titulo" xml:space="preserve">
+    <value>Why can't I save the user?</value>
+  </data>
+  <data name="ayuda.usuarios.errores.cuerpo" xml:space="preserve">
+    <value>The red message inside the form tells you what to fix. The most common causes are:</value>
+  </data>
+  <data name="ayuda.usuarios.errores.pasos" xml:space="preserve">
+    <value>**ID number already registered**: that ID already has a user; find it in the list and edit it.|**Invalid ID number**: digits only, no dots.|**Weak password**: at least 8 characters, with an uppercase letter, a number and a special character.|**Invalid or empty email**: it is required and used to sign in.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.titulo" xml:space="preserve">
+    <value>Permissions, groups and profiles</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.cuerpo" xml:space="preserve">
+    <value>Access is built on three levels. A **permission** enables a specific action. A **group** groups permissions (and other groups) that usually go together. A **profile** is what is assigned to the user and can contain single permissions and groups.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.pasos" xml:space="preserve">
+    <value>Build groups by topic, for example one for everything about stock and sales.|Create a profile per user type (administrator, manager, analyst) by combining groups.|Assign the profile to each user in **Users**.</value>
+  </data>
+  <data name="ayuda.permisos.crear.titulo" xml:space="preserve">
+    <value>Creating a profile or a group</value>
+  </data>
+  <data name="ayuda.permisos.crear.cuerpo" xml:space="preserve">
+    <value>The screen has two identical columns: **Profiles** on the left and **Groups** on the right. They are created the same way.</value>
+  </data>
+  <data name="ayuda.permisos.crear.pasos" xml:space="preserve">
+    <value>Enter the name of the new profile or group.|Tick the **Available permissions** and **Available groups** it should include.|Click **Create profile** or **Create group**.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.titulo" xml:space="preserve">
+    <value>Changing or deleting a profile or group</value>
+  </data>
+  <data name="ayuda.permisos.modificar.cuerpo" xml:space="preserve">
+    <value>Changes to a profile or group immediately affect every user who has it; each user sees them when they sign in again.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.pasos" xml:space="preserve">
+    <value>Choose the profile in **Selected profile** (or the group in **Selected group**).|To add: tick available permissions or groups and click **Add permissions**.|To remove: tick items in **Assigned content** and click **Remove permissions**.|To delete it: **Delete profile** or **Delete group**.</value>
+  </data>
+  <data name="ayuda.permisos.errores.titulo" xml:space="preserve">
+    <value>Why won't it let me make the change?</value>
+  </data>
+  <data name="ayuda.permisos.errores.cuerpo" xml:space="preserve">
+    <value>The system protects the permission structure so that nobody loses access by mistake. The most common causes are:</value>
+  </data>
+  <data name="ayuda.permisos.errores.pasos" xml:space="preserve">
+    <value>**In use**: a group assigned to a profile, or a profile assigned to users, cannot be deleted; remove it from there first.|**Already included**: the permission is already part of the profile, directly or inside a group.|**You would lose access**: the change would remove your permission for this screen.|**Repeated or empty name**: every profile and group needs a unique name.</value>
+  </data>
+  <data name="ayuda.empresas.crear.titulo" xml:space="preserve">
+    <value>Registering a company</value>
+  </data>
+  <data name="ayuda.empresas.crear.cuerpo" xml:space="preserve">
+    <value>Each client company has its own stores, products and users, and cannot see the others' data. Only the superuser manages companies.</value>
+  </data>
+  <data name="ayuda.empresas.crear.pasos" xml:space="preserve">
+    <value>Click **New company**.|Fill in the company name, tax ID (CUIT) and email, which are required.|For the CUIT, type only the 11 digits: the dashes are added automatically.|Save. Then create its users in **Users**.</value>
+  </data>
+  <data name="ayuda.empresas.estado.titulo" xml:space="preserve">
+    <value>Editing or deactivating a company</value>
+  </data>
+  <data name="ayuda.empresas.estado.cuerpo" xml:space="preserve">
+    <value>Deactivating a company is a strong measure: **none of its users can sign in** until it is activated again. Its data is kept.</value>
+  </data>
+  <data name="ayuda.empresas.estado.pasos" xml:space="preserve">
+    <value>Find the company by name or CUIT.|The pencil (**Edit**) corrects its data.|The arrows (**Activate/Deactivate**) change its status; the system asks for confirmation and says how many users lose access.</value>
+  </data>
+  <data name="ayuda.empresas.errores.titulo" xml:space="preserve">
+    <value>Why can't I save the company?</value>
+  </data>
+  <data name="ayuda.empresas.errores.cuerpo" xml:space="preserve">
+    <value>The red message inside the form tells you what to fix. The most common causes are:</value>
+  </data>
+  <data name="ayuda.empresas.errores.pasos" xml:space="preserve">
+    <value>**Invalid CUIT**: it must have 11 digits and the correct check digit. Make sure no digit is missing or extra.|**Company already registered**: that CUIT already exists; find it in the list.|**Invalid email format**: for example, the @ or the domain is missing.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.titulo" xml:space="preserve">
+    <value>Adding a language</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.cuerpo" xml:space="preserve">
+    <value>The languages in the list already come fully translated. With **Other language...** you can add any other: it is loaded with all the texts in Spanish, marked as pending, so you can translate it.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.pasos" xml:space="preserve">
+    <value>Click **Add language**.|Choose the language from the list, or **Other language...**.|For another language, enter its ISO code (for example ko, nl or pt-BR) and its name in Spanish; the native name is filled in automatically.|Confirm. The language stays **inactive** until you activate it.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.titulo" xml:space="preserve">
+    <value>Activating or deactivating a language</value>
+  </data>
+  <data name="ayuda.idiomas.activar.cuerpo" xml:space="preserve">
+    <value>Only active languages appear in the users' language selector. The bar on each card shows what percentage of the translations has been reviewed.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.pasos" xml:space="preserve">
+    <value>Before activating it, review its texts with **Edit translations**.|Use the card's button to activate or deactivate it.|The default language (Spanish) cannot be deactivated.|Nor can a language that a user has selected.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.titulo" xml:space="preserve">
+    <value>Synchronizing keys</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.cuerpo" xml:space="preserve">
+    <value>When new features are added to the platform, new texts appear. Synchronizing adds them to every language **without touching existing translations**.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.pasos" xml:space="preserve">
+    <value>Click **Sync keys**.|The message says how many texts were added and how many are pending.|Pending texts are shown in Spanish until you translate them with **Edit translations**.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.titulo" xml:space="preserve">
+    <value>Editing translations</value>
+  </data>
+  <data name="ayuda.traducciones.editar.cuerpo" xml:space="preserve">
+    <value>Here you can correct any text of the platform in the chosen language: buttons, messages and also the texts of this help. Changes show up in the system right away.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.pasos" xml:space="preserve">
+    <value>Filter by **Module**, search by key or text, or tick **Pending only**, and click **Filter**.|Correct the texts: when you type, the row is marked **Reviewed**.|Click **Save changes**: all changes are saved together.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.consejo" xml:space="preserve">
+    <value>If you edit Spanish (the base language), that text is also shown in languages where the translation is pending.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.titulo" xml:space="preserve">
+    <value>Why aren't the changes saved?</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.cuerpo" xml:space="preserve">
+    <value>Before saving, the system checks all the texts. If one has a problem, none are saved and the message says which one to fix.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.pasos" xml:space="preserve">
+    <value>**Empty text**: every translation needs a text.|**Text too long**: there is a maximum number of characters per text.|**Different placeholders**: whatever is in braces, such as {0} or {1}, must stay the same as in Spanish; the system replaces it with a value.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.titulo" xml:space="preserve">
+    <value>Searching the log</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.cuerpo" xml:space="preserve">
+    <value>The log records who did what and when: sign-ins, data changes, imports, backups and errors. When opened, it shows the last 3 days.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.pasos" xml:space="preserve">
+    <value>Use at least one filter: text (user, action, entity), **From date** and **To date**, event type or level.|Click **Filter**.|Browse the results with **Previous** and **Next**.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.titulo" xml:space="preserve">
+    <value>Severity levels</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.cuerpo" xml:space="preserve">
+    <value>Each event has a level that shows how much attention it needs.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.pasos" xml:space="preserve">
+    <value>**Info (1)**: normal operations, such as sign-ins or new records.|**Warning (2)**: situations to review, such as failed sign-in attempts or lockouts.|**Error (3)**: failures, such as a backup that could not be created or a data inconsistency.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.titulo" xml:space="preserve">
+    <value>Exporting the log</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.cuerpo" xml:space="preserve">
+    <value>Downloads the events currently shown, with the filters applied, as an Excel file (.xlsx). Useful for an external audit or to keep a record.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.pasos" xml:space="preserve">
+    <value>Apply the filters you need.|Click **Export log** at the top right.|Open the downloaded file with Excel or similar.</value>
+  </data>
+  <data name="ayuda.backup.crear.titulo" xml:space="preserve">
+    <value>Creating and downloading a backup</value>
+  </data>
+  <data name="ayuda.backup.crear.cuerpo" xml:space="preserve">
+    <value>A backup is a full copy of the database at a given moment. It is a good idea to create one before big changes, such as a bulk import.</value>
+  </data>
+  <data name="ayuda.backup.crear.pasos" xml:space="preserve">
+    <value>Click **Create backup**.|When it finishes, it appears first in the **Backup history**.|**Download** saves a copy outside the server.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.titulo" xml:space="preserve">
+    <value>Restoring a backup</value>
+  </data>
+  <data name="ayuda.backup.restaurar.cuerpo" xml:space="preserve">
+    <value>Restoring **replaces all current data** with the chosen backup's data, for every company. Anything entered after that date is lost and cannot be undone.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.pasos" xml:space="preserve">
+    <value>First, create a backup of the current state in case you need to go back.|In the history, click **Restore** on the chosen backup.|Check the date and size, and type the word **CONFIRM**.|Click **Restore backup**.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.titulo" xml:space="preserve">
+    <value>What is an inconsistency?</value>
+  </data>
+  <data name="ayuda.integridad.queEs.cuerpo" xml:space="preserve">
+    <value>Every record and every table stores a check digit calculated from its data. If a value was changed outside the system (for example, directly in the database), the digit no longer matches and the system detects it at sign-in.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.pasos" xml:space="preserve">
+    <value>The table shows each problem: which table, which record and what does not match.|While there are inconsistencies, other users see "The system is not available" when they try to sign in.|Check the **Audit / Log** to understand what happened before deciding.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.titulo" xml:space="preserve">
+    <value>Recalculate or restore</value>
+  </data>
+  <data name="ayuda.integridad.opciones.cuerpo" xml:space="preserve">
+    <value>There are two paths, depending on whether the detected change is valid or not.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.pasos" xml:space="preserve">
+    <value>**Recalculate check digits**: if the change was legitimate (for example, an authorized correction). The data stays as is and the digits are recalculated.|**Restore database**: if the change was not authorized. It goes back to the latest backup and anything entered afterwards is lost.|**Exit**: signs out without doing anything; the system remains unavailable for others.</value>
+  </data>
+  <data name="ayuda.login.pantalla" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="ayuda.login.ingresar.titulo" xml:space="preserve">
+    <value>Signing in to the platform</value>
+  </data>
+  <data name="ayuda.login.ingresar.cuerpo" xml:space="preserve">
+    <value>You sign in with the email and password your company's administrator gave you. After **3 failed attempts** the user is locked for security.</value>
+  </data>
+  <data name="ayuda.login.ingresar.pasos" xml:space="preserve">
+    <value>Enter your email.|Enter your password; the eye icon lets you see it to check it.|Click **Ingresar** (Sign in).</value>
+  </data>
+  <data name="ayuda.login.olvide.titulo" xml:space="preserve">
+    <value>I forgot my password</value>
+  </data>
+  <data name="ayuda.login.olvide.cuerpo" xml:space="preserve">
+    <value>You can set a new password yourself, without asking the administrator. You receive an email with a link that **expires after 5 minutes**.</value>
+  </data>
+  <data name="ayuda.login.olvide.pasos" xml:space="preserve">
+    <value>Click **¿Olvidaste tu contraseña?** (Forgot your password?).|Enter your email and confirm.|Open the email and follow the link right away.|Enter the new password twice and confirm. Then sign in with it.</value>
+  </data>
+  <data name="ayuda.login.errores.titulo" xml:space="preserve">
+    <value>Why can't I sign in?</value>
+  </data>
+  <data name="ayuda.login.errores.cuerpo" xml:space="preserve">
+    <value>The red message above the form shows the reason:</value>
+  </data>
+  <data name="ayuda.login.errores.pasos" xml:space="preserve">
+    <value>**Credenciales incorrectas** (wrong credentials): check the email and password (including uppercase).|**Usuario bloqueado** (user locked): after 3 failed attempts. Use **¿Olvidaste tu contraseña?** or ask the administrator to unlock you.|**Usuario deshabilitado** (user disabled) or **empresa inactiva** (inactive company): talk to the administrator.|**El sistema no está disponible** (system unavailable): a data problem was detected and the system administrator is looking into it.</value>
+  </data>
+  <data name="ayuda.recuperar.pantalla" xml:space="preserve">
+    <value>Password recovery</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.titulo" xml:space="preserve">
+    <value>Setting the new password</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.cuerpo" xml:space="preserve">
+    <value>The new password must have **at least 8 characters**, with an uppercase letter, a number and a special character. The link works only once and expires after 5 minutes.</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.pasos" xml:space="preserve">
+    <value>Enter the new password.|Repeat it to confirm.|Confirm and go back to the sign-in page to use it.|If the link expired or was already used, request a new one with **¿Olvidaste tu contraseña?**.</value>
+  </data>
 </root>

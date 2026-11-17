@@ -3191,4 +3191,259 @@
   <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
     <value>**Periodo non valido**: il mese iniziale non può essere successivo a quello finale né includere mesi futuri, e c'è un massimo di mesi.|**Nessuna sezione**: selezionane almeno una.|**Confronto senza scenari**: scegli lo scenario base e quello proposto.|**Nessun dato**: il punto vendita non ha vendite o magazzino in quel periodo.</value>
   </data>
+  <data name="ayuda.usuarios.crear.titulo" xml:space="preserve">
+    <value>Aggiungere un utente</value>
+  </data>
+  <data name="ayuda.usuarios.crear.cuerpo" xml:space="preserve">
+    <value>Ogni persona che usa la piattaforma ha il proprio utente. Il **Ruolo** (profilo) definisce quali schermate può vedere e cosa può fare.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.pasos" xml:space="preserve">
+    <value>Fai clic su **Aggiungi utente**.|Compila documento, nome, cognome ed e-mail: l'e-mail è quella con cui accede.|Scegli il **Ruolo**. Se sei superutente, scegli anche l'azienda.|Scrivi una password iniziale: almeno 8 caratteri, con maiuscola, numero e carattere speciale.|Fai clic su **Crea utente**.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.consejo" xml:space="preserve">
+    <value>Modificando un utente non si possono cambiare il documento né la password. Se l'ha dimenticata, può recuperarla dalla pagina di accesso.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.titulo" xml:space="preserve">
+    <value>Modificare o disattivare un utente</value>
+  </data>
+  <data name="ayuda.usuarios.estado.cuerpo" xml:space="preserve">
+    <value>Un utente che lascia l'azienda non si elimina: si disattiva. Non può più accedere, ma le sue azioni restano nell'audit.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.pasos" xml:space="preserve">
+    <value>Cerca l'utente per nome o e-mail; puoi filtrare per profilo e azienda.|Con la matita (**Modifica**) cambi i dati o il profilo.|Con le frecce (**Attiva/Disattiva**) lo attivi o disattivi; il sistema chiede conferma.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.titulo" xml:space="preserve">
+    <value>Sbloccare un utente</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.cuerpo" xml:space="preserve">
+    <value>Per sicurezza, un utente viene bloccato dopo **3 tentativi errati** di password. Nell'elenco compare l'etichetta **Bloccato**.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.pasos" xml:space="preserve">
+    <value>Nella riga dell'utente, fai clic su **Sblocca** e conferma.|Il sistema gli invia un'e-mail con un link per impostare una nuova password.|Il link scade dopo 5 minuti: avvisalo perché lo usi subito.</value>
+  </data>
+  <data name="ayuda.usuarios.errores.titulo" xml:space="preserve">
+    <value>Perché non riesco a salvare l'utente?</value>
+  </data>
+  <data name="ayuda.usuarios.errores.cuerpo" xml:space="preserve">
+    <value>Il messaggio in rosso nel modulo indica cosa correggere. Le cause più comuni sono:</value>
+  </data>
+  <data name="ayuda.usuarios.errores.pasos" xml:space="preserve">
+    <value>**Documento già registrato**: ha già un utente; cercalo nell'elenco e modificalo.|**Documento non valido**: solo cifre, senza punti.|**Password debole**: almeno 8 caratteri, con maiuscola, numero e carattere speciale.|**E-mail non valida o vuota**: è obbligatoria e serve per accedere.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.titulo" xml:space="preserve">
+    <value>Permessi, famiglie e profili</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.cuerpo" xml:space="preserve">
+    <value>Gli accessi si costruiscono su tre livelli. Un **permesso** abilita un'azione concreta. Una **famiglia** raggruppa permessi (e altre famiglie) che di solito vanno insieme. Un **profilo** è ciò che si assegna all'utente e può avere permessi singoli e famiglie.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.pasos" xml:space="preserve">
+    <value>Crea famiglie per tema, ad esempio una per tutto ciò che riguarda magazzino e vendite.|Crea un profilo per tipo di utente (amministratore, responsabile, analista) combinando famiglie.|Assegna il profilo a ogni utente in **Utenti**.</value>
+  </data>
+  <data name="ayuda.permisos.crear.titulo" xml:space="preserve">
+    <value>Creare un profilo o una famiglia</value>
+  </data>
+  <data name="ayuda.permisos.crear.cuerpo" xml:space="preserve">
+    <value>La schermata ha due colonne uguali: **Profili** a sinistra e **Famiglie** a destra. Si creano allo stesso modo.</value>
+  </data>
+  <data name="ayuda.permisos.crear.pasos" xml:space="preserve">
+    <value>Scrivi il nome del nuovo profilo o della nuova famiglia.|Seleziona i **Permessi disponibili** e le **Famiglie disponibili** da includere.|Fai clic su **Crea profilo** o **Crea famiglia**.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.titulo" xml:space="preserve">
+    <value>Modificare o eliminare un profilo o una famiglia</value>
+  </data>
+  <data name="ayuda.permisos.modificar.cuerpo" xml:space="preserve">
+    <value>Le modifiche a un profilo o a una famiglia valgono subito per tutti gli utenti che lo hanno; ognuno le vede al successivo accesso.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.pasos" xml:space="preserve">
+    <value>Scegli il profilo in **Profilo selezionato** (o la famiglia in **Famiglia selezionata**).|Per aggiungere: seleziona permessi o famiglie disponibili e fai clic su **Aggiungi permessi**.|Per togliere: seleziona voci in **Contenuto assegnato** e fai clic su **Rimuovi permessi**.|Per eliminarlo: **Elimina profilo** o **Elimina famiglia**.</value>
+  </data>
+  <data name="ayuda.permisos.errores.titulo" xml:space="preserve">
+    <value>Perché non mi lascia fare la modifica?</value>
+  </data>
+  <data name="ayuda.permisos.errores.cuerpo" xml:space="preserve">
+    <value>Il sistema protegge la struttura dei permessi perché nessuno perda accessi per errore. Le cause più comuni sono:</value>
+  </data>
+  <data name="ayuda.permisos.errores.pasos" xml:space="preserve">
+    <value>**È in uso**: una famiglia assegnata a un profilo, o un profilo assegnato a utenti, non si può eliminare; toglilo prima da lì.|**È già incluso**: il permesso fa già parte del profilo, direttamente o tramite una famiglia.|**Perderesti l'accesso**: la modifica ti toglierebbe il permesso per questa schermata.|**Nome ripetuto o vuoto**: ogni profilo e ogni famiglia richiede un nome univoco.</value>
+  </data>
+  <data name="ayuda.empresas.crear.titulo" xml:space="preserve">
+    <value>Registrare un'azienda</value>
+  </data>
+  <data name="ayuda.empresas.crear.cuerpo" xml:space="preserve">
+    <value>Ogni azienda cliente ha i propri punti vendita, prodotti e utenti e non vede i dati delle altre. Solo il superutente gestisce le aziende.</value>
+  </data>
+  <data name="ayuda.empresas.crear.pasos" xml:space="preserve">
+    <value>Fai clic su **Nuova azienda**.|Compila ragione sociale, CUIT (codice fiscale) ed e-mail, che sono obbligatori.|Nel CUIT scrivi solo le 11 cifre: i trattini si aggiungono da soli.|Salva. Poi crea i suoi utenti in **Utenti**.</value>
+  </data>
+  <data name="ayuda.empresas.estado.titulo" xml:space="preserve">
+    <value>Modificare o disattivare un'azienda</value>
+  </data>
+  <data name="ayuda.empresas.estado.cuerpo" xml:space="preserve">
+    <value>Disattivare un'azienda è una misura forte: **nessuno dei suoi utenti può accedere** finché non viene riattivata. I suoi dati restano.</value>
+  </data>
+  <data name="ayuda.empresas.estado.pasos" xml:space="preserve">
+    <value>Cerca l'azienda per nome o CUIT.|Con la matita (**Modifica**) correggi i dati.|Con le frecce (**Attiva/Disattiva**) cambi lo stato; il sistema chiede conferma e indica quanti utenti perdono l'accesso.</value>
+  </data>
+  <data name="ayuda.empresas.errores.titulo" xml:space="preserve">
+    <value>Perché non riesco a salvare l'azienda?</value>
+  </data>
+  <data name="ayuda.empresas.errores.cuerpo" xml:space="preserve">
+    <value>Il messaggio in rosso nel modulo indica cosa correggere. Le cause più comuni sono:</value>
+  </data>
+  <data name="ayuda.empresas.errores.pasos" xml:space="preserve">
+    <value>**CUIT non valido**: deve avere 11 cifre e la cifra di controllo corretta. Verifica che non manchi o non avanzi una cifra.|**Azienda già registrata**: quel CUIT esiste già; cercala nell'elenco.|**Formato e-mail non valido**: ad esempio manca la @ o il dominio.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.titulo" xml:space="preserve">
+    <value>Aggiungere una lingua</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.cuerpo" xml:space="preserve">
+    <value>Le lingue dell'elenco sono già tradotte per intero. Con **Altra lingua...** puoi aggiungerne qualsiasi altra: viene caricata con tutti i testi in spagnolo, segnati come in sospeso, per tradurla.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.pasos" xml:space="preserve">
+    <value>Fai clic su **Aggiungi lingua**.|Scegli la lingua dall'elenco, oppure **Altra lingua...**.|Se è un'altra lingua, scrivi il codice ISO (ad esempio ko, nl o pt-BR) e il nome in spagnolo; il nome nella sua lingua si completa da solo.|Conferma. La lingua resta **inattiva** finché non la attivi.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.titulo" xml:space="preserve">
+    <value>Attivare o disattivare una lingua</value>
+  </data>
+  <data name="ayuda.idiomas.activar.cuerpo" xml:space="preserve">
+    <value>Solo le lingue attive compaiono nel selettore di lingua degli utenti. La barra di ogni scheda mostra la percentuale di traduzioni revisionate.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.pasos" xml:space="preserve">
+    <value>Prima di attivarla, rivedi i testi con **Modifica traduzioni**.|Usa il pulsante della scheda per attivarla o disattivarla.|La lingua predefinita (spagnolo) non si può disattivare.|Né si può disattivare una lingua scelta da qualche utente.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.titulo" xml:space="preserve">
+    <value>Sincronizzare le chiavi</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.cuerpo" xml:space="preserve">
+    <value>Quando si aggiungono nuove funzioni alla piattaforma compaiono nuovi testi. La sincronizzazione li aggiunge a tutte le lingue **senza toccare le traduzioni esistenti**.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.pasos" xml:space="preserve">
+    <value>Fai clic su **Sincronizza chiavi**.|Il messaggio indica quanti testi sono stati aggiunti e quanti restano in sospeso.|Quelli in sospeso si vedono in spagnolo finché non li traduci da **Modifica traduzioni**.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.titulo" xml:space="preserve">
+    <value>Modificare le traduzioni</value>
+  </data>
+  <data name="ayuda.traducciones.editar.cuerpo" xml:space="preserve">
+    <value>Qui si corregge qualsiasi testo della piattaforma nella lingua scelta: pulsanti, messaggi e anche i testi di questa guida. Le modifiche si vedono subito nel sistema.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.pasos" xml:space="preserve">
+    <value>Filtra per **Modulo**, cerca per chiave o testo, oppure seleziona **Solo da completare**, e fai clic su **Filtra**.|Correggi i testi: scrivendo, la riga viene segnata come **Verificata**.|Fai clic su **Salva modifiche**: tutte le modifiche si salvano insieme.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.consejo" xml:space="preserve">
+    <value>Se modifichi lo spagnolo (lingua base), quel testo appare anche nelle lingue in cui la traduzione è in sospeso.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.titulo" xml:space="preserve">
+    <value>Perché le modifiche non vengono salvate?</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.cuerpo" xml:space="preserve">
+    <value>Prima di salvare, il sistema controlla tutti i testi. Se uno ha un problema non se ne salva nessuno e il messaggio indica quale correggere.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.pasos" xml:space="preserve">
+    <value>**Testo vuoto**: ogni traduzione richiede un testo.|**Testo troppo lungo**: c'è un massimo di caratteri per testo.|**Segnaposto diversi**: ciò che è tra parentesi graffe, come {0} o {1}, deve restare uguale allo spagnolo; il sistema lo sostituisce con un valore.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.titulo" xml:space="preserve">
+    <value>Cercare nel registro</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.cuerpo" xml:space="preserve">
+    <value>Il registro annota chi ha fatto cosa e quando: accessi, modifiche ai dati, importazioni, backup ed errori. All'apertura mostra gli ultimi 3 giorni.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.pasos" xml:space="preserve">
+    <value>Usa almeno un filtro: testo (utente, azione, entità), **Data da** e **Data a**, tipo di evento o livello.|Fai clic su **Filtra**.|Scorri i risultati con **Precedente** e **Successivo**.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.titulo" xml:space="preserve">
+    <value>Livelli di criticità</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.cuerpo" xml:space="preserve">
+    <value>Ogni evento ha un livello che indica quanta attenzione richiede.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.pasos" xml:space="preserve">
+    <value>**Info (1)**: operazioni normali, come accessi o inserimenti.|**Avviso (2)**: situazioni da controllare, come accessi falliti o blocchi.|**Errore (3)**: guasti, come un backup non generato o un'incoerenza nei dati.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.titulo" xml:space="preserve">
+    <value>Esportare il log</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.cuerpo" xml:space="preserve">
+    <value>Scarica in un Excel (.xlsx) gli eventi mostrati, con i filtri applicati. Utile per un controllo esterno o per conservarne una copia.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.pasos" xml:space="preserve">
+    <value>Applica i filtri che ti servono.|Fai clic su **Esporta log**, in alto a destra.|Apri il file scaricato con Excel o simili.</value>
+  </data>
+  <data name="ayuda.backup.crear.titulo" xml:space="preserve">
+    <value>Creare e scaricare un backup</value>
+  </data>
+  <data name="ayuda.backup.crear.cuerpo" xml:space="preserve">
+    <value>Un backup è una copia completa del database in un dato momento. Conviene crearne uno prima di grandi modifiche, come un'importazione massiva.</value>
+  </data>
+  <data name="ayuda.backup.crear.pasos" xml:space="preserve">
+    <value>Fai clic su **Crea backup**.|Al termine compare per primo nello **Cronologia dei backup**.|Con **Scarica** salvi una copia fuori dal server.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.titulo" xml:space="preserve">
+    <value>Ripristinare un backup</value>
+  </data>
+  <data name="ayuda.backup.restaurar.cuerpo" xml:space="preserve">
+    <value>Il ripristino **sostituisce tutti i dati attuali** con quelli del backup scelto, per tutte le aziende. Ciò che è stato caricato dopo quella data va perso e non si può annullare.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.pasos" xml:space="preserve">
+    <value>Prima, crea un backup dello stato attuale nel caso serva tornare indietro.|Nello storico, fai clic su **Ripristina** sul backup scelto.|Controlla data e dimensione e scrivi la parola **CONFERMA**.|Fai clic su **Ripristina backup**.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.titulo" xml:space="preserve">
+    <value>Che cos'è un'incoerenza?</value>
+  </data>
+  <data name="ayuda.integridad.queEs.cuerpo" xml:space="preserve">
+    <value>Ogni record e ogni tabella conservano una cifra di controllo calcolata dai loro dati. Se un dato è stato cambiato fuori dal sistema (ad esempio direttamente nel database), la cifra non corrisponde più e il sistema lo rileva all'accesso.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.pasos" xml:space="preserve">
+    <value>La tabella mostra ogni problema: in quale tabella, in quale record e cosa non corrisponde.|Finché ci sono incoerenze, gli altri utenti vedono "Il sistema non è disponibile" quando provano ad accedere.|Consulta **Audit / Registro eventi** per capire cosa è successo prima di decidere.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.titulo" xml:space="preserve">
+    <value>Ricalcolare o ripristinare</value>
+  </data>
+  <data name="ayuda.integridad.opciones.cuerpo" xml:space="preserve">
+    <value>Ci sono due strade, a seconda che la modifica rilevata sia valida o no.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.pasos" xml:space="preserve">
+    <value>**Ricalcola cifre di controllo**: se la modifica era legittima (ad esempio una correzione autorizzata). I dati restano come sono e le cifre vengono ricalcolate.|**Ripristina database**: se la modifica non era autorizzata. Torna all'ultimo backup e si perde ciò che è stato caricato dopo.|**Esci**: chiude la sessione senza fare nulla; il sistema resta non disponibile per gli altri.</value>
+  </data>
+  <data name="ayuda.login.pantalla" xml:space="preserve">
+    <value>Accesso</value>
+  </data>
+  <data name="ayuda.login.ingresar.titulo" xml:space="preserve">
+    <value>Accedere alla piattaforma</value>
+  </data>
+  <data name="ayuda.login.ingresar.cuerpo" xml:space="preserve">
+    <value>Accedi con l'e-mail e la password che ti ha dato l'amministratore della tua azienda. Dopo **3 tentativi errati** l'utente viene bloccato per sicurezza.</value>
+  </data>
+  <data name="ayuda.login.ingresar.pasos" xml:space="preserve">
+    <value>Scrivi la tua e-mail.|Scrivi la password; con l'occhio puoi vederla per controllarla.|Fai clic su **Ingresar** (Accedi).</value>
+  </data>
+  <data name="ayuda.login.olvide.titulo" xml:space="preserve">
+    <value>Ho dimenticato la password</value>
+  </data>
+  <data name="ayuda.login.olvide.cuerpo" xml:space="preserve">
+    <value>Puoi impostare tu stesso una nuova password, senza chiederla all'amministratore. Ricevi un'e-mail con un link che **scade dopo 5 minuti**.</value>
+  </data>
+  <data name="ayuda.login.olvide.pasos" xml:space="preserve">
+    <value>Fai clic su **¿Olvidaste tu contraseña?** (Password dimenticata?).|Scrivi la tua e-mail e conferma.|Apri l'e-mail e segui subito il link.|Scrivi due volte la nuova password e conferma. Poi accedi con quella.</value>
+  </data>
+  <data name="ayuda.login.errores.titulo" xml:space="preserve">
+    <value>Perché non riesco ad accedere?</value>
+  </data>
+  <data name="ayuda.login.errores.cuerpo" xml:space="preserve">
+    <value>Il messaggio in rosso sopra il modulo indica il motivo:</value>
+  </data>
+  <data name="ayuda.login.errores.pasos" xml:space="preserve">
+    <value>**Credenciales incorrectas** (credenziali errate): controlla e-mail e password (maiuscole comprese).|**Usuario bloqueado** (utente bloccato): dopo 3 tentativi errati. Usa **¿Olvidaste tu contraseña?** o chiedi all'amministratore di sbloccarti.|**Usuario deshabilitado** (utente disabilitato) o **empresa inactiva** (azienda inattiva): parla con l'amministratore.|**El sistema no está disponible** (sistema non disponibile): è stato rilevato un problema nei dati e l'amministratore di sistema lo sta verificando.</value>
+  </data>
+  <data name="ayuda.recuperar.pantalla" xml:space="preserve">
+    <value>Recupero password</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.titulo" xml:space="preserve">
+    <value>Impostare la nuova password</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.cuerpo" xml:space="preserve">
+    <value>La nuova password deve avere **almeno 8 caratteri**, con una maiuscola, un numero e un carattere speciale. Il link vale una sola volta e scade dopo 5 minuti.</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.pasos" xml:space="preserve">
+    <value>Scrivi la nuova password.|Ripetila per confermarla.|Conferma e torna alla pagina di accesso per usarla.|Se il link è scaduto o è già stato usato, chiedine uno nuovo da **¿Olvidaste tu contraseña?**.</value>
+  </data>
 </root>

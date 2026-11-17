@@ -53,7 +53,7 @@
 
     // Si hay un modal visible con data-ayuda-tema, la ayuda abre ese tema
     function temaDelContexto() {
-        var modales = document.querySelectorAll('.modal-fondo[data-ayuda-tema]');
+        var modales = document.querySelectorAll('.modal-fondo[data-ayuda-tema], .modal-overlay[data-ayuda-tema]');
         for (var i = 0; i < modales.length; i++) {
             if (esVisible(modales[i])) return modales[i].getAttribute('data-ayuda-tema');
         }

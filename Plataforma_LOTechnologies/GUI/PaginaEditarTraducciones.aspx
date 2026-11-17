@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaEditarTraducciones.aspx.cs" Inherits="PaginaEditarTraducciones" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -28,6 +28,7 @@
                             <asp:Literal ID="litResumen" runat="server" />
                         </p>
                     </div>
+                    <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="traducciones" />
                 </div>
 
                 <asp:Label ID="lblAvisoBase" runat="server" CssClass="mensaje trd-aviso" Visible="false"
@@ -85,13 +86,11 @@
                     <asp:Label ID="lblSinResultados" runat="server" CssClass="sin-resultados" Visible="false"
                         Text="No hay traducciones que coincidan con el filtro." />
                 </div>
-
                 <div class="trd-barra-guardar">
                     <span class="texto-secundario" runat="server" clave="traducciones.ayudaGuardar">Al escribir en una traducción se marca como revisada. Los cambios se guardan juntos.</span>
                     <asp:Button ID="btnGuardar" runat="server" CssClass="boton-nuevo" Text="Guardar cambios" Clave="comun.guardarCambios"
                         OnClick="btnGuardar_Click" OnClientClick="trdGuardando();" CausesValidation="false" />
                 </div>
-
             </div>
         </div>
     </form>

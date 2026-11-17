@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaIdiomas.aspx.cs" Inherits="PaginaIdiomas" %>
-
 <%@ Import Namespace="BE" %>
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -27,6 +27,7 @@
                         <p class="subtitulo" runat="server" clave="idiomas.subtitulo">Agregá idiomas del catálogo, revisá sus traducciones y activalos para los usuarios.</p>
                     </div>
                     <div class="idi-encabezado-acciones">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="idiomas" />
                         <asp:Button ID="btnSincronizar" runat="server" CssClass="idi-boton-secundario" Text="Sincronizar claves" Clave="idiomas.btnSincronizar"
                             ToolTip="Agrega a todos los idiomas las claves nuevas del catálogo, sin modificar las traducciones existentes" ClaveTitle="idiomas.ayudaSincronizar"
                             OnClick="btnSincronizar_Click" CausesValidation="false" />
@@ -86,7 +87,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalIdioma" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalIdioma" runat="server" data-ayuda-tema="idiomas.agregar" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="tituloAgregarIdioma">
                 <div class="modal-encabezado">
                     <h3 id="tituloAgregarIdioma" runat="server" clientidmode="Static" clave="idiomas.btnAgregar">Agregar idioma</h3>

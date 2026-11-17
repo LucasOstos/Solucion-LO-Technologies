@@ -3191,4 +3191,259 @@
   <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
     <value>**Неверный период**: начальный месяц не может быть позже конечного, нельзя включать будущие месяцы, и есть ограничение по числу месяцев.|**Нет разделов**: отметьте хотя бы один.|**Сравнение без сценариев**: выберите базовый и предлагаемый сценарии.|**Нет данных**: у магазина нет продаж или запасов за этот период.</value>
   </data>
+  <data name="ayuda.usuarios.crear.titulo" xml:space="preserve">
+    <value>Добавление пользователя</value>
+  </data>
+  <data name="ayuda.usuarios.crear.cuerpo" xml:space="preserve">
+    <value>У каждого, кто работает с платформой, свой пользователь. **Роль** (профиль) определяет, какие экраны ему доступны и что он может делать.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.pasos" xml:space="preserve">
+    <value>Нажмите **Добавить пользователя**.|Заполните номер документа, имя, фамилию и e-mail: по e-mail пользователь входит в систему.|Выберите **Роль**. Если вы суперпользователь, выберите и компанию.|Задайте начальный пароль: не менее 8 символов, с заглавной буквой, цифрой и специальным символом.|Нажмите **Создать пользователя**.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.consejo" xml:space="preserve">
+    <value>При изменении пользователя нельзя поменять номер документа и пароль. Если пароль забыт, его можно восстановить на странице входа.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.titulo" xml:space="preserve">
+    <value>Изменение и отключение пользователя</value>
+  </data>
+  <data name="ayuda.usuarios.estado.cuerpo" xml:space="preserve">
+    <value>Пользователя, ушедшего из компании, не удаляют, а отключают. Он больше не может войти, но его действия остаются в журнале аудита.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.pasos" xml:space="preserve">
+    <value>Найдите пользователя по имени или e-mail; можно отфильтровать по профилю и компании.|Карандаш (**Изменить**) меняет данные или профиль.|Стрелки (**Активировать/Деактивировать**) включают или отключают пользователя; система попросит подтверждение.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.titulo" xml:space="preserve">
+    <value>Разблокировка пользователя</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.cuerpo" xml:space="preserve">
+    <value>В целях безопасности пользователь блокируется после **3 неудачных** попыток ввода пароля. В списке появляется отметка **Заблокирован**.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.pasos" xml:space="preserve">
+    <value>В строке пользователя нажмите **Разблокировать** и подтвердите.|Система отправит ему письмо со ссылкой для задания нового пароля.|Ссылка действует 5 минут: предупредите пользователя, чтобы он воспользовался ею сразу.</value>
+  </data>
+  <data name="ayuda.usuarios.errores.titulo" xml:space="preserve">
+    <value>Почему не удаётся сохранить пользователя?</value>
+  </data>
+  <data name="ayuda.usuarios.errores.cuerpo" xml:space="preserve">
+    <value>Красное сообщение в форме показывает, что нужно исправить. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.usuarios.errores.pasos" xml:space="preserve">
+    <value>**Номер документа уже зарегистрирован**: у него уже есть пользователь; найдите его в списке и измените.|**Неверный номер документа**: только цифры, без точек.|**Слабый пароль**: не менее 8 символов, с заглавной буквой, цифрой и специальным символом.|**Неверный или пустой e-mail**: он обязателен и нужен для входа.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.titulo" xml:space="preserve">
+    <value>Разрешения, группы и профили</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.cuerpo" xml:space="preserve">
+    <value>Доступ строится на трёх уровнях. **Разрешение** открывает конкретное действие. **Группа** объединяет разрешения (и другие группы), которые обычно используются вместе. **Профиль** назначается пользователю и может содержать отдельные разрешения и группы.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.pasos" xml:space="preserve">
+    <value>Создавайте группы по темам, например одну для всего, что связано с запасами и продажами.|Создайте профиль для каждого типа пользователей (администратор, управляющий, аналитик), комбинируя группы.|Назначьте профиль каждому пользователю в разделе **Пользователи**.</value>
+  </data>
+  <data name="ayuda.permisos.crear.titulo" xml:space="preserve">
+    <value>Создание профиля или группы</value>
+  </data>
+  <data name="ayuda.permisos.crear.cuerpo" xml:space="preserve">
+    <value>На экране две одинаковые колонки: **Профили** слева и **Группы** справа. Они создаются одинаково.</value>
+  </data>
+  <data name="ayuda.permisos.crear.pasos" xml:space="preserve">
+    <value>Введите название нового профиля или группы.|Отметьте нужные элементы в списках **Доступные разрешения** и **Доступные группы**.|Нажмите **Создать профиль** или **Создать группу**.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.titulo" xml:space="preserve">
+    <value>Изменение и удаление профиля или группы</value>
+  </data>
+  <data name="ayuda.permisos.modificar.cuerpo" xml:space="preserve">
+    <value>Изменения профиля или группы сразу касаются всех пользователей, у которых он есть; каждый увидит их при следующем входе.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.pasos" xml:space="preserve">
+    <value>Выберите профиль в поле **Выбранный профиль** (или группу в поле **Выбранная группа**).|Чтобы добавить: отметьте доступные разрешения или группы и нажмите **Добавить разрешения**.|Чтобы убрать: отметьте элементы в блоке **Назначенное содержимое** и нажмите **Удалить разрешения**.|Чтобы удалить: **Удалить профиль** или **Удалить группу**.</value>
+  </data>
+  <data name="ayuda.permisos.errores.titulo" xml:space="preserve">
+    <value>Почему изменение не выполняется?</value>
+  </data>
+  <data name="ayuda.permisos.errores.cuerpo" xml:space="preserve">
+    <value>Система защищает структуру разрешений, чтобы никто не потерял доступ по ошибке. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.permisos.errores.pasos" xml:space="preserve">
+    <value>**Используется**: группу, назначенную профилю, или профиль, назначенный пользователям, нельзя удалить; сначала уберите её оттуда.|**Уже включено**: разрешение уже есть в профиле — напрямую или через группу.|**Вы потеряете доступ**: изменение лишит вас разрешения на этот экран.|**Повторяющееся или пустое название**: у каждого профиля и каждой группы должно быть уникальное название.</value>
+  </data>
+  <data name="ayuda.empresas.crear.titulo" xml:space="preserve">
+    <value>Регистрация компании</value>
+  </data>
+  <data name="ayuda.empresas.crear.cuerpo" xml:space="preserve">
+    <value>У каждой компании-клиента свои магазины, товары и пользователи, и она не видит данные других. Управлять компаниями может только суперпользователь.</value>
+  </data>
+  <data name="ayuda.empresas.crear.pasos" xml:space="preserve">
+    <value>Нажмите **Новая компания**.|Заполните обязательные поля: наименование, CUIT (налоговый номер) и e-mail.|В поле CUIT введите только 11 цифр: дефисы добавятся сами.|Сохраните. Затем создайте пользователей в разделе **Пользователи**.</value>
+  </data>
+  <data name="ayuda.empresas.estado.titulo" xml:space="preserve">
+    <value>Изменение и отключение компании</value>
+  </data>
+  <data name="ayuda.empresas.estado.cuerpo" xml:space="preserve">
+    <value>Отключение компании — серьёзная мера: **ни один её пользователь не сможет войти**, пока компанию не включат снова. Данные сохраняются.</value>
+  </data>
+  <data name="ayuda.empresas.estado.pasos" xml:space="preserve">
+    <value>Найдите компанию по названию или CUIT.|Карандаш (**Изменить**) исправляет данные.|Стрелки (**Активировать/Деактивировать**) меняют статус; система попросит подтверждение и сообщит, сколько пользователей потеряют доступ.</value>
+  </data>
+  <data name="ayuda.empresas.errores.titulo" xml:space="preserve">
+    <value>Почему не удаётся сохранить компанию?</value>
+  </data>
+  <data name="ayuda.empresas.errores.cuerpo" xml:space="preserve">
+    <value>Красное сообщение в форме показывает, что нужно исправить. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.empresas.errores.pasos" xml:space="preserve">
+    <value>**Неверный CUIT**: должно быть 11 цифр и правильная контрольная цифра. Проверьте, нет ли лишней или пропущенной цифры.|**Компания уже зарегистрирована**: такой CUIT уже есть; найдите её в списке.|**Неверный формат e-mail**: например, нет @ или домена.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.titulo" xml:space="preserve">
+    <value>Добавление языка</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.cuerpo" xml:space="preserve">
+    <value>Языки из списка уже полностью переведены. Через **Другой язык...** можно добавить любой другой: он загружается со всеми текстами на испанском, отмеченными как ожидающие перевода.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.pasos" xml:space="preserve">
+    <value>Нажмите **Добавить язык**.|Выберите язык из списка или **Другой язык...**.|Для другого языка введите его код ISO (например, ko, nl или pt-BR) и название на испанском; название на самом языке заполнится автоматически.|Подтвердите. Язык остаётся **неактивным**, пока вы его не включите.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.titulo" xml:space="preserve">
+    <value>Включение и отключение языка</value>
+  </data>
+  <data name="ayuda.idiomas.activar.cuerpo" xml:space="preserve">
+    <value>В переключателе языков у пользователей показываются только активные языки. Полоска на каждой карточке показывает, какой процент переводов проверен.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.pasos" xml:space="preserve">
+    <value>Перед включением проверьте тексты через **Изменить переводы**.|Кнопкой на карточке язык включается или отключается.|Язык по умолчанию (испанский) отключить нельзя.|Нельзя отключить и язык, который выбран у какого-либо пользователя.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.titulo" xml:space="preserve">
+    <value>Синхронизация ключей</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.cuerpo" xml:space="preserve">
+    <value>Когда на платформе появляются новые функции, появляются и новые тексты. Синхронизация добавляет их во все языки, **не трогая существующие переводы**.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.pasos" xml:space="preserve">
+    <value>Нажмите **Синхронизировать ключи**.|Сообщение покажет, сколько текстов добавлено и сколько ждут перевода.|Непереведённые тексты показываются на испанском, пока вы не переведёте их через **Изменить переводы**.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.titulo" xml:space="preserve">
+    <value>Редактирование переводов</value>
+  </data>
+  <data name="ayuda.traducciones.editar.cuerpo" xml:space="preserve">
+    <value>Здесь можно исправить любой текст платформы на выбранном языке: кнопки, сообщения и даже тексты этой справки. Изменения сразу видны в системе.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.pasos" xml:space="preserve">
+    <value>Отфильтруйте по полю **Модуль**, найдите по ключу или тексту или отметьте **Только ожидающие** и нажмите **Фильтровать**.|Исправьте тексты: при вводе строка отмечается как **Проверено**.|Нажмите **Сохранить изменения**: все изменения сохраняются вместе.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.consejo" xml:space="preserve">
+    <value>Если вы редактируете испанский (базовый язык), этот текст показывается и в языках, где перевод ещё не готов.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.titulo" xml:space="preserve">
+    <value>Почему изменения не сохраняются?</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.cuerpo" xml:space="preserve">
+    <value>Перед сохранением система проверяет все тексты. Если в одном есть ошибка, не сохраняется ни один, а сообщение укажет, что исправить.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.pasos" xml:space="preserve">
+    <value>**Пустой текст**: у каждого перевода должен быть текст.|**Слишком длинный текст**: есть ограничение на число символов.|**Другие маркеры**: всё в фигурных скобках, например {0} или {1}, должно остаться как в испанском; система подставляет туда значение.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.titulo" xml:space="preserve">
+    <value>Поиск в журнале</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.cuerpo" xml:space="preserve">
+    <value>Журнал фиксирует, кто, что и когда сделал: входы, изменения данных, импорт, резервные копии и ошибки. При открытии показываются последние 3 дня.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.pasos" xml:space="preserve">
+    <value>Используйте хотя бы один фильтр: текст (пользователь, действие, объект), **Дата с** и **Дата по**, тип события или уровень.|Нажмите **Фильтровать**.|Листайте результаты кнопками **Назад** и **Далее**.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.titulo" xml:space="preserve">
+    <value>Уровни критичности</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.cuerpo" xml:space="preserve">
+    <value>У каждого события есть уровень, показывающий, сколько внимания оно требует.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.pasos" xml:space="preserve">
+    <value>**Информация (1)**: обычные операции, например входы или добавление записей.|**Предупреждение (2)**: ситуации, требующие проверки, например неудачные попытки входа или блокировки.|**Ошибка (3)**: сбои, например не созданная резервная копия или несогласованность данных.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.titulo" xml:space="preserve">
+    <value>Экспорт журнала</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.cuerpo" xml:space="preserve">
+    <value>Скачивает отображаемые события с учётом фильтров в файл Excel (.xlsx). Пригодится для внешней проверки или хранения.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.pasos" xml:space="preserve">
+    <value>Примените нужные фильтры.|Нажмите **Экспорт журнала** справа вверху.|Откройте скачанный файл в Excel или аналогичной программе.</value>
+  </data>
+  <data name="ayuda.backup.crear.titulo" xml:space="preserve">
+    <value>Создание и загрузка резервной копии</value>
+  </data>
+  <data name="ayuda.backup.crear.cuerpo" xml:space="preserve">
+    <value>Резервная копия — это полная копия базы данных на определённый момент. Её стоит создавать перед крупными изменениями, например массовым импортом.</value>
+  </data>
+  <data name="ayuda.backup.crear.pasos" xml:space="preserve">
+    <value>Нажмите **Создать резервную копию**.|После завершения копия появится первой в блоке **История резервных копий**.|Кнопка **Скачать** сохраняет копию вне сервера.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.titulo" xml:space="preserve">
+    <value>Восстановление из резервной копии</value>
+  </data>
+  <data name="ayuda.backup.restaurar.cuerpo" xml:space="preserve">
+    <value>Восстановление **заменяет все текущие данные** данными выбранной копии — для всех компаний. Всё, что было внесено после этой даты, теряется без возможности отмены.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.pasos" xml:space="preserve">
+    <value>Сначала создайте копию текущего состояния на случай, если понадобится вернуться.|В истории нажмите **Восстановить** у нужной копии.|Проверьте дату и размер и введите слово **ПОДТВЕРДИТЬ**.|Нажмите **Восстановить копию**.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.titulo" xml:space="preserve">
+    <value>Что такое несогласованность?</value>
+  </data>
+  <data name="ayuda.integridad.queEs.cuerpo" xml:space="preserve">
+    <value>Каждая запись и каждая таблица хранят контрольную цифру, рассчитанную по их данным. Если данные изменили в обход системы (например, прямо в базе), цифра перестаёт совпадать, и система обнаруживает это при входе.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.pasos" xml:space="preserve">
+    <value>В таблице показана каждая проблема: какая таблица, какая запись и что не совпадает.|Пока есть несогласованности, остальные пользователи при входе видят «Система недоступна».|Прежде чем решать, загляните в **Аудит / Журнал**, чтобы понять, что произошло.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.titulo" xml:space="preserve">
+    <value>Пересчитать или восстановить</value>
+  </data>
+  <data name="ayuda.integridad.opciones.cuerpo" xml:space="preserve">
+    <value>Есть два пути — в зависимости от того, допустимо ли обнаруженное изменение.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.pasos" xml:space="preserve">
+    <value>**Пересчитать контрольные цифры**: если изменение было законным (например, разрешённое исправление). Данные остаются как есть, контрольные цифры пересчитываются.|**Восстановить базу данных**: если изменение не было разрешено. Возврат к последней резервной копии; всё, что внесено позже, теряется.|**Выйти**: выход без действий; для остальных система остаётся недоступной.</value>
+  </data>
+  <data name="ayuda.login.pantalla" xml:space="preserve">
+    <value>Вход в систему</value>
+  </data>
+  <data name="ayuda.login.ingresar.titulo" xml:space="preserve">
+    <value>Вход на платформу</value>
+  </data>
+  <data name="ayuda.login.ingresar.cuerpo" xml:space="preserve">
+    <value>Вход выполняется по e-mail и паролю, которые выдал администратор вашей компании. После **3 неудачных попыток** пользователь блокируется в целях безопасности.</value>
+  </data>
+  <data name="ayuda.login.ingresar.pasos" xml:space="preserve">
+    <value>Введите e-mail.|Введите пароль; значок глаза позволяет его показать и проверить.|Нажмите **Ingresar** (Войти).</value>
+  </data>
+  <data name="ayuda.login.olvide.titulo" xml:space="preserve">
+    <value>Я забыл пароль</value>
+  </data>
+  <data name="ayuda.login.olvide.cuerpo" xml:space="preserve">
+    <value>Новый пароль можно задать самостоятельно, не обращаясь к администратору. Придёт письмо со ссылкой, которая **действует 5 минут**.</value>
+  </data>
+  <data name="ayuda.login.olvide.pasos" xml:space="preserve">
+    <value>Нажмите **¿Olvidaste tu contraseña?** (Забыли пароль?).|Введите e-mail и подтвердите.|Откройте письмо и сразу перейдите по ссылке.|Введите новый пароль дважды и подтвердите. Затем войдите с ним.</value>
+  </data>
+  <data name="ayuda.login.errores.titulo" xml:space="preserve">
+    <value>Почему не получается войти?</value>
+  </data>
+  <data name="ayuda.login.errores.cuerpo" xml:space="preserve">
+    <value>Причина указана в красном сообщении над формой:</value>
+  </data>
+  <data name="ayuda.login.errores.pasos" xml:space="preserve">
+    <value>**Credenciales incorrectas** (неверные данные): проверьте e-mail и пароль (с учётом регистра).|**Usuario bloqueado** (пользователь заблокирован): после 3 неудачных попыток. Воспользуйтесь **¿Olvidaste tu contraseña?** или попросите администратора разблокировать вас.|**Usuario deshabilitado** (пользователь отключён) или **empresa inactiva** (компания неактивна): обратитесь к администратору.|**El sistema no está disponible** (система недоступна): обнаружена проблема с данными, ею занимается системный администратор.</value>
+  </data>
+  <data name="ayuda.recuperar.pantalla" xml:space="preserve">
+    <value>Восстановление пароля</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.titulo" xml:space="preserve">
+    <value>Задание нового пароля</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.cuerpo" xml:space="preserve">
+    <value>Новый пароль должен содержать **не менее 8 символов**, включая заглавную букву, цифру и специальный символ. Ссылка действует один раз и 5 минут.</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.pasos" xml:space="preserve">
+    <value>Введите новый пароль.|Повторите его для подтверждения.|Подтвердите и вернитесь на страницу входа, чтобы войти с ним.|Если ссылка устарела или уже использована, запросите новую через **¿Olvidaste tu contraseña?**.</value>
+  </data>
 </root>

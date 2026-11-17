@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaUsuarios.aspx.cs" Inherits="PaginaUsuarios" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,8 +22,11 @@
                     <div>
                         <h1 runat="server" clave="usuarios.encabezado">Maestro Usuarios</h1>
                     </div>
-                    <asp:Button ID="btnAgregarUsuario" runat="server" CssClass="boton-nuevo"
-                        Text="Agregar Usuario" Clave="usuarios.btnAgregar" CausesValidation="false" OnClick="btnAgregarUsuario_Click" />
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="usuarios" />
+                        <asp:Button ID="btnAgregarUsuario" runat="server" CssClass="boton-nuevo"
+                            Text="Agregar Usuario" Clave="usuarios.btnAgregar" CausesValidation="false" OnClick="btnAgregarUsuario_Click" />
+                    </div>
                 </div>
                 <asp:Label ID="lbMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false"></asp:Label>
 
@@ -96,7 +100,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalUsuario" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalUsuario" runat="server" data-ayuda-tema="usuarios.crear" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3>

@@ -88,8 +88,70 @@ public static class CatalogoAyuda
                 new TemaAyuda("reportes.tipos", "&#9776;", "#ddlTipoReporte", false, "reportes.generar"),
                 new TemaAyuda("reportes.recientes", "&#8681;", ".rep-item-acciones|#lblSinReportes", false),
                 new TemaAyuda("reportes.errores", "!", "#lblMensaje|#btnGenerarReporte", false, "reportes.generar"))
+        },
+        {
+            "usuarios", Pantalla("usuarios", "principal.usuarios.titulo", "PaginaUsuarios.aspx", PermisoNombres.GestionarUsuarios, new[] { "permisos", "empresas" },
+                new TemaAyuda("usuarios.crear", "+", "#tbDNI|#btnAgregarUsuario", true, "usuarios.errores", "usuarios.desbloquear"),
+                new TemaAyuda("usuarios.estado", "&#9998;", "td.acciones|#tbBuscar", false, "usuarios.desbloquear"),
+                new TemaAyuda("usuarios.desbloquear", "&#128275;", ".etiqueta-bloqueado|td.acciones", false, "usuarios.estado"),
+                new TemaAyuda("usuarios.errores", "!", "#lbMensajeModal|#tbDNI|#lbMensaje|#btnAgregarUsuario", false, "usuarios.crear"))
+        },
+        {
+            "permisos", Pantalla("permisos", "principal.permisos.titulo", "PaginaPermisos.aspx", PermisoNombres.GestionarPermisos, new[] { "usuarios" },
+                new TemaAyuda("permisos.conceptos", "&#9432;", ".perm-columnas", false, "permisos.crear"),
+                new TemaAyuda("permisos.crear", "+", "#tbNombrePerfil", false, "permisos.modificar"),
+                new TemaAyuda("permisos.modificar", "&#9998;", "#ddlPerfiles", false, "permisos.errores"),
+                new TemaAyuda("permisos.errores", "!", "#lblMensaje|#ddlPerfiles", false, "permisos.conceptos"))
+        },
+        {
+            "empresas", Pantalla("empresas", "principal.empresas.titulo", "PaginaEmpresas.aspx", PermisoNombres.GestionarEmpresas, new[] { "usuarios", "locales" },
+                new TemaAyuda("empresas.crear", "+", "#tbCUIT|#btnNuevaEmpresa", false, "empresas.errores"),
+                new TemaAyuda("empresas.estado", "&#9998;", "td.acciones|#tbBuscar", false, "empresas.crear"),
+                new TemaAyuda("empresas.errores", "!", "#lblMensajeModal|#tbCUIT|#lblMensaje|#btnNuevaEmpresa", false, "empresas.crear"))
+        },
+        {
+            "idiomas", Pantalla("idiomas", "principal.idiomas.titulo", "PaginaIdiomas.aspx", PermisoNombres.GestionarIdiomas, null,
+                new TemaAyuda("idiomas.agregar", "+", "#ddlNuevoIdioma|#btnAgregarIdioma", false, "idiomas.activar"),
+                new TemaAyuda("idiomas.activar", "&#10003;", ".idi-tarjeta-footer", false, "idiomas.agregar"),
+                new TemaAyuda("idiomas.sincronizar", "&#8635;", "#btnSincronizar", false, "idiomas.activar"))
+        },
+        {
+            "traducciones", Pantalla("traducciones", "idiomas.editarTraducciones", "PaginaEditarTraducciones.aspx", PermisoNombres.GestionarIdiomas, new[] { "idiomas" },
+                new TemaAyuda("traducciones.editar", "&#9998;", "#ddlModulo|#btnGuardar", true, "traducciones.marcadores"),
+                new TemaAyuda("traducciones.marcadores", "!", "#lblMensaje|#btnGuardar", false, "traducciones.editar"))
+        },
+        {
+            "auditoria", Pantalla("auditoria", "principal.bitacora.titulo", "PaginaAuditorias.aspx", PermisoNombres.ConsultarBitacora, new[] { "backup", "usuarios" },
+                new TemaAyuda("auditoria.filtrar", "&#128269;", "#tbFechaDesde|#btnFiltrar", false, "auditoria.niveles"),
+                new TemaAyuda("auditoria.niveles", "&#9888;", "#ddlCriticidad", false, "auditoria.filtrar"),
+                new TemaAyuda("auditoria.exportar", "&#8681;", "#btnExportarLog", false, "auditoria.filtrar"))
+        },
+        {
+            "backup", Pantalla("backup", "principal.backup.titulo", "PaginaBackupRestore.aspx", PermisoNombres.RealizarBackupRestore, new[] { "auditoria" },
+                new TemaAyuda("backup.crear", "+", "#btnCrearBackup", false, "backup.restaurar"),
+                new TemaAyuda("backup.restaurar", "&#8630;", "#tbConfirmarRestauracion|.tabla .boton-icono|#btnCrearBackup", false, "backup.crear"))
+        },
+        {
+            "integridad", SinPrimerosPasos(Pantalla("integridad", "integridad.encabezado", "PaginaDigitosVerificadores.aspx", PermisoNombres.RecalcularDigitos, new[] { "backup", "auditoria" },
+                new TemaAyuda("integridad.queEs", "&#9432;", ".dv-tarjeta", false, "integridad.opciones"),
+                new TemaAyuda("integridad.opciones", "&#9881;", ".dv-acciones", false, "integridad.queEs")))
+        },
+        {
+            "login", SinPrimerosPasos(Pantalla("login", "ayuda.login.pantalla", "PaginaLogin.aspx", null, null,
+                new TemaAyuda("login.ingresar", "&#128100;", "#tbEmail", false, "login.errores"),
+                new TemaAyuda("login.olvide", "&#128273;", "#linkOlvideContrasenia", false, "login.errores"),
+                new TemaAyuda("login.errores", "!", "#lbError|#btnIngresar", false, "login.olvide")))
+        },
+        {
+            "recuperar", SinPrimerosPasos(Pantalla("recuperar", "ayuda.recuperar.pantalla", "RecuperarContrasenia.aspx", null, null,
+                new TemaAyuda("recuperar.nueva", "&#128273;", "#tbNuevaContrasenia|#lbError", false)))
         }
     };
+    private static PantallaAyuda SinPrimerosPasos(PantallaAyuda pPantalla)
+    {
+        pPantalla.ConPrimerosPasos = false;
+        return pPantalla;
+    }
 
     private static PantallaAyuda Pantalla(string pCodigo, string pClaveTitulo, string pUrl, string pPermiso, string[] pRelacionadas, params TemaAyuda[] pTemas)
     {
@@ -114,7 +176,7 @@ public static class CatalogoAyuda
     {
         var temas = new List<TemaAyuda>();
         if (pPantalla != null) temas.AddRange(pPantalla.Temas);
-        temas.Add(PRIMEROS_PASOS);
+        if (pPantalla == null || pPantalla.ConPrimerosPasos) temas.Add(PRIMEROS_PASOS);
         return temas;
     }
 }
@@ -148,4 +210,6 @@ public class PantallaAyuda
     public string Permiso { get; set; }          // para no ofrecer como relacionada una pantalla sin acceso
     public List<TemaAyuda> Temas { get; set; }
     public string[] Relacionadas { get; set; }   // códigos de otras pantallas
+    // false en las pantallas fuera del uso diario (inicio de sesión, integridad): no muestran la guía "Primeros pasos"
+    public bool ConPrimerosPasos { get; set; } = true;
 }

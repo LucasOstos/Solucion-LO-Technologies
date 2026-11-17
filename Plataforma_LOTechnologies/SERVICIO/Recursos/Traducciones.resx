@@ -3191,4 +3191,259 @@
   <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
     <value>**Período inválido**: el mes desde no puede ser posterior al hasta, ni incluir meses futuros, y hay un máximo de meses.|**Sin secciones**: marcá al menos una.|**Comparación sin escenarios**: elegí el escenario base y el propuesto.|**Sin datos**: el local no tiene ventas o stock en ese período.</value>
   </data>
+  <data name="ayuda.usuarios.crear.titulo" xml:space="preserve">
+    <value>Dar de alta un usuario</value>
+  </data>
+  <data name="ayuda.usuarios.crear.cuerpo" xml:space="preserve">
+    <value>Cada persona que usa la plataforma tiene su usuario. El **Rol** (perfil) define qué pantallas puede ver y qué puede hacer.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.pasos" xml:space="preserve">
+    <value>Hacé clic en **Agregar usuario**.|Completá DNI, nombre, apellido y correo: el correo es el que usa para ingresar.|Elegí el **Rol**. Si sos superusuario, elegí también la empresa.|Escribí una contraseña inicial: al menos 8 caracteres, con mayúscula, número y carácter especial.|Hacé clic en **Crear usuario**.</value>
+  </data>
+  <data name="ayuda.usuarios.crear.consejo" xml:space="preserve">
+    <value>Al editar un usuario no se puede cambiar el DNI ni la contraseña. Si la olvidó, puede recuperarla desde el inicio de sesión.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.titulo" xml:space="preserve">
+    <value>Editar o desactivar un usuario</value>
+  </data>
+  <data name="ayuda.usuarios.estado.cuerpo" xml:space="preserve">
+    <value>Un usuario que deja la empresa no se borra: se desactiva. Ya no puede ingresar, pero sus acciones quedan en la auditoría.</value>
+  </data>
+  <data name="ayuda.usuarios.estado.pasos" xml:space="preserve">
+    <value>Buscá el usuario por nombre o correo; podés filtrar por perfil y empresa.|Con el lápiz (**Editar**) cambiás sus datos o su perfil.|Con las flechas (**Activar/Desactivar**) lo activás o desactivás; el sistema pide confirmación.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.titulo" xml:space="preserve">
+    <value>Desbloquear un usuario</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.cuerpo" xml:space="preserve">
+    <value>Por seguridad, un usuario se bloquea después de **3 intentos fallidos** de contraseña. En la lista aparece la etiqueta **Bloqueado**.</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.pasos" xml:space="preserve">
+    <value>En la fila del usuario, hacé clic en **Desbloquear** y confirmá.|El sistema le manda un correo con un link para definir una contraseña nueva.|El link vence a los 5 minutos: avisale para que lo use enseguida.</value>
+  </data>
+  <data name="ayuda.usuarios.errores.titulo" xml:space="preserve">
+    <value>¿Por qué no me deja guardar el usuario?</value>
+  </data>
+  <data name="ayuda.usuarios.errores.cuerpo" xml:space="preserve">
+    <value>El mensaje en rojo dentro del formulario indica qué corregir. Las causas más comunes son:</value>
+  </data>
+  <data name="ayuda.usuarios.errores.pasos" xml:space="preserve">
+    <value>**DNI ya registrado**: ese DNI ya tiene un usuario; buscalo en la lista y editalo.|**DNI inválido**: solo números, sin puntos.|**Contraseña débil**: al menos 8 caracteres, con mayúscula, número y carácter especial.|**Correo inválido o vacío**: es obligatorio y se usa para ingresar.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.titulo" xml:space="preserve">
+    <value>Permisos, familias y perfiles</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.cuerpo" xml:space="preserve">
+    <value>Los accesos se arman en tres niveles. Un **permiso** habilita una acción concreta. Una **familia** agrupa permisos (y otras familias) que suelen ir juntos. Un **perfil** es lo que se asigna al usuario y puede tener permisos sueltos y familias.</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.pasos" xml:space="preserve">
+    <value>Armá familias por tema, por ejemplo una para todo lo de stock y ventas.|Creá un perfil por tipo de usuario (administrador, gerente, analista) combinando familias.|Asigná el perfil a cada usuario desde **Usuarios**.</value>
+  </data>
+  <data name="ayuda.permisos.crear.titulo" xml:space="preserve">
+    <value>Crear un perfil o una familia</value>
+  </data>
+  <data name="ayuda.permisos.crear.cuerpo" xml:space="preserve">
+    <value>La pantalla tiene dos columnas iguales: **Perfiles** a la izquierda y **Familias** a la derecha. Se crean de la misma forma.</value>
+  </data>
+  <data name="ayuda.permisos.crear.pasos" xml:space="preserve">
+    <value>Escribí el nombre del perfil o de la familia nueva.|Marcá los **Permisos disponibles** y las **Familias disponibles** que debe incluir.|Hacé clic en **Crear perfil** o **Crear familia**.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.titulo" xml:space="preserve">
+    <value>Modificar o borrar un perfil o una familia</value>
+  </data>
+  <data name="ayuda.permisos.modificar.cuerpo" xml:space="preserve">
+    <value>Los cambios en un perfil o una familia afectan enseguida a todos los usuarios que lo tienen; cada usuario los ve al volver a ingresar.</value>
+  </data>
+  <data name="ayuda.permisos.modificar.pasos" xml:space="preserve">
+    <value>Elegí el perfil en **Perfil seleccionado** (o la familia en **Familia seleccionada**).|Para sumar: marcá permisos o familias disponibles y hacé clic en **Agregar permisos**.|Para sacar: marcá ítems de **Contenido asignado** y hacé clic en **Quitar permisos**.|Para eliminarlo: **Borrar perfil** o **Borrar familia**.</value>
+  </data>
+  <data name="ayuda.permisos.errores.titulo" xml:space="preserve">
+    <value>¿Por qué no me deja hacer el cambio?</value>
+  </data>
+  <data name="ayuda.permisos.errores.cuerpo" xml:space="preserve">
+    <value>El sistema protege la estructura de permisos para que nadie pierda accesos por error. Las causas más comunes son:</value>
+  </data>
+  <data name="ayuda.permisos.errores.pasos" xml:space="preserve">
+    <value>**Está en uso**: una familia asignada a un perfil, o un perfil asignado a usuarios, no se puede borrar; quitalo de ahí primero.|**Ya está incluido**: el permiso ya forma parte del perfil, directamente o dentro de una familia.|**Te quitarías el acceso**: el cambio te dejaría sin el permiso de esta pantalla.|**Nombre repetido o vacío**: cada perfil y cada familia necesita un nombre único.</value>
+  </data>
+  <data name="ayuda.empresas.crear.titulo" xml:space="preserve">
+    <value>Registrar una empresa</value>
+  </data>
+  <data name="ayuda.empresas.crear.cuerpo" xml:space="preserve">
+    <value>Cada empresa cliente tiene sus propios locales, productos y usuarios, y no ve los datos de las demás. Solo el superusuario administra las empresas.</value>
+  </data>
+  <data name="ayuda.empresas.crear.pasos" xml:space="preserve">
+    <value>Hacé clic en **Nueva empresa**.|Completá la razón social, el CUIT y el correo, que son obligatorios.|En el CUIT escribí solo los 11 números: los guiones se agregan solos.|Guardá. Después creá sus usuarios en **Usuarios**.</value>
+  </data>
+  <data name="ayuda.empresas.estado.titulo" xml:space="preserve">
+    <value>Editar o desactivar una empresa</value>
+  </data>
+  <data name="ayuda.empresas.estado.cuerpo" xml:space="preserve">
+    <value>Desactivar una empresa es una medida fuerte: **ninguno de sus usuarios puede iniciar sesión** hasta que se vuelva a activar. Sus datos se conservan.</value>
+  </data>
+  <data name="ayuda.empresas.estado.pasos" xml:space="preserve">
+    <value>Buscá la empresa por nombre o CUIT.|Con el lápiz (**Editar**) corregís sus datos.|Con las flechas (**Activar/Desactivar**) cambiás su estado; el sistema pide confirmación y avisa cuántos usuarios quedan sin acceso.</value>
+  </data>
+  <data name="ayuda.empresas.errores.titulo" xml:space="preserve">
+    <value>¿Por qué no me deja guardar la empresa?</value>
+  </data>
+  <data name="ayuda.empresas.errores.cuerpo" xml:space="preserve">
+    <value>El mensaje en rojo dentro del formulario indica qué corregir. Las causas más comunes son:</value>
+  </data>
+  <data name="ayuda.empresas.errores.pasos" xml:space="preserve">
+    <value>**CUIT inválido**: tiene que tener 11 números y el dígito verificador correcto. Revisá que no falte o sobre un número.|**Empresa ya registrada**: ese CUIT ya existe; buscala en la lista.|**Correo con formato inválido**: por ejemplo, falta la @ o el dominio.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.titulo" xml:space="preserve">
+    <value>Agregar un idioma</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.cuerpo" xml:space="preserve">
+    <value>Los idiomas de la lista ya traen su traducción completa. Con **Otro idioma...** podés agregar cualquier otro: se carga con todos los textos en español, marcados como pendientes, para traducirlo.</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.pasos" xml:space="preserve">
+    <value>Hacé clic en **Agregar idioma**.|Elegí el idioma de la lista, o **Otro idioma...**.|Si es otro idioma, escribí su código ISO (por ejemplo ko, nl o pt-BR) y su nombre en español; el nombre en su idioma se completa solo.|Confirmá. El idioma queda **inactivo** hasta que lo actives.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.titulo" xml:space="preserve">
+    <value>Activar o desactivar un idioma</value>
+  </data>
+  <data name="ayuda.idiomas.activar.cuerpo" xml:space="preserve">
+    <value>Solo los idiomas activos aparecen en el selector de idioma de los usuarios. La barra de cada tarjeta muestra qué porcentaje de las traducciones está revisado.</value>
+  </data>
+  <data name="ayuda.idiomas.activar.pasos" xml:space="preserve">
+    <value>Antes de activarlo, revisá sus textos con **Editar traducciones**.|Usá el botón de la tarjeta para activarlo o desactivarlo.|El idioma predeterminado (español) no se puede desactivar.|Tampoco se puede desactivar un idioma que algún usuario tiene elegido.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.titulo" xml:space="preserve">
+    <value>Sincronizar claves</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.cuerpo" xml:space="preserve">
+    <value>Cuando se agregan funciones nuevas a la plataforma aparecen textos nuevos. Sincronizar los suma a todos los idiomas **sin tocar las traducciones que ya existen**.</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.pasos" xml:space="preserve">
+    <value>Hacé clic en **Sincronizar claves**.|El mensaje indica cuántos textos se agregaron y cuántos quedaron pendientes.|Los pendientes se ven en español hasta que los traduzcas desde **Editar traducciones**.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.titulo" xml:space="preserve">
+    <value>Editar las traducciones</value>
+  </data>
+  <data name="ayuda.traducciones.editar.cuerpo" xml:space="preserve">
+    <value>Acá se corrige cualquier texto de la plataforma en el idioma elegido: botones, mensajes y también los textos de esta ayuda. Los cambios se ven enseguida en el sistema.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.pasos" xml:space="preserve">
+    <value>Filtrá por **Módulo**, buscá por clave o texto, o marcá **Solo pendientes**, y hacé clic en **Filtrar**.|Corregí los textos: al escribir, la fila se marca como **Revisada**.|Hacé clic en **Guardar cambios**: se guardan todos los cambios juntos.</value>
+  </data>
+  <data name="ayuda.traducciones.editar.consejo" xml:space="preserve">
+    <value>Si editás el español (idioma base), ese texto también se muestra en los idiomas donde la traducción está pendiente.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.titulo" xml:space="preserve">
+    <value>¿Por qué no se guardan los cambios?</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.cuerpo" xml:space="preserve">
+    <value>Antes de guardar, el sistema revisa todos los textos. Si uno tiene un problema, no se guarda ninguno y el mensaje indica cuál corregir.</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.pasos" xml:space="preserve">
+    <value>**Texto vacío**: toda traducción necesita un texto.|**Texto muy largo**: hay un máximo de caracteres por texto.|**Marcadores distintos**: lo que va entre llaves, como {0} o {1}, tiene que quedar igual que en español; el sistema lo reemplaza por un valor.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.titulo" xml:space="preserve">
+    <value>Buscar en la bitácora</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.cuerpo" xml:space="preserve">
+    <value>La bitácora registra quién hizo qué y cuándo: ingresos, cambios de datos, importaciones, backups y errores. Al abrirla muestra los últimos 3 días.</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.pasos" xml:space="preserve">
+    <value>Usá al menos un filtro: texto (usuario, acción, entidad), **Fecha desde** y **Fecha hasta**, tipo de suceso o nivel.|Hacé clic en **Filtrar**.|Navegá los resultados con **Anterior** y **Siguiente**.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.titulo" xml:space="preserve">
+    <value>Niveles de criticidad</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.cuerpo" xml:space="preserve">
+    <value>Cada suceso tiene un nivel que indica cuánto atención necesita.</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.pasos" xml:space="preserve">
+    <value>**Info (1)**: operaciones normales, como ingresos o altas.|**Advertencia (2)**: situaciones a revisar, como intentos de ingreso fallidos o bloqueos.|**Error (3)**: fallas, como un backup que no se pudo generar o una inconsistencia de datos.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.titulo" xml:space="preserve">
+    <value>Exportar el log</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.cuerpo" xml:space="preserve">
+    <value>Descarga en un Excel (.xlsx) los sucesos que se están mostrando, con los filtros aplicados. Sirve para un control externo o para guardar un respaldo.</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.pasos" xml:space="preserve">
+    <value>Aplicá los filtros que necesites.|Hacé clic en **Exportar log**, arriba a la derecha.|Abrí el archivo descargado con Excel o similar.</value>
+  </data>
+  <data name="ayuda.backup.crear.titulo" xml:space="preserve">
+    <value>Crear y descargar un backup</value>
+  </data>
+  <data name="ayuda.backup.crear.cuerpo" xml:space="preserve">
+    <value>Un backup es una copia completa de la base de datos en un momento dado. Conviene crear uno antes de cambios grandes, por ejemplo una importación masiva.</value>
+  </data>
+  <data name="ayuda.backup.crear.pasos" xml:space="preserve">
+    <value>Hacé clic en **Crear backup**.|Cuando termina, aparece primero en el **Historial de backups**.|Con **Descargar** guardás una copia fuera del servidor.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.titulo" xml:space="preserve">
+    <value>Restaurar un backup</value>
+  </data>
+  <data name="ayuda.backup.restaurar.cuerpo" xml:space="preserve">
+    <value>Restaurar **reemplaza todos los datos actuales** por los del backup elegido, para todas las empresas. Lo que se haya cargado después de esa fecha se pierde y no se puede deshacer.</value>
+  </data>
+  <data name="ayuda.backup.restaurar.pasos" xml:space="preserve">
+    <value>Antes, creá un backup del estado actual por si necesitás volver.|En el historial, hacé clic en **Restaurar** en el backup elegido.|Revisá la fecha y el tamaño, y escribí la palabra **CONFIRMAR**.|Hacé clic en **Restaurar backup**.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.titulo" xml:space="preserve">
+    <value>¿Qué es una inconsistencia?</value>
+  </data>
+  <data name="ayuda.integridad.queEs.cuerpo" xml:space="preserve">
+    <value>Cada registro y cada tabla guardan un dígito verificador calculado a partir de sus datos. Si un dato se cambió por fuera del sistema (por ejemplo, directo en la base), el dígito deja de coincidir y el sistema lo detecta al iniciar sesión.</value>
+  </data>
+  <data name="ayuda.integridad.queEs.pasos" xml:space="preserve">
+    <value>La tabla muestra cada problema: en qué tabla, en qué registro y qué no coincide.|Mientras haya inconsistencias, los demás usuarios ven "El sistema no está disponible" al querer ingresar.|Revisá la **Auditoría / Bitácora** para entender qué pasó antes de decidir.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.titulo" xml:space="preserve">
+    <value>Recalcular o restaurar</value>
+  </data>
+  <data name="ayuda.integridad.opciones.cuerpo" xml:space="preserve">
+    <value>Hay dos caminos según si el cambio detectado es válido o no.</value>
+  </data>
+  <data name="ayuda.integridad.opciones.pasos" xml:space="preserve">
+    <value>**Recalcular dígitos verificadores**: si el cambio fue legítimo (por ejemplo, una corrección autorizada). Los datos quedan como están y se vuelven a calcular los dígitos.|**Restaurar base de datos**: si el cambio no fue autorizado. Vuelve al último backup y se pierde lo cargado después.|**Salir**: cierra la sesión sin hacer nada; el sistema sigue no disponible para los demás.</value>
+  </data>
+  <data name="ayuda.login.pantalla" xml:space="preserve">
+    <value>Inicio de sesión</value>
+  </data>
+  <data name="ayuda.login.ingresar.titulo" xml:space="preserve">
+    <value>Ingresar a la plataforma</value>
+  </data>
+  <data name="ayuda.login.ingresar.cuerpo" xml:space="preserve">
+    <value>Ingresás con el correo y la contraseña que te dio el administrador de tu empresa. Después de **3 intentos fallidos** el usuario se bloquea por seguridad.</value>
+  </data>
+  <data name="ayuda.login.ingresar.pasos" xml:space="preserve">
+    <value>Escribí tu correo electrónico.|Escribí tu contraseña; con el ojo podés verla para revisar que esté bien.|Hacé clic en **Ingresar**.</value>
+  </data>
+  <data name="ayuda.login.olvide.titulo" xml:space="preserve">
+    <value>Olvidé mi contraseña</value>
+  </data>
+  <data name="ayuda.login.olvide.cuerpo" xml:space="preserve">
+    <value>Podés definir una contraseña nueva vos mismo, sin pedírsela al administrador. Te llega un correo con un link que **vence a los 5 minutos**.</value>
+  </data>
+  <data name="ayuda.login.olvide.pasos" xml:space="preserve">
+    <value>Hacé clic en **¿Olvidaste tu contraseña?**.|Escribí tu correo y confirmá.|Abrí el correo y entrá al link enseguida.|Escribí la contraseña nueva dos veces y confirmá. Después ingresá con ella.</value>
+  </data>
+  <data name="ayuda.login.errores.titulo" xml:space="preserve">
+    <value>¿Por qué no puedo ingresar?</value>
+  </data>
+  <data name="ayuda.login.errores.cuerpo" xml:space="preserve">
+    <value>El mensaje en rojo arriba del formulario indica el motivo:</value>
+  </data>
+  <data name="ayuda.login.errores.pasos" xml:space="preserve">
+    <value>**Credenciales incorrectas**: revisá el correo y la contraseña (mayúsculas incluidas).|**Usuario bloqueado**: después de 3 intentos fallidos. Usá **¿Olvidaste tu contraseña?** o pedile al administrador que te desbloquee.|**Usuario deshabilitado** o **empresa inactiva**: hablá con el administrador.|**El sistema no está disponible**: se detectó un problema en los datos y lo está revisando el administrador del sistema.</value>
+  </data>
+  <data name="ayuda.recuperar.pantalla" xml:space="preserve">
+    <value>Recuperar contraseña</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.titulo" xml:space="preserve">
+    <value>Definir la contraseña nueva</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.cuerpo" xml:space="preserve">
+    <value>La contraseña nueva debe tener **al menos 8 caracteres**, con una mayúscula, un número y un carácter especial. El link sirve una sola vez y vence a los 5 minutos.</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.pasos" xml:space="preserve">
+    <value>Escribí la contraseña nueva.|Repetila para confirmarla.|Confirmá y volvé al inicio de sesión para ingresar con ella.|Si el link venció o ya se usó, pedí uno nuevo desde **¿Olvidaste tu contraseña?**.</value>
+  </data>
 </root>

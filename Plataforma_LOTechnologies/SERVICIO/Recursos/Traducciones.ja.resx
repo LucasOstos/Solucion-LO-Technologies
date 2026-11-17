@@ -3191,4 +3191,259 @@
   <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
     <value>**期間が無効**：開始月は終了月より後にできず、未来の月も含められません。月数にも上限があります。|**セクションがない**：少なくとも1つにチェックを入れます。|**シナリオのない比較**：基準シナリオと変更案のシナリオを選びます。|**データがない**：その期間に店舗の売上や在庫がありません。</value>
   </data>
+  <data name="ayuda.usuarios.crear.titulo" xml:space="preserve">
+    <value>ユーザーを追加する</value>
+  </data>
+  <data name="ayuda.usuarios.crear.cuerpo" xml:space="preserve">
+    <value>プラットフォームを使う人ごとにユーザーを作成します。**ロール**（プロファイル）によって、見られる画面とできる操作が決まります。</value>
+  </data>
+  <data name="ayuda.usuarios.crear.pasos" xml:space="preserve">
+    <value>**ユーザーを追加**をクリックします。|身分証番号、名、姓、メールアドレスを入力します。メールアドレスはログインに使います。|**ロール**を選びます。スーパーユーザーの場合は企業も選びます。|初期パスワードを入力します（8文字以上、大文字・数字・記号を含む）。|**ユーザーを作成**をクリックします。</value>
+  </data>
+  <data name="ayuda.usuarios.crear.consejo" xml:space="preserve">
+    <value>ユーザーの編集では、身分証番号とパスワードは変更できません。パスワードを忘れた場合は、ログイン画面から再設定できます。</value>
+  </data>
+  <data name="ayuda.usuarios.estado.titulo" xml:space="preserve">
+    <value>ユーザーを編集・無効化する</value>
+  </data>
+  <data name="ayuda.usuarios.estado.cuerpo" xml:space="preserve">
+    <value>退職したユーザーは削除せず、無効にします。ログインできなくなりますが、操作の記録は監査に残ります。</value>
+  </data>
+  <data name="ayuda.usuarios.estado.pasos" xml:space="preserve">
+    <value>名前またはメールアドレスでユーザーを探します。プロファイルや企業で絞り込めます。|鉛筆（**編集**）でデータやプロファイルを変更します。|矢印（**有効化/無効化**）で有効・無効を切り替えます。確認メッセージが表示されます。</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.titulo" xml:space="preserve">
+    <value>ユーザーのロックを解除する</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.cuerpo" xml:space="preserve">
+    <value>安全のため、パスワードを**3回間違える**とユーザーはロックされます。一覧に**ロック中**と表示されます。</value>
+  </data>
+  <data name="ayuda.usuarios.desbloquear.pasos" xml:space="preserve">
+    <value>ユーザーの行で**ロック解除**をクリックし、確定します。|新しいパスワードを設定するリンクがメールで送られます。|リンクの有効期限は5分です。すぐに使うよう本人に伝えてください。</value>
+  </data>
+  <data name="ayuda.usuarios.errores.titulo" xml:space="preserve">
+    <value>ユーザーを保存できないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.usuarios.errores.cuerpo" xml:space="preserve">
+    <value>フォーム内の赤いメッセージに、修正が必要な点が表示されます。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.usuarios.errores.pasos" xml:space="preserve">
+    <value>**身分証番号が登録済み**：その番号のユーザーは既にあります。一覧で探して編集します。|**身分証番号が無効**：数字のみ、ピリオドなしで入力します。|**パスワードが弱い**：8文字以上で、大文字・数字・記号を含めます。|**メールアドレスが無効または空欄**：必須で、ログインに使います。</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.titulo" xml:space="preserve">
+    <value>権限・グループ・プロファイル</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.cuerpo" xml:space="preserve">
+    <value>アクセス権は3つの階層で構成します。**権限**は特定の操作を許可します。**グループ**は、よく一緒に使う権限（や他のグループ）をまとめたものです。**プロファイル**はユーザーに割り当てるもので、個別の権限とグループを含められます。</value>
+  </data>
+  <data name="ayuda.permisos.conceptos.pasos" xml:space="preserve">
+    <value>テーマごとにグループを作ります（例：在庫と売上に関するものすべて）。|ユーザーの種類（管理者、マネージャー、アナリスト）ごとに、グループを組み合わせてプロファイルを作ります。|**ユーザー**で各ユーザーにプロファイルを割り当てます。</value>
+  </data>
+  <data name="ayuda.permisos.crear.titulo" xml:space="preserve">
+    <value>プロファイルやグループを作成する</value>
+  </data>
+  <data name="ayuda.permisos.crear.cuerpo" xml:space="preserve">
+    <value>画面には同じ形の列が2つあります。左が**プロファイル**、右が**グループ**で、作り方は同じです。</value>
+  </data>
+  <data name="ayuda.permisos.crear.pasos" xml:space="preserve">
+    <value>新しいプロファイルまたはグループの名前を入力します。|含める**利用可能な権限**と**利用可能なグループ**にチェックを入れます。|**プロファイルを作成**または**グループを作成**をクリックします。</value>
+  </data>
+  <data name="ayuda.permisos.modificar.titulo" xml:space="preserve">
+    <value>プロファイルやグループを変更・削除する</value>
+  </data>
+  <data name="ayuda.permisos.modificar.cuerpo" xml:space="preserve">
+    <value>プロファイルやグループの変更は、それを持つすべてのユーザーにすぐ適用されます。各ユーザーには次回ログイン時に反映されます。</value>
+  </data>
+  <data name="ayuda.permisos.modificar.pasos" xml:space="preserve">
+    <value>**選択したプロファイル**でプロファイルを（または**選択したグループ**でグループを）選びます。|追加：利用可能な権限やグループにチェックを入れ、**権限を追加**をクリックします。|削除：**割り当て済みの内容**の項目にチェックを入れ、**権限を削除**をクリックします。|全体を削除：**プロファイルを削除**または**グループを削除**。</value>
+  </data>
+  <data name="ayuda.permisos.errores.titulo" xml:space="preserve">
+    <value>変更できないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.permisos.errores.cuerpo" xml:space="preserve">
+    <value>誤ってアクセス権を失うことがないよう、システムが権限の構成を保護しています。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.permisos.errores.pasos" xml:space="preserve">
+    <value>**使用中**：プロファイルに割り当てられたグループや、ユーザーに割り当てられたプロファイルは削除できません。先にそこから外します。|**すでに含まれている**：その権限は、直接またはグループ経由でプロファイルに含まれています。|**自分のアクセスがなくなる**：この変更でこの画面の権限がなくなります。|**名前の重複または空欄**：プロファイルとグループには、それぞれ一意の名前が必要です。</value>
+  </data>
+  <data name="ayuda.empresas.crear.titulo" xml:space="preserve">
+    <value>企業を登録する</value>
+  </data>
+  <data name="ayuda.empresas.crear.cuerpo" xml:space="preserve">
+    <value>顧客企業ごとに独自の店舗・商品・ユーザーを持ち、他社のデータは見えません。企業を管理できるのはスーパーユーザーだけです。</value>
+  </data>
+  <data name="ayuda.empresas.crear.pasos" xml:space="preserve">
+    <value>**新規企業**をクリックします。|必須項目の社名、CUIT（納税者番号）、メールアドレスを入力します。|CUITは11桁の数字だけを入力します。ハイフンは自動で入ります。|保存します。その後、**ユーザー**でユーザーを作成します。</value>
+  </data>
+  <data name="ayuda.empresas.estado.titulo" xml:space="preserve">
+    <value>企業を編集・無効化する</value>
+  </data>
+  <data name="ayuda.empresas.estado.cuerpo" xml:space="preserve">
+    <value>企業の無効化は影響の大きい操作です。再び有効にするまで、**その企業のユーザーは誰もログインできません**。データは保持されます。</value>
+  </data>
+  <data name="ayuda.empresas.estado.pasos" xml:space="preserve">
+    <value>社名またはCUITで企業を探します。|鉛筆（**編集**）でデータを修正します。|矢印（**有効化/無効化**）で状態を切り替えます。確認メッセージが表示され、アクセスできなくなるユーザー数も示されます。</value>
+  </data>
+  <data name="ayuda.empresas.errores.titulo" xml:space="preserve">
+    <value>企業を保存できないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.empresas.errores.cuerpo" xml:space="preserve">
+    <value>フォーム内の赤いメッセージに、修正が必要な点が表示されます。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.empresas.errores.pasos" xml:space="preserve">
+    <value>**CUITが無効**：11桁で、チェックディジットが正しい必要があります。桁の過不足がないか確認します。|**企業が登録済み**：そのCUITは既にあります。一覧で探します。|**メールアドレスの形式が無効**：@やドメインが抜けていないか確認します。</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.titulo" xml:space="preserve">
+    <value>言語を追加する</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.cuerpo" xml:space="preserve">
+    <value>一覧にある言語は、翻訳がすべて含まれています。**その他の言語...**を選ぶと任意の言語を追加でき、すべての文がスペイン語のまま「未翻訳」として登録されるので、それを翻訳します。</value>
+  </data>
+  <data name="ayuda.idiomas.agregar.pasos" xml:space="preserve">
+    <value>**言語を追加**をクリックします。|一覧から言語を選ぶか、**その他の言語...**を選びます。|その他の言語の場合は、ISOコード（例：ko、nl、pt-BR）とスペイン語での名前を入力します。その言語での名前は自動で入ります。|確定します。有効にするまで、言語は**無効**のままです。</value>
+  </data>
+  <data name="ayuda.idiomas.activar.titulo" xml:space="preserve">
+    <value>言語を有効・無効にする</value>
+  </data>
+  <data name="ayuda.idiomas.activar.cuerpo" xml:space="preserve">
+    <value>ユーザーの言語選択に表示されるのは、有効な言語だけです。各カードのバーは、確認済みの翻訳の割合を示します。</value>
+  </data>
+  <data name="ayuda.idiomas.activar.pasos" xml:space="preserve">
+    <value>有効にする前に、**翻訳を編集**で文を確認します。|カードのボタンで有効・無効を切り替えます。|既定の言語（スペイン語）は無効にできません。|ユーザーが選択している言語も無効にできません。</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.titulo" xml:space="preserve">
+    <value>キーを同期する</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.cuerpo" xml:space="preserve">
+    <value>プラットフォームに機能が追加されると、新しい文が増えます。同期すると、**既存の翻訳は変更せずに**、それらをすべての言語に追加します。</value>
+  </data>
+  <data name="ayuda.idiomas.sincronizar.pasos" xml:space="preserve">
+    <value>**キーを同期**をクリックします。|追加された文の数と、未翻訳のまま残った数がメッセージに表示されます。|未翻訳の文は、**翻訳を編集**で翻訳するまでスペイン語で表示されます。</value>
+  </data>
+  <data name="ayuda.traducciones.editar.titulo" xml:space="preserve">
+    <value>翻訳を編集する</value>
+  </data>
+  <data name="ayuda.traducciones.editar.cuerpo" xml:space="preserve">
+    <value>選んだ言語で、プラットフォームのあらゆる文（ボタン、メッセージ、このヘルプの文も）を修正できます。変更はすぐにシステムに反映されます。</value>
+  </data>
+  <data name="ayuda.traducciones.editar.pasos" xml:space="preserve">
+    <value>**モジュール**で絞り込むか、キーや文で検索するか、**未確認のみ**にチェックを入れ、**絞り込む**をクリックします。|文を修正します。入力すると、その行は**確認済み**になります。|**変更を保存**をクリックすると、すべての変更がまとめて保存されます。</value>
+  </data>
+  <data name="ayuda.traducciones.editar.consejo" xml:space="preserve">
+    <value>スペイン語（基本言語）を編集すると、その文は翻訳が未完了の言語でも表示されます。</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.titulo" xml:space="preserve">
+    <value>変更が保存されないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.cuerpo" xml:space="preserve">
+    <value>保存前に、システムがすべての文をチェックします。1つでも問題があると何も保存されず、修正すべき文がメッセージに表示されます。</value>
+  </data>
+  <data name="ayuda.traducciones.marcadores.pasos" xml:space="preserve">
+    <value>**文が空欄**：翻訳には必ず文が必要です。|**文が長すぎる**：1つの文には文字数の上限があります。|**プレースホルダーが異なる**：{0}や{1}のように波かっこで囲まれた部分は、スペイン語と同じにします。システムが値に置き換えます。</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.titulo" xml:space="preserve">
+    <value>ログを検索する</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.cuerpo" xml:space="preserve">
+    <value>ログには、誰がいつ何をしたか（ログイン、データ変更、インポート、バックアップ、エラー）が記録されます。開くと直近3日分が表示されます。</value>
+  </data>
+  <data name="ayuda.auditoria.filtrar.pasos" xml:space="preserve">
+    <value>少なくとも1つのフィルターを使います：文字列（ユーザー、操作、対象）、**開始日**と**終了日**、イベントの種類、レベル。|**絞り込む**をクリックします。|**前へ**と**次へ**で結果をページ送りします。</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.titulo" xml:space="preserve">
+    <value>重要度のレベル</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.cuerpo" xml:space="preserve">
+    <value>各イベントには、どの程度注意が必要かを示すレベルがあります。</value>
+  </data>
+  <data name="ayuda.auditoria.niveles.pasos" xml:space="preserve">
+    <value>**情報 (1)**：ログインや登録などの通常の操作。|**警告 (2)**：ログイン失敗やロックなど、確認が必要な状況。|**エラー (3)**：バックアップの作成失敗やデータの不整合などの障害。</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.titulo" xml:space="preserve">
+    <value>ログを書き出す</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.cuerpo" xml:space="preserve">
+    <value>表示中のイベントを、適用中のフィルターのままExcel（.xlsx）でダウンロードします。外部監査や記録の保存に使えます。</value>
+  </data>
+  <data name="ayuda.auditoria.exportar.pasos" xml:space="preserve">
+    <value>必要なフィルターを適用します。|右上の**ログをエクスポート**をクリックします。|ダウンロードしたファイルをExcelなどで開きます。</value>
+  </data>
+  <data name="ayuda.backup.crear.titulo" xml:space="preserve">
+    <value>バックアップを作成・ダウンロードする</value>
+  </data>
+  <data name="ayuda.backup.crear.cuerpo" xml:space="preserve">
+    <value>バックアップは、ある時点のデータベース全体のコピーです。大量インポートなど大きな変更の前に作成しておくと安心です。</value>
+  </data>
+  <data name="ayuda.backup.crear.pasos" xml:space="preserve">
+    <value>**バックアップを作成**をクリックします。|完了すると、**バックアップ履歴**の先頭に表示されます。|**ダウンロード**で、サーバーの外にコピーを保存します。</value>
+  </data>
+  <data name="ayuda.backup.restaurar.titulo" xml:space="preserve">
+    <value>バックアップから復元する</value>
+  </data>
+  <data name="ayuda.backup.restaurar.cuerpo" xml:space="preserve">
+    <value>復元すると、すべての企業について**現在のデータがすべて**選んだバックアップの内容に置き換わります。その日時以降に登録したものは失われ、元に戻せません。</value>
+  </data>
+  <data name="ayuda.backup.restaurar.pasos" xml:space="preserve">
+    <value>戻す必要が生じた場合に備えて、まず現在の状態のバックアップを作成します。|履歴で、選んだバックアップの**復元**をクリックします。|日時とサイズを確認し、**CONFIRM**と入力します。|**バックアップを復元**をクリックします。</value>
+  </data>
+  <data name="ayuda.integridad.queEs.titulo" xml:space="preserve">
+    <value>不整合とは</value>
+  </data>
+  <data name="ayuda.integridad.queEs.cuerpo" xml:space="preserve">
+    <value>各レコードと各テーブルには、データから計算したチェックディジットが保存されています。システムの外（データベースを直接操作した場合など）でデータが変更されると値が一致しなくなり、ログイン時にシステムが検出します。</value>
+  </data>
+  <data name="ayuda.integridad.queEs.pasos" xml:space="preserve">
+    <value>表には、問題ごとにテーブル、レコード、一致しない内容が表示されます。|不整合がある間、他のユーザーはログインしようとすると「システムを利用できません」と表示されます。|判断する前に**監査 / ログ**で何が起きたかを確認します。</value>
+  </data>
+  <data name="ayuda.integridad.opciones.titulo" xml:space="preserve">
+    <value>再計算か復元か</value>
+  </data>
+  <data name="ayuda.integridad.opciones.cuerpo" xml:space="preserve">
+    <value>検出された変更が正当かどうかで、2つの対応方法があります。</value>
+  </data>
+  <data name="ayuda.integridad.opciones.pasos" xml:space="preserve">
+    <value>**チェックディジットを再計算**：正当な変更（承認済みの修正など）の場合。データはそのままで、チェックディジットを計算し直します。|**データベースを復元**：承認されていない変更の場合。最新のバックアップに戻り、それ以降に登録した内容は失われます。|**終了**：何もせずにログアウトします。他のユーザーは引き続き利用できません。</value>
+  </data>
+  <data name="ayuda.login.pantalla" xml:space="preserve">
+    <value>ログイン</value>
+  </data>
+  <data name="ayuda.login.ingresar.titulo" xml:space="preserve">
+    <value>プラットフォームにログインする</value>
+  </data>
+  <data name="ayuda.login.ingresar.cuerpo" xml:space="preserve">
+    <value>会社の管理者から受け取ったメールアドレスとパスワードでログインします。**3回間違える**と、安全のためユーザーがロックされます。</value>
+  </data>
+  <data name="ayuda.login.ingresar.pasos" xml:space="preserve">
+    <value>メールアドレスを入力します。|パスワードを入力します。目のアイコンで表示して確認できます。|**Ingresar**（ログイン）をクリックします。</value>
+  </data>
+  <data name="ayuda.login.olvide.titulo" xml:space="preserve">
+    <value>パスワードを忘れた</value>
+  </data>
+  <data name="ayuda.login.olvide.cuerpo" xml:space="preserve">
+    <value>管理者に頼まなくても、自分で新しいパスワードを設定できます。**5分で期限が切れる**リンクがメールで届きます。</value>
+  </data>
+  <data name="ayuda.login.olvide.pasos" xml:space="preserve">
+    <value>**¿Olvidaste tu contraseña?**（パスワードをお忘れですか？）をクリックします。|メールアドレスを入力して確定します。|届いたメールを開き、すぐにリンクにアクセスします。|新しいパスワードを2回入力して確定します。その後、新しいパスワードでログインします。</value>
+  </data>
+  <data name="ayuda.login.errores.titulo" xml:space="preserve">
+    <value>ログインできないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.login.errores.cuerpo" xml:space="preserve">
+    <value>フォームの上の赤いメッセージに理由が表示されます。</value>
+  </data>
+  <data name="ayuda.login.errores.pasos" xml:space="preserve">
+    <value>**Credenciales incorrectas**（認証情報が違う）：メールアドレスとパスワード（大文字・小文字も）を確認します。|**Usuario bloqueado**（ユーザーがロックされた）：3回間違えた場合です。**¿Olvidaste tu contraseña?**を使うか、管理者にロック解除を依頼します。|**Usuario deshabilitado**（ユーザーが無効）または**empresa inactiva**（企業が無効）：管理者に相談します。|**El sistema no está disponible**（システムを利用できない）：データの問題が検出され、システム管理者が確認中です。</value>
+  </data>
+  <data name="ayuda.recuperar.pantalla" xml:space="preserve">
+    <value>パスワードの再設定</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.titulo" xml:space="preserve">
+    <value>新しいパスワードを設定する</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.cuerpo" xml:space="preserve">
+    <value>新しいパスワードは**8文字以上**で、大文字・数字・記号を含める必要があります。リンクは1回だけ使え、5分で期限が切れます。</value>
+  </data>
+  <data name="ayuda.recuperar.nueva.pasos" xml:space="preserve">
+    <value>新しいパスワードを入力します。|確認のためもう一度入力します。|確定し、ログイン画面に戻ってそのパスワードでログインします。|リンクの期限切れや使用済みの場合は、**¿Olvidaste tu contraseña?**から新しいリンクを依頼します。</value>
+  </data>
 </root>

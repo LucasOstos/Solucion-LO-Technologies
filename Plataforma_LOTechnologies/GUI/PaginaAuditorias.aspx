@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaAuditorias.aspx.cs" Inherits="PaginaAuditorias" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -24,7 +24,10 @@
                         <h1 runat="server" clave="principal.bitacora.titulo">Auditoría / Bitácora</h1>
                         <p class="subtitulo" runat="server" clave="auditoria.subtitulo">CUS 015 — Registro de acciones para auditoría y seguridad</p>
                     </div>
-                    <asp:Button ID="btnExportarLog" runat="server" CssClass="boton-secundario" Text="Exportar log" Clave="auditoria.btnExportar" OnClick="btnExportarLog_Click" CausesValidation="false" />
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="auditoria" />
+                        <asp:Button ID="btnExportarLog" runat="server" CssClass="boton-secundario" Text="Exportar log" Clave="auditoria.btnExportar" OnClick="btnExportarLog_Click" CausesValidation="false" />
+                    </div>
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
@@ -84,7 +87,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </form>

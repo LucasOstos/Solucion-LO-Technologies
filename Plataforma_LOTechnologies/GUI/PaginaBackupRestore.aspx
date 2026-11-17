@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaBackupRestore.aspx.cs" Inherits="PaginaBackupRestore" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -24,7 +24,10 @@
                     <div>
                         <h1 runat="server" clave="principal.backup.titulo">Backup / Restore</h1>
                     </div>
-                    <asp:Button ID="btnCrearBackup" runat="server" CssClass="boton-nuevo" Text="Crear Backup" Clave="backup.btnCrear" OnClick="btnCrearBackup_Click" CausesValidation="false" />
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="backup" />
+                        <asp:Button ID="btnCrearBackup" runat="server" CssClass="boton-nuevo" Text="Crear Backup" Clave="backup.btnCrear" OnClick="btnCrearBackup_Click" CausesValidation="false" />
+                    </div>
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
@@ -93,7 +96,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalRestaurar" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalRestaurar" runat="server" data-ayuda-tema="backup.restaurar" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3 runat="server" clave="backup.confirmarTitulo">Confirmar Restauración</h3>

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaEmpresas.aspx.cs" Inherits="PaginaEmpresas" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,8 +23,11 @@
                     <div>
                         <h1 runat="server" clave="empresas.encabezado">Maestro Empresas</h1>
                     </div>
-                    <asp:Button ID="btnNuevaEmpresa" runat="server" CssClass="boton-nuevo"
-                        Text="Nueva Empresa" Clave="empresas.btnNueva" OnClick="btnNuevaEmpresa_Click" CausesValidation="false" />
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="empresas" />
+                        <asp:Button ID="btnNuevaEmpresa" runat="server" CssClass="boton-nuevo"
+                            Text="Nueva Empresa" Clave="empresas.btnNueva" OnClick="btnNuevaEmpresa_Click" CausesValidation="false" />
+                    </div>
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
@@ -89,7 +92,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalEmpresa" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalEmpresa" runat="server" data-ayuda-tema="empresas.crear" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3>

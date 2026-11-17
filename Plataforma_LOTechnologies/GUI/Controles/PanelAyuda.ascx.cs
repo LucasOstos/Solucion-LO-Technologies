@@ -99,7 +99,8 @@ public partial class Controles_PanelAyuda : System.Web.UI.UserControl
             pHtml.Append("</ul></div>");
         }
         TemaAyuda primeros = CatalogoAyuda.PRIMEROS_PASOS;
-        pHtml.Append("<div class=\"ayuda-destacado\" data-buscar=\"").Append(A(TextoBuscable(primeros))).Append("\"><h3>")
+        if (pPantalla == null || pPantalla.ConPrimerosPasos)
+            pHtml.Append("<div class=\"ayuda-destacado\" data-buscar=\"").Append(A(TextoBuscable(primeros))).Append("\"><h3>")
             .Append(H(T(primeros.ClaveTitulo))).Append("</h3><p>").Append(Formatear(T("ayuda.general.primerosPasos.resumen")))
             .Append("</p><button type=\"button\" class=\"enlace\" data-tema=\"").Append(A(primeros.Clave)).Append("\">")
             .Append(H(T("ayuda.verGuia"))).Append(" &#8250;</button></div>");
@@ -148,6 +149,7 @@ public partial class Controles_PanelAyuda : System.Web.UI.UserControl
         pHtml.Append("</article>");
     }
     #endregion
+
     #region Textos
     private static string T(string pClave)
     {
