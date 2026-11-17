@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaEscenarios.aspx.cs" Inherits="PaginaEscenarios" %>
 
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -25,7 +26,10 @@
                         <h1 runat="server" Clave="principal.escenarios.titulo">Escenarios de Simulación</h1>
                         <p class="subtitulo" runat="server" Clave="escenarios.subtitulo">CUN 007 — Crear y gestionar escenarios alternativos</p>
                     </div>
-                    <asp:Button ID="btnNuevoEscenario" runat="server" CssClass="boton-nuevo" Text="+ Nuevo Escenario" Clave="escenarios.btnNuevo" OnClick="btnNuevoEscenario_Click" CausesValidation="false" />
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="escenarios" />
+                        <asp:Button ID="btnNuevoEscenario" runat="server" CssClass="boton-nuevo" Text="+ Nuevo Escenario" Clave="escenarios.btnNuevo" OnClick="btnNuevoEscenario_Click" CausesValidation="false" />
+                    </div>
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
@@ -134,7 +138,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalEscenario" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalEscenario" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;" data-ayuda-tema="escenarios.crear">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3 runat="server" Clave="escenarios.modalNuevo">Nuevo Escenario</h3>
@@ -158,7 +162,7 @@
                     <asp:TextBox ID="tbObjetivoEscenario" runat="server" CssClass="modal-campo"
                         placeholder="Ej: Aumentar la circulación en el sector Electrónica" ClavePlaceholder="escenarios.ejObjetivo" />
                 </div>
-                <div class="grupo-campo">
+                <div class="grupo-campo esc-cambios-sectores">
                     <p class="texto-secundario"><asp:Literal ID="litLayoutBaseNuevo" runat="server" /></p>
                     <label runat="server" Clave="escenarios.cambiosPropuestosSectores">Cambios propuestos de sectores</label>
                     <%-- Se puebla dinámicamente desde los Sectores reales del
@@ -189,7 +193,7 @@
                 </div>
             </div>
         </asp:Panel>
-        <asp:Panel ID="pnlDetalleEscenario" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlDetalleEscenario" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;" data-ayuda-tema="escenarios.estado">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3>

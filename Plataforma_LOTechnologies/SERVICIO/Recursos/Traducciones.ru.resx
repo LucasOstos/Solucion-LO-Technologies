@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>Название и название на этом языке могут содержать до {0} символов.</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>Справка по этому экрану (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>Закрыть справку</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>Назад к темам</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>Поиск по справке</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>На этом экране</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>Связанные экраны</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>См. также</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>Показать на экране</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>Совет:</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>Открыть руководство для начала работы</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>По запросу «{0}» темы не найдены.</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>Открыть или закрыть справку: {0}.</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>Выделено на экране.</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>Сейчас этого нет на экране.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>Начало работы</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>Впервые на платформе? Вот весь путь: от добавления магазина до проверки сценария.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>Чтобы анализировать магазин, платформе сначала нужны его данные. В первый раз действуйте в таком порядке:</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>В разделе **Магазины** добавьте магазин с его площадью.|В разделе **Планировка и секции** загрузите план и секции с расположением, проходимостью и площадью.|В разделе **Товары и категории** добавьте товары и разместите их по секциям.|В разделе **Запасы и продажи** введите или импортируйте продажи и запасы.|В разделе **Показатели и рекомендации** посмотрите, как работает каждая секция.|В разделе **Сценарии моделирования** проверьте изменения, которые предлагает система, и сравните их.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>На каждом экране кнопка **Справка** (или клавиша F1) объясняет, что здесь можно сделать.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>Для чего нужен сценарий?</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>Сценарий — это проверка изменения планировки магазина, например перенос секции ближе к входу или увеличение её площади. Система берёт реальные данные за последний месяц и оценивает, как изменятся продажи, проходимость и общий индекс, ничего не меняя в реальном магазине.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>В разделе **Показатели и рекомендации** найдите секцию, которую стоит улучшить.|Создайте сценарий с изменением, которое хотите проверить.|Сравните его с текущей ситуацией в разделе **Сравнение сценариев**.|Если это выгодно, утвердите сценарий и внесите изменение в магазине.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>Создание сценария</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>Сценарий позволяет проверить изменение в магазине **до** того, как его вносить. Система оценивает, как изменятся продажи и индекс.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>Выберите **магазин** в верхней части экрана.|Нажмите **+ Новый сценарий**.|Введите **название**, которого ещё нет в этом магазине, и при желании описание и цель.|В блоке **Предлагаемые изменения секций** выберите действие хотя бы для одной секции.|Нажмите **Создать сценарий**. Он сохранится в статусе **Черновик**.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>Если нажать «Создать сценарий» в рекомендации из раздела **Показатели** или **Анализ товаров**, эта форма откроется с уже выбранными секцией и действием.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>Как читать текущую ситуацию и изменения</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>Вверху показана **текущая ситуация (без изменений)**: реальные продажи, проходимость и общий индекс магазина. Каждый сценарий показывает свои расчётные значения и их отличие от текущей ситуации.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>Зелёная стрелка вверх означает улучшение, красная вниз — ухудшение.|Продажи сравниваются в процентах, общий индекс — в пунктах (от 0 до 100).|Индекс объединяет проходимость, оборачиваемость и продажи на м²: чем он выше, тем лучше работает магазин.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>Изменение статуса сценария</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>Статус помогает организовать работу со сценариями: **Черновик** (только что создан), **На рассмотрении**, **Утверждён** или **Отклонён**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>На карточке сценария нажмите **Подробнее**.|Выберите новый статус в списке **Статус**.|Нажмите **Изменить статус**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>Отмечайте статусом **Утверждён** сценарий, который будет внедрён в магазине, — так это будет понятно всей команде.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>Допущения моделирования</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>Каждое действие меняет реальные значения секции на фиксированный процент; эти значения приведены в таблице **Допущения моделирования** внизу экрана. Например, перенос секции ближе к входу добавляет 15 пунктов проходимости и 10 % продаж.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>Откройте **Допущения моделирования** внизу экрана.|Найдите нужное действие и посмотрите, как меняются проходимость, продажи и площадь.|Помните, что это оценки: они не предсказывают точный результат и влияние на другие секции.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>Удаление сценария</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>При удалении сценария вместе с ним удаляются его изменения и сохранённые сравнения. Уже созданные отчёты сохраняются.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>На карточке сценария нажмите **Удалить**.|Подтвердите в появившемся сообщении.</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>Почему не удаётся сохранить сценарий?</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>Красное сообщение в форме показывает, что нужно исправить. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**Не указано название**: оно обязательно.|**Сценарий с таким названием уже есть** в этом магазине: выберите другое.|**Не выбрано ни одного изменения**: сценарий без изменений совпадал бы с текущей ситуацией.|**У магазина нет действующей планировки**: сценарий всё равно создаётся, но без базовой планировки.</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>Как устроено меню</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>Меню объединяет модули в три блока. Вы видите только те модули, которые разрешены вашим профилем.</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**Магазины и компания**: ввод данных магазина (магазины, план, секции, товары, запасы и продажи).|**Моделирование и анализ**: анализ показателей и проверка изменений до их внедрения.|**Администрирование и безопасность**: пользователи, права и обслуживание системы — для администраторов.</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>Смена языка</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>Платформа доступна на нескольких языках. При смене языка переводятся все экраны, сообщения и эта справка.</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>Справа вверху откройте список **Язык**.|Выберите язык — экран обновится сам.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>Смена пароля</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>Новый пароль должен содержать **не менее 8 символов**, включая заглавную букву, цифру и специальный символ.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>Нажмите **Изменить пароль** справа вверху.|Введите текущий пароль.|Введите новый пароль и повторите его для подтверждения.|Нажмите **Сохранить**.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>Не вижу нужный модуль</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>Набор модулей зависит от прав вашего профиля. Если какого-то нет, это не ошибка: ваш профиль его не включает.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>Попросите администратора вашей компании проверить ваш профиль в разделе **Разрешения**.|После изменения выйдите из системы и войдите снова, чтобы увидеть модуль.</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>Регистрация магазина</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>Каждый магазин — это точка продаж компании. С него всё начинается: план, секции, товары и продажи всегда вносятся для конкретного магазина.</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>Нажмите **Новый магазин**.|Заполните обязательные поля: **название**, **компания** и **адрес**.|Укажите **Площадь, прибл. (м²)**: без неё не рассчитываются продажи на м².|Нажмите **Создать магазин**.</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>Название не может повторяться внутри одной компании. Используйте что-то, что отличает магазин, например город или улицу.</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>Каких данных не хватает магазину</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>На каждой карточке есть список **Данные для анализа**. Он показывает, что уже внесено и чего не хватает для правильной работы показателей, рекомендаций и сценариев.</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>Нет действующего плана или секции заполнены не полностью: внесите их в разделе **Планировка и секции**.|Мало размещённых товаров: назначьте им секцию в разделе **Товары и категории**.|Нет запасов или продаж за месяц: внесите их в разделе **Запасы и продажи**.|Если сумма площадей секций больше площади магазина, исправьте площадь магазина или секций.</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>Изменение, включение и отключение магазина</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>Кнопки внизу каждой карточки позволяют исправить данные магазина или изменить его статус. Неактивный магазин сохраняет все свои данные.</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>Карандаш (**Изменить**) открывает форму, где можно изменить данные и сохранить.|Стрелки (**Активировать/Деактивировать**) меняют статус; система попросит подтверждение.|**Посмотреть планировку** открывает план и секции этого магазина.</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>Поиск и фильтрация магазинов</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>Если магазинов много, список можно отфильтровать по названию, компании и статусу.</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>Введите часть названия в строку поиска.|При желании выберите компанию и статус.|Нажмите **Найти**.</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>Почему не удаётся сохранить магазин?</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>Красное сообщение в форме показывает, что нужно исправить. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**Название повторяется**: в компании уже есть магазин с таким названием.|**Компания неактивна**: её магазины нельзя регистрировать и изменять.|**Площадь равна 0**: она должна быть больше 0 (или оставьте поле пустым).|**Неверный телефон**: только цифры и + в начале, от 6 до 15 цифр.</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>Загрузка плана магазина</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>Планировка — это план магазина: изображение или PDF с расположением. Она сохраняется с датой, поэтому видно, как магазин менялся со временем.</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>Выберите магазин справа вверху.|На вкладке **Планировка магазина** нажмите **Загрузить планировку**.|Заполните название, дату, статус и описание.|Прикрепите файл: PNG, JPG или PDF до 5 МБ.|Нажмите **Подтвердить загрузку**.</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>Статус **Активен** выбирайте только для плана, который действует сейчас: он заменит предыдущий в качестве действующего.</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>Действующий план</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>У каждого магазина **только один действующий план**. Его используют сценарии как основу, и он показывается на картах.</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>В списке планировок действующая отмечена как **Действующий план**.|**Подробнее** показывает изображение или PDF плана.|**Сделать действующим** делает действующим другой план.|Корзина удаляет план; система попросит подтверждение.</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>Создание и изменение секций</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>Секции — это зоны магазина (фрукты, напитки, бытовая химия...). Показатели, рекомендации и сценарии работают по секциям.</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>Откройте вкладку **Управление секциями**.|Нажмите **Новая секция**.|Заполните название, тип и **Расположение** (одна из 9 зон плана).|Укажите **Расчётная проходимость (%)** и **Площадь (м²)**.|Сохраните. Чтобы исправить позже, нажмите **Изменить** в таблице.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>Проходимость, площадь и расположение</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>Эти три значения каждой секции используются в показателях и моделировании. Если их нет, результаты будут неполными.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**Проходимость**: оценочный % покупателей, проходящих через секцию, по наблюдению или подсчёту в магазине.|**Площадь**: м² секции; нужна для расчёта продаж на м². Сумма не должна превышать площадь магазина.|**Расположение**: зона плана. Её показывает **карта** ниже; вход находится внизу.</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>Почему план не загружается?</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>При подтверждении система проверяет файл и обязательные поля. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**Неверный формат**: принимаются только PNG, JPG или PDF.|**Слишком большой файл**: максимум 5 МБ. Уменьшите изображение или сохраните PDF с меньшим качеством.|**Не заполнено поле**: название, дата, описание и файл обязательны.</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>Главное меню</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>Создание категорий</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>Каждый товар относится к категории, поэтому сначала создайте категории. Категории принадлежат компании и общие для всех её магазинов.</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>Откройте вкладку **Категории**.|Нажмите **Новая категория**.|Введите название и при желании описание.|Нажмите **Сохранить**.</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>Добавление товара</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>Товар принадлежит компании, а его **секция** задаётся для каждого магазина: один и тот же товар может быть в напитках в одном магазине и в бакалее в другом.</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>Выберите магазин справа вверху и нажмите **Новый товар**.|Заполните название и категорию (обязательно), цену и **Себестоимость единицы**.|Выберите секцию товара в этом магазине.|Сохраните. **Внутренний код** (например, PROD-001) система присваивает сама.</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>Всегда указывайте **себестоимость единицы**: без неё маржа не рассчитывается ни в показателях, ни в отчётах.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>Неразмещённые товары</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>Товар без секции в магазине отображается как **Секция не назначена**. Его продажи учитываются для магазина, но в показателях не относятся ни к одной секции.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>В столбце **Секция в этом магазине** найдите товары без секции.|Откройте их карандашом и выберите секцию.|Сохраните. С этого момента их продажи относятся к этой секции.</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>Изменение и отключение товаров</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>Товар, который больше не продаётся, не удаляют, а отключают. История продаж сохраняется, но его больше нельзя импортировать или вносить.</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>Карандашом можно изменить товар, например цену или секцию.|Стрелками товар включают или отключают; система попросит подтверждение.|То же самое работает для категорий на их вкладке.</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>Импорт продаж или запасов из файла</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>Это быстрый способ внести много данных: файл, выгруженный из кассовой системы магазина, в формате **CSV** или **Excel (.xlsx)**, до 2 МБ.</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>Выберите магазин и нажмите **Импорт файла**.|Укажите, что содержит файл: **Продажа** или **Запас**.|Если формата нет, скачайте шаблон Excel или CSV и заполните его.|Выберите файл и нажмите **Импортировать**.</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>Файл проверяется целиком: если в одной строке ошибка, не импортируется ни одна строка, а система показывает номер строки и причину, чтобы вы её исправили.</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>Ручной ввод продажи или запаса</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>Подходит для отдельных записей и исправлений. Для большого объёма данных лучше импортировать файл.</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>Нажмите **Ручной ввод**.|В поле **Тип данных** выберите **Продажа** или **Запас**.|Выберите товар и введите количество и дату.|Для продажи сумма необязательна (пусто = цена × количество). Для запаса можно указать минимум и максимум.|Нажмите **Сохранить**.</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>Просмотр продаж и запасов</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>На экране три вкладки: **Данные о продажах**, **Данные о запасах** и **Импорт**. Фильтры вверху задают магазин, период и группировку.</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>Выберите период и группировку (**По секциям**, **По категориям** или **По товарам**) и нажмите **Применить**.|На вкладке **Данные о продажах** — итоги, диаграмма по секциям и последние внесённые продажи.|На вкладке **Данные о запасах** — статус каждого товара: **Критический** (нет в наличии), **Низкий** (на минимуме или ниже) или **Избыток** (выше максимума).</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>Исправление ошибочной загрузки</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>Отдельную продажу удаляют из списка последних продаж. Если файл импортирован по ошибке (например, дважды), можно отменить весь импорт.</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>Отдельная продажа: в блоке **Последние внесённые продажи** нажмите **Удалить**.|Весь файл: на вкладке **Импорт** нажмите **Отменить** и подтвердите.|Импорт запасов отменить нельзя: чтобы исправить, импортируйте правильный файл — он заменит запасы.</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>Почему файл не импортировался?</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>При ошибках форма показывает красным список строк с причинами. Исправьте файл и импортируйте его снова. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**Нет столбца**: заголовок должен содержать названия из шаблона (codigo, fecha, cantidad...).|**Неверный или несуществующий код**: используйте внутренний код товара, например PROD-001.|**Неверная дата или число**: даты вида 2026-10-15 или 15/10/2026, числа без разделителя тысяч.|**Неподдерживаемый формат**: старый формат Excel .xls не принимается; сохраните файл как .xlsx или .csv.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>Как читать показатели по секциям</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>Таблица показывает результаты каждой секции за выбранный период. Для сравнения секций удобнее всего **Общий индекс** от 0 до 100.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>Выберите магазин и период и нажмите **Применить**.|Смотрите на индекс: зелёный от 70, жёлтый от 50, ниже — красный.|Он складывается из 40 % проходимости, 30 % оборачиваемости и 30 % продаж на м² в сравнении с лучшей секцией магазина.|Как считается каждый столбец, смотрите в блоке **Как рассчитывается каждый показатель?** под таблицей.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>Автоматические рекомендации</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>Система анализирует показатели и предлагает действия: увеличить или уменьшить площадь секции, перенести её ближе к входу, пересмотреть цены, пополнить запасы или внести недостающие данные. У каждой рекомендации высокий, средний или низкий приоритет.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>Прочитайте причину под каждой рекомендацией: она объясняет, какой показатель её вызвал.|Если есть кнопка **Создать сценарий**, она открывает Сценарии с уже внесённым изменением.|Смоделируйте и сравните изменение, прежде чем вносить его в магазине.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>Карта и динамика магазина</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>Карта окрашивает каждую зону плана по выбранному показателю, чтобы сразу было видно, где магазин работает лучше всего. График динамики показывает продажи за последние 6 месяцев.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>В блоке **Карта магазина** выберите **Показатель**: продажи, продажи на м², маржа, проходимость, оборачиваемость или общий индекс.|Чем темнее зона, тем выше значение. Вход находится внизу.|На графике динамики текущий месяц ещё не закончился: пока не сравнивайте его с полными месяцами.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>Почему нет некоторых значений?</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>Некоторым показателям нужны данные из других экранов. Если чего-то нет, столбец остаётся пустым или появляется предупреждение.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**Маржа**: не указана себестоимость товаров (**Товары и категории**).|**Продажи на м²**: не указана площадь магазина или секций (**Магазины** или **Планировка и секции**).|**Оборачиваемость и покрытие**: нет данных о запасах (**Запасы и продажи**).|**Нет показателей и рекомендаций**: за выбранный период нет продаж.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>Сравнение двух сценариев</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>Сопоставляет два сценария одного магазина, чтобы понять, какой выгоднее. Чаще всего сравнивают **текущую ситуацию (без изменений)** с предлагаемым сценарием.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>Выберите магазин и **Период анализа**.|В поле **Текущий сценарий** выберите текущую ситуацию или базовый сценарий.|В поле **Предлагаемый сценарий** выберите оцениваемый сценарий.|Нажмите **Сравнить сценарии**.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>Как понять результат</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>Блок **Вывод** показывает, какой из двух сценариев выгоднее и насколько. Ниже — показатели каждого сценария, карты и таблица различий.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>Сравните **расчётные продажи** и **средний общий индекс** двух сценариев.|Обе карты используют одну цветовую шкалу: видно, в каких зонах предлагаемый сценарий лучше или хуже.|В таблице **Основные различия** посмотрите, какие секции дают изменение.|Помните, что это оценки: загляните в **Допущения моделирования** внизу.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>Сохранение сравнения в отчёт</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>Чтобы показать результат или сохранить его, сравнение можно выгрузить в PDF-отчёт.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>После сравнения нажмите **Создать отчёт по этому сравнению** внизу экрана.|Откроется раздел **Отчёты** с уже выбранными сценариями.|Проверьте период и разделы и сформируйте отчёт.</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>Почему сравнение не выполняется?</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>Причина указана в сообщении вверху экрана. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**С обеих сторон один и тот же сценарий**: выберите два разных сценария.|**У магазина нет сценариев**: сначала создайте их в разделе **Сценарии моделирования**.|**Не хватает данных**: нужны продажи за период и внесённые секции.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>Анализ товаров магазина</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>Анализ проверяет по каждому товару продажи, запасы и проходимость его секции и находит возможности: товары, которые лучше продавались бы в другом месте, которые не продаются или скоро закончатся.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>Выберите магазин и период (с и по).|Нажмите **Анализировать товары**.|Вверху видно, сколько товаров проанализировано и сколько возможностей с высоким, средним и низким приоритетом.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>Типы возможностей</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>У каждого товара с замечанием есть тип и приоритет. Причина на карточке объясняет, какие цифры к этому привели.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**Скрытая звезда**: хорошо продаётся, но стоит в секции с низкой проходимостью.|**Занимает выгодное место**: продаётся слабо в секции с высокой проходимостью.|**Без движения**: есть запас, но нет продаж.|**Риск дефицита**: запаса хватит меньше чем на 7 дней.|**Избыточный запас**: запаса хватит больше чем на 180 дней.|**Продаётся без размещения**: продаётся, но не имеет секции в магазине.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>Что делать с каждой возможностью</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>Начните с высокого приоритета. Фильтры помогают посмотреть один тип или конкретный товар.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>Отфильтруйте по типу или приоритету либо найдите товар по названию.|Если на карточке есть **Создать сценарий**, смоделируйте изменение перед внедрением.|Неразмещённому товару назначьте секцию в разделе **Товары и категории**.|При риске дефицита или избытке пересмотрите закупки в разделе **Запасы и продажи**.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>Внизу находится список **Проанализированные товары без рекомендаций**: это товары, которые хорошо работают на своём месте.</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>Формирование отчёта</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>Отчёты собирают в PDF сведения о магазине за период: показатели, рекомендации, запасы, продажи или сравнение сценариев.</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>Выберите магазин и **Тип отчёта**.|Укажите период в полях **С (месяц)** и **По (месяц)** (формат гггг-мм).|Выберите **Язык отчёта**.|Проверьте **Включаемые разделы** и нажмите **Сформировать отчёт**.</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>Язык отчёта может отличаться от вашего — например, чтобы отправить PDF в головной офис в другой стране.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>Типы отчётов и разделы</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>При выборе типа нужные разделы отмечаются автоматически. Затем можно добавить или убрать любые.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**Полный**: всё о магазине за период.|**Показатели**: показатели по секциям, динамика и рекомендации.|**Запас**: состояние запасов и сведения о товарах.|**Сравнение**: нужны **Базовый сценарий** и **Предлагаемый сценарий**.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>Просмотр, загрузка и удаление отчётов</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>Созданные отчёты хранятся справа в блоке **Последние отчёты**, их можно открыть снова без повторного формирования.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>**Просмотр** открывает PDF в браузере.|**Скачать** скачивает его на компьютер.|**Удалить** удаляет отчёт и его файл; система попросит подтверждение.</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>Почему отчёт не формируется?</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>Причина указана в сообщении вверху. Самые частые причины:</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**Неверный период**: начальный месяц не может быть позже конечного, нельзя включать будущие месяцы, и есть ограничение по числу месяцев.|**Нет разделов**: отметьте хотя бы один.|**Сравнение без сценариев**: выберите базовый и предлагаемый сценарии.|**Нет данных**: у магазина нет продаж или запасов за этот период.</value>
+  </data>
 </root>

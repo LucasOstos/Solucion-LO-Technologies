@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaProductos.aspx.cs" Inherits="PaginaProductos" %>
 
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -24,7 +25,8 @@
                     <div>
                         <h1 runat="server" clave="principal.productos.titulo">Productos y Categorías</h1>
                     </div>
-                    <div>
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="productos" />
                         <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" ClaveAria="comun.local" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
                         <asp:Button ID="btnNuevo" runat="server" CssClass="boton-nuevo" Text="Nuevo Producto" Clave="productos.btnNuevo" OnClick="btnNuevo_Click" CausesValidation="false" />
                     </div>
@@ -127,7 +129,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalProducto" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalProducto" runat="server" data-ayuda-tema="productos.crear" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3>
@@ -190,7 +192,7 @@
             </div>
         </asp:Panel>
 
-        <asp:Panel ID="pnlModalCategoria" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalCategoria" runat="server" data-ayuda-tema="productos.categorias" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3>

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaStockVentas.aspx.cs" Inherits="PaginaStockVentas" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -25,7 +25,8 @@
                         <h1 runat="server" clave="principal.stockVentas.titulo">Stock y Ventas</h1>
                         <p class="subtitulo" runat="server" clave="stock.subtitulo">CUN 006 — Carga y gestión de datos de ventas y stock</p>
                     </div>
-                    <div>
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="stock" />
                         <asp:Button ID="btnImportar" runat="server" CssClass="boton-secundario" Text="Importar archivo" Clave="stock.btnImportarArchivo" OnClick="btnImportar_Click" CausesValidation="false" />
                         <asp:Button ID="btnCargaManual" runat="server" CssClass="boton-nuevo" Text="Carga Manual" Clave="stock.btnCargaManual" OnClick="btnCargaManual_Click" CausesValidation="false" />
                     </div>
@@ -248,7 +249,7 @@
         </div>
 
         <%-- ===================== MODAL CARGA MANUAL ===================== --%>
-        <asp:Panel ID="pnlModalCarga" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalCarga" runat="server" data-ayuda-tema="stock.manual" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3 runat="server" clave="stock.btnCargaManual">Carga Manual</h3>
@@ -311,7 +312,7 @@
         </asp:Panel>
 
         <%-- ===================== MODAL IMPORTAR ARCHIVO ===================== --%>
-        <asp:Panel ID="pnlModalImportar" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalImportar" runat="server" data-ayuda-tema="stock.importar" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja modal-ancho">
                 <div class="modal-encabezado">
                     <h3 runat="server" clave="importar.titulo">Importar archivo</h3>

@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>The name and the name in its own language can have up to {0} characters.</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>Help for this screen (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>Close help</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>Back to topics</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>Search help</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>On this screen</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>Related screens</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>See also</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>Show me on the screen</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>Tip:</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>See the getting started guide</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>No topics found for “{0}”.</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>Open or close help with {0}.</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>It was highlighted on the screen.</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>That is not visible on the screen right now.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>Getting started</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>First time on the platform? Here is the full path, from loading the store to testing a scenario.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>To analyze a store, the platform first needs its data. The first time, follow this order:</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>In **Stores**, register the store with its floor area.|In **Layout and sections**, upload the floor plan and the sections with their location, traffic and area.|In **Products and categories**, load the products and place them in a section.|In **Stock and sales**, enter or import sales and stock.|In **Indicators and recommendations**, check how each section performs.|In **Simulation scenarios**, test the changes the system suggests and compare them.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>On every screen, the **Help** button (or the F1 key) explains what you can do there.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>What is a scenario for?</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>A scenario tests a change to the store layout, for example moving a section to the front or giving it more space. The system starts from last month's real data and estimates how sales, traffic and the overall index would change, without touching the real store.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>In **Indicators and recommendations**, find the section worth improving.|Create a scenario with the change you want to test.|Compare it with the current situation in **Scenario comparison**.|If it pays off, approve it and apply the change in the store.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>Create a scenario</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>A scenario tests a change to the store **before** making it for real. The system estimates how sales and the index would change.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>Choose the **store** at the top of the screen.|Click **+ New scenario**.|Enter a **name** not used in the store and, optionally, a description and the goal.|Under **Proposed section changes**, choose an action for at least one section.|Click **Create scenario**. It is saved as **Draft**.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>From a recommendation in **Indicators** or in **Product analysis**, the "Create scenario" button opens this form with the section and action already chosen.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>Reading the current situation and the changes</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>At the top is the **current situation (no changes)**: the store's real sales, traffic and overall index. Each scenario shows its estimated values and how much they change compared with that situation.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>A green up arrow means the value improves; a red down arrow means it gets worse.|Sales are compared as a percentage and the overall index in points (0 to 100).|The index combines traffic, turnover and sales per m²: the higher it is, the better the store performs.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>Changing a scenario's status</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>The status organizes work on scenarios: **Draft** (just created), **Under review**, **Approved** or **Discarded**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>On the scenario card, click **View details**.|Choose the new status in the **Status** list.|Click **Change status**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>Use **Approved** for the scenario that will be applied in the store, so it is clear to the whole team.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>Simulation assumptions</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>Each action changes the section's real values by fixed percentages, shown in the **Simulation assumptions** table at the bottom of the screen. For example, moving a section to the front adds 15 points of traffic and 10% of sales.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>Open **Simulation assumptions** at the bottom of the screen.|Find the action you are interested in and see how much traffic, sales and area change.|Keep in mind they are estimates: they do not predict the exact result or the effect on other sections.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>Deleting a scenario</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>Deleting a scenario removes it along with its changes and saved comparisons. Reports already generated are kept.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>On the scenario card, click **Delete**.|Confirm in the message that appears.</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>Why can't I save the scenario?</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>The red message inside the form tells you what to fix. The most common causes are:</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**The name is missing**: it is required.|**A scenario with that name already exists** in the store: choose another one.|**You did not choose any change**: a scenario without changes would equal the current situation.|**The store has no current layout**: the scenario is still created, but without a base layout.</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>How the menu is organized</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>The menu groups the modules into three blocks. You only see the modules your profile allows.</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**Stores and company**: load the store's data (stores, plan, sections, products, stock and sales).|**Simulation and analysis**: analyze performance and test changes before making them.|**Administration and security**: users, permissions and system maintenance, for administrators.</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>Changing the language</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>The platform is available in several languages. Changing it translates every screen, message and this help.</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>At the top right, open the **Language** list.|Choose the language: the screen updates by itself.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>Changing your password</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>The new password must have **at least 8 characters**, with an uppercase letter, a number and a special character.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>Click **Change password** at the top right.|Enter your current password.|Enter the new one and repeat it to confirm.|Click **Save**.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>I can't see a module I need</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>The modules shown depend on your profile's permissions. If one is missing, it is not an error: your profile does not include it.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>Ask your company's administrator to check your profile in **Permissions**.|Once it is changed, sign out and sign in again to see the module.</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>Registering a store</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>Each store is a point of sale of a company. It is the starting point: the plan, sections, products and sales are always loaded for a store.</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>Click **New store**.|Fill in the **name**, **company** and **address**, which are required.|Enter the **Approx. area (m²)**: without it, sales per m² cannot be calculated.|Click **Create store**.</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>The name cannot be repeated within the same company. Use something that identifies the store, such as the city or street.</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>What data the store is missing</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>Each card shows the **Data for the analysis** list. It shows what is loaded and what is missing for indicators, recommendations and scenarios to work properly.</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>No current plan or incomplete sections: load them in **Layout and sections**.|Few products placed: assign them a section in **Products and categories**.|No stock or no sales this month: load them in **Stock and sales**.|If the sections add up to more m² than the store, correct the store's area or the sections' area.</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>Editing, activating or deactivating a store</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>The buttons at the bottom of each card let you correct the store's data or change its status. An inactive store keeps all its data.</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>The pencil (**Edit**) opens the form so you can change the data and save.|The arrows (**Activate/Deactivate**) change the status; the system asks for confirmation.|**View layout** takes you straight to that store's plan and sections.</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>Searching and filtering stores</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>If there are many stores, you can filter the list by name, company and status.</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>Type part of the name in the search box.|Optionally, choose a company and a status.|Click **Search**.</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>Why can't I save the store?</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>The red message inside the form tells you what to fix. The most common causes are:</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**Repeated name**: the company already has a store with that name.|**Inactive company**: its stores cannot be registered or changed.|**Area of 0**: it must be greater than 0 (or leave it empty).|**Invalid phone**: only digits and a leading +, from 6 to 15 digits.</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>Uploading the store plan</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>The layout is the store plan: an image or PDF with the floor layout. It is saved with its date, so you can see how the store changed over time.</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>Choose the store at the top right.|On the **Store layout** tab, click **Upload layout**.|Fill in the name, date, status and description.|Attach the file: PNG, JPG or PDF up to 5 MB.|Click **Confirm upload**.</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>Choose the **Active** status only for the plan currently in force in the store: it replaces the previous one as the current plan.</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>The current plan</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>Each store has **only one current plan**. It is the one scenarios use as a base and the one shown on the maps.</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>In the list of layouts, the current one is marked **Current floor plan**.|**View details** shows the plan's image or PDF.|**Set as current** makes another plan the current one.|The trash can deletes a plan; the system asks for confirmation.</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>Creating and editing sections</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>Sections are the areas of the store (produce, drinks, cleaning...). Indicators, recommendations and scenarios work by section.</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>Open the **Section management** tab.|Click **New section**.|Fill in the name, type and **Location** (one of the 9 zones of the plan).|Enter the **Estimated foot traffic (%)** and the **Area (m²)**.|Save. To correct it later, use **Edit** in the table.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>Traffic, area and location</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>These three values of each section feed the indicators and simulations. If they are missing, the results are incomplete.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**Traffic**: estimated % of customers who pass through the section, by observation or counting in the store.|**Area**: m² of the section; used for sales per m². The total should not exceed the store's.|**Location**: zone of the plan. The **map** below shows it; the front (entrance) is the bottom.</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>Why won't the plan upload?</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>When you confirm, the system checks the file and the required fields. The most common causes are:</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**Invalid format**: only PNG, JPG or PDF are accepted.|**File too large**: the maximum is 5 MB. Shrink the image or export the PDF at lower quality.|**Missing data**: name, date, description and file are required.</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>Main menu</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>Creating categories</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>Every product belongs to a category, so it is best to create them first. Categories belong to the company: they are shared by all its stores.</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>Open the **Categories** tab.|Click **New category**.|Enter the name and, optionally, a description.|Click **Save**.</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>Adding a product</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>The product belongs to the company, but its **section** is specific to each store: the same product can be in drinks in one store and in groceries in another.</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>Choose the store at the top right and click **New product**.|Fill in the name and category (required), price and **Unit cost**.|Choose the product's section in that store.|Save. The **Internal code** (for example PROD-001) is assigned by the system.</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>Always enter the **unit cost**: without it, the margin is not calculated in indicators or reports.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>Unplaced products</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>A product with no section in the store appears as **No section assigned**. Its sales count for the store but do not add to any section in the indicators.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>In the **Section in this store** column, look for products with no section.|Edit them with the pencil and choose the section.|Save. From then on, their sales add to that section.</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>Editing or deactivating products</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>A product that is no longer sold is not deleted: it is deactivated. Its sales history is kept, but it can no longer be imported or entered.</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>The pencil edits the product, for example to change the price or section.|The arrows activate or deactivate it; the system asks for confirmation.|The same applies to categories, on their tab.</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>Importing sales or stock from a file</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>It is the quick way to load a lot of data: the file exported by the store's point-of-sale system, in **CSV** or **Excel (.xlsx)**, up to 2 MB.</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>Choose the store and click **Import file**.|Choose whether the file contains **Sale** or **Stock** data.|If you don't have the format, download the Excel or CSV template and fill it in.|Choose the file and click **Import**.</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>The whole file is validated: if one row has an error, none are imported, and the system shows the row and the reason so you can fix it.</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>Entering a sale or stock manually</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>Use it for single records or corrections. For a lot of data, importing a file is better.</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>Click **Manual entry**.|In **Data type**, choose **Sale** or **Stock**.|Choose the product and enter the quantity and date.|For a sale, the amount is optional (empty = price × quantity). For stock, you can enter the minimum and maximum.|Click **Save**.</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>Viewing sales and stock</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>The screen has three tabs: **Sales data**, **Stock data** and **Imports**. The filters at the top choose the store, the period and how to group.</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>Choose the period and grouping (**By section**, **By category** or **By product**) and click **Apply**.|**Sales data** shows the totals, the chart by section and the latest sales entered.|**Stock data** shows each product's status: **Critical** (out of stock), **Low** (at or below the minimum) or **Overstock** (above the maximum).</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>Fixing a wrong upload</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>A single sale is deleted from the list of latest sales. If a file was imported by mistake (for example, twice), the whole import can be undone.</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>Single sale: in **Latest sales entered**, click **Delete**.|Whole file: on the **Imports** tab, click **Undo** and confirm.|Stock imports cannot be undone: to correct them, import the right file, which replaces the stock.</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>Why wasn't the file imported?</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>If there are errors, the form shows in red the list of rows and their reasons. Fix the file and import it again. The most common causes are:</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**Missing column**: the header must have the template's names (codigo, fecha, cantidad...).|**Invalid or unknown code**: use the product's internal code, for example PROD-001.|**Invalid date or number**: dates like 2026-10-15 or 15/10/2026 and numbers without thousands separators.|**Unsupported format**: the old Excel .xls is not accepted; save it as .xlsx or .csv.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>Reading the indicators by section</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>The table shows how each section performs in the chosen period. The most useful value for comparing sections is the **Global index**, from 0 to 100.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>Choose the store and period, and click **Apply**.|Look at the index: green from 70, yellow from 50 and red below.|It combines 40% traffic, 30% turnover and 30% sales per m², compared with the best section in the store.|To see how each column is calculated, open **How is each indicator calculated?** below the table.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>Automatic recommendations</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>The system reviews the indicators and suggests actions: enlarging or reducing a section's area, moving it to the front, reviewing prices, restocking or loading missing data. Each has high, medium or low priority.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>Read the reason below each recommendation: it explains which value triggered it.|If it shows **Create scenario**, that button opens Scenarios with the change already loaded.|Simulate and compare it before applying it in the store.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>Store map and trend</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>The map colors each zone of the plan by the indicator you choose, so you can see at a glance where the store performs best. The trend chart shows sales for the last 6 months.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>In **Store map**, choose the **Indicator**: sales, sales per m², margin, traffic, turnover or overall index.|Darker zones have higher values. The front (entrance) is the bottom.|In the trend chart, the current month is still in progress: don't compare it with full months yet.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>Why are values missing?</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>Some indicators need data entered on other screens. If something is missing, the column is empty or a notice appears.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**Margin**: the products' unit cost is missing (**Products and categories**).|**Sales per m²**: the store's or sections' area is missing (**Stores** or **Layout and sections**).|**Turnover and coverage**: stock is missing (**Stock and sales**).|**No indicators or recommendations**: there are no sales in the chosen period.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>Comparing two scenarios</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>It sets two scenarios of the same store against each other to see which one pays off. The most common case is comparing the **current situation (no changes)** with a proposed scenario.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>Choose the store and the **Analysis period**.|In **Current scenario**, choose the current situation or the reference scenario.|In **Proposed scenario**, choose the scenario to evaluate.|Click **Compare scenarios**.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>Interpreting the result</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>The **Conclusion** says which of the two scenarios pays off and by how much. Below are each one's indicators, the maps and the differences table.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>Compare the **estimated sales** and the **average overall index** of both scenarios.|Both maps use the same color scale, so you can see in which zones the proposed one improves or worsens.|In **Main differences**, see which sections explain the change.|Remember they are estimates: check **Simulation assumptions** at the bottom.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>Saving the comparison as a report</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>To present the result or keep it, the comparison can be exported as a PDF report.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>After comparing, click **Generate a report of this comparison** at the bottom of the screen.|**Reports** opens with both scenarios already selected.|Check the period and sections, and generate the report.</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>Why won't it compare?</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>The message at the top of the screen shows the reason. The most common causes are:</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**Same scenario on both sides**: choose two different scenarios.|**The store has no scenarios**: create them first in **Simulation scenarios**.|**Missing data**: the store needs sales in the period and sections loaded.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>Analyzing the store's products</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>The analysis reviews each product's sales, stock and the traffic of its section, and detects opportunities: products that would sell more elsewhere, that don't move or that are about to run out.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>Choose the store and the period (from and to).|Click **Analyze products**.|At the top you see how many products were analyzed and how many high, medium and low priority opportunities there are.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>Types of opportunity</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>Each product with an observation has a type and a priority. The reason on each card explains the numbers behind it.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**Hidden star**: sells a lot but is in a low-traffic section.|**Takes a prime spot**: sells little in a high-traffic section.|**No movement**: has stock and no sales.|**Stock-out risk**: stock lasts less than 7 days.|**Excessive coverage**: stock lasts more than 180 days.|**Selling but not placed**: sells but has no section in the store.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>What to do with each opportunity</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>Start with the high-priority ones. The filters help you see one type or a specific product.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>Filter by type or priority, or search for a product by name.|If the card shows **Create scenario**, simulate the change before making it.|For an unplaced product, assign it a section in **Products and categories**.|For stockout risk or overstock, review purchasing in **Stock and sales**.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>At the bottom is the **Analyzed products without recommendation** list: these are the ones doing well where they are.</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>Generating a report</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>Reports summarize the store's information for a period in a PDF: indicators, recommendations, stock, sales or the scenario comparison.</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>Choose the store and the **Report type**.|Set the period with **From (month)** and **To (month)** (yyyy-mm format).|Choose the **Report language**.|Check the **Sections to include** and click **Generate report**.</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>The report's language can differ from yours: useful, for example, to send the PDF to headquarters in another country.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>Report types and sections</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>Choosing the type automatically ticks the sections it usually includes. You can then add or remove any you want.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**Full**: everything about the store in the period.|**Indicators**: indicators by section, trend and recommendations.|**Stock**: stock status and product detail.|**Comparison**: needs a **Base scenario** and a **Proposed scenario**.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>Viewing, downloading or deleting reports</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>Generated reports are kept in **Recent reports**, on the right, so you can open them again without regenerating them.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>**View** opens the PDF in the browser.|**Download** downloads it to your computer.|**Delete** deletes the report and its file; the system asks for confirmation.</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>Why isn't the report generated?</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>The message at the top shows the reason. The most common causes are:</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**Invalid period**: the from month cannot be after the to month or include future months, and there is a maximum number of months.|**No sections**: tick at least one.|**Comparison without scenarios**: choose the base and proposed scenarios.|**No data**: the store has no sales or stock in that period.</value>
+  </data>
 </root>

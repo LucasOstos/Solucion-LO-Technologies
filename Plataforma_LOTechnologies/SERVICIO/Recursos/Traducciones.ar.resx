@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>يمكن أن يحتوي الاسم والاسم بلغته على {0} حرفًا كحد أقصى.</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>مساعدة</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>مساعدة هذه الشاشة (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>مساعدة</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>إغلاق المساعدة</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>العودة إلى الموضوعات</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>البحث في المساعدة</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>في هذه الشاشة</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>شاشات ذات صلة</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>انظر أيضًا</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>أرني ذلك على الشاشة</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>نصيحة:</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>عرض دليل البدء</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>لم يتم العثور على موضوعات لـ "{0}".</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>افتح المساعدة أو أغلقها باستخدام {0}.</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>تم تمييزه على الشاشة.</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>هذا غير ظاهر على الشاشة حاليًا.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>الخطوات الأولى</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>هل هذه أول مرة على المنصة؟ هذا هو المسار الكامل، من تسجيل المتجر حتى تجربة سيناريو.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>لتحليل متجر، تحتاج المنصة أولًا إلى بياناته. في المرة الأولى اتبع هذا الترتيب:</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>في **المتاجر**، سجّل المتجر مع مساحته.|في **المخطط والأقسام**، حمّل المخطط والأقسام مع موقعها وحركة المرور ومساحتها.|في **المنتجات والفئات**، أضف المنتجات وضعها في قسم.|في **المخزون والمبيعات**، أدخل المبيعات والمخزون أو استوردها.|في **المؤشرات والتوصيات**، راجع أداء كل قسم.|في **سيناريوهات المحاكاة**، جرّب التغييرات التي يقترحها النظام وقارن بينها.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>في كل شاشة، يشرح زر **مساعدة** (أو المفتاح F1) ما يمكنك فعله فيها.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>ما فائدة السيناريو؟</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>السيناريو هو تجربة لتغيير في توزيع المتجر، مثل نقل قسم إلى الواجهة أو منحه مساحة أكبر. ينطلق النظام من البيانات الفعلية للشهر الأخير ويقدّر كيف ستتغير المبيعات وحركة المرور والمؤشر العام، دون تعديل أي شيء في المتجر الفعلي.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>في **المؤشرات والتوصيات**، حدّد القسم الذي يستحق التحسين.|أنشئ سيناريو بالتغيير الذي تريد تجربته.|قارنه بالوضع الحالي في **مقارنة السيناريوهات**.|إذا كان مجديًا، وافق عليه وطبّق التغيير في المتجر.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>إنشاء سيناريو</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>يجرّب السيناريو تغييرًا في المتجر **قبل** تنفيذه فعليًا. ويقدّر النظام كيف ستتغير المبيعات والمؤشر.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>اختر **المتجر** في أعلى الشاشة.|انقر على **+ سيناريو جديد**.|اكتب **اسمًا** غير مكرر في المتجر، وإن أردت وصفًا والهدف.|في **التغييرات المقترحة على الأقسام**، اختر إجراءً لقسم واحد على الأقل.|انقر على **إنشاء سيناريو**. يُحفظ بحالة **مسودة**.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>من توصية في **المؤشرات** أو في **تحليل المنتجات**، يفتح زر "إنشاء سيناريو" هذا النموذج مع اختيار القسم والإجراء مسبقًا.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>قراءة الوضع الحالي والتغيرات</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>في الأعلى يظهر **الوضع الحالي (دون تغييرات)**: المبيعات وحركة المرور والمؤشر العام الفعلية للمتجر. ويعرض كل سيناريو قيمه المقدّرة ومقدار تغيرها مقارنة بهذا الوضع.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>السهم الأخضر للأعلى يعني تحسّن القيمة، والسهم الأحمر للأسفل يعني تراجعها.|تُقارن المبيعات بالنسبة المئوية والمؤشر العام بالنقاط (من 0 إلى 100).|يجمع المؤشر بين حركة المرور ودوران المخزون والمبيعات لكل م²: كلما ارتفع كان أداء المتجر أفضل.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>تغيير حالة السيناريو</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>تنظّم الحالة العمل على السيناريوهات: **مسودة** (أُنشئ للتو)، أو **قيد المراجعة**، أو **معتمد**، أو **مستبعد**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>في بطاقة السيناريو، انقر على **عرض التفاصيل**.|اختر الحالة الجديدة من قائمة **الحالة**.|انقر على **تغيير الحالة**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>استخدم **معتمد** للسيناريو الذي سيُطبَّق في المتجر، ليكون واضحًا للفريق كله.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>افتراضات المحاكاة</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>يغيّر كل إجراء القيم الفعلية للقسم بنسب ثابتة، تظهر في جدول **افتراضات المحاكاة** أسفل الشاشة. فمثلًا، نقل قسم إلى الواجهة يضيف 15 نقطة إلى حركة المرور و10% إلى المبيعات.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>افتح **افتراضات المحاكاة** أسفل الشاشة.|ابحث عن الإجراء الذي يهمك وانظر مقدار تغيّر حركة المرور والمبيعات والمساحة.|تذكّر أنها تقديرات: لا تتنبأ بالنتيجة الدقيقة ولا بالأثر على الأقسام الأخرى.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>حذف سيناريو</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>حذف السيناريو يزيله مع تغييراته ومقارناته المحفوظة. أما التقارير التي أُنشئت فتبقى محفوظة.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>في بطاقة السيناريو، انقر على **حذف**.|أكّد في الرسالة التي تظهر.</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>لماذا لا يمكنني حفظ السيناريو؟</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>تشير الرسالة الحمراء داخل النموذج إلى ما يجب تصحيحه. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**الاسم مفقود**: إنه إلزامي.|**يوجد سيناريو بالاسم نفسه** في المتجر: اختر اسمًا آخر.|**لم تختر أي تغيير**: السيناريو دون تغييرات يطابق الوضع الحالي.|**لا يوجد مخطط ساري للمتجر**: يُنشأ السيناريو مع ذلك، لكن دون مخطط أساسي.</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>كيف تُنظَّم القائمة</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>تجمع القائمة الوحدات في ثلاث مجموعات. لا ترى إلا الوحدات التي يسمح بها ملفك الشخصي.</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**المتاجر والشركة**: إدخال بيانات المتجر (المتاجر والمخطط والأقسام والمنتجات والمخزون والمبيعات).|**المحاكاة والتحليل**: تحليل الأداء وتجربة التغييرات قبل تنفيذها.|**الإدارة والأمان**: المستخدمون والصلاحيات وصيانة النظام، للمسؤولين.</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>تغيير اللغة</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>المنصة متاحة بعدة لغات. عند تغيير اللغة تُترجم جميع الشاشات والرسائل وهذه المساعدة.</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>في أعلى الشاشة، افتح قائمة **اللغة**.|اختر اللغة: تتحدّث الشاشة تلقائيًا.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>تغيير كلمة المرور</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>يجب أن تتكون كلمة المرور الجديدة من **8 أحرف على الأقل**، وتتضمن حرفًا كبيرًا ورقمًا ورمزًا خاصًا.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>انقر على **تغيير كلمة المرور** في أعلى الشاشة.|اكتب كلمة المرور الحالية.|اكتب كلمة المرور الجديدة وكرّرها للتأكيد.|انقر على **حفظ**.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>لا أرى وحدة أحتاجها</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>تعتمد الوحدات الظاهرة على صلاحيات ملفك الشخصي. إذا كانت إحداها مفقودة فليس ذلك خطأ: ملفك لا يتضمنها.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>اطلب من مسؤول شركتك مراجعة ملفك في **الصلاحيات**.|بعد تعديله، سجّل الخروج ثم ادخل مجددًا لرؤية الوحدة.</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>تسجيل متجر</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>كل متجر هو نقطة بيع تابعة لشركة. وهو نقطة البداية: يُدخل المخطط والأقسام والمنتجات والمبيعات دائمًا لمتجر محدد.</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>انقر على **متجر جديد**.|املأ **الاسم** و**الشركة** و**العنوان**، وهي حقول إلزامية.|أدخل **المساحة التقريبية (م²)**: بدونها لا تُحسب المبيعات لكل م².|انقر على **إنشاء متجر**.</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>لا يمكن تكرار الاسم داخل الشركة نفسها. استخدم ما يميّز المتجر، مثل المدينة أو الشارع.</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>ما البيانات الناقصة في المتجر</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>تعرض كل بطاقة قائمة **بيانات التحليل**. وهي تبيّن ما تم إدخاله وما ينقص كي تعمل المؤشرات والتوصيات والسيناريوهات بشكل صحيح.</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>لا يوجد مخطط ساري أو الأقسام غير مكتملة: أدخلها في **المخطط والأقسام**.|منتجات قليلة موزّعة: خصّص لها قسمًا في **المنتجات والفئات**.|لا مخزون أو لا مبيعات هذا الشهر: أدخلها في **المخزون والمبيعات**.|إذا كان مجموع مساحات الأقسام أكبر من مساحة المتجر، صحّح مساحة المتجر أو الأقسام.</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>تعديل متجر أو تفعيله أو إيقافه</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>تتيح الأزرار أسفل كل بطاقة تصحيح بيانات المتجر أو تغيير حالته. يحتفظ المتجر غير النشط بجميع بياناته.</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>يفتح القلم (**تعديل**) النموذج لتعديل البيانات وحفظها.|تغيّر الأسهم (**تفعيل/إلغاء التفعيل**) الحالة، ويطلب النظام التأكيد.|ينقلك **عرض المخطط** مباشرة إلى مخطط هذا المتجر وأقسامه.</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>البحث عن المتاجر وتصفيتها</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>إذا كانت المتاجر كثيرة، يمكنك تصفية القائمة حسب الاسم والشركة والحالة.</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>اكتب جزءًا من الاسم في مربع البحث.|اختر شركة وحالة إن أردت.|انقر على **بحث**.</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>لماذا لا يمكنني حفظ المتجر؟</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>تشير الرسالة الحمراء داخل النموذج إلى ما يجب تصحيحه. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**اسم مكرر**: لدى الشركة متجر بالاسم نفسه.|**شركة غير نشطة**: لا يمكن تسجيل متاجرها أو تعديلها.|**مساحة تساوي 0**: يجب أن تكون أكبر من 0 (أو اتركها فارغة).|**هاتف غير صالح**: أرقام فقط مع + في البداية، من 6 إلى 15 رقمًا.</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>تحميل مخطط المتجر</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>المخطط هو خريطة المتجر: صورة أو ملف PDF يوضح التوزيع. يُحفظ مع تاريخه، فيمكن معرفة كيف تغيّر المتجر مع الوقت.</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>اختر المتجر في أعلى الشاشة.|في تبويب **مخطط المتجر**، انقر على **تحميل المخطط**.|املأ الاسم والتاريخ والحالة والوصف.|أرفق الملف: PNG أو JPG أو PDF حتى 5 ميغابايت.|انقر على **تأكيد التحميل**.</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>اختر الحالة **نشط** فقط للمخطط المعمول به حاليًا في المتجر: فهو يحلّ محل السابق بوصفه المخطط الساري.</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>المخطط الساري</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>لكل متجر **مخطط ساري واحد فقط**. تستخدمه السيناريوهات أساسًا، ويظهر في الخرائط.</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>في قائمة المخططات، يظهر الساري بعلامة **المخطط الحالي**.|يعرض **عرض التفاصيل** صورة المخطط أو ملف PDF.|يجعل **تعيين كحالي** مخططًا آخر ساريًا.|تحذف سلة المهملات المخطط، ويطلب النظام التأكيد.</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>إنشاء الأقسام وتعديلها</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>الأقسام هي مناطق المتجر (الخضار والفواكه، المشروبات، المنظفات...). تعمل المؤشرات والتوصيات والسيناريوهات حسب القسم.</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>افتح تبويب **إدارة الأقسام**.|انقر على **قسم جديد**.|املأ الاسم والنوع و**الموقع** (إحدى مناطق المخطط التسع).|أدخل **حركة المرور المقدّرة (%)** و**المساحة (م²)**.|احفظ. للتصحيح لاحقًا، استخدم **تعديل** في الجدول.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>حركة المرور والمساحة والموقع</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>تغذّي هذه البيانات الثلاث لكل قسم المؤشرات والمحاكاة. وإذا كانت ناقصة تكون النتائج غير مكتملة.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**حركة المرور**: النسبة المقدّرة للعملاء الذين يمرّون بالقسم، بالملاحظة أو العدّ في المتجر.|**المساحة**: م² القسم؛ تُستخدم لحساب المبيعات لكل م². يجب ألا يتجاوز المجموع مساحة المتجر.|**الموقع**: منطقة في المخطط. تعرضها **الخريطة** أدناه؛ والواجهة (المدخل) في الأسفل.</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>لماذا لا يُحمَّل المخطط؟</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>عند التأكيد يتحقق النظام من الملف والحقول الإلزامية. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**تنسيق غير صالح**: تُقبل ملفات PNG أو JPG أو PDF فقط.|**الملف كبير جدًا**: الحد الأقصى 5 ميغابايت. صغّر الصورة أو صدّر ملف PDF بجودة أقل.|**بيانات ناقصة**: الاسم والتاريخ والوصف والملف إلزامية.</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>القائمة الرئيسية</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>إنشاء الفئات</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>ينتمي كل منتج إلى فئة، لذا يُفضَّل إنشاء الفئات أولًا. الفئات تابعة للشركة وتُشارَك بين جميع متاجرها.</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>افتح تبويب **الفئات**.|انقر على **فئة جديدة**.|اكتب الاسم ووصفًا إن أردت.|انقر على **حفظ**.</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>إضافة منتج</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>المنتج تابع للشركة، لكن **قسمه** خاص بكل متجر: قد يكون المنتج نفسه في المشروبات في متجر وفي البقالة في متجر آخر.</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>اختر المتجر في أعلى الشاشة وانقر على **منتج جديد**.|املأ الاسم والفئة (إلزاميان) والسعر و**تكلفة الوحدة**.|اختر قسم المنتج في هذا المتجر.|احفظ. يخصّص النظام **الرمز الداخلي** (مثل PROD-001).</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>أدخل دائمًا **تكلفة الوحدة**: بدونها لا يُحسب الهامش في المؤشرات ولا في التقارير.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>منتجات غير موزّعة</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>يظهر المنتج الذي ليس له قسم في المتجر بعبارة **لم يُعيَّن قسم**. تُحتسب مبيعاته للمتجر لكنها لا تُضاف إلى أي قسم في المؤشرات.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>في عمود **القسم في هذا المتجر**، ابحث عن المنتجات التي ليس لها قسم.|عدّلها بالقلم واختر القسم.|احفظ. من تلك اللحظة تُضاف مبيعاتها إلى هذا القسم.</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>تعديل المنتجات أو إيقافها</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>المنتج الذي لم يعد يُباع لا يُحذف بل يُوقف. يُحتفظ بسجل مبيعاته، لكن لا يمكن استيراده أو إدخاله بعد ذلك.</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>بالقلم تعدّل المنتج، مثلًا لتغيير السعر أو القسم.|بالأسهم تفعّله أو توقفه، ويطلب النظام التأكيد.|ينطبق الأمر نفسه على الفئات في تبويبها.</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>استيراد المبيعات أو المخزون من ملف</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>إنها الطريقة السريعة لإدخال بيانات كثيرة: الملف الذي يصدّره نظام نقاط البيع في المتجر، بصيغة **CSV** أو **Excel (.xlsx)**، حتى 2 ميغابايت.</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>اختر المتجر وانقر على **استيراد ملف**.|حدّد ما إذا كان الملف يحتوي على **بيع** أو **المخزون**.|إذا لم يكن لديك التنسيق، نزّل قالب Excel أو CSV واملأه.|اختر الملف وانقر على **استيراد**.</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>يُتحقَّق من الملف بالكامل: إذا كان في صف واحد خطأ فلن يُستورد أي صف، ويبيّن النظام رقم الصف والسبب لتصحيحه.</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>إدخال بيع أو مخزون يدويًا</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>يفيد في البيانات المفردة أو التصحيحات. أما للبيانات الكثيرة فالأفضل استيراد ملف.</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>انقر على **إدخال يدوي**.|في **نوع البيانات**، اختر **بيع** أو **المخزون**.|اختر المنتج واكتب الكمية والتاريخ.|في البيع يكون المبلغ اختياريًا (فارغ = السعر × الكمية). وفي المخزون يمكنك إدخال الحد الأدنى والأقصى.|انقر على **حفظ**.</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>عرض المبيعات والمخزون</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>تحتوي الشاشة على ثلاثة تبويبات: **بيانات المبيعات** و**بيانات المخزون** و**عمليات الاستيراد**. تختار عوامل التصفية في الأعلى المتجر والفترة وطريقة التجميع.</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>اختر الفترة وطريقة التجميع (**حسب القسم** أو **حسب الفئة** أو **حسب المنتج**) وانقر على **تطبيق**.|في **بيانات المبيعات** ترى الإجماليات والرسم البياني حسب القسم وآخر المبيعات المُدخلة.|في **بيانات المخزون** ترى حالة كل منتج: **حرج** (نفد المخزون)، **منخفض** (عند الحد الأدنى أو أقل)، **فائض مخزون** (فوق الحد الأقصى).</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>تصحيح إدخال خاطئ</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>يُحذف البيع المفرد من قائمة آخر المبيعات. وإذا استُورد ملف عن طريق الخطأ (مرتين مثلًا)، يمكن التراجع عن الاستيراد بالكامل.</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>بيع مفرد: في **آخر المبيعات المسجلة**، انقر على **حذف**.|ملف كامل: في تبويب **عمليات الاستيراد**، انقر على **تراجع** وأكّد.|لا يمكن التراجع عن استيراد المخزون: لتصحيحه، استورد الملف الصحيح فيحلّ محل المخزون.</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>لماذا لم يُستورد الملف؟</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>إذا وُجدت أخطاء، يعرض النموذج باللون الأحمر قائمة الصفوف مع السبب. صحّح الملف واستورده مرة أخرى. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**عمود مفقود**: يجب أن يحتوي العنوان على أسماء القالب (codigo وfecha وcantidad...).|**رمز غير صالح أو غير موجود**: استخدم الرمز الداخلي للمنتج، مثل PROD-001.|**تاريخ أو رقم غير صالح**: تواريخ مثل 2026-10-15 أو 15/10/2026 وأرقام دون فاصل الآلاف.|**تنسيق غير مدعوم**: لا يُقبل تنسيق Excel القديم .xls؛ احفظه بصيغة .xlsx أو .csv.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>قراءة المؤشرات حسب القسم</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>يعرض الجدول أداء كل قسم في الفترة المختارة. أنفع قيمة لمقارنة الأقسام هي **المؤشر العام**، من 0 إلى 100.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>اختر المتجر والفترة وانقر على **تطبيق**.|انظر إلى المؤشر: أخضر من 70، وأصفر من 50، وأحمر دون ذلك.|يجمع 40% حركة المرور و30% دوران المخزون و30% المبيعات لكل م²، مقارنة بأفضل قسم في المتجر.|لمعرفة طريقة حساب كل عمود، افتح **كيف يُحسب كل مؤشر؟** أسفل الجدول.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>التوصيات التلقائية</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>يراجع النظام المؤشرات ويقترح إجراءات: توسيع مساحة قسم أو تقليصها، أو نقله إلى الواجهة، أو مراجعة الأسعار، أو إعادة التخزين، أو إدخال بيانات ناقصة. ولكل منها أولوية عالية أو متوسطة أو منخفضة.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>اقرأ السبب أسفل كل توصية: فهو يوضح القيمة التي أدّت إليها.|إذا ظهر **إنشاء سيناريو**، يفتح هذا الزر السيناريوهات مع التغيير مُدخلًا مسبقًا.|حاكِه وقارنه قبل تطبيقه في المتجر.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>خريطة المتجر وتطوره</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>تلوّن الخريطة كل منطقة في المخطط حسب المؤشر الذي تختاره، لترى بنظرة سريعة أين يكون أداء المتجر أفضل. ويعرض رسم التطور مبيعات آخر 6 أشهر.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>في **خريطة المتجر**، اختر **المؤشر**: المبيعات، أو المبيعات لكل م²، أو الهامش، أو حركة المرور، أو الدوران، أو المؤشر العام.|المناطق الأغمق قيمها أعلى. والواجهة (المدخل) في الأسفل.|في رسم التطور، الشهر الحالي ما زال جاريًا: لا تقارنه بعدُ بالأشهر الكاملة.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>لماذا توجد قيم ناقصة؟</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>تحتاج بعض المؤشرات إلى بيانات تُدخل في شاشات أخرى. إذا نقص شيء يبقى العمود فارغًا أو يظهر تنبيه.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**الهامش**: تكلفة وحدة المنتجات مفقودة (**المنتجات والفئات**).|**المبيعات لكل م²**: مساحة المتجر أو الأقسام مفقودة (**المتاجر** أو **المخطط والأقسام**).|**الدوران والتغطية**: المخزون مفقود (**المخزون والمبيعات**).|**لا مؤشرات ولا توصيات**: لا توجد مبيعات في الفترة المختارة.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>مقارنة سيناريوهين</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>يضع سيناريوهين للمتجر نفسه وجهًا لوجه لمعرفة أيهما أجدى. والأكثر شيوعًا مقارنة **الوضع الحالي (دون تغييرات)** بسيناريو مقترح.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>اختر المتجر و**فترة التحليل**.|في **السيناريو الحالي**، اختر الوضع الحالي أو السيناريو المرجعي.|في **السيناريو المقترح**، اختر السيناريو المراد تقييمه.|انقر على **مقارنة السيناريوهات**.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>تفسير النتيجة</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>يبيّن **الخلاصة** أي السيناريوهين أجدى وبأي مقدار. وتحته مؤشرات كل منهما والخرائط وجدول الفروق.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>قارن **المبيعات المقدّرة** و**متوسط المؤشر العام** للسيناريوهين.|تستخدم الخريطتان مقياس الألوان نفسه: فيظهر في أي المناطق يتحسّن المقترح أو يتراجع.|في **الاختلافات الرئيسية**، انظر إلى الأقسام التي تفسّر التغيير.|تذكّر أنها تقديرات: راجع **افتراضات المحاكاة** في الأسفل.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>حفظ المقارنة في تقرير</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>لعرض النتيجة أو الاحتفاظ بها، يمكن تصدير المقارنة في تقرير PDF.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>بعد المقارنة، انقر على **إنشاء تقرير لهذه المقارنة** أسفل الشاشة.|تُفتح **التقارير** مع اختيار السيناريوهين مسبقًا.|راجع الفترة والأقسام وأنشئ التقرير.</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>لماذا لا تتم المقارنة؟</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>تشير الرسالة أعلى الشاشة إلى السبب. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**السيناريو نفسه في الجهتين**: اختر سيناريوهين مختلفين.|**لا توجد سيناريوهات للمتجر**: أنشئها أولًا في **سيناريوهات المحاكاة**.|**بيانات ناقصة**: يحتاج المتجر إلى مبيعات في الفترة وأقسام مُدخلة.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>تحليل منتجات المتجر</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>يراجع التحليل كل منتج على حدة: مبيعاته ومخزونه وحركة المرور في قسمه، ويكتشف الفرص: منتجات قد تُباع أكثر في مكان آخر، أو لا تتحرك، أو على وشك النفاد.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>اختر المتجر والفترة (من وإلى).|انقر على **تحليل المنتجات**.|في الأعلى ترى عدد المنتجات المحللة وعدد الفرص ذات الأولوية العالية والمتوسطة والمنخفضة.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>أنواع الفرص</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>لكل منتج عليه ملاحظة نوع وأولوية. ويشرح السبب في كل بطاقة الأرقام التي أدّت إليه.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**نجم مخفي**: يُباع كثيرًا لكنه في قسم قليل الحركة.|**يشغل مكاناً مميزاً**: يُباع قليلًا في قسم كثير الحركة.|**بدون حركة**: له مخزون ولا مبيعات.|**خطر نفاد المخزون**: المخزون يكفي أقل من 7 أيام.|**تغطية مفرطة**: المخزون يكفي أكثر من 180 يومًا.|**يُباع دون موقع**: يُباع لكن ليس له قسم في المتجر.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>ماذا تفعل بكل فرصة</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>ابدأ بالفرص ذات الأولوية العالية. تساعدك عوامل التصفية على رؤية نوع معيّن أو منتج محدد.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>صفِّ حسب النوع أو الأولوية، أو ابحث عن منتج بالاسم.|إذا أظهرت البطاقة **إنشاء سيناريو**، فحاكِ التغيير قبل تنفيذه.|للمنتج غير الموزّع، خصّص له قسمًا في **المنتجات والفئات**.|لخطر النفاد أو فائض المخزون، راجع المشتريات في **المخزون والمبيعات**.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>في الأسفل قائمة **منتجات تم تحليلها دون توصية**: وهي المنتجات التي تعمل جيدًا في مكانها الحالي.</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>إنشاء تقرير</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>تلخّص التقارير في ملف PDF معلومات المتجر لفترة محددة: المؤشرات والتوصيات والمخزون والمبيعات أو مقارنة السيناريوهات.</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>اختر المتجر و**نوع التقرير**.|حدّد الفترة في **من (شهر)** و**إلى (شهر)** (بتنسيق yyyy-mm).|اختر **لغة التقرير**.|راجع **الأقسام المضمَّنة** وانقر على **إنشاء التقرير**.</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>يمكن أن تختلف لغة التقرير عن لغتك: مفيد مثلًا لإرسال ملف PDF إلى المقر الرئيسي في بلد آخر.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>أنواع التقارير والأقسام</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>عند اختيار النوع تُحدَّد تلقائيًا الأقسام التي يتضمنها عادةً. وبعدها يمكنك إضافة ما تريد أو إزالته.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**كامل**: كل ما يخص المتجر في الفترة.|**المؤشرات**: المؤشرات حسب القسم والتطور والتوصيات.|**المخزون**: حالة المخزون وتفاصيل المنتجات.|**مقارنة**: يتطلب **السيناريو الأساسي** و**السيناريو المقترح**.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>عرض التقارير أو تنزيلها أو حذفها</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>تُحفظ التقارير المُنشأة في **التقارير الأخيرة** على الجانب، لفتحها مجددًا دون إنشائها من جديد.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>يفتح **عرض** ملف PDF في المتصفح.|ينزّله **تنزيل** إلى حاسوبك.|يحذف **حذف** التقرير وملفه، ويطلب النظام التأكيد.</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>لماذا لا يُنشأ التقرير؟</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>تشير الرسالة في الأعلى إلى السبب. أكثر الأسباب شيوعًا هي:</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**فترة غير صالحة**: لا يمكن أن يكون شهر البداية بعد شهر النهاية ولا أن يتضمن أشهرًا مستقبلية، وهناك حد أقصى لعدد الأشهر.|**لا أقسام**: حدّد قسمًا واحدًا على الأقل.|**مقارنة دون سيناريوهات**: اختر السيناريو الأساسي والمقترح.|**لا بيانات**: لا مبيعات أو مخزون للمتجر في هذه الفترة.</value>
+  </data>
 </root>

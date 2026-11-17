@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaPrincipal.aspx.cs" Inherits="PaginaPrincipal" %>
 
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,6 +42,7 @@
                             <asp:DropDownList ID="ddlIdioma" runat="server" CssClass="principal-idioma-lista"
                                 AutoPostBack="true" OnSelectedIndexChanged="ddlIdioma_SelectedIndexChanged" CausesValidation="false" />
                         </div>
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="principal" />
                         <button type="button" id="btnAbrirCambiarContrasenia" runat="server" class="principal-accion" onclick="abrirModal('pnlCambiarContrasenia')">
                             <span aria-hidden="true">&#128273;</span>
                             <span runat="server" clave="principal.btnCambiarContrasenia">Cambiar contraseña</span>
@@ -136,7 +139,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlCambiarContrasenia" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlCambiarContrasenia" runat="server" data-ayuda-tema="principal.contrasenia" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="tituloCambiarContrasenia">
                 <div class="modal-encabezado">
                     <h3 id="tituloCambiarContrasenia" runat="server" clientidmode="Static" clave="principal.btnCambiarContrasenia">Cambiar contraseña</h3>

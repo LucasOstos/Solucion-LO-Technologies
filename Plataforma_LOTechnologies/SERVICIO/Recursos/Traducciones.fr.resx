@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>Le nom et le nom dans sa langue peuvent contenir jusqu'à {0} caractères.</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>Aide de cet écran (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>Fermer l'aide</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>Retour aux sujets</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>Rechercher dans l'aide</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>Sur cet écran</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>Écrans associés</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>Voir aussi</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>Me le montrer à l'écran</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>Conseil :</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>Voir le guide de démarrage</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>Aucun sujet trouvé pour « {0} ».</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>Ouvrez ou fermez l'aide avec {0}.</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>Élément mis en évidence à l'écran.</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>Cet élément n'est pas visible à l'écran pour le moment.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>Premiers pas</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>Première fois sur la plateforme ? Voici le parcours complet, de la saisie du magasin à l'essai d'un scénario.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>Pour analyser un magasin, la plateforme a d'abord besoin de ses données. La première fois, suivez cet ordre :</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>Dans **Magasins**, enregistrez le magasin avec sa surface.|Dans **Plan et rayons**, chargez le plan et les rayons avec leur emplacement, leur fréquentation et leur surface.|Dans **Produits et catégories**, saisissez les produits et placez-les dans un rayon.|Dans **Stock et ventes**, saisissez ou importez les ventes et le stock.|Dans **Indicateurs et recommandations**, vérifiez la performance de chaque rayon.|Dans **Scénarios de simulation**, testez les changements proposés par le système et comparez-les.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>Sur chaque écran, le bouton **Aide** (ou la touche F1) explique ce que vous pouvez y faire.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>À quoi sert un scénario ?</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>Un scénario teste un changement dans l'agencement du magasin, par exemple déplacer un rayon vers l'avant ou lui donner plus de surface. Le système part des données réelles du dernier mois et estime l'évolution des ventes, de la fréquentation et de l'indice global, sans rien modifier dans le magasin réel.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>Dans **Indicateurs et recommandations**, repérez le rayon à améliorer.|Créez un scénario avec le changement à tester.|Comparez-le avec la situation actuelle dans **Comparaison de scénarios**.|S'il est intéressant, approuvez-le et appliquez le changement dans le magasin.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>Créer un scénario</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>Un scénario teste un changement dans le magasin **avant** de le faire réellement. Le système estime l'évolution des ventes et de l'indice.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>Choisissez le **magasin** en haut de l'écran.|Cliquez sur **+ Nouveau scénario**.|Saisissez un **nom** qui n'existe pas déjà dans le magasin et, si vous le souhaitez, une description et l'objectif.|Dans **Modifications proposées des rayons**, choisissez une action pour au moins un rayon.|Cliquez sur **Créer le scénario**. Il est enregistré avec le statut **Brouillon**.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>Depuis une recommandation des **Indicateurs** ou de l'**Analyse des produits**, le bouton « Créer un scénario » ouvre ce formulaire avec le rayon et l'action déjà choisis.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>Lire la situation actuelle et les variations</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>En haut se trouve la **situation actuelle (sans changements)** : les ventes, la fréquentation et l'indice global réels du magasin. Chaque scénario affiche ses valeurs estimées et leur écart avec cette situation.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>Une flèche verte vers le haut indique une amélioration ; une flèche rouge vers le bas, une dégradation.|Les ventes sont comparées en pourcentage et l'indice global en points (de 0 à 100).|L'indice combine fréquentation, rotation et ventes au m² : plus il est élevé, plus le magasin est performant.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>Changer le statut d'un scénario</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>Le statut organise le travail sur les scénarios : **Brouillon** (tout juste créé), **En révision**, **Approuvé** ou **Écarté**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>Sur la carte du scénario, cliquez sur **Voir le détail**.|Choisissez le nouveau statut dans la liste **Statut**.|Cliquez sur **Changer le statut**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>Utilisez **Approuvé** pour le scénario qui sera appliqué dans le magasin, afin que toute l'équipe le sache.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>Hypothèses de la simulation</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>Chaque action modifie les valeurs réelles du rayon selon des pourcentages fixes, visibles dans le tableau **Hypothèses de la simulation** en bas de l'écran. Par exemple, déplacer un rayon vers l'avant ajoute 15 points de fréquentation et 10 % de ventes.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>Ouvrez **Hypothèses de la simulation** en bas de l'écran.|Repérez l'action qui vous intéresse et regardez l'évolution de la fréquentation, des ventes et de la surface.|Ce sont des estimations : elles ne prédisent ni le résultat exact ni l'effet sur les autres rayons.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>Supprimer un scénario</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>Supprimer un scénario l'efface avec ses changements et ses comparaisons enregistrées. Les rapports déjà générés sont conservés.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>Sur la carte du scénario, cliquez sur **Supprimer**.|Confirmez dans le message qui s'affiche.</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>Pourquoi je ne peux pas enregistrer le scénario ?</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>Le message en rouge dans le formulaire indique ce qu'il faut corriger. Les causes les plus fréquentes sont :</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**Le nom est manquant** : il est obligatoire.|**Un scénario portant ce nom existe déjà** dans le magasin : choisissez-en un autre.|**Vous n'avez choisi aucun changement** : un scénario sans changement serait identique à la situation actuelle.|**Le magasin n'a pas de plan en vigueur** : le scénario est quand même créé, mais sans plan de base.</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>Organisation du menu</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>Le menu regroupe les modules en trois blocs. Vous ne voyez que les modules autorisés par votre profil.</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**Magasins et entreprise** : saisir les données du magasin (magasins, plan, rayons, produits, stock et ventes).|**Simulation et analyse** : analyser les performances et tester des changements avant de les faire.|**Administration et sécurité** : utilisateurs, autorisations et maintenance du système, pour les administrateurs.</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>Changer de langue</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>La plateforme est disponible en plusieurs langues. En la changeant, tous les écrans, les messages et cette aide sont traduits.</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>En haut à droite, ouvrez la liste **Langue**.|Choisissez la langue : l'écran se met à jour tout seul.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>Changer votre mot de passe</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>Le nouveau mot de passe doit comporter **au moins 8 caractères**, dont une majuscule, un chiffre et un caractère spécial.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>Cliquez sur **Changer le mot de passe**, en haut à droite.|Saisissez votre mot de passe actuel.|Saisissez le nouveau et répétez-le pour le confirmer.|Cliquez sur **Enregistrer**.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>Je ne vois pas un module dont j'ai besoin</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>Les modules affichés dépendent des autorisations de votre profil. S'il en manque un, ce n'est pas une erreur : votre profil ne l'inclut pas.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>Demandez à l'administrateur de votre entreprise de vérifier votre profil dans **Autorisations**.|Une fois modifié, déconnectez-vous puis reconnectez-vous pour voir le module.</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>Enregistrer un magasin</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>Chaque magasin est un point de vente d'une entreprise. C'est le point de départ : le plan, les rayons, les produits et les ventes sont toujours saisis pour un magasin.</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>Cliquez sur **Nouveau magasin**.|Renseignez le **nom**, l'**entreprise** et l'**adresse**, qui sont obligatoires.|Saisissez la **Surface approx. (m²)** : sans elle, les ventes au m² ne sont pas calculées.|Cliquez sur **Créer le magasin**.</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>Le nom ne peut pas être répété dans la même entreprise. Utilisez un élément qui identifie le magasin, comme la ville ou la rue.</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>Quelles données manquent au magasin</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>Chaque carte affiche la liste **Données pour l'analyse**. Elle indique ce qui est saisi et ce qui manque pour que les indicateurs, les recommandations et les scénarios fonctionnent correctement.</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>Pas de plan en vigueur ou rayons incomplets : saisissez-les dans **Plan et rayons**.|Peu de produits placés : attribuez-leur un rayon dans **Produits et catégories**.|Pas de stock ou pas de ventes ce mois-ci : saisissez-les dans **Stock et ventes**.|Si les rayons totalisent plus de m² que le magasin, corrigez la surface du magasin ou celle des rayons.</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>Modifier, activer ou désactiver un magasin</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>Les boutons en bas de chaque carte permettent de corriger les données du magasin ou de changer son statut. Un magasin inactif conserve toutes ses données.</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>Le crayon (**Modifier**) ouvre le formulaire pour modifier les données et enregistrer.|Les flèches (**Activer/Désactiver**) changent le statut ; le système demande confirmation.|**Voir le plan** mène directement au plan et aux rayons de ce magasin.</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>Rechercher et filtrer les magasins</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>S'il y a beaucoup de magasins, vous pouvez filtrer la liste par nom, entreprise et statut.</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>Saisissez une partie du nom dans la recherche.|Si vous le souhaitez, choisissez une entreprise et un statut.|Cliquez sur **Rechercher**.</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>Pourquoi je ne peux pas enregistrer le magasin ?</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>Le message en rouge dans le formulaire indique ce qu'il faut corriger. Les causes les plus fréquentes sont :</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**Nom en double** : l'entreprise a déjà un magasin portant ce nom.|**Entreprise inactive** : ses magasins ne peuvent être ni enregistrés ni modifiés.|**Surface à 0** : elle doit être supérieure à 0 (ou laissez-la vide).|**Téléphone invalide** : uniquement des chiffres et un + au début, de 6 à 15 chiffres.</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>Charger le plan du magasin</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>Le plan est une image ou un PDF de l'agencement du magasin. Il est enregistré avec sa date, ce qui permet de voir comment le magasin a évolué.</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>Choisissez le magasin en haut à droite.|Dans l'onglet **Plan du magasin**, cliquez sur **Charger un plan**.|Renseignez le nom, la date, le statut et la description.|Joignez le fichier : PNG, JPG ou PDF jusqu'à 5 Mo.|Cliquez sur **Confirmer le chargement**.</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>Choisissez le statut **Actif** uniquement pour le plan actuellement en vigueur : il remplace le précédent comme plan en vigueur.</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>Le plan en vigueur</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>Chaque magasin a **un seul plan en vigueur**. C'est celui que les scénarios utilisent comme base et qui apparaît sur les cartes.</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>Dans la liste des plans, celui en vigueur est marqué **Plan en vigueur**.|**Voir le détail** affiche l'image ou le PDF du plan.|**Définir comme actuel** rend un autre plan en vigueur.|La corbeille supprime un plan ; le système demande confirmation.</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>Créer et modifier des rayons</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>Les rayons sont les zones du magasin (fruits et légumes, boissons, entretien...). Les indicateurs, les recommandations et les scénarios fonctionnent par rayon.</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>Ouvrez l'onglet **Gestion des rayons**.|Cliquez sur **Nouveau rayon**.|Renseignez le nom, le type et l'**Emplacement** (l'une des 9 zones du plan).|Saisissez la **Fréquentation estimée (%)** et la **Surface (m²)**.|Enregistrez. Pour corriger plus tard, utilisez **Modifier** dans le tableau.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>Fréquentation, surface et emplacement</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>Ces trois données de chaque rayon alimentent les indicateurs et les simulations. Si elles manquent, les résultats sont incomplets.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**Fréquentation** : % estimé de clients qui passent par le rayon, par observation ou comptage en magasin.|**Surface** : m² du rayon ; sert aux ventes au m². Le total ne devrait pas dépasser celle du magasin.|**Emplacement** : zone du plan. La **carte** ci-dessous l'affiche ; l'avant (entrée) est en bas.</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>Pourquoi le plan ne se charge pas ?</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>À la confirmation, le système vérifie le fichier et les champs obligatoires. Les causes les plus fréquentes sont :</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**Format non valide** : seuls PNG, JPG ou PDF sont acceptés.|**Fichier trop volumineux** : le maximum est de 5 Mo. Réduisez l'image ou exportez le PDF en qualité inférieure.|**Donnée manquante** : nom, date, description et fichier sont obligatoires.</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>Menu principal</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>Créer des catégories</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>Chaque produit appartient à une catégorie : mieux vaut donc les créer d'abord. Les catégories appartiennent à l'entreprise et sont partagées par tous ses magasins.</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>Ouvrez l'onglet **Catégories**.|Cliquez sur **Nouvelle catégorie**.|Saisissez le nom et, si vous le souhaitez, une description.|Cliquez sur **Enregistrer**.</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>Ajouter un produit</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>Le produit appartient à l'entreprise, mais son **rayon** est propre à chaque magasin : un même produit peut être aux boissons dans un magasin et à l'épicerie dans un autre.</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>Choisissez le magasin en haut à droite et cliquez sur **Nouveau produit**.|Renseignez le nom et la catégorie (obligatoires), le prix et le **Coût unitaire**.|Choisissez le rayon du produit dans ce magasin.|Enregistrez. Le **Code interne** (par exemple PROD-001) est attribué par le système.</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>Saisissez toujours le **coût unitaire** : sans lui, la marge n'est calculée ni dans les indicateurs ni dans les rapports.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>Produits non placés</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>Un produit sans rayon dans le magasin apparaît comme **Aucun rayon attribué**. Ses ventes comptent pour le magasin, mais ne s'ajoutent à aucun rayon dans les indicateurs.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>Dans la colonne **Rayon dans ce magasin**, repérez les produits sans rayon.|Modifiez-les avec le crayon et choisissez le rayon.|Enregistrez. Dès lors, leurs ventes s'ajoutent à ce rayon.</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>Modifier ou désactiver des produits</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>Un produit qui n'est plus vendu n'est pas supprimé : il est désactivé. Son historique de ventes est conservé, mais il ne peut plus être importé ni saisi.</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>Le crayon modifie le produit, par exemple pour changer le prix ou le rayon.|Les flèches l'activent ou le désactivent ; le système demande confirmation.|Il en va de même pour les catégories, dans leur onglet.</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>Importer des ventes ou du stock depuis un fichier</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>C'est la façon rapide de saisir beaucoup de données : le fichier exporté par le système de caisse du magasin, en **CSV** ou **Excel (.xlsx)**, jusqu'à 2 Mo.</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>Choisissez le magasin et cliquez sur **Importer un fichier**.|Indiquez si le fichier contient des données de **Vente** ou de **Stock**.|Si vous n'avez pas le format, téléchargez le modèle Excel ou CSV et remplissez-le.|Choisissez le fichier et cliquez sur **Importer**.</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>Le fichier est validé en entier : si une ligne contient une erreur, aucune n'est importée, et le système indique la ligne et le motif pour que vous corrigiez.</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>Saisir une vente ou un stock à la main</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>Utile pour des données isolées ou des corrections. Pour beaucoup de données, mieux vaut importer un fichier.</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>Cliquez sur **Saisie manuelle**.|Dans **Type de donnée**, choisissez **Vente** ou **Stock**.|Choisissez le produit et saisissez la quantité et la date.|Pour une vente, le montant est facultatif (vide = prix × quantité). Pour le stock, vous pouvez saisir le minimum et le maximum.|Cliquez sur **Enregistrer**.</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>Consulter les ventes et le stock</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>L'écran comporte trois onglets : **Données de ventes**, **Données de stock** et **Importations**. Les filtres en haut choisissent le magasin, la période et le regroupement.</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>Choisissez la période et le regroupement (**Par rayon**, **Par catégorie** ou **Par produit**) puis cliquez sur **Appliquer**.|**Données de ventes** affiche les totaux, le graphique par rayon et les dernières ventes saisies.|**Données de stock** affiche le statut de chaque produit : **Critique** (rupture), **Faible** (au minimum ou en dessous) ou **Surstock** (au-dessus du maximum).</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>Corriger une saisie erronée</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>Une vente isolée se supprime depuis la liste des dernières ventes. Si un fichier a été importé par erreur (par exemple deux fois), l'importation entière peut être annulée.</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>Vente isolée : dans **Dernières ventes saisies**, cliquez sur **Supprimer**.|Fichier entier : dans l'onglet **Importations**, cliquez sur **Annuler** et confirmez.|Les importations de stock ne s'annulent pas : pour les corriger, importez le bon fichier, qui remplace le stock.</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>Pourquoi le fichier n'a-t-il pas été importé ?</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>En cas d'erreurs, le formulaire affiche en rouge la liste des lignes avec leur motif. Corrigez le fichier et réimportez-le. Les causes les plus fréquentes sont :</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**Colonne manquante** : l'en-tête doit reprendre les noms du modèle (codigo, fecha, cantidad...).|**Code invalide ou inexistant** : utilisez le code interne du produit, par exemple PROD-001.|**Date ou nombre invalide** : dates comme 2026-10-15 ou 15/10/2026 et nombres sans séparateur de milliers.|**Format non pris en charge** : l'ancien .xls d'Excel n'est pas accepté ; enregistrez-le en .xlsx ou .csv.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>Lire les indicateurs par rayon</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>Le tableau montre la performance de chaque rayon sur la période choisie. La donnée la plus utile pour comparer les rayons est l'**Indice global**, de 0 à 100.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>Choisissez le magasin et la période, puis cliquez sur **Appliquer**.|Regardez l'indice : vert à partir de 70, jaune à partir de 50 et rouge en dessous.|Il combine 40 % fréquentation, 30 % rotation et 30 % ventes au m², comparées au meilleur rayon du magasin.|Pour voir le calcul de chaque colonne, ouvrez **Comment chaque indicateur est-il calculé ?** sous le tableau.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>Recommandations automatiques</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>Le système analyse les indicateurs et propose des actions : agrandir ou réduire la surface d'un rayon, le rapprocher de l'entrée, revoir les prix, réapprovisionner ou saisir des données manquantes. Chacune a une priorité haute, moyenne ou basse.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>Lisez le motif sous chaque recommandation : il explique quelle donnée l'a déclenchée.|Si **Créer un scénario** s'affiche, ce bouton ouvre les Scénarios avec le changement déjà saisi.|Simulez-le et comparez-le avant de l'appliquer en magasin.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>Carte et évolution du magasin</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>La carte colore chaque zone du plan selon l'indicateur choisi, pour voir d'un coup d'œil où le magasin est le plus performant. Le graphique d'évolution montre les ventes des 6 derniers mois.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>Dans **Carte du magasin**, choisissez l'**Indicateur** : ventes, ventes au m², marge, fréquentation, rotation ou indice global.|Les zones les plus foncées ont les valeurs les plus élevées. L'avant (entrée) est en bas.|Dans le graphique d'évolution, le mois en cours n'est pas terminé : ne le comparez pas encore aux mois complets.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>Pourquoi des valeurs manquent-elles ?</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>Certains indicateurs nécessitent des données saisies dans d'autres écrans. S'il en manque, la colonne reste vide ou un avertissement s'affiche.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**Marge** : le coût unitaire des produits manque (**Produits et catégories**).|**Ventes au m²** : la surface du magasin ou des rayons manque (**Magasins** ou **Plan et rayons**).|**Rotation et couverture** : le stock manque (**Stock et ventes**).|**Aucun indicateur ni recommandation** : il n'y a pas de ventes sur la période choisie.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>Comparer deux scénarios</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>Met face à face deux scénarios du même magasin pour voir lequel est le plus intéressant. Le cas le plus courant est de comparer la **situation actuelle (sans changements)** à un scénario proposé.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>Choisissez le magasin et la **Période d'analyse**.|Dans **Scénario actuel**, choisissez la situation actuelle ou le scénario de référence.|Dans **Scénario proposé**, choisissez le scénario à évaluer.|Cliquez sur **Comparer les scénarios**.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>Interpréter le résultat</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>La **Conclusion** indique lequel des deux scénarios est le plus intéressant et de combien. En dessous figurent les indicateurs de chacun, les cartes et le tableau des écarts.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>Comparez les **ventes estimées** et l'**indice global moyen** des deux scénarios.|Les deux cartes utilisent la même échelle de couleurs : on voit ainsi dans quelles zones le scénario proposé s'améliore ou se dégrade.|Dans **Principales différences**, voyez quels rayons expliquent le changement.|Ce sont des estimations : consultez **Hypothèses de la simulation** en bas de page.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>Enregistrer la comparaison dans un rapport</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>Pour présenter le résultat ou le conserver, la comparaison peut être exportée en rapport PDF.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>Après la comparaison, cliquez sur **Générer un rapport de cette comparaison**, en bas de l'écran.|**Rapports** s'ouvre avec les deux scénarios déjà choisis.|Vérifiez la période et les sections, puis générez le rapport.</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>Pourquoi la comparaison ne se fait pas ?</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>Le message en haut de l'écran indique le motif. Les causes les plus fréquentes sont :</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**Même scénario des deux côtés** : choisissez deux scénarios différents.|**Le magasin n'a pas de scénarios** : créez-les d'abord dans **Scénarios de simulation**.|**Données manquantes** : le magasin doit avoir des ventes sur la période et des rayons saisis.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>Analyser les produits du magasin</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>L'analyse examine pour chaque produit ses ventes, son stock et la fréquentation de son rayon, et détecte des opportunités : produits qui se vendraient mieux ailleurs, qui ne tournent pas ou bientôt en rupture.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>Choisissez le magasin et la période (du et au).|Cliquez sur **Analyser les produits**.|En haut, vous voyez combien de produits ont été analysés et combien d'opportunités il y a en priorité haute, moyenne et basse.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>Types d'opportunité</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>Chaque produit signalé a un type et une priorité. Le motif sur chaque carte explique les chiffres à l'origine.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**Étoile cachée** : se vend beaucoup mais se trouve dans un rayon peu fréquenté.|**Occupe un emplacement privilégié** : se vend peu dans un rayon très fréquenté.|**Sans mouvement** : a du stock et aucune vente.|**Risque de rupture** : le stock dure moins de 7 jours.|**Couverture excessive** : le stock dure plus de 180 jours.|**Vendu mais non placé** : se vend mais n'a pas de rayon dans le magasin.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>Que faire de chaque opportunité</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>Commencez par celles de priorité haute. Les filtres permettent de voir un type ou un produit précis.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>Filtrez par type ou priorité, ou recherchez un produit par son nom.|Si la carte affiche **Créer un scénario**, simulez le changement avant de le faire.|Pour un produit non placé, attribuez-lui un rayon dans **Produits et catégories**.|En cas de risque de rupture ou de surstock, revoyez les achats dans **Stock et ventes**.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>En bas figure la liste **Produits analysés sans recommandation** : ce sont ceux qui fonctionnent bien à leur place.</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>Générer un rapport</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>Les rapports résument dans un PDF les informations du magasin sur une période : indicateurs, recommandations, stock, ventes ou comparaison de scénarios.</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>Choisissez le magasin et le **Type de rapport**.|Indiquez la période avec **Du (mois)** et **Au (mois)** (format aaaa-mm).|Choisissez la **Langue du rapport**.|Vérifiez les **Sections à inclure** et cliquez sur **Générer le rapport**.</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>La langue du rapport peut être différente de la vôtre : utile, par exemple, pour envoyer le PDF au siège dans un autre pays.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>Types de rapport et sections</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>En choisissant le type, les sections habituelles se cochent toutes seules. Vous pouvez ensuite en ajouter ou en retirer.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**Complet** : tout ce qui concerne le magasin sur la période.|**Indicateurs** : indicateurs par rayon, évolution et recommandations.|**Stock** : état du stock et détail des produits.|**Comparaison** : nécessite un **Scénario de base** et un **Scénario proposé**.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>Voir, télécharger ou supprimer des rapports</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>Les rapports générés sont conservés dans **Rapports récents**, à droite, pour les rouvrir sans les régénérer.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>**Voir** ouvre le PDF dans le navigateur.|**Télécharger** le télécharge sur votre ordinateur.|**Supprimer** supprime le rapport et son fichier ; le système demande confirmation.</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>Pourquoi le rapport n'est-il pas généré ?</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>Le message en haut indique le motif. Les causes les plus fréquentes sont :</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**Période invalide** : le mois de début ne peut pas être postérieur au mois de fin ni inclure des mois futurs, et il y a un nombre maximal de mois.|**Aucune section** : cochez-en au moins une.|**Comparaison sans scénarios** : choisissez le scénario de base et le scénario proposé.|**Aucune donnée** : le magasin n'a ni ventes ni stock sur cette période.</value>
+  </data>
 </root>

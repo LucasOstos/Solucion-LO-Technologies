@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaLayoutSectores.aspx.cs" Inherits="PaginaLayoutSectores" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -23,7 +23,10 @@
                     <div>
                         <h1 runat="server" Clave="principal.layout.titulo">Layout y Sectores</h1>
                     </div>
-                    <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" ClaveAria="comun.local" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
+                    <div class="acciones-encabezado">
+                        <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="layout" />
+                        <asp:DropDownList ID="ddlLocal" runat="server" CssClass="selector" ClaveAria="comun.local" AutoPostBack="true" OnSelectedIndexChanged="ddlLocal_SelectedIndexChanged" />
+                    </div>
                 </div>
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
                 <asp:HiddenField ID="hfPestania" runat="server" ClientIDMode="Static" />
@@ -113,7 +116,7 @@
             </div>
         </div>
 
-        <asp:Panel ID="pnlModalLayout" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalLayout" runat="server" data-ayuda-tema="layout.cargar" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3 runat="server" Clave="layout.modalTitulo">Cargar Layout del Local</h3>
@@ -164,7 +167,7 @@
             </div>
         </asp:Panel>
 
-        <asp:Panel ID="pnlModalSector" runat="server" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
+        <asp:Panel ID="pnlModalSector" runat="server" data-ayuda-tema="layout.sectores" ClientIDMode="Static" CssClass="modal-fondo" Style="display: none;">
             <div class="modal-caja">
                 <div class="modal-encabezado">
                     <h3>

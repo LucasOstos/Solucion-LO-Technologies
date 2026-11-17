@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaReportes.aspx.cs" Inherits="PaginaReportes" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -24,6 +24,7 @@
                         <h1 runat="server" clave="reportes.encabezado">Generación de Reportes</h1>
                         <p class="subtitulo" runat="server" clave="reportes.subtitulo">CUN 010 — Generar reportes de análisis, indicadores y recomendaciones</p>
                     </div>
+                    <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="reportes" />
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />

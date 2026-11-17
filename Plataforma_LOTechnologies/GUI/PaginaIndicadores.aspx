@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaIndicadores.aspx.cs" Inherits="PaginaIndicadores" %>
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -24,6 +25,7 @@
                         <h1 runat="server" Clave="principal.indicadores.titulo">Indicadores y Recomendaciones</h1>
                         <p class="subtitulo" runat="server" Clave="indicadores.subtitulo">CUN 009 — Indicadores clave y recomendaciones automáticas</p>
                     </div>
+                    <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="indicadores" />
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />

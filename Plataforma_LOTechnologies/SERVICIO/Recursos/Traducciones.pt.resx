@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>O nome e o nome no próprio idioma podem ter até {0} caracteres.</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>Ajuda desta tela (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>Fechar a ajuda</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>Voltar aos temas</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>Pesquisar na ajuda</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>Nesta tela</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>Telas relacionadas</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>Veja também</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>Mostrar na tela</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>Dica:</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>Ver o guia de introdução</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>Nenhum tema encontrado para “{0}”.</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>Abra ou feche a ajuda com {0}.</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>Foi destacado na tela.</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>Isso não está visível na tela agora.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>Primeiros passos</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>Primeira vez na plataforma? Este é o percurso completo, do cadastro da loja até testar um cenário.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>Para analisar uma loja, a plataforma precisa primeiro dos seus dados. Na primeira vez, siga esta ordem:</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>Em **Lojas**, cadastre a loja com sua área.|Em **Layout e setores**, carregue a planta e os setores com localização, circulação e área.|Em **Produtos e categorias**, cadastre os produtos e coloque-os em um setor.|Em **Estoque e vendas**, registre ou importe as vendas e o estoque.|Em **Indicadores e recomendações**, veja o desempenho de cada setor.|Em **Cenários de simulação**, teste as mudanças sugeridas pelo sistema e compare-as.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>Em cada tela, o botão **Ajuda** (ou a tecla F1) explica o que é possível fazer ali.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>Para que serve um cenário?</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>Um cenário é o teste de uma mudança na distribuição da loja, por exemplo levar um setor para a frente ou dar-lhe mais área. O sistema parte dos dados reais do último mês e estima como mudariam as vendas, a circulação e o índice global, sem alterar nada na loja real.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>Em **Indicadores e recomendações**, veja qual setor vale a pena melhorar.|Crie um cenário com a mudança que deseja testar.|Compare-o com a situação atual em **Comparação de cenários**.|Se compensar, aprove-o e aplique a mudança na loja.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>Criar um cenário</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>Um cenário testa uma mudança na loja **antes** de fazê-la de verdade. O sistema estima como mudariam as vendas e o índice.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>Escolha a **loja** no topo da tela.|Clique em **+ Novo cenário**.|Digite um **nome** que não se repita na loja e, se quiser, uma descrição e o objetivo.|Em **Mudanças propostas nos setores**, escolha uma ação para pelo menos um setor.|Clique em **Criar cenário**. Ele fica no estado **Rascunho**.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>A partir de uma recomendação de **Indicadores** ou da **Análise de produtos**, o botão "Criar cenário" abre este formulário com o setor e a ação já escolhidos.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>Ler a situação atual e as variações</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>No topo está a **situação atual (sem alterações)**: as vendas, a circulação e o índice global reais da loja. Cada cenário mostra seus valores estimados e quanto mudam em relação a essa situação.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>Uma seta verde para cima indica que o valor melhora; uma vermelha para baixo, que piora.|As vendas são comparadas em porcentagem e o índice global em pontos (de 0 a 100).|O índice combina circulação, giro e vendas por m²: quanto mais alto, melhor o desempenho da loja.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>Alterar o estado de um cenário</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>O estado organiza o trabalho com os cenários: **Rascunho** (recém-criado), **Em revisão**, **Aprovado** ou **Descartado**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>No cartão do cenário, clique em **Ver detalhes**.|Escolha o novo estado na lista **Status**.|Clique em **Alterar estado**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>Use **Aprovado** para o cenário que será aplicado na loja, assim fica claro para toda a equipe.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>Premissas da simulação</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>Cada ação altera os valores reais do setor em porcentagens fixas, que aparecem na tabela **Premissas da simulação** no fim da tela. Por exemplo, levar um setor para a frente soma 15 pontos de circulação e 10% de vendas.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>Abra **Premissas da simulação** no fim da tela.|Procure a ação que interessa e veja quanto mudam a circulação, as vendas e a área.|Lembre-se de que são estimativas: não preveem o resultado exato nem o efeito sobre os outros setores.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>Excluir um cenário</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>Excluir um cenário apaga-o junto com suas mudanças e comparações salvas. Os relatórios já gerados são mantidos.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>No cartão do cenário, clique em **Excluir**.|Confirme na mensagem que aparece.</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>Por que não consigo salvar o cenário?</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>A mensagem em vermelho dentro do formulário indica o que corrigir. As causas mais comuns são:</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**Falta o nome**: é obrigatório.|**Já existe um cenário com esse nome** na loja: escolha outro.|**Você não escolheu nenhuma mudança**: um cenário sem mudanças seria igual à situação atual.|**A loja não tem layout vigente**: o cenário é criado mesmo assim, mas sem layout base.</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>Como o menu está organizado</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>O menu agrupa os módulos em três blocos. Você só vê os módulos que o seu perfil permite.</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**Lojas e empresa**: carregar os dados da loja (lojas, planta, setores, produtos, estoque e vendas).|**Simulação e análise**: analisar o desempenho e testar mudanças antes de fazê-las.|**Administração e segurança**: usuários, permissões e manutenção do sistema, para administradores.</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>Alterar o idioma</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>A plataforma está disponível em vários idiomas. Ao alterá-lo, todas as telas, mensagens e esta ajuda são traduzidas.</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>No canto superior direito, abra a lista **Idioma**.|Escolha o idioma: a tela se atualiza sozinha.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>Alterar sua senha</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>A nova senha deve ter **pelo menos 8 caracteres**, com uma letra maiúscula, um número e um caractere especial.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>Clique em **Alterar senha**, no canto superior direito.|Digite sua senha atual.|Digite a nova e repita-a para confirmar.|Clique em **Salvar**.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>Não vejo um módulo de que preciso</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>Os módulos exibidos dependem das permissões do seu perfil. Se faltar algum, não é um erro: seu perfil não o inclui.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>Peça ao administrador da sua empresa que revise seu perfil em **Permissões**.|Depois da alteração, saia e entre novamente para ver o módulo.</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>Cadastrar uma loja</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>Cada loja é um ponto de venda de uma empresa. É o ponto de partida: a planta, os setores, os produtos e as vendas são sempre carregados para uma loja.</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>Clique em **Nova loja**.|Preencha **nome**, **empresa** e **endereço**, que são obrigatórios.|Informe a **Área aprox. (m²)**: sem ela não se calculam as vendas por m².|Clique em **Criar loja**.</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>O nome não pode se repetir na mesma empresa. Use algo que identifique a loja, como a cidade ou a rua.</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>Quais dados faltam na loja</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>Cada cartão mostra a lista **Dados para a análise**. Ela indica o que já foi carregado e o que falta para que os indicadores, as recomendações e os cenários funcionem bem.</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>Sem planta vigente ou setores incompletos: carregue-os em **Layout e setores**.|Poucos produtos posicionados: atribua um setor em **Produtos e categorias**.|Sem estoque ou sem vendas do mês: carregue-os em **Estoque e vendas**.|Se os setores somam mais m² que a loja, corrija a área da loja ou a dos setores.</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>Editar, ativar ou desativar uma loja</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>Os botões na parte inferior de cada cartão permitem corrigir os dados da loja ou alterar seu estado. Uma loja inativa mantém todos os seus dados.</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>O lápis (**Editar**) abre o formulário para alterar os dados e salvar.|As setas (**Ativar/Desativar**) mudam o estado; o sistema pede confirmação.|**Ver layout** leva direto à planta e aos setores dessa loja.</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>Buscar e filtrar lojas</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>Se houver muitas lojas, você pode filtrar a lista por nome, empresa e estado.</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>Digite parte do nome na busca.|Se quiser, escolha uma empresa e um estado.|Clique em **Pesquisar**.</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>Por que não consigo salvar a loja?</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>A mensagem em vermelho dentro do formulário indica o que corrigir. As causas mais comuns são:</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**Nome repetido**: já existe uma loja com esse nome na empresa.|**Empresa inativa**: não é possível cadastrar nem alterar suas lojas.|**Área igual a 0**: deve ser maior que 0 (ou deixe vazia).|**Telefone inválido**: apenas números e um + no início, de 6 a 15 dígitos.</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>Carregar a planta da loja</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>O layout é a planta da loja: uma imagem ou um PDF com a distribuição. Fica salvo com sua data, assim é possível ver como a loja mudou ao longo do tempo.</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>Escolha a loja no canto superior direito.|Na aba **Layout da loja**, clique em **Carregar layout**.|Preencha nome, data, estado e descrição.|Anexe o arquivo: PNG, JPG ou PDF de até 5 MB.|Clique em **Confirmar envio**.</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>Escolha o estado **Ativo** só para a planta que vale hoje na loja: ela substitui a anterior como planta vigente.</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>A planta vigente</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>Cada loja tem **uma única planta vigente**. É a que os cenários usam como base e a que aparece nos mapas.</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>Na lista de layouts, o vigente aparece como **Planta vigente**.|**Ver detalhes** mostra a imagem ou o PDF da planta.|**Marcar como vigente** torna outra planta vigente.|A lixeira exclui uma planta; o sistema pede confirmação.</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>Criar e editar setores</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>Os setores são as zonas da loja (hortifrúti, bebidas, limpeza...). Os indicadores, as recomendações e os cenários trabalham por setor.</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>Abra a aba **Gestão de setores**.|Clique em **Novo setor**.|Preencha nome, tipo e **Localização** (uma das 9 zonas da planta).|Informe a **Circulação estimada (%)** e a **Área (m²)**.|Salve. Para corrigir depois, use **Editar** na tabela.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>Circulação, área e localização</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>Esses três dados de cada setor alimentam os indicadores e as simulações. Se faltarem, os resultados ficam incompletos.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**Circulação**: % estimado de clientes que passam pelo setor, por observação ou contagem na loja.|**Área**: m² do setor; usada nas vendas por m². A soma não deveria passar a da loja.|**Localização**: zona da planta. O **mapa** abaixo a mostra; a frente (entrada) é a parte inferior.</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>Por que a planta não é carregada?</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>Ao confirmar, o sistema verifica o arquivo e os campos obrigatórios. As causas mais comuns são:</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**Formato inválido**: só são aceitos PNG, JPG ou PDF.|**Arquivo muito grande**: o máximo é 5 MB. Reduza a imagem ou exporte o PDF com menos qualidade.|**Falta um dado**: nome, data, descrição e arquivo são obrigatórios.</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>Menu principal</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>Criar categorias</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>Todo produto pertence a uma categoria, por isso convém criá-las primeiro. As categorias são da empresa: são compartilhadas entre todas as suas lojas.</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>Abra a aba **Categorias**.|Clique em **Nova categoria**.|Digite o nome e, se quiser, uma descrição.|Clique em **Salvar**.</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>Cadastrar um produto</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>O produto é da empresa, mas seu **setor** é próprio de cada loja: o mesmo produto pode estar em bebidas numa loja e em mercearia em outra.</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>Escolha a loja no canto superior direito e clique em **Novo produto**.|Preencha nome e categoria (obrigatórios), preço e **Custo unitário**.|Escolha o setor do produto nessa loja.|Salve. O **Código interno** (por exemplo PROD-001) é atribuído pelo sistema.</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>Informe sempre o **custo unitário**: sem ele a margem não é calculada nos indicadores nem nos relatórios.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>Produtos sem localização</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>Um produto sem setor na loja aparece como **Sem setor atribuído**. Suas vendas contam para a loja, mas não somam a nenhum setor nos indicadores.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>Na coluna **Setor nesta loja**, procure os produtos sem setor.|Edite-os com o lápis e escolha o setor.|Salve. A partir daí suas vendas somam a esse setor.</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>Editar ou desativar produtos</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>Um produto que não é mais vendido não é excluído: é desativado. Seu histórico de vendas é mantido, mas não pode mais ser importado nem carregado.</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>Com o lápis você edita o produto, por exemplo para mudar o preço ou o setor.|Com as setas você o ativa ou desativa; o sistema pede confirmação.|O mesmo vale para as categorias, na aba delas.</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>Importar vendas ou estoque de um arquivo</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>É a forma rápida de carregar muitos dados: o arquivo exportado pelo sistema de ponto de venda da loja, em **CSV** ou **Excel (.xlsx)**, de até 2 MB.</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>Escolha a loja e clique em **Importar arquivo**.|Escolha se o arquivo é de **Venda** ou de **Estoque**.|Se não tiver o formato, baixe o modelo Excel ou CSV e preencha-o.|Escolha o arquivo e clique em **Importar**.</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>O arquivo é validado por inteiro: se uma linha tiver erro, nenhuma é importada, e o sistema indica a linha e o motivo para você corrigir.</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>Carregar uma venda ou um estoque manualmente</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>Serve para dados avulsos ou correções. Para muitos dados, convém importar um arquivo.</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>Clique em **Carga manual**.|Em **Tipo de dado**, escolha **Venda** ou **Estoque**.|Escolha o produto e digite a quantidade e a data.|Se for venda, o valor é opcional (vazio = preço × quantidade). Se for estoque, você pode informar o mínimo e o máximo.|Clique em **Salvar**.</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>Consultar vendas e estoque</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>A tela tem três abas: **Dados de vendas**, **Dados de estoque** e **Importações**. Os filtros no topo escolhem a loja, o período e como agrupar.</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>Escolha o período e o agrupamento (**Por setor**, **Por categoria** ou **Por produto**) e clique em **Aplicar**.|Em **Dados de vendas** você vê os totais, o gráfico por setor e as últimas vendas carregadas.|Em **Dados de estoque**, o estado de cada produto: **Crítico** (sem estoque), **Baixo** (no mínimo ou abaixo) ou **Excesso de estoque** (acima do máximo).</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>Corrigir um carregamento errado</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>Uma venda avulsa é excluída na lista das últimas vendas. Se um arquivo foi importado por engano (por exemplo, duas vezes), a importação inteira pode ser desfeita.</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>Venda avulsa: em **Últimas vendas registradas**, clique em **Excluir**.|Arquivo inteiro: na aba **Importações**, clique em **Desfazer** e confirme.|Importações de estoque não são desfeitas: para corrigi-las, importe o arquivo correto, que substitui o estoque.</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>Por que o arquivo não foi importado?</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>Se houver erros, o formulário mostra em vermelho a lista de linhas com o motivo. Corrija o arquivo e importe-o novamente. As causas mais comuns são:</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**Falta uma coluna**: o cabeçalho deve ter os nomes do modelo (codigo, fecha, cantidad...).|**Código inválido ou inexistente**: use o código interno do produto, por exemplo PROD-001.|**Data ou número inválido**: datas como 2026-10-15 ou 15/10/2026 e números sem separador de milhar.|**Formato não suportado**: o .xls antigo do Excel não é aceito; salve como .xlsx ou .csv.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>Ler os indicadores por setor</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>A tabela mostra o desempenho de cada setor no período escolhido. O dado mais útil para comparar setores é o **Índice global**, de 0 a 100.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>Escolha a loja e o período e clique em **Aplicar**.|Observe o índice: verde a partir de 70, amarelo a partir de 50 e vermelho abaixo.|Ele combina 40% circulação, 30% giro e 30% vendas por m², comparados com o melhor setor da loja.|Para ver como cada coluna é calculada, abra **Como cada indicador é calculado?** abaixo da tabela.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>Recomendações automáticas</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>O sistema analisa os indicadores e sugere ações: ampliar ou reduzir a área de um setor, levá-lo para a frente, revisar preços, repor estoque ou carregar dados que faltam. Cada uma tem prioridade alta, média ou baixa.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>Leia o motivo abaixo de cada recomendação: explica qual dado a gerou.|Se aparecer **Criar cenário**, esse botão abre Cenários com a mudança já carregada.|Simule e compare antes de aplicá-la na loja.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>Mapa e evolução da loja</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>O mapa colore cada zona da planta conforme o indicador escolhido, para ver de relance onde a loja rende mais. O gráfico de evolução mostra as vendas dos últimos 6 meses.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>Em **Mapa da loja**, escolha o **Indicador**: vendas, vendas por m², margem, circulação, giro ou índice global.|As zonas mais escuras têm valores mais altos. A frente (entrada) é a parte inferior.|No gráfico de evolução, o mês atual ainda está em curso: não o compare ainda com os meses completos.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>Por que faltam valores?</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>Alguns indicadores precisam de dados carregados em outras telas. Se faltar algum, a coluna fica vazia ou aparece um aviso.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**Margem**: falta o custo unitário dos produtos (**Produtos e categorias**).|**Vendas por m²**: falta a área da loja ou dos setores (**Lojas** ou **Layout e setores**).|**Giro e cobertura**: falta o estoque (**Estoque e vendas**).|**Sem indicadores nem recomendações**: não há vendas no período escolhido.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>Comparar dois cenários</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>Coloca frente a frente dois cenários da mesma loja para ver qual compensa. O mais comum é comparar a **situação atual (sem alterações)** com um cenário proposto.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>Escolha a loja e o **Período de análise**.|Em **Cenário atual**, escolha a situação atual ou o cenário de referência.|Em **Cenário proposto**, escolha o cenário a avaliar.|Clique em **Comparar cenários**.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>Interpretar o resultado</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>A **Conclusão** diz qual dos dois cenários compensa e por quanto. Abaixo estão os indicadores de cada um, os mapas e a tabela de diferenças.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>Compare as **vendas estimadas** e o **índice global médio** dos dois cenários.|Os dois mapas usam a mesma escala de cores: assim se vê em que zonas o proposto melhora ou piora.|Em **Principais diferenças**, veja quais setores explicam a mudança.|Lembre-se de que são estimativas: consulte **Premissas da simulação** no fim.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>Salvar a comparação em um relatório</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>Para apresentar o resultado ou guardá-lo, a comparação pode ser exportada como relatório PDF.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>Depois de comparar, clique em **Gerar relatório desta comparação**, no fim da tela.|Abre-se **Relatórios** com os dois cenários já escolhidos.|Revise o período e as seções e gere o relatório.</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>Por que não compara?</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>A mensagem no topo da tela indica o motivo. As causas mais comuns são:</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**O mesmo cenário dos dois lados**: escolha dois cenários diferentes.|**A loja não tem cenários**: crie-os primeiro em **Cenários de simulação**.|**Faltam dados**: a loja precisa de vendas no período e setores carregados.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>Analisar os produtos da loja</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>A análise revisa produto por produto suas vendas, seu estoque e a circulação do setor onde está, e detecta oportunidades: produtos que venderiam mais em outro lugar, que não giram ou que estão prestes a acabar.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>Escolha a loja e o período (de e até).|Clique em **Analisar produtos**.|No topo você vê quantos produtos foram analisados e quantas oportunidades há de prioridade alta, média e baixa.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>Tipos de oportunidade</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>Cada produto com observação tem um tipo e uma prioridade. O motivo de cada cartão explica os números que o geraram.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**Estrela escondida**: vende muito, mas está num setor com pouca circulação.|**Ocupa lugar privilegiado**: vende pouco num setor de muito movimento.|**Sem movimento**: tem estoque e nenhuma venda.|**Risco de ruptura**: o estoque dura menos de 7 dias.|**Cobertura excessiva**: o estoque dura mais de 180 dias.|**Sem localização com vendas**: é vendido, mas não tem setor na loja.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>O que fazer com cada oportunidade</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>Comece pelas de prioridade alta. Os filtros ajudam a ver um tipo ou um produto específico.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>Filtre por tipo ou prioridade, ou busque um produto pelo nome.|Se o cartão mostrar **Criar cenário**, simule a mudança antes de fazê-la.|Para um produto sem localização, atribua um setor em **Produtos e categorias**.|Para risco de ruptura ou excesso de estoque, revise as compras em **Estoque e vendas**.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>No fim está a lista **Produtos analisados sem recomendação**: são os que hoje funcionam bem onde estão.</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>Gerar um relatório</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>Os relatórios resumem em um PDF as informações da loja para um período: indicadores, recomendações, estoque, vendas ou a comparação de cenários.</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>Escolha a loja e o **Tipo de relatório**.|Preencha o período com **De (mês)** e **Até (mês)** (formato aaaa-mm).|Escolha o **Idioma do relatório**.|Revise as **Seções a incluir** e clique em **Gerar relatório**.</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>O idioma do relatório pode ser diferente do seu: serve, por exemplo, para enviar o PDF à matriz em outro país.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>Tipos de relatório e seções</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>Ao escolher o tipo, as seções que ele costuma ter são marcadas sozinhas. Depois você pode adicionar ou tirar as que quiser.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**Completo**: tudo da loja no período.|**Indicadores**: indicadores por setor, evolução e recomendações.|**Estoque**: estado do estoque e detalhe dos produtos.|**Comparação**: precisa de **Cenário base** e **Cenário proposto**.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>Ver, baixar ou excluir relatórios</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>Os relatórios gerados ficam salvos em **Relatórios recentes**, à direita, para abri-los de novo sem gerá-los outra vez.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>**Ver** abre o PDF no navegador.|**Baixar** baixa-o para o seu computador.|**Excluir** apaga o relatório e seu arquivo; o sistema pede confirmação.</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>Por que o relatório não é gerado?</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>A mensagem no topo indica o motivo. As causas mais comuns são:</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**Período inválido**: o mês inicial não pode ser posterior ao final nem incluir meses futuros, e há um máximo de meses.|**Sem seções**: marque pelo menos uma.|**Comparação sem cenários**: escolha o cenário base e o proposto.|**Sem dados**: a loja não tem vendas ou estoque nesse período.</value>
+  </data>
 </root>

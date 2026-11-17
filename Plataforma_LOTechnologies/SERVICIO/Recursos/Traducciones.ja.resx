@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>名前とその言語での名前は {0} 文字までです。</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>この画面のヘルプ (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>ヘルプを閉じる</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>トピック一覧に戻る</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>ヘルプを検索</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>この画面</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>関連する画面</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>関連項目</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>画面で表示する</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>ヒント：</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>はじめにガイドを見る</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>「{0}」に該当するトピックはありません。</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>{0} でヘルプを開閉できます。</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>画面上で強調表示しました。</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>現在、画面に表示されていません。</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>はじめに</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>初めてご利用ですか？店舗の登録からシナリオの検証までの全体の流れです。</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>店舗を分析するには、まずそのデータが必要です。初回は次の順序で進めてください。</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>**店舗**で、面積を含めて店舗を登録します。|**レイアウトと売り場**で、図面と、位置・通行量・面積を含む売り場を登録します。|**商品とカテゴリ**で、商品を登録して売り場に配置します。|**在庫と売上**で、売上と在庫を入力またはインポートします。|**指標と推奨事項**で、各売り場の成績を確認します。|**シミュレーションシナリオ**で、システムが提案する変更を試して比較します。</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>各画面の **ヘルプ** ボタン（または F1 キー）で、その画面でできることを確認できます。</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>シナリオとは</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>シナリオは、売り場を店舗の前方に移す、面積を広げるといった配置変更を試すものです。システムは直近1か月の実データをもとに、売上・通行量・総合指数がどう変わるかを見積もります。実際の店舗には何も変更を加えません。</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>**指標と推奨事項**で、改善すべき売り場を確認します。|試したい変更でシナリオを作成します。|**シナリオ比較**で現状と比較します。|効果があれば承認し、店舗で変更を実施します。</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>シナリオを作成する</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>シナリオでは、店舗の変更を実際に行う**前に**試せます。システムが売上と指数の変化を見積もります。</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>画面上部で**店舗**を選びます。|**+ 新規シナリオ**をクリックします。|店舗内で重複しない**名前**を入力し、必要に応じて説明と目的を入力します。|**売り場の変更案**で、少なくとも1つの売り場にアクションを選びます。|**シナリオを作成**をクリックします。状態は**下書き**になります。</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>**指標**または**商品分析**の推奨事項から「シナリオを作成」を押すと、売り場とアクションが選択済みの状態でこのフォームが開きます。</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>現状と変化の読み方</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>一番上に**現状（変更なし）**として、店舗の実際の売上・通行量・総合指数が表示されます。各シナリオには見積もり値と、現状からの変化が表示されます。</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>緑の上向き矢印は改善、赤の下向き矢印は悪化を示します。|売上はパーセントで、総合指数はポイント（0〜100）で比較します。|指数は通行量・回転率・1m²あたり売上を組み合わせたもので、高いほど店舗の成績が良いことを示します。</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>シナリオの状態を変更する</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>状態でシナリオの作業を整理します：**下書き**（作成直後）、**確認中**、**承認済み**、**不採用**。</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>シナリオのカードで**詳細を見る**をクリックします。|**状態**の一覧で新しい状態を選びます。|**ステータスを変更**をクリックします。</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>店舗で実施するシナリオには**承認済み**を使うと、チーム全員に伝わります。</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>シミュレーションの前提条件</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>各アクションは、売り場の実際の値を一定の割合で変更します。割合は画面下部の**シミュレーションの前提条件**の表で確認できます。たとえば売り場を前方に移すと、通行量が15ポイント、売上が10%増えます。</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>画面下部の**シミュレーションの前提条件**を開きます。|目的のアクションを探し、通行量・売上・面積の変化を確認します。|これは見積もりであり、正確な結果や他の売り場への影響を予測するものではありません。</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>シナリオを削除する</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>シナリオを削除すると、その変更内容と保存済みの比較も削除されます。作成済みのレポートは残ります。</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>シナリオのカードで**削除**をクリックします。|表示されるメッセージで確定します。</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>シナリオを保存できないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>フォーム内の赤いメッセージに、修正が必要な点が表示されます。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**名前が未入力**：名前は必須です。|**同じ名前のシナリオが既に存在する**：店舗内で別の名前を選んでください。|**変更が選択されていない**：変更のないシナリオは現状と同じになります。|**店舗に有効なレイアウトがない**：シナリオは作成されますが、基準レイアウトなしになります。</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>メニューの構成</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>メニューはモジュールを3つのブロックにまとめています。表示されるのは、あなたのプロファイルで許可されたモジュールだけです。</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**店舗と企業**：店舗のデータ（店舗、平面図、売り場、商品、在庫、売上）を登録します。|**シミュレーションと分析**：成績を分析し、変更を実施する前に試します。|**管理とセキュリティ**：ユーザー、権限、システム保守（管理者向け）。</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>言語を変更する</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>プラットフォームは複数の言語で利用できます。言語を変えると、すべての画面、メッセージ、このヘルプが翻訳されます。</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>右上の**言語**の一覧を開きます。|言語を選ぶと、画面が自動で更新されます。</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>パスワードを変更する</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>新しいパスワードは**8文字以上**で、大文字・数字・記号をそれぞれ1つ以上含める必要があります。</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>右上の**パスワードの変更**をクリックします。|現在のパスワードを入力します。|新しいパスワードを入力し、確認のためもう一度入力します。|**保存**をクリックします。</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>必要なモジュールが表示されない</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>表示されるモジュールは、プロファイルの権限によって決まります。表示されないのはエラーではなく、プロファイルに含まれていないためです。</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>会社の管理者に、**権限**であなたのプロファイルを確認してもらいます。|変更後、いったんログアウトして再度ログインするとモジュールが表示されます。</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>店舗を登録する</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>店舗は企業の販売拠点です。すべての出発点であり、平面図・売り場・商品・売上は必ず店舗ごとに登録します。</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>**新規店舗**をクリックします。|必須項目の**名前**、**企業**、**住所**を入力します。|**おおよその面積 (m²)**を入力します。これがないと1m²あたり売上を計算できません。|**店舗を作成**をクリックします。</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>同じ企業内で店舗名を重複させることはできません。都市名や通り名など、店舗を区別できる名前にしてください。</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>店舗に不足しているデータ</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>各カードには**分析用データ**の一覧が表示されます。指標・推奨事項・シナリオが正しく動くために、何が登録済みで何が不足しているかがわかります。</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>有効な平面図がない、または売り場が不完全な場合：**レイアウトと売り場**で登録します。|配置済みの商品が少ない場合：**商品とカテゴリ**で売り場を割り当てます。|在庫や当月の売上がない場合：**在庫と売上**で登録します。|売り場の合計面積が店舗より大きい場合は、店舗または売り場の面積を修正します。</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>店舗の編集・有効化・無効化</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>各カード下部のボタンで、店舗のデータを修正したり状態を変更したりできます。無効にした店舗もデータはすべて保持されます。</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>鉛筆（**編集**）でフォームを開き、データを変更して保存します。|矢印（**有効化/無効化**）で状態を切り替えます。確認メッセージが表示されます。|**レイアウトを見る**で、その店舗の平面図と売り場に直接移動します。</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>店舗を検索・絞り込む</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>店舗が多い場合は、名前・企業・状態で一覧を絞り込めます。</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>検索欄に名前の一部を入力します。|必要に応じて企業と状態を選びます。|**検索**をクリックします。</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>店舗を保存できないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>フォーム内の赤いメッセージに、修正が必要な点が表示されます。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**名前の重複**：同じ企業に同名の店舗が既にあります。|**企業が無効**：その企業の店舗は登録も変更もできません。|**面積が0**：0より大きい値にするか、空欄にします。|**電話番号が無効**：数字と先頭の+のみ、6〜15桁です。</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>店舗の平面図を登録する</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>レイアウトは店舗の平面図で、配置を示す画像またはPDFです。日付とともに保存されるため、店舗の変化を時系列で確認できます。</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>右上で店舗を選びます。|**店舗のレイアウト**タブで**レイアウトをアップロード**をクリックします。|名前、日付、状態、説明を入力します。|ファイルを添付します（PNG・JPG・PDF、最大5MB）。|**アップロードを確定**をクリックします。</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>状態**有効**は、現在店舗で使われている平面図にだけ選んでください。前の平面図に代わって有効な平面図になります。</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>有効な平面図</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>各店舗の**有効な平面図は1つだけ**です。シナリオの基準として使われ、マップにも表示されます。</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>レイアウト一覧では、有効なものに**現行の平面図**と表示されます。|**詳細を見る**で平面図の画像またはPDFを表示します。|**現行に設定**で別の平面図を有効にします。|ごみ箱で平面図を削除します。確認メッセージが表示されます。</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>売り場を作成・編集する</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>売り場は店舗内のゾーン（青果、飲料、日用品など）です。指標・推奨事項・シナリオは売り場単位で動きます。</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>**売り場の管理**タブを開きます。|**新規売り場**をクリックします。|名前、種類、**位置**（平面図の9つのゾーンのいずれか）を入力します。|**推定回遊率 (%)**と**面積（m²）**を入力します。|保存します。後で修正するときは、表の**編集**を使います。</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>通行量・面積・位置</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>各売り場のこの3つのデータが、指標とシミュレーションの元になります。不足していると結果が不完全になります。</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**通行量**：その売り場を通る客の推定割合（%）。店内での観察やカウントで求めます。|**面積**：売り場のm²。1m²あたり売上に使います。合計が店舗の面積を超えないようにします。|**位置**：平面図のゾーン。下の**マップ**に表示され、前方（入口）は下側です。</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>平面図を登録できないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>確定すると、システムがファイルと必須項目をチェックします。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**形式が無効**：PNG・JPG・PDFのみ使用できます。|**ファイルが大きすぎる**：上限は5MBです。画像を縮小するか、PDFを低画質で書き出します。|**未入力の項目がある**：名前・日付・説明・ファイルは必須です。</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>メインメニュー</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>カテゴリを作成する</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>商品は必ずカテゴリに属するため、先にカテゴリを作成しておきます。カテゴリは企業単位で、その企業のすべての店舗で共有されます。</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>**カテゴリ**タブを開きます。|**新規カテゴリ**をクリックします。|名前と、必要に応じて説明を入力します。|**保存**をクリックします。</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>商品を登録する</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>商品は企業単位ですが、**売り場**は店舗ごとに設定します。同じ商品が、ある店舗では飲料、別の店舗では食品の売り場に置かれることもあります。</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>右上で店舗を選び、**新規商品**をクリックします。|名前とカテゴリ（必須）、価格、**単価原価**を入力します。|その店舗での商品の売り場を選びます。|保存します。**社内コード**（例：PROD-001）はシステムが割り当てます。</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>**単価原価**は必ず入力してください。ないと指標やレポートで利益率が計算されません。</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>売り場未設定の商品</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>店舗内で売り場が設定されていない商品は**売り場未設定**と表示されます。売上は店舗には計上されますが、指標ではどの売り場にも加算されません。</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>**この店舗の売り場**列で、売り場のない商品を探します。|鉛筆で編集し、売り場を選びます。|保存します。以後、その商品の売上はその売り場に加算されます。</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>商品を編集・無効化する</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>販売終了した商品は削除せず、無効にします。販売履歴は残りますが、インポートや入力はできなくなります。</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>鉛筆で商品を編集します（価格や売り場の変更など）。|矢印で有効・無効を切り替えます。確認メッセージが表示されます。|カテゴリも、そのタブで同じように操作できます。</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>ファイルから売上・在庫をインポートする</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>大量のデータを素早く登録する方法です。店舗のPOSシステムから書き出した**CSV**または**Excel（.xlsx）**ファイル（最大2MB）を使います。</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>店舗を選び、**ファイルをインポート**をクリックします。|ファイルが**売上**か**在庫**かを選びます。|形式がわからない場合は、ExcelまたはCSVのテンプレートをダウンロードして記入します。|ファイルを選び、**インポート**をクリックします。</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>ファイルは全体がチェックされます。1行でもエラーがあると1行もインポートされず、修正できるよう行番号と理由が表示されます。</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>売上・在庫を手入力する</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>単発のデータや修正に使います。大量のデータはファイルのインポートが便利です。</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>**手動登録**をクリックします。|**データの種類**で**売上**または**在庫**を選びます。|商品を選び、数量と日付を入力します。|売上の場合、金額は任意です（空欄＝価格×数量）。在庫の場合は最小値と最大値も入力できます。|**保存**をクリックします。</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>売上と在庫を確認する</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>画面には**売上データ**、**在庫データ**、**インポート**の3つのタブがあります。上部のフィルターで店舗・期間・集計方法を選びます。</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>期間と集計方法（**売り場別**、**カテゴリ別**、**商品別**）を選び、**適用**をクリックします。|**売上データ**では合計、売り場別グラフ、最近登録した売上を確認できます。|**在庫データ**では各商品の状態を確認できます：**危険**（在庫なし）、**少ない**（最小値以下）、**過剰在庫**（最大値超過）。</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>誤った登録を修正する</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>単発の売上は、最近の売上一覧から削除します。ファイルを誤ってインポートした場合（2回取り込んだ場合など）は、インポート全体を取り消せます。</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>単発の売上：**最近登録された売上**で**削除**をクリックします。|ファイル全体：**インポート**タブで**取り消し**をクリックし、確定します。|在庫のインポートは取り消せません。修正するには正しいファイルをインポートし、在庫を置き換えます。</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>ファイルがインポートされなかったのはなぜですか？</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>エラーがあると、フォームに行番号と理由の一覧が赤で表示されます。ファイルを修正して、もう一度インポートします。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**列が不足している**：見出しにはテンプレートと同じ列名（codigo、fecha、cantidad など）が必要です。|**コードが無効または存在しない**：商品の社内コード（例：PROD-001）を使います。|**日付や数値が無効**：日付は2026-10-15や15/10/2026の形式、数値は桁区切りなしで入力します。|**未対応の形式**：古いExcelの.xlsは使えません。.xlsxまたは.csvで保存します。</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>売り場別の指標の読み方</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>表は、選んだ期間における各売り場の成績を示します。売り場を比べるのに最も役立つのは、0〜100の**総合指数**です。</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>店舗と期間を選び、**適用**をクリックします。|指数を確認します：70以上は緑、50以上は黄、それ未満は赤です。|通行量40%、回転率30%、1m²あたり売上30%を組み合わせ、店舗内で最も良い売り場と比較しています。|各列の計算方法は、表の下の**各指標の計算方法**を開くと確認できます。</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>自動推奨事項</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>システムは指標を確認して、売り場の面積の拡大・縮小、前方への移動、価格の見直し、在庫補充、不足データの登録などを提案します。それぞれに優先度（高・中・低）が付きます。</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>各推奨事項の下にある理由を読みます。どのデータから生じたかが説明されています。|**シナリオを作成**が表示されている場合、そのボタンで変更を設定済みのシナリオ画面が開きます。|店舗で実施する前に、シミュレーションして比較します。</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>店舗マップと推移</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>マップは選んだ指標に応じて平面図の各ゾーンを色分けし、店舗のどこが好調かをひと目で示します。推移グラフは直近6か月の売上を表示します。</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>**店舗マップ**で**指標**（売上、1m²あたり売上、利益率、通行量、回転率、総合指数）を選びます。|色の濃いゾーンほど値が高くなります。前方（入口）は下側です。|推移グラフの当月はまだ途中なので、締まった月とはまだ比較しないでください。</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>値が表示されないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>指標の中には、別の画面で登録するデータが必要なものがあります。不足していると列が空欄になるか、注意が表示されます。</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**利益率**：商品の単価原価が未登録です（**商品とカテゴリ**）。|**1m²あたり売上**：店舗または売り場の面積が未登録です（**店舗**または**レイアウトと売り場**）。|**回転率とカバー日数**：在庫が未登録です（**在庫と売上**）。|**指標も推奨事項も出ない**：選んだ期間に売上がありません。</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>2つのシナリオを比較する</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>同じ店舗の2つのシナリオを並べて、どちらが有利かを確認します。よく使うのは、**現状（変更なし）**と変更案のシナリオの比較です。</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>店舗と**分析期間**を選びます。|**現行シナリオ**で、現状または基準となるシナリオを選びます。|**提案シナリオ**で、評価したいシナリオを選びます。|**シナリオを比較**をクリックします。</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>結果の読み方</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>**結論**に、どちらのシナリオがどれだけ有利かが表示されます。その下に各シナリオの指標、マップ、差異の表があります。</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>2つのシナリオの**売上見込み**と**総合指数の平均**を比べます。|2つのマップは同じ色の尺度を使うため、変更案でどのゾーンが良くなり、どこが悪くなるかがわかります。|**主な違い**で、変化の要因となる売り場を確認します。|これは見積もりです。下部の**シミュレーションの前提条件**も確認してください。</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>比較結果をレポートに保存する</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>結果を共有したり保存したりするために、比較をPDFレポートとして書き出せます。</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>比較後、画面下部の**この比較のレポートを作成**をクリックします。|2つのシナリオが選択済みの状態で**レポート**が開きます。|期間とセクションを確認し、レポートを作成します。</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>比較できないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>画面上部のメッセージに理由が表示されます。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**両側に同じシナリオを選んでいる**：異なる2つのシナリオを選びます。|**店舗にシナリオがない**：先に**シミュレーションシナリオ**で作成します。|**データが不足している**：期間内の売上と売り場の登録が必要です。</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>店舗の商品を分析する</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>分析では、商品ごとに売上・在庫・置かれている売り場の通行量を確認し、別の場所ならもっと売れる商品、動いていない商品、在庫切れが近い商品などの機会を見つけます。</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>店舗と期間（開始・終了）を選びます。|**商品を分析**をクリックします。|上部に、分析した商品数と、優先度（高・中・低）ごとの機会の数が表示されます。</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>機会の種類</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>指摘のある商品には、種類と優先度が付きます。各カードの理由に、その根拠となる数値が書かれています。</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**隠れたスター商品**：よく売れるが、通行量の少ない売り場にある。|**好立地を占有**：人通りの多い売り場にあるが、あまり売れない。|**動きなし**：在庫があるのに売上がない。|**欠品リスク**：在庫が7日分未満。|**在庫過多**：在庫が180日分超。|**未配置だが販売あり**：売れているが、店舗内で売り場が設定されていない。</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>機会ごとの対応</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>優先度の高いものから対応します。フィルターで種類や特定の商品に絞り込めます。</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>種類や優先度で絞り込むか、商品名で検索します。|カードに**シナリオを作成**がある場合は、実施前に変更をシミュレーションします。|売り場未設定の商品は、**商品とカテゴリ**で売り場を割り当てます。|在庫切れのおそれや過剰在庫は、**在庫と売上**で仕入れを見直します。</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>下部の**推奨のない分析済み商品**は、現在の場所でうまく売れている商品です。</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>レポートを作成する</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>レポートは、期間を指定して店舗の情報（指標、推奨事項、在庫、売上、シナリオ比較）を1つのPDFにまとめます。</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>店舗と**レポートの種類**を選びます。|**開始（月）**と**終了（月）**で期間を入力します（yyyy-mm形式）。|**レポートの言語**を選びます。|**含めるセクション**を確認し、**レポートを作成**をクリックします。</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>レポートの言語は、あなたの表示言語と別にできます。たとえば海外の本社にPDFを送るときに便利です。</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>レポートの種類とセクション</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>種類を選ぶと、通常含まれるセクションに自動でチェックが入ります。その後、自由に追加・削除できます。</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**総合**：期間内の店舗に関するすべて。|**指標**：売り場別の指標、推移、推奨事項。|**在庫**：在庫の状態と商品の詳細。|**比較**：**ベースシナリオ**と**提案シナリオ**が必要です。</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>レポートの表示・ダウンロード・削除</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>作成したレポートは右側の**最近のレポート**に保存され、作り直さずに開き直せます。</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>**表示**でPDFをブラウザに表示します。|**ダウンロード**でパソコンにダウンロードします。|**削除**でレポートとファイルを削除します。確認メッセージが表示されます。</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>レポートが作成されないのはなぜですか？</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>上部のメッセージに理由が表示されます。よくある原因は次のとおりです。</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**期間が無効**：開始月は終了月より後にできず、未来の月も含められません。月数にも上限があります。|**セクションがない**：少なくとも1つにチェックを入れます。|**シナリオのない比較**：基準シナリオと変更案のシナリオを選びます。|**データがない**：その期間に店舗の売上や在庫がありません。</value>
+  </data>
 </root>

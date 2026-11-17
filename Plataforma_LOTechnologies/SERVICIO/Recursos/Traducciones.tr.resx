@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>Ad ve kendi dilindeki ad en fazla {0} karakter olabilir.</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>Yardım</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>Bu ekranın yardımı (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>Yardım</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>Yardımı kapat</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>Konulara dön</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>Yardımda ara</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>Bu ekranda</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>İlgili ekranlar</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>Ayrıca bakın</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>Ekranda göster</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>İpucu:</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>Başlangıç kılavuzunu gör</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>“{0}” için konu bulunamadı.</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>Yardımı {0} ile açıp kapatın.</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>Ekranda işaretlendi.</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>Bu şu anda ekranda görünmüyor.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>İlk adımlar</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>Platformda ilk kez mi? Mağazayı kaydetmekten bir senaryoyu denemeye kadar tüm yol burada.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>Bir mağazayı analiz etmek için platformun önce verilerine ihtiyacı vardır. İlk seferde bu sırayı izleyin:</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>**Mağazalar** bölümünde mağazayı alanıyla birlikte kaydedin.|**Yerleşim ve reyonlar** bölümünde planı ve reyonlari konum, trafik ve alanlarıyla yükleyin.|**Ürünler ve kategoriler** bölümünde ürünleri ekleyip bir reyona yerleştirin.|**Stok ve satışlar** bölümünde satışları ve stoku girin veya içe aktarın.|**Göstergeler ve öneriler** bölümünde her reyonun performansını inceleyin.|**Simülasyon senaryoları** bölümünde sistemin önerdiği değişiklikleri deneyip karşılaştırın.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>Her ekranda **Yardım** düğmesi (veya F1 tuşu) orada neler yapabileceğinizi açıklar.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>Senaryo ne işe yarar?</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>Senaryo, mağaza yerleşimindeki bir değişikliğin denemesidir; örneğin bir reyonu öne taşımak veya ona daha fazla alan vermek. Sistem son ayın gerçek verilerinden yola çıkar ve gerçek mağazada hiçbir şeyi değiştirmeden satışların, trafiğin ve genel endeksin nasıl değişeceğini tahmin eder.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>**Göstergeler ve öneriler** bölümünde iyileştirilmesi gereken reyonu bulun.|Denemek istediğiniz değişiklikle bir senaryo oluşturun.|**Senaryo karşılaştırması** bölümünde mevcut durumla karşılaştırın.|Faydalıysa onaylayın ve değişikliği mağazada uygulayın.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>Senaryo oluşturma</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>Senaryo, mağazadaki bir değişikliği gerçekten yapmadan **önce** dener. Sistem satışların ve endeksin nasıl değişeceğini tahmin eder.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>Ekranın üstünden **mağazayı** seçin.|**+ Yeni senaryo** düğmesine tıklayın.|Mağazada tekrarlanmayan bir **ad** ve isterseniz bir açıklama ile hedef girin.|**Önerilen reyon değişiklikleri** bölümünde en az bir reyon için bir eylem seçin.|**Senaryo oluştur** düğmesine tıklayın. **Taslak** durumunda kaydedilir.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>**Göstergeler** veya **Ürün analizi** bölümündeki bir öneriden "Senaryo oluştur" düğmesi bu formu reyon ve eylem seçili olarak açar.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>Mevcut durumu ve değişimleri okuma</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>En üstte **mevcut durum (değişiklik yok)** yer alır: mağazanın gerçek satışları, trafiği ve genel endeksi. Her senaryo tahmini değerlerini ve bu duruma göre ne kadar değiştiklerini gösterir.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>Yukarı yeşil ok değerin iyileştiğini, aşağı kırmızı ok kötüleştiğini gösterir.|Satışlar yüzde olarak, genel endeks ise puan olarak (0–100) karşılaştırılır.|Endeks trafiği, devir hızını ve m² başına satışı birleştirir: ne kadar yüksekse mağaza o kadar iyi performans gösterir.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>Senaryonun durumunu değiştirme</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>Durum, senaryolar üzerindeki çalışmayı düzenler: **Taslak** (yeni oluşturulmuş), **İncelemede**, **Onaylandı** veya **Elendi**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>Senaryo kartında **Ayrıntıyı gör** düğmesine tıklayın.|**Durum** listesinden yeni durumu seçin.|**Durumu değiştir** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>Mağazada uygulanacak senaryo için **Onaylandı** durumunu kullanın; böylece tüm ekip için açık olur.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>Simülasyon varsayımları</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>Her eylem, reyonun gerçek değerlerini sabit yüzdelerle değiştirir; bunlar ekranın altındaki **Simülasyon varsayımları** tablosunda görünür. Örneğin bir reyonu öne taşımak trafiğe 15 puan, satışlara %10 ekler.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>Ekranın altındaki **Simülasyon varsayımları** bölümünü açın.|İlgilendiğiniz eylemi bulun ve trafiğin, satışların ve alanın ne kadar değiştiğine bakın.|Bunların tahmin olduğunu unutmayın: kesin sonucu veya diğer reyonlara etkisini öngörmezler.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>Senaryo silme</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>Bir senaryoyu silmek onu değişiklikleri ve kaydedilmiş karşılaştırmalarıyla birlikte siler. Oluşturulmuş raporlar korunur.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>Senaryo kartında **Sil** düğmesine tıklayın.|Görünen mesajda onaylayın.</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>Senaryoyu neden kaydedemiyorum?</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>Formdaki kırmızı mesaj neyin düzeltilmesi gerektiğini gösterir. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**Ad eksik**: zorunludur.|**Mağazada bu adla bir senaryo zaten var**: başka bir ad seçin.|**Hiçbir değişiklik seçmediniz**: değişiklik içermeyen bir senaryo mevcut durumla aynı olur.|**Mağazanın geçerli bir yerleşim planı yok**: senaryo yine oluşturulur, ancak temel yerleşim olmadan.</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>Menü nasıl düzenlenmiştir</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>Menü modülleri üç blokta toplar. Yalnızca profilinizin izin verdiği modülleri görürsünüz.</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**Mağazalar ve şirket**: mağaza verilerini girin (mağazalar, plan, reyonlar, ürünler, stok ve satışlar).|**Simülasyon ve analiz**: performansı analiz edin ve değişiklikleri yapmadan önce deneyin.|**Yönetim ve güvenlik**: kullanıcılar, izinler ve sistem bakımı (yöneticiler için).</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>Dili değiştirme</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>Platform birkaç dilde kullanılabilir. Dili değiştirdiğinizde tüm ekranlar, mesajlar ve bu yardım çevrilir.</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>Sağ üstte **Dil** listesini açın.|Dili seçin: ekran kendiliğinden güncellenir.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>Şifrenizi değiştirme</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>Yeni şifre **en az 8 karakter** olmalı ve bir büyük harf, bir rakam ve bir özel karakter içermelidir.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>Sağ üstteki **Şifreyi değiştir** düğmesine tıklayın.|Mevcut şifrenizi girin.|Yeni şifreyi girin ve onaylamak için tekrarlayın.|**Kaydet** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>İhtiyacım olan bir modülü göremiyorum</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>Görünen modüller profilinizin izinlerine bağlıdır. Biri eksikse bu bir hata değildir: profiliniz onu içermiyor.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>Şirketinizin yöneticisinden **Yetkiler** bölümünde profilinizi kontrol etmesini isteyin.|Değiştirildikten sonra modülü görmek için oturumu kapatıp yeniden açın.</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>Mağaza kaydetme</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>Her mağaza bir şirketin satış noktasıdır. Başlangıç noktasıdır: plan, reyonlar, ürünler ve satışlar her zaman bir mağaza için girilir.</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>**Yeni mağaza** düğmesine tıklayın.|Zorunlu olan **ad**, **şirket** ve **adres** alanlarını doldurun.|**Yaklaşık alan (m²)** değerini girin: o olmadan m² başına satış hesaplanmaz.|**Mağaza oluştur** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>Ad aynı şirket içinde tekrarlanamaz. Mağazayı ayırt eden bir şey kullanın; örneğin şehir veya cadde.</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>Mağazada hangi veriler eksik</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>Her kart **Analiz için veriler** listesini gösterir. Göstergelerin, önerilerin ve senaryoların doğru çalışması için neyin girildiğini ve neyin eksik olduğunu belirtir.</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>Geçerli plan yok veya reyonlar eksik: **Yerleşim ve reyonlar** bölümünde girin.|Az sayıda ürün yerleştirilmiş: **Ürünler ve kategoriler** bölümünde onlara reyon atayın.|Stok veya bu ayın satışları yok: **Stok ve satışlar** bölümünde girin.|Reyonların toplam m²'si mağazadan büyükse, mağazanın veya reyonların alanını düzeltin.</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>Mağazayı düzenleme, etkinleştirme veya devre dışı bırakma</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>Her kartın altındaki düğmelerle mağaza bilgilerini düzeltebilir veya durumunu değiştirebilirsiniz. Pasif bir mağaza tüm verilerini korur.</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>Kalem (**Düzenle**) formu açar; verileri değiştirip kaydedersiniz.|Oklar (**Etkinleştir/Devre dışı bırak**) durumu değiştirir; sistem onay ister.|**Yerleşimi gör** sizi doğrudan o mağazanın planına ve reyonlarına götürür.</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>Mağaza arama ve filtreleme</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>Çok sayıda mağaza varsa listeyi ada, şirkete ve duruma göre filtreleyebilirsiniz.</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>Arama kutusuna adın bir kısmını yazın.|İsterseniz bir şirket ve durum seçin.|**Ara** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>Mağazayı neden kaydedemiyorum?</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>Formdaki kırmızı mesaj neyin düzeltilmesi gerektiğini gösterir. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**Tekrarlanan ad**: şirkette bu adla bir mağaza zaten var.|**Pasif şirket**: mağazaları kaydedilemez veya değiştirilemez.|**Alan 0**: 0'dan büyük olmalıdır (veya boş bırakın).|**Geçersiz telefon**: yalnızca rakamlar ve başta +, 6 ile 15 hane arası.</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>Mağaza planını yükleme</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>Yerleşim, mağazanın planıdır: düzeni gösteren bir görüntü veya PDF. Tarihiyle kaydedilir; böylece mağazanın zaman içinde nasıl değiştiği görülebilir.</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>Sağ üstten mağazayı seçin.|**Mağaza yerleşimi** sekmesinde **Yerleşim yükle** düğmesine tıklayın.|Ad, tarih, durum ve açıklamayı doldurun.|Dosyayı ekleyin: en fazla 5 MB PNG, JPG veya PDF.|**Yüklemeyi onayla** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>**Aktif** durumunu yalnızca mağazada şu an geçerli olan plan için seçin: önceki planın yerine geçerli plan olur.</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>Geçerli plan</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>Her mağazanın **yalnızca bir geçerli planı** vardır. Senaryolar onu temel alır ve haritalarda o gösterilir.</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>Yerleşim listesinde geçerli olan **Geçerli plan** olarak işaretlenir.|**Ayrıntıyı gör** planın görüntüsünü veya PDF'ini gösterir.|**Geçerli yap** başka bir planı geçerli yapar.|Çöp kutusu planı siler; sistem onay ister.</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>Reyon oluşturma ve düzenleme</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>Reyonlar mağazanın bölgeleridir (manav, içecek, temizlik...). Göstergeler, öneriler ve senaryolar reyon bazında çalışır.</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>**Reyon yönetimi** sekmesini açın.|**Yeni reyon** düğmesine tıklayın.|Ad, tür ve **Konum** (planın 9 bölgesinden biri) alanlarını doldurun.|**Tahmini ziyaretçi trafiği (%)** ve **Alan (m²)** değerlerini girin.|Kaydedin. Sonradan düzeltmek için tablodaki **Düzenle** seçeneğini kullanın.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>Trafik, alan ve konum</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>Her reyonun bu üç verisi göstergeleri ve simülasyonları besler. Eksik olurlarsa sonuçlar eksik kalır.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**Trafik**: reyondan geçen müşterilerin tahmini yüzdesi; mağazada gözlem veya sayımla belirlenir.|**Alan**: reyonun m²'si; m² başına satış için kullanılır. Toplam, mağazanınkini aşmamalıdır.|**Konum**: planın bölgesi. Aşağıdaki **harita** gösterir; ön taraf (giriş) alttadır.</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>Plan neden yüklenmiyor?</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>Onayladığınızda sistem dosyayı ve zorunlu alanları kontrol eder. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**Geçersiz biçim**: yalnızca PNG, JPG veya PDF kabul edilir.|**Dosya çok büyük**: en fazla 5 MB. Görüntüyü küçültün veya PDF'i daha düşük kalitede dışa aktarın.|**Eksik veri**: ad, tarih, açıklama ve dosya zorunludur.</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>Ana menü</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>Kategori oluşturma</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>Her ürün bir kategoriye aittir; bu yüzden önce kategorileri oluşturmak iyi olur. Kategoriler şirkete aittir ve tüm mağazalarında ortak kullanılır.</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>**Kategoriler** sekmesini açın.|**Yeni kategori** düğmesine tıklayın.|Adı ve isterseniz bir açıklama girin.|**Kaydet** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>Ürün ekleme</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>Ürün şirkete aittir, ancak **reyonu** her mağazaya özgüdür: aynı ürün bir mağazada içecek, diğerinde bakkaliye reyonunda olabilir.</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>Sağ üstten mağazayı seçin ve **Yeni ürün** düğmesine tıklayın.|Ad ve kategoriyi (zorunlu), fiyatı ve **Birim maliyet** değerini girin.|Ürünün o mağazadaki reyonunu seçin.|Kaydedin. **Dahili kod** (örneğin PROD-001) sistem tarafından atanır.</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>**Birim maliyeti** her zaman girin: o olmadan göstergelerde ve raporlarda marj hesaplanmaz.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>Yerleştirilmemiş ürünler</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>Mağazada reyonu olmayan ürün **Reyon atanmadı** olarak görünür. Satışları mağazaya sayılır ama göstergelerde hiçbir reyona eklenmez.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>**Bu mağazadaki reyon** sütununda reyonu olmayan ürünleri bulun.|Kalemle düzenleyin ve reyonu seçin.|Kaydedin. O andan itibaren satışları o reyona eklenir.</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>Ürünleri düzenleme veya devre dışı bırakma</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>Artık satılmayan bir ürün silinmez, devre dışı bırakılır. Satış geçmişi korunur ama artık içe aktarılamaz veya girilemez.</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>Kalemle ürünü düzenlersiniz; örneğin fiyatı veya reyonu değiştirmek için.|Oklarla etkinleştirir veya devre dışı bırakırsınız; sistem onay ister.|Aynısı kendi sekmesindeki kategoriler için de geçerlidir.</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>Dosyadan satış veya stok içe aktarma</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>Çok veriyi hızlıca girmenin yoludur: mağazanın satış noktası sisteminin dışa aktardığı **CSV** veya **Excel (.xlsx)** dosyası, en fazla 2 MB.</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>Mağazayı seçin ve **Dosya içe aktar** düğmesine tıklayın.|Dosyanın **Satış** mı yoksa **Stok** mu olduğunu seçin.|Biçim elinizde yoksa Excel veya CSV şablonunu indirip doldurun.|Dosyayı seçin ve **İçe aktar** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>Dosya bütün olarak doğrulanır: bir satırda hata varsa hiçbiri içe aktarılmaz ve düzeltebilmeniz için sistem satırı ve nedeni gösterir.</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>Satış veya stoğu elle girme</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>Tek tük veriler veya düzeltmeler içindir. Çok veri için dosya içe aktarmak daha iyidir.</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>**Manuel giriş** düğmesine tıklayın.|**Veri türü** alanında **Satış** veya **Stok** seçin.|Ürünü seçin, miktarı ve tarihi girin.|Satışta tutar isteğe bağlıdır (boş = fiyat × miktar). Stokta minimum ve maksimum girebilirsiniz.|**Kaydet** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>Satışları ve stoğu görüntüleme</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>Ekranda üç sekme vardır: **Satış verileri**, **Stok verileri** ve **İçe aktarmalar**. Üstteki filtreler mağazayı, dönemi ve gruplamayı seçer.</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>Dönemi ve gruplamayı (**Reyona göre**, **Kategoriye göre** veya **Ürüne göre**) seçin ve **Uygula** düğmesine tıklayın.|**Satış verileri** sekmesinde toplamları, reyona göre grafiği ve son girilen satışları görürsünüz.|**Stok verileri** sekmesinde her ürünün durumu görünür: **Kritik** (stok yok), **Düşük** (minimumda veya altında) ya da Fazla **Fazla stok** (maksimumun üstünde).</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>Hatalı bir yüklemeyi düzeltme</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>Tek bir satış, son satışlar listesinden silinir. Bir dosya yanlışlıkla içe aktarıldıysa (örneğin iki kez), içe aktarmanın tamamı geri alınabilir.</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>Tek satış: **Son girilen satışlar** bölümünde **Sil** düğmesine tıklayın.|Dosyanın tamamı: **İçe aktarmalar** sekmesinde **Geri al** düğmesine tıklayıp onaylayın.|Stok içe aktarmaları geri alınamaz: düzeltmek için doğru dosyayı içe aktarın; stoğun yerine geçer.</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>Dosya neden içe aktarılmadı?</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>Hata varsa form, satırların listesini nedenleriyle birlikte kırmızıyla gösterir. Dosyayı düzeltip yeniden içe aktarın. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**Eksik sütun**: başlıkta şablondaki adlar olmalıdır (codigo, fecha, cantidad...).|**Geçersiz veya olmayan kod**: ürünün iç kodunu kullanın, örneğin PROD-001.|**Geçersiz tarih veya sayı**: 2026-10-15 veya 15/10/2026 gibi tarihler ve binlik ayırıcısız sayılar.|**Desteklenmeyen biçim**: eski Excel .xls kabul edilmez; .xlsx veya .csv olarak kaydedin.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>Reyon bazında göstergeleri okuma</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>Tablo, seçilen dönemde her reyonun performansını gösterir. Reyonları karşılaştırmak için en yararlı değer 0–100 arası **Genel endeks** değeridir.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>Mağazayı ve dönemi seçin, **Uygula** düğmesine tıklayın.|Endekse bakın: 70'ten itibaren yeşil, 50'den itibaren sarı, altı kırmızı.|%40 trafik, %30 devir hızı ve %30 m² başına satışı, mağazanın en iyi reyonuyla karşılaştırarak birleştirir.|Her sütunun nasıl hesaplandığını görmek için tablonun altındaki **Her gösterge nasıl hesaplanır?** bölümünü açın.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>Otomatik öneriler</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>Sistem göstergeleri inceler ve eylemler önerir: bir reyonun alanını büyütmek veya küçültmek, öne taşımak, fiyatları gözden geçirmek, stok yenilemek veya eksik verileri girmek. Her birinin yüksek, orta veya düşük önceliği vardır.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>Her önerinin altındaki nedeni okuyun: hangi değerin onu oluşturduğunu açıklar.|**Senaryo oluştur** görünüyorsa bu düğme, değişiklik girilmiş olarak Senaryolar'ı açar.|Mağazada uygulamadan önce simüle edip karşılaştırın.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>Mağaza haritası ve gelişimi</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>Harita, planın her bölgesini seçtiğiniz göstergeye göre renklendirir; böylece mağazanın en iyi nerede performans gösterdiğini bir bakışta görürsünüz. Gelişim grafiği son 6 ayın satışlarını gösterir.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>**Mağaza haritası** bölümünde **Gösterge** seçin: satış, m² başına satış, marj, trafik, devir hızı veya genel endeks.|Koyu bölgelerin değerleri daha yüksektir. Ön taraf (giriş) alttadır.|Gelişim grafiğinde içinde bulunulan ay henüz bitmedi: onu şimdilik tamamlanmış aylarla karşılaştırmayın.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>Neden bazı değerler eksik?</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>Bazı göstergeler başka ekranlarda girilen verilere ihtiyaç duyar. Eksik bir şey varsa sütun boş kalır veya bir uyarı görünür.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**Marj**: ürünlerin birim maliyeti eksik (**Ürünler ve kategoriler**).|**m² başına satış**: mağazanın veya reyonların alanı eksik (**Mağazalar** veya **Yerleşim ve reyonlar**).|**Devir hızı ve kapsama**: stok eksik (**Stok ve satışlar**).|**Gösterge ve öneri yok**: seçilen dönemde satış yok.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>İki senaryoyu karşılaştırma</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>Aynı mağazanın iki senaryosunu karşı karşıya koyarak hangisinin daha avantajlı olduğunu gösterir. En yaygın kullanım, **mevcut durumu (değişiklik yok)** önerilen bir senaryoyla karşılaştırmaktır.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>Mağazayı ve **Analiz dönemi** değerini seçin.|**Mevcut senaryo** alanında mevcut durumu veya referans senaryoyu seçin.|**Önerilen senaryo** alanında değerlendirilecek senaryoyu seçin.|**Senaryoları karşılaştır** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>Sonucu yorumlama</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>**Sonuç** bölümü iki senaryodan hangisinin ne kadar avantajlı olduğunu söyler. Altında her birinin göstergeleri, haritalar ve farklar tablosu yer alır.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>İki senaryonun **tahmini satışlarını** ve **ortalama genel endeksini** karşılaştırın.|İki harita aynı renk ölçeğini kullanır; önerilen senaryonun hangi bölgelerde iyileştiği veya kötüleştiği görülür.|**Başlıca farklar** bölümünde değişimi hangi reyonların açıkladığına bakın.|Bunların tahmin olduğunu unutmayın: alttaki **Simülasyon varsayımları** bölümüne bakın.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>Karşılaştırmayı rapora kaydetme</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>Sonucu sunmak veya saklamak için karşılaştırma PDF rapor olarak dışa aktarılabilir.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>Karşılaştırmadan sonra ekranın altındaki **Bu karşılaştırmanın raporunu oluştur** düğmesine tıklayın.|İki senaryo seçili olarak **Raporlar** açılır.|Dönemi ve bölümleri kontrol edip raporu oluşturun.</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>Neden karşılaştırmıyor?</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>Ekranın üstündeki mesaj nedeni gösterir. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**İki tarafta aynı senaryo**: iki farklı senaryo seçin.|**Mağazanın senaryosu yok**: önce **Simülasyon senaryoları** bölümünde oluşturun.|**Eksik veri**: mağazanın dönem içinde satışı ve girilmiş reyonları olmalıdır.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>Mağazanın ürünlerini analiz etme</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>Analiz her ürünün satışlarını, stoğunu ve bulunduğu reyonun trafiğini inceler; başka yerde daha çok satacak, hareket etmeyen veya stoğu bitmek üzere olan ürünler gibi fırsatları bulur.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>Mağazayı ve dönemi (başlangıç ve bitiş) seçin.|**Ürünleri analiz et** düğmesine tıklayın.|Üstte kaç ürünün analiz edildiğini ve yüksek, orta, düşük öncelikli kaç fırsat olduğunu görürsünüz.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>Fırsat türleri</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>Gözlem yapılan her ürünün bir türü ve önceliği vardır. Her karttaki neden, buna yol açan rakamları açıklar.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**Gizli yıldız**: çok satıyor ama trafiği az bir reyonda.|**Ayrıcalıklı yeri işgal ediyor**: trafiği yoğun bir reyonda az satıyor.|**Hareketsiz**: stoğu var ama satışı yok.|**Stok tükenme riski**: stok 7 günden az yetiyor.|**Aşırı stok süresi**: stok 180 günden fazla yetiyor.|**Satılıyor ama yerleştirilmemiş**: satılıyor ama mağazada reyonu yok.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>Her fırsatla ne yapılmalı</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>Yüksek öncelikli olanlardan başlayın. Filtreler bir türü veya belirli bir ürünü görmenize yardımcı olur.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>Türe veya önceliğe göre filtreleyin ya da bir ürünü adıyla arayın.|Kartta **Senaryo oluştur** varsa değişikliği yapmadan önce simüle edin.|Yerleştirilmemiş bir ürüne **Ürünler ve kategoriler** bölümünde reyon atayın.|Stok tükenme riski veya fazla stok için **Stok ve satışlar** bölümünde alımları gözden geçirin.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>Altta **Öneri olmayan analiz edilmiş ürünler** listesi vardır: bunlar şu an bulundukları yerde iyi giden ürünlerdir.</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>Rapor oluşturma</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>Raporlar mağazanın bir döneme ait bilgilerini bir PDF'te özetler: göstergeler, öneriler, stok, satışlar veya senaryo karşılaştırması.</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>Mağazayı ve **Rapor türü** değerini seçin.|**Başlangıç (ay)** ve **Bitiş (ay)** alanlarıyla dönemi girin (yyyy-aa biçimi).|**Rapor dili** seçin.|**Dahil edilecek bölümler** kısmını kontrol edip **Rapor oluştur** düğmesine tıklayın.</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>Raporun dili sizinkinden farklı olabilir: örneğin PDF'i başka bir ülkedeki genel merkeze göndermek için kullanışlıdır.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>Rapor türleri ve bölümler</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>Türü seçtiğinizde genellikle içerdiği bölümler kendiliğinden işaretlenir. Sonra istediğinizi ekleyip çıkarabilirsiniz.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**Tam**: dönem içinde mağazayla ilgili her şey.|**Göstergeler**: reyon bazında göstergeler, gelişim ve öneriler.|**Stok**: stok durumu ve ürün ayrıntıları.|**Karşılaştırma**: **Temel senaryo** ve **Önerilen senaryo** gerektirir.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>Raporları görüntüleme, indirme veya silme</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>Oluşturulan raporlar sağdaki **Son raporlar** bölümünde saklanır; yeniden oluşturmadan tekrar açabilirsiniz.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>**Görüntüle** PDF'i tarayıcıda açar.|**İndir** bilgisayarınıza indirir.|**Sil** raporu ve dosyasını siler; sistem onay ister.</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>Rapor neden oluşturulmuyor?</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>Üstteki mesaj nedeni gösterir. En yaygın nedenler şunlardır:</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**Geçersiz dönem**: başlangıç ayı bitiş ayından sonra olamaz, gelecek ayları içeremez ve ay sayısının bir üst sınırı vardır.|**Bölüm yok**: en az birini işaretleyin.|**Senaryosuz karşılaştırma**: temel ve önerilen senaryoyu seçin.|**Veri yok**: mağazanın o dönemde satışı veya stoğu yok.</value>
+  </data>
 </root>

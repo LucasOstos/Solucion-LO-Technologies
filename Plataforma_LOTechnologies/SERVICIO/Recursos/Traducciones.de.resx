@@ -2696,4 +2696,499 @@
   <data name="idiomas.errNombreLargo" xml:space="preserve">
     <value>Der Name und der Name in der eigenen Sprache dürfen höchstens {0} Zeichen haben.</value>
   </data>
+  <data name="ayuda.boton" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="ayuda.botonTitulo" xml:space="preserve">
+    <value>Hilfe zu dieser Seite (F1)</value>
+  </data>
+  <data name="ayuda.titulo" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="ayuda.cerrar" xml:space="preserve">
+    <value>Hilfe schließen</value>
+  </data>
+  <data name="ayuda.volver" xml:space="preserve">
+    <value>Zurück zu den Themen</value>
+  </data>
+  <data name="ayuda.buscar" xml:space="preserve">
+    <value>Hilfe durchsuchen</value>
+  </data>
+  <data name="ayuda.enEstaPantalla" xml:space="preserve">
+    <value>Auf dieser Seite</value>
+  </data>
+  <data name="ayuda.relacionadas" xml:space="preserve">
+    <value>Verwandte Seiten</value>
+  </data>
+  <data name="ayuda.verTambien" xml:space="preserve">
+    <value>Siehe auch</value>
+  </data>
+  <data name="ayuda.mostrar" xml:space="preserve">
+    <value>Auf der Seite zeigen</value>
+  </data>
+  <data name="ayuda.consejo" xml:space="preserve">
+    <value>Tipp:</value>
+  </data>
+  <data name="ayuda.verGuia" xml:space="preserve">
+    <value>Einstiegsanleitung ansehen</value>
+  </data>
+  <data name="ayuda.sinResultados" xml:space="preserve">
+    <value>Keine Themen für „{0}“ gefunden.</value>
+  </data>
+  <data name="ayuda.atajo" xml:space="preserve">
+    <value>Hilfe mit {0} öffnen oder schließen.</value>
+  </data>
+  <data name="ayuda.marcado" xml:space="preserve">
+    <value>Auf der Seite hervorgehoben.</value>
+  </data>
+  <data name="ayuda.noVisible" xml:space="preserve">
+    <value>Das ist gerade nicht auf der Seite sichtbar.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.titulo" xml:space="preserve">
+    <value>Erste Schritte</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.resumen" xml:space="preserve">
+    <value>Zum ersten Mal auf der Plattform? Hier ist der ganze Weg, vom Erfassen der Filiale bis zum Testen eines Szenarios.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.cuerpo" xml:space="preserve">
+    <value>Um eine Filiale zu analysieren, braucht die Plattform zuerst ihre Daten. Gehen Sie beim ersten Mal in dieser Reihenfolge vor:</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.pasos" xml:space="preserve">
+    <value>Unter **Filialen** die Filiale mit ihrer Fläche erfassen.|Unter **Grundriss und Bereiche** den Grundriss und die Bereiche mit Lage, Kundenfrequenz und Fläche hochladen.|Unter **Produkte und Kategorien** die Produkte erfassen und einem Bereich zuordnen.|Unter **Bestand und Verkäufe** Verkäufe und Bestand erfassen oder importieren.|Unter **Kennzahlen und Empfehlungen** prüfen, wie jeder Bereich abschneidet.|Unter **Simulationsszenarien** die vom System vorgeschlagenen Änderungen testen und vergleichen.</value>
+  </data>
+  <data name="ayuda.general.primerosPasos.consejo" xml:space="preserve">
+    <value>Auf jeder Seite erklärt die Schaltfläche **Hilfe** (oder die Taste F1), was Sie dort tun können.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.titulo" xml:space="preserve">
+    <value>Wozu dient ein Szenario?</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.cuerpo" xml:space="preserve">
+    <value>Ein Szenario testet eine Änderung der Filialaufteilung, zum Beispiel einen Bereich nach vorne zu verlegen oder ihm mehr Fläche zu geben. Das System geht von den echten Daten des letzten Monats aus und schätzt, wie sich Verkäufe, Kundenfrequenz und Gesamtindex ändern würden, ohne die echte Filiale zu verändern.</value>
+  </data>
+  <data name="ayuda.escenarios.queEs.pasos" xml:space="preserve">
+    <value>Unter **Kennzahlen und Empfehlungen** prüfen, welcher Bereich verbessert werden sollte.|Ein Szenario mit der zu testenden Änderung anlegen.|Es unter **Szenariovergleich** mit der aktuellen Situation vergleichen.|Wenn es sich lohnt, genehmigen und die Änderung in der Filiale umsetzen.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.titulo" xml:space="preserve">
+    <value>Ein Szenario anlegen</value>
+  </data>
+  <data name="ayuda.escenarios.crear.cuerpo" xml:space="preserve">
+    <value>Ein Szenario testet eine Änderung in der Filiale, **bevor** sie wirklich umgesetzt wird. Das System schätzt, wie sich Verkäufe und Index ändern würden.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.pasos" xml:space="preserve">
+    <value>Oben auf der Seite die **Filiale** wählen.|Auf **+ Neues Szenario** klicken.|Einen **Namen** eingeben, der in der Filiale noch nicht vorkommt, und optional Beschreibung und Ziel.|Unter **Vorgeschlagene Bereichsänderungen** für mindestens einen Bereich eine Aktion wählen.|Auf **Szenario anlegen** klicken. Es wird als **Entwurf** gespeichert.</value>
+  </data>
+  <data name="ayuda.escenarios.crear.consejo" xml:space="preserve">
+    <value>Aus einer Empfehlung unter **Kennzahlen** oder **Produktanalyse** öffnet die Schaltfläche „Szenario anlegen“ dieses Formular mit bereits gewähltem Bereich und Aktion.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.titulo" xml:space="preserve">
+    <value>Aktuelle Situation und Abweichungen lesen</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.cuerpo" xml:space="preserve">
+    <value>Ganz oben steht die **aktuelle Situation (ohne Änderungen)**: die echten Verkäufe, die Kundenfrequenz und der Gesamtindex der Filiale. Jedes Szenario zeigt seine geschätzten Werte und deren Abweichung von dieser Situation.</value>
+  </data>
+  <data name="ayuda.escenarios.variaciones.pasos" xml:space="preserve">
+    <value>Ein grüner Pfeil nach oben bedeutet eine Verbesserung, ein roter Pfeil nach unten eine Verschlechterung.|Verkäufe werden in Prozent verglichen, der Gesamtindex in Punkten (0 bis 100).|Der Index kombiniert Kundenfrequenz, Umschlag und Verkäufe pro m²: je höher, desto besser schneidet die Filiale ab.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.titulo" xml:space="preserve">
+    <value>Status eines Szenarios ändern</value>
+  </data>
+  <data name="ayuda.escenarios.estado.cuerpo" xml:space="preserve">
+    <value>Der Status ordnet die Arbeit mit Szenarien: **Entwurf** (gerade angelegt), **In Prüfung**, **Genehmigt** oder **Verworfen**.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.pasos" xml:space="preserve">
+    <value>Auf der Szenariokarte auf **Details ansehen** klicken.|In der Liste **Status** den neuen Status wählen.|Auf **Status ändern** klicken.</value>
+  </data>
+  <data name="ayuda.escenarios.estado.consejo" xml:space="preserve">
+    <value>Verwenden Sie **Genehmigt** für das Szenario, das in der Filiale umgesetzt wird, damit es für das ganze Team klar ist.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.titulo" xml:space="preserve">
+    <value>Annahmen der Simulation</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.cuerpo" xml:space="preserve">
+    <value>Jede Aktion verändert die echten Werte des Bereichs um feste Prozentsätze, die in der Tabelle **Annahmen der Simulation** unten auf der Seite stehen. Wird ein Bereich zum Beispiel nach vorne verlegt, kommen 15 Punkte Kundenfrequenz und 10 % Verkäufe hinzu.</value>
+  </data>
+  <data name="ayuda.escenarios.supuestos.pasos" xml:space="preserve">
+    <value>Unten auf der Seite **Annahmen der Simulation** öffnen.|Die gewünschte Aktion suchen und ablesen, wie sich Kundenfrequenz, Verkäufe und Fläche ändern.|Beachten Sie, dass es Schätzungen sind: Sie sagen weder das genaue Ergebnis noch die Wirkung auf andere Bereiche voraus.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.titulo" xml:space="preserve">
+    <value>Ein Szenario löschen</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.cuerpo" xml:space="preserve">
+    <value>Beim Löschen eines Szenarios werden auch seine Änderungen und gespeicherten Vergleiche gelöscht. Bereits erstellte Berichte bleiben erhalten.</value>
+  </data>
+  <data name="ayuda.escenarios.eliminar.pasos" xml:space="preserve">
+    <value>Auf der Szenariokarte auf **Löschen** klicken.|In der angezeigten Meldung bestätigen.</value>
+  </data>
+  <data name="ayuda.escenarios.errores.titulo" xml:space="preserve">
+    <value>Warum kann ich das Szenario nicht speichern?</value>
+  </data>
+  <data name="ayuda.escenarios.errores.cuerpo" xml:space="preserve">
+    <value>Die rote Meldung im Formular zeigt, was korrigiert werden muss. Die häufigsten Ursachen sind:</value>
+  </data>
+  <data name="ayuda.escenarios.errores.pasos" xml:space="preserve">
+    <value>**Der Name fehlt**: Er ist Pflicht.|**Es gibt bereits ein Szenario mit diesem Namen** in der Filiale: Wählen Sie einen anderen.|**Sie haben keine Änderung gewählt**: Ein Szenario ohne Änderungen entspräche der aktuellen Situation.|**Die Filiale hat kein gültiges Layout**: Das Szenario wird trotzdem angelegt, aber ohne Basislayout.</value>
+  </data>
+  <data name="ayuda.principal.modulos.titulo" xml:space="preserve">
+    <value>Aufbau des Menüs</value>
+  </data>
+  <data name="ayuda.principal.modulos.cuerpo" xml:space="preserve">
+    <value>Das Menü fasst die Module in drei Blöcken zusammen. Sie sehen nur die Module, die Ihr Profil erlaubt.</value>
+  </data>
+  <data name="ayuda.principal.modulos.pasos" xml:space="preserve">
+    <value>**Filialen und Unternehmen**: Daten der Filiale erfassen (Filialen, Grundriss, Bereiche, Produkte, Bestand und Verkäufe).|**Simulation und Analyse**: Leistung analysieren und Änderungen testen, bevor sie umgesetzt werden.|**Verwaltung und Sicherheit**: Benutzer, Berechtigungen und Systemwartung, für Administratoren.</value>
+  </data>
+  <data name="ayuda.principal.idioma.titulo" xml:space="preserve">
+    <value>Sprache ändern</value>
+  </data>
+  <data name="ayuda.principal.idioma.cuerpo" xml:space="preserve">
+    <value>Die Plattform ist in mehreren Sprachen verfügbar. Beim Wechsel werden alle Seiten, Meldungen und diese Hilfe übersetzt.</value>
+  </data>
+  <data name="ayuda.principal.idioma.pasos" xml:space="preserve">
+    <value>Öffnen Sie oben rechts die Liste **Sprache**.|Wählen Sie die Sprache: Die Seite aktualisiert sich von selbst.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.titulo" xml:space="preserve">
+    <value>Ihr Passwort ändern</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.cuerpo" xml:space="preserve">
+    <value>Das neue Passwort muss **mindestens 8 Zeichen** haben, darunter einen Großbuchstaben, eine Ziffer und ein Sonderzeichen.</value>
+  </data>
+  <data name="ayuda.principal.contrasenia.pasos" xml:space="preserve">
+    <value>Klicken Sie oben rechts auf **Passwort ändern**.|Geben Sie Ihr aktuelles Passwort ein.|Geben Sie das neue ein und wiederholen Sie es zur Bestätigung.|Klicken Sie auf **Speichern**.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.titulo" xml:space="preserve">
+    <value>Ein benötigtes Modul fehlt</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.cuerpo" xml:space="preserve">
+    <value>Welche Module angezeigt werden, hängt von den Berechtigungen Ihres Profils ab. Fehlt eines, ist das kein Fehler: Ihr Profil enthält es nicht.</value>
+  </data>
+  <data name="ayuda.principal.sinModulo.pasos" xml:space="preserve">
+    <value>Bitten Sie den Administrator Ihres Unternehmens, Ihr Profil unter **Berechtigungen** zu prüfen.|Melden Sie sich nach der Änderung ab und wieder an, um das Modul zu sehen.</value>
+  </data>
+  <data name="ayuda.locales.crear.titulo" xml:space="preserve">
+    <value>Eine Filiale anlegen</value>
+  </data>
+  <data name="ayuda.locales.crear.cuerpo" xml:space="preserve">
+    <value>Jede Filiale ist eine Verkaufsstelle eines Unternehmens. Sie ist der Ausgangspunkt: Grundriss, Bereiche, Produkte und Verkäufe werden immer für eine Filiale erfasst.</value>
+  </data>
+  <data name="ayuda.locales.crear.pasos" xml:space="preserve">
+    <value>Klicken Sie auf **Neue Filiale**.|Füllen Sie **Name**, **Unternehmen** und **Adresse** aus; sie sind Pflichtfelder.|Geben Sie die **Fläche ca. (m²)** an: Ohne sie werden keine Verkäufe pro m² berechnet.|Klicken Sie auf **Filiale anlegen**.</value>
+  </data>
+  <data name="ayuda.locales.crear.consejo" xml:space="preserve">
+    <value>Der Name darf innerhalb desselben Unternehmens nicht doppelt vorkommen. Verwenden Sie etwas Eindeutiges, etwa die Stadt oder die Straße.</value>
+  </data>
+  <data name="ayuda.locales.datos.titulo" xml:space="preserve">
+    <value>Welche Daten der Filiale fehlen</value>
+  </data>
+  <data name="ayuda.locales.datos.cuerpo" xml:space="preserve">
+    <value>Jede Karte zeigt die Liste **Daten für die Analyse**. Sie zeigt, was erfasst ist und was fehlt, damit Kennzahlen, Empfehlungen und Szenarien richtig funktionieren.</value>
+  </data>
+  <data name="ayuda.locales.datos.pasos" xml:space="preserve">
+    <value>Kein gültiger Grundriss oder unvollständige Bereiche: unter **Grundriss und Bereiche** erfassen.|Wenige Produkte zugeordnet: unter **Produkte und Kategorien** einen Bereich zuweisen.|Kein Bestand oder keine Verkäufe im Monat: unter **Bestand und Verkäufe** erfassen.|Ergeben die Bereiche mehr m² als die Filiale, die Fläche der Filiale oder der Bereiche korrigieren.</value>
+  </data>
+  <data name="ayuda.locales.editar.titulo" xml:space="preserve">
+    <value>Filiale bearbeiten, aktivieren oder deaktivieren</value>
+  </data>
+  <data name="ayuda.locales.editar.cuerpo" xml:space="preserve">
+    <value>Mit den Schaltflächen unten auf jeder Karte können Sie die Daten der Filiale korrigieren oder ihren Status ändern. Eine inaktive Filiale behält alle Daten.</value>
+  </data>
+  <data name="ayuda.locales.editar.pasos" xml:space="preserve">
+    <value>Der Stift (**Bearbeiten**) öffnet das Formular zum Ändern und Speichern.|Die Pfeile (**Aktivieren/Deaktivieren**) ändern den Status; das System fragt nach einer Bestätigung.|**Grundriss ansehen** führt direkt zum Grundriss und den Bereichen dieser Filiale.</value>
+  </data>
+  <data name="ayuda.locales.buscar.titulo" xml:space="preserve">
+    <value>Filialen suchen und filtern</value>
+  </data>
+  <data name="ayuda.locales.buscar.cuerpo" xml:space="preserve">
+    <value>Bei vielen Filialen können Sie die Liste nach Name, Unternehmen und Status filtern.</value>
+  </data>
+  <data name="ayuda.locales.buscar.pasos" xml:space="preserve">
+    <value>Geben Sie einen Teil des Namens in die Suche ein.|Wählen Sie optional ein Unternehmen und einen Status.|Klicken Sie auf **Suchen**.</value>
+  </data>
+  <data name="ayuda.locales.errores.titulo" xml:space="preserve">
+    <value>Warum kann ich die Filiale nicht speichern?</value>
+  </data>
+  <data name="ayuda.locales.errores.cuerpo" xml:space="preserve">
+    <value>Die rote Meldung im Formular zeigt, was korrigiert werden muss. Die häufigsten Ursachen sind:</value>
+  </data>
+  <data name="ayuda.locales.errores.pasos" xml:space="preserve">
+    <value>**Doppelter Name**: Das Unternehmen hat bereits eine Filiale mit diesem Namen.|**Inaktives Unternehmen**: Seine Filialen können weder angelegt noch geändert werden.|**Fläche 0**: Sie muss größer als 0 sein (oder leer bleiben).|**Ungültige Telefonnummer**: nur Ziffern und ein + am Anfang, 6 bis 15 Ziffern.</value>
+  </data>
+  <data name="ayuda.layout.cargar.titulo" xml:space="preserve">
+    <value>Grundriss der Filiale hochladen</value>
+  </data>
+  <data name="ayuda.layout.cargar.cuerpo" xml:space="preserve">
+    <value>Der Grundriss ist ein Bild oder PDF mit der Aufteilung der Filiale. Er wird mit Datum gespeichert, sodass Sie sehen, wie sich die Filiale verändert hat.</value>
+  </data>
+  <data name="ayuda.layout.cargar.pasos" xml:space="preserve">
+    <value>Wählen Sie oben rechts die Filiale.|Klicken Sie auf der Registerkarte **Grundriss der Filiale** auf **Grundriss hochladen**.|Füllen Sie Name, Datum, Status und Beschreibung aus.|Hängen Sie die Datei an: PNG, JPG oder PDF bis 5 MB.|Klicken Sie auf **Hochladen bestätigen**.</value>
+  </data>
+  <data name="ayuda.layout.cargar.consejo" xml:space="preserve">
+    <value>Wählen Sie den Status **Aktiv** nur für den Grundriss, der derzeit gilt: Er ersetzt den bisherigen als gültigen Grundriss.</value>
+  </data>
+  <data name="ayuda.layout.vigente.titulo" xml:space="preserve">
+    <value>Der gültige Grundriss</value>
+  </data>
+  <data name="ayuda.layout.vigente.cuerpo" xml:space="preserve">
+    <value>Jede Filiale hat **genau einen gültigen Grundriss**. Er dient den Szenarien als Basis und erscheint in den Karten.</value>
+  </data>
+  <data name="ayuda.layout.vigente.pasos" xml:space="preserve">
+    <value>In der Liste ist der gültige Grundriss als **Aktueller Grundriss** markiert.|**Details ansehen** zeigt das Bild oder PDF des Grundrisses.|**Als aktuell festlegen** macht einen anderen Grundriss gültig.|Der Papierkorb löscht einen Grundriss; das System fragt nach einer Bestätigung.</value>
+  </data>
+  <data name="ayuda.layout.sectores.titulo" xml:space="preserve">
+    <value>Bereiche anlegen und bearbeiten</value>
+  </data>
+  <data name="ayuda.layout.sectores.cuerpo" xml:space="preserve">
+    <value>Bereiche sind die Zonen der Filiale (Obst, Getränke, Reinigung ...). Kennzahlen, Empfehlungen und Szenarien arbeiten pro Bereich.</value>
+  </data>
+  <data name="ayuda.layout.sectores.pasos" xml:space="preserve">
+    <value>Öffnen Sie die Registerkarte **Bereichsverwaltung**.|Klicken Sie auf **Neuer Bereich**.|Füllen Sie Name, Typ und **Lage** aus (eine der 9 Zonen des Grundrisses).|Geben Sie **Geschätzte Kundenfrequenz (%)** und **Fläche (m²)** ein.|Speichern. Zum späteren Korrigieren **Bearbeiten** in der Tabelle verwenden.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.titulo" xml:space="preserve">
+    <value>Kundenfrequenz, Fläche und Lage</value>
+  </data>
+  <data name="ayuda.layout.circulacion.cuerpo" xml:space="preserve">
+    <value>Diese drei Werte jedes Bereichs fließen in Kennzahlen und Simulationen ein. Fehlen sie, sind die Ergebnisse unvollständig.</value>
+  </data>
+  <data name="ayuda.layout.circulacion.pasos" xml:space="preserve">
+    <value>**Kundenfrequenz**: geschätzter Anteil der Kunden in %, die den Bereich passieren, durch Beobachtung oder Zählung.|**Fläche**: m² des Bereichs; dient für die Verkäufe pro m². Die Summe sollte die der Filiale nicht übersteigen.|**Lage**: Zone des Grundrisses. Die **Karte** unten zeigt sie; vorne (Eingang) ist unten.</value>
+  </data>
+  <data name="ayuda.layout.errores.titulo" xml:space="preserve">
+    <value>Warum wird der Grundriss nicht hochgeladen?</value>
+  </data>
+  <data name="ayuda.layout.errores.cuerpo" xml:space="preserve">
+    <value>Beim Bestätigen prüft das System die Datei und die Pflichtfelder. Die häufigsten Ursachen sind:</value>
+  </data>
+  <data name="ayuda.layout.errores.pasos" xml:space="preserve">
+    <value>**Ungültiges Format**: Nur PNG, JPG oder PDF werden akzeptiert.|**Datei zu groß**: Maximal 5 MB. Verkleinern Sie das Bild oder exportieren Sie das PDF in geringerer Qualität.|**Fehlende Angabe**: Name, Datum, Beschreibung und Datei sind Pflicht.</value>
+  </data>
+  <data name="ayuda.principal.pantalla" xml:space="preserve">
+    <value>Hauptmenü</value>
+  </data>
+  <data name="ayuda.productos.categorias.titulo" xml:space="preserve">
+    <value>Kategorien anlegen</value>
+  </data>
+  <data name="ayuda.productos.categorias.cuerpo" xml:space="preserve">
+    <value>Jedes Produkt gehört zu einer Kategorie, daher legen Sie diese am besten zuerst an. Kategorien gehören zum Unternehmen und gelten für alle seine Filialen.</value>
+  </data>
+  <data name="ayuda.productos.categorias.pasos" xml:space="preserve">
+    <value>Öffnen Sie die Registerkarte **Kategorien**.|Klicken Sie auf **Neue Kategorie**.|Geben Sie den Namen und optional eine Beschreibung ein.|Klicken Sie auf **Speichern**.</value>
+  </data>
+  <data name="ayuda.productos.crear.titulo" xml:space="preserve">
+    <value>Ein Produkt anlegen</value>
+  </data>
+  <data name="ayuda.productos.crear.cuerpo" xml:space="preserve">
+    <value>Das Produkt gehört zum Unternehmen, sein **Bereich** gilt aber je Filiale: Dasselbe Produkt kann in einer Filiale bei Getränken und in einer anderen im Lebensmittelbereich stehen.</value>
+  </data>
+  <data name="ayuda.productos.crear.pasos" xml:space="preserve">
+    <value>Wählen Sie oben rechts die Filiale und klicken Sie auf **Neues Produkt**.|Füllen Sie Name und Kategorie (Pflicht), Preis und **Stückkosten** aus.|Wählen Sie den Bereich des Produkts in dieser Filiale.|Speichern. Den **Interner Code** (z. B. PROD-001) vergibt das System.</value>
+  </data>
+  <data name="ayuda.productos.crear.consejo" xml:space="preserve">
+    <value>Geben Sie immer die **Stückkosten** ein: Ohne sie wird die Marge weder in den Kennzahlen noch in den Berichten berechnet.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.titulo" xml:space="preserve">
+    <value>Nicht zugeordnete Produkte</value>
+  </data>
+  <data name="ayuda.productos.ubicar.cuerpo" xml:space="preserve">
+    <value>Ein Produkt ohne Bereich in der Filiale erscheint als **Kein Bereich zugewiesen**. Seine Verkäufe zählen für die Filiale, aber für keinen Bereich in den Kennzahlen.</value>
+  </data>
+  <data name="ayuda.productos.ubicar.pasos" xml:space="preserve">
+    <value>Suchen Sie in der Spalte **Bereich in dieser Filiale** die Produkte ohne Bereich.|Bearbeiten Sie sie mit dem Stift und wählen Sie den Bereich.|Speichern. Ab dann zählen ihre Verkäufe für diesen Bereich.</value>
+  </data>
+  <data name="ayuda.productos.estado.titulo" xml:space="preserve">
+    <value>Produkte bearbeiten oder deaktivieren</value>
+  </data>
+  <data name="ayuda.productos.estado.cuerpo" xml:space="preserve">
+    <value>Ein Produkt, das nicht mehr verkauft wird, wird nicht gelöscht, sondern deaktiviert. Die Verkaufshistorie bleibt erhalten, aber es kann nicht mehr importiert oder erfasst werden.</value>
+  </data>
+  <data name="ayuda.productos.estado.pasos" xml:space="preserve">
+    <value>Mit dem Stift bearbeiten Sie das Produkt, etwa um Preis oder Bereich zu ändern.|Mit den Pfeilen aktivieren oder deaktivieren Sie es; das System fragt nach einer Bestätigung.|Dasselbe gilt für Kategorien auf ihrer Registerkarte.</value>
+  </data>
+  <data name="ayuda.stock.importar.titulo" xml:space="preserve">
+    <value>Verkäufe oder Bestand aus einer Datei importieren</value>
+  </data>
+  <data name="ayuda.stock.importar.cuerpo" xml:space="preserve">
+    <value>So erfassen Sie schnell viele Daten: die vom Kassensystem der Filiale exportierte Datei als **CSV** oder **Excel (.xlsx)**, bis 2 MB.</value>
+  </data>
+  <data name="ayuda.stock.importar.pasos" xml:space="preserve">
+    <value>Wählen Sie die Filiale und klicken Sie auf **Datei importieren**.|Wählen Sie, ob die Datei **Verkauf** oder **Bestand** enthält.|Wenn Sie das Format nicht haben, laden Sie die Excel- oder CSV-Vorlage herunter und füllen Sie sie aus.|Wählen Sie die Datei und klicken Sie auf **Importieren**.</value>
+  </data>
+  <data name="ayuda.stock.importar.consejo" xml:space="preserve">
+    <value>Die Datei wird vollständig geprüft: Hat eine Zeile einen Fehler, wird keine importiert, und das System nennt Zeile und Grund, damit Sie ihn korrigieren.</value>
+  </data>
+  <data name="ayuda.stock.manual.titulo" xml:space="preserve">
+    <value>Einen Verkauf oder Bestand manuell erfassen</value>
+  </data>
+  <data name="ayuda.stock.manual.cuerpo" xml:space="preserve">
+    <value>Für einzelne Daten oder Korrekturen. Bei vielen Daten ist der Import einer Datei besser.</value>
+  </data>
+  <data name="ayuda.stock.manual.pasos" xml:space="preserve">
+    <value>Klicken Sie auf **Manuelle Erfassung**.|Wählen Sie unter **Datentyp** **Verkauf** oder **Bestand**.|Wählen Sie das Produkt und geben Sie Menge und Datum ein.|Bei einem Verkauf ist der Betrag optional (leer = Preis × Menge). Beim Bestand können Sie Minimum und Maximum angeben.|Klicken Sie auf **Speichern**.</value>
+  </data>
+  <data name="ayuda.stock.consultar.titulo" xml:space="preserve">
+    <value>Verkäufe und Bestand ansehen</value>
+  </data>
+  <data name="ayuda.stock.consultar.cuerpo" xml:space="preserve">
+    <value>Die Seite hat drei Registerkarten: **Verkaufsdaten**, **Bestandsdaten** und **Importe**. Mit den Filtern oben wählen Sie Filiale, Zeitraum und Gruppierung.</value>
+  </data>
+  <data name="ayuda.stock.consultar.pasos" xml:space="preserve">
+    <value>Wählen Sie Zeitraum und Gruppierung (**Nach Bereich**, **Nach Kategorie** oder **Nach Produkt**) und klicken Sie auf **Anwenden**.|**Verkaufsdaten** zeigt Summen, das Diagramm nach Bereich und die zuletzt erfassten Verkäufe.|**Bestandsdaten** zeigt den Status jedes Produkts: **Kritisch** (kein Bestand), **Niedrig** (am oder unter dem Minimum) oder **Überbestand** (über dem Maximum).</value>
+  </data>
+  <data name="ayuda.stock.deshacer.titulo" xml:space="preserve">
+    <value>Eine falsche Erfassung korrigieren</value>
+  </data>
+  <data name="ayuda.stock.deshacer.cuerpo" xml:space="preserve">
+    <value>Ein einzelner Verkauf wird in der Liste der letzten Verkäufe gelöscht. Wurde eine Datei versehentlich importiert (z. B. doppelt), lässt sich der ganze Import rückgängig machen.</value>
+  </data>
+  <data name="ayuda.stock.deshacer.pasos" xml:space="preserve">
+    <value>Einzelner Verkauf: Klicken Sie unter **Zuletzt erfasste Verkäufe** auf **Löschen**.|Ganze Datei: Klicken Sie auf der Registerkarte **Importe** auf **Rückgängig** und bestätigen Sie.|Bestandsimporte lassen sich nicht rückgängig machen: Importieren Sie zur Korrektur die richtige Datei, die den Bestand ersetzt.</value>
+  </data>
+  <data name="ayuda.stock.errores.titulo" xml:space="preserve">
+    <value>Warum wurde die Datei nicht importiert?</value>
+  </data>
+  <data name="ayuda.stock.errores.cuerpo" xml:space="preserve">
+    <value>Bei Fehlern zeigt das Formular rot die Liste der Zeilen mit dem Grund. Korrigieren Sie die Datei und importieren Sie sie erneut. Die häufigsten Ursachen sind:</value>
+  </data>
+  <data name="ayuda.stock.errores.pasos" xml:space="preserve">
+    <value>**Fehlende Spalte**: Die Kopfzeile muss die Namen der Vorlage enthalten (codigo, fecha, cantidad ...).|**Ungültiger oder unbekannter Code**: Verwenden Sie den internen Produktcode, z. B. PROD-001.|**Ungültiges Datum oder ungültige Zahl**: Datum wie 2026-10-15 oder 15/10/2026, Zahlen ohne Tausendertrennzeichen.|**Nicht unterstütztes Format**: Das alte Excel-Format .xls wird nicht akzeptiert; speichern Sie als .xlsx oder .csv.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.titulo" xml:space="preserve">
+    <value>Kennzahlen nach Bereich lesen</value>
+  </data>
+  <data name="ayuda.indicadores.leer.cuerpo" xml:space="preserve">
+    <value>Die Tabelle zeigt die Leistung jedes Bereichs im gewählten Zeitraum. Am nützlichsten zum Vergleichen ist der **Gesamtindex** von 0 bis 100.</value>
+  </data>
+  <data name="ayuda.indicadores.leer.pasos" xml:space="preserve">
+    <value>Wählen Sie Filiale und Zeitraum und klicken Sie auf **Anwenden**.|Achten Sie auf den Index: grün ab 70, gelb ab 50, darunter rot.|Er kombiniert 40 % Kundenfrequenz, 30 % Umschlag und 30 % Verkäufe pro m², verglichen mit dem besten Bereich der Filiale.|Wie jede Spalte berechnet wird, sehen Sie unter **Wie wird jede Kennzahl berechnet?** unter der Tabelle.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.titulo" xml:space="preserve">
+    <value>Automatische Empfehlungen</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.cuerpo" xml:space="preserve">
+    <value>Das System prüft die Kennzahlen und schlägt Maßnahmen vor: die Fläche eines Bereichs vergrößern oder verkleinern, ihn nach vorne verlegen, Preise prüfen, Bestand auffüllen oder fehlende Daten erfassen. Jede hat hohe, mittlere oder niedrige Priorität.</value>
+  </data>
+  <data name="ayuda.indicadores.recomendaciones.pasos" xml:space="preserve">
+    <value>Lesen Sie den Grund unter jeder Empfehlung: Er erklärt, welcher Wert sie ausgelöst hat.|Wird **Szenario erstellen** angezeigt, öffnet diese Schaltfläche die Szenarien mit bereits eingetragener Änderung.|Simulieren und vergleichen Sie, bevor Sie es in der Filiale umsetzen.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.titulo" xml:space="preserve">
+    <value>Karte und Entwicklung der Filiale</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.cuerpo" xml:space="preserve">
+    <value>Die Karte färbt jede Zone des Grundrisses nach der gewählten Kennzahl, damit Sie auf einen Blick sehen, wo die Filiale am besten abschneidet. Das Entwicklungsdiagramm zeigt die Verkäufe der letzten 6 Monate.</value>
+  </data>
+  <data name="ayuda.indicadores.mapa.pasos" xml:space="preserve">
+    <value>Wählen Sie unter **Filialkarte** die **Kennzahl**: Verkäufe, Verkäufe pro m², Marge, Kundenfrequenz, Umschlag oder Gesamtindex.|Dunklere Zonen haben höhere Werte. Vorne (Eingang) ist unten.|Im Entwicklungsdiagramm läuft der aktuelle Monat noch: Vergleichen Sie ihn noch nicht mit vollen Monaten.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.titulo" xml:space="preserve">
+    <value>Warum fehlen Werte?</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.cuerpo" xml:space="preserve">
+    <value>Manche Kennzahlen brauchen Daten aus anderen Seiten. Fehlt etwas, bleibt die Spalte leer oder es erscheint ein Hinweis.</value>
+  </data>
+  <data name="ayuda.indicadores.faltanDatos.pasos" xml:space="preserve">
+    <value>**Marge**: Es fehlen die Stückkosten der Produkte (**Produkte und Kategorien**).|**Verkäufe pro m²**: Es fehlt die Fläche der Filiale oder der Bereiche (**Filialen** oder **Grundriss und Bereiche**).|**Umschlag und Reichweite**: Es fehlt der Bestand (**Bestand und Verkäufe**).|**Keine Kennzahlen oder Empfehlungen**: Im gewählten Zeitraum gibt es keine Verkäufe.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.titulo" xml:space="preserve">
+    <value>Zwei Szenarien vergleichen</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.cuerpo" xml:space="preserve">
+    <value>Stellt zwei Szenarien derselben Filiale gegenüber, um zu sehen, welches sich lohnt. Am häufigsten wird die **aktuelle Situation (ohne Änderungen)** mit einem vorgeschlagenen Szenario verglichen.</value>
+  </data>
+  <data name="ayuda.comparacion.comparar.pasos" xml:space="preserve">
+    <value>Wählen Sie die Filiale und den **Analysezeitraum**.|Wählen Sie unter **Aktuelles Szenario** die aktuelle Situation oder das Referenzszenario.|Wählen Sie unter **Vorgeschlagenes Szenario** das zu bewertende Szenario.|Klicken Sie auf **Szenarien vergleichen**.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.titulo" xml:space="preserve">
+    <value>Das Ergebnis deuten</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.cuerpo" xml:space="preserve">
+    <value>Das **Fazit** sagt, welches der beiden Szenarien sich lohnt und um wie viel. Darunter stehen die Kennzahlen beider Szenarien, die Karten und die Tabelle der Unterschiede.</value>
+  </data>
+  <data name="ayuda.comparacion.resultados.pasos" xml:space="preserve">
+    <value>Vergleichen Sie die **geschätzten Verkäufe** und den **durchschnittlichen Gesamtindex** beider Szenarien.|Beide Karten nutzen dieselbe Farbskala: So sehen Sie, in welchen Zonen sich das vorgeschlagene Szenario verbessert oder verschlechtert.|Unter **Wichtigste Unterschiede** sehen Sie, welche Bereiche die Änderung erklären.|Denken Sie daran, dass es Schätzungen sind: Prüfen Sie **Annahmen der Simulation** unten.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.titulo" xml:space="preserve">
+    <value>Den Vergleich als Bericht speichern</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.cuerpo" xml:space="preserve">
+    <value>Um das Ergebnis zu präsentieren oder aufzubewahren, kann der Vergleich als PDF-Bericht exportiert werden.</value>
+  </data>
+  <data name="ayuda.comparacion.reporte.pasos" xml:space="preserve">
+    <value>Klicken Sie nach dem Vergleich unten auf der Seite auf **Bericht zu diesem Vergleich erstellen**.|**Berichte** öffnet sich mit beiden Szenarien bereits ausgewählt.|Prüfen Sie Zeitraum und Abschnitte und erstellen Sie den Bericht.</value>
+  </data>
+  <data name="ayuda.comparacion.errores.titulo" xml:space="preserve">
+    <value>Warum wird nicht verglichen?</value>
+  </data>
+  <data name="ayuda.comparacion.errores.cuerpo" xml:space="preserve">
+    <value>Die Meldung oben auf der Seite nennt den Grund. Die häufigsten Ursachen sind:</value>
+  </data>
+  <data name="ayuda.comparacion.errores.pasos" xml:space="preserve">
+    <value>**Dasselbe Szenario auf beiden Seiten**: Wählen Sie zwei verschiedene Szenarien.|**Die Filiale hat keine Szenarien**: Legen Sie sie zuerst unter **Simulationsszenarien** an.|**Fehlende Daten**: Die Filiale braucht Verkäufe im Zeitraum und erfasste Bereiche.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.titulo" xml:space="preserve">
+    <value>Die Produkte der Filiale analysieren</value>
+  </data>
+  <data name="ayuda.analisis.analizar.cuerpo" xml:space="preserve">
+    <value>Die Analyse prüft für jedes Produkt Verkäufe, Bestand und die Kundenfrequenz seines Bereichs und erkennt Chancen: Produkte, die anderswo mehr verkaufen würden, die sich nicht bewegen oder bald ausverkauft sind.</value>
+  </data>
+  <data name="ayuda.analisis.analizar.pasos" xml:space="preserve">
+    <value>Wählen Sie Filiale und Zeitraum (von und bis).|Klicken Sie auf **Produkte analysieren**.|Oben sehen Sie, wie viele Produkte analysiert wurden und wie viele Chancen mit hoher, mittlerer und niedriger Priorität es gibt.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.titulo" xml:space="preserve">
+    <value>Arten von Chancen</value>
+  </data>
+  <data name="ayuda.analisis.tipos.cuerpo" xml:space="preserve">
+    <value>Jedes auffällige Produkt hat einen Typ und eine Priorität. Der Grund auf jeder Karte erklärt die Zahlen dahinter.</value>
+  </data>
+  <data name="ayuda.analisis.tipos.pasos" xml:space="preserve">
+    <value>**Versteckter Star**: verkauft viel, steht aber in einem Bereich mit wenig Kundenfrequenz.|**Belegt einen Top-Platz**: verkauft wenig in einem stark frequentierten Bereich.|**Ohne Bewegung**: hat Bestand und keine Verkäufe.|**Risiko eines Fehlbestands**: Der Bestand reicht weniger als 7 Tage.|**Zu hohe Reichweite**: Der Bestand reicht mehr als 180 Tage.|**Verkauft, aber nicht platziert**: wird verkauft, hat aber keinen Bereich in der Filiale.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.titulo" xml:space="preserve">
+    <value>Was mit jeder Chance zu tun ist</value>
+  </data>
+  <data name="ayuda.analisis.acciones.cuerpo" xml:space="preserve">
+    <value>Beginnen Sie mit hoher Priorität. Die Filter helfen, einen Typ oder ein bestimmtes Produkt zu sehen.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.pasos" xml:space="preserve">
+    <value>Filtern Sie nach Typ oder Priorität oder suchen Sie ein Produkt nach Namen.|Zeigt die Karte **Szenario erstellen**, simulieren Sie die Änderung vorher.|Weisen Sie einem nicht zugeordneten Produkt unter **Produkte und Kategorien** einen Bereich zu.|Bei Ausverkaufsrisiko oder Überbestand prüfen Sie die Einkäufe unter **Bestand und Verkäufe**.</value>
+  </data>
+  <data name="ayuda.analisis.acciones.consejo" xml:space="preserve">
+    <value>Unten steht die Liste **Analysierte Produkte ohne Empfehlung**: Diese laufen an ihrem Platz gut.</value>
+  </data>
+  <data name="ayuda.reportes.generar.titulo" xml:space="preserve">
+    <value>Einen Bericht erstellen</value>
+  </data>
+  <data name="ayuda.reportes.generar.cuerpo" xml:space="preserve">
+    <value>Berichte fassen die Informationen der Filiale für einen Zeitraum in einem PDF zusammen: Kennzahlen, Empfehlungen, Bestand, Verkäufe oder den Szenariovergleich.</value>
+  </data>
+  <data name="ayuda.reportes.generar.pasos" xml:space="preserve">
+    <value>Wählen Sie die Filiale und den **Berichtstyp**.|Legen Sie den Zeitraum mit **Von (Monat)** und **Bis (Monat)** fest (Format jjjj-mm).|Wählen Sie die **Berichtssprache**.|Prüfen Sie die **Einzuschließende Abschnitte** und klicken Sie auf **Bericht erstellen**.</value>
+  </data>
+  <data name="ayuda.reportes.generar.consejo" xml:space="preserve">
+    <value>Die Berichtssprache kann von Ihrer abweichen, etwa um das PDF an die Zentrale in einem anderen Land zu senden.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.titulo" xml:space="preserve">
+    <value>Berichtstypen und Abschnitte</value>
+  </data>
+  <data name="ayuda.reportes.tipos.cuerpo" xml:space="preserve">
+    <value>Bei der Wahl des Typs werden die üblichen Abschnitte automatisch angekreuzt. Danach können Sie beliebige hinzufügen oder entfernen.</value>
+  </data>
+  <data name="ayuda.reportes.tipos.pasos" xml:space="preserve">
+    <value>**Vollständig**: alles zur Filiale im Zeitraum.|**Kennzahlen**: Kennzahlen nach Bereich, Entwicklung und Empfehlungen.|**Bestand**: Bestandsstatus und Produktdetails.|**Vergleich**: braucht **Basisszenario** und **Vorgeschlagenes Szenario**.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.titulo" xml:space="preserve">
+    <value>Berichte ansehen, herunterladen oder löschen</value>
+  </data>
+  <data name="ayuda.reportes.recientes.cuerpo" xml:space="preserve">
+    <value>Erstellte Berichte bleiben rechts unter **Neueste Berichte** gespeichert und lassen sich ohne Neuerstellung wieder öffnen.</value>
+  </data>
+  <data name="ayuda.reportes.recientes.pasos" xml:space="preserve">
+    <value>**Ansehen** öffnet das PDF im Browser.|**Herunterladen** lädt es auf Ihren Computer herunter.|**Löschen** löscht den Bericht und seine Datei; das System fragt nach einer Bestätigung.</value>
+  </data>
+  <data name="ayuda.reportes.errores.titulo" xml:space="preserve">
+    <value>Warum wird der Bericht nicht erstellt?</value>
+  </data>
+  <data name="ayuda.reportes.errores.cuerpo" xml:space="preserve">
+    <value>Die Meldung oben nennt den Grund. Die häufigsten Ursachen sind:</value>
+  </data>
+  <data name="ayuda.reportes.errores.pasos" xml:space="preserve">
+    <value>**Ungültiger Zeitraum**: Der Von-Monat darf nicht nach dem Bis-Monat liegen und keine zukünftigen Monate enthalten; außerdem gibt es eine Höchstzahl an Monaten.|**Keine Abschnitte**: Kreuzen Sie mindestens einen an.|**Vergleich ohne Szenarien**: Wählen Sie Basis- und vorgeschlagenes Szenario.|**Keine Daten**: Die Filiale hat in diesem Zeitraum keine Verkäufe oder keinen Bestand.</value>
+  </data>
 </root>

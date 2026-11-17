@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PaginaAnalisisProductos.aspx.cs" Inherits="PaginaAnalisisProductos" %>
-
 <%@ Register TagPrefix="uc" TagName="BotonVolverMenu" Src="~/Controles/BotonVolverMenu.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PanelAyuda" Src="~/Controles/PanelAyuda.ascx" %>
 
 <!DOCTYPE html>
 
@@ -24,6 +24,7 @@
                         <h1 runat="server" Clave="principal.analisisProductos.titulo">Análisis de Productos</h1>
                         <p class="subtitulo" runat="server" Clave="analisis.subtitulo">CUN 011 — Detectar oportunidades de reubicación de productos</p>
                     </div>
+                    <uc:PanelAyuda ID="ayuda" runat="server" Pantalla="analisis" />
                 </div>
 
                 <asp:Label ID="lblMensaje" runat="server" CssClass="mensaje" Visible="false" EnableViewState="false" />
