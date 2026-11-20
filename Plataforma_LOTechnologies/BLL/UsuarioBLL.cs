@@ -170,7 +170,7 @@ namespace BLL
             accesoDAL.DesbloquearSinContrasenia(pDNI);
             digitos.ActualizarDigitoFila("Usuario", pDNI);
             Guid token = tokenDAL.GenerarToken(pDNI, 60);
-            GmailServicio.Instancia.EnviarMailRecuperacion(usuario.Email, $"{usuario.Nombre} {usuario.Apellido}", token);
+            GmailServicio.Instancia.EnviarMailDesbloqueo(usuario.Email, $"{usuario.Nombre} {usuario.Apellido}", token);
             SucesoServicio.Instancia.RegistrarSuceso($"{Sesion.Instancia.Usuario.Nombre} {Sesion.Instancia.Usuario.Apellido}", "Desbloquear usuario", "Usuarios", 1);
         }
         private void AplicarAlcance(Usuario pUsuario)

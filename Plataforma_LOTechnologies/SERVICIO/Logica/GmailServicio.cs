@@ -27,8 +27,21 @@ namespace SERVICIO.Logica
             string cuerpo = $@"
                             <p>Hola {pNombreCompleto},</p>
                             <p>Recibimos una solicitud para restablecer tu contraseña.</p>
-                            <p><a href='{link}'>Hacé clic acá reestablacer tu contraseña</a></p>
+                            <p><a href='{link}'>Hacé clic acá para reestablecer tu contraseña</a></p>
                             <p>Este link expira en 5 minutos. Si no solicitaste este cambio, ignorá este mensaje.</p>";
+            EnviarMail(pDestinatario, asunto, cuerpo);
+        }
+        public void EnviarMailDesbloqueo(string pDestinatario, string pNombreCompleto, Guid pToken)
+        {
+            string urlBase = ConfigurationManager.AppSettings["UrlBase"];
+            string link = $"{urlBase}/RecuperarContrasenia.aspx?token={pToken}";
+            string asunto = "LO Technologies - Tu usuario fue desbloqueado";
+            string cuerpo = $@"
+                            <p>Hola {pNombreCompleto},</p>
+                            <p>Tu usuario estaba bloqueado por superar la cantidad de intentos de ingreso permitidos.</p>
+                            <p>Por seguridad, antes de volver a ingresar tenés que definir una contraseña nueva.</p>
+                            <p><a href='{link}'>Hacé clic acá para definir tu nueva contraseña</a></p>
+                            <p>Este link expira en 60 minutos. Si no reconocés esta acción, comunicate con el administrador de tu empresa.</p>";
             EnviarMail(pDestinatario, asunto, cuerpo);
         }
         private void EnviarMail(string pDestinatario, string pAsunto, string pHtml)
